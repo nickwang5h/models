@@ -5,10 +5,76 @@
       "title": "思维方法",
       "models": [
         {
+          "id": "circle-of-competence",
+          "name": "能力圈",
+          "en": "Circle of Competence",
+          "one_line": "把重要判断放在经得起检验的理解之内，知道边界比懂得多更重要。"
+        },
+        {
           "id": "inversion",
           "name": "逆向思维",
           "en": "Inversion",
           "one_line": "先找出哪些做法会把事情搞砸，再避开它们，缩小通往成功的障碍。"
+        },
+        {
+          "id": "first-principles",
+          "name": "第一性原理",
+          "en": "First Principles",
+          "one_line": "把惯例拆成有依据的事实与约束，再从这些起点重新推导解决办法。"
+        },
+        {
+          "id": "second-order-thinking",
+          "name": "二阶思维",
+          "en": "Second-Order Thinking",
+          "one_line": "做决定时，多问一步“然后呢”，看眼前的结果会怎样改变接下来的局面。"
+        },
+        {
+          "id": "probabilistic-thinking",
+          "name": "概率思维",
+          "en": "Probabilistic Thinking",
+          "one_line": "把判断写成有依据的概率和区间，让把握有多大、结果能差多少都看得见"
+        },
+        {
+          "id": "occams-razor",
+          "name": "奥卡姆剃刀",
+          "en": "Occam's Razor",
+          "one_line": "当几种解释同样符合证据时，优先选需要额外假设更少的那个。"
+        },
+        {
+          "id": "hanlons-razor",
+          "name": "汉隆剃刀",
+          "en": "Hanlon's Razor",
+          "one_line": "当疏忽足以解释坏结果时，先查失误，别急着认定对方有恶意。"
+        },
+        {
+          "id": "map-territory",
+          "name": "地图不是疆域",
+          "en": "The Map Is Not the Territory",
+          "one_line": "模型、指标和报表靠省略细节帮你看清现实，也会把决定成败的细节藏起来。"
+        },
+        {
+          "id": "falsifiability",
+          "name": "可证伪性",
+          "en": "Falsifiability",
+          "one_line": "一个判断要经得起检验，先得说清什么证据会让你承认它错了。"
+        },
+        {
+          "id": "thought-experiment",
+          "name": "思想实验",
+          "en": "Thought Experiment",
+          "one_line": "在脑中设定极端场景，沿着假设推到底，让想法的矛盾和边界显出来。"
+        },
+        {
+          "id": "checklists",
+          "name": "检查清单",
+          "en": "Checklists",
+          "one_line": "把容易遗漏的关键步骤写下来，在行动的关口逐项核实，让熟练的人也少犯错。"
+        },
+        {
+          "id": "premortem",
+          "name": "事前验尸",
+          "en": "Premortem",
+          "one_line": "先假定计划已经失败，再倒查原因，把藏着的担忧变成能改的行动。"
         }
       ]
     },
@@ -21,45 +87,420 @@
           "name": "复利",
           "en": "Compounding",
           "one_line": "把每轮增长留下来，让它参与下一轮增长，时间就会放大最初的差距。"
+        },
+        {
+          "id": "expected-value",
+          "name": "期望值",
+          "en": "Expected Value",
+          "one_line": "把各种结果按概率加权，比较选择；一次输赢不足以判定决策好坏。"
+        },
+        {
+          "id": "bayesian-updating",
+          "name": "贝叶斯更新",
+          "en": "Bayesian Updating",
+          "one_line": "新证据让旧判断的赔率乘以似然比，改变相信它的程度。"
+        },
+        {
+          "id": "base-rate",
+          "name": "基础比率",
+          "en": "Base Rate",
+          "one_line": "判断一个个案前，先找可比的一类，看同样的结果在其中有多常见。"
+        },
+        {
+          "id": "regression-to-mean",
+          "name": "回归均值",
+          "en": "Regression to the Mean",
+          "one_line": "当表现夹杂随机波动时，极端成绩之后的平均表现会更接近常态。"
+        },
+        {
+          "id": "law-of-large-numbers",
+          "name": "大数定律与小样本",
+          "en": "Law of Large Numbers",
+          "one_line": "独立、同分布的样本越多，比例越稳定；小样本更容易出现极端比例。"
+        },
+        {
+          "id": "fat-tails",
+          "name": "正态与肥尾",
+          "en": "Normal vs Fat-Tailed Distributions",
+          "one_line": "正态世界里典型值能代表多数，肥尾世界里少数极端值能改写整体"
+        },
+        {
+          "id": "power-law",
+          "name": "幂律与长尾",
+          "en": "Power Laws",
+          "one_line": "幂律描述固定的缩放关系，集中程度取决于指数，二八只是一个特例。"
+        },
+        {
+          "id": "correlation-causation",
+          "name": "相关不等于因果",
+          "en": "Correlation vs Causation",
+          "one_line": "两件事一起变化，不代表改变其中一件就能让另一件跟着变。"
+        },
+        {
+          "id": "survivorship-bias",
+          "name": "幸存者偏差",
+          "en": "Survivorship Bias",
+          "one_line": "只看留下来的样本，会把通过筛选的结果误当成所有人的规律。"
+        },
+        {
+          "id": "ergodicity",
+          "name": "遍历性",
+          "en": "Ergodicity",
+          "one_line": "许多人各试一次的平均结果，未必是你反复尝试后的长期结果。"
+        },
+        {
+          "id": "luck-and-skill",
+          "name": "运气与技能",
+          "en": "Luck vs Skill",
+          "one_line": "结果越受运气影响，判断本领就越要看可重复的表现，而非一次输赢。"
         }
       ]
     },
     {
       "id": "physics",
       "title": "物理、化学与工程",
-      "models": []
+      "models": [
+        {
+          "id": "leverage",
+          "name": "杠杆",
+          "en": "Leverage",
+          "one_line": "杠杆让一份投入带动更大的结果，也把投入中的错误一同放大。"
+        },
+        {
+          "id": "inertia",
+          "name": "惯性",
+          "en": "Inertia",
+          "one_line": "物体保持原有运动状态；组织与习惯也会延续，直到改变机制真正生效。"
+        },
+        {
+          "id": "friction",
+          "name": "摩擦",
+          "en": "Friction",
+          "one_line": "摩擦阻碍接触面的相对运动；流程里的小麻烦，也能让人放弃本想做的事。"
+        },
+        {
+          "id": "critical-mass",
+          "name": "临界质量",
+          "en": "Critical Mass",
+          "one_line": "能接续下一轮的有效数量足够多，链式反应才跨过自我维持的门槛。"
+        },
+        {
+          "id": "phase-transition",
+          "name": "相变与临界点",
+          "en": "Phase Transitions and Tipping Points",
+          "one_line": "系统接近某个边界时，条件再变一点，就会换一种运行方式。"
+        },
+        {
+          "id": "entropy",
+          "name": "熵",
+          "en": "Entropy",
+          "one_line": "孤立系统总熵不减，受扰动的秩序要持续投入能量来维持。"
+        },
+        {
+          "id": "equilibrium",
+          "name": "均衡",
+          "en": "Equilibrium",
+          "one_line": "均衡是相反作用恰好抵消的状态，是否稳定要看偏离后会被拉回还是推远"
+        },
+        {
+          "id": "catalyst",
+          "name": "催化剂",
+          "en": "Catalyst",
+          "one_line": "催化剂提供可反复使用的反应路径，加快转变而自身不被净消耗。"
+        },
+        {
+          "id": "activation-energy",
+          "name": "活化能",
+          "en": "Activation Energy",
+          "one_line": "一件事即使值得做，也得先越过启动门槛，才会真正开始。"
+        },
+        {
+          "id": "redundancy",
+          "name": "冗余",
+          "en": "Redundancy",
+          "one_line": "给关键环节留备份和余量，让局部失效不至于变成整个系统停摆。"
+        },
+        {
+          "id": "square-cube-law",
+          "name": "平方-立方定律",
+          "en": "Square-Cube Law",
+          "one_line": "形状不变时，尺寸越大，体积相对面积越大，承重和散热就越吃紧。"
+        }
+      ]
     },
     {
       "id": "biology",
       "title": "生物与演化",
       "models": [
         {
+          "id": "natural-selection",
+          "name": "自然选择",
+          "en": "Natural Selection",
+          "one_line": "能遗传的差异影响留下后代的多少，群体便能在没有设计者的情况下形成适应"
+        },
+        {
+          "id": "local-optimum",
+          "name": "适应与局部最优",
+          "en": "Adaptation and Local Optima",
+          "one_line": "每一步都在变好，也会困在小山顶；能走多远，取决于中间的路能否走通。"
+        },
+        {
           "id": "red-queen",
           "name": "红皇后效应",
           "en": "Red Queen Effect",
           "one_line": "当对手不断进步并抵消你的优势时，持续改进也只能维持原位。"
+        },
+        {
+          "id": "ecological-niche",
+          "name": "生态位",
+          "en": "Ecological Niche",
+          "one_line": "生态位是一个物种赖以生存的资源、环境条件及其与其他生物的关系。"
+        },
+        {
+          "id": "competitive-exclusion",
+          "name": "竞争排斥",
+          "en": "Competitive Exclusion",
+          "one_line": "环境稳定、资源有限时，生态位完全重合的物种无法稳定地长期共存。"
+        },
+        {
+          "id": "mutualism",
+          "name": "互利共生",
+          "en": "Mutualism",
+          "one_line": "互利共生靠双方持续满足彼此的需要，让各自所得超过付出，维持长期关系。"
+        },
+        {
+          "id": "costly-signaling",
+          "name": "昂贵信号",
+          "en": "Costly Signaling",
+          "one_line": "当冒充者付出同样代价却得不偿失时，昂贵的信号才更可信。"
+        },
+        {
+          "id": "reciprocal-altruism",
+          "name": "互惠利他",
+          "en": "Reciprocal Altruism",
+          "one_line": "能认出并再次遇见彼此时，今天付出的小代价能换来日后的大帮助。"
+        },
+        {
+          "id": "ess",
+          "name": "演化稳定策略",
+          "en": "Evolutionarily Stable Strategy",
+          "one_line": "当一种策略已普及时，少数改用其他策略者无法靠收益优势扩张。"
+        },
+        {
+          "id": "supernormal-stimulus",
+          "name": "超常刺激",
+          "en": "Supernormal Stimulus",
+          "one_line": "当触发本能的线索被夸大，人会更想要它，却未必得到更多实际好处。"
         }
       ]
     },
     {
       "id": "systems",
       "title": "系统",
-      "models": []
+      "models": [
+        {
+          "id": "feedback-loops",
+          "name": "反馈回路",
+          "en": "Feedback Loops",
+          "one_line": "结果绕回起点改变下一轮：正反馈放大原有变化，负反馈抵消偏离"
+        },
+        {
+          "id": "stocks-and-flows",
+          "name": "存量与流量",
+          "en": "Stocks and Flows",
+          "one_line": "存量是过去净流入的积累；流入仍大于流出，增长就不会停止。"
+        },
+        {
+          "id": "time-delays",
+          "name": "时间延迟",
+          "en": "Time Delays",
+          "one_line": "效果尚未显现时反复加码，会让原本纠偏的动作把系统推向另一端。"
+        },
+        {
+          "id": "bottlenecks",
+          "name": "瓶颈",
+          "en": "Bottlenecks",
+          "one_line": "必经环节里，产能最低的一环限制整体产出，其他地方提速也帮不上忙。"
+        },
+        {
+          "id": "emergence",
+          "name": "涌现",
+          "en": "Emergence",
+          "one_line": "个体按局部规则相互作用，会形成单个个体没有的整体性质。"
+        },
+        {
+          "id": "antifragility",
+          "name": "韧性与反脆弱",
+          "en": "Resilience and Antifragility",
+          "one_line": "韧性让系统受冲击后恢复，反脆弱让系统在一定范围内从冲击中获益"
+        },
+        {
+          "id": "path-dependence",
+          "name": "路径依赖",
+          "en": "Path Dependence",
+          "one_line": "早期选择一旦积累了配套投入，就会让后来的选择越来越难改道。"
+        },
+        {
+          "id": "unintended-consequences",
+          "name": "非预期后果",
+          "en": "Unintended Consequences",
+          "one_line": "干预会改变人和环境的反应，带来设计者没想到、甚至背离初衷的结果。"
+        }
+      ]
     },
     {
       "id": "economics",
       "title": "经济学",
-      "models": []
+      "models": [
+        {
+          "id": "opportunity-cost",
+          "name": "机会成本",
+          "en": "Opportunity Cost",
+          "one_line": "选择的真正代价，是同一份资源原本能换来的最佳替代价值。"
+        },
+        {
+          "id": "marginal-thinking",
+          "name": "边际思维",
+          "en": "Marginal Thinking",
+          "one_line": "决定要不要再多做一点，比较这一步新增的收益与成本，而非过去的平均。"
+        },
+        {
+          "id": "diminishing-returns",
+          "name": "边际收益递减",
+          "en": "Diminishing Returns",
+          "one_line": "其他条件不变时，同样多加一份投入，带来的新增成果会逐步缩小。"
+        },
+        {
+          "id": "comparative-advantage",
+          "name": "比较优势",
+          "en": "Comparative Advantage",
+          "one_line": "即使样样都比别人强，也该按相对代价分工，把时间留给优势更大的事。"
+        },
+        {
+          "id": "supply-demand",
+          "name": "供需与价格信号",
+          "en": "Supply, Demand and Price Signals",
+          "one_line": "价格把分散的供需变化压缩成一个数，让互不相识的人调整行动。"
+        },
+        {
+          "id": "incentives",
+          "name": "激励",
+          "en": "Incentives",
+          "one_line": "人会对自己在意的奖惩作出反应，设计制度先看它实际奖励了什么"
+        },
+        {
+          "id": "scarcity",
+          "name": "稀缺",
+          "en": "Scarcity",
+          "one_line": "资源装不下所有想做的事，取舍就无法避免；时间尤其无法储存和补回"
+        },
+        {
+          "id": "sunk-cost",
+          "name": "沉没成本",
+          "en": "Sunk Cost",
+          "one_line": "已经花掉且收不回的钱，不该决定下一步；该看从现在起各条路的得失。"
+        },
+        {
+          "id": "economies-of-scale",
+          "name": "规模经济",
+          "en": "Economies of Scale",
+          "one_line": "产量扩大能把每件产品的成本压低，但管理与协调也会让规模优势反转。"
+        },
+        {
+          "id": "transaction-costs",
+          "name": "交易成本",
+          "en": "Transaction Costs",
+          "one_line": "找人、谈条件和确保对方履约的成本，会改变一笔交易是否值得做。"
+        },
+        {
+          "id": "externalities",
+          "name": "外部性",
+          "en": "Externalities",
+          "one_line": "当一笔决策的成本或收益落到未参与的旁人身上，个人账本就会漏算社会账。"
+        },
+        {
+          "id": "tragedy-of-commons",
+          "name": "公地悲剧",
+          "en": "Tragedy of the Commons",
+          "one_line": "当多用的好处归自己、耗损由大家分担时，共享资源会被各自理性的选择耗尽。"
+        },
+        {
+          "id": "principal-agent",
+          "name": "委托代理",
+          "en": "Principal-Agent Problem",
+          "one_line": "替你办事的人有自己的利益；当你看不清他的选择时，他会偏离你的目标。"
+        },
+        {
+          "id": "adverse-selection",
+          "name": "逆向选择",
+          "en": "Adverse Selection",
+          "one_line": "交易前分不清好坏时，按平均水平开的条件，会让好货先退出。"
+        },
+        {
+          "id": "moral-hazard",
+          "name": "道德风险",
+          "en": "Moral Hazard",
+          "one_line": "当保障替人承担损失，而交易后的行为难以监督，人就少了谨慎的理由。"
+        },
+        {
+          "id": "goodharts-law",
+          "name": "古德哈特定律",
+          "en": "Goodhart's Law",
+          "one_line": "当人们能绕过真实成果来提高指标，把指标当目标就会使它失真。"
+        },
+        {
+          "id": "creative-destruction",
+          "name": "创造性破坏",
+          "en": "Creative Destruction",
+          "one_line": "新技术和新企业把事情做得更好，也让旧企业赖以赚钱的优势失效。"
+        }
+      ]
     },
     {
       "id": "games",
       "title": "博弈论",
       "models": [
         {
+          "id": "zero-sum",
+          "name": "零和与正和",
+          "en": "Zero-Sum vs Positive-Sum",
+          "one_line": "先看双方能否增加总收益，再看怎么分；对方获益未必就是你的损失。"
+        },
+        {
           "id": "prisoners-dilemma",
           "name": "囚徒困境",
           "en": "Prisoner's Dilemma",
           "one_line": "当背离合作对每个人都更划算时，各自理性会把所有人带向更差的结果。"
+        },
+        {
+          "id": "repeated-games",
+          "name": "重复博弈与以牙还牙",
+          "en": "Repeated Games and Tit for Tat",
+          "one_line": "当双方在意未来往来，今天占便宜就会变贵，合作也就有了支撑。"
+        },
+        {
+          "id": "nash-equilibrium",
+          "name": "纳什均衡",
+          "en": "Nash Equilibrium",
+          "one_line": "别人策略不变时，谁单独换策略都不会更好，大家便停在均衡里。"
+        },
+        {
+          "id": "credible-commitment",
+          "name": "可信承诺",
+          "en": "Credible Commitment",
+          "one_line": "提前限制自己的退路，让别人相信你会兑现，从而改变他们的选择。"
+        },
+        {
+          "id": "schelling-point",
+          "name": "谢林点",
+          "en": "Focal Point",
+          "one_line": "无法沟通却想选到一起时，共同觉得醒目的答案会把大家引向同一处。"
+        },
+        {
+          "id": "arms-race",
+          "name": "军备竞赛",
+          "en": "Arms Race",
+          "one_line": "当优势取决于比别人多投入，各方追着加码，成本上涨却拉不开差距。"
         }
       ]
     },
@@ -68,17 +509,192 @@
       "title": "心理学与误判",
       "models": [
         {
+          "id": "incentive-bias",
+          "name": "激励偏差",
+          "en": "Incentive-Caused Bias",
+          "one_line": "利益不只改变人怎么做，还会改变人真心觉得什么是对的。"
+        },
+        {
+          "id": "reciprocity",
+          "name": "互惠",
+          "en": "Reciprocity",
+          "one_line": "受人恩惠会让人想回报，哪怕没开口索取，也会因此答应原本不愿做的事。"
+        },
+        {
+          "id": "commitment-consistency",
+          "name": "承诺与一致",
+          "en": "Commitment and Consistency",
+          "one_line": "人会为了延续对自己的看法，让后来的选择跟随先前的表态和行动。"
+        },
+        {
           "id": "social-proof",
           "name": "社会认同",
           "en": "Social Proof",
           "one_line": "拿不准时，我们会把别人的选择当作线索，但跟随人数未必代表证据多少。"
+        },
+        {
+          "id": "authority",
+          "name": "权威",
+          "en": "Authority Bias",
+          "one_line": "当权威的指令压过眼前的证据，人会把判断和责任一起交出去。"
+        },
+        {
+          "id": "liking",
+          "name": "喜好与光环",
+          "en": "Liking and the Halo Effect",
+          "one_line": "当好感越过证据的边界，我们就会把一个人的讨喜当成他样样出色的理由。"
+        },
+        {
+          "id": "loss-aversion",
+          "name": "损失厌恶",
+          "en": "Loss Aversion",
+          "one_line": "人以心里的基准计算得失，同样分量的失去比得到更牵动决定。"
+        },
+        {
+          "id": "anchoring",
+          "name": "锚定",
+          "en": "Anchoring",
+          "one_line": "先看到的数字会牵引后来的估计，即使它与要判断的事情毫无关系。"
+        },
+        {
+          "id": "contrast-effect",
+          "name": "对比效应",
+          "en": "Contrast Effect",
+          "one_line": "同一个东西，换了比较对象，好坏、大小和贵贱的感觉就会改变。"
+        },
+        {
+          "id": "availability",
+          "name": "可得性",
+          "en": "Availability Heuristic",
+          "one_line": "人会把例子想起得有多容易，误当成事情发生得有多频繁。"
+        },
+        {
+          "id": "confirmation-bias",
+          "name": "确认偏误",
+          "en": "Confirmation Bias",
+          "one_line": "确认偏误让人偏爱支持既有判断的证据，把反对证据挡在结论之外。"
+        },
+        {
+          "id": "overconfidence",
+          "name": "过度自信",
+          "en": "Overconfidence",
+          "one_line": "过度自信让人高估自己的知识与能力，并把预测区间收得过窄。"
+        },
+        {
+          "id": "hindsight-bias",
+          "name": "后见之明",
+          "en": "Hindsight Bias",
+          "one_line": "知道结果后，我们会把当初的不确定，记成自己早已看清的必然。"
+        },
+        {
+          "id": "fundamental-attribution",
+          "name": "基本归因错误",
+          "en": "Fundamental Attribution Error",
+          "one_line": "看别人失误，我们容易怪性格；看自己失误，却更容易看见处境。"
+        },
+        {
+          "id": "mental-accounting",
+          "name": "心理账户",
+          "en": "Mental Accounting",
+          "one_line": "人把钱贴上来源和用途的标签，让本可互换的钱受到不同待遇。"
+        },
+        {
+          "id": "default-effect",
+          "name": "默认与现状偏好",
+          "en": "Default Effect and Status Quo Bias",
+          "one_line": "人会顺着预设选项、留在已有状态；不主动选择，也会被安排一个结果。"
+        },
+        {
+          "id": "envy",
+          "name": "嫉妒",
+          "en": "Envy",
+          "one_line": "嫉妒让身边人的优势变成自己的痛苦，甚至让人为缩小差距牺牲实利。"
+        },
+        {
+          "id": "denial",
+          "name": "否认",
+          "en": "Denial",
+          "one_line": "当承认现实带来的痛苦难以承受时，人会拒绝承认事实或它的后果。"
+        },
+        {
+          "id": "reason-respecting",
+          "name": "给出理由",
+          "en": "Reason-Respecting Tendency",
+          "one_line": "请求代价很小时，人会把“有个理由”当成配合的依据，哪怕理由没说出新东西。"
+        },
+        {
+          "id": "lollapalooza",
+          "name": "Lollapalooza 效应",
+          "en": "Lollapalooza Effect",
+          "one_line": "几种心理倾向同向推动、彼此放大时，普通人也会做出极端选择。"
         }
       ]
     },
     {
       "id": "business",
       "title": "商业与战略",
-      "models": []
+      "models": [
+        {
+          "id": "moat",
+          "name": "护城河",
+          "en": "Economic Moat",
+          "one_line": "护城河是让对手难以划算地抢走生意、从而长期保护超额利润的优势。"
+        },
+        {
+          "id": "network-effects",
+          "name": "网络效应",
+          "en": "Network Effects",
+          "one_line": "当新增用户让已有用户也获得更多价值时，网络效应就出现了。"
+        },
+        {
+          "id": "switching-costs",
+          "name": "转换成本与锁定",
+          "en": "Switching Costs and Lock-in",
+          "one_line": "客户留下，有时是因为换掉旧产品的代价超过了新产品的好处。"
+        },
+        {
+          "id": "pricing-power",
+          "name": "定价权",
+          "en": "Pricing Power",
+          "one_line": "客户愿意承受涨价而继续购买，企业就能把独特价值变成更厚的利润。"
+        },
+        {
+          "id": "flywheel",
+          "name": "飞轮",
+          "en": "Flywheel",
+          "one_line": "几个环节首尾相接，把上一轮的成果变成下一轮的助力，越做越顺。"
+        },
+        {
+          "id": "disruptive-innovation",
+          "name": "颠覆式创新",
+          "en": "Disruptive Innovation",
+          "one_line": "后来者从领先者不愿服务的低端或新市场起步，逐步改进并进入主流。"
+        },
+        {
+          "id": "two-sided-platforms",
+          "name": "双边平台",
+          "en": "Two-Sided Platforms",
+          "one_line": "连接两群人时，先扶持能带动对面参与的一边，让双方有理由留下。"
+        },
+        {
+          "id": "first-mover",
+          "name": "先发与后发",
+          "en": "First-Mover vs Second-Mover Advantage",
+          "one_line": "先到者只有把时间变成难以追回的积累，才能压过后来者少交的学费。"
+        },
+        {
+          "id": "unit-economics",
+          "name": "单位经济",
+          "en": "Unit Economics",
+          "one_line": "先算清一单或一个客户留下多少钱，再看扩张会放大收益还是亏损。"
+        },
+        {
+          "id": "strategy-tradeoffs",
+          "name": "战略即取舍",
+          "en": "Strategy as Trade-offs",
+          "one_line": "战略是选定要给谁什么价值，并放弃会破坏这份价值的业务和做法。"
+        }
+      ]
     },
     {
       "id": "investing",
@@ -89,18 +705,152 @@
           "name": "安全边际",
           "en": "Margin of Safety",
           "one_line": "只在价格远低于有依据的估值时买入，让判断出错后仍有余地。"
+        },
+        {
+          "id": "mr-market",
+          "name": "市场先生",
+          "en": "Mr. Market",
+          "one_line": "把市场当成情绪多变的报价者，按自己的判断决定是否成交。"
+        },
+        {
+          "id": "price-and-value",
+          "name": "价格与价值",
+          "en": "Price vs Value",
+          "one_line": "价格是成交时付出的代价，价值是买到的东西今后能为你带来的收益。"
+        },
+        {
+          "id": "risk-uncertainty",
+          "name": "风险与不确定性",
+          "en": "Risk vs Uncertainty",
+          "one_line": "风险能估出可信的概率，不确定性连概率都缺乏可靠依据。"
+        },
+        {
+          "id": "avoid-ruin",
+          "name": "避免毁灭",
+          "en": "Avoiding Ruin",
+          "one_line": "再高的平均收益，也抵不过一次让你永远失去继续参与资格的失败。"
+        },
+        {
+          "id": "convexity",
+          "name": "凸性与非对称回报",
+          "en": "Convexity and Asymmetric Payoffs",
+          "one_line": "把失败的损失封顶，让成功的收益继续增长，少数大胜就能抵过多次小败。"
+        },
+        {
+          "id": "optionality",
+          "name": "可选性",
+          "en": "Optionality",
+          "one_line": "能在有利时行动、不利时放弃，保留这份选择权就有价值。"
+        },
+        {
+          "id": "diversification",
+          "name": "分散与相关性",
+          "en": "Diversification and Correlation",
+          "one_line": "分散的效果取决于损失是否同步，而危机会让原本不同的风险一起发作。"
         }
       ]
     },
     {
       "id": "society",
       "title": "社会、历史与组织",
-      "models": []
+      "models": [
+        {
+          "id": "lindy-effect",
+          "name": "林迪效应",
+          "en": "Lindy Effect",
+          "one_line": "在淘汰规则相近时，书、技术和制度存续越久，预期剩余寿命越长。"
+        },
+        {
+          "id": "checks-and-balances",
+          "name": "制衡与分权",
+          "en": "Checks and Balances",
+          "one_line": "把决定、执行和监督交给能互相说不的人，让权力难以独自越界。"
+        },
+        {
+          "id": "peter-principle",
+          "name": "彼得原理",
+          "en": "Peter Principle",
+          "one_line": "当组织凭旧岗位的成绩提拔人，又难让人退回时，人会停在不胜任的位置。"
+        },
+        {
+          "id": "parkinsons-law",
+          "name": "帕金森定律",
+          "en": "Parkinson's Law",
+          "one_line": "当任务边界模糊时，工作会填满时间，机构会自己制造扩张的理由。"
+        },
+        {
+          "id": "conways-law",
+          "name": "康威定律",
+          "en": "Conway's Law",
+          "one_line": "组织共同设计系统时，系统的分块与连接会复制人的沟通方式。"
+        },
+        {
+          "id": "public-choice",
+          "name": "公共选择",
+          "en": "Public Choice",
+          "one_line": "掌握公共权力的人也有自身利益，理解公共决策要看他们如何得失。"
+        },
+        {
+          "id": "collective-action",
+          "name": "集体行动困境",
+          "en": "Collective Action Problem",
+          "one_line": "利益集中者更愿意付钱出力，能压过人数更多却各自得失很小的人。"
+        },
+        {
+          "id": "dunbars-number",
+          "name": "邓巴数",
+          "en": "Dunbar's Number",
+          "one_line": "人能维持的稳定关系约一百五十个，组织扩张会让熟人协作吃力"
+        }
+      ]
     },
     {
       "id": "computing",
       "title": "计算机与信息",
-      "models": []
+      "models": [
+        {
+          "id": "explore-exploit",
+          "name": "探索与利用",
+          "en": "Explore vs Exploit",
+          "one_line": "在反复选择中，用一部分眼前收益换取信息，再把机会投向已知更好的选择。"
+        },
+        {
+          "id": "optimal-stopping",
+          "name": "最优停止",
+          "en": "Optimal Stopping",
+          "one_line": "最优停止是在继续寻找的收益与等待的代价之间，选定出手的时机。"
+        },
+        {
+          "id": "combinatorial-explosion",
+          "name": "指数爆炸",
+          "en": "Combinatorial Explosion",
+          "one_line": "当多个选择可以自由搭配，每增加一项决策，候选方案就成倍增长。"
+        },
+        {
+          "id": "caching-locality",
+          "name": "缓存与局部性",
+          "en": "Caching and Locality",
+          "one_line": "把反复要用的东西放在近处，用更少的取用成本换速度，并及时更新。"
+        },
+        {
+          "id": "abstraction",
+          "name": "抽象与模块化",
+          "en": "Abstraction and Modularity",
+          "one_line": "把变化留在模块内部，用稳定接口协作，让人无需懂全部也能掌控整体。"
+        },
+        {
+          "id": "signal-noise",
+          "name": "信噪比",
+          "en": "Signal-to-Noise Ratio",
+          "one_line": "判断能否变准，取决于有效线索相对干扰有多强，而非消息有多少。"
+        },
+        {
+          "id": "overfitting",
+          "name": "过拟合",
+          "en": "Overfitting",
+          "one_line": "把旧数据里的偶然细节当成规律，会让过去的高分变成未来的失分。"
+        }
+      ]
     }
   ],
   "names": {

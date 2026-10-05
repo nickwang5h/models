@@ -12,7 +12,7 @@ const MATH = /\$\$([\s\S]+?)\$\$|\$([^$\n]+?)\$/g;
 export function markdown(text, { inline = false } = {}) {
   const pieces = [];
   const held = String(text).replace(MATH, (_, block, line) => {
-    pieces.push(katex.renderToString(block ?? line, { displayMode: Boolean(block), throwOnError: false, output: 'html' }));
+    pieces.push(katex.renderToString(block ?? line, { displayMode: Boolean(block), throwOnError: false, strict: 'ignore', output: 'html' }));
     return `@@M${pieces.length - 1}@@`;
   });
   const html = inline ? md.parseInline(held) : md.parse(held);
