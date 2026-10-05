@@ -19,6 +19,14 @@ test('markdown renders math with KaTeX and keeps bold', () => {
   assert.match(html, /katex-display/);
 });
 
+test('bold closes next to Chinese punctuation, which CommonMark flanking rules miss', () => {
+  const html = markdown('先说一句。**对方过得更差，并不会让你更好。**判断下一步，看“**自己**”要什么。');
+  assert.doesNotMatch(html, /\*\*/);
+  assert.match(html, /<strong>对方过得更差，并不会让你更好。<\/strong>判断/);
+  assert.match(html, /“<strong>自己<\/strong>”/);
+  assert.match(markdown('前文。**$x^2$ 越大越好。**后文'), /<strong><span class="katex">/);
+});
+
 test('markdown leaves currency-free text alone and escapes raw html', () => {
   assert.doesNotMatch(markdown('<script>x</script>'), /<script>/);
 });

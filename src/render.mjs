@@ -5,6 +5,20 @@ import { escape, questionHtml } from '../public/quiz.mjs';
 
 const md = new Marked({ gfm: true });
 md.use({ renderer: { html: (token) => escape(token.text ?? '') } });
+// CommonMark won't close ** after punctuation when a letter follows (“好。**判断”), which Chinese prose does all the time;
+// pair the stars directly instead.
+md.use({
+  extensions: [{
+    name: 'cjkStrong',
+    level: 'inline',
+    start: (src) => src.indexOf('**'),
+    tokenizer(src) {
+      const match = /^\*\*(?=\S)([\s\S]*?\S)\*\*/.exec(src);
+      if (match) return { type: 'strong', raw: match[0], text: match[1], tokens: this.lexer.inlineTokens(match[1]) };
+      return undefined;
+    },
+  }],
+});
 
 const MATH = /\$\$([\s\S]+?)\$\$|\$([^$\n]+?)\$/g;
 
