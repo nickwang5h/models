@@ -1,0 +1,83 @@
+// Answering, reading marks, tallies, random card and review. Everything works on the built HTML; progress lives in
+// localStorage through progress.mjs, which swallows storage errors.
+import { load, markRead, pickUnread, record, reviewQueue, save, stats } from './progress.mjs';
+import { questionHtml } from './quiz.mjs';
+
+let storage = null;
+try { storage = window.localStorage; } catch { /* no storage: progress stays in this page */ }
+const memory = { getItem: () => null, setItem: () => {} };
+const store = storage ?? memory;
+let state = load(store);
+const today = () => new Date().toISOString().slice(0, 10);
+const commit = (next) => { state = next; save(store, state); };
+
+function wire(root) {
+  for (const q of root.querySelectorAll('.q')) {
+    q.addEventListener('click', (event) => {
+      const button = event.target.closest('button.opt');
+      if (!button || q.classList.contains('done')) return;
+      q.classList.add('done');
+      const ok = button.dataset.ok === '1';
+      button.classList.add(ok ? 'right' : 'wrong');
+      button.nextElementSibling.hidden = false;
+      for (const other of q.querySelectorAll('button.opt')) {
+        other.disabled = true;
+        if (other.dataset.ok === '1') other.classList.add('right');
+      }
+      q.querySelector('.explain').hidden = false;
+      const card = q.dataset.q.replace(/-\d+$/, '');
+      commit(record(markRead(state, card, today()), q.dataset.q, ok, Date.now()));
+    });
+  }
+}
+
+function tally() {
+  for (const node of document.querySelectorAll('[data-ids]')) {
+    const ids = node.dataset.ids.split(' ').filter(Boolean);
+    const s = stats(state, ids);
+    const bar = node.querySelector('[data-bar]');
+    if (bar) bar.style.width = `${(100 * s.read) / ids.length}%`;
+  }
+  const scope = document.querySelector('.discipline[data-ids]')?.dataset.ids.split(' ')
+    ?? [...document.querySelectorAll('[data-ids]')].flatMap((n) => n.dataset.ids.split(' '));
+  const shown = document.querySelector('[data-tally]');
+  if (shown && scope.length) {
+    const s = stats(state, scope);
+    shown.textContent = s.read ? `已读 ${s.read}/${scope.length} 张 · 做过 ${s.answered} 题，答对 ${s.right} 题` : `共 ${scope.length} 张，还没有开始读。`;
+  }
+  for (const link of document.querySelectorAll('.tiles a[data-id]')) link.classList.toggle('read', Boolean(state.read[link.dataset.id]));
+}
+
+async function goRandom() {
+  const ids = await (await fetch('/ids.json')).json();
+  location.href = `/m/${pickUnread(state, ids)}`;
+}
+
+async function review(box) {
+  const all = await (await fetch('/questions.json')).json();
+  const cards = Object.entries(all).map(([id, card]) => ({ id, questions: card.questions.map((_, n) => `${id}-${n}`) }));
+  const queue = reviewQueue(state, cards).slice(0, 10);
+  if (!queue.length) return;
+  box.innerHTML = queue.map((qid) => {
+    const id = qid.replace(/-\d+$/, '');
+    return questionHtml(all[id].questions[Number(qid.split('-').pop())], qid, { id, name: all[id].name });
+  }).join('') + '<p class="more"><a href="/review">再来一组</a></p>';
+  wire(box);
+}
+
+const card = document.querySelector('[data-card]');
+if (card) {
+  wire(card);
+  const quiz = document.getElementById('quiz');
+  if ('IntersectionObserver' in window && quiz) {
+    const seen = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) { commit(markRead(state, card.dataset.card, today())); seen.disconnect(); }
+    });
+    seen.observe(quiz);
+  }
+}
+tally();
+for (const link of document.querySelectorAll('[data-random]')) link.addEventListener('click', (e) => { e.preventDefault(); goRandom(); });
+if (document.querySelector('[data-go-random]')) goRandom();
+const box = document.getElementById('review');
+if (box) review(box);

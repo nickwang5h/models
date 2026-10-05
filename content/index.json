@@ -1,0 +1,238 @@
+{
+  "disciplines": [
+    {
+      "id": "thinking",
+      "title": "思维方法",
+      "models": [
+        {
+          "id": "inversion",
+          "name": "逆向思维",
+          "en": "Inversion",
+          "one_line": "先找出哪些做法会把事情搞砸，再避开它们，缩小通往成功的障碍。"
+        }
+      ]
+    },
+    {
+      "id": "math",
+      "title": "数学与统计",
+      "models": [
+        {
+          "id": "compounding",
+          "name": "复利",
+          "en": "Compounding",
+          "one_line": "把每轮增长留下来，让它参与下一轮增长，时间就会放大最初的差距。"
+        }
+      ]
+    },
+    {
+      "id": "physics",
+      "title": "物理、化学与工程",
+      "models": []
+    },
+    {
+      "id": "biology",
+      "title": "生物与演化",
+      "models": [
+        {
+          "id": "red-queen",
+          "name": "红皇后效应",
+          "en": "Red Queen Effect",
+          "one_line": "当对手不断进步并抵消你的优势时，持续改进也只能维持原位。"
+        }
+      ]
+    },
+    {
+      "id": "systems",
+      "title": "系统",
+      "models": []
+    },
+    {
+      "id": "economics",
+      "title": "经济学",
+      "models": []
+    },
+    {
+      "id": "games",
+      "title": "博弈论",
+      "models": [
+        {
+          "id": "prisoners-dilemma",
+          "name": "囚徒困境",
+          "en": "Prisoner's Dilemma",
+          "one_line": "当背离合作对每个人都更划算时，各自理性会把所有人带向更差的结果。"
+        }
+      ]
+    },
+    {
+      "id": "psychology",
+      "title": "心理学与误判",
+      "models": [
+        {
+          "id": "social-proof",
+          "name": "社会认同",
+          "en": "Social Proof",
+          "one_line": "拿不准时，我们会把别人的选择当作线索，但跟随人数未必代表证据多少。"
+        }
+      ]
+    },
+    {
+      "id": "business",
+      "title": "商业与战略",
+      "models": []
+    },
+    {
+      "id": "investing",
+      "title": "投资与风险",
+      "models": [
+        {
+          "id": "margin-of-safety",
+          "name": "安全边际",
+          "en": "Margin of Safety",
+          "one_line": "只在价格远低于有依据的估值时买入，让判断出错后仍有余地。"
+        }
+      ]
+    },
+    {
+      "id": "society",
+      "title": "社会、历史与组织",
+      "models": []
+    },
+    {
+      "id": "computing",
+      "title": "计算机与信息",
+      "models": []
+    }
+  ],
+  "names": {
+    "circle-of-competence": "能力圈",
+    "inversion": "逆向思维",
+    "first-principles": "第一性原理",
+    "second-order-thinking": "二阶思维",
+    "probabilistic-thinking": "概率思维",
+    "occams-razor": "奥卡姆剃刀",
+    "hanlons-razor": "汉隆剃刀",
+    "map-territory": "地图不是疆域",
+    "falsifiability": "可证伪性",
+    "thought-experiment": "思想实验",
+    "checklists": "检查清单",
+    "premortem": "事前验尸",
+    "compounding": "复利",
+    "expected-value": "期望值",
+    "bayesian-updating": "贝叶斯更新",
+    "base-rate": "基础比率",
+    "regression-to-mean": "回归均值",
+    "law-of-large-numbers": "大数定律与小样本",
+    "fat-tails": "正态与肥尾",
+    "power-law": "幂律与长尾",
+    "correlation-causation": "相关不等于因果",
+    "survivorship-bias": "幸存者偏差",
+    "ergodicity": "遍历性",
+    "luck-and-skill": "运气与技能",
+    "leverage": "杠杆",
+    "inertia": "惯性",
+    "friction": "摩擦",
+    "critical-mass": "临界质量",
+    "phase-transition": "相变与临界点",
+    "entropy": "熵",
+    "equilibrium": "均衡",
+    "catalyst": "催化剂",
+    "activation-energy": "活化能",
+    "redundancy": "冗余",
+    "square-cube-law": "平方-立方定律",
+    "natural-selection": "自然选择",
+    "local-optimum": "适应与局部最优",
+    "red-queen": "红皇后效应",
+    "ecological-niche": "生态位",
+    "competitive-exclusion": "竞争排斥",
+    "mutualism": "互利共生",
+    "costly-signaling": "昂贵信号",
+    "reciprocal-altruism": "互惠利他",
+    "ess": "演化稳定策略",
+    "supernormal-stimulus": "超常刺激",
+    "feedback-loops": "反馈回路",
+    "stocks-and-flows": "存量与流量",
+    "time-delays": "时间延迟",
+    "bottlenecks": "瓶颈",
+    "emergence": "涌现",
+    "antifragility": "韧性与反脆弱",
+    "path-dependence": "路径依赖",
+    "unintended-consequences": "非预期后果",
+    "opportunity-cost": "机会成本",
+    "marginal-thinking": "边际思维",
+    "diminishing-returns": "边际收益递减",
+    "comparative-advantage": "比较优势",
+    "supply-demand": "供需与价格信号",
+    "incentives": "激励",
+    "scarcity": "稀缺",
+    "sunk-cost": "沉没成本",
+    "economies-of-scale": "规模经济",
+    "transaction-costs": "交易成本",
+    "externalities": "外部性",
+    "tragedy-of-commons": "公地悲剧",
+    "principal-agent": "委托代理",
+    "adverse-selection": "逆向选择",
+    "moral-hazard": "道德风险",
+    "goodharts-law": "古德哈特定律",
+    "creative-destruction": "创造性破坏",
+    "zero-sum": "零和与正和",
+    "prisoners-dilemma": "囚徒困境",
+    "repeated-games": "重复博弈与以牙还牙",
+    "nash-equilibrium": "纳什均衡",
+    "credible-commitment": "可信承诺",
+    "schelling-point": "谢林点",
+    "arms-race": "军备竞赛",
+    "incentive-bias": "激励偏差",
+    "reciprocity": "互惠",
+    "commitment-consistency": "承诺与一致",
+    "social-proof": "社会认同",
+    "authority": "权威",
+    "liking": "喜好与光环",
+    "loss-aversion": "损失厌恶",
+    "anchoring": "锚定",
+    "contrast-effect": "对比效应",
+    "availability": "可得性",
+    "confirmation-bias": "确认偏误",
+    "overconfidence": "过度自信",
+    "hindsight-bias": "后见之明",
+    "fundamental-attribution": "基本归因错误",
+    "mental-accounting": "心理账户",
+    "default-effect": "默认与现状偏好",
+    "envy": "嫉妒",
+    "denial": "否认",
+    "reason-respecting": "给出理由",
+    "lollapalooza": "Lollapalooza 效应",
+    "moat": "护城河",
+    "network-effects": "网络效应",
+    "switching-costs": "转换成本与锁定",
+    "pricing-power": "定价权",
+    "flywheel": "飞轮",
+    "disruptive-innovation": "颠覆式创新",
+    "two-sided-platforms": "双边平台",
+    "first-mover": "先发与后发",
+    "unit-economics": "单位经济",
+    "strategy-tradeoffs": "战略即取舍",
+    "margin-of-safety": "安全边际",
+    "mr-market": "市场先生",
+    "price-and-value": "价格与价值",
+    "risk-uncertainty": "风险与不确定性",
+    "avoid-ruin": "避免毁灭",
+    "convexity": "凸性与非对称回报",
+    "optionality": "可选性",
+    "diversification": "分散与相关性",
+    "lindy-effect": "林迪效应",
+    "checks-and-balances": "制衡与分权",
+    "peter-principle": "彼得原理",
+    "parkinsons-law": "帕金森定律",
+    "conways-law": "康威定律",
+    "public-choice": "公共选择",
+    "collective-action": "集体行动困境",
+    "dunbars-number": "邓巴数",
+    "explore-exploit": "探索与利用",
+    "optimal-stopping": "最优停止",
+    "combinatorial-explosion": "指数爆炸",
+    "caching-locality": "缓存与局部性",
+    "abstraction": "抽象与模块化",
+    "signal-noise": "信噪比",
+    "overfitting": "过拟合"
+  }
+}
