@@ -75,6 +75,42 @@
           "name": "事前验尸",
           "en": "Premortem",
           "one_line": "先假定计划已经失败，再倒查原因，把藏着的担忧变成能改的行动。"
+        },
+        {
+          "id": "chestertons-fence",
+          "name": "切斯特顿栅栏",
+          "en": "Chesterton's Fence",
+          "one_line": "拆掉一条看似多余的规矩前，先查清它当初解决了什么问题。"
+        },
+        {
+          "id": "steelmanning",
+          "name": "钢人论证",
+          "en": "Steelmanning",
+          "one_line": "把对方的观点重建成最有力、最合理的版本，再决定是否赞同。"
+        },
+        {
+          "id": "feynman-technique",
+          "name": "费曼技巧",
+          "en": "Feynman Technique",
+          "one_line": "用外行听得懂的话讲清因果，找出卡壳之处，补学后再讲一遍。"
+        },
+        {
+          "id": "five-whys",
+          "name": "五个为什么",
+          "en": "Five Whys",
+          "one_line": "沿着有证据的原因逐层追问，找到能动手改、能减少问题复发的一环。"
+        },
+        {
+          "id": "one-way-two-way-doors",
+          "name": "单向门与双向门",
+          "en": "One-Way and Two-Way Doors",
+          "one_line": "能低成本退回来的决定快做，后果难以收回的决定多花时间再做。"
+        },
+        {
+          "id": "outside-view",
+          "name": "外部视角",
+          "en": "Outside View",
+          "one_line": "先用同类事情的实际结局校准预期，再凭证据判断自己有多特殊。"
         }
       ]
     },
@@ -153,6 +189,54 @@
           "name": "运气与技能",
           "en": "Luck vs Skill",
           "one_line": "结果越受运气影响，判断本领就越要看可重复的表现，而非一次输赢。"
+        },
+        {
+          "id": "median-vs-mean",
+          "name": "中位数与平均数",
+          "en": "Median vs Mean",
+          "one_line": "平均数随每个数的大小移动，中位数按排序取中间，更能抵抗极端值"
+        },
+        {
+          "id": "simpsons-paradox",
+          "name": "辛普森悖论",
+          "en": "Simpson's Paradox",
+          "one_line": "当两边的组别占比不同，每组都领先的一方，合起来反而会落后。"
+        },
+        {
+          "id": "multiple-comparisons",
+          "name": "多重比较",
+          "en": "Multiple Comparisons",
+          "one_line": "试过的指标、分组和方法越多，越容易把偶然结果当成规律。"
+        },
+        {
+          "id": "pareto-principle",
+          "name": "帕累托法则",
+          "en": "Pareto Principle",
+          "one_line": "少数原因常常贡献大部分结果，先找出它们，再决定把力气花在哪里。"
+        },
+        {
+          "id": "random-walk",
+          "name": "随机游走",
+          "en": "Random Walk",
+          "one_line": "独立的随机变化一旦逐步累积，也会画出看似有方向的曲线。"
+        },
+        {
+          "id": "fermi-estimation",
+          "name": "费米估算",
+          "en": "Fermi Estimation",
+          "one_line": "把难以直接回答的大数拆成几个能估的因子，先判断数量级。"
+        },
+        {
+          "id": "confidence-intervals",
+          "name": "置信区间",
+          "en": "Confidence Intervals",
+          "one_line": "估计一个数时，把抽样误差有多大也一起报出来。"
+        },
+        {
+          "id": "statistical-vs-practical-significance",
+          "name": "统计显著与实际显著",
+          "en": "Statistical vs Practical Significance",
+          "one_line": "统计显著说明差异有多强的证据，实际显著说明差异是否值得行动"
         }
       ]
     },
@@ -225,6 +309,42 @@
           "name": "平方-立方定律",
           "en": "Square-Cube Law",
           "one_line": "形状不变时，尺寸越大，体积相对面积越大，承重和散热就越吃紧。"
+        },
+        {
+          "id": "resonance",
+          "name": "共振",
+          "en": "Resonance",
+          "one_line": "当反复施力的节奏接近系统的固有节奏，微小推动也能积成大幅振荡。"
+        },
+        {
+          "id": "conservation-laws",
+          "name": "守恒定律",
+          "en": "Conservation Laws",
+          "one_line": "对确实守恒的量，一处的增减必能在别处的转移或转化中找到。"
+        },
+        {
+          "id": "half-life",
+          "name": "半衰期",
+          "en": "Half-Life",
+          "one_line": "每过固定时间，剩余量减半：前期消失得快，后期拖着长尾。"
+        },
+        {
+          "id": "safety-factor",
+          "name": "安全系数",
+          "en": "Safety Factor",
+          "one_line": "把预计负荷乘上一个大于一的倍数来设计，给估算误差留出承受空间。"
+        },
+        {
+          "id": "material-fatigue",
+          "name": "材料疲劳",
+          "en": "Material Fatigue",
+          "one_line": "一次扛得住的力，反复作用也能养大裂纹，让东西在某一次突然断掉。"
+        },
+        {
+          "id": "impedance-matching",
+          "name": "阻抗匹配",
+          "en": "Impedance Matching",
+          "one_line": "两端响应差得越远，能量越容易在交界处折返；接得合适，比加大输入更有效。"
         }
       ]
     },
@@ -291,6 +411,30 @@
           "name": "超常刺激",
           "en": "Supernormal Stimulus",
           "one_line": "当触发本能的线索被夸大，人会更想要它，却未必得到更多实际好处。"
+        },
+        {
+          "id": "homeostasis",
+          "name": "稳态",
+          "en": "Homeostasis",
+          "one_line": "稳态是系统靠持续监测和纠偏，把关键变量守在可承受的范围里。"
+        },
+        {
+          "id": "r-k-selection",
+          "name": "r 与 K 策略",
+          "en": "r/K Selection",
+          "one_line": "机会短、损失难防时偏向多生；多养的繁殖收益补得回数量损失时，少生才占优。"
+        },
+        {
+          "id": "host-parasite",
+          "name": "宿主与寄生",
+          "en": "Host and Parasite",
+          "one_line": "寄生者靠宿主供养，索取一旦毁掉宿主的生存能力，也会断掉自己的资源来源。"
+        },
+        {
+          "id": "convergent-evolution",
+          "name": "趋同演化",
+          "en": "Convergent Evolution",
+          "one_line": "不同来路若面对相近难题和约束，就可能独立长出相似解法。"
         }
       ]
     },
@@ -345,6 +489,48 @@
           "name": "非预期后果",
           "en": "Unintended Consequences",
           "one_line": "干预会改变人和环境的反应，带来设计者没想到、甚至背离初衷的结果。"
+        },
+        {
+          "id": "leverage-points",
+          "name": "杠杆点",
+          "en": "Leverage Points",
+          "one_line": "找到支配许多行为的关键位置，改动一处，就能带动系统整体改变。"
+        },
+        {
+          "id": "matthew-effect",
+          "name": "马太效应",
+          "en": "Matthew Effect",
+          "one_line": "当资源按已有成绩和名气分配时，领先者更容易拿到下一份机会，继续扩大优势。"
+        },
+        {
+          "id": "overshoot-oscillation",
+          "name": "过冲与振荡",
+          "en": "Overshoot and Oscillation",
+          "one_line": "反馈赶不上纠偏的力度时，调整会越过目标，甚至来回摆动。"
+        },
+        {
+          "id": "tight-coupling",
+          "name": "紧耦合与级联失效",
+          "en": "Tight Coupling and Cascading Failure",
+          "one_line": "环节之间缺少缓冲和替代时，一处故障会沿依赖关系拖垮更多环节。"
+        },
+        {
+          "id": "limits-to-growth",
+          "name": "增长的极限",
+          "en": "Limits to Growth",
+          "one_line": "增长会吃掉支撑它的余量；继续加力，可能收效递减甚至损伤增长基础。"
+        },
+        {
+          "id": "shifting-the-burden",
+          "name": "转嫁负担",
+          "en": "Shifting the Burden",
+          "one_line": "当治标挤掉治本并削弱解决能力，人就会越来越离不开眼前的救急办法。"
+        },
+        {
+          "id": "braess-paradox",
+          "name": "布雷斯悖论",
+          "en": "Braess's Paradox",
+          "one_line": "当各人自选路线、拥堵随流量增加时，多一条捷径反而可能让所有人更慢。"
         }
       ]
     },
@@ -453,6 +639,54 @@
           "name": "创造性破坏",
           "en": "Creative Destruction",
           "one_line": "新技术和新企业把事情做得更好，也让旧企业赖以赚钱的优势失效。"
+        },
+        {
+          "id": "price-elasticity",
+          "name": "价格弹性",
+          "en": "Price Elasticity",
+          "one_line": "价格弹性衡量买家对涨价有多敏感，销量反应决定收入，成本决定利润。"
+        },
+        {
+          "id": "substitutes-complements",
+          "name": "替代品与互补品",
+          "en": "Substitutes and Complements",
+          "one_line": "一种东西涨价，会把买家推向替身，也会让搭档更难卖。"
+        },
+        {
+          "id": "discounting",
+          "name": "贴现与时间偏好",
+          "en": "Discounting and Time Preference",
+          "one_line": "把未来的钱折成今天的价值，才能比较早拿少一点与晚拿多一点。"
+        },
+        {
+          "id": "rent-seeking",
+          "name": "寻租",
+          "en": "Rent-Seeking",
+          "one_line": "寻租是花资源争取或守住排他利益，让自己多分收入，却不增加总价值。"
+        },
+        {
+          "id": "jevons-paradox",
+          "name": "杰文斯悖论",
+          "en": "Jevons Paradox",
+          "one_line": "当效率提升带来的使用扩张超过单位节省时，资源总用量反而上升。"
+        },
+        {
+          "id": "coase-theorem",
+          "name": "科斯定理",
+          "en": "Coase Theorem",
+          "one_line": "权利清楚、协商无成本且估值不变时，初始归属不改变最终用途，却改变谁付钱"
+        },
+        {
+          "id": "price-discrimination",
+          "name": "价格歧视",
+          "en": "Price Discrimination",
+          "one_line": "同样的东西按买家收不同价格，能否多赚钱取决于高价买家能否拿到低价。"
+        },
+        {
+          "id": "money-illusion",
+          "name": "货币幻觉",
+          "en": "Money Illusion",
+          "one_line": "只盯着金额的涨跌，却忘了物价变化，会把账面增减误当成购买力增减。"
         }
       ]
     },
@@ -501,6 +735,48 @@
           "name": "军备竞赛",
           "en": "Arms Race",
           "one_line": "当优势取决于比别人多投入，各方追着加码，成本上涨却拉不开差距。"
+        },
+        {
+          "id": "chicken-game",
+          "name": "胆小鬼博弈",
+          "en": "Game of Chicken",
+          "one_line": "双方都想让对方退让，却又承受不起谁都不退让的共同灾难。"
+        },
+        {
+          "id": "stag-hunt",
+          "name": "猎鹿博弈",
+          "en": "Stag Hunt",
+          "one_line": "双方合作能拿到最好结果，但怕对方退出，会让各自保底成为稳定选择。"
+        },
+        {
+          "id": "winners-curse",
+          "name": "赢家诅咒",
+          "en": "Winner's Curse",
+          "one_line": "争抢价值不明的东西时，竞价会筛出最乐观的估计，让赢家更容易买贵。"
+        },
+        {
+          "id": "batna",
+          "name": "谈判底牌",
+          "en": "BATNA",
+          "one_line": "谈判筹码来自谈崩后最好的去处；退路越好，越能拒绝差条件。"
+        },
+        {
+          "id": "backward-induction",
+          "name": "逆向归纳",
+          "en": "Backward Induction",
+          "one_line": "从最后一步的最优选择往回推，用后续各方的反应决定现在怎么走。"
+        },
+        {
+          "id": "mechanism-design",
+          "name": "机制设计",
+          "en": "Mechanism Design",
+          "one_line": "从想要的结果倒推规则，让各自追求利益的人也愿意促成这个结果。"
+        },
+        {
+          "id": "signaling-screening",
+          "name": "信号与筛选",
+          "en": "Signaling and Screening",
+          "one_line": "知道多的人用难以冒充的证据证明自己，知道少的人设条件让差别显露。"
         }
       ]
     },
@@ -627,6 +903,60 @@
           "name": "Lollapalooza 效应",
           "en": "Lollapalooza Effect",
           "one_line": "几种心理倾向同向推动、彼此放大时，普通人也会做出极端选择。"
+        },
+        {
+          "id": "planning-fallacy",
+          "name": "计划谬误",
+          "en": "Planning Fallacy",
+          "one_line": "估工期时，人会把一切顺利的用时当成预测，连过去的延期也没算进去。"
+        },
+        {
+          "id": "framing-effect",
+          "name": "框架效应",
+          "en": "Framing Effect",
+          "one_line": "事实和选项相同，换一种说法，就能改变人对结果的评价和选择。"
+        },
+        {
+          "id": "endowment-effect",
+          "name": "禀赋效应",
+          "en": "Endowment Effect",
+          "one_line": "同一件东西，只因已经归你所有，你愿意卖出的价格就高于愿意买入的价格。"
+        },
+        {
+          "id": "present-bias",
+          "name": "现时偏差",
+          "en": "Present Bias",
+          "one_line": "现时偏差让眼前的好处突然增值，也让我们推翻为未来做好的打算。"
+        },
+        {
+          "id": "groupthink",
+          "name": "群体思维",
+          "en": "Groupthink",
+          "one_line": "当小组把维持一致看得比查明事实更重，异议就会消失，错误也会被共同放大。"
+        },
+        {
+          "id": "narrative-fallacy",
+          "name": "叙事谬误",
+          "en": "Narrative Fallacy",
+          "one_line": "人把零散事实串成因果故事，再把故事的顺畅当成证据。"
+        },
+        {
+          "id": "outcome-bias",
+          "name": "结果偏差",
+          "en": "Outcome Bias",
+          "one_line": "结果偏差是拿事后的成败，替代对当时信息、选择和风险的判断。"
+        },
+        {
+          "id": "peak-end-rule",
+          "name": "峰终定律",
+          "en": "Peak-End Rule",
+          "one_line": "回顾一段体验时，最强烈的时刻和结尾，可能在整体评价中占较大权重。"
+        },
+        {
+          "id": "self-serving-bias",
+          "name": "自利偏差",
+          "en": "Self-Serving Bias",
+          "one_line": "成功时把功劳归给自己，失败时把责任推给外界，会让人从经历中学错东西。"
         }
       ]
     },
@@ -693,6 +1023,54 @@
           "name": "战略即取舍",
           "en": "Strategy as Trade-offs",
           "one_line": "战略是选定要给谁什么价值，并放弃会破坏这份价值的业务和做法。"
+        },
+        {
+          "id": "five-forces",
+          "name": "波特五力",
+          "en": "Porter's Five Forces",
+          "one_line": "一个行业能留下多少利润，取决于同行、买家、供应商、潜在进入者和替代品的挤压。"
+        },
+        {
+          "id": "value-chain",
+          "name": "价值链",
+          "en": "Value Chain",
+          "one_line": "把业务拆成相互连接的活动，看清哪里创造客户价值、哪里消耗成本。"
+        },
+        {
+          "id": "razor-and-blades",
+          "name": "剃刀与刀片",
+          "en": "Razor and Blades",
+          "one_line": "把主件价格压低，让用户开始使用，再靠反复购买的耗材赚钱。"
+        },
+        {
+          "id": "product-market-fit",
+          "name": "产品市场匹配",
+          "en": "Product-Market Fit",
+          "one_line": "先找到愿意持续选择你的那群人，再扩张，否则增长只会放大流失。"
+        },
+        {
+          "id": "jobs-to-be-done",
+          "name": "待完成的工作",
+          "en": "Jobs to Be Done",
+          "one_line": "顾客雇用产品，是为了在具体处境中取得进展，替代方案也由这件事决定。"
+        },
+        {
+          "id": "experience-curve",
+          "name": "经验曲线",
+          "en": "Experience Curve",
+          "one_line": "重复生产中的经验若能沉淀为改进，累计做得越多，单位成本就越低。"
+        },
+        {
+          "id": "cannibalization",
+          "name": "自我蚕食",
+          "en": "Cannibalization",
+          "one_line": "新产品抢走旧产品的顾客时，要算整个生意多赚了多少，而非新品卖了多少。"
+        },
+        {
+          "id": "aggregation-theory",
+          "name": "聚合理论",
+          "en": "Aggregation Theory",
+          "one_line": "当用户先找入口再挑供给，掌握入口的一方就能让供给方相互替代"
         }
       ]
     },
@@ -747,6 +1125,48 @@
           "name": "分散与相关性",
           "en": "Diversification and Correlation",
           "one_line": "分散的效果取决于损失是否同步，而危机会让原本不同的风险一起发作。"
+        },
+        {
+          "id": "kelly-criterion",
+          "name": "凯利公式",
+          "en": "Kelly Criterion",
+          "one_line": "凯利公式用胜率和盈亏赔率，算出让本金长期增长最快的下注比例。"
+        },
+        {
+          "id": "volatility-drag",
+          "name": "波动拖累",
+          "en": "Volatility Drag",
+          "one_line": "涨跌都按变化后的本金计算，同幅涨跌会亏钱，简单平均掩盖了损耗。"
+        },
+        {
+          "id": "financial-leverage",
+          "name": "财务杠杆",
+          "en": "Financial Leverage",
+          "one_line": "借钱让同一笔本金承受更大的盈亏，还可能让你被迫提前出局。"
+        },
+        {
+          "id": "liquidity",
+          "name": "流动性",
+          "en": "Liquidity",
+          "one_line": "流动性决定你能否在需要时，把手里的东西及时卖出而少受折价。"
+        },
+        {
+          "id": "reflexivity",
+          "name": "反身性",
+          "en": "Reflexivity",
+          "one_line": "价格会通过人们的行动改变基本面，再为下一轮价格变化提供理由。"
+        },
+        {
+          "id": "capital-allocation",
+          "name": "资本配置",
+          "en": "Capital Allocation",
+          "one_line": "把赚来的钱投向更值得的去处，长期决定公司会变成什么样。"
+        },
+        {
+          "id": "return-on-invested-capital",
+          "name": "资本回报率",
+          "en": "Return on Invested Capital",
+          "one_line": "资本回报率衡量经营中每占用一元资本，一年能赚多少税后利润。"
         }
       ]
     },
@@ -801,6 +1221,54 @@
           "name": "邓巴数",
           "en": "Dunbar's Number",
           "one_line": "人能维持的稳定关系约一百五十个，组织扩张会让熟人协作吃力"
+        },
+        {
+          "id": "race-to-the-bottom",
+          "name": "逐底竞争",
+          "en": "Race to the Bottom",
+          "one_line": "为免输给对手，各方竞相降低标准，最后连想守底线的人也不敢停。"
+        },
+        {
+          "id": "preference-falsification",
+          "name": "偏好伪装",
+          "en": "Preference Falsification",
+          "one_line": "人们为避开惩罚而违心表态，公开共识便能在私下不满中维持，并突然瓦解。"
+        },
+        {
+          "id": "resource-curse",
+          "name": "资源诅咒",
+          "en": "Resource Curse",
+          "one_line": "容易到手的财富，在分配缺少约束、收入依赖加深时，会拖垮制度和产业。"
+        },
+        {
+          "id": "iron-law-of-oligarchy",
+          "name": "寡头铁律",
+          "en": "Iron Law of Oligarchy",
+          "one_line": "组织越依赖少数人办事，他们就越容易把受托的权力变成长期控制。"
+        },
+        {
+          "id": "social-capital",
+          "name": "社会资本",
+          "en": "Social Capital",
+          "one_line": "人与人之间可调用的信任与联系，能省下寻找、核实和协调的成本。"
+        },
+        {
+          "id": "legitimacy",
+          "name": "合法性",
+          "en": "Legitimacy",
+          "one_line": "人们承认谁有权作决定，服从便有了恐惧和利益之外的理由。"
+        },
+        {
+          "id": "streisand-effect",
+          "name": "斯特赖桑德效应",
+          "en": "Streisand Effect",
+          "one_line": "当压制消息本身引来围观和转发，原本冷门的消息反而传得更广。"
+        },
+        {
+          "id": "historical-contingency",
+          "name": "历史的偶然性",
+          "en": "Historical Contingency",
+          "one_line": "已经发生的历史，只是当时条件允许的多条道路中的一条。"
         }
       ]
     },
@@ -849,6 +1317,48 @@
           "name": "过拟合",
           "en": "Overfitting",
           "one_line": "把旧数据里的偶然细节当成规律，会让过去的高分变成未来的失分。"
+        },
+        {
+          "id": "divide-and-conquer",
+          "name": "分而治之",
+          "en": "Divide and Conquer",
+          "one_line": "把大问题拆成同类小问题，逐个求解，再按规则合回完整答案。"
+        },
+        {
+          "id": "time-space-tradeoff",
+          "name": "时间与空间的权衡",
+          "en": "Time-Space Tradeoff",
+          "one_line": "把反复需要的结果或中间步骤存下来，用额外空间换取更少计算。"
+        },
+        {
+          "id": "queueing-theory",
+          "name": "排队论",
+          "en": "Queueing Theory",
+          "one_line": "任务到达或耗时有波动时，负荷越接近上限，等待越会陡增。"
+        },
+        {
+          "id": "end-to-end-principle",
+          "name": "端到端原则",
+          "en": "End-to-End Principle",
+          "one_line": "只有两端掌握完整条件时，最终正确性就必须由两端保证。"
+        },
+        {
+          "id": "technical-debt",
+          "name": "技术债",
+          "en": "Technical Debt",
+          "one_line": "技术债是用今天的省事，换取未来反复付出的维护与返工成本。"
+        },
+        {
+          "id": "brooks-law",
+          "name": "布鲁克斯定律",
+          "en": "Brooks's Law",
+          "one_line": "给延期项目加人，若新人的贡献抵不过带教和协调成本，反而更晚。"
+        },
+        {
+          "id": "compression",
+          "name": "数据压缩",
+          "en": "Compression",
+          "one_line": "能保住信息又缩短描述，说明你抓住了藏在细节里的规律。"
         }
       ]
     }
@@ -866,6 +1376,12 @@
     "thought-experiment": "思想实验",
     "checklists": "检查清单",
     "premortem": "事前验尸",
+    "chestertons-fence": "切斯特顿栅栏",
+    "steelmanning": "钢人论证",
+    "feynman-technique": "费曼技巧",
+    "five-whys": "五个为什么",
+    "one-way-two-way-doors": "单向门与双向门",
+    "outside-view": "外部视角",
     "compounding": "复利",
     "expected-value": "期望值",
     "bayesian-updating": "贝叶斯更新",
@@ -878,6 +1394,14 @@
     "survivorship-bias": "幸存者偏差",
     "ergodicity": "遍历性",
     "luck-and-skill": "运气与技能",
+    "median-vs-mean": "中位数与平均数",
+    "simpsons-paradox": "辛普森悖论",
+    "multiple-comparisons": "多重比较",
+    "pareto-principle": "帕累托法则",
+    "random-walk": "随机游走",
+    "fermi-estimation": "费米估算",
+    "confidence-intervals": "置信区间",
+    "statistical-vs-practical-significance": "统计显著与实际显著",
     "leverage": "杠杆",
     "inertia": "惯性",
     "friction": "摩擦",
@@ -889,6 +1413,12 @@
     "activation-energy": "活化能",
     "redundancy": "冗余",
     "square-cube-law": "平方-立方定律",
+    "resonance": "共振",
+    "conservation-laws": "守恒定律",
+    "half-life": "半衰期",
+    "safety-factor": "安全系数",
+    "material-fatigue": "材料疲劳",
+    "impedance-matching": "阻抗匹配",
     "natural-selection": "自然选择",
     "local-optimum": "适应与局部最优",
     "red-queen": "红皇后效应",
@@ -899,6 +1429,12 @@
     "reciprocal-altruism": "互惠利他",
     "ess": "演化稳定策略",
     "supernormal-stimulus": "超常刺激",
+    "homeostasis": "稳态",
+    "hormesis": "毒物兴奋效应",
+    "r-k-selection": "r 与 K 策略",
+    "host-parasite": "宿主与寄生",
+    "convergent-evolution": "趋同演化",
+    "basic-reproduction-number": "基本再生数",
     "feedback-loops": "反馈回路",
     "stocks-and-flows": "存量与流量",
     "time-delays": "时间延迟",
@@ -907,6 +1443,13 @@
     "antifragility": "韧性与反脆弱",
     "path-dependence": "路径依赖",
     "unintended-consequences": "非预期后果",
+    "leverage-points": "杠杆点",
+    "matthew-effect": "马太效应",
+    "overshoot-oscillation": "过冲与振荡",
+    "tight-coupling": "紧耦合与级联失效",
+    "limits-to-growth": "增长的极限",
+    "shifting-the-burden": "转嫁负担",
+    "braess-paradox": "布雷斯悖论",
     "opportunity-cost": "机会成本",
     "marginal-thinking": "边际思维",
     "diminishing-returns": "边际收益递减",
@@ -924,6 +1467,14 @@
     "moral-hazard": "道德风险",
     "goodharts-law": "古德哈特定律",
     "creative-destruction": "创造性破坏",
+    "price-elasticity": "价格弹性",
+    "substitutes-complements": "替代品与互补品",
+    "discounting": "贴现与时间偏好",
+    "rent-seeking": "寻租",
+    "jevons-paradox": "杰文斯悖论",
+    "coase-theorem": "科斯定理",
+    "price-discrimination": "价格歧视",
+    "money-illusion": "货币幻觉",
     "zero-sum": "零和与正和",
     "prisoners-dilemma": "囚徒困境",
     "repeated-games": "重复博弈与以牙还牙",
@@ -931,6 +1482,13 @@
     "credible-commitment": "可信承诺",
     "schelling-point": "谢林点",
     "arms-race": "军备竞赛",
+    "chicken-game": "胆小鬼博弈",
+    "stag-hunt": "猎鹿博弈",
+    "winners-curse": "赢家诅咒",
+    "batna": "谈判底牌",
+    "backward-induction": "逆向归纳",
+    "mechanism-design": "机制设计",
+    "signaling-screening": "信号与筛选",
     "incentive-bias": "激励偏差",
     "reciprocity": "互惠",
     "commitment-consistency": "承诺与一致",
@@ -951,6 +1509,16 @@
     "denial": "否认",
     "reason-respecting": "给出理由",
     "lollapalooza": "Lollapalooza 效应",
+    "planning-fallacy": "计划谬误",
+    "framing-effect": "框架效应",
+    "endowment-effect": "禀赋效应",
+    "present-bias": "现时偏差",
+    "cognitive-dissonance": "认知失调",
+    "groupthink": "群体思维",
+    "narrative-fallacy": "叙事谬误",
+    "outcome-bias": "结果偏差",
+    "peak-end-rule": "峰终定律",
+    "self-serving-bias": "自利偏差",
     "moat": "护城河",
     "network-effects": "网络效应",
     "switching-costs": "转换成本与锁定",
@@ -961,6 +1529,14 @@
     "first-mover": "先发与后发",
     "unit-economics": "单位经济",
     "strategy-tradeoffs": "战略即取舍",
+    "five-forces": "波特五力",
+    "value-chain": "价值链",
+    "razor-and-blades": "剃刀与刀片",
+    "product-market-fit": "产品市场匹配",
+    "jobs-to-be-done": "待完成的工作",
+    "experience-curve": "经验曲线",
+    "cannibalization": "自我蚕食",
+    "aggregation-theory": "聚合理论",
     "margin-of-safety": "安全边际",
     "mr-market": "市场先生",
     "price-and-value": "价格与价值",
@@ -969,6 +1545,13 @@
     "convexity": "凸性与非对称回报",
     "optionality": "可选性",
     "diversification": "分散与相关性",
+    "kelly-criterion": "凯利公式",
+    "volatility-drag": "波动拖累",
+    "financial-leverage": "财务杠杆",
+    "liquidity": "流动性",
+    "reflexivity": "反身性",
+    "capital-allocation": "资本配置",
+    "return-on-invested-capital": "资本回报率",
     "lindy-effect": "林迪效应",
     "checks-and-balances": "制衡与分权",
     "peter-principle": "彼得原理",
@@ -977,12 +1560,27 @@
     "public-choice": "公共选择",
     "collective-action": "集体行动困境",
     "dunbars-number": "邓巴数",
+    "race-to-the-bottom": "逐底竞争",
+    "preference-falsification": "偏好伪装",
+    "resource-curse": "资源诅咒",
+    "iron-law-of-oligarchy": "寡头铁律",
+    "social-capital": "社会资本",
+    "legitimacy": "合法性",
+    "streisand-effect": "斯特赖桑德效应",
+    "historical-contingency": "历史的偶然性",
     "explore-exploit": "探索与利用",
     "optimal-stopping": "最优停止",
     "combinatorial-explosion": "指数爆炸",
     "caching-locality": "缓存与局部性",
     "abstraction": "抽象与模块化",
     "signal-noise": "信噪比",
-    "overfitting": "过拟合"
+    "overfitting": "过拟合",
+    "divide-and-conquer": "分而治之",
+    "time-space-tradeoff": "时间与空间的权衡",
+    "queueing-theory": "排队论",
+    "end-to-end-principle": "端到端原则",
+    "technical-debt": "技术债",
+    "brooks-law": "布鲁克斯定律",
+    "compression": "数据压缩"
   }
 }
