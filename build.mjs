@@ -33,5 +33,5 @@ await writeFile(join(DIST, 'index.html'), indexPage(index));
 await writeFile(join(DIST, 'review.html'), reviewPage());
 await writeFile(join(DIST, 'random.html'), indexPage(index).replace('<section class="home">', '<section class="home" data-go-random>'));
 await writeFile(join(DIST, 'ids.json'), JSON.stringify(order));
-await writeFile(join(DIST, 'questions.json'), JSON.stringify(Object.fromEntries(order.map((id) => [id, { name: cards[id].name, questions: cards[id].questions }]))));
+await writeFile(join(DIST, 'questions.json'), JSON.stringify(Object.fromEntries(order.map((id) => [id, { name: cards[id].name, one_line: cards[id].one_line, questions: cards[id].questions }]))));
 console.log(`构建 ${order.length} 张卡、${index.disciplines.filter((d) => d.models.length).length} 个学科到 ${DIST}/`);
