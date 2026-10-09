@@ -2,6 +2,7 @@
 // localStorage through progress.mjs, which swallows storage errors.
 import { load, markRead, pickUnread, record, reviewQueue, save, stats } from './progress.mjs';
 import { questionHtml } from './quiz.mjs';
+import { SIZES, THEMES, apply, read as readDisplay, save as saveDisplay } from './display.mjs';
 
 let storage = null;
 try { storage = window.localStorage; } catch { /* no storage: progress stays in this page */ }
@@ -81,3 +82,26 @@ for (const link of document.querySelectorAll('[data-random]')) link.addEventList
 if (document.querySelector('[data-go-random]')) goRandom();
 const box = document.getElementById('review');
 if (box) review(box);
+
+// Theme and size, in the footer of every page: the page restyles at once and the choice stays in this browser.
+function display(root) {
+  const prefs = readDisplay(store);
+  const group = (label, key, choices) => `<span>${label}${Object.entries(choices).map(([value, name]) =>
+    `<button data-key="${key}" data-value="${value}" aria-pressed="${prefs[key] === value}">${name}</button>`).join('')}</span>`;
+  root.innerHTML = group('明暗', 'theme', THEMES) + group('字号', 'size', SIZES);
+}
+const displayRoot = document.querySelector('[data-display]');
+if (displayRoot) {
+  display(displayRoot);
+  displayRoot.addEventListener('click', (event) => {
+    const button = event.target.closest('button[data-key]');
+    if (!button) return;
+    const next = { ...readDisplay(store), [button.dataset.key]: button.dataset.value };
+    saveDisplay(store, next);
+    apply(document.documentElement, next);
+    display(displayRoot);
+  });
+}
+
+// Offline use and install: see sw.js.
+if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('/sw.js').catch(() => {});

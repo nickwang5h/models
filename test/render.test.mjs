@@ -68,3 +68,9 @@ test('discipline and index pages list every card', () => {
   assert.match(home, /href="\/d\/math"/);
   assert.match(home, /2 张/);
 });
+
+test('every page can be installed: it links the manifest and the touch icon', () => {
+  const html = indexPage(index);
+  assert.match(html, /<link rel="manifest" href="\/manifest\.webmanifest">/);
+  assert.match(html, /apple-touch-icon/);
+});

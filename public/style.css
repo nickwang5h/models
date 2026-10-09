@@ -1,38 +1,39 @@
 :root {
-  --bg: #f7f5f0;
-  --paper: #fffdf8;
-  --ink: #1f1d1a;
-  --soft: #5f5a52;
-  --faint: #8d877d;
-  --line: #e4ded3;
-  --accent: hsl(var(--hue, 215) 55% 40%);
-  --accent-bg: hsl(var(--hue, 215) 60% 95%);
+  --bg: #f3f0e9;
+  --paper: #fbf8f1;
+  --ink: #27241f;
+  --soft: #5c574f;
+  --faint: #847e74;
+  --line: #e0d9cd;
+  --accent: hsl(var(--hue, 215) 50% 38%);
+  --accent-bg: hsl(var(--hue, 215) 45% 93%);
   --right: #1f7a4d;
-  --right-bg: #e6f4ec;
+  --right-bg: #e2f0e7;
   --wrong: #b3362f;
-  --wrong-bg: #fbe9e7;
+  --wrong-bg: #f7e5e2;
   --serif: "Songti SC", "Noto Serif SC", "Source Han Serif SC", serif;
   --sans: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
   color-scheme: light;
 }
+/* Dark: text a step below full brightness on a ground a step above black, and muted accents, to ease long reading. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #161513; --paper: #1e1d1a; --ink: #ece8e1; --soft: #b4ada2; --faint: #8a8378; --line: #34312c;
-    --accent: hsl(var(--hue, 215) 60% 70%); --accent-bg: hsl(var(--hue, 215) 30% 18%);
-    --right: #6fcf97; --right-bg: #173226; --wrong: #f28b82; --wrong-bg: #3a1d1a;
+    --bg: #1b1a17; --paper: #23221f; --ink: #d9d4cb; --soft: #aaa398; --faint: #8a8378; --line: #37342f;
+    --accent: hsl(var(--hue, 215) 42% 68%); --accent-bg: hsl(var(--hue, 215) 22% 19%);
+    --right: #78bf98; --right-bg: #1c2e25; --wrong: #e08c84; --wrong-bg: #36211e;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #161513; --paper: #1e1d1a; --ink: #ece8e1; --soft: #b4ada2; --faint: #8a8378; --line: #34312c;
-  --accent: hsl(var(--hue, 215) 60% 70%); --accent-bg: hsl(var(--hue, 215) 30% 18%);
-  --right: #6fcf97; --right-bg: #173226; --wrong: #f28b82; --wrong-bg: #3a1d1a;
+  --bg: #1b1a17; --paper: #23221f; --ink: #d9d4cb; --soft: #aaa398; --faint: #8a8378; --line: #37342f;
+  --accent: hsl(var(--hue, 215) 42% 68%); --accent-bg: hsl(var(--hue, 215) 22% 19%);
+  --right: #78bf98; --right-bg: #1c2e25; --wrong: #e08c84; --wrong-bg: #36211e;
   color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.8 var(--sans); }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.85 var(--sans); zoom: var(--zoom, 1); }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 main { max-width: 44rem; margin: 0 auto; padding: 0 16px 48px; }
@@ -55,7 +56,7 @@ h3 { font-size: 1.05rem; margin: 18px 0 6px; }
 .origin { color: var(--soft); }
 .examples { display: grid; gap: 12px; }
 .example { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 4px 18px 6px; }
-.example .field { margin: 12px 0 0; font-size: .78rem; letter-spacing: .15em; color: var(--accent); }
+.example .field { margin: 12px 0 0; font-size: .82rem; letter-spacing: .15em; color: var(--accent); }
 .example h3 { margin-top: 2px; }
 .use ol { padding-left: 1.4em; }
 .use li { margin: 6px 0; }
@@ -86,7 +87,7 @@ th { background: var(--paper); }
 .related a, .related .soon { font-weight: 600; }
 .related .soon { color: var(--soft); }
 .related p { margin: 2px 0 0; color: var(--soft); font-size: .93rem; }
-.rel { display: inline-block; font-size: .72rem; font-weight: 400; color: var(--accent); background: var(--accent-bg); border-radius: 999px; padding: 1px 8px; margin-right: 8px; vertical-align: 2px; }
+.rel { display: inline-block; font-size: .78rem; font-weight: 400; color: var(--accent); background: var(--accent-bg); border-radius: 999px; padding: 1px 8px; margin-right: 8px; vertical-align: 2px; }
 .steps { display: flex; justify-content: space-between; gap: 12px; margin-top: 36px; font-size: .95rem; }
 
 .groups, .tiles { list-style: none; padding: 0; margin: 18px 0; display: grid; gap: 12px; }
@@ -102,3 +103,8 @@ th { background: var(--paper); }
 .tiles span { display: block; color: var(--soft); font-size: .92rem; }
 .tiles a.read strong::after { content: " ✓"; color: var(--right); font-family: var(--sans); font-size: .85rem; }
 .empty { color: var(--faint); }
+
+.display { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 14px; }
+.display span { display: inline-flex; align-items: center; gap: 6px; }
+.display button { font: inherit; color: var(--soft); background: none; border: 1px solid var(--line); border-radius: 999px; padding: 2px 12px; cursor: pointer; }
+.display button[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); }
