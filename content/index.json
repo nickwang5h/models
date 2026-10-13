@@ -8,13 +8,13 @@
           "id": "circle-of-competence",
           "name": "能力圈",
           "en": "Circle of Competence",
-          "one_line": "把重要判断放在经得起检验的理解之内，知道边界比懂得多更重要。"
+          "one_line": "重要判断放在自己经得起检验的理解范围内做；知道边界在哪，比懂得多更重要。"
         },
         {
           "id": "inversion",
           "name": "逆向思维",
           "en": "Inversion",
-          "one_line": "先找出哪些做法会把事情搞砸，再避开它们，缩小通往成功的障碍。"
+          "one_line": "先找出哪些做法会把事情搞砸，再避开它们，通往成功的障碍就少了。"
         },
         {
           "id": "first-principles",
@@ -44,7 +44,7 @@
           "id": "hanlons-razor",
           "name": "汉隆剃刀",
           "en": "Hanlon's Razor",
-          "one_line": "当疏忽足以解释坏结果时，先查失误，别急着认定对方有恶意。"
+          "one_line": "别急着认定对方有恶意：坏结果若用疏忽就足以解释，先查失误。"
         },
         {
           "id": "map-territory",
@@ -128,13 +128,13 @@
           "id": "expected-value",
           "name": "期望值",
           "en": "Expected Value",
-          "one_line": "把各种结果按概率加权，比较选择；一次输赢不足以判定决策好坏。"
+          "one_line": "一次输赢说明不了决策好坏；要把每种结果乘上发生概率加起来，再比较选择。"
         },
         {
           "id": "bayesian-updating",
           "name": "贝叶斯更新",
           "en": "Bayesian Updating",
-          "one_line": "新证据让旧判断的赔率乘以似然比，改变相信它的程度。"
+          "one_line": "新证据在判断成立时比不成立时常见几倍，旧判断的赔率就乘上几倍。"
         },
         {
           "id": "base-rate",
@@ -146,7 +146,7 @@
           "id": "regression-to-mean",
           "name": "回归均值",
           "en": "Regression to the Mean",
-          "one_line": "当表现夹杂随机波动时，极端成绩之后的平均表现会更接近常态。"
+          "one_line": "极端成绩之后，平均表现会更接近常态，只要表现里夹杂着随机波动。"
         },
         {
           "id": "law-of-large-numbers",
@@ -158,13 +158,13 @@
           "id": "fat-tails",
           "name": "正态与肥尾",
           "en": "Normal vs Fat-Tailed Distributions",
-          "one_line": "正态世界里典型值能代表多数，肥尾世界里少数极端值能改写整体"
+          "one_line": "身高那样的正态分布里，典型值能代表多数；财富那样的肥尾分布里，少数极端值能改写整体。"
         },
         {
           "id": "power-law",
           "name": "幂律与长尾",
           "en": "Power Laws",
-          "one_line": "幂律描述固定的缩放关系，集中程度取决于指数，二八只是一个特例。"
+          "one_line": "门槛每翻一倍，数量就按固定比例减少，这是幂律；有多集中由指数决定，二八只是特例。"
         },
         {
           "id": "correlation-causation",
@@ -194,13 +194,13 @@
           "id": "median-vs-mean",
           "name": "中位数与平均数",
           "en": "Median vs Mean",
-          "one_line": "平均数随每个数的大小移动，中位数按排序取中间，更能抵抗极端值"
+          "one_line": "平均数随每个数的大小移动，中位数按排序取中间，更能抵抗极端值。"
         },
         {
           "id": "simpsons-paradox",
           "name": "辛普森悖论",
           "en": "Simpson's Paradox",
-          "one_line": "当两边的组别占比不同，每组都领先的一方，合起来反而会落后。"
+          "one_line": "每组都领先的一方，合起来反而会落后，前提是两边的组别占比不同。"
         },
         {
           "id": "multiple-comparisons",
@@ -230,13 +230,13 @@
           "id": "confidence-intervals",
           "name": "置信区间",
           "en": "Confidence Intervals",
-          "one_line": "估计一个数时，把抽样误差有多大也一起报出来。"
+          "one_line": "换一批样本，估计值就会变；置信区间把这种抽样误差有多大一起报出来。"
         },
         {
           "id": "statistical-vs-practical-significance",
           "name": "统计显著与实际显著",
           "en": "Statistical vs Practical Significance",
-          "one_line": "统计显著说明差异有多强的证据，实际显著说明差异是否值得行动"
+          "one_line": "统计显著说的是差异的证据有多强，实际显著说的是这点差异值不值得行动。"
         }
       ]
     },
@@ -254,7 +254,7 @@
           "id": "inertia",
           "name": "惯性",
           "en": "Inertia",
-          "one_line": "物体保持原有运动状态；组织与习惯也会延续，直到改变机制真正生效。"
+          "one_line": "物体会保持原来的运动状态；组织和习惯也会照旧延续，直到改变机制真正生效。"
         },
         {
           "id": "friction",
@@ -266,7 +266,7 @@
           "id": "critical-mass",
           "name": "临界质量",
           "en": "Critical Mass",
-          "one_line": "能接续下一轮的有效数量足够多，链式反应才跨过自我维持的门槛。"
+          "one_line": "有效数量够多，每一轮都能引出不少于自己的下一轮，链式反应才能自我维持。"
         },
         {
           "id": "phase-transition",
@@ -278,19 +278,19 @@
           "id": "entropy",
           "name": "熵",
           "en": "Entropy",
-          "one_line": "孤立系统总熵不减，受扰动的秩序要持续投入能量来维持。"
+          "one_line": "孤立系统的总熵只会不变或增加；秩序受到扰动，要持续投入能量才能维持。"
         },
         {
           "id": "equilibrium",
           "name": "均衡",
           "en": "Equilibrium",
-          "one_line": "均衡是相反作用恰好抵消的状态，是否稳定要看偏离后会被拉回还是推远"
+          "one_line": "相反的作用恰好抵消，就是均衡；稳不稳，要看偏离后是被拉回还是被推远。"
         },
         {
           "id": "catalyst",
           "name": "催化剂",
           "en": "Catalyst",
-          "one_line": "催化剂提供可反复使用的反应路径，加快转变而自身不被净消耗。"
+          "one_line": "催化剂给反应另开一条路，让转变加快，自己参与其中却不被耗掉，可以反复使用。"
         },
         {
           "id": "activation-energy",
@@ -308,19 +308,19 @@
           "id": "square-cube-law",
           "name": "平方-立方定律",
           "en": "Square-Cube Law",
-          "one_line": "形状不变时，尺寸越大，体积相对面积越大，承重和散热就越吃紧。"
+          "one_line": "东西按原形状放大，体积涨得比面积快，承重和散热就越来越吃紧。"
         },
         {
           "id": "resonance",
           "name": "共振",
           "en": "Resonance",
-          "one_line": "当反复施力的节奏接近系统的固有节奏，微小推动也能积成大幅振荡。"
+          "one_line": "微小的推动也能积成大幅振荡，只要反复施力的节奏接近系统的固有节奏。"
         },
         {
           "id": "conservation-laws",
           "name": "守恒定律",
           "en": "Conservation Laws",
-          "one_line": "对确实守恒的量，一处的增减必能在别处的转移或转化中找到。"
+          "one_line": "一处的增减，必能在别处的转移或转化里对上账，前提是这个量确实守恒。"
         },
         {
           "id": "half-life",
@@ -344,7 +344,7 @@
           "id": "impedance-matching",
           "name": "阻抗匹配",
           "en": "Impedance Matching",
-          "one_line": "两端响应差得越远，能量越容易在交界处折返；接得合适，比加大输入更有效。"
+          "one_line": "两端特性差得越远，能量越容易在交界处被弹回；接得合适，比加大输入更有效。"
         }
       ]
     },
@@ -356,7 +356,7 @@
           "id": "natural-selection",
           "name": "自然选择",
           "en": "Natural Selection",
-          "one_line": "能遗传的差异影响留下后代的多少，群体便能在没有设计者的情况下形成适应"
+          "one_line": "没有设计者，群体也能形成适应，只要能遗传的差异影响了谁留下更多后代。"
         },
         {
           "id": "local-optimum",
@@ -374,19 +374,19 @@
           "id": "ecological-niche",
           "name": "生态位",
           "en": "Ecological Niche",
-          "one_line": "生态位是一个物种赖以生存的资源、环境条件及其与其他生物的关系。"
+          "one_line": "一个物种靠什么资源、什么环境条件、和其他生物什么关系活下去，合起来就是它的生态位。"
         },
         {
           "id": "competitive-exclusion",
           "name": "竞争排斥",
           "en": "Competitive Exclusion",
-          "one_line": "环境稳定、资源有限时，生态位完全重合的物种无法稳定地长期共存。"
+          "one_line": "两个物种若生存所需完全相同，在环境稳定、资源有限时就无法长期稳定共存。"
         },
         {
           "id": "mutualism",
           "name": "互利共生",
           "en": "Mutualism",
-          "one_line": "互利共生靠双方持续满足彼此的需要，让各自所得超过付出，维持长期关系。"
+          "one_line": "双方一直补上对方缺的东西，各自得到的又多于付出，关系就能长期维持。"
         },
         {
           "id": "costly-signaling",
@@ -398,19 +398,19 @@
           "id": "reciprocal-altruism",
           "name": "互惠利他",
           "en": "Reciprocal Altruism",
-          "one_line": "能认出并再次遇见彼此时，今天付出的小代价能换来日后的大帮助。"
+          "one_line": "今天付出的小代价能换来日后的大帮助，前提是双方认得出彼此、还会再遇见。"
         },
         {
           "id": "ess",
           "name": "演化稳定策略",
           "en": "Evolutionarily Stable Strategy",
-          "one_line": "当一种策略已普及时，少数改用其他策略者无法靠收益优势扩张。"
+          "one_line": "这种策略一旦普及，少数改用别的策略的个体就没法靠更高收益扩张开来。"
         },
         {
           "id": "supernormal-stimulus",
           "name": "超常刺激",
           "en": "Supernormal Stimulus",
-          "one_line": "当触发本能的线索被夸大，人会更想要它，却未必得到更多实际好处。"
+          "one_line": "把触发本能的线索夸大，人会更想要它，却未必得到更多实际好处。"
         },
         {
           "id": "homeostasis",
@@ -422,7 +422,7 @@
           "id": "r-k-selection",
           "name": "r 与 K 策略",
           "en": "r/K Selection",
-          "one_line": "机会短、损失难防时偏向多生；多养的繁殖收益补得回数量损失时，少生才占优。"
+          "one_line": "多生还是少生看处境：机会短、损失难防偏向多生，多养的收益补得回数量损失，少生才占优。"
         },
         {
           "id": "host-parasite",
@@ -452,13 +452,13 @@
           "id": "stocks-and-flows",
           "name": "存量与流量",
           "en": "Stocks and Flows",
-          "one_line": "存量是过去净流入的积累；流入仍大于流出，增长就不会停止。"
+          "one_line": "只要流入仍大于流出，存量就继续增长，因为存量是过去净流入的积累。"
         },
         {
           "id": "time-delays",
           "name": "时间延迟",
           "en": "Time Delays",
-          "one_line": "效果尚未显现时反复加码，会让原本纠偏的动作把系统推向另一端。"
+          "one_line": "效果还没显现就反复加码，本想纠偏的动作会把系统推向另一端。"
         },
         {
           "id": "bottlenecks",
@@ -476,7 +476,7 @@
           "id": "antifragility",
           "name": "韧性与反脆弱",
           "en": "Resilience and Antifragility",
-          "one_line": "韧性让系统受冲击后恢复，反脆弱让系统在一定范围内从冲击中获益"
+          "one_line": "受了冲击能恢复叫韧性；在一定范围内还能从冲击中获益，才叫反脆弱。"
         },
         {
           "id": "path-dependence",
@@ -506,7 +506,7 @@
           "id": "overshoot-oscillation",
           "name": "过冲与振荡",
           "en": "Overshoot and Oscillation",
-          "one_line": "反馈赶不上纠偏的力度时，调整会越过目标，甚至来回摆动。"
+          "one_line": "反馈一旦赶不上纠偏的力度，调整就会冲过目标，甚至来回摆动。"
         },
         {
           "id": "tight-coupling",
@@ -518,7 +518,7 @@
           "id": "limits-to-growth",
           "name": "增长的极限",
           "en": "Limits to Growth",
-          "one_line": "增长会吃掉支撑它的余量；继续加力，可能收效递减甚至损伤增长基础。"
+          "one_line": "增长会吃掉支撑它的余量；继续加力，可能越来越不见效，甚至伤到增长的根基。"
         },
         {
           "id": "shifting-the-burden",
@@ -530,7 +530,7 @@
           "id": "braess-paradox",
           "name": "布雷斯悖论",
           "en": "Braess's Paradox",
-          "one_line": "当各人自选路线、拥堵随流量增加时，多一条捷径反而可能让所有人更慢。"
+          "one_line": "多一条捷径反而可能让所有人更慢，条件是各人自选路线、车越多路越堵。"
         }
       ]
     },
@@ -542,19 +542,19 @@
           "id": "opportunity-cost",
           "name": "机会成本",
           "en": "Opportunity Cost",
-          "one_line": "选择的真正代价，是同一份资源原本能换来的最佳替代价值。"
+          "one_line": "做一个选择的真正代价，是同一份资源本来能换到的最好的那个备选。"
         },
         {
           "id": "marginal-thinking",
           "name": "边际思维",
           "en": "Marginal Thinking",
-          "one_line": "决定要不要再多做一点，比较这一步新增的收益与成本，而非过去的平均。"
+          "one_line": "要不要再多做一点，看这一步新增的收益和成本，不看过去的平均。"
         },
         {
           "id": "diminishing-returns",
           "name": "边际收益递减",
           "en": "Diminishing Returns",
-          "one_line": "其他条件不变时，同样多加一份投入，带来的新增成果会逐步缩小。"
+          "one_line": "同样多加一份投入，新增的成果却一次比一次少，前提是其他条件不变。"
         },
         {
           "id": "comparative-advantage",
@@ -572,7 +572,7 @@
           "id": "incentives",
           "name": "激励",
           "en": "Incentives",
-          "one_line": "人会对自己在意的奖惩作出反应，设计制度先看它实际奖励了什么"
+          "one_line": "人会对自己在意的奖惩作出反应，设计制度先看它实际奖励了什么。"
         },
         {
           "id": "scarcity",
@@ -626,13 +626,13 @@
           "id": "moral-hazard",
           "name": "道德风险",
           "en": "Moral Hazard",
-          "one_line": "当保障替人承担损失，而交易后的行为难以监督，人就少了谨慎的理由。"
+          "one_line": "损失有保障替自己扛，事后的行为又难被监督，人就少了谨慎的理由。"
         },
         {
           "id": "goodharts-law",
           "name": "古德哈特定律",
           "en": "Goodhart's Law",
-          "one_line": "当人们能绕过真实成果来提高指标，把指标当目标就会使它失真。"
+          "one_line": "指标一旦被当成目标就会失真，只要人们能绕过真实成果把数字做上去。"
         },
         {
           "id": "creative-destruction",
@@ -644,7 +644,7 @@
           "id": "price-elasticity",
           "name": "价格弹性",
           "en": "Price Elasticity",
-          "one_line": "价格弹性衡量买家对涨价有多敏感，销量反应决定收入，成本决定利润。"
+          "one_line": "涨价能不能多收钱，要看买家多敏感、销量掉多少；能不能多赚，还得算上成本。"
         },
         {
           "id": "substitutes-complements",
@@ -662,19 +662,19 @@
           "id": "rent-seeking",
           "name": "寻租",
           "en": "Rent-Seeking",
-          "one_line": "寻租是花资源争取或守住排他利益，让自己多分收入，却不增加总价值。"
+          "one_line": "花钱花力去争取或守住只归自己的好处，自己多分了收入，总价值却没增加。"
         },
         {
           "id": "jevons-paradox",
           "name": "杰文斯悖论",
           "en": "Jevons Paradox",
-          "one_line": "当效率提升带来的使用扩张超过单位节省时，资源总用量反而上升。"
+          "one_line": "效率提高后，资源总用量反而上升，条件是多出来的使用盖过了每次省下的量。"
         },
         {
           "id": "coase-theorem",
           "name": "科斯定理",
           "en": "Coase Theorem",
-          "one_line": "权利清楚、协商无成本且估值不变时，初始归属不改变最终用途，却改变谁付钱"
+          "one_line": "权利一开始归谁，不改变最后怎么用，只改变谁付钱，前提是权利清楚、协商无成本、估值不变。"
         },
         {
           "id": "price-discrimination",
@@ -698,13 +698,13 @@
           "id": "zero-sum",
           "name": "零和与正和",
           "en": "Zero-Sum vs Positive-Sum",
-          "one_line": "先看双方能否增加总收益，再看怎么分；对方获益未必就是你的损失。"
+          "one_line": "对方获益未必就是你的损失：先看双方能否把总收益做大，再看怎么分。"
         },
         {
           "id": "prisoners-dilemma",
           "name": "囚徒困境",
           "en": "Prisoner's Dilemma",
-          "one_line": "当背离合作对每个人都更划算时，各自理性会把所有人带向更差的结果。"
+          "one_line": "人人理性地为自己打算，大家反而都更差，只要背离合作对每个人都更划算。"
         },
         {
           "id": "repeated-games",
@@ -716,7 +716,7 @@
           "id": "nash-equilibrium",
           "name": "纳什均衡",
           "en": "Nash Equilibrium",
-          "one_line": "别人策略不变时，谁单独换策略都不会更好，大家便停在均衡里。"
+          "one_line": "大家都停在原地不动，因为别人不变时，谁单独换策略都不会更好。"
         },
         {
           "id": "credible-commitment",
@@ -752,7 +752,7 @@
           "id": "winners-curse",
           "name": "赢家诅咒",
           "en": "Winner's Curse",
-          "one_line": "争抢价值不明的东西时，竞价会筛出最乐观的估计，让赢家更容易买贵。"
+          "one_line": "大家争抢价值不明的东西，赢的是估得最乐观的那个人，所以赢家更容易买贵。"
         },
         {
           "id": "batna",
@@ -800,7 +800,7 @@
           "id": "commitment-consistency",
           "name": "承诺与一致",
           "en": "Commitment and Consistency",
-          "one_line": "人会为了延续对自己的看法，让后来的选择跟随先前的表态和行动。"
+          "one_line": "表过态、做过事之后，人会让后来的选择跟着走，好延续对自己的看法。"
         },
         {
           "id": "social-proof",
@@ -818,13 +818,13 @@
           "id": "liking",
           "name": "喜好与光环",
           "en": "Liking and the Halo Effect",
-          "one_line": "当好感越过证据的边界，我们就会把一个人的讨喜当成他样样出色的理由。"
+          "one_line": "好感一旦跑到证据前面，我们就会把一个人的讨喜当成他样样出色的理由。"
         },
         {
           "id": "loss-aversion",
           "name": "损失厌恶",
           "en": "Loss Aversion",
-          "one_line": "人以心里的基准计算得失，同样分量的失去比得到更牵动决定。"
+          "one_line": "同样分量的失去，比得到更能左右人的决定；得失则按人心里的基准来算。"
         },
         {
           "id": "anchoring",
@@ -848,13 +848,13 @@
           "id": "confirmation-bias",
           "name": "确认偏误",
           "en": "Confirmation Bias",
-          "one_line": "确认偏误让人偏爱支持既有判断的证据，把反对证据挡在结论之外。"
+          "one_line": "人偏爱支持自己已有判断的证据，把反对的证据挡在结论之外。"
         },
         {
           "id": "overconfidence",
           "name": "过度自信",
           "en": "Overconfidence",
-          "one_line": "过度自信让人高估自己的知识与能力，并把预测区间收得过窄。"
+          "one_line": "人会高估自己知道多少、能做多少，给预测留的上下范围也收得过窄。"
         },
         {
           "id": "hindsight-bias",
@@ -872,7 +872,7 @@
           "id": "mental-accounting",
           "name": "心理账户",
           "en": "Mental Accounting",
-          "one_line": "人把钱贴上来源和用途的标签，让本可互换的钱受到不同待遇。"
+          "one_line": "人按来源和用途给钱贴标签，本来可以互换的钱，就被区别对待了。"
         },
         {
           "id": "default-effect",
@@ -896,7 +896,7 @@
           "id": "reason-respecting",
           "name": "给出理由",
           "en": "Reason-Respecting Tendency",
-          "one_line": "请求代价很小时，人会把“有个理由”当成配合的依据，哪怕理由没说出新东西。"
+          "one_line": "小请求只要带个理由，人就更愿意配合，哪怕这理由没说出任何新东西。"
         },
         {
           "id": "lollapalooza",
@@ -926,7 +926,7 @@
           "id": "present-bias",
           "name": "现时偏差",
           "en": "Present Bias",
-          "one_line": "现时偏差让眼前的好处突然增值，也让我们推翻为未来做好的打算。"
+          "one_line": "好处一到眼前就显得格外值钱，我们会因此推翻早先为未来做好的打算。"
         },
         {
           "id": "groupthink",
@@ -944,13 +944,13 @@
           "id": "outcome-bias",
           "name": "结果偏差",
           "en": "Outcome Bias",
-          "one_line": "结果偏差是拿事后的成败，替代对当时信息、选择和风险的判断。"
+          "one_line": "结果好就说决定对、结果坏就说决定错，却不看当时的信息、选择和风险。"
         },
         {
           "id": "peak-end-rule",
           "name": "峰终定律",
           "en": "Peak-End Rule",
-          "one_line": "回顾一段体验时，最强烈的时刻和结尾，可能在整体评价中占较大权重。"
+          "one_line": "人回头评价一段体验，可能格外看重最强烈的那一刻和结尾。"
         },
         {
           "id": "self-serving-bias",
@@ -974,7 +974,7 @@
           "id": "network-effects",
           "name": "网络效应",
           "en": "Network Effects",
-          "one_line": "当新增用户让已有用户也获得更多价值时，网络效应就出现了。"
+          "one_line": "新用户加入，让老用户手里的同一件东西也更有用，这就是网络效应。"
         },
         {
           "id": "switching-costs",
@@ -986,7 +986,7 @@
           "id": "pricing-power",
           "name": "定价权",
           "en": "Pricing Power",
-          "one_line": "客户愿意承受涨价而继续购买，企业就能把独特价值变成更厚的利润。"
+          "one_line": "涨了价客户照样买，企业就能把独特价值变成更厚的利润。"
         },
         {
           "id": "flywheel",
@@ -1034,7 +1034,7 @@
           "id": "value-chain",
           "name": "价值链",
           "en": "Value Chain",
-          "one_line": "把业务拆成相互连接的活动，看清哪里创造客户价值、哪里消耗成本。"
+          "one_line": "把业务拆成进货、生产、交付、售后这些相连的活动，看清哪里为客户创造价值、哪里花掉成本。"
         },
         {
           "id": "razor-and-blades",
@@ -1052,13 +1052,13 @@
           "id": "jobs-to-be-done",
           "name": "待完成的工作",
           "en": "Jobs to Be Done",
-          "one_line": "顾客雇用产品，是为了在具体处境中取得进展，替代方案也由这件事决定。"
+          "one_line": "顾客“雇用”产品，是为了在具体处境里把一件事往前推进；谁能替代它，也由这件事决定。"
         },
         {
           "id": "experience-curve",
           "name": "经验曲线",
           "en": "Experience Curve",
-          "one_line": "重复生产中的经验若能沉淀为改进，累计做得越多，单位成本就越低。"
+          "one_line": "累计做得越多，每件的成本就越低，前提是重复生产的经验沉淀成了改进。"
         },
         {
           "id": "cannibalization",
@@ -1088,7 +1088,7 @@
           "id": "mr-market",
           "name": "市场先生",
           "en": "Mr. Market",
-          "one_line": "把市场当成情绪多变的报价者，按自己的判断决定是否成交。"
+          "one_line": "把市场看成一位情绪多变、天天来报价的人，成不成交按你自己的判断来定。"
         },
         {
           "id": "price-and-value",
@@ -1124,7 +1124,7 @@
           "id": "diversification",
           "name": "分散与相关性",
           "en": "Diversification and Correlation",
-          "one_line": "分散的效果取决于损失是否同步，而危机会让原本不同的风险一起发作。"
+          "one_line": "损失不同步，分散才有用；而危机会让原本不同的风险一起发作。"
         },
         {
           "id": "kelly-criterion",
@@ -1178,7 +1178,7 @@
           "id": "lindy-effect",
           "name": "林迪效应",
           "en": "Lindy Effect",
-          "one_line": "在淘汰规则相近时，书、技术和制度存续越久，预期剩余寿命越长。"
+          "one_line": "书、技术和制度存续越久，预计还能存续的时间越长，前提是淘汰规则相近。"
         },
         {
           "id": "checks-and-balances",
@@ -1196,7 +1196,7 @@
           "id": "parkinsons-law",
           "name": "帕金森定律",
           "en": "Parkinson's Law",
-          "one_line": "当任务边界模糊时，工作会填满时间，机构会自己制造扩张的理由。"
+          "one_line": "任务没有清楚的边界，工作就会填满时间，机构也会自己制造扩张的理由。"
         },
         {
           "id": "conways-law",
@@ -1208,7 +1208,7 @@
           "id": "public-choice",
           "name": "公共选择",
           "en": "Public Choice",
-          "one_line": "掌握公共权力的人也有自身利益，理解公共决策要看他们如何得失。"
+          "one_line": "掌握公共权力的人也有自身利益，看懂公共决策要看他们从中得到什么、失去什么。"
         },
         {
           "id": "collective-action",
@@ -1238,7 +1238,7 @@
           "id": "resource-curse",
           "name": "资源诅咒",
           "en": "Resource Curse",
-          "one_line": "容易到手的财富，在分配缺少约束、收入依赖加深时，会拖垮制度和产业。"
+          "one_line": "容易到手的财富会拖垮制度和产业，如果分配缺少约束、收入又越来越依赖它。"
         },
         {
           "id": "iron-law-of-oligarchy",
@@ -1250,13 +1250,13 @@
           "id": "social-capital",
           "name": "社会资本",
           "en": "Social Capital",
-          "one_line": "人与人之间可调用的信任与联系，能省下寻找、核实和协调的成本。"
+          "one_line": "靠信得过的关系办事，能省下寻找、核实和协调的成本。"
         },
         {
           "id": "legitimacy",
           "name": "合法性",
           "en": "Legitimacy",
-          "one_line": "人们承认谁有权作决定，服从便有了恐惧和利益之外的理由。"
+          "one_line": "人们承认谁有权作决定，就算不怕罚、不图利，也有了服从的理由。"
         },
         {
           "id": "streisand-effect",
@@ -1286,7 +1286,7 @@
           "id": "optimal-stopping",
           "name": "最优停止",
           "en": "Optimal Stopping",
-          "one_line": "最优停止是在继续寻找的收益与等待的代价之间，选定出手的时机。"
+          "one_line": "再找下去可能遇到更好的，等下去也有代价，最优停止就是权衡两者选定何时出手。"
         },
         {
           "id": "combinatorial-explosion",
@@ -1304,7 +1304,7 @@
           "id": "abstraction",
           "name": "抽象与模块化",
           "en": "Abstraction and Modularity",
-          "one_line": "把变化留在模块内部，用稳定接口协作，让人无需懂全部也能掌控整体。"
+          "one_line": "不必懂全部细节也能掌控整体：变化关在模块内部，模块之间靠稳定接口协作。"
         },
         {
           "id": "signal-noise",
@@ -1340,13 +1340,13 @@
           "id": "end-to-end-principle",
           "name": "端到端原则",
           "en": "End-to-End Principle",
-          "one_line": "只有两端掌握完整条件时，最终正确性就必须由两端保证。"
+          "one_line": "最终结果对不对，必须由两端来保证，前提是只有两端掌握完整条件。"
         },
         {
           "id": "technical-debt",
           "name": "技术债",
           "en": "Technical Debt",
-          "one_line": "技术债是用今天的省事，换取未来反复付出的维护与返工成本。"
+          "one_line": "今天省下的事，日后要用反复的维护和返工来还，这就是技术债。"
         },
         {
           "id": "brooks-law",
