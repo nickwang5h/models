@@ -2,6 +2,7 @@
 // localStorage through progress.mjs, which swallows storage errors.
 import { load, markRead, pickUnread, record, reviewQueue, save, stats } from './progress.mjs';
 import { questionHtml } from './quiz.mjs';
+import { act, keyAction } from './keys.mjs';
 import { SIZES, THEMES, apply, read as readDisplay, save as saveDisplay } from './display.mjs';
 
 let storage = null;
@@ -105,3 +106,10 @@ if (displayRoot) {
 
 // Offline use and install: see sw.js.
 if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('/sw.js').catch(() => {});
+
+// Keyboard: see keys.mjs.
+document.addEventListener('keydown', (event) => {
+  if (/^(INPUT|TEXTAREA|SELECT)$/.test(event.target?.tagName ?? '') || event.metaKey || event.ctrlKey || event.altKey) return;
+  const action = keyAction(event.key);
+  if (action && act(action, document)) event.preventDefault();
+});

@@ -83,7 +83,7 @@ ${math ? '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Ka
 <main>
 ${body}
 </main>
-<footer class="foot">芒格说：要掌握约一百个来自不同学科的重要模型，让它们互相支撑，形成一张格栅。<br>进度只保存在这个浏览器里。<div class="display" data-display></div></footer>
+<footer class="foot">芒格说：要掌握约一百个来自不同学科的重要模型，让它们互相支撑，形成一张格栅。<br>进度只保存在这个浏览器里。键盘：1–4 答题，← → 换卡，R 随机一张。<div class="display" data-display></div></footer>
 <script type="module" src="/app.js"></script>
 ${script}
 </body>
@@ -106,7 +106,7 @@ export function cardPage(card, { cards, index, prev, next }) {
     return `<li>${head}<p>${escape(link.why)}</p></li>`;
   }).join('');
   const questions = card.questions.map((q, n) => questionHtml(q, `${card.id}-${n}`)).join('');
-  const step = (id, label) => (id ? `<a href="/m/${escape(id)}">${label}${escape(nameOf(cards, index, id))}</a>` : '<span></span>');
+  const step = (id, label, rel) => (id ? `<a href="/m/${escape(id)}" rel="${rel}">${label}${escape(nameOf(cards, index, id))}</a>` : '<span></span>');
   const body = `<article class="card" data-card="${escape(card.id)}">
 <p class="crumb"><a href="/d/${escape(discipline.id)}">${escape(discipline.title)}</a> · ${order}/${discipline.models.length}</p>
 <h1>${escape(card.name)}<small>${escape(card.en)}</small></h1>
@@ -119,7 +119,7 @@ export function cardPage(card, { cards, index, prev, next }) {
 <section class="limits"><h2>边界与误用</h2>${markdown(card.limits)}</section>
 <section class="quiz" id="quiz"><h2>练一练</h2>${questions}</section>
 <section class="related"><h2>格栅里的邻居</h2><ul>${related}</ul></section>
-<nav class="steps">${step(prev, '← ')}${step(next, '')}</nav>
+<nav class="steps">${step(prev, '← ', 'prev')}${step(next, '', 'next')}</nav>
 </article>`;
   const math = /\$/.test([card.scene, card.mechanism, card.origin, card.limits, ...card.examples.map((e) => e.text)].join(''));
   return shell({ title: `${card.name} · 思维模型`, description: card.one_line, body, hue: HUES[card.discipline], math });
