@@ -35,20 +35,48 @@ export function markdown(text, { inline = false } = {}) {
 
 const RELATIONS = ['互补', '相反', '常一起出现', '是它的特例', '是它的一般化'];
 
+const FIELDS = ['id', 'name', 'en', 'discipline', 'one_line', 'scene', 'mechanism', 'origin', 'examples', 'use', 'limits', 'related', 'questions'];
+const filled = (value) => typeof value === 'string' && value.trim() !== '';
+
+// The content schema (docs/2026-10-05-models-design.md), checked by the build and by test/content.test.mjs.
 export function validate(index, cards) {
   const errors = [];
+  const home = new Map(index.disciplines.flatMap((d) => d.models.map((m) => [m.id, { discipline: d, model: m }])));
   const listed = index.disciplines.flatMap((d) => d.models.map((m) => m.id));
   for (const id of listed) if (!cards[id]) errors.push(`${id}：索引里有，但没有卡片文件`);
+  if (new Set(listed).size !== listed.length) errors.push('索引里有重复的 id');
   for (const [id, card] of Object.entries(cards)) {
-    for (const key of ['one_line', 'scene', 'mechanism', 'origin', 'examples', 'use', 'limits', 'related', 'questions']) {
+    if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(id)) errors.push(`${id}：id 只能用小写字母、数字和连字符`);
+    if (card.id !== undefined && card.id !== id) errors.push(`${id}：文件名和 id（${card.id}）不一致`);
+    for (const key of FIELDS) {
+      if (key === 'id' && card.id === undefined) continue;
       if (!card[key] || (Array.isArray(card[key]) && !card[key].length)) errors.push(`${id}：缺 ${key}`);
     }
-    for (const link of card.related ?? []) {
+    const place = home.get(id);
+    if (!place) errors.push(`${id}：有卡片文件，但索引里没有`);
+    else {
+      if (card.discipline !== place.discipline.id) errors.push(`${id}：学科 ${card.discipline} 和索引里的 ${place.discipline.id} 不一致`);
+      for (const key of ['name', 'one_line']) if (place.model[key] !== undefined && place.model[key] !== card[key]) errors.push(`${id}：索引里的 ${key} 和卡片不一致`);
+    }
+    if (Array.isArray(card.examples)) {
+      if (card.examples.length !== 3) errors.push(`${id}：examples 要恰好 3 个`);
+      card.examples.forEach((e, n) => { if (!filled(e?.field) || !filled(e?.title) || !filled(e?.text)) errors.push(`${id}：第 ${n + 1} 个例子缺 field、title 或 text`); });
+    }
+    if (Array.isArray(card.use) && (card.use.length < 3 || card.use.length > 5 || !card.use.every(filled))) errors.push(`${id}：use 要 3–5 个问题`);
+    const related = card.related ?? [];
+    if (related.length && (related.length < 3 || related.length > 5)) errors.push(`${id}：related 要 3–5 个`);
+    if (new Set(related.map((link) => link.id)).size !== related.length) errors.push(`${id}：related 有重复`);
+    for (const link of related) {
+      if (link.id === id) errors.push(`${id}：related 指向自己`);
       if (!cards[link.id] && !index.names?.[link.id]) errors.push(`${id}：相关模型 ${link.id} 不存在`);
       if (!RELATIONS.includes(link.relation)) errors.push(`${id}：关系 ${link.relation} 不认识`);
+      if (!filled(link.why)) errors.push(`${id}：相关模型 ${link.id} 缺 why`);
     }
+    if (Array.isArray(card.questions) && card.questions.length && card.questions.length < 2) errors.push(`${id}：至少要 2 道题`);
     (card.questions ?? []).forEach((q, n) => {
-      if (q.options?.length !== 4 || q.options.filter((o) => o.correct).length !== 1) errors.push(`${id}：第 ${n + 1} 题要 4 个选项、恰好一个正确`);
+      if (q.options?.length !== 4 || q.options.filter((o) => o.correct === true).length !== 1) errors.push(`${id}：第 ${n + 1} 题要 4 个选项、恰好一个正确`);
+      if (!filled(q.stem) || !filled(q.question) || !filled(q.explain)) errors.push(`${id}：第 ${n + 1} 题缺 stem、question 或 explain`);
+      if ((q.options ?? []).some((o) => !filled(o.text) || !filled(o.feedback))) errors.push(`${id}：第 ${n + 1} 题有选项缺 text 或 feedback`);
     });
   }
   return errors;
