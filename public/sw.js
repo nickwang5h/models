@@ -58,6 +58,6 @@ self.addEventListener('fetch', (event) => {
   if (request.method !== 'GET') return;
   const url = new URL(request.url);
   if (request.url.startsWith(KATEX) || (url.origin === self.location.origin && url.pathname.startsWith('/icons/'))) return event.respondWith(kept(request));
-  if (url.origin !== self.location.origin) return;
+  if (url.origin !== self.location.origin || url.pathname.startsWith('/api/')) return;   // confirmation links and the like stay out of the cache
   event.respondWith(fresh(request));
 });

@@ -113,6 +113,40 @@ if (displayRoot) {
   });
 }
 
+// Email subscription (functions/api/subscribe.js): the confirmation link brings the reader back here with a status.
+const NOTES = {
+  confirmed: '订阅成功。从下一封起，每天一张卡会发到你的邮箱。',
+  expired: '确认链接无效或已经过期，请重新填一次邮箱。',
+  sent: '确认信已经发出。请到邮箱里点开链接（48 小时内有效），没收到就看看垃圾邮件。',
+  off: '邮件订阅还没有开通。可以先用阅读器订阅 Atom（/feed.xml），或者每天打开“今日”。',
+};
+const form = document.querySelector('[data-subscribe]');
+const note = document.querySelector('[data-subscribe-status]');
+if (form && note) {
+  const query = new URLSearchParams(location.search);
+  if (query.has('confirmed')) note.textContent = NOTES.confirmed;
+  else if (query.has('expired')) note.textContent = NOTES.expired;
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const button = form.querySelector('button');
+    button.disabled = true;
+    note.textContent = '正在发送……';
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: form.email.value, website: form.website.value }),
+      });
+      const answer = await response.json().catch(() => ({}));
+      if (response.ok) { note.textContent = NOTES.sent; form.reset(); }
+      else if (response.status === 503) note.textContent = NOTES.off;
+      else note.textContent = answer.error || '没能发出确认信，请稍后再试。';
+    } catch {
+      note.textContent = '网络不通，请稍后再试。';
+    }
+    button.disabled = false;
+  });
+}
+
 // Offline use and install: see sw.js.
 if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('/sw.js').catch(() => {});
 
