@@ -91,3 +91,12 @@ test('every page can be installed: it links the manifest and the touch icon', ()
   assert.match(html, /<link rel="manifest" href="\/manifest\.webmanifest">/);
   assert.match(html, /apple-touch-icon/);
 });
+
+test('every page states both licenses, and a card page reports errors against that card', () => {
+  const cards = { a: card('a', [{ id: 'b', relation: '互补', why: '…' }]), b: card('b') };
+  const html = cardPage(cards.a, { cards, index, prev: null, next: 'b' });
+  assert.match(html, /MIT/);
+  assert.match(html, /CC BY-NC-SA 4\.0/);
+  assert.match(html, /issues\/new\?template=content-error\.yml&amp;card=a&amp;title=/);
+  assert.match(indexPage(index), /issues\/new\?template=content-error\.yml"/);
+});

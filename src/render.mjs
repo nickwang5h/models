@@ -2,7 +2,7 @@
 import katex from 'katex';
 import { Marked } from 'marked';
 import { escape, questionHtml } from '../public/quiz.mjs';
-import { HUES, shell } from './shell.mjs';
+import { HUES, reportUrl, shell } from './shell.mjs';
 
 const md = new Marked({ gfm: true });
 md.use({ renderer: { html: (token) => escape(token.text ?? '') } });
@@ -114,7 +114,7 @@ export function cardPage(card, { cards, index, prev, next }) {
 <nav class="steps">${step(prev, '← ', 'prev')}${step(next, '', 'next')}</nav>
 </article>`;
   const math = /\$/.test([card.scene, card.mechanism, card.origin, card.limits, ...card.examples.map((e) => e.text)].join(''));
-  return shell({ title: `${card.name} · 思维模型`, description: card.one_line, body, hue: HUES[card.discipline], math });
+  return shell({ title: `${card.name} · 思维模型`, description: card.one_line, body, hue: HUES[card.discipline], math, report: reportUrl(card.id) });
 }
 
 function tile(model, read = '') {

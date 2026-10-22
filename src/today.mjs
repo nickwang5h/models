@@ -1,7 +1,7 @@
 // The pages and the feed around 今日一卡. /today and /feed.xml are rendered per request by Pages Functions
 // (functions/), so this file avoids KaTeX and Markdown: the day shows the card's summary and one question, not its body.
 import { escape, questionHtml } from '../public/quiz.mjs';
-import { HUES, shell } from './shell.mjs';
+import { HUES, reportUrl, shell } from './shell.mjs';
 import { EPOCH, addDays, recentDates } from './daily.mjs';
 
 export const SITE = 'https://models.wuhua.app';
@@ -25,7 +25,7 @@ export function todayPage(day, current) {
 <p class="tally">每天一张，所有人看到的都一样，按 UTC 日期更换。也可以<a href="/subscribe">用邮件订阅</a>，或者用阅读器订阅 <a href="/feed.xml">Atom</a>。</p>
 <nav class="steps">${prev}${next}</nav>
 </section>`;
-  return shell({ title: `今日一卡：${card.name} · 思维模型`, description: card.one_line, body, hue: HUES[card.discipline] });
+  return shell({ title: `今日一卡：${card.name} · 思维模型`, description: card.one_line, body, hue: HUES[card.discipline], report: reportUrl(id) });
 }
 
 export function subscribePage() {
