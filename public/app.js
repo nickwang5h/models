@@ -81,6 +81,15 @@ if (card) {
 tally();
 for (const link of document.querySelectorAll('[data-random]')) link.addEventListener('click', (e) => { e.preventDefault(); goRandom(); });
 if (document.querySelector('[data-go-random]')) goRandom();
+const todayQuiz = document.querySelector('[data-today-quiz]');
+if (todayQuiz) wire(todayQuiz);
+// The home page names today's card (see functions/today.json.js); without it the tile still links to /today.
+const todayLine = document.querySelector('[data-today]');
+if (todayLine) {
+  fetch('/today.json').then((r) => (r.ok ? r.json() : null)).then((day) => {
+    if (day?.name) todayLine.textContent = `${day.name}：${day.one_line}`;
+  }).catch(() => {});
+}
 const box = document.getElementById('review');
 if (box) review(box);
 
