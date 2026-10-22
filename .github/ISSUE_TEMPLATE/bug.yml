@@ -1,0 +1,24 @@
+name: 网站问题 / Site bug
+description: 页面显示、答题、进度、离线、订阅等功能不正常。
+title: "[网站] "
+labels: ["bug"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: 出问题的页面
+      placeholder: https://models.wuhua.app/today
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 怎么出现的
+      description: 做了什么、期望看到什么、实际看到什么。截图很有帮助。
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: 浏览器和设备
+      placeholder: iOS 18 Safari / Chrome 130 on Windows

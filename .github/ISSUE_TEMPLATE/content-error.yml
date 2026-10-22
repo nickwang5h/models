@@ -1,0 +1,46 @@
+name: 卡片内容有误 / Content error
+description: 事实、年份、人名、出处、题目答案或解析有错，或者讲得不清楚。
+title: "[内容] "
+labels: ["content"]
+body:
+  - type: input
+    id: card
+    attributes:
+      label: 哪张卡（id 或链接）
+      description: 例如 anchoring，或 https://models.wuhua.app/m/anchoring
+      placeholder: anchoring
+    validations:
+      required: true
+  - type: dropdown
+    id: part
+    attributes:
+      label: 哪一部分
+      options:
+        - 一句话（one_line）
+        - 开场故事（scene）
+        - 为什么成立（mechanism）
+        - 出处（origin）
+        - 换个领域看（examples）
+        - 遇事时问自己（use）
+        - 边界与误用（limits）
+        - 格栅里的邻居（related）
+        - 练一练（questions：题面、选项、答案或解析）
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: 哪里不对
+      description: 引用原句，说明问题。题目有错时，请写出你认为的正确答案和理由。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 依据
+      description: 论文、书籍（含页码）或可靠来源的链接。没有也可以先报。
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: 建议的改法（可选）
