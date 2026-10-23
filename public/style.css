@@ -314,6 +314,7 @@ h3{scroll-margin-top:24px}
 .fc-0{stroke:var(--ink3);stroke-opacity:.5}
 .fc-tk{fill:var(--ink3);font-size:12px}
 .fc-sm{font-size:11px}
+.fc-xs{font-size:10.5px}
 .fc-ax{fill:var(--ink2);font-size:12px}
 .fc-cat{fill:var(--ink2);font-size:13px}
 .fc-v{fill:var(--ink2);font-size:12px;font-weight:500}
@@ -330,9 +331,9 @@ h3{scroll-margin-top:24px}
 .fc-b{stroke:none}
 .fc-b.fc-ink{fill:var(--ink2)}
 .fc-b.fc-muted{fill:var(--ink3);fill-opacity:.45}
-.fc-nm{font-size:12px;font-weight:600;stroke:none}
+.fc-nm{font-size:12px;font-weight:600;stroke:var(--paper);stroke-width:3px;paint-order:stroke;stroke-linejoin:round}
 .fc-m{stroke:var(--ink3);stroke-dasharray:3 4}
-.fc-mt{fill:var(--ink2);font-size:12px}
+.fc-mt{fill:var(--ink2);font-size:12px;stroke:var(--paper);stroke-width:3px;paint-order:stroke;stroke-linejoin:round}
 .fc-pt{fill:var(--paper);stroke:var(--ink);stroke-width:1.6}
 .fig .fdemo{display:grid;grid-template-columns:230px minmax(0,1fr);padding:0}
 .fig .fdemo .ctl{padding:18px;border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:16px;font-size:15px}

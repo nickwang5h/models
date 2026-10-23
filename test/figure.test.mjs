@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { compile, figureHtml, figureProblems, figureSvg, formatNumber, runDemo, seeded } from '../public/figure.mjs';
+import { axis, compile, figureHtml, figureProblems, figureSvg, formatNumber, runDemo, seeded } from '../public/figure.mjs';
 import { leadHtml } from '../public/list.mjs';
 
 const run = (src, env = {}) => compile(src)(env);
@@ -100,4 +100,26 @@ test('figure html: live demos carry sliders and their spec; elsewhere they are a
   const still = figureHtml(demo);
   assert.doesNotMatch(still, /type="range"|data-spec/);
   assert.match(leadHtml({ id: 'a', name: '名', en: 'N', one_line: '一句', lede: '开头' }, '2026-10-23', '数学', still), /<p class="one">一句<\/p><figure/);
+});
+
+test('axis: at least three ticks, rounds up to a tick unless that wastes a quarter of the chart', () => {
+  assert.deepEqual(axis(0, 29.6, 4).values, [0, 10, 20, 30]);
+  const tight = axis(0, 102, 4);
+  assert.ok(tight.hi < 110 && tight.values.at(-1) === 100);
+  assert.ok(axis(-40, 40, 3, { fixLo: true, fixHi: true }).values.length >= 3);
+  assert.deepEqual(axis(0, 7, 3, { step: 1 }).values, [0, 1, 2, 3, 4, 5, 6, 7]);
+});
+
+test('bar charts draw reference lines; mark words stay off the line they label', () => {
+  const bar = { kind: 'chart', type: 'bar', title: '承诺最多等十分钟', categories: ['换拉链头', '改裤脚'], series: [{ name: '分钟', values: [5, 30] }], marks: [{ y: 10, text: '承诺' }] };
+  assert.deepEqual(figureProblems(bar), []);
+  assert.match(figureSvg(bar), /class="fc-m"[\s\S]*>承诺</);
+  const hbar = { ...bar, type: 'hbar' };
+  assert.match(figureSvg(hbar), /class="fc-m"/);
+  const line = { kind: 'chart', title: '一条上升的线', series: [{ name: '涨', points: [[0, 0], [10, 10]] }], marks: [{ x: 5, y: 5, text: '中间这一点' }] };
+  const svg = figureSvg(line);
+  const [, x, y] = svg.match(/<text class="fc-mt" x="([\d.]+)" y="([\d.]+)"[^>]*>中间这一点/);
+  const [, cx, cy] = svg.match(/<circle class="fc-pt" cx="([\d.]+)" cy="([\d.]+)"/);
+  // the line rises to the upper right, so the label goes below right or above left of the point, never above right
+  assert.ok(!(Number(x) > Number(cx) && Number(y) < Number(cy)));
 });

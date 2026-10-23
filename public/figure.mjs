@@ -155,6 +155,53 @@ export function ticks(lo, hi, count = 4) {
   for (let v = start; v <= hi + step * 1e-9; v += step) out.push(Math.abs(v) < step * 1e-9 ? 0 : v);
   return { values: out, step };
 }
+// An axis from lo to hi: a free end runs out to the next round tick; a fixed end stays put. At least three ticks,
+// unless `step` fixes the spacing.
+export function axis(lo, hi, count, { fixLo = false, fixHi = false, step: forced } = {}) {
+  if (!(hi > lo)) hi = lo + 1;
+  let out = null;
+  for (let c = count; c <= count + 6; c++) {
+    const step = forced ?? niceStep(hi - lo, c);
+    const a = fixLo ? lo : Math.floor(lo / step + 1e-9) * step;
+    const b = fixHi ? hi : Math.ceil(hi / step - 1e-9) * step;
+    const values = [];
+    for (let v = Math.ceil(a / step - 1e-9) * step; v <= b + step * 1e-9; v += step) values.push(Math.abs(v) < step * 1e-9 ? 0 : Number(v.toPrecision(12)));
+    out = { lo: a, hi: b, step, values };
+    if (values.length >= 3 || forced) break;
+  }
+  // rounding the top up to a tick shouldn't leave a quarter of the chart empty; stop just above the data instead
+  if (!fixHi && hi > 0 && out.hi > hi * 1.25) return axis(lo, hi * 1.04, count, { fixLo, fixHi: true, step: forced });
+  return out;
+}
+
+// Where to put a label: the candidate box with the least in it (line samples, other labels), inside the plot.
+function placeLabel(candidates, obstacles, placed, frame) {
+  let best = null;
+  for (const c of candidates) {
+    const box = { x0: c.anchor === 'end' ? c.x - c.w : c.anchor === 'middle' ? c.x - c.w / 2 : c.x, y0: c.y - 11, w: c.w, h: 14 };
+    let score = 0;
+    for (const q of obstacles) if (q[0] > box.x0 - 3 && q[0] < box.x0 + box.w + 3 && q[1] > box.y0 - 3 && q[1] < box.y0 + box.h + 3) score += 1;
+    for (const b of placed) if (box.x0 < b.x0 + b.w + 2 && b.x0 < box.x0 + box.w + 2 && box.y0 < b.y0 + b.h && b.y0 < box.y0 + box.h) score += 8;
+    if (box.x0 < frame.x0 - 2 || box.x0 + box.w > frame.x1 + 2 || box.y0 < frame.y0 - 16 || box.y0 + box.h > frame.y1 + 2) score += 30;
+    if (!best || score < best.score) best = { ...c, box, score };
+  }
+  placed.push(best.box);
+  return best;
+}
+
+// Points every few pixels along a polyline, for placeLabel to avoid.
+function samples(pts, gap = 4) {
+  const out = [];
+  for (let k = 0; k < pts.length; k++) {
+    out.push(pts[k]);
+    if (k === 0) continue;
+    const [x0, y0] = pts[k - 1]; const [x1, y1] = pts[k];
+    const n = Math.min(200, Math.floor(Math.hypot(x1 - x0, y1 - y0) / gap));
+    for (let j = 1; j < n; j++) out.push([x0 + ((x1 - x0) * j) / n, y0 + ((y1 - y0) * j) / n]);
+  }
+  return out;
+}
+
 const trim0 = (s) => (s.includes('.') ? s.replace(/\.?0+$/, '') : s);
 // `format` 'cn' writes 万 and 亿; otherwise the number with as many decimals as the tick step needs, and the unit.
 export function formatNumber(v, { unit = '', format = '', step = 0 } = {}) {
@@ -420,13 +467,8 @@ function chartSvg(spec, data, W, H) {
   let ylo = y.min ?? Math.min(0, ...all.map((p) => p[1]), ...marks.filter((m) => m.y != null).map((m) => m.y));
   let yhi = y.max ?? Math.max(...all.map((p) => p[1]), ...marks.filter((m) => m.y != null).map((m) => m.y));
   if (y.max == null) yhi += (yhi - ylo) * 0.04;
-  if (!(yhi > ylo)) yhi = ylo + 1;
-  let yt = ticks(ylo, yhi, narrow ? 3 : 4);
-  // without a fixed range the axis runs to the next round tick, so the top line has a gridline above it
-  if (y.max == null) yhi = Math.ceil(yhi / yt.step - 1e-9) * yt.step;
-  if (y.min == null) ylo = Math.floor(ylo / yt.step + 1e-9) * yt.step;
-  yt = { ...ticks(ylo, yhi, narrow ? 3 : 4), step: yt.step };
-  yt.values = yt.values.filter((v) => Math.abs(Math.round(v / yt.step) * yt.step - v) < yt.step * 1e-6);
+  const yt = axis(ylo, yhi, narrow ? 3 : 4, { fixLo: y.min != null, fixHi: y.max != null, step: y.step });
+  ylo = yt.lo; yhi = yt.hi;
   // a demo's x.min and x.max may be formulas; runDemo works them out
   const xlo = typeof x.min === 'number' ? x.min : data.xmin ?? Math.min(...all.map((p) => p[0]));
   const xhi = typeof x.max === 'number' ? x.max : data.xmax ?? Math.max(...all.map((p) => p[0]));
@@ -458,46 +500,66 @@ function chartSvg(spec, data, W, H) {
   }
   if (x.label) g += txt((L + W - R) / 2, H - 8, x.label, 'fc-ax', 'middle');
   if (y.label) g += txt(0, 14, y.label, 'fc-ax');
-  // marks: a horizontal or vertical reference line, or a labelled point
+  const path = (pts) => `M${pts.map((p) => `${t1(sx(p[0]))} ${t1(yClamp(p[1]))}`).join('L')}`;
+  const toneOf = (s, k) => (SERIES_TONES.includes(s.tone) ? s.tone : SERIES_TONES[Math.min(k, 2)]);
+  // what labels must keep off: every line, every dot
+  const obstacles = [];
+  const drawn = data.series.map((s) => s.points.filter((p) => Number.isFinite(p[0]) && Number.isFinite(p[1])));
+  drawn.forEach((pts, k) => {
+    const px = pts.map((p) => [sx(p[0]), yClamp(p[1])]);
+    if (data.series[k].line !== false) obstacles.push(...samples(px)); else obstacles.push(...px);
+  });
+  // names at the ends of the lines, pushed apart so they don't overlap
+  const tags = ends.map((s) => {
+    const k = data.series.indexOf(s);
+    const p = s.points.filter((q) => Number.isFinite(q[1])).at(-1);
+    return { y: yClamp(p[1]), x: sx(p[0]), name: s.name, tone: toneOf(s, k) };
+  }).sort((a, b) => a.y - b.y);
+  for (let k = 1; k < tags.length; k++) if (tags[k].y - tags[k - 1].y < 16) tags[k].y = tags[k - 1].y + 16;
+  const over = tags.length ? tags[tags.length - 1].y - (H - B + 6) : 0;
+  if (over > 0) for (const tag of tags) tag.y -= over;
+  const placed = tags.map((tag) => ({ x0: Math.min(tag.x, W - R) + 8, y0: tag.y - 7, w: textWidth(tag.name, 12), h: 14 }));
+  const frame = { x0: L, x1: W - 2, y0: T, y1: H - B };
+  // marks: a horizontal or vertical reference line, or a labelled point; lines go under the data, words on top
+  let words = '';
   for (const m of marks) {
+    const w = m.text ? textWidth(m.text, 12) : 0;
     if (m.y != null && m.x == null) {
       const yy = sy(m.y);
       g += `<line class="fc-m" x1="${L}" x2="${t1(W - R)}" y1="${t1(yy)}" y2="${t1(yy)}"/>`;
-      if (m.text) g += txt(W - R - 4, yy - 6, m.text, 'fc-mt', 'end');
+      if (m.text) {
+        const at = placeLabel([{ x: W - R - 4, y: yy - 6, anchor: 'end' }, { x: W - R - 4, y: yy + 15, anchor: 'end' }, { x: L + 6, y: yy - 6, anchor: 'start' }, { x: L + 6, y: yy + 15, anchor: 'start' },
+          { x: (L + W - R) / 2, y: yy - 6, anchor: 'middle' }, { x: (L + W - R) / 2, y: yy + 15, anchor: 'middle' }].map((c) => ({ ...c, w })), obstacles, placed, frame);
+        words += txt(at.x, at.y, m.text, 'fc-mt', at.anchor);
+      }
     } else if (m.x != null && m.y == null) {
       const xx = sx(m.x);
       g += `<line class="fc-m" x1="${t1(xx)}" x2="${t1(xx)}" y1="${T}" y2="${t1(H - B)}"/>`;
-      if (m.text) g += txt(xx + 5, T + 10, m.text, 'fc-mt');
-    } else if (m.x != null && m.y != null) {
-      const xx = sx(m.x); const yy = sy(m.y);
-      g += `<circle class="fc-pt" cx="${t1(xx)}" cy="${t1(yy)}" r="4"/>`;
       if (m.text) {
-        const right = xx + textWidth(m.text, 12) + 10 < W - R;
-        g += txt(right ? xx + 8 : xx - 8, yy - 8, m.text, 'fc-mt', right ? 'start' : 'end');
+        const at = placeLabel([{ x: xx + 5, y: T + 10, anchor: 'start' }, { x: xx - 5, y: T + 10, anchor: 'end' }, { x: xx + 5, y: H - B - 6, anchor: 'start' }, { x: xx - 5, y: H - B - 6, anchor: 'end' },
+          { x: xx + 5, y: (T + H - B) / 2, anchor: 'start' }, { x: xx - 5, y: (T + H - B) / 2, anchor: 'end' }].map((c) => ({ ...c, w })), obstacles, placed, frame);
+        words += txt(at.x, at.y, m.text, 'fc-mt', at.anchor);
+      }
+    } else if (m.x != null && m.y != null) {
+      const xx = sx(m.x); const yy = yClamp(m.y);
+      words += `<circle class="fc-pt" cx="${t1(xx)}" cy="${t1(yy)}" r="4"/>`;
+      if (m.text) {
+        const at = placeLabel([{ x: xx + 8, y: yy - 8, anchor: 'start' }, { x: xx - 8, y: yy + 17, anchor: 'end' }, { x: xx + 8, y: yy + 17, anchor: 'start' }, { x: xx - 8, y: yy - 8, anchor: 'end' },
+          { x: xx, y: yy - 12, anchor: 'middle' }, { x: xx, y: yy + 22, anchor: 'middle' }, { x: xx + 10, y: yy + 4, anchor: 'start' }, { x: xx - 10, y: yy + 4, anchor: 'end' }].map((c) => ({ ...c, w })), obstacles, placed, frame);
+        words += txt(at.x, at.y, m.text, 'fc-mt', at.anchor);
       }
     }
   }
-  const path = (pts) => `M${pts.map((p) => `${t1(sx(p[0]))} ${t1(yClamp(p[1]))}`).join('L')}`;
   data.series.forEach((s, k) => {
-    const tone = SERIES_TONES.includes(s.tone) ? s.tone : SERIES_TONES[Math.min(k, 2)];
-    const pts = s.points.filter((p) => Number.isFinite(p[0]) && Number.isFinite(p[1]));
+    const tone = toneOf(s, k);
+    const pts = drawn[k];
     if (!pts.length) return;
     if (s.fill) g += `<path class="fc-a fc-${tone}" d="${path(pts)}L${t1(sx(pts[pts.length - 1][0]))} ${t1(sy(Math.max(ylo, 0)))}L${t1(sx(pts[0][0]))} ${t1(sy(Math.max(ylo, 0)))}Z"/>`;
     if (s.line !== false && pts.length > 1) g += `<path class="fc-l fc-${tone}${s.dashed ? ' fc-d' : ''}${s.thin ? ' fc-thin' : ''}" d="${path(pts)}"/>`;
     if (s.dots || pts.length === 1) for (const p of pts) g += `<circle class="fc-dot fc-${tone}" cx="${t1(sx(p[0]))}" cy="${t1(yClamp(p[1]))}" r="${s.dots === 'small' ? 2.5 : 3.5}"/>`;
   });
-  // names at the ends of the lines, pushed apart so they don't overlap
-  const tags = ends.map((s) => {
-    const k = data.series.indexOf(s);
-    const tone = SERIES_TONES.includes(s.tone) ? s.tone : SERIES_TONES[Math.min(k, 2)];
-    const p = s.points.filter((q) => Number.isFinite(q[1])).at(-1);
-    return { y: yClamp(p[1]), x: sx(p[0]), name: s.name, tone };
-  }).sort((a, b) => a.y - b.y);
-  for (let k = 1; k < tags.length; k++) if (tags[k].y - tags[k - 1].y < 16) tags[k].y = tags[k - 1].y + 16;
-  const over = tags.length ? tags[tags.length - 1].y - (H - B + 6) : 0;
-  if (over > 0) for (const tag of tags) tag.y -= over;
   for (const tag of tags) g += txt(Math.min(tag.x, W - R) + 8, tag.y + 4, tag.name, `fc-nm fc-${tag.tone}`);
-  return g;
+  return g + words;
 }
 
 function barSvg(spec, data, W, H) {
@@ -506,18 +568,21 @@ function barSvg(spec, data, W, H) {
   const y = spec.y ?? {};
   const cats = spec.categories ?? [];
   const series = data.series;
+  const marks = (data.marks ?? []).filter((m) => m.y != null);
   const values = series.flatMap((s) => s.values ?? []);
-  const lo = Math.min(0, y.min ?? 0, ...values);
-  let hi = y.max ?? Math.max(...values) * 1.08;
-  if (!(hi > lo)) hi = lo + 1;
-  const yt = ticks(lo, hi, narrow ? 3 : 4);
+  const lo0 = Math.min(0, y.min ?? 0, ...values);
+  const hi0 = y.max ?? Math.max(...values, ...marks.map((m) => m.y)) * 1.02;
+  const yt = axis(lo0, hi0, narrow ? 3 : 4, { fixLo: lo0 === 0 || y.min != null, fixHi: y.max != null, step: y.step });
+  const { lo, hi } = yt;
   const fmt = (v, step = yt.step) => formatNumber(v, { unit: y.unit ?? '', format: y.format, step });
   const fmtVal = (v) => formatNumber(v, { unit: y.unit ?? '', format: y.format, step: spec.digits != null ? 10 ** -spec.digits : 0 });
+  const toneAt = (s, k, i) => (Array.isArray(s.tones) && s.tones[i] ? s.tones[i] : SERIES_TONES.includes(s.tone) ? s.tone : SERIES_TONES[Math.min(k, 2)]);
   let g = '';
+  let words = '';
   const legend = series.length > 1;
   if (horizontal) {
     const catW = Math.min(narrow ? 120 : 200, Math.max(...cats.map((c) => textWidth(c, 13))) + 12);
-    const L = catW; const R = 56; const T = legend ? 30 : 8; const B = 8;
+    const L = catW; const R = 56; const T = legend || marks.some((m) => m.text) ? 30 : 8; const B = 8;
     const band = (H - T - B) / cats.length;
     const barH = Math.min(26, (band * 0.7) / series.length);
     const sx = (v) => L + ((W - L - R) * (v - lo)) / (hi - lo);
@@ -525,16 +590,19 @@ function barSvg(spec, data, W, H) {
       const cy = T + band * i + band / 2;
       g += txt(L - 10, cy + 5, c, 'fc-cat', 'end');
       series.forEach((s, k) => {
-        const tone = SERIES_TONES.includes(s.tone) ? s.tone : SERIES_TONES[Math.min(k, 2)];
         const v = s.values[i];
         const yy = cy - (barH * series.length) / 2 + barH * k;
-        const tc = Array.isArray(s.tones) && s.tones[i] ? s.tones[i] : tone;
-        g += `<rect class="fc-b fc-${tc}" x="${t1(Math.min(sx(0), sx(v)))}" y="${t1(yy + 1)}" width="${t1(Math.abs(sx(v) - sx(0)))}" height="${t1(barH - 2)}" rx="2"/>`;
+        g += `<rect class="fc-b fc-${toneAt(s, k, i)}" x="${t1(Math.min(sx(0), sx(v)))}" y="${t1(yy + 1)}" width="${t1(Math.abs(sx(v) - sx(0)))}" height="${t1(barH - 2)}" rx="2"/>`;
         g += txt(Math.max(sx(0), sx(v)) + 6, yy + barH / 2 + 4, fmtVal(v), 'fc-v');
       });
     });
+    // a reference value: a line down through the bars, its words above them
+    for (const m of marks) {
+      g += `<line class="fc-m" x1="${t1(sx(m.y))}" x2="${t1(sx(m.y))}" y1="${T - 6}" y2="${t1(H - B)}"/>`;
+      if (m.text) words += txt(sx(m.y), T - 10, m.text, 'fc-mt', sx(m.y) + textWidth(m.text, 12) / 2 > W - 4 ? 'end' : 'middle');
+    }
     if (legend) g += legendSvg(series, L, 14);
-    return g;
+    return g + words;
   }
   const tickW = Math.max(...yt.values.map((v) => textWidth(fmt(v), 12)));
   const L = Math.ceil(tickW) + 14; const R = 8; const T = (y.label || legend) ? 30 : 14; const B = spec.x?.label ? 50 : 32;
@@ -546,23 +614,40 @@ function barSvg(spec, data, W, H) {
     g += `<line class="fc-g${v === 0 ? ' fc-0' : ''}" x1="${L}" x2="${t1(W - R)}" y1="${t1(sy(v))}" y2="${t1(sy(v))}"/>`;
     g += txt(L - 8, sy(v) + 4, fmt(v), 'fc-tk', 'end');
   }
+  const tops = [];
   cats.forEach((c, i) => {
     const cx = L + band * i + band / 2;
     const size = textWidth(c, 12) > band - 4 ? 11 : 12;
     g += txt(cx, H - B + 18, c, size === 11 ? 'fc-tk fc-sm' : 'fc-tk', 'middle');
     series.forEach((s, k) => {
-      const tone = SERIES_TONES.includes(s.tone) ? s.tone : SERIES_TONES[Math.min(k, 2)];
-      const tc = Array.isArray(s.tones) && s.tones[i] ? s.tones[i] : tone;
       const v = s.values[i];
       const xx = cx - (barW * series.length) / 2 + barW * k;
-      g += `<rect class="fc-b fc-${tc}" x="${t1(xx + 1)}" y="${t1(Math.min(sy(0), sy(v)))}" width="${t1(barW - 2)}" height="${t1(Math.abs(sy(v) - sy(0)))}" rx="2"/>`;
-      if (!narrow || series.length === 1) g += txt(xx + barW / 2, Math.min(sy(0), sy(v)) - 6, fmtVal(v), 'fc-v', 'middle');
+      g += `<rect class="fc-b fc-${toneAt(s, k, i)}" x="${t1(xx + 1)}" y="${t1(Math.min(sy(0), sy(v)))}" width="${t1(barW - 2)}" height="${t1(Math.abs(sy(v) - sy(0)))}" rx="2"/>`;
+      // side by side on a phone the numbers get smaller, and are left off only where they don't fit over the bar
+      const label = fmtVal(v);
+      const small = narrow && series.length > 1;
+      if (!small || textWidth(label, 10.5) <= barW + 4) g += txt(xx + barW / 2, Math.min(sy(0), sy(v)) - 6, label, small ? 'fc-v fc-xs' : 'fc-v', 'middle');
+      tops.push([xx, xx + barW, Math.min(sy(0), sy(v)) - 18]);
     });
   });
+  // a reference value: a dotted line across, its words at the end with the most room above the bars
+  for (const m of marks) {
+    const yy = sy(m.y);
+    g += `<line class="fc-m" x1="${L}" x2="${t1(W - R)}" y1="${t1(yy)}" y2="${t1(yy)}"/>`;
+    if (!m.text) continue;
+    const w = textWidth(m.text, 12);
+    const clear = (x0, x1) => !tops.some(([a, b, top]) => a < x1 && x0 < b && top < yy + 2);
+    const right = clear(W - R - w - 4, W - R);
+    words += txt(right ? W - R - 2 : L + 4, yy - 6, m.text, 'fc-mt', right ? 'end' : 'start');
+  }
   if (spec.x?.label) g += txt((L + W - R) / 2, H - 8, spec.x.label, 'fc-ax', 'middle');
-  if (legend) g += legendSvg(series, L, 14);
-  else if (y.label) g += txt(0, 14, y.label, 'fc-ax');
-  return g;
+  if (y.label) g += txt(0, 14, y.label, 'fc-ax');
+  if (legend) {
+    // with a y label the legend moves to the right, so the two don't run into each other
+    const lw = series.reduce((sum, s) => sum + textWidth(s.name, 12) + 34, -20);
+    g += legendSvg(series, y.label ? Math.max(L + textWidth(y.label, 12) + 16, W - R - lw) : L, 14);
+  }
+  return g + words;
 }
 
 function legendSvg(series, x, y) {
@@ -634,8 +719,13 @@ export function figureSvg(spec, { size = 'wide', values, seed = 1 } = {}) {
   const label = escape(spec.title ?? '');
   if (spec.kind === 'flow') {
     const layout = spec.layout ?? 'right';
-    const dir = size === 'narrow' && layout === 'right' && spec.nodes.length > 3 ? 'down' : layout;
-    const f = flowSvg(spec, dir);
+    // on a phone a layered flow goes whichever way shrinks its words least (left to right wins a tie)
+    let f = flowSvg(spec, layout);
+    if (size === 'narrow' && layout !== 'loop') {
+      const other = flowSvg(spec, layout === 'right' ? 'down' : 'right');
+      const scale = (g) => Math.min(1, 340 / g.width);
+      if (scale(other) > scale(f) + 0.02 || (scale(other) >= scale(f) - 0.02 && layout === 'down' && other.width <= 340)) f = other;
+    }
     const max = size === 'narrow' ? 360 : 940;
     const w = Math.min(f.width, max);
     return `<svg class="fg" viewBox="${f.viewBox}" width="${t1(w)}" role="img" aria-label="${label}" style="max-width:100%;height:auto">${f.svg}</svg>`;
