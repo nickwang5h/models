@@ -1,7 +1,8 @@
 // Offline use and "add to home screen". Pages come fresh from the network when it answers in time, else from the copy kept here;
 // after install every card is fetched in the background, so the whole lattice reads offline. Progress stays in localStorage.
-const CACHE = 'models-v2';
-const SHELL = ['/', '/style.css', '/app.js', '/progress.mjs', '/quiz.mjs', '/display.mjs', '/keys.mjs', '/questions.json', '/ids.json', '/review', '/icon.svg',
+const CACHE = 'models-v3';
+const SHELL = ['/', '/style.css', '/app.js', '/progress.mjs', '/quiz.mjs', '/display.mjs', '/keys.mjs', '/list.mjs', '/daily.mjs', '/questions.json', '/ids.json', '/review', '/icon.svg',
+  '/fonts/inter-latin.woff2',
   '/icons/icon-192.png', '/manifest.webmanifest'];
 const WAIT = 3000;   // after this long without the network, the kept copy is shown
 const KATEX = 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/';
@@ -43,7 +44,7 @@ async function fresh(request) {
   return (await cache.match(request, {ignoreSearch: true})) ?? network;
 }
 
-// Files that never change under the same name (KaTeX and its fonts, the icons): the kept copy first.
+// Files that never change under the same name (KaTeX and its fonts, the icons, our font): the kept copy first.
 async function kept(request) {
   const cache = await caches.open(CACHE);
   const hit = await cache.match(request);
@@ -57,7 +58,7 @@ self.addEventListener('fetch', (event) => {
   const {request} = event;
   if (request.method !== 'GET') return;
   const url = new URL(request.url);
-  if (request.url.startsWith(KATEX) || (url.origin === self.location.origin && url.pathname.startsWith('/icons/'))) return event.respondWith(kept(request));
+  if (request.url.startsWith(KATEX) || (url.origin === self.location.origin && (url.pathname.startsWith('/icons/') || url.pathname.startsWith('/fonts/')))) return event.respondWith(kept(request));
   if (url.origin !== self.location.origin || url.pathname.startsWith('/api/')) return;   // confirmation links and the like stay out of the cache
   event.respondWith(fresh(request));
 });

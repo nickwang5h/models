@@ -10,8 +10,8 @@ test('a number answers the first question still open, and does nothing once all 
   const clicked = [];
   const option = (name) => ({click: () => clicked.push(name)});
   const open = {querySelectorAll: () => [option('a'), option('b'), option('c'), option('d')]};
-  const links = {'.steps a[rel="next"]': option('next'), '[data-random]': option('random')};
-  const page = (question) => ({querySelector: (selector) => (selector === '.q:not(.done)' ? question : links[selector] ?? null)});
+  const links = {'.pn a[rel="next"]': option('next'), '[data-random]': option('random')};
+  const page = (question) => ({querySelector: (selector) => (selector === '.q:not(.done):not([hidden])' ? question : links[selector] ?? null)});
   assert.equal(act('pick2', page(open)), true);
   assert.equal(act('pick0', page(null)), false);
   assert.equal(act('next', page(null)), true);

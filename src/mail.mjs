@@ -1,7 +1,8 @@
 // Email subscription to 今日一卡, ported from learn.wuhua.app (server/subscribe.ts, server/daily-mail.ts) to Cloudflare
 // Pages Functions: Web Crypto instead of node:crypto, Chinese messages, the card of the day instead of a word.
 //
-// Two steps, so nobody can sign up an address that is not theirs: POST /api/subscribe sends a confirmation link;
+// Two steps, so nobody can sign up an address that is not theirs: POST /api/subscribe sends a confirmation link
+// (GET /api/subscribe says whether subscription is open, so pages show the form only then);
 // GET /api/confirm adds the address to the Resend Segment (formerly Audience) the daily broadcast goes to.
 // POST /api/daily-mail, called once a day with a bearer token, sends the day's card to that Segment as one Resend
 // Broadcast named models-today-YYYY-MM-DD; a second call finds it by name and does nothing.
@@ -134,7 +135,9 @@ export function confirmationMail(from, email, link) {
 
 export function createSubscribeHandler({ env, fetcher = fetch, now = () => new Date() }) {
   return async (request) => {
-    if (request.method !== 'POST') return reply(405, '请用 POST。', { Allow: 'POST' });
+    // GET tells the page whether to show the form at all.
+    if (request.method === 'GET') return Response.json({ ok: true, open: configured(env) }, { headers: { 'Cache-Control': 'no-store' } });
+    if (request.method !== 'POST') return reply(405, '请用 POST。', { Allow: 'GET, POST' });
     const origin = new URL(request.url).origin;
     if (request.headers.get('origin') !== origin) return reply(403, '请在网站上提交。');
     if (request.headers.get('content-type')?.split(';')[0].trim().toLowerCase() !== 'application/json') return reply(415, '请用 JSON。');

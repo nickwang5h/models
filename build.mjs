@@ -1,9 +1,10 @@
-// Build dist/ from content/: one page per card and discipline, the home page, review, random and subscribe pages.
+// Build dist/ from content/: one page per card, the home page (and one per discipline), review, random and subscribe pages.
 // /today, /today.json, /feed.xml and /api/* are Pages Functions (functions/) that read dist/questions.json.
 import { cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { cardPage, disciplinePage, indexPage, reviewPage, validate } from './src/render.mjs';
+import { cardPage, homePage, listData, reviewPage, validate } from './src/render.mjs';
 import { subscribePage } from './src/today.mjs';
+import { dailyPick, utcDate } from './src/daily.mjs';
 
 const CONTENT = process.env.MODELS_CONTENT ?? 'content';
 const DIST = 'dist';
@@ -23,18 +24,20 @@ await rm(DIST, { recursive: true, force: true });
 await mkdir(join(DIST, 'm'), { recursive: true });
 await mkdir(join(DIST, 'd'), { recursive: true });
 await cp('public', DIST, { recursive: true });
+await cp('src/daily.mjs', join(DIST, 'daily.mjs'));   // the browser picks today's card the same way the Functions do
 
-const order = index.disciplines.flatMap((d) => d.models.map((m) => m.id));
-for (const [n, id] of order.entries()) {
-  await writeFile(join(DIST, 'm', `${id}.html`), cardPage(cards[id], { cards, index, prev: order[n - 1] ?? null, next: order[n + 1] ?? null }));
-}
-for (const discipline of index.disciplines.filter((d) => d.models.length)) {
-  await writeFile(join(DIST, 'd', `${discipline.id}.html`), disciplinePage(discipline, { cards, index }));
-}
-await writeFile(join(DIST, 'index.html'), indexPage(index));
-await writeFile(join(DIST, 'review.html'), reviewPage());
-await writeFile(join(DIST, 'subscribe.html'), subscribePage());
-await writeFile(join(DIST, 'random.html'), indexPage(index).replace('<section class="home">', '<section class="home" data-go-random>'));
+const list = listData(index, cards);
+const order = list.map((c) => c.id);
+const total = order.length;
+// The first paint of the home page shows the build day's card; app.js redraws it for the reader's day.
+const date = utcDate();
+const today = { id: dailyPick(order, date).id, date };
+for (const id of order) await writeFile(join(DIST, 'm', `${id}.html`), cardPage(cards[id], { cards, index }));
+for (const d of index.disciplines) await writeFile(join(DIST, 'd', `${d.id}.html`), homePage(index, list, { discipline: d.id, today }));
+await writeFile(join(DIST, 'index.html'), homePage(index, list, { today }));
+await writeFile(join(DIST, 'random.html'), homePage(index, list, { today, random: true }));
+await writeFile(join(DIST, 'review.html'), reviewPage(total));
+await writeFile(join(DIST, 'subscribe.html'), subscribePage(total));
 await writeFile(join(DIST, 'ids.json'), JSON.stringify(order));
-await writeFile(join(DIST, 'questions.json'), JSON.stringify(Object.fromEntries(order.map((id) => [id, { name: cards[id].name, en: cards[id].en, discipline: cards[id].discipline, one_line: cards[id].one_line, questions: cards[id].questions }]))));
-console.log(`构建 ${order.length} 张卡、${index.disciplines.filter((d) => d.models.length).length} 个学科到 ${DIST}/`);
+await writeFile(join(DIST, 'questions.json'), JSON.stringify(Object.fromEntries(order.map((id) => [id, { name: cards[id].name, en: cards[id].en, discipline: cards[id].discipline, one_line: cards[id].one_line, questions: cards[id].use.questions }]))));
+console.log(`构建 ${total} 张卡、${index.disciplines.length} 个学科到 ${DIST}/`);

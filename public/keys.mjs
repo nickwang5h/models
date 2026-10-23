@@ -10,13 +10,13 @@ export function keyAction(key) {
 export function act(action, document) {
   const press = (element) => { if (!element) return false; element.click(); return true; };
   if (action.startsWith('pick')) {
-    const open = document.querySelector('.q:not(.done)');
+    const open = document.querySelector('.q:not(.done):not([hidden])');
     if (!open) return false;
     open.scrollIntoView?.({block: 'nearest'});
     return press(open.querySelectorAll('button.opt')[Number(action.slice(4))]);
   }
-  if (action === 'previous') return press(document.querySelector('.steps a[rel="prev"]'));
-  if (action === 'next') return press(document.querySelector('.steps a[rel="next"]'));
+  if (action === 'previous') return press(document.querySelector('.pn a[rel="prev"]'));
+  if (action === 'next') return press(document.querySelector('.pn a[rel="next"]'));
   if (action === 'random') return press(document.querySelector('[data-random]'));
   return false;
 }

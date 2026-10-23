@@ -23,9 +23,8 @@ test('every card in content/ passes the schema check', async () => {
   assert.deepEqual(validate(index, cards), []);
 });
 
-test('every card is listed exactly once in index.json, and every related id names a model in the catalog', async () => {
+test('every card is listed exactly once in index.json, and every card it is read with exists', async () => {
   const { index, cards } = await load();
-  const listed = index.disciplines.flatMap((d) => d.models.map((m) => m.id));
-  assert.deepEqual([...listed].sort(), Object.keys(cards).sort());
-  for (const card of Object.values(cards)) for (const link of card.related) assert.ok(cards[link.id] || index.names?.[link.id], `${card.id} → ${link.id}`);
+  assert.deepEqual(index.cards.map((c) => c.id).sort(), Object.keys(cards).sort());
+  for (const card of Object.values(cards)) for (const w of card.use.with) assert.ok(cards[w.id], `${card.id} → ${w.id}`);
 });

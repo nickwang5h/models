@@ -30,7 +30,8 @@ export function createTodayHandler({ load, now = () => new Date() }) {
     if (asked !== null && asked === current) return redirect(request.url, '/today');
     if (asked !== null && (!isDate(asked) || asked > current || asked < EPOCH || asked < addDays(current, -BACK_DAYS))) return redirect(request.url, '/today');
     const date = asked ?? current;
-    const html = todayPage(today(await load(), date), current);
+    const data = await load();
+    const html = todayPage(today(data, date), current, Object.keys(data).length);
     return send(request, html, 'text/html; charset=utf-8', date === current ? fresh(clock) : settled);
   };
 }

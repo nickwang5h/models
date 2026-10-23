@@ -1,47 +1,48 @@
 // The pages and the feed around 今日一卡. /today and /feed.xml are rendered per request by Pages Functions
 // (functions/), so this file avoids KaTeX and Markdown: the day shows the card's summary and one question, not its body.
 import { escape, questionHtml } from '../public/quiz.mjs';
-import { HUES, reportUrl, shell } from './shell.mjs';
+import { reportUrl, shell } from './shell.mjs';
 import { EPOCH, addDays, recentDates } from './daily.mjs';
 
 export const SITE = 'https://models.wuhua.app';
 export const FEED_DAYS = 14;
 export const BACK_DAYS = 30;   // /today?date= reaches this far back
 
-// One day's page. `current` is today's UTC date, so the page knows whether a later day exists yet.
-export function todayPage(day, current) {
+// One day's page. `current` is today's UTC date, so the page knows whether a later day exists yet; `total` is the
+// number of cards, for the top bar.
+export function todayPage(day, current, total) {
   const { date, id, card, questionIndex, question } = day;
   const earlier = addDays(date, -1);
   const later = addDays(date, 1);
+  const label = (d) => `${Number(d.slice(5, 7))} 月 ${Number(d.slice(8, 10))} 日`;
   const prev = earlier >= EPOCH && earlier >= addDays(current, -BACK_DAYS)
-    ? `<a href="/today?date=${earlier}" rel="prev">← ${earlier}</a>` : '<span></span>';
-  const next = later <= current ? `<a href="${later === current ? '/today' : `/today?date=${later}`}" rel="next">${later} →</a>` : '<span></span>';
-  const body = `<section class="today">
-<p class="crumb">今日一卡 · ${escape(date)}${date === current ? '' : ` · <a href="/today">回到今天</a>`}</p>
-<h1>${escape(card.name)}<small>${escape(card.en ?? '')}</small></h1>
-<p class="lead">${escape(card.one_line)}</p>
-<p><a href="/m/${escape(id)}">读整张卡 →</a></p>
-<section class="quiz" id="quiz" data-today-quiz><h2>今天的一道题</h2>${questionHtml(question, `${id}-${questionIndex}`)}</section>
-<p class="tally">每天一张，所有人看到的都一样，按 UTC 日期更换。也可以<a href="/subscribe">用邮件订阅</a>，或者用阅读器订阅 <a href="/feed.xml">Atom</a>。</p>
-<nav class="steps">${prev}${next}</nav>
+    ? `<a href="/today?date=${earlier}" rel="prev"><span>←</span><b>${label(earlier)}</b></a>` : '';
+  const next = later <= current ? `<a class="r" href="${later === current ? '/today' : `/today?date=${later}`}" rel="next"><span>→</span><b>${label(later)}</b></a>` : '';
+  const body = `<section class="plainpage day wrap">
+<a class="today" href="/m/${escape(id)}"><div class="date"><b>${label(date)}</b></div>
+<h1><span class="nm">${escape(card.name)}</span><span class="en">${escape(card.en ?? '')}</span></h1>
+<p class="one">${escape(card.one_line)}</p><p class="ex">读整张卡<span class="arr" aria-hidden="true">→</span></p></a>
+<div class="qs" data-today-quiz>${questionHtml(question, `${id}-${questionIndex}`)}</div>
+<nav class="pn">${prev}${next}</nav>
 </section>`;
-  return shell({ title: `今日一卡：${card.name} · 思维模型`, description: card.one_line, body, hue: HUES[card.discipline], report: reportUrl(id) });
+  return shell({ title: `今日一卡：${card.name} · 思维模型`, description: card.one_line, body, total, report: reportUrl(id) });
 }
 
-export function subscribePage() {
-  const body = `<section class="subscribe">
-<h1>订阅今日一卡</h1>
-<p class="lead">每天一封邮件：一张卡的一句话、一道题，和读整张卡的链接。</p>
+export function subscribePage(total) {
+  const body = `<section class="plainpage wrap">
+<h1>每天一张，发到邮箱</h1>
+<p class="one">一张卡的一句话、一道题，和读整张卡的链接。</p>
+<div class="sub">
 <form data-subscribe>
-<label for="email">邮箱</label>
-<input id="email" name="email" type="email" required maxlength="254" autocomplete="email" placeholder="you@example.com">
-<span class="trap" aria-hidden="true"><label>网站 <input name="website" tabindex="-1" autocomplete="off"></label></span>
+<input id="email" name="email" type="email" required maxlength="254" autocomplete="email" aria-label="邮箱" placeholder="you@example.com">
+<span class="trap" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></span>
 <button type="submit">订阅</button>
 </form>
-<p class="tally" data-subscribe-status role="status" aria-live="polite"></p>
-<p class="tally">会先收到一封确认信，点开里面的链接才算订阅。地址只保存在发信服务 Resend，每封信都有退订链接。不想留邮箱，也可以用阅读器订阅 <a href="/feed.xml">Atom</a>，或者每天打开 <a href="/today">今日一卡</a>。</p>
+<p class="done" data-subscribe-status role="status" aria-live="polite"></p>
+<p class="rss">先收到一封确认信，点开链接才算订阅；每封信都能退订。不想留邮箱，可以用 <a href="/feed.xml">RSS</a>。</p>
+</div>
 </section>`;
-  return shell({ title: '订阅 · 思维模型', description: '每天一张思维模型卡，发到你的邮箱', body });
+  return shell({ title: '订阅 · 思维模型', description: '每天一张思维模型卡，发到你的邮箱', body, total });
 }
 
 export const escapeXml = (text) => String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');

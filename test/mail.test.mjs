@@ -51,10 +51,16 @@ test('a confirmation token carries the address for 48 hours and nothing else ver
   for (const junk of ['', '.', 'a.b.c', '***.***', null]) assert.equal(await verifyToken(junk, SECRET, NOW), undefined);
 });
 
+test('GET says whether subscription is open, so the page shows the form only when it works', async () => {
+  const open = await (await createSubscribeHandler({ env })(new Request(`${SITE}/api/subscribe`))).json();
+  const closed = await (await createSubscribeHandler({ env: {} })(new Request(`${SITE}/api/subscribe`))).json();
+  assert.deepEqual([open.open, closed.open], [true, false]);
+});
+
 test('subscribe refuses wrong methods, other origins, non-JSON and malformed input', async () => {
   const { fetcher, calls } = fake({ status: 200 });
   const handler = createSubscribeHandler({ env, fetcher, now });
-  assert.equal((await handler(new Request(`${SITE}/api/subscribe`))).status, 405);
+  assert.equal((await handler(new Request(`${SITE}/api/subscribe`, { method: 'PUT' }))).status, 405);
   assert.equal((await handler(post({ email: 'a@b.co', website: '' }, { origin: 'https://evil.example' }))).status, 403);
   assert.equal((await handler(post({ email: 'a@b.co', website: '' }, { type: 'text/plain' }))).status, 415);
   assert.equal((await handler(post('{nope'))).status, 400);
