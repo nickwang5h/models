@@ -143,5 +143,59 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "问到第三层，答案落在篮子放的位置",
+  "caption": "第一层是症状，第三层手边就能改；再往下问，就落到改不了的性格上。",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "领口发黄",
+    "sub": "换洗涤剂没用"
+   },
+   {
+    "id": "b",
+    "label": "汗渍洗不掉"
+   },
+   {
+    "id": "c",
+    "label": "隔夜干透"
+   },
+   {
+    "id": "d",
+    "label": "篮子在卧室",
+    "sub": "挪到浴室门口",
+    "tone": "accent"
+   },
+   {
+    "id": "e",
+    "label": "不够自律",
+    "sub": "问太深，改不了",
+    "tone": "muted"
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b",
+    "label": "为什么"
+   },
+   {
+    "from": "b",
+    "to": "c"
+   },
+   {
+    "from": "c",
+    "to": "d"
+   },
+   {
+    "from": "d",
+    "to": "e",
+    "dashed": true,
+    "tone": "muted"
+   }
+  ]
  }
 }

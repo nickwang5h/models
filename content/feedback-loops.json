@@ -147,5 +147,44 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "loop",
+  "title": "声音绕一圈回到话筒，就推着下一圈更响",
+  "caption": "每绕一圈响一倍，三圈就是八倍；话筒挪开半米，回到话筒的声音变小，啸叫就停。",
+  "center": "增强回路",
+  "centerSub": "每圈 ×2",
+  "nodes": [
+   {
+    "id": "mic",
+    "label": "话筒收音"
+   },
+   {
+    "id": "amp",
+    "label": "音箱放大"
+   },
+   {
+    "id": "out",
+    "label": "声音更响",
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "mic",
+    "to": "amp"
+   },
+   {
+    "from": "amp",
+    "to": "out"
+   },
+   {
+    "from": "out",
+    "to": "mic",
+    "label": "再进话筒",
+    "tone": "accent"
+   }
+  ]
  }
 }

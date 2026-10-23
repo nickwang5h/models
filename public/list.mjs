@@ -51,9 +51,10 @@ export function bands(cards, options = {}) {
 
 export const dayLabel = (date) => `${Number(date.slice(5, 7))} 月 ${Number(date.slice(8, 10))} 日`;
 
-// Today's card at the top of the home page; app.js redraws it for the reader's own day.
-export function leadHtml(card, date, discipline) {
+// Today's card at the top of the home page; app.js redraws it for the reader's own day. `fig` is the card's figure,
+// drawn by figure.mjs.
+export function leadHtml(card, date, discipline, fig = '') {
   return `<div class="date"><b>${dayLabel(date)}</b> · ${escape(discipline)}</div>
 <h1><span class="nm">${escape(card.name)}</span><span class="en">${escape(card.en)}</span></h1>
-<p class="one">${escape(card.one_line)}</p><p class="ex">${escape(card.lede)}<span class="arr" aria-hidden="true">→</span></p>`;
+<p class="one">${escape(card.one_line)}</p>${fig}<p class="ex">${escape(card.lede)}<span class="arr" aria-hidden="true">→</span></p>`;
 }

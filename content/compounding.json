@@ -147,5 +147,76 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "利息并回本金，三十年后是取走利息的四倍多",
+  "caption": "一万元，同样的年利率。拖动年数：头几年两条线几乎重合，差距在后面一年比一年大。",
+  "x": {
+   "label": "年"
+  },
+  "y": {
+   "format": "cn"
+  },
+  "params": [
+   {
+    "id": "r",
+    "label": "年利率",
+    "min": 1,
+    "max": 20,
+    "step": 1,
+    "value": 10,
+    "unit": "%"
+   },
+   {
+    "id": "yrs",
+    "label": "年数",
+    "min": 1,
+    "max": 50,
+    "step": 1,
+    "value": 30
+   }
+  ],
+  "model": {
+   "steps": "yrs",
+   "init": {
+    "c": 10000,
+    "s": 10000
+   },
+   "next": {
+    "c": "c*(1+r/100)",
+    "s": "s + 10000*r/100"
+   }
+  },
+  "series": [
+   {
+    "name": "利息并回本金",
+    "expr": "c",
+    "tone": "accent"
+   },
+   {
+    "name": "每年取走利息",
+    "expr": "s",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "readouts": [
+   {
+    "label": "利息并回本金",
+    "expr": "c",
+    "format": "cn"
+   },
+   {
+    "label": "每年取走利息",
+    "expr": "s",
+    "format": "cn"
+   },
+   {
+    "label": "利息生出的利息",
+    "expr": "c-s",
+    "format": "cn"
+   }
+  ]
  }
 }

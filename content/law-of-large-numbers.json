@@ -147,5 +147,62 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "罚得越多，命中率越贴近七成",
+  "caption": "六个同样水平的球员各罚一个赛季。前几罚，什么比例都有；几百罚以后，六条线挤到一起。点「重抽」换一批。",
+  "x": {
+   "label": "罚球次数"
+  },
+  "y": {
+   "label": "累计命中率",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "shots",
+    "label": "罚球次数",
+    "min": 20,
+    "max": 600,
+    "step": 20,
+    "value": 600
+   },
+   {
+    "id": "p",
+    "label": "真实命中率",
+    "min": 10,
+    "max": 90,
+    "step": 5,
+    "value": 70,
+    "unit": "%"
+   }
+  ],
+  "runs": 6,
+  "model": {
+   "steps": "shots",
+   "init": {
+    "h": 0
+   },
+   "next": {
+    "h": "h + flip(p/100)"
+   }
+  },
+  "series": [
+   {
+    "name": "",
+    "expr": "h/k*100",
+    "tone": "accent",
+    "from": 1
+   }
+  ],
+  "marks": [
+   {
+    "y": "p",
+    "text": "真实命中率"
+   }
+  ]
  }
 }

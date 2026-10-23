@@ -23,6 +23,7 @@ if (errors.length) {
 await rm(DIST, { recursive: true, force: true });
 await mkdir(join(DIST, 'm'), { recursive: true });
 await mkdir(join(DIST, 'd'), { recursive: true });
+await mkdir(join(DIST, 'fig'), { recursive: true });
 await cp('public', DIST, { recursive: true });
 await cp('src/daily.mjs', join(DIST, 'daily.mjs'));   // the browser picks today's card the same way the Functions do
 
@@ -33,9 +34,12 @@ const total = order.length;
 const date = utcDate();
 const today = { id: dailyPick(order, date).id, date };
 for (const id of order) await writeFile(join(DIST, 'm', `${id}.html`), cardPage(cards[id], { cards, index }));
-for (const d of index.disciplines) await writeFile(join(DIST, 'd', `${d.id}.html`), homePage(index, list, { discipline: d.id, today }));
-await writeFile(join(DIST, 'index.html'), homePage(index, list, { today }));
-await writeFile(join(DIST, 'random.html'), homePage(index, list, { today, random: true }));
+// Each figure on its own, for the home page when the reader's day has a different card than the build's.
+for (const id of order) if (cards[id].figure) await writeFile(join(DIST, 'fig', `${id}.json`), JSON.stringify(cards[id].figure));
+const figure = cards[today.id].figure ?? null;
+for (const d of index.disciplines) await writeFile(join(DIST, 'd', `${d.id}.html`), homePage(index, list, { discipline: d.id, today, figure }));
+await writeFile(join(DIST, 'index.html'), homePage(index, list, { today, figure }));
+await writeFile(join(DIST, 'random.html'), homePage(index, list, { today, figure, random: true }));
 await writeFile(join(DIST, 'review.html'), reviewPage(total));
 await writeFile(join(DIST, 'subscribe.html'), subscribePage(total));
 await writeFile(join(DIST, 'ids.json'), JSON.stringify(order));

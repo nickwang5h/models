@@ -43,7 +43,8 @@ npm run deploy    # 构建，然后 wrangler pages deploy dist --project-name mo
 | `src/today.mjs`、`src/handlers.mjs` | `/today` 页面、Atom 源和它们的请求处理 |
 | `src/mail.mjs` | 订阅、确认和每日邮件（Resend） |
 | `functions/` | Cloudflare Pages Functions，只把请求转给 `src/` 里的处理函数 |
-| `public/` | 浏览器脚本、样式、字体（Inter，SIL OFL）、图标、Service Worker、`_redirects`（合并或删掉的旧卡跳到新卡） |
+| `public/` | 浏览器脚本、样式、字体（Inter，SIL OFL）、图标、Service Worker、`_redirects`（合并或删掉的旧卡跳到新卡）；`figure.mjs` 画卡片的图，构建和浏览器共用 |
+| `scripts/set-figure.mjs` | 检查一张图并写进卡片 |
 | `ops/models-daily.py` | 每日 Telegram 推送，同时触发每日邮件 |
 | `test/` | `node:test` 测试 |
 
@@ -65,6 +66,7 @@ npm run deploy    # 构建，然后 wrangler pages deploy dist --project-name mo
 | `use.ask` | 2–4 句遇事时问自己的话 |
 | `use.with` | 2–4 个 `{id, sees}`：和这张卡一起看时会看到什么；`id` 必须是已有的卡，不能指向自己 |
 | `use.questions` | 至少 2 道 `{stem, question, explain, options}`；每道 4 个 `{text, correct, feedback}`，恰好一个正确；题面和选项不出现模型名 |
+| `figure` | 可选：一张图，流程图、表格、图表或可拖动的演示，见 [docs/figures.md](docs/figures.md) |
 
 `index.json` 的 `cards` 每张卡一条：`name`、`en`、`discipline`、`one_line` 与卡片一致；`rank` 是名次（1 到卡片总数各一次）；`tier` 是核心（core）或进阶（adv）；`story`、`year` 是开场故事的一句话和年份。`npm run build` 和 `npm test`（`test/content.test.mjs`）都会跑同一个 `validate()`，不合格会列出卡片 id 和问题。
 

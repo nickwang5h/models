@@ -143,5 +143,78 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "两种开局，一年后站到同一处",
+  "caption": "拖动两个换店比例：终点跟着移动；开局在哪，只决定走多久。",
+  "x": {
+   "label": "月"
+  },
+  "y": {
+   "label": "甲店份额",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "甲店每月流向乙",
+    "min": 5,
+    "max": 40,
+    "step": 5,
+    "value": 10,
+    "unit": "%"
+   },
+   {
+    "id": "q",
+    "label": "乙店每月流向甲",
+    "min": 5,
+    "max": 40,
+    "step": 5,
+    "value": 20,
+    "unit": "%"
+   }
+  ],
+  "model": {
+   "steps": 12,
+   "init": {
+    "a": 1,
+    "b": 0
+   },
+   "next": {
+    "a": "a*(1-p/100) + (1-a)*q/100",
+    "b": "b*(1-p/100) + (1-b)*q/100"
+   }
+  },
+  "series": [
+   {
+    "name": "开业全在甲店",
+    "expr": "a*100",
+    "tone": "accent",
+    "dots": "small"
+   },
+   {
+    "name": "开业全在乙店",
+    "expr": "b*100",
+    "tone": "ink",
+    "dots": "small"
+   }
+  ],
+  "marks": [
+   {
+    "y": "q/(p+q)*100",
+    "text": "进出相抵"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "甲店长期份额",
+    "expr": "q/(p+q)*100",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
  }
 }

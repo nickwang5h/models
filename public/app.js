@@ -82,6 +82,11 @@ function home(data) {
   if (lead && (lead.getAttribute('href') !== `/m/${todayId}` || lead.querySelector('.date b')?.textContent !== dayLabel(date))) {
     lead.href = `/m/${todayId}`;
     lead.innerHTML = leadHtml(byId[todayId], date, titles[byId[todayId].discipline]);
+    if (byId[todayId].fig) {
+      Promise.all([fetch(`/fig/${todayId}.json`).then((r) => r.json()), import('./figure.mjs')])
+        .then(([spec, { figureHtml }]) => { lead.querySelector('.one')?.insertAdjacentHTML('afterend', figureHtml(spec)); })
+        .catch(() => { /* offline or missing: the card reads fine without its figure */ });
+    }
   }
   const past = document.querySelector('[data-past]');
   if (past) {

@@ -4,6 +4,7 @@ import { Marked } from 'marked';
 import { escape, questionHtml } from '../public/quiz.mjs';
 import { USES, bands, leadHtml } from '../public/list.mjs';
 import { reportUrl, shell } from './shell.mjs';
+import { figureHtml, figureProblems } from '../public/figure.mjs';
 
 const md = new Marked({ gfm: true });
 md.use({ renderer: { html: (token) => escape(token.text ?? '') } });
@@ -78,6 +79,7 @@ export function validate(index, cards) {
       else if (!cards[w?.id]) errors.push(`${id}：use.with 里的 ${w?.id} 不存在`);
       if (!filled(w?.sees)) errors.push(`${id}：use.with 里的 ${w?.id} 缺 sees`);
     }
+    if (card.figure != null) for (const problem of figureProblems(card.figure)) errors.push(`${id}：${problem}`);
     const questions = use.questions ?? [];
     if (questions.length < 2) errors.push(`${id}：至少要 2 道题`);
     questions.forEach((q, n) => {
@@ -121,7 +123,7 @@ export function lede(scene) {
 export function listData(index, cards) {
   return [...index.cards].sort((a, b) => a.rank - b.rank).map((e) => ({
     id: e.id, name: e.name, en: e.en, discipline: e.discipline, one_line: e.one_line, rank: e.rank, story: e.story ?? '',
-    uses: cards[e.id].use.uses.map((u) => u.use), lede: lede(cards[e.id].shallow.scene),
+    uses: cards[e.id].use.uses.map((u) => u.use), lede: lede(cards[e.id].shallow.scene), fig: cards[e.id].figure != null,
   }));
 }
 
@@ -163,7 +165,7 @@ ${toc('s-quiz', `<span class="tq" aria-label="${use.questions.length} 道题">${
 <section class="story" id="s-scene">
 <div class="col scene">${markdown(shallow.scene)}</div>
 <div class="col plain">${markdown(shallow.plain)}</div>
-${card.id === 'compounding' ? COMPOUNDING_DEMO : ''}
+${card.figure ? figureHtml(card.figure, { live: true, id: card.id }) : ''}
 </section>
 
 <section class="why">
@@ -197,38 +199,21 @@ ${next ? `<a class="r" href="/m/${escape(next.id)}" rel="next"><span>${escape(di
 </div>
 </div>`;
   const math = /\$/.test([shallow.scene, shallow.plain, deep.mechanism, deep.origin, deep.limits, ...use.examples.map((e) => e.text), ...use.uses.map((u) => u.text), ...use.with.map((w) => w.sees)].join(''));
-  const script = card.id === 'compounding' ? '<script type="module" src="/compound.js"></script>' : '';
+  const script = card.figure?.kind === 'demo' ? '<script type="module" src="/figs.js"></script>' : '';
   return shell({ title: `${card.name} · 思维模型`, description: card.one_line, body, total: index.cards.length, math, script, report: reportUrl(card.id) });
 }
-
-// Ten thousand yuan, compound against simple interest; public/compound.js draws it.
-const COMPOUNDING_DEMO = `<figure class="demo" data-demo>
-<div class="dh"><span>一万元，两种算法</span><button class="reset" type="button" hidden>还原</button></div>
-<div class="db">
-<div class="ctl">
-<label><span class="lv">年利率<output data-o="r">10%</output></span><input data-i="r" type="range" min="1" max="20" step="1" value="10"></label>
-<label><span class="lv">年数<output data-o="n">30</output></span><input data-i="n" type="range" min="1" max="50" step="1" value="30"></label>
-<div class="rd">
-<div><span class="sw"></span><span>利息并回本金</span><b data-v="c"></b></div>
-<div><span class="sw s"></span><span>每年取走利息</span><b data-v="s"></b></div>
-<div><span class="sw a"></span><span>利息生出的利息</span><b data-v="d"></b></div>
-</div>
-</div>
-<div class="chart"><svg viewBox="0 0 640 330" role="img" aria-label="两种算法的账户金额随年数变化"></svg></div>
-</div>
-</figure>`;
 
 const SEARCH_ICON = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg>';
 
 // The home page: today's card, then every card by rank with search and filters. `discipline` pre-selects one (/d/<id>);
-// `today` is {id, date} for the first paint.
-export function homePage(index, list, { discipline = null, today, random = false } = {}) {
+// `today` is {id, date} for the first paint, and `figure` today's figure, if the card has one.
+export function homePage(index, list, { discipline = null, today, figure = null, random = false } = {}) {
   const short = Object.fromEntries(index.disciplines.map((d) => [d.id, d.short]));
   const title = Object.fromEntries(index.disciplines.map((d) => [d.id, d.title]));
   const first = list.find((c) => c.id === today.id);
   const shown = discipline ? list.filter((c) => c.discipline === discipline) : list;
   const body = `<section class="lead wrap"${random ? ' data-go-random' : ''}>
-<a class="today" href="/m/${escape(first.id)}" data-lead>${leadHtml(first, today.date, title[first.discipline])}</a>
+<a class="today" href="/m/${escape(first.id)}" data-lead>${leadHtml(first, today.date, title[first.discipline], figure ? figureHtml(figure) : '')}</a>
 <aside class="sub">
 <div data-mail hidden><h2>每天一张，发到邮箱</h2>
 <form data-subscribe><input name="email" type="email" required maxlength="254" autocomplete="email" aria-label="邮箱" placeholder="you@example.com"><span class="trap" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></span><button type="submit">订阅</button></form>
