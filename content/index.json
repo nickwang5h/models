@@ -96,26 +96,26 @@
    "story": "1876 年达尔文写自传，记下“金规则”：遇到与自己结论相反的事实、观察和想法立刻记下"
   },
   {
-   "id": "opportunity-cost",
-   "name": "机会成本",
-   "en": "Opportunity Cost",
-   "discipline": "economics",
-   "one_line": "资源不够分，选了这样就做不成那样，选择的代价是放弃的最好的那个备选。",
-   "rank": 4,
-   "tier": "core",
-   "year": "1953",
-   "story": "1953 年 4 月 16 日艾森豪威尔《和平的机会》演讲：一架重型轰炸机的钱抵三十多所学校、两座发电厂或两所医院"
-  },
-  {
    "id": "law-of-large-numbers",
    "name": "大数定律与小样本",
    "en": "Law of Large Numbers",
    "discipline": "math",
    "one_line": "独立重复的次数越多，比例越稳；次数少时，什么极端比例都出得来。",
-   "rank": 5,
+   "rank": 4,
    "tier": "core",
    "year": "1940",
    "story": "1940 年起克里奇在德占丹麦被拘禁期间投硬币一万次，前十次四个正面，一万次正面 5067 次（50.67%）"
+  },
+  {
+   "id": "opportunity-cost",
+   "name": "机会成本",
+   "en": "Opportunity Cost",
+   "discipline": "economics",
+   "one_line": "资源不够分，选了这样就做不成那样，选择的代价是放弃的最好的那个备选。",
+   "rank": 5,
+   "tier": "core",
+   "year": "1953",
+   "story": "1953 年 4 月 16 日艾森豪威尔《和平的机会》演讲：一架重型轰炸机的钱抵三十多所学校、两座发电厂或两所医院"
   },
   {
    "id": "expected-value",
@@ -129,26 +129,26 @@
    "story": "2015 年第 49 届超级碗海鹰队在一码线选择传球被巴特勒抄截"
   },
   {
-   "id": "prisoners-dilemma",
-   "name": "囚徒困境",
-   "en": "Prisoner's Dilemma",
-   "discipline": "games",
-   "one_line": "每个人单看自己都该背离合作，凑在一起，大家反而都比合作时更差。",
-   "rank": 7,
-   "tier": "core",
-   "year": "1970",
-   "story": "1970 年尼克松签署法律禁止香烟电视和广播广告，1971 年生效，烟草商同时撤出这两个渠道"
-  },
-  {
    "id": "diminishing-returns",
    "name": "边际收益递减",
    "en": "Diminishing Returns",
    "discipline": "economics",
    "one_line": "同样多加一份投入，新增的成果却一次比一次少，前提是其他条件不变。",
-   "rank": 8,
+   "rank": 7,
    "tier": "core",
    "year": "1843",
    "story": "1843 年起罗瑟姆斯特 Broadbalk 小麦长期施肥试验，1968–2016 年数据显示氮肥增产曲线逐渐变平"
+  },
+  {
+   "id": "prisoners-dilemma",
+   "name": "囚徒困境",
+   "en": "Prisoner's Dilemma",
+   "discipline": "games",
+   "one_line": "每个人单看自己都该背离合作，凑在一起，大家反而都比合作时更差。",
+   "rank": 8,
+   "tier": "core",
+   "year": "1970",
+   "story": "1970 年尼克松签署法律禁止香烟电视和广播广告，1971 年生效，烟草商同时撤出这两个渠道"
   },
   {
    "id": "feedback-loops",
@@ -348,15 +348,15 @@
    "story": "2016 年 9 月 8 日美国消费者金融保护局披露富国银行员工为完成开户指标私开账户，罚款 1 亿美元"
   },
   {
-   "id": "marginal-thinking",
-   "name": "边际思维",
-   "en": "Marginal Thinking",
+   "id": "economies-of-scale",
+   "name": "规模经济",
+   "en": "Economies of Scale",
    "discipline": "economics",
-   "one_line": "多做一步值不值，只比这一步新增的收入和成本；已付的钱和平均数都不进账。",
+   "one_line": "产量越大，每件分到的固定花费越少；组织大过一定程度，协调又把节省吃回去。",
    "rank": 27,
    "tier": "core",
-   "year": "1973",
-   "story": "1973 年布兰尼夫把达拉斯—休斯敦票价降到 13 美元，西南航空推出 26 美元送威士忌"
+   "year": "1913",
+   "story": "1913 年福特高地公园工厂启用移动装配线，T 型车大批量生产、售价大降"
   },
   {
    "id": "base-rate",
@@ -370,37 +370,37 @@
    "story": "1999 年萨莉·克拉克案，梅多作证“七千三百万分之一”，2001 年皇家统计学会指出算错"
   },
   {
-   "id": "avoid-ruin",
-   "name": "避免毁灭",
-   "en": "Avoiding Ruin",
-   "discipline": "investing",
-   "one_line": "平均赚得再多，只要有一次失败会让你出局，就先防这一次，再谈收益。",
-   "rank": 29,
-   "tier": "core",
-   "year": "1995",
-   "story": "1995 年利森在新加坡替巴林银行做日经期货，藏亏于 88888 账户，亏损约 8.27 亿英镑超过全部资本，巴林破产"
-  },
-  {
    "id": "sunk-cost",
    "name": "沉没成本",
    "en": "Sunk Cost",
    "discipline": "economics",
    "one_line": "已经花掉、收不回的钱，在两条路上都一样；该比的是从今天起各条路还剩什么。",
-   "rank": 30,
+   "rank": 29,
    "tier": "core",
    "year": "1962",
    "story": "1962 年英法签约合造协和超音速客机；1964 年英国工党政府想退出，条约没有退出条款；70 多架意向订单约 1973 年全部取消，1976 年载客、2003 年退役，共造 20 架"
   },
   {
-   "id": "time-delays",
-   "name": "时间延迟",
-   "en": "Time Delays",
-   "discipline": "systems",
-   "one_line": "动作要隔一阵才见效，人就会趁等的时候反复加码，把系统推过目标，再推回来。",
+   "id": "social-proof",
+   "name": "社会认同",
+   "en": "Social Proof",
+   "discipline": "psychology",
+   "one_line": "拿不准时人会把别人的选择当线索，可跟随的人再多，也未必有谁真的查证过。",
+   "rank": 30,
+   "tier": "core",
+   "year": "1968",
+   "story": "1968 年拉塔内与达利烟雾实验：有冷漠同伴时报告率从 75% 降到 10%"
+  },
+  {
+   "id": "marginal-thinking",
+   "name": "边际思维",
+   "en": "Marginal Thinking",
+   "discipline": "economics",
+   "one_line": "多做一步值不值，只比这一步新增的收入和成本；已付的钱和平均数都不进账。",
    "rank": 31,
    "tier": "core",
-   "year": "1989",
-   "story": "1989 年斯特曼发表啤酒游戏实验：需求一次性翻倍引发供应链缺货与积压"
+   "year": "1973",
+   "story": "1973 年布兰尼夫把达拉斯—休斯敦票价降到 13 美元，西南航空推出 26 美元送威士忌"
   },
   {
    "id": "circle-of-competence",
@@ -414,26 +414,37 @@
    "story": "1999 年 7 月太阳谷聚会上巴菲特解释为何不碰科技股，以汽车与航空业为例"
   },
   {
-   "id": "economies-of-scale",
-   "name": "规模经济",
-   "en": "Economies of Scale",
-   "discipline": "economics",
-   "one_line": "产量越大，每件分到的固定花费越少；组织大过一定程度，协调又把节省吃回去。",
+   "id": "loss-aversion",
+   "name": "损失厌恶",
+   "en": "Loss Aversion",
+   "discipline": "psychology",
+   "one_line": "同样分量的失去，比得到更能左右人的决定；已经归自己的东西，放手也算失去。",
    "rank": 33,
-   "tier": "core",
-   "year": "1913",
-   "story": "1913 年福特高地公园工厂启用移动装配线，T 型车大批量生产、售价大降"
+   "tier": "adv",
+   "year": "1990",
+   "story": "1990 年卡尼曼、克内奇、塞勒的马克杯实验：拿到杯子者要价中位数是买家出价的两倍多（随 endowment-effect 并入）"
   },
   {
-   "id": "social-proof",
-   "name": "社会认同",
-   "en": "Social Proof",
-   "discipline": "psychology",
-   "one_line": "拿不准时人会把别人的选择当线索，可跟随的人再多，也未必有谁真的查证过。",
+   "id": "avoid-ruin",
+   "name": "避免毁灭",
+   "en": "Avoiding Ruin",
+   "discipline": "investing",
+   "one_line": "平均赚得再多，只要有一次失败会让你出局，就先防这一次，再谈收益。",
    "rank": 34,
    "tier": "core",
-   "year": "1968",
-   "story": "1968 年拉塔内与达利烟雾实验：有冷漠同伴时报告率从 75% 降到 10%"
+   "year": "1995",
+   "story": "1995 年利森在新加坡替巴林银行做日经期货，藏亏于 88888 账户，亏损约 8.27 亿英镑超过全部资本，巴林破产"
+  },
+  {
+   "id": "time-delays",
+   "name": "时间延迟",
+   "en": "Time Delays",
+   "discipline": "systems",
+   "one_line": "动作要隔一阵才见效，人就会趁等的时候反复加码，把系统推过目标，再推回来。",
+   "rank": 35,
+   "tier": "core",
+   "year": "1989",
+   "story": "1989 年斯特曼发表啤酒游戏实验：需求一次性翻倍引发供应链缺货与积压"
   },
   {
    "id": "supply-demand",
@@ -441,21 +452,10 @@
    "en": "Supply, Demand and Price Signals",
    "discipline": "economics",
    "one_line": "价格把分散的供需变化压成一个数，让互不相识的人各自调整行动。",
-   "rank": 35,
+   "rank": 36,
    "tier": "core",
    "year": "2020",
    "story": "2020 年 4 月 20 日 WTI 原油五月期货结算价跌至每桶 -37.63 美元"
-  },
-  {
-   "id": "loss-aversion",
-   "name": "损失厌恶",
-   "en": "Loss Aversion",
-   "discipline": "psychology",
-   "one_line": "同样分量的失去，比得到更能左右人的决定；已经归自己的东西，放手也算失去。",
-   "rank": 36,
-   "tier": "adv",
-   "year": "1990",
-   "story": "1990 年卡尼曼、克内奇、塞勒的马克杯实验：拿到杯子者要价中位数是买家出价的两倍多（随 endowment-effect 并入）"
   },
   {
    "id": "leverage",
@@ -491,26 +491,37 @@
    "story": "1952 年 12 月 5—9 日伦敦大雾霾，燃煤烟尘散不出去，官方统计约四千人死亡，1956 年通过《清洁空气法》"
   },
   {
+   "id": "central-limit-theorem",
+   "name": "中心极限定理",
+   "en": "Central Limit Theorem",
+   "discipline": "math",
+   "one_line": "许多独立的小因素相加，总和近似钟形；平均数的误差随样本数的平方根缩小。",
+   "rank": 40,
+   "tier": "core",
+   "year": "1877",
+   "story": "1877 年 2 月 9 日高尔顿在伦敦皇家研究院讲《遗传的典型规律》，演示钉板（quincunx）：小弹丸穿过钉阵，在底部格子里堆成钟形"
+  },
+  {
+   "id": "decision-trees",
+   "name": "决策树",
+   "en": "Decision Trees",
+   "discipline": "thinking",
+   "one_line": "把选择和机会画成树，从树梢往回算：遇机会求平均，遇选择取最优，就知道现在走哪枝。",
+   "rank": 41,
+   "tier": "core",
+   "year": "1987",
+   "story": "1987 年 4 月德士古提出以 20 亿美元了结 105.3 亿美元判决，潘佐尔董事长利德基拒绝；年底以 30 亿美元和解（Clemen 教材第 4 章例题）"
+  },
+  {
    "id": "explore-exploit",
    "name": "探索与利用",
    "en": "Explore vs Exploit",
    "discipline": "computing",
    "one_line": "一边用已知最好的选项挣钱，一边留一部分机会去试没把握的，让以后每次选择都更准。",
-   "rank": 40,
+   "rank": 42,
    "tier": "core",
    "year": "2007",
    "story": "2007 年 1 月 Netflix 在经营 DVD 邮寄的同时推出不另收费的“即时观看”"
-  },
-  {
-   "id": "falsifiability",
-   "name": "可证伪性",
-   "en": "Falsifiability",
-   "discipline": "thinking",
-   "one_line": "一个判断要经得起检验，先得说清什么证据会让你承认它错了。",
-   "rank": 41,
-   "tier": "adv",
-   "year": "1919",
-   "story": "1919 年 5 月 29 日爱丁顿在普林西比岛观测日食，11 月公布星光偏折更接近爱因斯坦预言的约两倍于牛顿值"
   },
   {
    "id": "liking",
@@ -518,32 +529,21 @@
    "en": "Liking and the Halo Effect",
    "discipline": "psychology",
    "one_line": "好感跑到证据前面，一个人讨喜，就会被默认为别的方面也出色。",
-   "rank": 42,
+   "rank": 43,
    "tier": "core",
    "year": "1977",
    "story": "1977 年尼斯贝特与威尔逊的晕轮效应实验：热情版教师的口音外貌也被评得更好"
   },
   {
-   "id": "margin-of-safety",
-   "name": "安全边际",
-   "en": "Margin of Safety",
-   "discipline": "investing",
-   "one_line": "把买价或设计压在估计之下，留出一段缺口，判断错了也不至于出局。",
-   "rank": 43,
-   "tier": "core",
-   "year": "1973",
-   "story": "1973 年巴菲特以约四分之一的估值买入华盛顿邮报公司股票，1974 年仍续跌"
-  },
-  {
-   "id": "hindsight-bias",
-   "name": "后见之明",
-   "en": "Hindsight Bias",
-   "discipline": "psychology",
-   "one_line": "知道结果以后，人会把当初的不确定改记成早有预感，觉得它本来就明摆着。",
+   "id": "falsifiability",
+   "name": "可证伪性",
+   "en": "Falsifiability",
+   "discipline": "thinking",
+   "one_line": "一个判断要经得起检验，先得说清什么证据会让你承认它错了。",
    "rank": 44,
-   "tier": "core",
-   "year": "1972",
-   "story": "1972 年尼克松访华访苏前后，菲施霍夫与拜斯请受试者预测再回忆概率（1975 年发表）"
+   "tier": "adv",
+   "year": "1919",
+   "story": "1919 年 5 月 29 日爱丁顿在普林西比岛观测日食，11 月公布星光偏折更接近爱因斯坦预言的约两倍于牛顿值"
   },
   {
    "id": "map-territory",
@@ -557,12 +557,34 @@
    "story": "1933 年哈里·贝克的伦敦地铁示意图，牺牲地理比例换取易读"
   },
   {
+   "id": "margin-of-safety",
+   "name": "安全边际",
+   "en": "Margin of Safety",
+   "discipline": "investing",
+   "one_line": "把买价或设计压在估计之下，留出一段缺口，判断错了也不至于出局。",
+   "rank": 46,
+   "tier": "core",
+   "year": "1973",
+   "story": "1973 年巴菲特以约四分之一的估值买入华盛顿邮报公司股票，1974 年仍续跌"
+  },
+  {
+   "id": "hindsight-bias",
+   "name": "后见之明",
+   "en": "Hindsight Bias",
+   "discipline": "psychology",
+   "one_line": "知道结果以后，人会把当初的不确定改记成早有预感，觉得它本来就明摆着。",
+   "rank": 47,
+   "tier": "core",
+   "year": "1972",
+   "story": "1972 年尼克松访华访苏前后，菲施霍夫与拜斯请受试者预测再回忆概率（1975 年发表）"
+  },
+  {
    "id": "matthew-effect",
    "name": "马太效应",
    "en": "Matthew Effect",
    "discipline": "systems",
    "one_line": "机会按已有成绩和名气分配时，早占先的人更容易拿到下一份，差距越拉越大。",
-   "rank": 46,
+   "rank": 48,
    "tier": "core",
    "year": "1998",
    "story": "《哈利·波特》美国首印从 1998 年第一部 5 万册增至 2000 年第四部 380 万册"
@@ -573,31 +595,10 @@
    "en": "Stocks and Flows",
    "discipline": "systems",
    "one_line": "只要流入大于流出，存量就在增加；存量是过去每一期净流入的累计。",
-   "rank": 47,
+   "rank": 49,
    "tier": "core",
    "year": "1912",
    "story": "1912 年泰坦尼克号撞冰山后进水速度超过水泵排水，船沉没"
-  },
-  {
-   "id": "signal-noise",
-   "name": "信噪比",
-   "en": "Signal-to-Noise Ratio",
-   "discipline": "computing",
-   "one_line": "一个变化是真的还是碰巧，要看它比平时的上下波动大多少，而不是看手里有多少消息。",
-   "rank": 48,
-   "tier": "core",
-   "story": "1964–65 年彭齐亚斯与威尔逊排除鸽粪等干扰后发现宇宙微波背景辐射"
-  },
-  {
-   "id": "fat-tails",
-   "name": "正态与肥尾",
-   "en": "Normal vs Fat-Tailed Distributions",
-   "discipline": "math",
-   "one_line": "少数极端事件承担了大部分损失时，平静时期的平均数和标准差会把风险算小。",
-   "rank": 49,
-   "tier": "adv",
-   "year": "1987",
-   "story": "1987 年 10 月 19 日“黑色星期一”，道指单日跌 22.6%"
   },
   {
    "id": "redundancy",
@@ -611,12 +612,44 @@
    "story": "1970 年阿波罗 13 号服务舱失效，登月舱的备用电力与生命保障救回三人"
   },
   {
+   "id": "diversity-prediction",
+   "name": "多样性预测定理",
+   "en": "Diversity Prediction Theorem",
+   "discipline": "math",
+   "one_line": "群体误差等于个人平均误差减去分歧；各人独立又略强于瞎猜时，人越多，多数越准。",
+   "rank": 51,
+   "tier": "core",
+   "year": "1906",
+   "story": "1906 年高尔顿在普利茅斯家畜展收集 787 张猜牛重的票，中位数 1207 磅对实重 1198 磅（1907 年《自然》，Vox Populi）"
+  },
+  {
+   "id": "fat-tails",
+   "name": "正态与肥尾",
+   "en": "Normal vs Fat-Tailed Distributions",
+   "discipline": "math",
+   "one_line": "少数极端事件承担了大部分损失时，平静时期的平均数和标准差会把风险算小。",
+   "rank": 52,
+   "tier": "adv",
+   "year": "1987",
+   "story": "1987 年 10 月 19 日“黑色星期一”，道指单日跌 22.6%"
+  },
+  {
+   "id": "signal-noise",
+   "name": "信噪比",
+   "en": "Signal-to-Noise Ratio",
+   "discipline": "computing",
+   "one_line": "一个变化是真的还是碰巧，要看它比平时的上下波动大多少，而不是看手里有多少消息。",
+   "rank": 53,
+   "tier": "core",
+   "story": "1964–65 年彭齐亚斯与威尔逊排除鸽粪等干扰后发现宇宙微波背景辐射"
+  },
+  {
    "id": "local-optimum",
    "name": "局部最优",
    "en": "Adaptation and Local Optima",
    "discipline": "biology",
    "one_line": "每一步都在变好，也会困在小山顶；能走多远，取决于中间的路能否走通。",
-   "rank": 51,
+   "rank": 54,
    "tier": "core",
    "year": "2006",
    "story": "2006 年温赖希等人在《科学》报告抗药酶 TEM 的五个突变：120 种积累顺序里只有 18 种每一步都让抗药性变强"
@@ -627,7 +660,7 @@
    "en": "Median vs Mean",
    "discipline": "math",
    "one_line": "同一组数有两种概括：平均数留着总量，中位数留着名次，问什么才该用什么。",
-   "rank": 52,
+   "rank": 55,
    "tier": "core",
    "year": "1982",
    "story": "1982 年古尔德确诊间皮瘤，查到中位生存期八个月后写《中位数不是讯息》"
@@ -638,54 +671,21 @@
    "en": "Activation Energy",
    "discipline": "physics",
    "one_line": "事再值得做，开头也有一道要先付清的门槛；越过去，后面才顺。",
-   "rank": 53,
+   "rank": 56,
    "tier": "core",
    "year": "1860",
    "story": "1860 年法拉第在皇家研究院讲《蜡烛的化学史》，用细烛火沿白烟引燃刚熄的蜡烛"
   },
   {
-   "id": "nash-equilibrium",
-   "name": "纳什均衡",
-   "en": "Nash Equilibrium",
-   "discipline": "games",
-   "one_line": "别人都不变时，谁单独换做法都不会更好，局面就停在那里。",
-   "rank": 54,
-   "tier": "core",
-   "year": "1967",
-   "story": "1967 年 9 月 3 日瑞典“H 日”全国车辆同时由靠左改为靠右，前一天谁也不敢先换"
-  },
-  {
-   "id": "power-law",
-   "name": "幂律",
-   "en": "Power Laws (including the 80/20 Rule and the Long Tail)",
-   "discipline": "math",
-   "one_line": "门槛每翻一倍，数量按固定比例减少，没有典型大小；少数占大头，二八只是一例。",
-   "rank": 55,
-   "tier": "core",
-   "year": "2014",
-   "story": "2014 年 2 月 Facebook 宣布收购 WhatsApp，红杉 2011 年起累计约 6000 万美元的投资估值约 30 亿美元（约 50 倍）"
-  },
-  {
-   "id": "incentive-bias",
-   "name": "激励偏差",
-   "en": "Incentive-Caused Bias",
-   "discipline": "psychology",
-   "one_line": "利益不只改变人怎么做，还会改变他真心觉得什么是对的。",
-   "rank": 56,
-   "tier": "adv",
-   "year": "1995",
-   "story": "1995 年巴布科克与勒文斯坦的谈判实验：原告组和被告组对判决的估计向己方倾斜"
-  },
-  {
-   "id": "random-walk",
-   "name": "随机游走",
-   "en": "Random Walk",
-   "discipline": "math",
-   "one_line": "每一步都是偶然，累加起来的位置却会画出像有方向的曲线，还越走越散。",
+   "id": "arbitrage",
+   "name": "套利",
+   "en": "Arbitrage",
+   "discipline": "economics",
+   "one_line": "同一样东西两处不同价时，低处买进、高处卖出，买卖本身就把差价压平。",
    "rank": 57,
    "tier": "core",
-   "year": "1827",
-   "story": "1827 年夏植物学家罗伯特·布朗在伦敦用显微镜看水中花粉散出的微粒不停抖动，换成无机物颗粒照样动"
+   "year": "1997",
+   "story": "1997 年起喀拉拉邦海岸铺开手机信号，渔民在海上先打电话问价再选海滩靠岸（詹森 2007 年《经济学季刊》）"
   },
   {
    "id": "risk-uncertainty",
@@ -699,15 +699,48 @@
    "story": "1961 年埃尔斯伯格在论文里摆出 90 球罐子（30 红、60 黑黄比例未知），多数人第一组押红、第二组押黑或黄，与任何一个对黑球个数的估计都对不上"
   },
   {
-   "id": "path-dependence",
-   "name": "路径依赖",
-   "en": "Path Dependence",
-   "discipline": "systems",
-   "one_line": "起初差不多的几条路，偶然先走的那条越走越好走，后来的人就被锁在上面。",
+   "id": "nash-equilibrium",
+   "name": "纳什均衡",
+   "en": "Nash Equilibrium",
+   "discipline": "games",
+   "one_line": "别人都不变时，谁单独换做法都不会更好，局面就停在那里。",
    "rank": 59,
    "tier": "core",
-   "year": "1873",
-   "story": "1873 年雷明顿生产肖尔斯打字机，QWERTY 键盘布局沿用至今"
+   "year": "1967",
+   "story": "1967 年 9 月 3 日瑞典“H 日”全国车辆同时由靠左改为靠右，前一天谁也不敢先换"
+  },
+  {
+   "id": "incentive-bias",
+   "name": "激励偏差",
+   "en": "Incentive-Caused Bias",
+   "discipline": "psychology",
+   "one_line": "利益不只改变人怎么做，还会改变他真心觉得什么是对的。",
+   "rank": 60,
+   "tier": "adv",
+   "year": "1995",
+   "story": "1995 年巴布科克与勒文斯坦的谈判实验：原告组和被告组对判决的估计向己方倾斜"
+  },
+  {
+   "id": "power-law",
+   "name": "幂律",
+   "en": "Power Laws (including the 80/20 Rule and the Long Tail)",
+   "discipline": "math",
+   "one_line": "门槛每翻一倍，数量按固定比例减少，没有典型大小；少数占大头，二八只是一例。",
+   "rank": 61,
+   "tier": "core",
+   "year": "2014",
+   "story": "2014 年 2 月 Facebook 宣布收购 WhatsApp，红杉 2011 年起累计约 6000 万美元的投资估值约 30 亿美元（约 50 倍）"
+  },
+  {
+   "id": "random-walk",
+   "name": "随机游走",
+   "en": "Random Walk",
+   "discipline": "math",
+   "one_line": "每一步都是偶然，累加起来的位置却会画出像有方向的曲线，还越走越散。",
+   "rank": 62,
+   "tier": "core",
+   "year": "1827",
+   "story": "1827 年夏植物学家罗伯特·布朗在伦敦用显微镜看水中花粉散出的微粒不停抖动，换成无机物颗粒照样动"
   },
   {
    "id": "envy",
@@ -715,43 +748,10 @@
    "en": "Envy",
    "discipline": "psychology",
    "one_line": "别人占了优势，会让自己毫发无损的日子也变得难受，难受到愿意拿实利去换回差距。",
-   "rank": 60,
+   "rank": 63,
    "tier": "adv",
    "year": "1995",
    "story": "1995 年哈佛公卫学院问卷：约半数人宁可赚 5 万而别人 2.5 万，也不要赚 10 万而别人 20 万"
-  },
-  {
-   "id": "arms-race",
-   "name": "军备竞赛",
-   "en": "Arms Race",
-   "discipline": "games",
-   "one_line": "争的是相对位置时，各方不停加码或让步，位置没变，成本却一起涨。",
-   "rank": 61,
-   "tier": "adv",
-   "year": "1972",
-   "story": "1972 年尼克松与勃列日涅夫在莫斯科签署限制战略武器协议与反导条约"
-  },
-  {
-   "id": "commitment-consistency",
-   "name": "承诺与一致",
-   "en": "Commitment and Consistency",
-   "discipline": "psychology",
-   "one_line": "做过的事、说过的话成了人对自己的说法，之后的选择就倾向和它对得上。",
-   "rank": 62,
-   "tier": "adv",
-   "year": "1966",
-   "story": "1966 年发表的弗里德曼与弗雷泽登门槛实验：先挂小牌子的居民更愿意竖大广告牌"
-  },
-  {
-   "id": "equilibrium",
-   "name": "均衡",
-   "en": "Equilibrium",
-   "discipline": "physics",
-   "one_line": "相反的作用恰好抵消，就是均衡；稳不稳，要看偏离后是被拉回还是被推远。",
-   "rank": 63,
-   "tier": "core",
-   "year": "1990",
-   "story": "1990 年比萨斜塔关闭，伯兰团队从北侧掏土纠偏，2001 年重新开放"
   },
   {
    "id": "premortem",
@@ -765,15 +765,48 @@
    "story": "2020 年 4 月 Quibi 上线（筹资 17.5 亿美元、每集 5–10 分钟、起初只能手机看），10 月 21 日卡岑伯格与惠特曼发信宣布关停，信里列了两种可能原因"
   },
   {
-   "id": "signaling-screening",
-   "name": "信号与筛选",
-   "en": "Signaling and Screening",
+   "id": "arms-race",
+   "name": "军备竞赛",
+   "en": "Arms Race",
    "discipline": "games",
-   "one_line": "底细只有自己清楚的人，靠冒充者付不起的代价，让别人相信他。",
+   "one_line": "争的是相对位置时，各方不停加码或让步，位置没变，成本却一起涨。",
    "rank": 65,
+   "tier": "adv",
+   "year": "1972",
+   "story": "1972 年尼克松与勃列日涅夫在莫斯科签署限制战略武器协议与反导条约"
+  },
+  {
+   "id": "path-dependence",
+   "name": "路径依赖",
+   "en": "Path Dependence",
+   "discipline": "systems",
+   "one_line": "起初差不多的几条路，偶然先走的那条越走越好走，后来的人就被锁在上面。",
+   "rank": 66,
    "tier": "core",
-   "year": "1998",
-   "story": "1998 年现代汽车在美国推出十年十万英里动力总成保修"
+   "year": "1873",
+   "story": "1873 年雷明顿生产肖尔斯打字机，QWERTY 键盘布局沿用至今"
+  },
+  {
+   "id": "commitment-consistency",
+   "name": "承诺与一致",
+   "en": "Commitment and Consistency",
+   "discipline": "psychology",
+   "one_line": "做过的事、说过的话成了人对自己的说法，之后的选择就倾向和它对得上。",
+   "rank": 67,
+   "tier": "adv",
+   "year": "1966",
+   "story": "1966 年发表的弗里德曼与弗雷泽登门槛实验：先挂小牌子的居民更愿意竖大广告牌"
+  },
+  {
+   "id": "equilibrium",
+   "name": "均衡",
+   "en": "Equilibrium",
+   "discipline": "physics",
+   "one_line": "相反的作用恰好抵消，就是均衡；稳不稳，要看偏离后是被拉回还是被推远。",
+   "rank": 68,
+   "tier": "core",
+   "year": "1990",
+   "story": "1990 年比萨斜塔关闭，伯兰团队从北侧掏土纠偏，2001 年重新开放"
   },
   {
    "id": "emergence",
@@ -781,21 +814,10 @@
    "en": "Emergence",
    "discipline": "systems",
    "one_line": "个体只按眼前的规则互相影响，整体却长出任何一个个体身上都没有的性质。",
-   "rank": 66,
+   "rank": 69,
    "tier": "adv",
    "year": "2008",
    "story": "2008 年名古屋大学杉山雄规环形跑道实验，22 辆车无故自发形成堵车波"
-  },
-  {
-   "id": "diversification",
-   "name": "分散与相关性",
-   "en": "Diversification and Correlation",
-   "discipline": "investing",
-   "one_line": "几笔钱的涨跌越不同步，合起来越稳；但抛售一来，平时不同步的也会一起跌。",
-   "rank": 67,
-   "tier": "core",
-   "year": "2007",
-   "story": "2007 年 8 月第一周美国量化股票基金同步亏损，卡恩达尼与罗推测是平仓拖累持仓相似的同行"
   },
   {
    "id": "reciprocity",
@@ -803,43 +825,21 @@
    "en": "Reciprocity",
    "discipline": "psychology",
    "one_line": "别人先给了你好处，你就觉得欠着，常会用答应一件原本不想答应的事去还。",
-   "rank": 68,
+   "rank": 70,
    "tier": "core",
    "year": "1971",
    "story": "1971 年里根实验：助手送一瓶可乐的受试者买彩票约为没收到者的两倍，与是否喜欢助手无关"
   },
   {
-   "id": "entropy",
-   "name": "熵",
-   "en": "Entropy",
-   "discipline": "physics",
-   "one_line": "孤立系统自己只会滑向内部排法更多的状态；想让一处保持整齐，得持续付出能量。",
-   "rank": 69,
-   "tier": "adv",
-   "year": "1986",
-   "story": "1984–1986 年自由女神像大修，与铜皮接触、被腐蚀百年的铁架逐根换成不锈钢"
-  },
-  {
-   "id": "central-limit-theorem",
-   "name": "中心极限定理",
-   "en": "Central Limit Theorem",
+   "id": "lognormal",
+   "name": "对数正态分布",
+   "en": "Lognormal Distribution (Multiplicative Shocks)",
    "discipline": "math",
-   "one_line": "许多独立的小因素相加，总和近似钟形；平均数的误差随样本数的平方根缩小。",
-   "rank": 70,
-   "tier": "core",
-   "year": "1877",
-   "story": "1877 年 2 月 9 日高尔顿在伦敦皇家研究院讲《遗传的典型规律》，演示钉板（quincunx）：小弹丸穿过钉阵，在底部格子里堆成钟形"
-  },
-  {
-   "id": "checklists",
-   "name": "检查清单",
-   "en": "Checklists",
-   "discipline": "thinking",
-   "one_line": "把熟练的人也会漏掉的关键步骤写成一张短单，在行动的关口逐项核实。",
+   "one_line": "每一步按比例涨跌，结果就向右拖出长尾，平均数被少数大值拉到中位数之上。",
    "rank": 71,
    "tier": "core",
-   "year": "1935",
-   "story": "1935 年 10 月 30 日波音 299 型在莱特机场试飞坠毁（未解除操纵锁），此后改用书面核对项目"
+   "year": "1879",
+   "story": "1879 年高尔顿请麦卡利斯特推出几何平均律：数据取对数后偏斜分布变成钟形（两文同期刊于皇家学会会刊）"
   },
   {
    "id": "friction",
@@ -853,37 +853,37 @@
    "story": "1997 年亚马逊推出一键购买，老顾客用存好的地址和信用卡一点即下单"
   },
   {
-   "id": "decision-trees",
-   "name": "决策树",
-   "en": "Decision Trees",
-   "discipline": "thinking",
-   "one_line": "把选择和机会画成树，从树梢往回算：遇机会求平均，遇选择取最优，就知道现在走哪枝。",
+   "id": "signaling-screening",
+   "name": "信号与筛选",
+   "en": "Signaling and Screening",
+   "discipline": "games",
+   "one_line": "底细只有自己清楚的人，靠冒充者付不起的代价，让别人相信他。",
    "rank": 73,
    "tier": "core",
-   "year": "1987",
-   "story": "1987 年 4 月德士古提出以 20 亿美元了结 105.3 亿美元判决，潘佐尔董事长利德基拒绝；年底以 30 亿美元和解（Clemen 教材第 4 章例题）"
+   "year": "1998",
+   "story": "1998 年现代汽车在美国推出十年十万英里动力总成保修"
   },
   {
-   "id": "framing-effect",
-   "name": "框架效应",
-   "en": "Framing Effect",
-   "discipline": "psychology",
-   "one_line": "事实和选项相同，换一种说法，就能改变人对结果的评价和选择。",
+   "id": "linear-regression",
+   "name": "线性回归",
+   "en": "Linear Models / Multiple Linear Regression",
+   "discipline": "math",
+   "one_line": "结果等于几项因素的加权和；每个权重是其余相同时，这一项多一个单位的平均差别。",
    "rank": 74,
    "tier": "core",
-   "year": "1981",
-   "story": "1981 年特沃斯基与卡尼曼“亚洲疾病”问题：救活 200 人与死 400 人框架下选择翻转"
+   "year": "1990",
+   "story": "1990 年阿申费尔特用冬季降雨、生长季气温、采收季降雨三个天气数预测波尔多红酒价格"
   },
   {
-   "id": "availability",
-   "name": "可得性",
-   "en": "Availability Heuristic",
-   "discipline": "psychology",
-   "one_line": "人会把例子想起得有多容易，误当成事情发生得有多频繁。",
+   "id": "entropy",
+   "name": "熵",
+   "en": "Entropy",
+   "discipline": "physics",
+   "one_line": "孤立系统自己只会滑向内部排法更多的状态；想让一处保持整齐，得持续付出能量。",
    "rank": 75,
    "tier": "adv",
-   "year": "2001",
-   "story": "2001 年 9·11 撞楼画面反复重播后，不少美国人弃机改开车，吉仁泽对照交通数据估算由此多出的公路死亡"
+   "year": "1986",
+   "story": "1984–1986 年自由女神像大修，与铜皮接触、被腐蚀百年的铁架逐根换成不锈钢"
   },
   {
    "id": "spacing-retrieval",
@@ -897,59 +897,59 @@
    "story": "1879 年起艾宾浩斯以自己为唯一被试背无意义音节、用节省法量遗忘，1885 年出版《论记忆》"
   },
   {
+   "id": "diversification",
+   "name": "分散与相关性",
+   "en": "Diversification and Correlation",
+   "discipline": "investing",
+   "one_line": "几笔钱的涨跌越不同步，合起来越稳；但抛售一来，平时不同步的也会一起跌。",
+   "rank": 77,
+   "tier": "core",
+   "year": "2007",
+   "story": "2007 年 8 月第一周美国量化股票基金同步亏损，卡恩达尼与罗推测是平仓拖累持仓相似的同行"
+  },
+  {
+   "id": "availability",
+   "name": "可得性",
+   "en": "Availability Heuristic",
+   "discipline": "psychology",
+   "one_line": "人会把例子想起得有多容易，误当成事情发生得有多频繁。",
+   "rank": 78,
+   "tier": "adv",
+   "year": "2001",
+   "story": "2001 年 9·11 撞楼画面反复重播后，不少美国人弃机改开车，吉仁泽对照交通数据估算由此多出的公路死亡"
+  },
+  {
+   "id": "framing-effect",
+   "name": "框架效应",
+   "en": "Framing Effect",
+   "discipline": "psychology",
+   "one_line": "事实和选项相同，换一种说法，就能改变人对结果的评价和选择。",
+   "rank": 79,
+   "tier": "core",
+   "year": "1981",
+   "story": "1981 年特沃斯基与卡尼曼“亚洲疾病”问题：救活 200 人与死 400 人框架下选择翻转"
+  },
+  {
+   "id": "checklists",
+   "name": "检查清单",
+   "en": "Checklists",
+   "discipline": "thinking",
+   "one_line": "把熟练的人也会漏掉的关键步骤写成一张短单，在行动的关口逐项核实。",
+   "rank": 80,
+   "tier": "core",
+   "year": "1935",
+   "story": "1935 年 10 月 30 日波音 299 型在莱特机场试飞坠毁（未解除操纵锁），此后改用书面核对项目"
+  },
+  {
    "id": "moral-hazard",
    "name": "道德风险",
    "en": "Moral Hazard",
    "discipline": "economics",
    "one_line": "损失有保障替自己扛，事后的行为又难被监督，人就少了谨慎的理由。",
-   "rank": 77,
+   "rank": 81,
    "tier": "core",
    "year": "1984",
    "story": "1984 年基廷买下林肯储贷协会，借存款保险押注高风险地产，1989 年被接管"
-  },
-  {
-   "id": "network-effects",
-   "name": "网络效应",
-   "en": "Network Effects",
-   "discipline": "business",
-   "one_line": "每多一个用户，老用户手里的同一件东西就更有用一点。",
-   "rank": 78,
-   "tier": "adv",
-   "year": "2004",
-   "story": "2004 年 2 月 4 日扎克伯格在哈佛上线 TheFacebook，到 2 月 8 日下午超过 650 人注册"
-  },
-  {
-   "id": "planning-fallacy",
-   "name": "计划谬误",
-   "en": "Planning Fallacy",
-   "discipline": "psychology",
-   "one_line": "估工期时，人拿一切顺利的用时当预测，连自己上次的延期也没算进去。",
-   "rank": 79,
-   "tier": "adv",
-   "year": "1959",
-   "story": "1959 年悉尼歌剧院开工，估算 700 万澳元、原定 1963 年完工，1973 年 10 月揭幕，耗资约 1.02 亿澳元"
-  },
-  {
-   "id": "anchoring",
-   "name": "锚定",
-   "en": "Anchoring",
-   "discipline": "psychology",
-   "one_line": "先听到的数字会拽着后面的估计走，哪怕它和要估的事毫无关系。",
-   "rank": 80,
-   "tier": "core",
-   "year": "1974",
-   "story": "1974 年特沃斯基与卡尼曼的幸运转盘实验：转盘停在 10 或 65，影响对非洲国家联合国席位比例的估计"
-  },
-  {
-   "id": "bounded-rationality",
-   "name": "有限理性",
-   "en": "Bounded Rationality / Satisficing",
-   "discipline": "economics",
-   "one_line": "信息和算力有限时，人先设一条「够好」的线，碰到第一个达标的就收手，不去找最优。",
-   "rank": 81,
-   "tier": "adv",
-   "year": "1956",
-   "story": "1956 年夏达特茅斯会议上，纽厄尔、肖、西蒙的“逻辑理论家”程序靠经验规则证出《数学原理》第二章前 52 条定理中的 38 条"
   },
   {
    "id": "moat",
@@ -963,15 +963,70 @@
    "story": "1972 年巴菲特与芒格以 2500 万美元买下喜诗糖果，品牌偏好带来数十年高利润"
   },
   {
+   "id": "markov-models",
+   "name": "马尔可夫模型",
+   "en": "Markov Models",
+   "discipline": "math",
+   "one_line": "下一步只看现在在哪、按固定概率转移，长期份额由概率决定，和从哪出发无关。",
+   "rank": 83,
+   "tier": "core",
+   "year": "1913",
+   "story": "1913 年马尔可夫数普希金《叶甫盖尼·奥涅金》开头两万个字母的元音/辅音及其转移比例（元音约 43%，元音后接元音 13%，辅音后接元音 66%）"
+  },
+  {
+   "id": "planning-fallacy",
+   "name": "计划谬误",
+   "en": "Planning Fallacy",
+   "discipline": "psychology",
+   "one_line": "估工期时，人拿一切顺利的用时当预测，连自己上次的延期也没算进去。",
+   "rank": 84,
+   "tier": "adv",
+   "year": "1959",
+   "story": "1959 年悉尼歌剧院开工，估算 700 万澳元、原定 1963 年完工，1973 年 10 月揭幕，耗资约 1.02 亿澳元"
+  },
+  {
+   "id": "network-effects",
+   "name": "网络效应",
+   "en": "Network Effects",
+   "discipline": "business",
+   "one_line": "每多一个用户，老用户手里的同一件东西就更有用一点。",
+   "rank": 85,
+   "tier": "adv",
+   "year": "2004",
+   "story": "2004 年 2 月 4 日扎克伯格在哈佛上线 TheFacebook，到 2 月 8 日下午超过 650 人注册"
+  },
+  {
+   "id": "anchoring",
+   "name": "锚定",
+   "en": "Anchoring",
+   "discipline": "psychology",
+   "one_line": "先听到的数字会拽着后面的估计走，哪怕它和要估的事毫无关系。",
+   "rank": 86,
+   "tier": "core",
+   "year": "1974",
+   "story": "1974 年特沃斯基与卡尼曼的幸运转盘实验：转盘停在 10 或 65，影响对非洲国家联合国席位比例的估计"
+  },
+  {
    "id": "half-life",
    "name": "半衰期",
    "en": "Half-Life",
    "discipline": "physics",
    "one_line": "每过一段固定的时间，剩下的就少一半：开头掉得快，后面拖着一条长尾。",
-   "rank": 83,
+   "rank": 87,
    "tier": "core",
    "year": "1991",
    "story": "1991 年 9 月 19 日西蒙夫妇在阿尔卑斯山发现冰人奥茨，碳十四测年确定为五千多年前"
+  },
+  {
+   "id": "bounded-rationality",
+   "name": "有限理性",
+   "en": "Bounded Rationality / Satisficing",
+   "discipline": "economics",
+   "one_line": "信息和算力有限时，人先设一条「够好」的线，碰到第一个达标的就收手，不去找最优。",
+   "rank": 88,
+   "tier": "adv",
+   "year": "1956",
+   "story": "1956 年夏达特茅斯会议上，纽厄尔、肖、西蒙的“逻辑理论家”程序靠经验规则证出《数学原理》第二章前 52 条定理中的 38 条"
   },
   {
    "id": "mechanism-design",
@@ -979,7 +1034,7 @@
    "en": "Mechanism Design",
    "discipline": "games",
    "one_line": "从想要的结果倒推规则，让各自追求利益的人也愿意促成这个结果。",
-   "rank": 84,
+   "rank": 89,
    "tier": "core",
    "year": "2005",
    "story": "2005 年 7 月波士顿学校委员会投票放弃“波士顿机制”，在罗斯等经济学家推动下改用延迟接受算法分配学位"
@@ -990,7 +1045,7 @@
    "en": "One-Way and Two-Way Doors",
    "discipline": "thinking",
    "one_line": "能低成本退回来的决定快做，后果难以收回的决定多花时间再做。",
-   "rank": 85,
+   "rank": 90,
    "tier": "core",
    "year": "1985",
    "story": "1985 年 4 月 23 日可口可乐宣布换新配方，7 月 11 日（79 天后）恢复为“经典可口可乐”并付出代价"
@@ -1001,65 +1056,10 @@
    "en": "Price Elasticity",
    "discipline": "economics",
    "one_line": "涨价能不能多收钱，要看买家多敏感、销量掉多少；能不能多赚，还得算上成本。",
-   "rank": 86,
+   "rank": 91,
    "tier": "core",
    "year": "2011",
    "story": "2011 年 Netflix 拆分流媒体与 DVD 套餐，两样都用从每月 9.99 涨到 15.98 美元，第三季度美国订户净减约 80 万"
-  },
-  {
-   "id": "divide-and-conquer",
-   "name": "分而治之",
-   "en": "Divide and Conquer",
-   "discipline": "computing",
-   "one_line": "大问题拆成同类的小问题，各自做完，再用一条接缝规则合成完整答案。",
-   "rank": 87,
-   "tier": "core",
-   "year": "2019",
-   "story": "2019 年 7 月 14 日温网男单决赛德约科维奇五盘胜费德勒；128 人签表逐层分区、七轮淘汰"
-  },
-  {
-   "id": "adverse-selection",
-   "name": "逆向选择",
-   "en": "Adverse Selection",
-   "discipline": "economics",
-   "one_line": "卖家比买家更清楚货的好坏时，统一的价格会先把好货筛出去。",
-   "rank": 88,
-   "tier": "core",
-   "year": "1995",
-   "story": "1995 年哈佛教职工医保改为固定补贴，健康员工转投便宜计划，卡特勒与雷伯追踪到贵计划留下高费用参保人"
-  },
-  {
-   "id": "financial-leverage",
-   "name": "财务杠杆",
-   "en": "Financial Leverage",
-   "discipline": "investing",
-   "one_line": "借钱让同一笔本金承受更大的盈亏，还可能让你被迫提前出局。",
-   "rank": 89,
-   "tier": "adv",
-   "year": "1998",
-   "story": "1998 年长期资本管理公司以 48 亿美元资本持有逾千亿美元资产，价差扩大后被接管"
-  },
-  {
-   "id": "diversity-prediction",
-   "name": "多样性预测定理",
-   "en": "Diversity Prediction Theorem",
-   "discipline": "math",
-   "one_line": "群体误差等于个人平均误差减去分歧；各人独立又略强于瞎猜时，人越多，多数越准。",
-   "rank": 90,
-   "tier": "core",
-   "year": "1906",
-   "story": "1906 年高尔顿在普利茅斯家畜展收集 787 张猜牛重的票，中位数 1207 磅对实重 1198 磅（1907 年《自然》，Vox Populi）"
-  },
-  {
-   "id": "transaction-costs",
-   "name": "交易成本",
-   "en": "Transaction Costs",
-   "discipline": "economics",
-   "one_line": "找人、谈条件和盯着对方履约的花费，价签上看不到，却决定一笔交易值不值得做。",
-   "rank": 91,
-   "tier": "core",
-   "year": "1932",
-   "story": "1931–32 年科斯拿卡塞尔旅行奖学金访美，参观福特、通用汽车，追问企业为什么存在；1932 年 10 月在邓迪讲出雏形，1937 年发表《企业的性质》"
   },
   {
    "id": "lollapalooza",
@@ -1073,15 +1073,59 @@
    "story": "1951 年前后特百惠撤出商店、改在家庭聚会里卖，芒格 1995 年哈佛演讲把特百惠聚会列为几种心理倾向合力的例子"
   },
   {
-   "id": "discounting",
-   "name": "贴现",
-   "en": "Discounting",
-   "discipline": "economics",
-   "one_line": "未来的钱要先折成今天的价值，才能和现在的钱放在一起比。",
+   "id": "network-models",
+   "name": "网络模型",
+   "en": "Network Models",
+   "discipline": "systems",
+   "one_line": "点与点怎样连，比有几个点更能决定消息传多远、谁成了中心。",
    "rank": 93,
    "tier": "core",
-   "year": "2000",
-   "story": "2000 年纽约大都会与博尼拉约定 590 万美元延至 2011–2035 年每年付约 119 万美元"
+   "year": "1967",
+   "story": "1967 年米尔格拉姆小世界信件实验：中西部的人经熟人转递文件夹给波士顿股票经纪人，送到的链子中间只隔五六人（同年 5 月《今日心理学》）"
+  },
+  {
+   "id": "divide-and-conquer",
+   "name": "分而治之",
+   "en": "Divide and Conquer",
+   "discipline": "computing",
+   "one_line": "大问题拆成同类的小问题，各自做完，再用一条接缝规则合成完整答案。",
+   "rank": 94,
+   "tier": "core",
+   "year": "2019",
+   "story": "2019 年 7 月 14 日温网男单决赛德约科维奇五盘胜费德勒；128 人签表逐层分区、七轮淘汰"
+  },
+  {
+   "id": "adverse-selection",
+   "name": "逆向选择",
+   "en": "Adverse Selection",
+   "discipline": "economics",
+   "one_line": "卖家比买家更清楚货的好坏时，统一的价格会先把好货筛出去。",
+   "rank": 95,
+   "tier": "core",
+   "year": "1995",
+   "story": "1995 年哈佛教职工医保改为固定补贴，健康员工转投便宜计划，卡特勒与雷伯追踪到贵计划留下高费用参保人"
+  },
+  {
+   "id": "transaction-costs",
+   "name": "交易成本",
+   "en": "Transaction Costs",
+   "discipline": "economics",
+   "one_line": "找人、谈条件和盯着对方履约的花费，价签上看不到，却决定一笔交易值不值得做。",
+   "rank": 96,
+   "tier": "core",
+   "year": "1932",
+   "story": "1931–32 年科斯拿卡塞尔旅行奖学金访美，参观福特、通用汽车，追问企业为什么存在；1932 年 10 月在邓迪讲出雏形，1937 年发表《企业的性质》"
+  },
+  {
+   "id": "financial-leverage",
+   "name": "财务杠杆",
+   "en": "Financial Leverage",
+   "discipline": "investing",
+   "one_line": "借钱让同一笔本金承受更大的盈亏，还可能让你被迫提前出局。",
+   "rank": 97,
+   "tier": "adv",
+   "year": "1998",
+   "story": "1998 年长期资本管理公司以 48 亿美元资本持有逾千亿美元资产，价差扩大后被接管"
   },
   {
    "id": "simpsons-paradox",
@@ -1089,7 +1133,7 @@
    "en": "Simpson's Paradox",
    "discipline": "math",
    "one_line": "每一组里都领先的一方，合起来反而落后：总数里，各组的人数占比也在投票。",
-   "rank": 94,
+   "rank": 98,
    "tier": "core",
    "year": "1986",
    "story": "1986 年查里格等人的肾结石治疗研究：开放手术分组都领先，合计却落后"
@@ -1100,10 +1144,21 @@
    "en": "Queueing Theory",
    "discipline": "computing",
    "one_line": "任务随机到来、耗时有长有短时，负荷越接近上限，平均等待涨得越陡。",
-   "rank": 95,
+   "rank": 99,
    "tier": "core",
    "year": "2021",
    "story": "2021 年秋洛杉矶港外集装箱船排队，拜登宣布港口全天候作业"
+  },
+  {
+   "id": "discounting",
+   "name": "贴现",
+   "en": "Discounting",
+   "discipline": "economics",
+   "one_line": "未来的钱要先折成今天的价值，才能和现在的钱放在一起比。",
+   "rank": 100,
+   "tier": "core",
+   "year": "2000",
+   "story": "2000 年纽约大都会与博尼拉约定 590 万美元延至 2011–2035 年每年付约 119 万美元"
   },
   {
    "id": "credible-commitment",
@@ -1111,7 +1166,7 @@
    "en": "Credible Commitment",
    "discipline": "games",
    "one_line": "提前堵死自己的退路，让对方相信你到时一定照做，他的选择就会跟着变。",
-   "rank": 96,
+   "rank": 101,
    "tier": "core",
    "year": "-207",
    "story": "公元前 207 年巨鹿之战，项羽渡河后沉船、破釜甑、烧庐舍、只带三日粮，大破秦军"
@@ -1122,43 +1177,10 @@
    "en": "Limits to Growth",
    "discipline": "systems",
    "one_line": "增长会吃掉支撑它的余量；继续加力，可能越来越不见效，甚至伤到增长的根基。",
-   "rank": 97,
+   "rank": 102,
    "tier": "adv",
    "year": "1960",
    "story": "1960 年代起苏联引阿姆河、锡尔河水浇棉田，咸海到 2007 年只剩 1960 年的约十分之一"
-  },
-  {
-   "id": "arbitrage",
-   "name": "套利",
-   "en": "Arbitrage",
-   "discipline": "economics",
-   "one_line": "同一样东西两处不同价时，低处买进、高处卖出，买卖本身就把差价压平。",
-   "rank": 98,
-   "tier": "core",
-   "year": "1997",
-   "story": "1997 年起喀拉拉邦海岸铺开手机信号，渔民在海上先打电话问价再选海滩靠岸（詹森 2007 年《经济学季刊》）"
-  },
-  {
-   "id": "overconfidence",
-   "name": "过度自信",
-   "en": "Overconfidence",
-   "discipline": "psychology",
-   "one_line": "人嘴上说的把握，高过事后数出来的命中率；预测的上下范围也留得太窄。",
-   "rank": 99,
-   "tier": "core",
-   "year": "1981",
-   "story": "1981 年斯文森请美国和瑞典学生给自己的驾驶技术定位，美国 93%、瑞典 69% 自认高于中位"
-  },
-  {
-   "id": "kelly-criterion",
-   "name": "凯利公式",
-   "en": "Kelly Criterion",
-   "discipline": "investing",
-   "one_line": "反复下注时，按胜率和赔率算出每轮该押本金的几成，本金长期长得最快。",
-   "rank": 100,
-   "tier": "core",
-   "year": "1961",
-   "story": "1961 年索普带资助者的 1 万美元到里诺和太浩湖赌场验证二十一点算牌法，牌面有利加注、不利减注"
   },
   {
    "id": "signal-detection",
@@ -1166,32 +1188,21 @@
    "en": "Signal Detection Theory",
    "discipline": "psychology",
    "one_line": "判断既会漏报也会虚警；挪动判定线只能互换两种错，要同时减少，得拉高分辨力。",
-   "rank": 101,
+   "rank": 103,
    "tier": "core",
    "year": "1941",
    "story": "1941 年 12 月 7 日奥帕纳角雷达兵洛卡德和埃利奥特报告大批回波，值班军官答“别担心”，不到一小时后珍珠港遇袭"
   },
   {
-   "id": "confidence-intervals",
-   "name": "置信区间",
-   "en": "Confidence Intervals",
-   "discipline": "math",
-   "one_line": "换一批样本，估计值就会变；置信区间把这种抽样波动有多大，随估计值一起报出来。",
-   "rank": 102,
-   "tier": "adv",
-   "year": "2020",
-   "story": "2020 年《新英格兰医学杂志》发表莫德纳疫苗三期试验：效力 94.1%（89.3%–96.8%）"
-  },
-  {
-   "id": "overfitting",
-   "name": "过拟合",
-   "en": "Overfitting",
-   "discipline": "computing",
-   "one_line": "把旧数据里的偶然细节当成规律，会让过去的高分变成未来的失分。",
-   "rank": 103,
+   "id": "overconfidence",
+   "name": "过度自信",
+   "en": "Overconfidence",
+   "discipline": "psychology",
+   "one_line": "人嘴上说的把握，高过事后数出来的命中率；预测的上下范围也留得太窄。",
+   "rank": 104,
    "tier": "core",
-   "year": "2008",
-   "story": "2008 年谷歌流感趋势上线，2009 年 H1N1 第一波中低估疫情"
+   "year": "1981",
+   "story": "1981 年斯文森请美国和瑞典学生给自己的驾驶技术定位，美国 93%、瑞典 69% 自认高于中位"
   },
   {
    "id": "checks-and-balances",
@@ -1199,10 +1210,43 @@
    "en": "Checks and Balances",
    "discipline": "society",
    "one_line": "把决定、执行和监督交给能互相说不的人，让权力难以独自越界。",
-   "rank": 104,
+   "rank": 105,
    "tier": "adv",
    "year": "1974",
    "story": "1974 年最高法院“美国诉尼克松案”8:0 判总统交出水门录音，尼克松辞职"
+  },
+  {
+   "id": "overfitting",
+   "name": "过拟合",
+   "en": "Overfitting",
+   "discipline": "computing",
+   "one_line": "把旧数据里的偶然细节当成规律，会让过去的高分变成未来的失分。",
+   "rank": 106,
+   "tier": "core",
+   "year": "2008",
+   "story": "2008 年谷歌流感趋势上线，2009 年 H1N1 第一波中低估疫情"
+  },
+  {
+   "id": "kelly-criterion",
+   "name": "凯利公式",
+   "en": "Kelly Criterion",
+   "discipline": "investing",
+   "one_line": "反复下注时，按胜率和赔率算出每轮该押本金的几成，本金长期长得最快。",
+   "rank": 107,
+   "tier": "core",
+   "year": "1961",
+   "story": "1961 年索普带资助者的 1 万美元到里诺和太浩湖赌场验证二十一点算牌法，牌面有利加注、不利减注"
+  },
+  {
+   "id": "confidence-intervals",
+   "name": "置信区间",
+   "en": "Confidence Intervals",
+   "discipline": "math",
+   "one_line": "换一批样本，估计值就会变；置信区间把这种抽样波动有多大，随估计值一起报出来。",
+   "rank": 108,
+   "tier": "adv",
+   "year": "2020",
+   "story": "2020 年《新英格兰医学杂志》发表莫德纳疫苗三期试验：效力 94.1%（89.3%–96.8%）"
   },
   {
    "id": "default-effect",
@@ -1210,10 +1254,21 @@
    "en": "Default Effect",
    "discipline": "psychology",
    "one_line": "人会顺着预设选项、留在已有状态；没有主动选择，也会被安排一个结果。",
-   "rank": 105,
+   "rank": 109,
    "tier": "core",
    "year": "2003",
    "story": "2003 年约翰逊与戈尔德斯坦在《科学》比较器官捐献默认规则：德国 12% 对奥地利 99.98%"
+  },
+  {
+   "id": "creative-destruction",
+   "name": "创造性破坏",
+   "en": "Creative Destruction",
+   "discipline": "economics",
+   "one_line": "新办法让旧办法的收入消失；在位者常因太听老顾客的话，让出了入口。",
+   "rank": 110,
+   "tier": "core",
+   "year": "1975",
+   "story": "1975 年柯达工程师萨松造出数码相机，数码摄影最终让柯达 2012 年破产"
   },
   {
    "id": "swiss-cheese",
@@ -1221,7 +1276,7 @@
    "en": "Swiss Cheese Model",
    "discipline": "systems",
    "one_line": "每道防线都有漏洞，事故出在几个洞恰好排成一线时，要改的是让洞开着的上游。",
-   "rank": 106,
+   "rank": 111,
    "tier": "adv",
    "year": "1987",
    "story": "1987 年 3 月 6 日渡轮“自由企业先驱号”敞着艏门驶离泽布吕赫后倾覆，193 人遇难；谢恩主持的正式调查同年 7 月作出结论，责任追到公司管理层"
@@ -1232,7 +1287,7 @@
    "en": "Fundamental Attribution Error",
    "discipline": "psychology",
    "one_line": "看别人出错，我们先给他定性格；处境和疏忽往往已足够解释，先查它们。",
-   "rank": 107,
+   "rank": 112,
    "tier": "adv",
    "year": "1977",
    "story": "1977 年李·罗斯等人的问答者实验：随机分配的出题者被评为更博学"
@@ -1243,32 +1298,21 @@
    "en": "Chesterton's Fence",
    "discipline": "thinking",
    "one_line": "拆掉一条看似多余的规矩前，先查清它当初是为了挡住什么。",
-   "rank": 108,
+   "rank": 113,
    "tier": "adv",
    "year": "2012",
    "story": "2012 年 J.C. Penney 的约翰逊取消优惠券改日常低价，销售额降约四分之一"
   },
   {
-   "id": "creative-destruction",
-   "name": "创造性破坏",
-   "en": "Creative Destruction",
-   "discipline": "economics",
-   "one_line": "新办法让旧办法的收入消失；在位者常因太听老顾客的话，让出了入口。",
-   "rank": 109,
+   "id": "conjunction-fallacy",
+   "name": "合取谬误",
+   "en": "Conjunction Fallacy",
+   "discipline": "psychology",
+   "one_line": "一个说法添上更多贴合的细节，会显得更像真的，成立的把握却只会更小。",
+   "rank": 114,
    "tier": "core",
-   "year": "1975",
-   "story": "1975 年柯达工程师萨松造出数码相机，数码摄影最终让柯达 2012 年破产"
-  },
-  {
-   "id": "ergodicity",
-   "name": "遍历性",
-   "en": "Ergodicity",
-   "discipline": "math",
-   "one_line": "一群人各试一次的平均，不等于你反复试下去的结果；钱按比例滚动时，两者能背道而驰。",
-   "rank": 110,
-   "tier": "core",
-   "year": "2010",
-   "story": "2010 年 2 月巴菲特股东信业绩表：标普 500 含股息 2008 年 -37%、2009 年 +26.5%，两年后仍少约五分之一（随 volatility-drag 并入本卡）"
+   "year": "1983",
+   "story": "1983 年特沃斯基与卡尼曼在《心理学评论》报告琳达问题：多数人把“出纳员且女权活动者”排在“出纳员”之前"
   },
   {
    "id": "thought-experiment",
@@ -1276,21 +1320,21 @@
    "en": "Thought Experiment",
    "discipline": "thinking",
    "one_line": "不动手，只在脑中把条件改到极端，顺着规则推到底，看想法在哪里自相矛盾。",
-   "rank": 111,
+   "rank": 115,
    "tier": "adv",
    "year": "1907",
    "story": "1907 年爱因斯坦在伯尔尼专利局想到“下落的人感觉不到自身重量”"
   },
   {
-   "id": "statistical-vs-practical-significance",
-   "name": "统计显著与实际显著",
-   "en": "Statistical vs Practical Significance",
-   "discipline": "math",
-   "one_line": "数据够多，再小的差别也测得出来；测得出来，不等于值得为它动手。",
-   "rank": 112,
-   "tier": "core",
-   "year": "2014",
-   "story": "2014 年 Facebook 情绪传染实验：68.9 万用户正面词比例下降约 0.1 个百分点"
+   "id": "sir-r0",
+   "name": "SIR 模型与基本再生数",
+   "en": "SIR Model and R0",
+   "discipline": "biology",
+   "one_line": "病人把没得过的人变成病人，好了就退场；没得过的人少到传不满一个，疫情掉头。",
+   "rank": 116,
+   "tier": "adv",
+   "year": "1978",
+   "story": "1978 年 1—2 月英格兰北部一所男子寄宿学校流感：763 名学生中 512 人卧床，《英国医学杂志》1978 年 3 月 4 日报告"
   },
   {
    "id": "present-bias",
@@ -1298,42 +1342,9 @@
    "en": "Present Bias",
    "discipline": "psychology",
    "one_line": "好处一到眼前就格外值钱，早先为将来定好的计划，到时候会被推翻。",
-   "rank": 113,
+   "rank": 117,
    "tier": "adv",
    "story": "20 世纪六七十年代米歇尔在斯坦福宾幼儿园做棉花糖延迟满足实验"
-  },
-  {
-   "id": "lognormal",
-   "name": "对数正态分布",
-   "en": "Lognormal Distribution (Multiplicative Shocks)",
-   "discipline": "math",
-   "one_line": "每一步按比例涨跌，结果就向右拖出长尾，平均数被少数大值拉到中位数之上。",
-   "rank": 114,
-   "tier": "core",
-   "year": "1879",
-   "story": "1879 年高尔顿请麦卡利斯特推出几何平均律：数据取对数后偏斜分布变成钟形（两文同期刊于皇家学会会刊）"
-  },
-  {
-   "id": "collective-action",
-   "name": "集体行动困境",
-   "en": "Collective Action Problem",
-   "discipline": "society",
-   "one_line": "每人分到的好处越小，越没人愿意先出力；好处集中在少数人手里，反倒有人带头。",
-   "rank": 115,
-   "tier": "core",
-   "year": "1955",
-   "story": "1955 年 12 月帕克斯被捕后，蒙哥马利黑人乘客拒乘公交 381 天，靠教会联络、志愿者拼车，1956 年 12 月公交取消隔离"
-  },
-  {
-   "id": "linear-regression",
-   "name": "线性回归",
-   "en": "Linear Models / Multiple Linear Regression",
-   "discipline": "math",
-   "one_line": "结果等于几项因素的加权和；每个权重是其余相同时，这一项多一个单位的平均差别。",
-   "rank": 116,
-   "tier": "core",
-   "year": "1990",
-   "story": "1990 年阿申费尔特用冬季降雨、生长季气温、采收季降雨三个天气数预测波尔多红酒价格"
   },
   {
    "id": "contrast-effect",
@@ -1341,10 +1352,43 @@
    "en": "Contrast Effect",
    "discipline": "psychology",
    "one_line": "同一个东西，换了比较对象，好坏、大小和贵贱的感觉就会改变。",
-   "rank": 117,
+   "rank": 118,
    "tier": "core",
    "year": "1977",
    "story": "1977 年蒙大拿州立大学宿舍实验：看完《霹雳娇娃》的男生给普通女性照片打分更低（1980 年发表）"
+  },
+  {
+   "id": "ergodicity",
+   "name": "遍历性",
+   "en": "Ergodicity",
+   "discipline": "math",
+   "one_line": "一群人各试一次的平均，不等于你反复试下去的结果；钱按比例滚动时，两者能背道而驰。",
+   "rank": 119,
+   "tier": "core",
+   "year": "2010",
+   "story": "2010 年 2 月巴菲特股东信业绩表：标普 500 含股息 2008 年 -37%、2009 年 +26.5%，两年后仍少约五分之一（随 volatility-drag 并入本卡）"
+  },
+  {
+   "id": "collective-action",
+   "name": "集体行动困境",
+   "en": "Collective Action Problem",
+   "discipline": "society",
+   "one_line": "每人分到的好处越小，越没人愿意先出力；好处集中在少数人手里，反倒有人带头。",
+   "rank": 120,
+   "tier": "core",
+   "year": "1955",
+   "story": "1955 年 12 月帕克斯被捕后，蒙哥马利黑人乘客拒乘公交 381 天，靠教会联络、志愿者拼车，1956 年 12 月公交取消隔离"
+  },
+  {
+   "id": "statistical-vs-practical-significance",
+   "name": "统计显著与实际显著",
+   "en": "Statistical vs Practical Significance",
+   "discipline": "math",
+   "one_line": "数据够多，再小的差别也测得出来；测得出来，不等于值得为它动手。",
+   "rank": 121,
+   "tier": "core",
+   "year": "2014",
+   "story": "2014 年 Facebook 情绪传染实验：68.9 万用户正面词比例下降约 0.1 个百分点"
   },
   {
    "id": "ecological-niche",
@@ -1352,32 +1396,10 @@
    "en": "Ecological Niche",
    "discipline": "biology",
    "one_line": "一个物种靠一整套条件活下去；需要同一套条件的对手，会把它实际占到的范围挤得更窄。",
-   "rank": 118,
+   "rank": 122,
    "tier": "core",
    "year": "1961",
    "story": "1961 年康奈尔在苏格兰坎布雷岛移除大藤壶，小藤壶能在低处存活"
-  },
-  {
-   "id": "mutualism",
-   "name": "互利共生",
-   "en": "Mutualism",
-   "discipline": "biology",
-   "one_line": "双方一直补上对方缺的东西，各自得到的又多于付出，关系就能长期维持。",
-   "rank": 119,
-   "tier": "adv",
-   "year": "1984",
-   "story": "1984 年丰田与通用在加州弗里蒙特关闭的通用旧厂合资成立 NUMMI（新联合汽车制造公司）"
-  },
-  {
-   "id": "selection-bias-berkson",
-   "name": "选择偏差与伯克森悖论",
-   "en": "Selection Bias / Berkson's Paradox",
-   "discipline": "math",
-   "one_line": "只看被门槛筛进来的人，本来无关的两样长处会显得此消彼长。",
-   "rank": 120,
-   "tier": "adv",
-   "year": "1946",
-   "story": "1946 年梅奥诊所的伯克森在《生物统计学通报》发文，指出住院这道筛选会让医院四格表里本无关的两种病显出假关联"
   },
   {
    "id": "critical-mass",
@@ -1385,10 +1407,21 @@
    "en": "Critical Mass and Phase Transitions",
    "discipline": "physics",
    "one_line": "每一轮能接出的下一轮，少于一就熄灭，多于一就越烧越大；越线之处，系统换一种活法。",
-   "rank": 121,
+   "rank": 123,
    "tier": "core",
    "year": "1942",
    "story": "1942 年 12 月 2 日费米团队在芝加哥大学看台下的壁球场逐截抽出镉控制棒，芝加哥一号堆首次自持链式反应，运行 28 分钟"
+  },
+  {
+   "id": "selection-bias-berkson",
+   "name": "选择偏差与伯克森悖论",
+   "en": "Selection Bias / Berkson's Paradox",
+   "discipline": "math",
+   "one_line": "只看被门槛筛进来的人，本来无关的两样长处会显得此消彼长。",
+   "rank": 124,
+   "tier": "adv",
+   "year": "1946",
+   "story": "1946 年梅奥诊所的伯克森在《生物统计学通报》发文，指出住院这道筛选会让医院四格表里本无关的两种病显出假关联"
   },
   {
    "id": "catalyst",
@@ -1396,43 +1429,21 @@
    "en": "Catalyst",
    "discipline": "physics",
    "one_line": "催化剂另开一条路让转变变快，自己参与其中又恢复原样，一份能反复用，终点却不变。",
-   "rank": 122,
+   "rank": 125,
    "tier": "adv",
    "year": "1913",
    "story": "1913 年 9 月巴斯夫奥堡合成氨工厂投产，博施团队放大哈伯法，同一批铁基催化剂反复使用"
   },
   {
-   "id": "self-serving-bias",
-   "name": "自利偏差",
-   "en": "Self-Serving Bias",
-   "discipline": "psychology",
-   "one_line": "赢了算自己的，输了算外面的，同一份证据两种松紧，人就从经历里学歪了。",
-   "rank": 123,
+   "id": "mutualism",
+   "name": "互利共生",
+   "en": "Mutualism",
+   "discipline": "biology",
+   "one_line": "双方一直补上对方缺的东西，各自得到的又多于付出，关系就能长期维持。",
+   "rank": 126,
    "tier": "adv",
-   "year": "1980",
-   "story": "1980 年劳与拉塞尔归类报纸体育版里球员、教练谈输赢的原因：赢了归自己，输了归队外"
-  },
-  {
-   "id": "conservation-laws",
-   "name": "守恒定律",
-   "en": "Conservation Laws",
-   "discipline": "physics",
-   "one_line": "有些量只能转移、不能凭空增减，所以少掉的一份必有去处，多出的一份必有来处。",
-   "rank": 124,
-   "tier": "core",
-   "year": "1845",
-   "story": "1845 年焦耳用下落重物带动桨轮搅水，测出功与热的当量"
-  },
-  {
-   "id": "social-capital",
-   "name": "社会资本",
-   "en": "Social Capital",
-   "discipline": "society",
-   "one_line": "信得过的关系是一笔能取用的资产：办事时省下寻找、核实和谈条件的工夫。",
-   "rank": 125,
-   "tier": "adv",
-   "year": "1997",
-   "story": "1997 年爱信精机工厂火灾致丰田停产，供应商网络自发协作数日内复产"
+   "year": "1984",
+   "story": "1984 年丰田与通用在加州弗里蒙特关闭的通用旧厂合资成立 NUMMI（新联合汽车制造公司）"
   },
   {
    "id": "unit-economics",
@@ -1440,10 +1451,43 @@
    "en": "Unit Economics",
    "discipline": "business",
    "one_line": "先算清一单或一个客户留下多少钱，再看扩张会放大收益还是亏损。",
-   "rank": 126,
+   "rank": 127,
    "tier": "core",
    "year": "2017",
    "story": "2017 年 MoviePass 推出 9.95 美元每月每天一场，每次观影按全价付影院票款"
+  },
+  {
+   "id": "conservation-laws",
+   "name": "守恒定律",
+   "en": "Conservation Laws",
+   "discipline": "physics",
+   "one_line": "有些量只能转移、不能凭空增减，所以少掉的一份必有去处，多出的一份必有来处。",
+   "rank": 128,
+   "tier": "core",
+   "year": "1845",
+   "story": "1845 年焦耳用下落重物带动桨轮搅水，测出功与热的当量"
+  },
+  {
+   "id": "self-serving-bias",
+   "name": "自利偏差",
+   "en": "Self-Serving Bias",
+   "discipline": "psychology",
+   "one_line": "赢了算自己的，输了算外面的，同一份证据两种松紧，人就从经历里学歪了。",
+   "rank": 129,
+   "tier": "adv",
+   "year": "1980",
+   "story": "1980 年劳与拉塞尔归类报纸体育版里球员、教练谈输赢的原因：赢了归自己，输了归队外"
+  },
+  {
+   "id": "social-capital",
+   "name": "社会资本",
+   "en": "Social Capital",
+   "discipline": "society",
+   "one_line": "信得过的关系是一笔能取用的资产：办事时省下寻找、核实和谈条件的工夫。",
+   "rank": 130,
+   "tier": "adv",
+   "year": "1997",
+   "story": "1997 年爱信精机工厂火灾致丰田停产，供应商网络自发协作数日内复产"
   },
   {
    "id": "pareto-efficiency",
@@ -1451,21 +1495,10 @@
    "en": "Pareto Efficiency",
    "discipline": "economics",
    "one_line": "不让任何人更差就没法让谁更好，分法就到了顶；它只问有没有浪费，不问公不公平。",
-   "rank": 127,
+   "rank": 131,
    "tier": "core",
    "year": "1945",
    "story": "二战期间拉德福德所在战俘营里互换红十字会包裹，香烟成了通用的钱（1945 年 11 月《Economica》）"
-  },
-  {
-   "id": "chicken-game",
-   "name": "胆小鬼博弈",
-   "en": "Game of Chicken",
-   "discipline": "games",
-   "one_line": "谁让谁吃亏，谁都不让又一起吃大亏时，每个人都想等对方先让。",
-   "rank": 128,
-   "tier": "adv",
-   "year": "1962",
-   "story": "1962 年古巴导弹危机，美苏对峙后以撤弹换不入侵与秘密撤走土耳其导弹收场"
   },
   {
    "id": "multiple-comparisons",
@@ -1473,21 +1506,10 @@
    "en": "Multiple Comparisons",
    "discipline": "math",
    "one_line": "试过的指标、分组和方法越多，越容易把偶然的结果当成规律。",
-   "rank": 129,
+   "rank": 132,
    "tier": "core",
    "year": "2005",
    "story": "克雷格·贝内特用死鲑鱼做 fMRI，未校正多重比较时“发现”脑激活（2005 年扫描，2009 年报告）"
-  },
-  {
-   "id": "network-models",
-   "name": "网络模型",
-   "en": "Network Models",
-   "discipline": "systems",
-   "one_line": "点与点怎样连，比有几个点更能决定消息传多远、谁成了中心。",
-   "rank": 130,
-   "tier": "core",
-   "year": "1967",
-   "story": "1967 年米尔格拉姆小世界信件实验：中西部的人经熟人转递文件夹给波士顿股票经纪人，送到的链子中间只隔五六人（同年 5 月《今日心理学》）"
   },
   {
    "id": "resonance",
@@ -1495,32 +1517,32 @@
    "en": "Resonance",
    "discipline": "physics",
    "one_line": "推力的节拍和系统自己来回的节拍对上，小推力也能积成大摆幅。",
-   "rank": 131,
+   "rank": 133,
    "tier": "adv",
    "year": "1831",
    "story": "1831 年士兵齐步走过曼彻斯特附近的布劳顿悬索桥致桥坍塌"
   },
   {
-   "id": "backward-induction",
-   "name": "逆向归纳",
-   "en": "Backward Induction",
+   "id": "chicken-game",
+   "name": "胆小鬼博弈",
+   "en": "Game of Chicken",
    "discipline": "games",
-   "one_line": "先看最后一个做决定的人会怎么选，再一步步往前推，就知道眼下每条路通向哪里。",
-   "rank": 132,
-   "tier": "core",
-   "year": "1858",
-   "story": "1858 年巴黎歌剧院包厢，墨菲对布伦瑞克公爵与伊苏阿尔伯爵，第 16 步弃后、下一步将杀（歌剧院对局）"
+   "one_line": "谁让谁吃亏，谁都不让又一起吃大亏时，每个人都想等对方先让。",
+   "rank": 134,
+   "tier": "adv",
+   "year": "1962",
+   "story": "1962 年古巴导弹危机，美苏对峙后以撤弹换不入侵与秘密撤走土耳其导弹收场"
   },
   {
-   "id": "fermi-estimation",
-   "name": "费米估算",
-   "en": "Fermi Estimation",
-   "discipline": "math",
-   "one_line": "大数没法直接猜时，拆成几个能猜的小数再相乘，先弄清是几十、几千还是几百万。",
-   "rank": 133,
-   "tier": "core",
-   "year": "1945",
-   "story": "1945 年“三位一体”核试验，费米撒纸片估出约一万吨 TNT 当量"
+   "id": "hotelling-competition",
+   "name": "空间竞争（霍特林）",
+   "en": "Spatial Competition (Hotelling/Downs)",
+   "discipline": "economics",
+   "one_line": "顾客只按远近挑，两家争同一批人，各自就会往中间挪，最后并肩站在一处。",
+   "rank": 135,
+   "tier": "adv",
+   "year": "1995",
+   "story": "1995 年布莱尔在特别党代会改写工党党章第四条（公有制条款），向中间靠拢，1997 年大选工党大胜"
   },
   {
    "id": "optionality",
@@ -1528,10 +1550,43 @@
    "en": "Optionality",
    "discipline": "investing",
    "one_line": "花一点小成本买下先看清再决定的余地，好就行动、不好就放弃，这份余地本身就值钱。",
-   "rank": 134,
+   "rank": 136,
    "tier": "adv",
    "year": "2011",
    "story": "2011 年伯克希尔投资美国银行 50 亿美元优先股并获认股权证，2017 年行权"
+  },
+  {
+   "id": "fermi-estimation",
+   "name": "费米估算",
+   "en": "Fermi Estimation",
+   "discipline": "math",
+   "one_line": "大数没法直接猜时，拆成几个能猜的小数再相乘，先弄清是几十、几千还是几百万。",
+   "rank": 137,
+   "tier": "core",
+   "year": "1945",
+   "story": "1945 年“三位一体”核试验，费米撒纸片估出约一万吨 TNT 当量"
+  },
+  {
+   "id": "backward-induction",
+   "name": "逆向归纳",
+   "en": "Backward Induction",
+   "discipline": "games",
+   "one_line": "先看最后一个做决定的人会怎么选，再一步步往前推，就知道眼下每条路通向哪里。",
+   "rank": 138,
+   "tier": "core",
+   "year": "1858",
+   "story": "1858 年巴黎歌剧院包厢，墨菲对布伦瑞克公爵与伊苏阿尔伯爵，第 16 步弃后、下一步将杀（歌剧院对局）"
+  },
+  {
+   "id": "square-cube-law",
+   "name": "平方-立方定律",
+   "en": "Square-Cube Law",
+   "discipline": "physics",
+   "one_line": "东西按原形状放大，体积涨得比面积快，承重和散热就越来越吃紧。",
+   "rank": 139,
+   "tier": "adv",
+   "year": "1935",
+   "story": "胡佛大坝（1935 年落成）分块浇筑并埋设冷却水管以散出巨大坝体的水化热"
   },
   {
    "id": "tight-coupling",
@@ -1539,7 +1594,7 @@
    "en": "Tight Coupling and Cascading Failure",
    "discipline": "systems",
    "one_line": "环节之间没有缓冲和替代时，一处故障会沿依赖一环环传下去，直到某处接得住。",
-   "rank": 135,
+   "rank": 140,
    "tier": "core",
    "year": "2003",
    "story": "2003 年 8 月 14 日美加东北大停电，俄亥俄线路触树跳闸、报警系统失灵后级联扩展，约五千万人断电"
@@ -1550,7 +1605,7 @@
    "en": "Price vs Value",
    "discipline": "investing",
    "one_line": "价格是对方开的数，价值是买下后能收到的钱折回今天；两个数不必相等。",
-   "rank": 136,
+   "rank": 141,
    "tier": "adv",
    "year": "2008",
    "story": "2008 年 2 月微软出价每股 31 美元（约 446 亿美元）收购雅虎，高出前日收盘六成多，雅虎董事会以低估为由拒绝，5 月微软撤回"
@@ -1561,21 +1616,10 @@
    "en": "Winner's Curse",
    "discipline": "games",
    "one_line": "大家抢一件价值不明的东西，赢的是估得最乐观的那个人，所以赢家更容易买贵。",
-   "rank": 137,
+   "rank": 142,
    "tier": "core",
    "year": "1983",
    "story": "1983 年巴泽曼与萨缪尔森在波士顿大学让 MBA 学生竞拍硬币罐，赢家平均出价 10.01 美元而罐值 8 美元"
-  },
-  {
-   "id": "square-cube-law",
-   "name": "平方-立方定律",
-   "en": "Square-Cube Law",
-   "discipline": "physics",
-   "one_line": "东西按原形状放大，体积涨得比面积快，承重和散热就越来越吃紧。",
-   "rank": 138,
-   "tier": "adv",
-   "year": "1935",
-   "story": "胡佛大坝（1935 年落成）分块浇筑并埋设冷却水管以散出巨大坝体的水化热"
   },
   {
    "id": "batna",
@@ -1583,7 +1627,7 @@
    "en": "BATNA",
    "discipline": "games",
    "one_line": "谈判筹码来自谈崩后最好的去处；退路越好，越能拒绝差条件。",
-   "rank": 139,
+   "rank": 143,
    "tier": "core",
    "year": "1996",
    "story": "1996 年苹果找新操作系统，Be 收购谈判破裂后转而以约 4 亿美元收购 NeXT"
@@ -1594,10 +1638,21 @@
    "en": "Abstraction and Modularity",
    "discipline": "computing",
    "one_line": "不必懂全部细节也能掌控整体：变化关在模块内部，模块之间靠稳定接口协作。",
-   "rank": 140,
+   "rank": 144,
    "tier": "core",
    "year": "1956",
    "story": "1956 年 4 月 26 日麦克莱恩的“理想 X 号”载 58 个集装箱从纽瓦克驶往休斯敦，集装箱运输起步"
+  },
+  {
+   "id": "substitutes-complements",
+   "name": "替代品与互补品",
+   "en": "Substitutes and Complements",
+   "discipline": "economics",
+   "one_line": "一样东西涨价，买家会转向能顶替它的，也会少买和它搭着用的。",
+   "rank": 145,
+   "tier": "core",
+   "year": "1973",
+   "story": "1973 年石油禁运后油价上涨，美国购车者转向省油小车"
   },
   {
    "id": "strategy-tradeoffs",
@@ -1605,7 +1660,7 @@
    "en": "Strategy as Trade-offs",
    "discipline": "business",
    "one_line": "战略是选定要给谁什么价值，并放弃会破坏这份价值的业务和做法。",
-   "rank": 141,
+   "rank": 146,
    "tier": "adv",
    "year": "1997",
    "story": "1997 年乔布斯回归苹果，把产品线收成四格，1998 年宣布停掉牛顿"
@@ -1616,21 +1671,21 @@
    "en": "Compression",
    "discipline": "computing",
    "one_line": "能把记录写短又完整还原，说明你抓住了藏在细节里的规律。",
-   "rank": 142,
+   "rank": 147,
    "tier": "adv",
    "year": "1951",
    "story": "1951 年 MIT 研究生霍夫曼为免考法诺的信息论期末考，想出先合并最少见两个符号的最优编码，1952 年发表"
   },
   {
-   "id": "substitutes-complements",
-   "name": "替代品与互补品",
-   "en": "Substitutes and Complements",
-   "discipline": "economics",
-   "one_line": "一样东西涨价，买家会转向能顶替它的，也会少买和它搭着用的。",
-   "rank": 143,
-   "tier": "core",
-   "year": "1973",
-   "story": "1973 年石油禁运后油价上涨，美国购车者转向省油小车"
+   "id": "shapley-value",
+   "name": "合作博弈与夏普利值",
+   "en": "Cooperative Games and the Shapley Value",
+   "discipline": "games",
+   "one_line": "合作的成果，按每个人在所有加入顺序里带来的平均增量来分。",
+   "rank": 148,
+   "tier": "adv",
+   "year": "1954",
+   "story": "1954 年夏普利与舒比克在《美国政治学评论》提出投票权力指数，以 11 国安理会（7 票、须含五常）为例，五常合占约 98.7%"
   },
   {
    "id": "combinatorial-explosion",
@@ -1638,7 +1693,7 @@
    "en": "Combinatorial Explosion",
    "discipline": "computing",
    "one_line": "选择能自由搭配时，每多一步决策，候选方案就乘上一轮，很快多到查不完。",
-   "rank": 144,
+   "rank": 149,
    "tier": "core",
    "year": "1997",
    "story": "1997 年深蓝以 3.5:2.5 击败卡斯帕罗夫，每秒评估约两亿局面仍需剪枝"
@@ -1649,43 +1704,10 @@
    "en": "Five Whys",
    "discipline": "thinking",
    "one_line": "出了问题，把每个答案再问一遍为什么，追到手边能改、改了会少复发的那一环就停。",
-   "rank": 145,
+   "rank": 150,
    "tier": "adv",
    "year": "1999",
    "story": "1999 年 9 月 23 日火星气候轨道器入轨时失联，调查追到地面软件按磅力秒输出、导航按牛顿秒读取的单位错误"
-  },
-  {
-   "id": "conjunction-fallacy",
-   "name": "合取谬误",
-   "en": "Conjunction Fallacy",
-   "discipline": "psychology",
-   "one_line": "一个说法添上更多贴合的细节，会显得更像真的，成立的把握却只会更小。",
-   "rank": 146,
-   "tier": "core",
-   "year": "1983",
-   "story": "1983 年特沃斯基与卡尼曼在《心理学评论》报告琳达问题：多数人把“出纳员且女权活动者”排在“出纳员”之前"
-  },
-  {
-   "id": "convexity",
-   "name": "凸性与非对称回报",
-   "en": "Convexity and Asymmetric Payoffs",
-   "discipline": "investing",
-   "one_line": "亏损封顶、盈利不封顶的回报，会把价格的上下起伏变成你的平均收益。",
-   "rank": 147,
-   "tier": "adv",
-   "year": "2004",
-   "story": "2004 年蒂尔向 Facebook 投 50 万美元，下行有限、上行无上限，2012 年上市后获利巨大"
-  },
-  {
-   "id": "sir-r0",
-   "name": "SIR 模型与基本再生数",
-   "en": "SIR Model and R0",
-   "discipline": "biology",
-   "one_line": "病人把没得过的人变成病人，好了就退场；没得过的人少到传不满一个，疫情掉头。",
-   "rank": 148,
-   "tier": "adv",
-   "year": "1978",
-   "story": "1978 年 1—2 月英格兰北部一所男子寄宿学校流感：763 名学生中 512 人卧床，《英国医学杂志》1978 年 3 月 4 日报告"
   },
   {
    "id": "reason-respecting",
@@ -1693,10 +1715,21 @@
    "en": "Reason-Respecting Tendency",
    "discipline": "psychology",
    "one_line": "请求小的时候，后面跟一句「因为」，哪怕没说出任何新东西，人也更容易答应。",
-   "rank": 149,
+   "rank": 151,
    "tier": "adv",
    "year": "1978",
    "story": "1978 年兰格等人在纽约市立大学研究生中心复印机插队实验：“因为我要复印”与真实理由的同意率几乎相同（93% 对 94%）"
+  },
+  {
+   "id": "convexity",
+   "name": "凸性与非对称回报",
+   "en": "Convexity and Asymmetric Payoffs",
+   "discipline": "investing",
+   "one_line": "亏损封顶、盈利不封顶的回报，会把价格的上下起伏变成你的平均收益。",
+   "rank": 152,
+   "tier": "adv",
+   "year": "2004",
+   "story": "2004 年蒂尔向 Facebook 投 50 万美元，下行有限、上行无上限，2012 年上市后获利巨大"
   },
   {
    "id": "jevons-paradox",
@@ -1704,7 +1737,7 @@
    "en": "Jevons Paradox",
    "discipline": "economics",
    "one_line": "效率提高后，资源总用量反而上升，条件是多出来的使用盖过了每次省下的量。",
-   "rank": 150,
+   "rank": 153,
    "tier": "adv",
    "year": "1769",
    "story": "1769 年瓦特独立冷凝器获专利，蒸汽机更省煤，英国用煤总量却持续增长"
@@ -1715,7 +1748,7 @@
    "en": "Convergent Evolution",
    "discipline": "biology",
    "one_line": "祖先不同的生物，若碰上同一道硬难题，会各自长出相似的解法。",
-   "rank": 151,
+   "rank": 154,
    "tier": "adv",
    "year": "1811",
    "story": "1811 年约瑟夫·安宁在莱姆里吉斯挖出鱼龙头骨，妹妹玛丽随后挖出骨架；鱼龙体形与海豚趋同"
@@ -1726,7 +1759,7 @@
    "en": "Liquidity",
    "discipline": "investing",
    "one_line": "要用钱的那天，手里的东西能换回多少现金，取决于它能卖多快、要让多少价。",
-   "rank": 152,
+   "rank": 155,
    "tier": "adv",
    "year": "2019",
    "story": "2019 年 6 月 3 日伍德福德股票收益基金因赎回不断、手中多为难卖股份而暂停按日赎回"
@@ -1737,7 +1770,7 @@
    "en": "Rent-Seeking",
    "discipline": "economics",
    "one_line": "花钱花力去抢一个只归自己的好处，抢到的人多赚了，社会的总价值却一分没多。",
-   "rank": 153,
+   "rank": 156,
    "tier": "adv",
    "year": "1815",
    "story": "1815 年 3 月英国议会通过《谷物法》，国内小麦每夸特不到 80 先令即禁止进口，地主的地租和面包价一起留在高处"
@@ -1748,7 +1781,7 @@
    "en": "Outcome Bias",
    "discipline": "psychology",
    "one_line": "结局好就说决定对、结局坏就说决定错，评分时忘了当时只知道什么、还能选什么。",
-   "rank": 154,
+   "rank": 157,
    "tier": "adv",
    "year": "1986",
    "story": "1986 年挑战者号失事，此前密封圈受损而平安返航被当作继续发射的依据；费曼在调查报告附录里用俄罗斯轮盘赌作比"
@@ -1759,7 +1792,7 @@
    "en": "Lindy Effect",
    "discipline": "society",
    "one_line": "书、手艺和规矩这类能传下去的东西，已经存续得越久，预计还能存续的时间越长。",
-   "rank": 155,
+   "rank": 158,
    "tier": "adv",
    "year": "1997",
    "story": "1997 年 6 月 12 日伊丽莎白二世出席伦敦重建的莎士比亚环球剧院开幕"
@@ -1770,7 +1803,7 @@
    "en": "Technical Debt",
    "discipline": "computing",
    "one_line": "今天抄近路省下的工夫，会变成以后每次改动多付的利息，直到有人花力气还清。",
-   "rank": 156,
+   "rank": 159,
    "tier": "adv",
    "year": "2012",
    "story": "2012 年 8 月 1 日骑士资本复用旧开关，漏更新的服务器激活 2003 年停用的旧代码，约 45 分钟亏损逾 4.6 亿美元"
@@ -1781,32 +1814,10 @@
    "en": "Narrative Fallacy",
    "discipline": "psychology",
    "one_line": "人把零散事实串成因果故事，再把故事的顺畅当成证据。",
-   "rank": 157,
+   "rank": 160,
    "tier": "adv",
    "year": "1995",
    "story": "1995 年奥米迪亚创办网上拍卖网站（eBay）；“为女友交易 PEZ 糖果盒”的起源故事是 1997 年公关编的，2002 年科恩《完美的商店》揭出"
-  },
-  {
-   "id": "five-forces",
-   "name": "波特五力",
-   "en": "Porter's Five Forces",
-   "discipline": "business",
-   "one_line": "行业能留下多少利润，看买家、供应商、同行、新进入者和替代品各挤走多少。",
-   "rank": 158,
-   "tier": "adv",
-   "year": "1978",
-   "story": "1978 年卡特签署《航空业放松管制法》，票价下降、航空公司难以留住利润"
-  },
-  {
-   "id": "braess-paradox",
-   "name": "布雷斯悖论",
-   "en": "Braess's Paradox",
-   "discipline": "systems",
-   "one_line": "各人自选最快的路、车越多路越堵时，多修一条捷径反而可能让所有人都更慢。",
-   "rank": 159,
-   "tier": "adv",
-   "year": "1990",
-   "story": "1990 年地球日纽约封闭第 42 街，据《纽约时报》报道交通未瘫痪反而顺畅"
   },
   {
    "id": "authority",
@@ -1814,7 +1825,7 @@
    "en": "Authority Bias",
    "discipline": "psychology",
    "one_line": "当权威的指令压过眼前的证据，人会把判断和责任一起交出去。",
-   "rank": 160,
+   "rank": 161,
    "tier": "adv",
    "year": "1961",
    "story": "1961 年耶鲁米尔格拉姆服从实验，40 人中 26 人按到 450 伏"
@@ -1825,7 +1836,7 @@
    "en": "Price Discrimination",
    "discipline": "economics",
    "one_line": "同样的东西按买家愿付的钱收两种价，前提是高价买家钻不进低价的门。",
-   "rank": 161,
+   "rank": 162,
    "tier": "adv",
    "year": "2014",
    "story": "2014 年 Spotify 在美国推出学生半价 Premium，经 SheerID 核验身份"
@@ -1836,10 +1847,32 @@
    "en": "Focal Point",
    "discipline": "games",
    "one_line": "无法沟通却想选到一起时，共同觉得醒目的答案会把大家引向同一处。",
-   "rank": 162,
+   "rank": 163,
    "tier": "adv",
    "year": "1960",
    "story": "1960 年谢林《冲突的战略》报告纽约会面题：答案集中在中央车站和正午"
+  },
+  {
+   "id": "five-forces",
+   "name": "波特五力",
+   "en": "Porter's Five Forces",
+   "discipline": "business",
+   "one_line": "行业能留下多少利润，看买家、供应商、同行、新进入者和替代品各挤走多少。",
+   "rank": 164,
+   "tier": "adv",
+   "year": "1978",
+   "story": "1978 年卡特签署《航空业放松管制法》，票价下降、航空公司难以留住利润"
+  },
+  {
+   "id": "braess-paradox",
+   "name": "布雷斯悖论",
+   "en": "Braess's Paradox",
+   "discipline": "systems",
+   "one_line": "各人自选最快的路、车越多路越堵时，多修一条捷径反而可能让所有人都更慢。",
+   "rank": 165,
+   "tier": "adv",
+   "year": "1990",
+   "story": "1990 年地球日纽约封闭第 42 街，据《纽约时报》报道交通未瘫痪反而顺畅"
   },
   {
    "id": "peter-principle",
@@ -1847,7 +1880,7 @@
    "en": "Peter Principle",
    "discipline": "society",
    "one_line": "当组织凭旧岗位的成绩提拔人，又难让人退回时，人会停在不胜任的位置。",
-   "rank": 163,
+   "rank": 166,
    "tier": "adv",
    "year": "1862",
    "story": "1862 年伯恩赛德升任波托马克军团司令，弗雷德里克斯堡惨败"
@@ -1858,7 +1891,7 @@
    "en": "Material Fatigue",
    "discipline": "physics",
    "one_line": "一次扛得住的力，反复作用也能养大裂纹，让东西在某一次突然断掉。",
-   "rank": 164,
+   "rank": 167,
    "tier": "adv",
    "year": "1954",
    "story": "1954 年彗星客机在厄尔巴岛附近空中解体，法恩伯勒水槽试验重现增压疲劳裂纹"
@@ -1869,21 +1902,10 @@
    "en": "Feynman Technique",
    "discipline": "thinking",
    "one_line": "合上资料，用外行听得懂的话把因果讲完；讲不下去的地方，就是该补的缺口。",
-   "rank": 165,
+   "rank": 168,
    "tier": "adv",
    "year": "1989",
    "story": "古德斯坦请费曼讲清自旋 1/2 粒子为何服从费米—狄拉克统计，费曼说降不到大一水平，说明我们并不真懂（1989 年《今日物理》，1996 年收入《费曼遗失的讲义》）"
-  },
-  {
-   "id": "hotelling-competition",
-   "name": "空间竞争（霍特林）",
-   "en": "Spatial Competition (Hotelling/Downs)",
-   "discipline": "economics",
-   "one_line": "顾客只按远近挑，两家争同一批人，各自就会往中间挪，最后并肩站在一处。",
-   "rank": 166,
-   "tier": "adv",
-   "year": "1995",
-   "story": "1995 年布莱尔在特别党代会改写工党党章第四条（公有制条款），向中间靠拢，1997 年大选工党大胜"
   },
   {
    "id": "conways-law",
@@ -1891,7 +1913,7 @@
    "en": "Conway's Law",
    "discipline": "society",
    "one_line": "系统的分块和接缝，往往照着设计者之间的沟通方式长出来。",
-   "rank": 167,
+   "rank": 169,
    "tier": "adv",
    "year": "1998",
    "story": "1998 年后亚马逊把单体网站程序拆成服务，同时把组织改成独立小团队"
@@ -1902,7 +1924,7 @@
    "en": "Steelmanning",
    "discipline": "thinking",
    "one_line": "反驳之前，先把对方的观点重建成他本人会认可的最强版本，再决定赞同还是反对。",
-   "rank": 168,
+   "rank": 170,
    "tier": "adv",
    "year": "2009",
    "story": "2009 年卡尼曼与克莱因合写《直觉专长的条件：一次没能分歧的分歧》，刊于《美国心理学家》"
@@ -1913,7 +1935,7 @@
    "en": "Stag Hunt",
    "discipline": "games",
    "one_line": "一起做收益最高，落单却最亏，于是怕对方退出的双方，会各自退回保底。",
-   "rank": 169,
+   "rank": 171,
    "tier": "core",
    "year": "1972",
    "story": "1972 年美苏签约后共同准备三年，1975 年阿波罗—联盟号对接，宇航员在轨道上握手"
@@ -1924,7 +1946,7 @@
    "en": "Experience Curve",
    "discipline": "business",
    "one_line": "累计做得越多，每件的成本就越低，前提是重复生产的经验沉淀成了改进。",
-   "rank": 170,
+   "rank": 172,
    "tier": "adv",
    "year": "1936",
    "story": "1936 年赖特发表《影响飞机成本的因素》：累计架数每翻一倍，每架机体直接人工约剩八成"
@@ -1935,7 +1957,7 @@
    "en": "Switching Costs and Lock-in",
    "discipline": "business",
    "one_line": "客户留下，有时是因为离开要付的代价，超过了新产品带来的好处。",
-   "rank": 171,
+   "rank": 173,
    "tier": "adv",
    "year": "2007",
    "story": "2007 年 4 月 2 日苹果与百代在伦敦宣布 iTunes 将出售无 DRM 歌曲"
@@ -1946,21 +1968,10 @@
    "en": "Resilience and Antifragility",
    "discipline": "systems",
    "one_line": "受了冲击能恢复叫韧性；在一定范围内，冲击反而让它变得更好，才叫反脆弱。",
-   "rank": 172,
+   "rank": 174,
    "tier": "adv",
    "year": "2011",
    "story": "2011 年 4 月 21 日亚马逊云美东故障，多家网站瘫痪，早用混乱猴子随机关机演练的网飞大体照常"
-  },
-  {
-   "id": "capital-allocation",
-   "name": "资本配置",
-   "en": "Capital Allocation",
-   "discipline": "investing",
-   "one_line": "钱有几个去处时，比各自多带回多少；年年这样选，公司就被选成了什么样。",
-   "rank": 173,
-   "tier": "adv",
-   "year": "1967",
-   "story": "1967 年巴菲特用伯克希尔纺织业务的现金买下国民赔偿保险，1985 年关闭纺织厂"
   },
   {
    "id": "hormesis",
@@ -1968,7 +1979,7 @@
    "en": "Hormesis",
    "discipline": "biology",
    "one_line": "同一种刺激，量小时逼身体变强，量大时伤身体：剂量决定它往哪个方向走。",
-   "rank": 174,
+   "rank": 175,
    "tier": "adv",
    "year": "1943",
    "story": "1943 年索瑟姆与埃利希发现西部红柏心材提取物低浓度促进、高浓度抑制木腐菌生长，并造词 hormesis"
@@ -1979,10 +1990,21 @@
    "en": "Legitimacy",
    "discipline": "society",
    "one_line": "人们承认谁有权作决定，就算不怕罚、不图利，也有了服从的理由。",
-   "rank": 175,
+   "rank": 176,
    "tier": "adv",
    "year": "2000",
    "story": "2000 年 12 月 13 日戈尔在最高法院叫停重新计票后发表认输讲话"
+  },
+  {
+   "id": "capital-allocation",
+   "name": "资本配置",
+   "en": "Capital Allocation",
+   "discipline": "investing",
+   "one_line": "钱有几个去处时，比各自多带回多少；年年这样选，公司就被选成了什么样。",
+   "rank": 177,
+   "tier": "adv",
+   "year": "1967",
+   "story": "1967 年巴菲特用伯克希尔纺织业务的现金买下国民赔偿保险，1985 年关闭纺织厂"
   },
   {
    "id": "mental-accounting",
@@ -1990,7 +2012,7 @@
    "en": "Mental Accounting",
    "discipline": "psychology",
    "one_line": "人把钱按用途和来源分进不同的账，各账之间不肯互相调剂，同样的钱就有了不同的待遇。",
-   "rank": 176,
+   "rank": 178,
    "tier": "adv",
    "story": "达斯汀·霍夫曼成名前把钱分罐存放，伙食罐空了就向哈克曼借钱，别的罐里的钱不碰（塞勒转述的轶事）"
   },
@@ -2000,32 +2022,10 @@
    "en": "Optimal Stopping",
    "discipline": "computing",
    "one_line": "选项依次出现、错过不回头时，先放过一批立标准，再选第一个超过它的。",
-   "rank": 177,
+   "rank": 179,
    "tier": "core",
    "year": "1969",
    "story": "1969 年阿姆斯特朗驾登月舱飞越巨石区，在燃料告急前选定落点"
-  },
-  {
-   "id": "shapley-value",
-   "name": "合作博弈与夏普利值",
-   "en": "Cooperative Games and the Shapley Value",
-   "discipline": "games",
-   "one_line": "合作的成果，按每个人在所有加入顺序里带来的平均增量来分。",
-   "rank": 178,
-   "tier": "adv",
-   "year": "1954",
-   "story": "1954 年夏普利与舒比克在《美国政治学评论》提出投票权力指数，以 11 国安理会（7 票、须含五常）为例，五常合占约 98.7%"
-  },
-  {
-   "id": "resource-curse",
-   "name": "资源诅咒",
-   "en": "Resource Curse",
-   "discipline": "society",
-   "one_line": "容易到手的大笔收入，会让人放松培养别的本事，也让分钱的人不必向谁交代。",
-   "rank": 179,
-   "tier": "adv",
-   "year": "1974",
-   "story": "1974 年佩雷斯就任委内瑞拉总统，借油价暴涨推“大委内瑞拉”扩张、举外债；1983 年 2 月 20 日政府下令暂停外汇交易（“黑色星期五”）"
   },
   {
    "id": "denial",
@@ -2039,12 +2039,23 @@
    "story": "2003 年琼·狄迪恩丈夫猝死，她仍无法送走他的鞋（《奇想之年》）"
   },
   {
+   "id": "resource-curse",
+   "name": "资源诅咒",
+   "en": "Resource Curse",
+   "discipline": "society",
+   "one_line": "容易到手的大笔收入，会让人放松培养别的本事，也让分钱的人不必向谁交代。",
+   "rank": 181,
+   "tier": "adv",
+   "year": "1974",
+   "story": "1974 年佩雷斯就任委内瑞拉总统，借油价暴涨推“大委内瑞拉”扩张、举外债；1983 年 2 月 20 日政府下令暂停外汇交易（“黑色星期五”）"
+  },
+  {
    "id": "public-choice",
    "name": "公共选择",
    "en": "Public Choice",
    "discipline": "society",
    "one_line": "议员和官员也在算自己的得失，看懂一项公共决策，先问谁得到什么、谁付钱、谁在场。",
-   "rank": 181,
+   "rank": 182,
    "tier": "adv",
    "year": "2005",
    "story": "2005 年国会为阿拉斯加格拉维纳岛“无处之桥”预留 2.23 亿美元，参议院 82 比 14 否决改拨卡特里娜重建，11 月取消专款指定"
@@ -2055,10 +2066,21 @@
    "en": "Caching and Locality",
    "discipline": "computing",
    "one_line": "反复要用的东西放在近处，多占一点地方，换来每次少等、少算。",
-   "rank": 182,
+   "rank": 183,
    "tier": "core",
    "year": "2012",
    "story": "2012 年 Netflix 推出 Open Connect，把存热门影片的缓存服务器装进各地运营商机房"
+  },
+  {
+   "id": "schelling-segregation",
+   "name": "谢林隔离模型",
+   "en": "Schelling Segregation Model",
+   "discipline": "society",
+   "one_line": "每户只要身边有少量同类就满意，一轮轮搬家下来，整片地方仍会裂成泾渭分明的块。",
+   "rank": 184,
+   "tier": "adv",
+   "year": "1969",
+   "story": "1969 年谢林发表《隔离模型》，1971 年《隔离的动态模型》在格子纸上用两种硬币推演搬家：温和的同类偏好也聚成成片隔离"
   },
   {
    "id": "historical-contingency",
@@ -2066,21 +2088,10 @@
    "en": "Historical Contingency",
    "discipline": "society",
    "one_line": "已经发生的历史，只是当时走得通的几条路里的一条；换掉一个环节，后面就不一样。",
-   "rank": 183,
+   "rank": 185,
    "tier": "adv",
    "year": "1989",
    "story": "1989 年 11 月 9 日沙博夫斯基口误称新旅行规定“立即生效”，柏林墙当晚开放"
-  },
-  {
-   "id": "markov-models",
-   "name": "马尔可夫模型",
-   "en": "Markov Models",
-   "discipline": "math",
-   "one_line": "下一步只看现在在哪、按固定概率转移，长期份额由概率决定，和从哪出发无关。",
-   "rank": 184,
-   "tier": "core",
-   "year": "1913",
-   "story": "1913 年马尔可夫数普希金《叶甫盖尼·奥涅金》开头两万个字母的元音/辅音及其转移比例（元音约 43%，元音后接元音 13%，辅音后接元音 66%）"
   },
   {
    "id": "preference-falsification",
@@ -2088,10 +2099,21 @@
    "en": "Preference Falsification",
    "discipline": "society",
    "one_line": "人们为避开惩罚而违心表态，公开的一致就能压在私下的不满上，再突然瓦解。",
-   "rank": 185,
+   "rank": 186,
    "tier": "adv",
    "year": "1989",
    "story": "1989 年 12 月 21 日齐奥塞斯库在布加勒斯特阳台讲话时人群突然嘘声，政权数日内倒台"
+  },
+  {
+   "id": "mr-market",
+   "name": "市场先生",
+   "en": "Mr. Market",
+   "discipline": "investing",
+   "one_line": "股市像一位天天登门报价的合伙人：报价只是邀请，买不买看你自己算过的估值。",
+   "rank": 187,
+   "tier": "adv",
+   "year": "2008",
+   "story": "2008 年 10 月 16 日巴菲特在《纽约时报》发文《买入美国》：个人账户此前只持有美国国债，恐慌中改买美国股票"
   },
   {
    "id": "brooks-law",
@@ -2099,7 +2121,7 @@
    "en": "Brooks's Law",
    "discipline": "computing",
    "one_line": "项目已经晚了，再加人，新人的产出补不回带教和协调的成本，交付只会更晚。",
-   "rank": 186,
+   "rank": 188,
    "tier": "adv",
    "year": "1964",
    "story": "1964 年起 IBM 为 OS/360 不断增员仍延期，布鲁克斯据此写《人月神话》"
@@ -2110,21 +2132,10 @@
    "en": "Impedance Matching",
    "discipline": "physics",
    "one_line": "两端特性差得越远，能量越容易在交界处被弹回；接得合适，比加大输入更有效。",
-   "rank": 187,
+   "rank": 189,
    "tier": "adv",
    "year": "1958",
    "story": "1958 年伊恩·唐纳德等在格拉斯哥发表腹部超声研究，用耦合剂排除空气"
-  },
-  {
-   "id": "mr-market",
-   "name": "市场先生",
-   "en": "Mr. Market",
-   "discipline": "investing",
-   "one_line": "股市像一位天天登门报价的合伙人：报价只是邀请，买不买看你自己算过的估值。",
-   "rank": 188,
-   "tier": "adv",
-   "year": "2008",
-   "story": "2008 年 10 月 16 日巴菲特在《纽约时报》发文《买入美国》：个人账户此前只持有美国国债，恐慌中改买美国股票"
   },
   {
    "id": "first-mover",
@@ -2132,21 +2143,10 @@
    "en": "First-Mover vs Second-Mover Advantage",
    "discipline": "business",
    "one_line": "先到者只有把时间变成难以追回的积累，才能压过后来者少交的学费。",
-   "rank": 189,
+   "rank": 190,
    "tier": "adv",
    "year": "1998",
    "story": "1998 年佩奇和布林在雅虎、AltaVista 之后创办 Google，后来居上"
-  },
-  {
-   "id": "two-sided-platforms",
-   "name": "双边平台",
-   "en": "Two-Sided Platforms",
-   "discipline": "business",
-   "one_line": "连着两群互相需要的人，价格不能平摊：补贴带得动对面的一边，向另一边收钱。",
-   "rank": 190,
-   "tier": "core",
-   "year": "1950",
-   "story": "1950 年麦克纳马拉与施奈德在纽约推出大来卡，同时争取持卡人与餐馆"
   },
   {
    "id": "coase-theorem",
@@ -2182,15 +2182,15 @@
    "story": "1922 年费雪在柏林买衬衫，店主在恶性通胀中仍以为卖价高于进价就是赚钱"
   },
   {
-   "id": "return-on-invested-capital",
-   "name": "资本回报率",
-   "en": "Return on Invested Capital",
-   "discipline": "investing",
-   "one_line": "每占用一元经营资本，一年能留下多少税后利润，是衡量赚钱效率的一把尺。",
+   "id": "two-sided-platforms",
+   "name": "双边平台",
+   "en": "Two-Sided Platforms",
+   "discipline": "business",
+   "one_line": "连着两群互相需要的人，价格不能平摊：补贴带得动对面的一边，向另一边收钱。",
    "rank": 194,
-   "tier": "adv",
-   "year": "1986",
-   "story": "1986 年可口可乐把自有装瓶厂并成可口可乐装瓶企业上市，自留 49%"
+   "tier": "core",
+   "year": "1950",
+   "story": "1950 年麦克纳马拉与施奈德在纽约推出大来卡，同时争取持卡人与餐馆"
   },
   {
    "id": "value-chain",
@@ -2204,12 +2204,23 @@
    "story": "1950 年代宜家设计师伦德格伦为装车卸下桌腿，宜家随后做平板盒装，把装配挪到顾客家里"
   },
   {
+   "id": "return-on-invested-capital",
+   "name": "资本回报率",
+   "en": "Return on Invested Capital",
+   "discipline": "investing",
+   "one_line": "每占用一元经营资本，一年能留下多少税后利润，是衡量赚钱效率的一把尺。",
+   "rank": 196,
+   "tier": "adv",
+   "year": "1986",
+   "story": "1986 年可口可乐把自有装瓶厂并成可口可乐装瓶企业上市，自留 49%"
+  },
+  {
    "id": "ess",
    "name": "演化稳定策略",
    "en": "Evolutionarily Stable Strategy",
    "discipline": "biology",
    "one_line": "一种做法普遍之后，少数改用别的做法的个体得不到更高收益，这种做法才算稳定。",
-   "rank": 196,
+   "rank": 197,
    "tier": "adv",
    "year": "1930",
    "story": "1930 年费希尔《自然选择的遗传理论》数孙辈，解释雌雄比例为何停在一比一附近"
@@ -2220,7 +2231,7 @@
    "en": "Peak-End Rule",
    "discipline": "psychology",
    "one_line": "回头评价一段经历，人记得的是最强烈的那一刻和怎么收场，不是每一分钟加起来。",
-   "rank": 197,
+   "rank": 198,
    "tier": "adv",
    "year": "2003",
    "story": "雷德尔迈尔的结肠镜随机试验（1994–95 年进行，2003 年发表）：延长一段较轻不适后整体评价更好"
@@ -2231,7 +2242,7 @@
    "en": "Cannibalization",
    "discipline": "business",
    "one_line": "新品抢走自家旧品的买主时，要算整个生意多赚了多少，不看新品卖了多少。",
-   "rank": 198,
+   "rank": 199,
    "tier": "adv",
    "year": "2007",
    "story": "2007 年 1 月 9 日乔布斯在旧金山 Macworld 发布能放音乐的 iPhone，苹果当时的主力产品之一是 iPod"
@@ -2242,7 +2253,7 @@
    "en": "Supernormal Stimulus",
    "discipline": "biology",
    "one_line": "把触发本能的线索夸大，反应会比面对真东西时更强，实际好处却没有跟着增加。",
-   "rank": 199,
+   "rank": 200,
    "tier": "adv",
    "year": "1951",
    "story": "1951 年廷伯根《本能研究》报告蛎鹬弃真蛋而孵超大假蛋"
@@ -2253,7 +2264,7 @@
    "en": "Shifting the Burden",
    "discipline": "systems",
    "one_line": "治标越管用，治本越被挤到后面，人也越来越离不开眼前的救急办法。",
-   "rank": 200,
+   "rank": 201,
    "tier": "adv",
    "year": "1887",
    "story": "1887 年安妮·沙利文到塔斯坎比亚教海伦·凯勒，家人的迁就让教学难以推进"
@@ -2264,21 +2275,10 @@
    "en": "End-to-End Principle",
    "discipline": "computing",
    "one_line": "最终结果对不对，要由两端来验收，因为只有两端掌握完整的条件。",
-   "rank": 201,
+   "rank": 202,
    "tier": "adv",
    "year": "2016",
    "story": "2016 年 4 月 WhatsApp 宣布默认端到端加密，服务器照常转发消息却没有解密密钥"
-  },
-  {
-   "id": "schelling-segregation",
-   "name": "谢林隔离模型",
-   "en": "Schelling Segregation Model",
-   "discipline": "society",
-   "one_line": "每户只要身边有少量同类就满意，一轮轮搬家下来，整片地方仍会裂成泾渭分明的块。",
-   "rank": 202,
-   "tier": "adv",
-   "year": "1969",
-   "story": "1969 年谢林发表《隔离模型》，1971 年《隔离的动态模型》在格子纸上用两种硬币推演搬家：温和的同类偏好也聚成成片隔离"
   },
   {
    "id": "host-parasite",
