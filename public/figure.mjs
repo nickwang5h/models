@@ -58,7 +58,7 @@ export function compile(src, names = new Set()) {
     return (env) => (c(env) ? a(env) : b(env));
   };
   const binary = (level) => {
-    if (level === BIN.length) return power();
+    if (level === BIN.length) return unary();
     let left = binary(level + 1);
     for (;;) {
       const op = peek();
@@ -68,19 +68,18 @@ export function compile(src, names = new Set()) {
       left = (env) => f(l(env), r(env));
     }
   };
-  const power = () => {
-    const base = unary();
-    if (!take('^')) return base;
-    const exp = unary2();
-    return (env) => base(env) ** exp(env);
-  };
-  // the exponent may itself carry a sign and a further power: 2^-x, 2^3^2
-  const unary2 = () => { if (take('-')) { const v = unary2(); return (env) => -v(env); } return power(); };
+  // a sign applies after the power, as in -2^2 = -4; the exponent may carry its own sign and power: 2^-x, 2^3^2
   const unary = () => {
     if (take('-')) { const v = unary(); return (env) => -v(env); }
     if (take('+')) return unary();
     if (take('!')) { const v = unary(); return (env) => (v(env) ? 0 : 1); }
-    return atom();
+    return power();
+  };
+  const power = () => {
+    const base = atom();
+    if (!take('^')) return base;
+    const exp = unary();
+    return (env) => base(env) ** exp(env);
   };
   const atom = () => {
     const tk = ts[i++];
@@ -98,15 +97,15 @@ export function compile(src, names = new Set()) {
           if (tk.v === 'flip') return (env) => (env.$rand() < a[0](env) ? 1 : 0);
           return (env) => { const u = 1 - env.$rand(); const v = env.$rand(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); };
         }
-        const f = FUNCS[tk.v];
+        const f = Object.hasOwn(FUNCS, tk.v) ? FUNCS[tk.v] : null;
         if (!f) throw new Error(`公式「${src}」里的函数 ${tk.v} 不认识`);
         return (env) => f(...args.map((a) => a(env)));
       }
-      if (tk.v in CONSTS) return () => CONSTS[tk.v];
+      if (Object.hasOwn(CONSTS, tk.v)) return () => CONSTS[tk.v];
       names.add(tk.v);
       const name = tk.v;
       return (env) => {
-        const v = env[name];
+        const v = Object.hasOwn(env, name) ? env[name] : undefined;
         if (typeof v !== 'number') throw new Error(`公式「${src}」用到的 ${name} 没有定义`);
         return v;
       };
@@ -741,7 +740,7 @@ export function figureProblems(spec) {
     const params = spec.params ?? [];
     if (!params.length || params.length > 4) out.push('demo 要 1–4 个滑块');
     for (const p of params) {
-      if (!/^[a-z][a-z0-9_]*$/i.test(p.id ?? '') || p.id in CONSTS || p.id === 'x' || p.id === 'k' || p.id === 'n') out.push(`滑块 id ${p.id} 不能用`);
+      if (!/^[a-z][a-z0-9_]*$/i.test(p.id ?? '') || Object.hasOwn(CONSTS, p.id) || p.id === 'x' || p.id === 'k' || p.id === 'n') out.push(`滑块 id ${p.id} 不能用`);
       if (!short(p.label, 10)) out.push(`滑块 ${p.id} 的 label 要有，最多 10 个字`);
       if (![p.min, p.max, p.value].every(Number.isFinite) || !(p.min < p.max) || p.value < p.min || p.value > p.max) out.push(`滑块 ${p.id} 的 min、max、value 不对`);
     }
