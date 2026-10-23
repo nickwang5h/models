@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   broadcastName, configured, createConfirmHandler, createDailyMailHandler, createSubscribeHandler, dailyMailHtml, dailyMailText,
-  signToken, validEmail, verifyToken,
+  signToken, TOPIC, topicId, validEmail, verifyToken,
 } from '../src/mail.mjs';
 import { today } from '../src/daily.mjs';
 
@@ -119,25 +119,52 @@ test('subscribe passes on rate limits and reports provider failures without deta
   assert.equal((await createSubscribeHandler({ env, fetcher: fake(new Error('down')).fetcher, now })(post({ email: 'a@b.co', website: '' }))).status, 502);
 });
 
-test('confirm adds a valid address to the segment and sends the reader back to the page', async () => {
+// A fake Resend that answers by method and path, for flows with several calls.
+function resend(routes) {
+  const calls = [];
+  const fetcher = async (url, init = {}) => {
+    const key = `${init.method ?? 'GET'} ${new URL(url).pathname}`;
+    calls.push({ key, body: init.body });
+    const answer = routes[key] ?? { status: 404 };
+    if (answer instanceof Error) throw answer;
+    return Response.json(answer.body ?? {}, { status: answer.status ?? 200 });
+  };
+  return { fetcher, calls };
+}
+const TOPICS = { 'GET /topics': { body: { data: [{ id: 'tp_1', name: '思维模型 · 今日一卡' }] } } };
+
+test('confirm adds a valid address to the segment, opts it in to the topic and sends the reader back', async () => {
   const token = await signToken('reader@example.com', SECRET, NOW);
-  const { fetcher, calls } = fake({ status: 201, body: { id: 'ct_1' } });
+  const { fetcher, calls } = resend({ ...TOPICS, 'POST /contacts': { status: 201, body: { id: 'ct_1' } }, 'PATCH /contacts/reader%40example.com/topics': { body: {} } });
   const handler = createConfirmHandler({ env, fetcher, now });
   const response = await handler(new Request(`${SITE}/api/confirm?t=${token}`));
   assert.equal(response.status, 303);
   assert.equal(response.headers.get('location'), `${SITE}/subscribe?confirmed=1`);
-  assert.equal(calls.length, 1);
-  assert.equal(calls[0].url, 'https://api.resend.com/contacts');
-  assert.deepEqual(JSON.parse(calls[0].body), { email: 'reader@example.com', unsubscribed: false, segments: [{ id: 'seg_1' }] });
+  assert.deepEqual(calls.map((c) => c.key), ['GET /topics', 'POST /contacts', 'PATCH /contacts/reader%40example.com/topics']);
+  assert.deepEqual(JSON.parse(calls[1].body), { email: 'reader@example.com', unsubscribed: false, segments: [{ id: 'seg_1' }], topics: [{ id: 'tp_1', subscription: 'opt_in' }] });
+  assert.deepEqual(JSON.parse(calls[2].body), [{ id: 'tp_1', subscription: 'opt_in' }]);
 
   const bad = await handler(new Request(`${SITE}/api/confirm?t=${token.slice(0, -3)}xyz`));
   assert.equal(bad.headers.get('location'), `${SITE}/subscribe?expired=1`);
   assert.equal((await handler(new Request(`${SITE}/api/confirm`, { method: 'POST' }))).status, 405);
   assert.equal((await createConfirmHandler({ env, fetcher: fake({ status: 500 }).fetcher, now })(new Request(`${SITE}/api/confirm?t=${token}`))).status, 502);
+  const optInFails = resend({ ...TOPICS, 'POST /contacts': { status: 201, body: { id: 'ct_1' } }, 'PATCH /contacts/reader%40example.com/topics': { status: 500 } });
+  assert.equal((await createConfirmHandler({ env, fetcher: optInFails.fetcher, now })(new Request(`${SITE}/api/confirm?t=${token}`))).status, 502);
   const off = await createConfirmHandler({ env: {}, fetcher, now })(new Request(`${SITE}/api/confirm?t=${token}`));
   assert.equal(off.status, 503);
   assert.match(await off.text(), /还没有开通/);
-  assert.equal(calls.length, 1);
+  assert.equal(calls.length, 3);
+});
+
+test('the topic is created on first use, opted out by default so only confirmed readers get the mail', async () => {
+  const { fetcher, calls } = resend({ 'GET /topics': { body: { data: [{ id: 'tp_learn', name: 'Learn' }] } }, 'POST /topics': { status: 201, body: { id: 'tp_new' } } });
+  const id = await topicId(fetcher, {}, () => undefined);
+  assert.equal(id, 'tp_new');
+  assert.deepEqual(calls.map((c) => c.key), ['GET /topics', 'POST /topics']);
+  const created = JSON.parse(calls[1].body);
+  assert.equal(created.name, TOPIC);
+  assert.equal(created.default_subscription, 'opt_out');
+  await assert.rejects(topicId(resend({ 'GET /topics': { status: 500 } }).fetcher, {}, () => undefined));
 });
 
 // Daily mail ---------------------------------------------------------------------------------------------------
@@ -159,14 +186,15 @@ test('daily mail needs its variables and the bearer token', async () => {
 });
 
 test('daily mail creates and sends one broadcast with today\'s card', async () => {
-  const { fetcher, calls } = fake({ status: 200, body: { data: [{ id: 'old', name: 'today-2026-11-05', status: 'sent' }] } }, { status: 201, body: { id: 'bc_1' } }, { status: 200, body: { id: 'bc_1' } });
+  const { fetcher, calls } = fake({ status: 200, body: { data: [{ id: 'old', name: 'today-2026-11-05', status: 'sent' }] } }, { status: 200, body: { data: [{ id: 'tp_1', name: TOPIC }] } }, { status: 201, body: { id: 'bc_1' } }, { status: 200, body: { id: 'bc_1' } });
   const response = await createDailyMailHandler({ env, load, fetcher, now })(cron());
   const day = today(data, '2026-11-05');
   assert.equal(response.status, 200);
   assert.deepEqual(await response.json(), { ok: true, broadcast: 'bc_1', name: 'models-today-2026-11-05', card: day.id });
-  assert.deepEqual(calls.map((c) => `${c.method} ${c.url}`), ['GET https://api.resend.com/broadcasts', 'POST https://api.resend.com/broadcasts', 'POST https://api.resend.com/broadcasts/bc_1/send']);
-  const created = JSON.parse(calls[1].body);
+  assert.deepEqual(calls.map((c) => `${c.method} ${c.url}`), ['GET https://api.resend.com/broadcasts', 'GET https://api.resend.com/topics', 'POST https://api.resend.com/broadcasts', 'POST https://api.resend.com/broadcasts/bc_1/send']);
+  const created = JSON.parse(calls[2].body);
   assert.equal(created.segment_id, 'seg_1');
+  assert.equal(created.topic_id, 'tp_1');
   assert.equal(created.from, env.MAIL_FROM);
   assert.equal(created.name, broadcastName('2026-11-05'));
   assert.ok(created.subject.includes(day.card.name));

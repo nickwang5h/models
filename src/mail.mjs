@@ -187,6 +187,25 @@ const failed = () => new Response('订阅没能保存，请稍后再打开一次
   status: 502, headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' },
 });
 
+// models.wuhua.app shares its Resend account with learn.wuhua.app. The daily mail goes to a Topic of its own, so
+// Resend's unsubscribe page can offer leaving just this mail. Readers opt in when they confirm; the Topic is found by
+// name, or created on first use.
+export const TOPIC = '思维模型 · 今日一卡';
+
+export async function topicId(fetcher, headers, timeout) {
+  const listed = await fetcher(`${RESEND}/topics`, { headers, signal: timeout() });
+  if (!listed.ok) throw new Error(`topics: ${listed.status}`);
+  const found = (await listed.json())?.data?.find?.((topic) => topic?.name === TOPIC);
+  if (typeof found?.id === 'string') return found.id;
+  const created = await fetcher(`${RESEND}/topics`, {
+    method: 'POST', headers, signal: timeout(),
+    body: JSON.stringify({ name: TOPIC, default_subscription: 'opt_out', description: 'models.wuhua.app 每天一张思维模型卡' }),
+  });
+  const id = created.ok ? (await created.json())?.id : undefined;
+  if (typeof id !== 'string') throw new Error(`topic: ${created.status}`);
+  return id;
+}
+
 export function createConfirmHandler({ env, fetcher = fetch, now = () => new Date() }) {
   return async (request) => {
     const url = new URL(request.url);
@@ -198,14 +217,20 @@ export function createConfirmHandler({ env, fetcher = fetch, now = () => new Dat
     }
     const email = await verifyToken(url.searchParams.get('t') || '', env.SUBSCRIBE_SECRET, now());
     if (!email) return redirect(url.origin, '/subscribe?expired=1');
+    const headers = { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' };
+    const timeout = () => AbortSignal.timeout(10000);
     try {
+      const topic = await topicId(fetcher, headers, timeout);
       const response = await fetcher(`${RESEND}/contacts`, {
-        method: 'POST',
-        headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, unsubscribed: false, segments: [{ id: env.RESEND_AUDIENCE_ID }] }),
-        signal: AbortSignal.timeout(10000),
+        method: 'POST', headers, signal: timeout(),
+        body: JSON.stringify({ email, unsubscribed: false, segments: [{ id: env.RESEND_AUDIENCE_ID }], topics: [{ id: topic, subscription: 'opt_in' }] }),
       });
       if (!response.ok) return failed();
+      // POST /contacts leaves an existing contact's topics alone, so opt in explicitly as well.
+      const optIn = await fetcher(`${RESEND}/contacts/${encodeURIComponent(email)}/topics`, {
+        method: 'PATCH', headers, signal: timeout(), body: JSON.stringify([{ id: topic, subscription: 'opt_in' }]),
+      });
+      if (!optIn.ok) return failed();
       return redirect(url.origin, '/subscribe?confirmed=1');
     } catch {
       return failed();
@@ -281,11 +306,12 @@ export function createDailyMailHandler({ env, load, fetcher = fetch, now = () =>
       if (previous && previous.status !== 'draft') return json(200, { ok: true, skipped: true, name, card: day.id });
       let id = previous?.id;
       if (!id) {
+        const topic = await topicId(fetcher, headers, timeout);
         const created = await fetcher(`${RESEND}/broadcasts`, {
           method: 'POST',
           headers,
           body: JSON.stringify({
-            segment_id: env.RESEND_AUDIENCE_ID, from: env.MAIL_FROM, subject: dailySubject(day),
+            segment_id: env.RESEND_AUDIENCE_ID, topic_id: topic, from: env.MAIL_FROM, subject: dailySubject(day),
             html: dailyMailHtml(day, site), text: dailyMailText(day, site), name,
           }),
           signal: timeout(),

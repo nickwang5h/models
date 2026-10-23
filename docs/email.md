@@ -25,8 +25,10 @@
 
 1. 读者在 `/subscribe` 填邮箱。`POST /api/subscribe` 只接受同源（`Origin` 与站点一致）的 JSON，正文不超过 24 KiB；隐藏的诱捕字段 `website` 非空时返回 202 但不发信。
 2. 它用 `MAIL_FROM` 发一封确认信，链接是 `/api/confirm?t=<令牌>`。令牌是 `base64url(邮箱|过期时间).base64url(HMAC-SHA256)`，密钥为 `SUBSCRIBE_SECRET`，自申请当天 UTC 零点起 48 小时有效。同一地址同一天的确认信内容相同，并带同一个 `Idempotency-Key`，多按几次也只发一封。
-3. 读者点开链接，`GET /api/confirm` 验证令牌后，把地址加入 Resend Segment（`RESEND_AUDIENCE_ID`），再跳回 `/subscribe?confirmed=1`；令牌无效或过期跳到 `/subscribe?expired=1`。
-4. 每天一次，`POST /api/daily-mail`（`Authorization: Bearer <CRON_SECRET>`）把当天的卡作为一条名为 `models-today-YYYY-MM-DD` 的 Broadcast 发给该 Segment。它先列出账号里的 Broadcast：同名且已发送就跳过；同名的草稿（上次创建后发送失败）就接着发送；都没有才新建。退订链接由 Resend 的 `{{{RESEND_UNSUBSCRIBE_URL}}}` 占位符生成。
+3. 读者点开链接，`GET /api/confirm` 验证令牌后，把地址加入 Resend Segment（`RESEND_AUDIENCE_ID`），并让它订阅 Topic「思维模型 · 今日一卡」，再跳回 `/subscribe?confirmed=1`；令牌无效或过期跳到 `/subscribe?expired=1`。
+4. 每天一次，`POST /api/daily-mail`（`Authorization: Bearer <CRON_SECRET>`）把当天的卡作为一条名为 `models-today-YYYY-MM-DD` 的 Broadcast 发给该 Segment 里订阅了这个 Topic 的人。它先列出账号里的 Broadcast：同名且已发送就跳过；同名的草稿（上次创建后发送失败）就接着发送；都没有才新建。退订链接由 Resend 的 `{{{RESEND_UNSUBSCRIBE_URL}}}` 占位符生成。
+
+Resend 账号与 learn.wuhua.app 共用，联系人的“已订阅／已退订”是全账号的状态。所以每日邮件限定在自己的 Topic 上：Topic 默认不订阅（opt_out）、仅对已订阅者可见（private），读者在退订页可以只退这一项，不影响 learn。Topic 按名字查找，第一次用到时由代码自动创建，不需要另配变量。退订页上的 Unsubscribe All 仍是全账号退订。
 
 地址只保存在 Resend，代码不记录、不落库。变量不全时，三个接口都返回 503：订阅页提示“邮件订阅还没有开通”，确认链接显示同样的说明，`/today` 和 `/feed.xml` 不受影响。
 
