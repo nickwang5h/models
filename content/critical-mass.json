@@ -143,5 +143,66 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "每人转给不到 1 个就断，多过 1 个越传越多",
+  "caption": "100 个人各转发一条消息。拖动「每人转给」：0.8 时下一轮 80、再下一轮 64；1.2 时是 120、144。分界在恰好 1 个。",
+  "x": {
+   "label": "第几轮",
+   "ticks": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10
+   ]
+  },
+  "y": {
+   "label": "这一轮收到的人"
+  },
+  "params": [
+   {
+    "id": "m",
+    "label": "每人转给",
+    "min": 0.5,
+    "max": 1.5,
+    "step": 0.05,
+    "value": 1.2,
+    "unit": " 个"
+   }
+  ],
+  "model": {
+   "steps": 10,
+   "init": {
+    "a": 100
+   },
+   "next": {
+    "a": "a*m"
+   }
+  },
+  "series": [
+   {
+    "name": "收到的人",
+    "expr": "a",
+    "tone": "accent",
+    "dots": "small"
+   },
+   {
+    "name": "恰好 1 个",
+    "expr": "100",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "readouts": [
+   {
+    "label": "第 10 轮收到",
+    "expr": "a",
+    "unit": " 人",
+    "digits": 0
+   }
+  ]
  }
 }

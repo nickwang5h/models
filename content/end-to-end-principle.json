@@ -143,5 +143,65 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "三站都盖了「包装完好」，两头一数少 3 只",
+  "caption": "每一站只对自己那一段负责，章都没盖错。你数过寄出的，朋友数过收到的，两个数一对，少的就露出来。",
+  "nodes": [
+   {
+    "id": "s",
+    "label": "寄出 12 只",
+    "sub": "你数过",
+    "tone": "accent"
+   },
+   {
+    "id": "a",
+    "label": "揽收",
+    "sub": "包装完好"
+   },
+   {
+    "id": "b",
+    "label": "转运",
+    "sub": "包装完好"
+   },
+   {
+    "id": "c",
+    "label": "派送",
+    "sub": "包装完好"
+   },
+   {
+    "id": "r",
+    "label": "收到 9 只",
+    "sub": "朋友数过",
+    "tone": "warn"
+   }
+  ],
+  "edges": [
+   {
+    "from": "s",
+    "to": "a"
+   },
+   {
+    "from": "a",
+    "to": "b"
+   },
+   {
+    "from": "b",
+    "to": "c"
+   },
+   {
+    "from": "c",
+    "to": "r"
+   },
+   {
+    "from": "r",
+    "to": "s",
+    "label": "两头一对",
+    "dashed": true,
+    "tone": "accent"
+   }
+  ]
  }
 }

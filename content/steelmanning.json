@@ -147,5 +147,63 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "驳倒「太远了」没用，他怕的是回程堵车",
+  "caption": "抓最差的一句驳，担心原封不动；先说出他会点头的最强版本，再谈去不去。",
+  "nodes": [
+   {
+    "id": "r",
+    "label": "不想去海边"
+   },
+   {
+    "id": "a",
+    "label": "驳「太远了」",
+    "sub": "抓最差的一句",
+    "tone": "muted"
+   },
+   {
+    "id": "b",
+    "label": "「怕回程堵车？」",
+    "sub": "说成他会点头的",
+    "tone": "accent"
+   },
+   {
+    "id": "a2",
+    "label": "担心原封不动",
+    "tone": "muted"
+   },
+   {
+    "id": "b2",
+    "label": "他点头，再谈",
+    "sub": "或换不堵的地方",
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "r",
+    "to": "a",
+    "tone": "muted"
+   },
+   {
+    "from": "r",
+    "to": "b",
+    "label": "钢人论证",
+    "tone": "accent"
+   },
+   {
+    "from": "a",
+    "to": "a2",
+    "tone": "muted"
+   },
+   {
+    "from": "b",
+    "to": "b2",
+    "tone": "accent"
+   }
+  ]
  }
 }

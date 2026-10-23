@@ -139,5 +139,64 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "同涨同跌的那一块，加多少项也压不掉",
+  "caption": "每项年波动都是 20%，等额持有。拖动相关系数：0 时越加越稳；0.5 时 4 项 15.8%，25 项 14.4%，再多也低不过虚线处的 14.1%。",
+  "x": {
+   "label": "持有几项",
+   "min": 1,
+   "max": 25,
+   "step": 1
+  },
+  "y": {
+   "label": "组合年波动",
+   "unit": "%",
+   "min": 0,
+   "max": 20
+  },
+  "params": [
+   {
+    "id": "r",
+    "label": "相关系数",
+    "min": 0,
+    "max": 1,
+    "step": 0.1,
+    "value": 0.5
+   }
+  ],
+  "series": [
+   {
+    "name": "组合波动",
+    "expr": "20*sqrt(r+(1-r)/x)",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "y": "20*sqrt(r)"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "持有 4 项",
+    "expr": "20*sqrt(r+(1-r)/4)",
+    "unit": "%",
+    "digits": 1
+   },
+   {
+    "label": "持有 25 项",
+    "expr": "20*sqrt(r+(1-r)/25)",
+    "unit": "%",
+    "digits": 1
+   },
+   {
+    "label": "底线",
+    "expr": "20*sqrt(r)",
+    "unit": "%",
+    "digits": 1
+   }
+  ]
  }
 }

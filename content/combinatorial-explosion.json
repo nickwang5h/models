@@ -147,5 +147,66 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "密码每多一位，要试的就多十倍",
+  "caption": "四位数的行李锁有一万种，一秒试一个要近三个小时。把位数拖到 5：十万种，要一天多。每步只有两种选择，十步也有 1024 种。",
+  "x": {
+   "label": "位数"
+  },
+  "y": {
+   "label": "要试的组合",
+   "format": "cn"
+  },
+  "params": [
+   {
+    "id": "b",
+    "label": "每位几种",
+    "min": 2,
+    "max": 10,
+    "step": 1,
+    "value": 10
+   },
+   {
+    "id": "m",
+    "label": "位数",
+    "min": 1,
+    "max": 10,
+    "step": 1,
+    "value": 4
+   }
+  ],
+  "model": {
+   "steps": "m",
+   "init": {
+    "c": 1
+   },
+   "next": {
+    "c": "c*b"
+   }
+  },
+  "series": [
+   {
+    "name": "组合数",
+    "expr": "c",
+    "tone": "accent",
+    "dots": true
+   }
+  ],
+  "readouts": [
+   {
+    "label": "组合数",
+    "expr": "c",
+    "format": "cn"
+   },
+   {
+    "label": "一秒试一个要",
+    "expr": "c/3600",
+    "unit": "小时",
+    "format": "cn",
+    "digits": 1
+   }
+  ]
  }
 }

@@ -143,5 +143,64 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "收下一盒点心或看到一次让步，都会觉得欠着",
+  "caption": "欠着的感觉不看礼物值多少：几十块的点心，换走四个小时的值班。还哪一样，由对方开口来定。",
+  "nodes": [
+   {
+    "id": "big",
+    "label": "大要求被拒",
+    "sub": "陪跑一整个月",
+    "layer": 0
+   },
+   {
+    "id": "small",
+    "label": "改成小要求",
+    "sub": "这周陪跑一次",
+    "layer": 1
+   },
+   {
+    "id": "gift",
+    "label": "收下一盒点心",
+    "sub": "没人托他带",
+    "layer": 1
+   },
+   {
+    "id": "owe",
+    "label": "觉得欠着",
+    "tone": "accent",
+    "layer": 2
+   },
+   {
+    "id": "yes",
+    "label": "答应原本想推的",
+    "sub": "替他值班到十点",
+    "tone": "warn",
+    "layer": 3
+   }
+  ],
+  "edges": [
+   {
+    "from": "big",
+    "to": "small",
+    "label": "他让一步"
+   },
+   {
+    "from": "small",
+    "to": "owe"
+   },
+   {
+    "from": "gift",
+    "to": "owe"
+   },
+   {
+    "from": "owe",
+    "to": "yes",
+    "label": "他开口要"
+   }
+  ]
  }
 }

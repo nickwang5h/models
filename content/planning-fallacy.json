@@ -147,5 +147,78 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "八个环节各有九成把握，全程按时只剩 43%",
+  "caption": "每多一个环节，全程按时的把握就再乘一次九成。拖动滑块：环节加到十五个，只剩 21%；每环提到九成五，八个环节回到 66%。",
+  "x": {
+   "label": "环节数"
+  },
+  "y": {
+   "label": "按时的把握",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "每环把握",
+    "min": 50,
+    "max": 99,
+    "step": 1,
+    "value": 90,
+    "unit": "%"
+   },
+   {
+    "id": "m",
+    "label": "环节数",
+    "min": 1,
+    "max": 20,
+    "step": 1,
+    "value": 8
+   }
+  ],
+  "model": {
+   "steps": 20,
+   "init": {
+    "q": 1
+   },
+   "next": {
+    "q": "q*p/100"
+   }
+  },
+  "series": [
+   {
+    "name": "全程按时",
+    "expr": "q*100",
+    "tone": "accent",
+    "dots": "small",
+    "from": 1
+   },
+   {
+    "name": "单个环节",
+    "expr": "p",
+    "tone": "muted",
+    "dashed": true,
+    "from": 1
+   }
+  ],
+  "marks": [
+   {
+    "x": "m",
+    "y": "(p/100)^m*100",
+    "text": "你的计划"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "全程按时",
+    "expr": "(p/100)^m*100",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
  }
 }

@@ -143,5 +143,72 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "同事涨 6000，你涨的 2000 就被差距抵平了",
+  "caption": "设想每多 1 元差距，心里少 0.5 元。同事涨 5000，你净得 500；涨到 8000，你净亏 1000。拖动难受比例，看抵平点往哪走。",
+  "x": {
+   "label": "同事涨薪（元）",
+   "min": 1000,
+   "max": 10000,
+   "step": 500
+  },
+  "y": {
+   "label": "你心里的净得",
+   "unit": "元"
+  },
+  "params": [
+   {
+    "id": "r",
+    "label": "难受比例",
+    "min": 0.1,
+    "max": 1,
+    "step": 0.1,
+    "value": 0.5
+   },
+   {
+    "id": "m",
+    "label": "你涨薪",
+    "min": 1000,
+    "max": 4000,
+    "step": 500,
+    "value": 2000,
+    "unit": "元"
+   }
+  ],
+  "series": [
+   {
+    "name": "心里的净得",
+    "expr": "m - r*max(x - m, 0)",
+    "tone": "accent"
+   },
+   {
+    "name": "不去比",
+    "expr": "m",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "y": 0,
+    "text": "抵平"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "他涨到这里抵平",
+    "expr": "m + m/r",
+    "unit": "元",
+    "digits": 0
+   },
+   {
+    "label": "他涨 8000 时",
+    "expr": "m - r*(8000 - m)",
+    "unit": "元",
+    "digits": 0
+   }
+  ]
  }
 }

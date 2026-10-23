@@ -147,5 +147,45 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "司机一眼就看见，急诊要到下个路口才看见",
+  "caption": "「没素质」当场就有；把他逼急的处境不在视野里。看别人出错，先查处境，再下性格的结论。",
+  "nodes": [
+   {
+    "id": "cut",
+    "label": "被猛地并线",
+    "sub": "差点蹭上"
+   },
+   {
+    "id": "rude",
+    "label": "那司机没素质",
+    "sub": "当场就下的结论",
+    "tone": "warn"
+   },
+   {
+    "id": "er",
+    "label": "他赶去急诊",
+    "sub": "下个路口才看见",
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "cut",
+    "to": "rude",
+    "label": "一眼",
+    "tone": "warn"
+   },
+   {
+    "from": "cut",
+    "to": "er",
+    "label": "多看一眼",
+    "dashed": true,
+    "tone": "accent"
+   }
+  ]
  }
 }

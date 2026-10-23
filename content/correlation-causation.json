@@ -139,5 +139,65 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "人派得多、烧得多，是同一场火带出来的",
+  "caption": "表上两件事同升同降，因为它们都跟着火势走。照表少派人，火只会烧得更久。",
+  "nodes": [
+   {
+    "id": "fire",
+    "label": "火势大",
+    "tone": "accent"
+   },
+   {
+    "id": "crew",
+    "label": "多派消防员",
+    "sub": "指挥中心看火势定"
+   },
+   {
+    "id": "loss",
+    "label": "烧毁的房子多"
+   },
+   {
+    "id": "table",
+    "label": "表上同升同降",
+    "tone": "muted"
+   },
+   {
+    "id": "cut",
+    "label": "提议少派人",
+    "sub": "火只会烧得更久",
+    "tone": "warn"
+   }
+  ],
+  "edges": [
+   {
+    "from": "fire",
+    "to": "crew"
+   },
+   {
+    "from": "fire",
+    "to": "loss"
+   },
+   {
+    "from": "crew",
+    "to": "table",
+    "dashed": true,
+    "tone": "muted"
+   },
+   {
+    "from": "loss",
+    "to": "table",
+    "dashed": true,
+    "tone": "muted"
+   },
+   {
+    "from": "table",
+    "to": "cut",
+    "tone": "warn"
+   }
+  ]
  }
 }

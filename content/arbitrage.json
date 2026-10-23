@@ -147,5 +147,75 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "车越跑越多，价差压到只剩运费",
+  "caption": "省城的苹果往下跌，产地的往上涨，价差停在每公斤 1 元运费上。拖动运费：运费多高，价差就停多高；过了 4 元，一辆车也不跑。",
+  "x": {
+   "label": "一批批开出去的车"
+  },
+  "y": {
+   "label": "每公斤价格",
+   "unit": "元",
+   "min": 0,
+   "max": 7
+  },
+  "params": [
+   {
+    "id": "c",
+    "label": "运费",
+    "min": 0.2,
+    "max": 5,
+    "step": 0.2,
+    "value": 1,
+    "unit": "元"
+   }
+  ],
+  "model": {
+   "steps": 12,
+   "init": {
+    "s": 6,
+    "o": 2
+   },
+   "next": {
+    "s": "s - 0.2*max(s - o - c, 0)",
+    "o": "o + 0.2*max(s - o - c, 0)"
+   }
+  },
+  "series": [
+   {
+    "name": "省城批发价",
+    "expr": "s",
+    "tone": "accent",
+    "dots": "small"
+   },
+   {
+    "name": "产地收购价",
+    "expr": "o",
+    "tone": "ink",
+    "dots": "small"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "省城",
+    "expr": "s",
+    "unit": " 元",
+    "digits": 1
+   },
+   {
+    "label": "产地",
+    "expr": "o",
+    "unit": " 元",
+    "digits": 1
+   },
+   {
+    "label": "剩下的价差",
+    "expr": "s - o",
+    "unit": " 元",
+    "digits": 1
+   }
+  ]
  }
 }

@@ -143,5 +143,73 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "拆成四个好猜的数，乘出一年约 1.6 万卷",
+  "caption": "每个数只要猜对大概。乘下来是一万多卷，不是一百万卷，这就够了。",
+  "nodes": [
+   {
+    "id": "h",
+    "label": "100 户",
+    "layer": 0
+   },
+   {
+    "id": "p",
+    "label": "每户 3 人",
+    "layer": 0
+   },
+   {
+    "id": "w",
+    "label": "每周一卷",
+    "layer": 0
+   },
+   {
+    "id": "y",
+    "label": "一年 52 周",
+    "layer": 0
+   },
+   {
+    "id": "people",
+    "label": "300 人"
+   },
+   {
+    "id": "per",
+    "label": "每人 52 卷"
+   },
+   {
+    "id": "total",
+    "label": "约 1.6 万卷",
+    "sub": "300 × 52",
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "h",
+    "to": "people"
+   },
+   {
+    "from": "p",
+    "to": "people"
+   },
+   {
+    "from": "w",
+    "to": "per"
+   },
+   {
+    "from": "y",
+    "to": "per"
+   },
+   {
+    "from": "people",
+    "to": "total"
+   },
+   {
+    "from": "per",
+    "to": "total"
+   }
+  ]
  }
 }

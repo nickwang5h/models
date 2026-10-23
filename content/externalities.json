@@ -143,5 +143,59 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "采石场的账说开五炮，算上村里只该开三炮",
+  "caption": "斜线是采石场每多一炮多赚的钱，横线是村里每挨一炮多修的钱。斜线高过横线的那几炮才划算；拖动村里的损失看它变。",
+  "x": {
+   "label": "第几炮",
+   "min": 1,
+   "max": 5,
+   "step": 1
+  },
+  "y": {
+   "label": "这一炮的钱",
+   "unit": "元",
+   "min": 0,
+   "max": 600
+  },
+  "params": [
+   {
+    "id": "d",
+    "label": "村里损失",
+    "min": 50,
+    "max": 550,
+    "step": 50,
+    "value": 250,
+    "unit": "元"
+   }
+  ],
+  "series": [
+   {
+    "name": "采石场多赚",
+    "expr": "600 - 100*x",
+    "tone": "accent",
+    "dots": true
+   },
+   {
+    "name": "村里多修",
+    "expr": "d",
+    "tone": "warn",
+    "dashed": true
+   }
+  ],
+  "readouts": [
+   {
+    "label": "采石场开",
+    "expr": "5",
+    "unit": " 炮"
+   },
+   {
+    "label": "算上村里该开",
+    "expr": "clamp(floor((600 - d)/100), 0, 5)",
+    "unit": " 炮"
+   }
+  ]
  }
 }

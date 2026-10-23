@@ -147,5 +147,84 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "恢复时多长一截，下次才举得动 12 公斤",
+  "caption": "只恢复到练前的样子，练一年还是 10 公斤；冲击超出承受范围，就只剩拉伤。",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "举 10 公斤"
+   },
+   {
+    "id": "b",
+    "label": "肌肉酸痛"
+   },
+   {
+    "id": "c",
+    "label": "多长一点",
+    "sub": "反脆弱",
+    "tone": "accent"
+   },
+   {
+    "id": "d",
+    "label": "下次加到 12 公斤",
+    "tone": "accent"
+   },
+   {
+    "id": "e",
+    "label": "只回到原样",
+    "sub": "韧性",
+    "tone": "muted"
+   },
+   {
+    "id": "f",
+    "label": "一年还是 10 公斤",
+    "tone": "muted"
+   },
+   {
+    "id": "g",
+    "label": "一把加到 40 公斤",
+    "tone": "warn"
+   },
+   {
+    "id": "h",
+    "label": "拉伤",
+    "tone": "warn"
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b"
+   },
+   {
+    "from": "b",
+    "to": "c",
+    "label": "隔两天恢复",
+    "tone": "accent"
+   },
+   {
+    "from": "c",
+    "to": "d",
+    "tone": "accent"
+   },
+   {
+    "from": "b",
+    "to": "e"
+   },
+   {
+    "from": "e",
+    "to": "f",
+    "tone": "muted"
+   },
+   {
+    "from": "g",
+    "to": "h",
+    "tone": "warn"
+   }
+  ]
  }
 }

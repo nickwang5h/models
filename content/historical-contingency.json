@@ -147,5 +147,75 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "条件只留下两条路，一句口误选了当晚放行",
+  "caption": "抗议和财政困难解释得了限制为什么松，解释不了边境为什么偏在那一夜打开。少了口误或直播，多半走下面那条。",
+  "nodes": [
+   {
+    "id": "b",
+    "label": "出境限制要松",
+    "sub": "抗议、财政困难"
+   },
+   {
+    "id": "c",
+    "label": "答「立即生效」",
+    "sub": "沙博夫斯基口误",
+    "tone": "accent"
+   },
+   {
+    "id": "d",
+    "label": "电视传遍柏林"
+   },
+   {
+    "id": "e",
+    "label": "守卫抬起栏杆",
+    "sub": "11 月 9 日夜里",
+    "tone": "accent"
+   },
+   {
+    "id": "f",
+    "label": "明天起凭手续办",
+    "tone": "muted"
+   },
+   {
+    "id": "g",
+    "label": "守卫等命令",
+    "sub": "没人冲向检查站",
+    "tone": "muted"
+   }
+  ],
+  "edges": [
+   {
+    "from": "b",
+    "to": "c",
+    "tone": "accent"
+   },
+   {
+    "from": "c",
+    "to": "d",
+    "tone": "accent"
+   },
+   {
+    "from": "d",
+    "to": "e",
+    "label": "人群涌向边境",
+    "tone": "accent"
+   },
+   {
+    "from": "b",
+    "to": "f",
+    "dashed": true,
+    "tone": "muted"
+   },
+   {
+    "from": "f",
+    "to": "g",
+    "dashed": true,
+    "tone": "muted"
+   }
+  ]
  }
 }

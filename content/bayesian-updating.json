@@ -143,5 +143,69 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "起点只有百分之五，一道划痕推到约一半",
+  "caption": "划痕在撬锁时常见二十倍，赔率就乘二十。拖动起点：起点 1% 只推到约 17%，起点 5% 推到约一半。",
+  "x": {
+   "label": "看到划痕前，进贼的可能",
+   "min": 0,
+   "max": 100,
+   "unit": "%"
+  },
+  "y": {
+   "label": "看到划痕后",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "起点",
+    "min": 1,
+    "max": 50,
+    "step": 1,
+    "value": 5,
+    "unit": "%"
+   },
+   {
+    "id": "r",
+    "label": "常见几倍",
+    "min": 1,
+    "max": 50,
+    "step": 1,
+    "value": 20
+   }
+  ],
+  "series": [
+   {
+    "name": "看到划痕后",
+    "expr": "100*x*r/(x*r+100-x)",
+    "tone": "accent"
+   },
+   {
+    "name": "没有新证据",
+    "expr": "x",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "x": "p",
+    "y": "100*p*r/(p*r+100-p)",
+    "text": "你家门口"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "进贼的可能",
+    "expr": "100*p*r/(p*r+100-p)",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
  }
 }

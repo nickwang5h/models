@@ -143,5 +143,81 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "各送 80 时断一条，四条线接连跳闸",
+  "caption": "四条线路每条最多送 100。拖动每条的负荷：75 以下，断一条就停在一条；过了 75，剩下的接不住，一条接一条退出。",
+  "x": {
+   "label": "轮",
+   "ticks": [
+    {
+     "at": 0,
+     "label": "正常"
+    },
+    {
+     "at": 1,
+     "label": "断一条"
+    },
+    {
+     "at": 2,
+     "label": "2"
+    },
+    {
+     "at": 3,
+     "label": "3"
+    },
+    {
+     "at": 4,
+     "label": "4"
+    }
+   ]
+  },
+  "y": {
+   "label": "还在运行的线路",
+   "unit": " 条",
+   "min": 0,
+   "max": 4
+  },
+  "params": [
+   {
+    "id": "load",
+    "label": "每条负荷",
+    "min": 50,
+    "max": 95,
+    "step": 5,
+    "value": 80
+   }
+  ],
+  "model": {
+   "steps": 4,
+   "init": {
+    "m": 4
+   },
+   "next": {
+    "m": "k==0 ? 3 : (m>0 && 4*load/m > 100 ? m-1 : m)"
+   }
+  },
+  "series": [
+   {
+    "name": "还在运行",
+    "expr": "m",
+    "tone": "accent",
+    "dots": true
+   }
+  ],
+  "readouts": [
+   {
+    "label": "断一条后每条要送",
+    "expr": "4*load/3",
+    "digits": 1
+   },
+   {
+    "label": "最后剩下",
+    "expr": "m",
+    "unit": " 条",
+    "digits": 0
+   }
+  ]
  }
 }

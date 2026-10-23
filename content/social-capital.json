@@ -147,5 +147,66 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "邻居一句推荐，省掉了比价和核实",
+  "caption": "楼下邻居上个月推荐过一位师傅，你一个电话就约好。换成陌生师傅，找、查、谈都得从头来过。",
+  "nodes": [
+   {
+    "id": "s",
+    "label": "半夜水管漏了"
+   },
+   {
+    "id": "a",
+    "label": "找陌生师傅",
+    "tone": "muted"
+   },
+   {
+    "id": "a1",
+    "label": "打三个电话比价",
+    "tone": "muted"
+   },
+   {
+    "id": "a2",
+    "label": "怕他乱要价",
+    "sub": "还怕修完又漏",
+    "tone": "muted"
+   },
+   {
+    "id": "b",
+    "label": "问楼下邻居",
+    "tone": "accent"
+   },
+   {
+    "id": "b1",
+    "label": "一个电话约好",
+    "sub": "不比价，不查底",
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "s",
+    "to": "b"
+   },
+   {
+    "from": "s",
+    "to": "a"
+   },
+   {
+    "from": "b",
+    "to": "b1"
+   },
+   {
+    "from": "a",
+    "to": "a1"
+   },
+   {
+    "from": "a1",
+    "to": "a2"
+   }
+  ]
  }
 }

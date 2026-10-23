@@ -147,5 +147,80 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "每级六成胜任，三级后七十八人卡在半路",
+  "caption": "一百人，每次晋升胜任的继续往上，不胜任的留在原位。拖动胜任比例：新旧工作越像，比例越高；九成时，三级下来只卡住 27 人。",
+  "x": {
+   "label": "晋升",
+   "ticks": [
+    {
+     "at": 0,
+     "label": "入职"
+    },
+    {
+     "at": 1,
+     "label": "第一级"
+    },
+    {
+     "at": 2,
+     "label": "第二级"
+    },
+    {
+     "at": 3,
+     "label": "第三级"
+    }
+   ]
+  },
+  "y": {
+   "label": "人数",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "胜任比例",
+    "min": 50,
+    "max": 95,
+    "step": 5,
+    "value": 60,
+    "unit": "%"
+   }
+  ],
+  "model": {
+   "steps": 3,
+   "init": {
+    "up": 100,
+    "stuck": 0
+   },
+   "next": {
+    "stuck": "stuck + up*(1-p/100)",
+    "up": "up*p/100"
+   }
+  },
+  "series": [
+   {
+    "name": "卡在半路",
+    "expr": "stuck",
+    "tone": "warn",
+    "dots": true
+   },
+   {
+    "name": "仍然胜任",
+    "expr": "up",
+    "tone": "ink",
+    "dots": true
+   }
+  ],
+  "readouts": [
+   {
+    "label": "三级后卡住",
+    "expr": "stuck",
+    "unit": " 人",
+    "digits": 0
+   }
+  ]
  }
 }

@@ -143,5 +143,85 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "往对手那边挪 100 米，地盘就多 50 米",
+  "caption": "拖甲往中间走，甲的客人一路变多。两人都挪到正中，仍是各分一半，游客平均要走的路却从 125 米变成 250 米。",
+  "x": {
+   "label": "一公里的沙滩",
+   "unit": " 米",
+   "min": 0,
+   "max": 1000,
+   "step": 5
+  },
+  "y": {
+   "label": "游客走到最近小贩",
+   "unit": " 米",
+   "min": 0,
+   "max": 500
+  },
+  "params": [
+   {
+    "id": "a",
+    "label": "甲的位置",
+    "min": 0,
+    "max": 1000,
+    "step": 50,
+    "value": 250,
+    "unit": "米"
+   },
+   {
+    "id": "b",
+    "label": "乙的位置",
+    "min": 0,
+    "max": 1000,
+    "step": 50,
+    "value": 750,
+    "unit": "米"
+   }
+  ],
+  "series": [
+   {
+    "name": "",
+    "expr": "min(abs(x-a),abs(x-b))",
+    "tone": "accent",
+    "fill": true
+   }
+  ],
+  "marks": [
+   {
+    "x": "a",
+    "text": "甲"
+   },
+   {
+    "x": "b",
+    "text": "乙"
+   },
+   {
+    "x": "(a+b)/2",
+    "text": "分界"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "甲的客人",
+    "expr": "a<b ? (a+b)/20 : (a>b ? 100-(a+b)/20 : 50)",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "乙的客人",
+    "expr": "a<b ? 100-(a+b)/20 : (a>b ? (a+b)/20 : 50)",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "游客平均要走",
+    "expr": "(min(a,b)^2/2 + ((max(a,b)-min(a,b))/2)^2 + (1000-max(a,b))^2/2)/1000",
+    "unit": " 米",
+    "digits": 0
+   }
+  ]
  }
 }

@@ -143,5 +143,63 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "借一小团火翻过门槛，之后火靠自己的热烧",
+  "caption": "法拉第的蜡烛。燃料和空气一直都在，缺的是开头那团火；烛芯点着以后，拿开细蜡烛，火也不灭。",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "蜡蒸气和空气",
+    "sub": "都在，就是不烧",
+    "tone": "muted"
+   },
+   {
+    "id": "b",
+    "label": "细蜡烛凑近",
+    "sub": "先给一小团火",
+    "tone": "accent"
+   },
+   {
+    "id": "c",
+    "label": "烛芯着火"
+   },
+   {
+    "id": "d",
+    "label": "放出热"
+   },
+   {
+    "id": "e",
+    "label": "更多蜡汽化"
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b"
+   },
+   {
+    "from": "b",
+    "to": "c",
+    "label": "翻过门槛"
+   },
+   {
+    "from": "c",
+    "to": "d"
+   },
+   {
+    "from": "d",
+    "to": "e"
+   },
+   {
+    "from": "e",
+    "to": "c",
+    "label": "接着烧",
+    "dashed": true,
+    "tone": "accent"
+   }
+  ]
  }
 }

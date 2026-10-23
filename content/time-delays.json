@@ -147,5 +147,83 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "货两周才到，订量在 0 到 16 箱之间来回",
+  "caption": "需求第 1 周起从 4 箱涨到 8 箱，之后不再变。拖到货周数：一周到货，第 2 周就稳了；越久，库存冲得越高。",
+  "x": {
+   "label": "周"
+  },
+  "y": {
+   "label": "箱"
+  },
+  "params": [
+   {
+    "id": "d",
+    "label": "到货周数",
+    "min": 1,
+    "max": 3,
+    "step": 1,
+    "value": 2
+   },
+   {
+    "id": "g",
+    "label": "补缺口",
+    "min": 25,
+    "max": 100,
+    "step": 25,
+    "value": 100,
+    "unit": "%"
+   }
+  ],
+  "model": {
+   "steps": 12,
+   "init": {
+    "inv": 12,
+    "o1": 4,
+    "o2": 4,
+    "o3": 4,
+    "o4": 4,
+    "mx": 12
+   },
+   "next": {
+    "inv": "inv + (d==1)*o1 + (d==2)*o2 + (d==3)*o3 + (d==4)*o4 - 8",
+    "o1": "max(0, 8 + g/100*(12 - (inv + (d==1)*o1 + (d==2)*o2 + (d==3)*o3 + (d==4)*o4 - 8)))",
+    "o2": "o1",
+    "o3": "o2",
+    "o4": "o3",
+    "mx": "max(mx, inv + (d==1)*o1 + (d==2)*o2 + (d==3)*o3 + (d==4)*o4 - 8)"
+   }
+  },
+  "series": [
+   {
+    "name": "库存",
+    "expr": "inv",
+    "tone": "accent",
+    "dots": "small"
+   },
+   {
+    "name": "每周订量",
+    "expr": "o1",
+    "tone": "ink",
+    "dashed": true,
+    "dots": "small"
+   }
+  ],
+  "marks": [
+   {
+    "y": 12,
+    "text": "想留的库存"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "库存最高",
+    "expr": "mx",
+    "unit": " 箱",
+    "digits": 0
+   }
+  ]
  }
 }

@@ -147,5 +147,53 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "loop",
+  "title": "躲开一次松一口气，下次要面对的更重",
+  "caption": "关上报告，焦虑当场降下来，这点轻松让人下次更想躲。拆出一件今天就能做的小事，比如约一次复查，圈就断了。",
+  "center": "躲一次",
+  "centerSub": "下次更想躲",
+  "nodes": [
+   {
+    "id": "red",
+    "label": "报告上有红箭头"
+   },
+   {
+    "id": "drawer",
+    "label": "塞进抽屉",
+    "tone": "warn"
+   },
+   {
+    "id": "relief",
+    "label": "今晚睡得着",
+    "sub": "焦虑当场降下来"
+   },
+   {
+    "id": "worse",
+    "label": "问题越拖越大"
+   }
+  ],
+  "edges": [
+   {
+    "from": "red",
+    "to": "drawer"
+   },
+   {
+    "from": "drawer",
+    "to": "relief"
+   },
+   {
+    "from": "relief",
+    "to": "worse"
+   },
+   {
+    "from": "worse",
+    "to": "red",
+    "label": "下次更重",
+    "tone": "warn"
+   }
+  ]
  }
 }

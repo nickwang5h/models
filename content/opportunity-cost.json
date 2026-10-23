@@ -143,5 +143,53 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "选了睡觉，代价是没接的那单 300 元校对",
+  "caption": "代价只算没选的去处里最好的那个：校对挣 300 元，健身还要倒贴 50 元。账上一分没出，代价是 300 元。",
+  "nodes": [
+   {
+    "id": "r",
+    "label": "周六两小时"
+   },
+   {
+    "id": "a",
+    "label": "睡觉"
+   },
+   {
+    "id": "b",
+    "label": "接校对",
+    "sub": "能挣 300 元",
+    "tone": "accent"
+   },
+   {
+    "id": "c",
+    "label": "去健身",
+    "sub": "还要付 50 元",
+    "tone": "muted"
+   }
+  ],
+  "edges": [
+   {
+    "from": "r",
+    "to": "a",
+    "label": "选了"
+   },
+   {
+    "from": "r",
+    "to": "b",
+    "label": "代价",
+    "tone": "accent"
+   },
+   {
+    "from": "r",
+    "to": "c",
+    "label": "不算",
+    "tone": "muted",
+    "dashed": true
+   }
+  ]
  }
 }

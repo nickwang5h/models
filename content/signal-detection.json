@@ -143,5 +143,92 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "挪线只是换一种错，拉开两堆才两种都少",
+  "caption": "读数过了判定线就报警。红色是虚警，灰色是漏报。拖判定线，一块变小另一块就变大；拖两堆相距，两块才一起缩小。",
+  "x": {
+   "label": "屏幕读数",
+   "min": -3,
+   "max": 6,
+   "step": 0.05
+  },
+  "y": {
+   "min": 0,
+   "max": 0.45
+  },
+  "params": [
+   {
+    "id": "c",
+    "label": "判定线",
+    "min": -1,
+    "max": 3,
+    "step": 0.5,
+    "value": 1
+   },
+   {
+    "id": "d",
+    "label": "两堆相距",
+    "min": 0.5,
+    "max": 4,
+    "step": 0.5,
+    "value": 2
+   }
+  ],
+  "series": [
+   {
+    "name": "",
+    "expr": "x>c ? exp(-x^2/2)/sqrt(2*pi) : 0",
+    "tone": "warn",
+    "fill": true,
+    "line": false,
+    "label": false
+   },
+   {
+    "name": "",
+    "expr": "x<c ? exp(-(x-d)^2/2)/sqrt(2*pi) : 0",
+    "tone": "muted",
+    "fill": true,
+    "line": false,
+    "label": false
+   },
+   {
+    "name": "没有目标",
+    "expr": "exp(-x^2/2)/sqrt(2*pi)",
+    "tone": "ink"
+   },
+   {
+    "name": "有目标",
+    "expr": "exp(-(x-d)^2/2)/sqrt(2*pi)",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "x": "c",
+    "text": "判定线"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "抓到率",
+    "expr": "100/(1+exp(-(1.5976*(d-c)+0.07056*(d-c)^3)))",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "虚警率",
+    "expr": "100/(1+exp(-(1.5976*(-c)+0.07056*(-c)^3)))",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "漏报率",
+    "expr": "100-100/(1+exp(-(1.5976*(d-c)+0.07056*(d-c)^3)))",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
  }
 }

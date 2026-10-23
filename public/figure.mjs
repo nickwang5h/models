@@ -427,8 +427,9 @@ function chartSvg(spec, data, W, H) {
   if (y.min == null) ylo = Math.floor(ylo / yt.step + 1e-9) * yt.step;
   yt = { ...ticks(ylo, yhi, narrow ? 3 : 4), step: yt.step };
   yt.values = yt.values.filter((v) => Math.abs(Math.round(v / yt.step) * yt.step - v) < yt.step * 1e-6);
-  const xlo = x.min ?? Math.min(...all.map((p) => p[0]));
-  const xhi = x.max ?? Math.max(...all.map((p) => p[0]));
+  // a demo's x.min and x.max may be formulas; runDemo works them out
+  const xlo = typeof x.min === 'number' ? x.min : data.xmin ?? Math.min(...all.map((p) => p[0]));
+  const xhi = typeof x.max === 'number' ? x.max : data.xmax ?? Math.max(...all.map((p) => p[0]));
   const fmtY = (v) => formatNumber(v, { unit: y.unit ?? '', format: y.format, step: yt.step });
   const tickW = Math.max(...yt.values.map((v) => textWidth(fmtY(v), 12)));
   // the end of each line carries its name (no legend), so the right margin fits the longest name
@@ -588,6 +589,7 @@ export function runDemo(spec, values = {}, seed = 1) {
   const runs = Math.min(30, Math.max(1, spec.runs ?? 1));
   const plots = (spec.series ?? []).map((s) => ({ ...s, f: compile(s.expr) }));
   let last = { ...env };
+  let xmin; let xmax;
   if (spec.model) {
     const steps = Math.min(2000, Math.max(1, Math.round(num(spec.model.steps ?? x.max ?? 50, env))));
     const init = Object.entries(spec.model.init ?? {}).map(([k, v]) => [k, compile(v)]);
@@ -616,13 +618,14 @@ export function runDemo(spec, values = {}, seed = 1) {
       series.push({ name: p.name, tone: p.tone, dashed: p.dashed, dots: p.dots, fill: p.fill, line: p.line, points: pts, label: p.label });
     }
     last = { ...env, x: hi };
+    xmin = lo; xmax = hi;
   }
   const marks = (spec.marks ?? []).map((m) => ({ text: m.text, x: m.x != null ? num(m.x, last) : undefined, y: m.y != null ? num(m.y, last) : undefined }));
   const readouts = (spec.readouts ?? []).map((r) => {
     const v = compile(r.expr)(last);
     return { label: r.label, value: formatNumber(v, { unit: r.unit ?? '', format: r.format, step: r.digits != null ? 10 ** -r.digits : 0 }) };
   });
-  return { series, marks, readouts };
+  return { series, marks, readouts, xmin, xmax };
 }
 
 // ---------- the figure ----------
@@ -758,7 +761,9 @@ export function figureProblems(spec) {
     }
   }
   if (!out.length) {
-    try { figureSvg(spec, { size: 'wide' }); figureSvg(spec, { size: 'narrow' }); } catch (error) { out.push(`figure 画不出来：${error.message}`); }
+    try {
+      for (const size of ['wide', 'narrow']) if (/NaN|Infinity/.test(figureSvg(spec, { size }))) out.push(`figure 在${size === 'wide' ? '宽屏' : '手机'}上画出了非数坐标`);
+    } catch (error) { out.push(`figure 画不出来：${error.message}`); }
   }
   return out;
 }

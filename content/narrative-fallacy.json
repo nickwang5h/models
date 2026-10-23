@@ -139,5 +139,43 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "两头都是真的，连起来的那根线是后补的",
+  "caption": "女友收藏糖果盒是真的，网站也是真的。「为她搭平台」是 1997 年公关编给记者的，连得越顺，越像亲眼所见。",
+  "nodes": [
+   {
+    "id": "pez",
+    "label": "女友收藏糖果盒",
+    "sub": "真的"
+   },
+   {
+    "id": "site",
+    "label": "1995 年办拍卖网站",
+    "sub": "真的"
+   },
+   {
+    "id": "story",
+    "label": "为她搭的平台",
+    "sub": "1997 年公关编的",
+    "tone": "warn"
+   }
+  ],
+  "edges": [
+   {
+    "from": "pez",
+    "to": "story",
+    "dashed": true,
+    "tone": "warn"
+   },
+   {
+    "from": "site",
+    "to": "story",
+    "dashed": true,
+    "tone": "warn"
+   }
+  ]
  }
 }

@@ -143,5 +143,73 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "新路真省 8 分钟，跑一周左右才看得清",
+  "caption": "每天的用时上下晃 10 分钟左右，六条线是六段不同的试跑。把真省拖到 2：跑满 120 天，线还贴着零；拖到 20：两三天就分开了。",
+  "x": {
+   "label": "跑了几天"
+  },
+  "y": {
+   "label": "平均每天省几分钟",
+   "min": -15,
+   "max": 35
+  },
+  "params": [
+   {
+    "id": "s",
+    "label": "真能省",
+    "min": 0,
+    "max": 20,
+    "step": 2,
+    "value": 8,
+    "unit": "分钟"
+   },
+   {
+    "id": "d",
+    "label": "跑几天",
+    "min": 5,
+    "max": 120,
+    "step": 5,
+    "value": 30
+   }
+  ],
+  "runs": 6,
+  "model": {
+   "steps": "d",
+   "init": {
+    "t": 0
+   },
+   "next": {
+    "t": "t + s + 10*randn()"
+   }
+  },
+  "series": [
+   {
+    "name": "",
+    "expr": "t/k",
+    "tone": "accent",
+    "from": 1
+   }
+  ],
+  "marks": [
+   {
+    "y": "s",
+    "text": "真能省的"
+   },
+   {
+    "y": 0,
+    "text": "和老路一样"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "平均的晃动",
+    "expr": "10/sqrt(d)",
+    "unit": " 分钟",
+    "digits": 1
+   }
+  ]
  }
 }

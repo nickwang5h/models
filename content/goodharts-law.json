@@ -143,5 +143,57 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "发了钱，本数是靠薄绘本涨上去的",
+  "caption": "读完的本数原来跟着爱读书走；一本奖一块钱以后，最快的涨法是每天读五本薄绘本，本数一周到 35 本。",
+  "nodes": [
+   {
+    "id": "m",
+    "label": "一本奖一块钱",
+    "layer": 0
+   },
+   {
+    "id": "a",
+    "label": "爱读书",
+    "sub": "一周啃一本厚书",
+    "layer": 1,
+    "tone": "muted"
+   },
+   {
+    "id": "c",
+    "label": "专挑薄绘本",
+    "sub": "一天五本",
+    "layer": 1,
+    "tone": "warn"
+   },
+   {
+    "id": "d",
+    "label": "读完的本数",
+    "sub": "一周 35 本",
+    "layer": 2,
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "m",
+    "to": "c"
+   },
+   {
+    "from": "a",
+    "to": "d",
+    "label": "原来",
+    "dashed": true
+   },
+   {
+    "from": "c",
+    "to": "d",
+    "label": "现在",
+    "tone": "warn"
+   }
+  ]
  }
 }

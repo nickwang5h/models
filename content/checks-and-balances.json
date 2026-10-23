@@ -143,5 +143,62 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "三个人各管一步，想越界得同时摆平另外两个",
+  "caption": "一笔 20 万元的采购，挑、付、验分给三个人。财务能拒付，仓库能拒收，单子才不会自己走完。",
+  "nodes": [
+   {
+    "id": "c",
+    "label": "采购",
+    "sub": "挑供应商"
+   },
+   {
+    "id": "f",
+    "label": "财务",
+    "sub": "批付款"
+   },
+   {
+    "id": "w",
+    "label": "仓库",
+    "sub": "验货"
+   },
+   {
+    "id": "d",
+    "label": "单子走完",
+    "sub": "20 万付出去",
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "c",
+    "to": "f"
+   },
+   {
+    "from": "f",
+    "to": "w"
+   },
+   {
+    "from": "w",
+    "to": "d"
+   },
+   {
+    "from": "f",
+    "to": "c",
+    "label": "拒付",
+    "dashed": true,
+    "tone": "warn"
+   },
+   {
+    "from": "w",
+    "to": "c",
+    "label": "拒收",
+    "dashed": true,
+    "tone": "warn"
+   }
+  ]
  }
 }

@@ -147,5 +147,56 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "你只碰三样东西，里面换什么都照样开",
+  "caption": "方向盘、油门、刹车的用法不变，发动机换了型号，你第一天照样上路。",
+  "nodes": [
+   {
+    "id": "you",
+    "label": "开车的你"
+   },
+   {
+    "id": "i",
+    "label": "方向盘 油门 刹车",
+    "sub": "用法不变",
+    "tone": "accent"
+   },
+   {
+    "id": "e",
+    "label": "发动机",
+    "sub": "换了型号也行"
+   },
+   {
+    "id": "g",
+    "label": "变速箱"
+   },
+   {
+    "id": "p",
+    "label": "上万个零件",
+    "tone": "muted"
+   }
+  ],
+  "edges": [
+   {
+    "from": "you",
+    "to": "i",
+    "label": "只管这三样"
+   },
+   {
+    "from": "i",
+    "to": "e"
+   },
+   {
+    "from": "i",
+    "to": "g"
+   },
+   {
+    "from": "i",
+    "to": "p"
+   }
+  ]
  }
 }

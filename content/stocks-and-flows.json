@@ -139,5 +139,74 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "每月进 800 人、走 5%，用户数停在 16000",
+  "caption": "用户越多，每月走的人越多，直到走的和来的一样多。拖动两个滑块：停下来的位置跟着移，起点 10000 人只决定走多久。",
+  "x": {
+   "label": "月"
+  },
+  "y": {
+   "label": "用户数",
+   "min": 0,
+   "max": 25000
+  },
+  "params": [
+   {
+    "id": "inflow",
+    "label": "每月新增",
+    "min": 400,
+    "max": 1000,
+    "step": 100,
+    "value": 800,
+    "unit": " 人"
+   },
+   {
+    "id": "churn",
+    "label": "每月流失",
+    "min": 4,
+    "max": 10,
+    "step": 1,
+    "value": 5,
+    "unit": "%"
+   }
+  ],
+  "model": {
+   "steps": 60,
+   "init": {
+    "u": 10000
+   },
+   "next": {
+    "u": "u + inflow - u*churn/100"
+   }
+  },
+  "series": [
+   {
+    "name": "用户数",
+    "expr": "u",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "y": "inflow/(churn/100)",
+    "text": "流失追上新增"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "停下来的位置",
+    "expr": "inflow/(churn/100)",
+    "unit": " 人",
+    "digits": 0
+   },
+   {
+    "label": "第 60 个月",
+    "expr": "u",
+    "unit": " 人",
+    "digits": 0
+   }
+  ]
  }
 }

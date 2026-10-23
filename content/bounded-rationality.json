@@ -139,5 +139,66 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "碰到第一家过线的就进门，不去找最好的那家",
+  "caption": "四十几家饭馆，不挨家比。先定一条线，一家家看，过线就进；连看十几家都不过，就划掉一条，把线放低。",
+  "nodes": [
+   {
+    "id": "s",
+    "label": "定一条线",
+    "sub": "干净、有座、人均 40 内"
+   },
+   {
+    "id": "l",
+    "label": "看下一家"
+   },
+   {
+    "id": "c",
+    "label": "过线了吗"
+   },
+   {
+    "id": "go",
+    "label": "进门点菜",
+    "sub": "二十分钟点上菜",
+    "tone": "accent"
+   },
+   {
+    "id": "dn",
+    "label": "划掉一条",
+    "sub": "连看 15 家都不过",
+    "tone": "muted"
+   }
+  ],
+  "edges": [
+   {
+    "from": "s",
+    "to": "l"
+   },
+   {
+    "from": "l",
+    "to": "c"
+   },
+   {
+    "from": "c",
+    "to": "go",
+    "label": "过了",
+    "tone": "accent"
+   },
+   {
+    "from": "c",
+    "to": "dn",
+    "label": "一直没有",
+    "tone": "muted"
+   },
+   {
+    "from": "c",
+    "to": "l",
+    "label": "没过",
+    "dashed": true
+   }
+  ]
  }
 }

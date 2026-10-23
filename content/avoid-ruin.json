@@ -147,5 +147,69 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "每轮三成出局，五轮后只剩不到两成还在桌上",
+  "caption": "每轮都押上全部，翻倍和出局七三开。拖到每轮 1%、100 轮：累计出局约 63%。",
+  "x": {
+   "label": "轮"
+  },
+  "y": {
+   "label": "还没出局的人",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "每轮出局",
+    "min": 1,
+    "max": 50,
+    "step": 1,
+    "value": 30,
+    "unit": "%"
+   },
+   {
+    "id": "t",
+    "label": "轮数",
+    "min": 1,
+    "max": 100,
+    "step": 1,
+    "value": 5
+   }
+  ],
+  "model": {
+   "steps": "t",
+   "init": {
+    "s": 100
+   },
+   "next": {
+    "s": "s*(1-p/100)"
+   }
+  },
+  "series": [
+   {
+    "name": "还在桌上",
+    "expr": "s",
+    "tone": "accent",
+    "dots": "small"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "还在桌上",
+    "expr": "s",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "累计出局",
+    "expr": "100-s",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
  }
 }

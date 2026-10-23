@@ -139,5 +139,82 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "每步都在抛硬币，路线却越走越散",
+  "caption": "八个人各走一遍。步数乘四，散开只乘二。把向右的机会拖到 51%，走到两千步，平均推出的 40 步快赶上散开的幅度。",
+  "x": {
+   "label": "步数"
+  },
+  "y": {
+   "label": "离起点几步"
+  },
+  "params": [
+   {
+    "id": "s",
+    "label": "步数",
+    "min": 100,
+    "max": 2000,
+    "step": 100,
+    "value": 100
+   },
+   {
+    "id": "p",
+    "label": "向右机会",
+    "min": 50,
+    "max": 52,
+    "step": 0.5,
+    "value": 50,
+    "unit": "%"
+   }
+  ],
+  "runs": 8,
+  "model": {
+   "steps": "s",
+   "init": {
+    "pos": 0
+   },
+   "next": {
+    "pos": "pos + 2*flip(p/100) - 1"
+   }
+  },
+  "series": [
+   {
+    "name": "",
+    "expr": "pos",
+    "tone": "accent"
+   },
+   {
+    "name": "平均推出",
+    "expr": "k*(2*p/100-1)",
+    "tone": "ink",
+    "dashed": true,
+    "thin": false
+   }
+  ],
+  "marks": [
+   {
+    "y": "sqrt(s)",
+    "text": "典型距离"
+   },
+   {
+    "y": "-sqrt(s)"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "典型距离",
+    "expr": "sqrt(s)",
+    "unit": " 步",
+    "digits": 0
+   },
+   {
+    "label": "平均推出",
+    "expr": "s*(2*p/100-1)",
+    "unit": " 步",
+    "digits": 0
+   }
+  ]
  }
 }

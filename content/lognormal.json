@@ -147,5 +147,78 @@
     ]
    }
   ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "平均数还在 100，中位数已掉到 82",
+  "caption": "三十个摊子每月抛一次硬币，涨或跌两成。多数线落在 100 以下，少数几条冲得很高，把平均数撑在 100。拖大涨跌幅，中位数掉得更快。",
+  "x": {
+   "label": "月"
+  },
+  "y": {
+   "label": "营业额（元）",
+   "min": 0
+  },
+  "params": [
+   {
+    "id": "s",
+    "label": "每月涨跌",
+    "min": 10,
+    "max": 40,
+    "step": 5,
+    "value": 20,
+    "unit": "%"
+   }
+  ],
+  "runs": 30,
+  "model": {
+   "steps": 10,
+   "init": {
+    "v": 100
+   },
+   "next": {
+    "v": "v*(1 + (2*flip(0.5)-1)*s/100)"
+   }
+  },
+  "series": [
+   {
+    "name": "",
+    "expr": "v",
+    "tone": "muted"
+   },
+   {
+    "name": "平均数",
+    "expr": "100",
+    "tone": "ink",
+    "dashed": true,
+    "thin": false
+   },
+   {
+    "name": "中位数",
+    "expr": "100*pow(1-(s/100)^2, k/2)",
+    "tone": "accent",
+    "thin": false
+   }
+  ],
+  "readouts": [
+   {
+    "label": "中位数",
+    "expr": "100*pow(1-(s/100)^2, 5)",
+    "unit": " 元",
+    "digits": 0
+   },
+   {
+    "label": "十次全涨",
+    "expr": "100*pow(1+s/100, 10)",
+    "unit": " 元",
+    "digits": 0
+   },
+   {
+    "label": "十次全跌",
+    "expr": "100*pow(1-s/100, 10)",
+    "unit": " 元",
+    "digits": 0
+   }
+  ]
  }
 }
