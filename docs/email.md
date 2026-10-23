@@ -67,7 +67,7 @@ Pages 没有定时任务。每天已经在跑的 `ops/models-daily.py`（Telegra
 
 不发真实邮件的检查：
 
-- `GET /api/subscribe` → 405；`Origin` 不对的 POST → 403；
+- `GET /api/subscribe` → `{"ok":true,"open":…}`（变量齐全时为 true，页面据此显示订阅框）；`Origin` 不对的 POST → 403；
 - 变量缺失时，`POST /api/subscribe` 和 `POST /api/daily-mail` → 503；
 - 变量齐全时，不带 `Authorization` 的 `POST /api/daily-mail` → 401；
 - `/today`、`/today.json`、`/feed.xml` 返回 200，并且是同一张卡；
