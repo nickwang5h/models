@@ -268,6 +268,12 @@ h3{scroll-margin-top:24px}
 .rd div{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:6px;font-size:13px;color:var(--ink2);line-height:1.5}
 .rd b{font-size:17px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
 
+/* tables written in a card's Markdown (payoff tables and the like) */
+.body table{border-collapse:collapse;margin:18px 0;font-size:15px;line-height:1.6;display:block;max-width:100%;overflow-x:auto;font-variant-numeric:tabular-nums}
+.body th,.body td{padding:7px 16px;border-bottom:1px solid var(--rule);text-align:left;white-space:nowrap}
+.body th{font-weight:500;color:var(--ink2);border-bottom-color:var(--ink3)}
+.body td:first-child,.body th:first-child{padding-left:0}
+
 /* ---- figures (figure.mjs): flow, chart, demo ---- */
 .fig{margin:36px 0 0;max-width:984px}
 .fig .fh{font-size:15px;font-weight:500;margin:0 0 12px;padding-left:12px;border-left:3px solid var(--accent);line-height:1.5}
