@@ -455,7 +455,7 @@ function gridSvg(spec) {
 // ---------- chart ----------
 const SERIES_TONES = ['accent', 'ink', 'muted', 'warn'];
 
-// The chart's frame and marks. `data` is {series:[{name, tone, points:[[x,y]...], dots, line, fill, dashed}], marks}.
+// The chart's frame and marks. `data` is {series:[{name, tone, points:[[x,y] or [x,y,err]...], dots, line, fill, dashed, err}], marks}.
 function chartSvg(spec, data, W, H) {
   const narrow = W < 480;
   const type = spec.type ?? 'line';
@@ -508,6 +508,7 @@ function chartSvg(spec, data, W, H) {
   drawn.forEach((pts, k) => {
     const px = pts.map((p) => [sx(p[0]), yClamp(p[1])]);
     if (data.series[k].line !== false) obstacles.push(...samples(px)); else obstacles.push(...px);
+    if (data.series[k].err) for (const p of pts) obstacles.push(...samples([[sx(p[0]), yClamp(p[1] - p[2])], [sx(p[0]), yClamp(p[1] + p[2])]]));
   });
   // names at the ends of the lines, pushed apart so they don't overlap
   const tags = ends.map((s) => {
@@ -556,6 +557,8 @@ function chartSvg(spec, data, W, H) {
     if (!pts.length) return;
     if (s.fill) g += `<path class="fc-a fc-${tone}" d="${path(pts)}L${t1(sx(pts[pts.length - 1][0]))} ${t1(sy(Math.max(ylo, 0)))}L${t1(sx(pts[0][0]))} ${t1(sy(Math.max(ylo, 0)))}Z"/>`;
     if (s.line !== false && pts.length > 1) g += `<path class="fc-l fc-${tone}${s.dashed ? ' fc-d' : ''}${s.thin ? ' fc-thin' : ''}" d="${path(pts)}"/>`;
+    // `err` is a half-width: each point gets a vertical bar from y − err to y + err
+    if (s.err) for (const p of pts) g += `<path class="fc-l fc-err fc-${tone}" d="M${t1(sx(p[0]))} ${t1(yClamp(p[1] - p[2]))}V${t1(yClamp(p[1] + p[2]))}"/>`;
     if (s.dots || pts.length === 1) for (const p of pts) g += `<circle class="fc-dot fc-${tone}" cx="${t1(sx(p[0]))}" cy="${t1(yClamp(p[1]))}" r="${s.dots === 'small' ? 2.5 : 3.5}"/>`;
   });
   for (const tag of tags) g += txt(Math.min(tag.x, W - R) + 8, tag.y + 4, tag.name, `fc-nm fc-${tag.tone}`);
@@ -667,12 +670,14 @@ const num = (v, env) => (typeof v === 'number' ? v : compile(v)(env));
 export function runDemo(spec, values = {}, seed = 1) {
   const env = {};
   for (const p of spec.params ?? []) env[p.id] = values[p.id] ?? p.value;
-  const rand = seeded(seed);
+  // spec.seed shifts every draw, so a card can choose which random numbers its first picture shows
+  const rand = seeded(seed + (spec.seed ?? 0));
   env.$rand = rand;
   const x = spec.x ?? {};
   const series = [];
   const runs = Math.min(30, Math.max(1, spec.runs ?? 1));
-  const plots = (spec.series ?? []).map((s) => ({ ...s, f: compile(s.expr) }));
+  const plots = (spec.series ?? []).map((s) => ({ ...s, f: compile(s.expr), e: s.err != null ? compile(s.err) : null }));
+  const at = (p, st, xv) => (p.e ? [xv, p.f(st), p.e(st)] : [xv, p.f(st)]);
   let last = { ...env };
   let xmin; let xmax;
   if (spec.model) {
@@ -685,12 +690,12 @@ export function runDemo(spec, values = {}, seed = 1) {
       const pts = plots.map(() => []);
       for (let k = 0; ; k++) {
         st.k = k; st.x = k;
-        plots.forEach((p, n) => { if (k >= (p.from ?? 0)) pts[n].push([k, p.f(st)]); });
+        plots.forEach((p, n) => { if (k >= (p.from ?? 0)) pts[n].push(at(p, st, k)); });
         if (k === steps) break;
         const upd = next.map(([key, f]) => [key, f(st)]);
         for (const [key, v] of upd) st[key] = v;
       }
-      plots.forEach((p, n) => series.push({ name: run === 0 ? p.name : '', tone: p.tone, dashed: p.dashed, dots: p.dots, fill: p.fill, line: p.line, thin: runs > 1 && p.thin !== false, points: pts[n], label: run === 0 && p.label !== false }));
+      plots.forEach((p, n) => series.push({ name: run === 0 ? p.name : '', tone: p.tone, dashed: p.dashed, dots: p.dots, fill: p.fill, line: p.line, err: !!p.e, thin: runs > 1 && p.thin !== false, points: pts[n], label: run === 0 && p.label !== false }));
       if (run === 0) last = { ...st };
     }
   } else {
@@ -699,8 +704,8 @@ export function runDemo(spec, values = {}, seed = 1) {
     const samples = Math.min(400, Math.max(2, x.step ? Math.round((hi - lo) / x.step) : 80));
     for (const p of plots) {
       const pts = [];
-      for (let k = 0; k <= samples; k++) { const xv = lo + ((hi - lo) * k) / samples; pts.push([xv, p.f({ ...env, x: xv })]); }
-      series.push({ name: p.name, tone: p.tone, dashed: p.dashed, dots: p.dots, fill: p.fill, line: p.line, points: pts, label: p.label });
+      for (let k = 0; k <= samples; k++) { const xv = lo + ((hi - lo) * k) / samples; pts.push(at(p, { ...env, x: xv }, xv)); }
+      series.push({ name: p.name, tone: p.tone, dashed: p.dashed, dots: p.dots, fill: p.fill, line: p.line, err: !!p.e, points: pts, label: p.label });
     }
     last = { ...env, x: hi };
     xmin = lo; xmax = hi;
@@ -839,11 +844,12 @@ export function figureProblems(spec) {
     }
     for (const r of spec.readouts ?? []) if (!short(r.label, 12)) out.push(`读数「${r.label}」的 label 最多 12 个字`);
     if ((spec.readouts ?? []).length > 3) out.push('readouts 最多 3 个');
+    if (spec.seed != null && !Number.isInteger(spec.seed)) out.push('seed 要是整数');
     try {
       const corners = [Object.fromEntries(params.map((p) => [p.id, p.value])), Object.fromEntries(params.map((p) => [p.id, p.min])), Object.fromEntries(params.map((p) => [p.id, p.max]))];
       for (const values of corners) {
         const r = runDemo(spec, values);
-        const bad = r.series.some((s) => !s.points.length || s.points.some((p) => !Number.isFinite(p[1])));
+        const bad = r.series.some((s) => !s.points.length || s.points.some((p) => !Number.isFinite(p[1]) || (s.err && !Number.isFinite(p[2]))));
         if (bad) out.push(`demo 在滑块取 ${JSON.stringify(values)} 时算出了非数（除以零或对负数取对数）`);
       }
     } catch (error) {

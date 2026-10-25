@@ -326,6 +326,7 @@ h3{scroll-margin-top:24px}
 .fc-v{fill:var(--ink2);font-size:12px;font-weight:500}
 .fc-l{fill:none;stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round}
 .fc-l.fc-thin{stroke-width:1.3;stroke-opacity:.55}
+.fc-l.fc-err{stroke-width:1.6}
 .fc-l.fc-d{stroke-dasharray:5 4;stroke-width:2}
 .fc-a{stroke:none;fill-opacity:.14}
 .fc-accent{stroke:var(--accent);fill:var(--accent)}

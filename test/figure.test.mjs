@@ -59,6 +59,13 @@ test('demo: steps the state forward and reads out at the end', () => {
   assert.equal(runDemo(demo, { p: 20 }).readouts[0].value, '50%');
 });
 
+test('demo: a series with err draws a bar around each point', () => {
+  const ci = { ...demo, series: [{ name: '区间', expr: '50', err: 'p', dots: true, line: false }] };
+  assert.deepEqual(runDemo(ci).series[0].points[0], [0, 50, 10]);
+  assert.deepEqual(figureProblems(ci), []);
+  assert.equal((figureSvg(ci).match(/class="fc-l fc-err/g) ?? []).length, 13);
+});
+
 test('demo: random runs are reproducible and differ by seed', () => {
   const coin = { ...demo, runs: 3, params: [{ id: 'q', label: '概率', min: 0, max: 1, step: 0.1, value: 0.5 }], model: { steps: 20, init: { h: 0 }, next: { h: 'h + flip(q)' } }, series: [{ name: '', expr: 'h/k', from: 1 }], readouts: [] };
   assert.equal(runDemo(coin).series.length, 3);
