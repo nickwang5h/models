@@ -4,3 +4,4 @@ dist/
 .dev.vars
 ops/sent.json
 __pycache__/
+.claude_api_key
