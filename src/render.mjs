@@ -112,7 +112,8 @@ const storyRest = (story) => story.replace(/^\d{3,4}\s*年(?![起代间])\s*/, '
 // The first sentences of the opening story, about 70 characters: the home page shows them under today's card.
 export function lede(scene) {
   let text = '';
-  for (const sentence of scene.match(/[^。！？]+[。！？]/g) ?? [scene]) {
+  const flat = scene.replace(/\s*\n\s*/g, '');
+  for (const sentence of flat.match(/[^。！？]+[。！？]/g) ?? [flat]) {
     text += sentence;
     if (text.length > 70) break;
   }
