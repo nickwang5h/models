@@ -55,7 +55,7 @@ npm run deploy    # 构建，然后 wrangler pages deploy dist --project-name mo
 | 字段 | 内容 |
 |---|---|
 | `id`、`name`、`en`、`discipline` | 标识、中文名、英文名、学科 |
-| `one_line` | 一句话说清 |
+| `one_line` | 一句话说清：像跟朋友提起它时脱口而出的那句。只说一个意思，二三十字，用日常的词，不用冒号和分号；条件和例外留给正文（例：「赚来的钱也接着去赚钱，时间越长，差距拉得越开。」） |
 | `shallow.scene` | 开场故事，真实事件，先不点名模型 |
 | `shallow.plain` | 大白话讲清它是什么 |
 | `deep.mechanism` | Markdown：为什么成立，两三节，每节一个 `### 小标题`，可以有 `$…$` 公式 |
