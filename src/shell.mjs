@@ -30,6 +30,9 @@ const ENVELOPE = '<svg class="env" viewBox="0 0 24 24" aria-hidden="true" focusa
   + '<path class="e-body" d="M3.5 9.5v9a1 1 0 0 0 1 1h15a1 1 0 0 0 1-1v-9"/><path class="e-body" d="M3.5 9.5l8.5 5.6 8.5-5.6"/><path class="e-flap" d="M3.5 9.5l8.5-5 8.5 5"/></svg>';
 export const subButton = () => `<button class="letter" type="submit">${ENVELOPE}<span>订阅</span></button>`;
 
+// app.js and every module it imports, fetched together instead of one after another (the import chain is two deep).
+const MODULES = ['app.js', 'progress.mjs', 'quiz.mjs', 'keys.mjs', 'display.mjs', 'list.mjs', 'daily.mjs', 'i18n.mjs'].map((f) => `<link rel="modulepreload" href="/${f}">`).join('');
+
 const THEME_ICON = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="7.2"/><path d="M10 2.8a7.2 7.2 0 0 1 0 14.4z" fill="currentColor"/></svg>';
 
 // Phones (≤720px) navigate from a bar at the bottom: today, find, review. A card page has its spine there instead
@@ -67,6 +70,7 @@ ${lang === 'zh' ? '<link rel="alternate" type="application/atom+xml" title="思�
 <script>try { var d = JSON.parse(localStorage.getItem('models-display') || '{}'); if (d.theme === 'light' || d.theme === 'dark') document.documentElement.dataset.theme = d.theme; } catch (e) {}</script>
 <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/style.css">
+${MODULES}
 ${math ? '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">' : ''}
 ${head}</head>
 <body>

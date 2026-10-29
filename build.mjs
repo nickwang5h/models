@@ -9,6 +9,11 @@ import { checkTranslation } from './src/translation.mjs';
 import { existsSync } from 'node:fs';
 
 const CONTENT = process.env.MODELS_CONTENT ?? 'content';
+const questionCounts = (set, ids) => Object.fromEntries(ids.map((id) => [id, set[id].use.questions.length]));
+async function writeQuestions(dir, set, ids) {
+  await mkdir(join(dir, 'q'), { recursive: true });
+  for (const id of ids) await writeFile(join(dir, 'q', `${id}.json`), JSON.stringify({ name: set[id].name, en: set[id].en, discipline: set[id].discipline, one_line: set[id].one_line, questions: set[id].use.questions }));
+}
 const DIST = 'dist';
 
 const index = JSON.parse(await readFile(join(CONTENT, 'index.json'), 'utf8'));
@@ -42,10 +47,14 @@ const figure = cards[today.id].figure ?? null;
 for (const d of index.disciplines) await writeFile(join(DIST, 'd', `${d.id}.html`), homePage(index, list, { discipline: d.id, today, figure }));
 await writeFile(join(DIST, 'index.html'), homePage(index, list, { today, figure }));
 await writeFile(join(DIST, 'random.html'), homePage(index, list, { today, figure, random: true }));
-await writeFile(join(DIST, 'review.html'), reviewPage(total, index.disciplines));
+await writeFile(join(DIST, 'review.html'), reviewPage(total, index.disciplines, 'zh', questionCounts(cards, order)));
 await writeFile(join(DIST, 'subscribe.html'), subscribePage(total));
 await writeFile(join(DIST, 'ids.json'), JSON.stringify(order));
 await writeFile(join(DIST, 'questions.json'), JSON.stringify(Object.fromEntries(order.map((id) => [id, { name: cards[id].name, en: cards[id].en, discipline: cards[id].discipline, one_line: cards[id].one_line, questions: cards[id].use.questions }]))));
+// The browser needs far less than questions.json (the Functions' copy): how many questions each card has (the review
+// count, the review queue) and, for the questions it shows, one card's questions at a time.
+await writeFile(join(DIST, 'qn.json'), JSON.stringify(questionCounts(cards, order)));
+await writeQuestions(DIST, cards, order);
 console.log(`构建 ${total} 张卡、${index.disciplines.length} 个学科到 ${DIST}/`);
 
 // English under /en: content/en/<id>.json (the same cards, translated, each with its story line in `story`) and
@@ -92,7 +101,8 @@ if (existsSync(join(EN, 'index.json'))) {
   for (const d of enIndex.disciplines) await writeFile(join(OUT, 'd', `${d.id}.html`), homePage(enIndex, enList, { discipline: d.id, today, figure: enFigure, lang: 'en' }));
   await writeFile(join(OUT, 'index.html'), homePage(enIndex, enList, { today, figure: enFigure, lang: 'en' }));
   await writeFile(join(OUT, 'random.html'), homePage(enIndex, enList, { today, figure: enFigure, random: true, lang: 'en' }));
-  await writeFile(join(OUT, 'review.html'), reviewPage(total, enIndex.disciplines, 'en'));
+  await writeFile(join(OUT, 'review.html'), reviewPage(total, enIndex.disciplines, 'en', questionCounts(en, order)));
+  await writeQuestions(OUT, en, order);
   await writeFile(join(OUT, 'questions.json'), JSON.stringify(Object.fromEntries(order.map((id) => [id, { name: en[id].name, en: en[id].en, discipline: en[id].discipline, one_line: en[id].one_line, questions: en[id].use.questions }]))));
   console.log(`English: ${total - stand} cards${stand ? ` (${stand} still in Chinese)` : ''} to ${OUT}/`);
 }

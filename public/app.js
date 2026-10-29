@@ -64,6 +64,23 @@ function wire(q, onDone = () => {}, { restore = true } = {}) {
   return reveal;
 }
 
+// The first tap on an option shows text the page hasn't set yet (its feedback, the explanation, ✓ or ✕), and setting it
+// the first time is slow. While the page is idle, set the shown question's once, off screen, and throw it away.
+function warm(q) {
+  const run = () => {
+    if (!q || q.hidden) return;
+    const box = document.createElement('div');
+    box.className = q.className;
+    box.setAttribute('aria-hidden', 'true');
+    box.style.cssText = `position:absolute;left:-10000px;top:0;width:${q.clientWidth || 340}px;visibility:hidden`;
+    box.innerHTML = `<span class="st">✓✕</span>${[...q.querySelectorAll('.fb,.explain')].map((p) => `<p class="${p.className}">${p.innerHTML}</p>`).join('')}`;
+    q.after(box);
+    void box.offsetHeight;
+    box.remove();
+  };
+  if ('requestIdleCallback' in window) requestIdleCallback(run, { timeout: 3000 }); else setTimeout(run, 1500);
+}
+
 // Top bar: how many cards this reader has read, the theme switch (also in the footer on phones) and the random card.
 function chrome() {
   const count = document.querySelector('[data-count]');
@@ -121,17 +138,24 @@ function findBox(sieve) {
   scrollTo({ top: box.getBoundingClientRect().top + scrollY - 12 });
   box.querySelector('input').focus({ preventScroll: true });
 }
-let questions = null;
-const allQuestions = async () => questions ?? (questions = await (await fetch(at('/questions.json'))).json());
+// How many questions each card has (inline on the review page, else /qn.json), and one card's questions (/q/<id>.json),
+// each fetched once: the promise is kept, so callers at the same moment share one request.
+let counts = null;
+const questionCounts = () => counts ?? (counts = Promise.resolve().then(() => {
+  const inline = document.getElementById('counts');
+  return inline ? JSON.parse(inline.textContent) : fetch(at('/qn.json')).then((r) => r.json());
+}));
+const cardQuestions = new Map();
+const questionsOf = (id) => cardQuestions.get(id) ?? cardQuestions.set(id, fetch(at(`/q/${id}.json`)).then((r) => r.json())).get(id);
 async function updateDue() {
   const badge = document.querySelector('[data-due]');
   const read = Object.keys(state.read);
   if (!badge) return;
   if (!read.length) { badge.hidden = true; return; }
-  const all = await allQuestions().catch(() => null);
-  if (!all) return;
+  const n = await questionCounts().catch(() => null);
+  if (!n) return;
   let due = 0;
-  for (const id of read) (all[id]?.questions ?? []).forEach((_, n) => { if (!lastAnswer(`${id}-${n}`)?.ok) due++; });
+  for (const id of read) for (let k = 0; k < (n[id] ?? 0); k++) if (!lastAnswer(`${id}-${k}`)?.ok) due++;
   badge.textContent = Math.min(due, 10);
   badge.hidden = !due;
 }
@@ -273,8 +297,8 @@ function card(root) {
   };
   qs.forEach((q) => reveals.set(q.dataset.q, [wire(q, () => answered(q.dataset.q))]));
   current = Math.max(0, qs.findIndex((q) => !q.classList.contains('done')));
-  for (const b of nexts) b.addEventListener('click', () => { current = Number(b.dataset.to); show(); qs[current].querySelector('.opt')?.focus({ preventScroll: true }); });
-  for (const t of tasks) t.addEventListener('click', () => { current = Number(t.dataset.i); show(); });
+  for (const b of nexts) b.addEventListener('click', () => { current = Number(b.dataset.to); show(); warm(qs[current]); qs[current].querySelector('.opt')?.focus({ preventScroll: true }); });
+  for (const t of tasks) t.addEventListener('click', () => { current = Number(t.dataset.i); show(); warm(qs[current]); });
 
   const use = document.getElementById('s-use');
   if ('IntersectionObserver' in window && use) {
@@ -319,6 +343,7 @@ function card(root) {
   addEventListener('resize', follow);
   follow();
   show();
+  warm(qs[current]);
 
   // The day: today's date beside the crumbs when this is today's card; on a phone opened for a day (?day= within the
   // last 30 days and that day's card), that date, and the day's question after the opening.
@@ -343,6 +368,7 @@ function card(root) {
     block.append(q);
     root.querySelector('.story').after(block);
     reveals.get(qid).push(wire(q, () => answered(qid)));
+    warm(q);
     // the outline gets the day too, after the story: its date and one box
     const item = document.createElement('li');
     item.innerHTML = `<a href="#s-day" data-t="s-day" class="td"><span class="tqd">${dayLabel(date, lang)}</span><span class="tq"><i></i></span></a>`;
@@ -417,11 +443,15 @@ function card(root) {
 }
 
 async function review(box) {
-  const all = await allQuestions();
-  const cards = Object.entries(all).map(([id, c]) => ({ id, questions: c.questions.map((_, n) => `${id}-${n}`) }));
+  const n = await questionCounts();
+  const cards = Object.entries(n).map(([id, k]) => ({ id, questions: Array.from({ length: k }, (_, j) => `${id}-${j}`) }));
   const queue = reviewQueue(state, cards).slice(0, 10);
+  box.dataset.ready = '';
   if (!queue.length) return;
-  if (phone.matches) { reviewOne(box, all, queue); return; }
+  const ids = [...new Set(queue.map((qid) => qid.replace(/-\d+$/, '')))];
+  for (const id of ids) questionsOf(id);   // all at once, in parallel
+  if (phone.matches) { reviewOne(box, queue); return; }
+  const all = Object.fromEntries(await Promise.all(ids.map(async (id) => [id, await questionsOf(id)])));
   box.innerHTML = queue.map((qid) => {
     const id = qid.replace(/-\d+$/, '');
     return questionHtml(all[id].questions[Number(qid.split('-').pop())], qid, { id, name: all[id].name, href: at(`/m/${id}`) });
@@ -432,17 +462,25 @@ async function review(box) {
 
 // Review on a phone: one question a screen. Once the right option is found, 下一题 (做完了 on the last) waits above the
 // bottom bar; at the end, how many were right at the first pick, each card marked ✓ or ✗ and linked.
-function reviewOne(box, all, queue) {
+// The page's own heading stays where it is (nothing above the question moves); the count sits beside it.
+function reviewOne(box, queue) {
   const section = box.closest('.plainpage');
   section.classList.add('rvmode');
+  const heading = section.querySelector('h1');
+  const count = document.createElement('small');
+  count.className = 'rvn';
+  heading.append(count);
   const titles = JSON.parse(document.getElementById('disciplines')?.textContent || '{}');
+  const all = {};
   const right = [];
   let i = 0;
-  const top = (count) => `<div class="rvtop"><h1>${t.review}</h1>${count}</div><div class="segs" aria-hidden="true">${queue.map((_, n) => `<i class="${n < right.length ? (right[n] ? 'ok' : 'miss') : n === i ? 'cur' : ''}"></i>`).join('')}</div>`;
-  const render = () => {
+  const top = () => `<div class="segs" aria-hidden="true">${queue.map((_, n) => `<i class="${n < right.length ? (right[n] ? 'ok' : 'miss') : n === i ? 'cur' : ''}"></i>`).join('')}</div>`;
+  const render = async () => {
+    for (const id of i >= queue.length ? new Set(queue.map((q) => q.replace(/-\d+$/, ''))) : [queue[i].replace(/-\d+$/, '')]) all[id] ??= await questionsOf(id);
+    count.textContent = i < queue.length ? `${i + 1} / ${queue.length}` : '';
     if (i >= queue.length) {
       const score = right.filter(Boolean).length;
-      box.innerHTML = `${top('')}<div class="sum"><p class="big">${score}<small>/ ${queue.length}</small></p><ul>${queue.map((qid, n) => {
+      box.innerHTML = `${top()}<div class="sum"><p class="big">${score}<small>/ ${queue.length}</small></p><ul>${queue.map((qid, n) => {
         const id = qid.replace(/-\d+$/, '');
         return `<li><a href="${at(`/m/${escape(id)}`)}"><b class="${right[n] ? 'y' : 'n'}">${right[n] ? '✓' : '✗'}</b> <b>${escape(all[id].name)}</b><span>${escape(all[id].one_line)}</span></a></li>`;
       }).join('')}</ul><a class="again" href="${at('/review')}">${t.reviewAgain}</a></div>`;
@@ -450,14 +488,16 @@ function reviewOne(box, all, queue) {
     }
     const qid = queue[i];
     const id = qid.replace(/-\d+$/, '');
-    box.innerHTML = `${top(`<small>${i + 1} / ${queue.length}</small>`)}<div class="rvq"><p class="src"><a href="${at(`/m/${escape(id)}`)}">${escape(all[id].name)}</a><span>${escape(titles[all[id].discipline] ?? '')}</span></p>`
+    box.innerHTML = `${top()}<div class="rvq"><p class="src"><a href="${at(`/m/${escape(id)}`)}">${escape(all[id].name)}</a><span>${escape(titles[all[id].discipline] ?? '')}</span></p>`
       + `${questionHtml(all[id].questions[Number(qid.split('-').pop())], qid)}<button class="rnext" type="button" hidden>${i < queue.length - 1 ? t.reviewNext : t.reviewDone}</button></div>`;
     const next = box.querySelector('.rnext');
-    wire(box.querySelector('.q'), () => {
+    const q = box.querySelector('.q');
+    wire(q, () => {
       right[i] = Boolean(lastAnswer(qid)?.ok);
       next.hidden = false;
       updateDue();
     }, { restore: false });
+    warm(q);
     next.addEventListener('click', () => { i += 1; render(); scrollTo({ top: 0 }); });
   };
   render();
@@ -507,7 +547,7 @@ if (data) home(JSON.parse(data.textContent));
 if (document.querySelector('[data-go-random]')) goRandom();
 const page = document.querySelector('[data-card]');
 if (page) card(page);
-for (const q of document.querySelectorAll('[data-today-quiz] .q')) wire(q);
+for (const q of document.querySelectorAll('[data-today-quiz] .q')) { wire(q); warm(q); }
 const box = document.getElementById('review');
 if (box) review(box);
 const form = document.querySelector('[data-subscribe]');

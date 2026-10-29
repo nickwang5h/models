@@ -250,7 +250,7 @@ export function homePage(index, list, { discipline = null, today, figure = null,
 ${lang === 'zh' ? `<div data-mail hidden><h2>每天一张，发到邮箱</h2>
 <form data-subscribe><input name="email" type="email" required maxlength="254" autocomplete="email" aria-label="邮箱" placeholder="you@example.com"><span class="trap" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></span>${subButton()}</form>
 <p class="done" data-subscribe-status role="status" aria-live="polite"></p></div>
-<p class="rss"><a href="/feed.xml">RSS</a> · <a href="/today">今天的题</a></p>
+<p class="rss"><a href="/feed.xml">RSS</a><span class="td"> · <a href="/today">今天的题</a></span></p>
 ` : ''}<nav class="past" data-past aria-label="${t.pastDays}"></nav>
 </aside>
 </section>
@@ -266,11 +266,23 @@ ${lang === 'zh' ? `<div data-mail hidden><h2>每天一张，发到邮箱</h2>
   return shell({ title: what, description: t.homeDescription(list.length), body, total: list.length, tab: discipline ? 'find' : 'today', lang, path: random ? '/random' : discipline ? `/d/${discipline}` : '/' });
 }
 
-// `disciplines` name each question's discipline in the phone layout (one question a screen, app.js).
-export function reviewPage(total, disciplines = [], lang = 'zh') {
+// `disciplines` name each question's discipline in the phone layout (one question a screen, app.js); `counts` is how
+// many questions each card has, so the queue is known before any question is fetched.
+export function reviewPage(total, disciplines = [], lang = 'zh', counts = {}) {
   const t = T[lang];
-  const body = `<section class="plainpage wrap"><h1>${t.review}</h1>
+  const body = `<section class="plainpage wrap rv"><h1>${t.review}</h1>
 <div id="review" class="qs"><p class="empty">${t.reviewEmpty}</p></div></section>
 <script type="application/json" id="disciplines">${JSON.stringify(Object.fromEntries(disciplines.map((d) => [d.id, d.title]))).replace(/</g, '\\u003c')}</script>`;
-  return shell({ title: t.reviewTitle, description: t.reviewDescription, body, total, tab: 'review', lang, path: '/review' });
+  // The question counts, and a head start: the cards of the first questions in line (the order of reviewQueue in
+  // progress.mjs: last answered wrong, then never answered, then right; older first; then by rank) start loading
+  // while app.js and its modules do.
+  const head = `<script type="application/json" id="counts">${JSON.stringify(counts)}</script>
+<script>try { (function () { var n = JSON.parse(document.getElementById('counts').textContent), s = JSON.parse(localStorage.getItem('models-progress-v1') || '{}'), read = s.read || {}, last = {}, qs = [], o = 0;
+(s.answers || []).forEach(function (a) { last[a.q] = a; });
+Object.keys(n).forEach(function (id) { for (var k = 0; k < n[id]; k++, o++) if (read[id]) { var l = last[id + '-' + k]; qs.push({ id: id, rank: !l ? 1 : l.ok ? 2 : 0, at: l ? l.at : 0, o: o }); } });
+qs.sort(function (x, y) { return x.rank - y.rank || x.at - y.at || x.o - y.o; });
+var seen = {}; qs.forEach(function (q) { if (seen[q.id] || Object.keys(seen).length >= 3) return; seen[q.id] = 1; var l = document.createElement('link'); l.rel = 'preload'; l.as = 'fetch'; l.crossOrigin = 'anonymous'; l.href = '${href(lang, '/q/')}' + q.id + '.json'; document.head.appendChild(l); });
+})(); } catch (e) {}</script>
+`;
+  return shell({ title: t.reviewTitle, description: t.reviewDescription, body, total, tab: 'review', lang, path: '/review', head });
 }

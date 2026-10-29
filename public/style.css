@@ -101,7 +101,8 @@ button,input{font:inherit;color:inherit}
   .mark small,.bar nav{display:none}
   .bar .wrap{height:auto;min-height:56px}
   .mark{white-space:nowrap;padding:7px 0;margin:-7px 0}
-  .foot a{position:relative;padding:10px 9px;margin:-10px -9px}
+  .foot a{position:relative;padding:14px 9px;margin:-14px -9px}
+  .foot .wrap{row-gap:28px}
   .foot .ft{display:inline-flex;align-items:center;gap:6px;width:auto;height:44px;margin:-10px 0;padding:0;border-radius:0;background:none;font-size:13px;color:var(--ink3);letter-spacing:.02em}
   .foot .ft svg{width:16px;height:16px}
   .foot .ft:hover{background:none;color:var(--ink)}
@@ -182,6 +183,8 @@ button,input{font:inherit;color:inherit}
   .letter{position:relative}
   .letter::before{content:"";position:absolute;inset:-6px -1px}
   .lead .rss a{position:relative;display:inline-block;padding:4px 0 24px;margin:-4px 0 -24px}
+  /* the line under the subscribe box is just the feed; 今日 in the bottom bar is today's question */
+  .lead .rss .td{display:none}
   .lead .rss a:first-child{padding-inline:9px;margin-inline:-9px}
 }
 /* search field shared by the three catalogues */
@@ -667,7 +670,7 @@ h3{scroll-margin-top:24px}
   .tasks{order:-1;border-left:0;border-bottom:1px solid var(--rule);padding:0}
   .tasks ol{display:grid;grid-template-columns:repeat(3,1fr);padding:0}
   .tasks li+li{border-top:0;border-left:1px solid var(--rule)}
-  .tasks button{grid-template-columns:auto auto;justify-content:center;gap:6px;padding:10px 0}
+  .tasks button{grid-template-columns:auto auto;justify-content:center;gap:6px;padding:10px 0;min-height:44px}
   .tasks button .tq{display:none}
   .tasks .cont{display:none}
   .tasks .cont.on{display:block}
@@ -696,11 +699,13 @@ h3{scroll-margin-top:24px}
   .qs .q{padding:18px 16px 20px;margin-left:-16px;margin-right:-16px;border-radius:0;border-left:0;border-right:0}
   .qs .from a,.qs .more a{position:relative;display:inline-block;min-width:44px;padding:12px 0;margin:-12px 0}
   /* review on a phone: one question a screen, the next one under the thumb, a tally at the end (app.js) */
-  .rvmode{padding-top:16px}
-  .rvmode>h1{display:none}
-  .rvtop{display:flex;align-items:baseline;justify-content:space-between}
-  .rvtop h1{margin:0;font-size:22px;line-height:1.4;font-weight:600}
-  .rvtop small{font-size:13px;color:var(--ink3);font-variant-numeric:tabular-nums}
+  /* the review page keeps its own heading from the first paint, and room for the question, so nothing jumps when the
+     question arrives; the empty note waits until the queue is known */
+  .plainpage.rv{padding-top:16px}
+  .rv>h1{display:flex;align-items:baseline;justify-content:space-between;margin:0;font-size:22px;line-height:1.4}
+  .rv>h1 .rvn{font-size:13px;font-weight:400;color:var(--ink3);font-variant-numeric:tabular-nums}
+  .rv #review{min-height:calc(100vh - 160px)}
+  .rv #review:not([data-ready]) .empty{visibility:hidden}
   .segs{display:flex;gap:4px;margin:12px 0 0}
   .segs i{flex:1;height:3px;border-radius:2px;background:var(--rule)}
   .segs i.ok{background:var(--accent)}
