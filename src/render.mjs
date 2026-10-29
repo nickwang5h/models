@@ -3,7 +3,7 @@ import katex from 'katex';
 import { Marked } from 'marked';
 import { escape, questionHtml } from '../public/quiz.mjs';
 import { USES, bands, leadHtml } from '../public/list.mjs';
-import { reportUrl, shell } from './shell.mjs';
+import { reportUrl, shell, tipAfter } from './shell.mjs';
 import { figureHtml, figureProblems } from '../public/figure.mjs';
 
 const md = new Marked({ gfm: true });
@@ -193,6 +193,7 @@ ${after ? `<a class="cont" href="/m/${escape(after.id)}">${escape(after.name)} �
 </div></div>
 </section>
 
+${tipAfter()}
 <nav class="pn" aria-label="同学科">
 ${prev ? `<a href="/m/${escape(prev.id)}" rel="prev"><span>← ${escape(discipline.title)}</span><b>${escape(prev.name)}</b></a>` : ''}
 ${next ? `<a class="r" href="/m/${escape(next.id)}" rel="next"><span>${escape(discipline.title)} →</span><b>${escape(next.name)}</b></a>` : ''}

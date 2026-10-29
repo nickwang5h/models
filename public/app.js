@@ -67,6 +67,26 @@ function chrome() {
   for (const link of document.querySelectorAll('[data-random]')) link.addEventListener('click', (e) => { e.preventDefault(); goRandom(); });
 }
 
+// Support pills: the dumpling hops when pressed and lets off steam when focused from the keyboard (hover is CSS). The one at
+// the end of a card lets off steam once a session, when most of it is on screen. Reduced motion stops all of it in CSS.
+function tips() {
+  const replay = (el, cls) => { el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); };
+  for (const a of document.querySelectorAll('[data-tip]')) {
+    a.addEventListener('pointerdown', () => replay(a, 'hop'));
+    a.addEventListener('animationend', (e) => { if (e.animationName === 'tipHop') a.classList.remove('hop'); });
+    a.addEventListener('focus', () => { replay(a, 'steam'); setTimeout(() => a.classList.remove('steam'), 1400); });
+  }
+  const after = document.querySelector('[data-tip-after]');
+  if (!after || !('IntersectionObserver' in window)) return;
+  const seen = new IntersectionObserver(([e]) => {
+    if (e.intersectionRatio < 0.6) return;
+    seen.disconnect();
+    try { if (sessionStorage.getItem('models-tip')) return; sessionStorage.setItem('models-tip', '1'); } catch { /* no storage: play it */ }
+    after.classList.add('play');
+  }, { threshold: [0, 0.6, 1] });
+  seen.observe(after);
+}
+
 async function goRandom() {
   location.href = `/m/${pickUnread(state, await allIds())}`;
 }
@@ -244,6 +264,7 @@ function subscribe(form, note, box) {
 }
 
 chrome();
+tips();
 const data = document.getElementById('cards');
 if (data) home(JSON.parse(data.textContent));
 if (document.querySelector('[data-go-random]')) goRandom();

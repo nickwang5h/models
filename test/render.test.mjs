@@ -131,3 +131,18 @@ test('every page can be installed and states both licenses; a card page reports 
   assert.match(html, /issues\/new\?template=content-error\.yml&amp;card=a&amp;title=/);
   assert.match(home, /issues\/new\?template=content-error\.yml"/);
 });
+
+test('every page has one support pill in the top bar; a card page ends with the support line once, before its neighbours', () => {
+  const all = cards();
+  const home = homePage(index, listData(index, all), { today: { id: 'a', date: '2026-10-23' } });
+  const html = cardPage(all.a, { cards: all, index });
+  for (const page of [home, html]) {
+    const bar = page.split('</header>')[0];
+    assert.equal(bar.match(/data-tip>/g).length, 1);
+    assert.match(bar, /data-tip>[\s\S]*data-theme-toggle/);
+    assert.match(bar, /href="https:\/\/ko-fi\.com\/nickwang5h" target="_blank" rel="noopener noreferrer"/);
+  }
+  assert.doesNotMatch(home, /data-tip-after/);
+  assert.equal(html.match(/data-tip-after/g).length, 1);
+  assert.match(html, /data-tip-after[\s\S]*这张卡读完了。[\s\S]*<nav class="pn"/);
+});

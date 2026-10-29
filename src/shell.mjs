@@ -8,6 +8,19 @@ export function reportUrl(id = '') {
   return `${REPO}/issues/new?template=content-error.yml${id ? `&card=${encodeURIComponent(id)}&title=${encodeURIComponent(`[内容] ${id}：`)}` : ''}`;
 }
 
+// Support: a pill to Ko-fi with a line-drawn dumpling (Ko-fi's tip unit here is a dumpling too). Steam rises when it is
+// pointed at, it hops when pressed; nothing moves by itself. Colours are the site's own --accent and --paper.
+export const KOFI = 'https://ko-fi.com/nickwang5h';
+const DUMPLING = '<svg class="dp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g class="d-all">'
+  + '<path class="d-steam" d="M8.2 6.1c-.9-1 .9-1.9 0-3.1"/><path class="d-steam s2" d="M12 5.4c-.9-1 .9-1.9 0-3.1"/><path class="d-steam s3" d="M15.8 6.1c-.9-1 .9-1.9 0-3.1"/>'
+  + '<path class="d-body" d="M2.3 13.6c.5-.2 1 .1 1.3.6 3.4 5.9 13.4 5.9 16.8 0 .3-.5.8-.8 1.3-.6C20.2 5.2 3.8 5.2 2.3 13.6Z"/>'
+  + '<path class="d-pleat" d="M6.8 9.8l1 2.3M9.5 8.7l.6 2.5M12.2 8.3l.1 2.6M14.9 8.6l-.4 2.5M17.5 9.6l-.8 2.3"/></g></svg>';
+export const tip = (cls = '') => `<a class="tip${cls}" href="${KOFI}" target="_blank" rel="noopener noreferrer" aria-label="在 Ko-fi 请我吃个饺子（新窗口）" data-tip>${DUMPLING}<span class="tl">请我吃个饺子</span></a>`;
+
+// The end of a card: one line and the same pill. Its dumpling lets off steam once a session (app.js).
+export const tipAfter = () => `<aside class="tip-after" aria-label="请我吃个饺子" data-tip-after><div class="art" aria-hidden="true">${DUMPLING}</div>
+<p class="line">这张卡读完了。卡片都免费；觉得有用，请我吃个饺子。</p><p class="row">${tip()}<span class="note">Ko-fi · 一个 $5</span></p></aside>`;
+
 const THEME_ICON = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="7.2"/><path d="M10 2.8a7.2 7.2 0 0 1 0 14.4z" fill="currentColor"/></svg>';
 
 // `total` is the number of cards, shown in the top bar until the reader has read some.
@@ -36,7 +49,7 @@ ${math ? '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Ka
 <body>
 <header class="bar"><div class="wrap">
 <a class="mark" href="/">思维模型<small>${total} 张卡 · 12 门学科</small></a>
-<nav><a href="/review">复习</a><a href="/random" data-random>随机一张</a><a class="count" href="/#read" data-count>${total} 张</a><button class="theme" type="button" aria-label="切换深浅色" data-theme-toggle>${THEME_ICON}</button></nav>
+<nav><a href="/review">复习</a><a href="/random" data-random>随机一张</a><a class="count" href="/#read" data-count>${total} 张</a>${tip(' hd')}<button class="theme" type="button" aria-label="切换深浅色" data-theme-toggle>${THEME_ICON}</button></nav>
 </div></header>
 <main>
 ${body}
