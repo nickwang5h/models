@@ -3,7 +3,7 @@ import katex from 'katex';
 import { Marked } from 'marked';
 import { escape, questionHtml } from '../public/quiz.mjs';
 import { USES, bands, leadHtml } from '../public/list.mjs';
-import { reportUrl, shell, tipAfter } from './shell.mjs';
+import { reportUrl, shell, subButton, tipAfter } from './shell.mjs';
 import { figureHtml, figureProblems } from '../public/figure.mjs';
 
 const md = new Marked({ gfm: true });
@@ -218,7 +218,7 @@ export function homePage(index, list, { discipline = null, today, figure = null,
 <a class="today" href="/m/${escape(first.id)}" data-lead>${leadHtml(first, today.date, title[first.discipline], figure ? figureHtml(figure) : '')}</a>
 <aside class="sub">
 <div data-mail hidden><h2>每天一张，发到邮箱</h2>
-<form data-subscribe><input name="email" type="email" required maxlength="254" autocomplete="email" aria-label="邮箱" placeholder="you@example.com"><span class="trap" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></span><button type="submit">订阅</button></form>
+<form data-subscribe><input name="email" type="email" required maxlength="254" autocomplete="email" aria-label="邮箱" placeholder="you@example.com"><span class="trap" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></span>${subButton()}</form>
 <p class="done" data-subscribe-status role="status" aria-live="polite"></p></div>
 <p class="rss"><a href="/feed.xml">RSS</a> · <a href="/today">今天的题</a></p>
 <nav class="past" data-past aria-label="前几天"></nav>

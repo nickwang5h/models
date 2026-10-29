@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { EPOCH, addDays, cycleOrder, dailyPick, dayNumber, isDate, recentDates, secondsLeft, today, todayJson, utcDate } from '../src/daily.mjs';
 import { createFeedHandler, createTodayHandler, createTodayJsonHandler } from '../src/handlers.mjs';
-import { atomFeed, entryHtml } from '../src/today.mjs';
+import { atomFeed, entryHtml, subscribePage } from '../src/today.mjs';
 
 const question = (n) => ({
   stem: `情境 ${n} <i>`, question: `问题 ${n}？`, explain: '解析',
@@ -145,4 +145,10 @@ test('the feed starts at the epoch, and entry html never gives the answer away',
   const html = entryHtml(today(data, EPOCH));
   assert.doesNotMatch(html, /反馈 \d|>解析<|correct/);
   assert.match(html, /A\. 选项 0/);
+});
+
+test('the subscribe forms submit with the outlined envelope pill, still labelled 订阅', () => {
+  const page = subscribePage(204);
+  assert.equal(page.match(/<button class="letter" type="submit"><svg class="env"[\s\S]*?<span>订阅<\/span><\/button>/g).length, 1);
+  assert.match(page, /data-subscribe-status/);
 });

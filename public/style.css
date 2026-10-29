@@ -92,6 +92,8 @@ button,input{font:inherit;color:inherit}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important}
+  .letter .e-flap{transform:none!important}
+  .letter .e-slip{opacity:0!important}
 }
 
 /* ---------- lead: today + subscribe ---------- */
@@ -110,11 +112,23 @@ button,input{font:inherit;color:inherit}
 
 .sub{border-left:1px solid var(--rule);padding-left:32px;font-size:15px;line-height:1.7}
 .sub h2{font-size:17px;font-weight:600;margin:0 0 14px}
-.sub form{display:flex;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:var(--paper)}
-.sub form:focus-within{border-color:var(--accent)}
-.sub input{flex:1;min-width:0;border:0;background:none;padding:10px 12px;font-size:15px;outline:none}
+.sub form{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.sub input{height:34px;flex:1 1 200px;max-width:280px;min-width:0;padding:0 14px;border:1px solid var(--rule);border-radius:999px;background:transparent;font-size:14px}
+.sub input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .sub input::placeholder{color:var(--ink3)}
-.sub button{border:0;background:var(--accent);color:var(--paper);padding:0 16px;font-weight:600;font-size:15px;cursor:pointer}
+/* the submit: the dumpling pill's outlined companion (the dumpling stays the only filled button) */
+.letter{display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 15px 0 12px;border:1px solid var(--accent);border-radius:999px;flex:none;white-space:nowrap;
+  background:transparent;color:var(--ink);font-weight:600;font-size:14px;line-height:1;letter-spacing:.01em;cursor:pointer;transition:color .15s}
+.letter:hover{color:var(--accent)}
+.letter:active{transform:translateY(1px) scale(.97)}
+.letter:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.letter:disabled{cursor:default;opacity:.6}
+.env{width:20px;height:20px;flex:none;overflow:visible;color:var(--accent)}
+.env .e-body,.env .e-flap{fill:none;stroke:currentColor;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
+.env .e-slip{fill:currentColor;fill-opacity:.16;stroke:currentColor;stroke-width:1.2;opacity:0;transform:translateY(5px);transition:transform .35s cubic-bezier(.3,1.4,.5,1),opacity .2s}
+.env .e-flap{transform-box:fill-box;transform-origin:50% 0;transition:transform .25s ease}
+.letter:hover .e-flap,.letter:focus-visible .e-flap{transform:scaleY(-1)}
+.letter:hover .e-slip,.letter:focus-visible .e-slip{opacity:1;transform:translateY(-4px)}
 .sub .done{margin:10px 0 0;color:var(--accent);font-size:14px}
 .sub .done:empty{display:none}
 .trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}

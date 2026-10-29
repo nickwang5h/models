@@ -21,6 +21,12 @@ export const tip = (cls = '') => `<a class="tip${cls}" href="${KOFI}" target="_b
 export const tipAfter = () => `<aside class="tip-after" aria-label="请我吃个饺子" data-tip-after><div class="art" aria-hidden="true">${DUMPLING}</div>
 <p class="line">这张卡读完了。卡片都免费；觉得有用，请我吃个饺子。</p><p class="row">${tip()}<span class="note">Ko-fi · 一个 $5</span></p></aside>`;
 
+// Subscribe: the dumpling's companion, the same pill outlined, with a line envelope whose flap opens on hover and lets
+// a slip rise out. It replaces the subscribe forms' submit button; the flow and the words stay as they were.
+const ENVELOPE = '<svg class="env" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect class="e-slip" x="7" y="5" width="10" height="9" rx="1"/>'
+  + '<path class="e-body" d="M3.5 9.5v9a1 1 0 0 0 1 1h15a1 1 0 0 0 1-1v-9"/><path class="e-body" d="M3.5 9.5l8.5 5.6 8.5-5.6"/><path class="e-flap" d="M3.5 9.5l8.5-5 8.5 5"/></svg>';
+export const subButton = () => `<button class="letter" type="submit">${ENVELOPE}<span>订阅</span></button>`;
+
 const THEME_ICON = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="7.2"/><path d="M10 2.8a7.2 7.2 0 0 1 0 14.4z" fill="currentColor"/></svg>';
 
 // `total` is the number of cards, shown in the top bar until the reader has read some.

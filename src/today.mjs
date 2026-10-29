@@ -1,7 +1,7 @@
 // The pages and the feed around 今日一卡. /today and /feed.xml are rendered per request by Pages Functions
 // (functions/), so this file avoids KaTeX and Markdown: the day shows the card's summary and one question, not its body.
 import { escape, questionHtml } from '../public/quiz.mjs';
-import { reportUrl, shell } from './shell.mjs';
+import { reportUrl, shell, subButton } from './shell.mjs';
 import { EPOCH, addDays, recentDates } from './daily.mjs';
 
 export const SITE = 'https://models.wuhua.app';
@@ -36,7 +36,7 @@ export function subscribePage(total) {
 <form data-subscribe>
 <input id="email" name="email" type="email" required maxlength="254" autocomplete="email" aria-label="邮箱" placeholder="you@example.com">
 <span class="trap" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></span>
-<button type="submit">订阅</button>
+${subButton()}
 </form>
 <p class="done" data-subscribe-status role="status" aria-live="polite"></p>
 <p class="rss">先收到一封确认信，点开链接才算订阅；每封信都能退订。不想留邮箱，可以用 <a href="/feed.xml">RSS</a>。</p>

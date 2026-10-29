@@ -146,3 +146,8 @@ test('every page has one support pill in the top bar; a card page ends with the 
   assert.equal(html.match(/data-tip-after/g).length, 1);
   assert.match(html, /data-tip-after[\s\S]*这张卡读完了。[\s\S]*<nav class="pn"/);
 });
+
+test('the home page subscribe form submits with the envelope pill', () => {
+  const home = homePage(index, listData(index, cards()), { today: { id: 'a', date: '2026-10-23' } });
+  assert.match(home, /<form data-subscribe>[\s\S]*<button class="letter" type="submit">[\s\S]*<span>订阅<\/span><\/button><\/form>/);
+});
