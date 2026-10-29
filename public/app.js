@@ -442,12 +442,14 @@ function card(root) {
   dots.forEach((d, n) => d.addEventListener('click', () => { ex3.scrollTo({ left: ex3.scrollLeft + articles[n].getBoundingClientRect().left - ex3.getBoundingClientRect().left - 16, behavior: 'smooth' }); }));
 }
 
+// The page shows its footer (and the empty note) once the questions are in place: see reviewPage.
+const settled = (box) => { box.dataset.ready = ''; document.documentElement.classList.remove('rvwait'); };
 async function review(box) {
-  const n = await questionCounts();
+  const n = await questionCounts().catch(() => null);
+  if (!n) { settled(box); return; }
   const cards = Object.entries(n).map(([id, k]) => ({ id, questions: Array.from({ length: k }, (_, j) => `${id}-${j}`) }));
   const queue = reviewQueue(state, cards).slice(0, 10);
-  box.dataset.ready = '';
-  if (!queue.length) return;
+  if (!queue.length) { settled(box); return; }
   const ids = [...new Set(queue.map((qid) => qid.replace(/-\d+$/, '')))];
   for (const id of ids) questionsOf(id);   // all at once, in parallel
   if (phone.matches) { reviewOne(box, queue); return; }
@@ -456,6 +458,7 @@ async function review(box) {
     const id = qid.replace(/-\d+$/, '');
     return questionHtml(all[id].questions[Number(qid.split('-').pop())], qid, { id, name: all[id].name, href: at(`/m/${id}`) });
   }).join('') + `<p class="more"><a href="${at('/review')}">${t.reviewAgain}</a></p>`;
+  settled(box);
   // Review asks again even when the last answer was right.
   for (const q of box.querySelectorAll('.q')) wire(q, undefined, { restore: false });
 }
@@ -500,7 +503,7 @@ function reviewOne(box, queue) {
     warm(q);
     next.addEventListener('click', () => { i += 1; render(); scrollTo({ top: 0 }); });
   };
-  render();
+  render().then(() => settled(box), () => settled(box));
 }
 
 // Email: the form shows only when the site can send (GET /api/subscribe).

@@ -273,10 +273,12 @@ export function reviewPage(total, disciplines = [], lang = 'zh', counts = {}) {
   const body = `<section class="plainpage wrap rv"><h1>${t.review}</h1>
 <div id="review" class="qs"><p class="empty">${t.reviewEmpty}</p></div></section>
 <script type="application/json" id="disciplines">${JSON.stringify(Object.fromEntries(disciplines.map((d) => [d.id, d.title]))).replace(/</g, '\\u003c')}</script>`;
-  // The question counts, and a head start: the cards of the first questions in line (the order of reviewQueue in
+  // Until the questions are in place (or 5s pass), the footer and the empty note wait unseen, so nothing visible moves
+  // when the questions arrive; the finished page is the same. Then the question counts, and a head start: the cards of the first questions in line (the order of reviewQueue in
   // progress.mjs: last answered wrong, then never answered, then right; older first; then by rank) start loading
   // while app.js and its modules do.
   const head = `<script type="application/json" id="counts">${JSON.stringify(counts)}</script>
+<script>document.documentElement.classList.add('rvwait'); setTimeout(function () { document.documentElement.classList.remove('rvwait'); }, 5000);</script>
 <script>try { (function () { var n = JSON.parse(document.getElementById('counts').textContent), s = JSON.parse(localStorage.getItem('models-progress-v1') || '{}'), read = s.read || {}, last = {}, qs = [], o = 0;
 (s.answers || []).forEach(function (a) { last[a.q] = a; });
 Object.keys(n).forEach(function (id) { for (var k = 0; k < n[id]; k++, o++) if (read[id]) { var l = last[id + '-' + k]; qs.push({ id: id, rank: !l ? 1 : l.ok ? 2 : 0, at: l ? l.at : 0, o: o }); } });
