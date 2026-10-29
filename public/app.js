@@ -94,14 +94,25 @@ function chrome() {
     saveDisplay(store, prefs);
   });
   for (const link of document.querySelectorAll('[data-random]')) link.addEventListener('click', (e) => { e.preventDefault(); goRandom(); });
+  toTop(document.querySelector('.mark'));
   tabs();
 }
 
 // Phones: the bottom bar. 找 on a page with the sieve scrolls to it and opens the keyboard in the same tap (iOS only
 // raises it from a tap); elsewhere it goes to /#sieve. 复习 counts the questions of read cards not yet answered right.
+// The site's name, and the bottom bar's tab for the page it is on: tapped there, back to the top instead of a reload.
+const smooth = () => (matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth');
+function toTop(link) {
+  link?.addEventListener('click', (e) => {
+    if (new URL(link.href).pathname !== location.pathname) return;
+    e.preventDefault();
+    scrollTo({ top: 0, behavior: smooth() });
+  });
+}
 function tabs() {
   const bar = document.querySelector('.tabs');
   if (!bar || !phone.matches) return;
+  toTop(bar.querySelector('a.on:not([data-tab="find"])'));
   bar.querySelector('[data-tab="find"]').addEventListener('click', (event) => {
     const sieve = document.getElementById('sieve');
     if (!sieve) return;
@@ -317,6 +328,13 @@ function card(root) {
   let k = 0;
   const marker = root.querySelector('.toc .ind');
   const collect = () => { links = [...toc.querySelectorAll('a')]; targets = links.map((a) => document.getElementById(a.dataset.t)); };
+  // The outline's first item, the opening, goes to the top of the card (from the phone's sheet: goTo below).
+  toc.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (spine || !a || a !== links[0]) return;
+    e.preventDefault();
+    scrollTo({ top: 0, behavior: smooth() });
+  });
   // What the spine says: the outline's own words for the part in view; in the questions, the current question.
   function label() {
     if (!spine || !links[k]) return;
@@ -423,9 +441,11 @@ function card(root) {
   scrim.addEventListener('click', () => close());
   addEventListener('keydown', (e) => { if (e.key === 'Escape' && open) close(); });
   const ex3 = root.querySelector('[data-ex3]');
+  // The outline's first item, the opening, goes to the top of the card.
   const goTo = (t) => {
     const el = document.getElementById(t);
     if (!el) return;
+    if (t === links[0]?.dataset.t) { scrollTo({ top: 0 }); here.focus({ preventScroll: true }); return; }
     scrollTo({ top: el.getBoundingClientRect().top + scrollY - 16 });
     if (el.parentElement === ex3) ex3.scrollLeft += el.getBoundingClientRect().left - ex3.getBoundingClientRect().left - 16;
     here.focus({ preventScroll: true });
