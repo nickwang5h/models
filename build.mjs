@@ -102,6 +102,7 @@ if (existsSync(join(EN, 'index.json'))) {
   await writeFile(join(OUT, 'index.html'), homePage(enIndex, enList, { today, figure: enFigure, lang: 'en' }));
   await writeFile(join(OUT, 'random.html'), homePage(enIndex, enList, { today, figure: enFigure, random: true, lang: 'en' }));
   await writeFile(join(OUT, 'review.html'), reviewPage(total, enIndex.disciplines, 'en', questionCounts(en, order)));
+  await writeFile(join(OUT, 'qn.json'), JSON.stringify(questionCounts(en, order)));
   await writeQuestions(OUT, en, order);
   await writeFile(join(OUT, 'questions.json'), JSON.stringify(Object.fromEntries(order.map((id) => [id, { name: en[id].name, en: en[id].en, discipline: en[id].discipline, one_line: en[id].one_line, questions: en[id].use.questions }]))));
   console.log(`English: ${total - stand} cards${stand ? ` (${stand} still in Chinese)` : ''} to ${OUT}/`);

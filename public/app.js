@@ -139,14 +139,17 @@ function findBox(sieve) {
   box.querySelector('input').focus({ preventScroll: true });
 }
 // How many questions each card has (inline on the review page, else /qn.json), and one card's questions (/q/<id>.json),
-// each fetched once: the promise is kept, so callers at the same moment share one request.
+// each fetched once: the promise is kept, so callers at the same moment share one request. Offline, a card's file the
+// service worker never kept is still in its copy of questions.json.
 let counts = null;
 const questionCounts = () => counts ?? (counts = Promise.resolve().then(() => {
   const inline = document.getElementById('counts');
   return inline ? JSON.parse(inline.textContent) : fetch(at('/qn.json')).then((r) => r.json());
 }));
 const cardQuestions = new Map();
-const questionsOf = (id) => cardQuestions.get(id) ?? cardQuestions.set(id, fetch(at(`/q/${id}.json`)).then((r) => r.json())).get(id);
+const questionsOf = (id) => cardQuestions.get(id) ?? cardQuestions.set(id, fetch(at(`/q/${id}.json`)).then((r) => r.json())
+  .catch(() => fetch(at('/questions.json')).then((r) => r.json()).then((all) => all[id] ?? Promise.reject(new Error(id))))
+  .catch((error) => { cardQuestions.delete(id); throw error; })).get(id);
 async function updateDue() {
   const badge = document.querySelector('[data-due]');
   const read = Object.keys(state.read);
@@ -501,7 +504,8 @@ function reviewOne(box, queue) {
       updateDue();
     }, { restore: false });
     warm(q);
-    next.addEventListener('click', () => { i += 1; render(); scrollTo({ top: 0 }); });
+    // once: on a slow network the next question takes a moment, and a second tap would skip it
+    next.addEventListener('click', () => { i += 1; render(); scrollTo({ top: 0 }); }, { once: true });
   };
   render().then(() => settled(box), () => settled(box));
 }
