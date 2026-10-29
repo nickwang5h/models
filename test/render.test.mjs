@@ -151,3 +151,18 @@ test('the home page subscribe form submits with the envelope pill', () => {
   const home = homePage(index, listData(index, cards()), { today: { id: 'a', date: '2026-10-23' } });
   assert.match(home, /<form data-subscribe>[\s\S]*<button class="letter" type="submit">[\s\S]*<span>订阅<\/span><\/button><\/form>/);
 });
+
+test('a card page carries its question boxes under the name, as one wordless link to the questions', () => {
+  const all = cards();
+  const html = cardPage(all.a, { cards: all, index });
+  const row = html.match(/<a class="hq" href="#s-quiz" aria-label="去答题">([\s\S]*?)<\/a>/);
+  assert.ok(row);
+  assert.equal(row[1].replace(/<[^>]+>/g, ''), '');
+  assert.equal(row[1].match(/<i><\/i>/g).length, all.a.use.questions.length);
+  assert.match(html, /<p class="one">[^<]*<\/p>\n<a class="hq"/);
+});
+
+test('the sieve has a magnifier that leads back to the search box, outside the tag buttons', () => {
+  const home = homePage(index, listData(index, cards()), { today: { id: 'a', date: '2026-10-23' } });
+  assert.match(home, /<button class="look" type="button" aria-label="找一张卡" data-look><svg[\s\S]*?<\/svg><\/button>\n<div class="tg" data-tags>/);
+});

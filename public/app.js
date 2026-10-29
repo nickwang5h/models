@@ -129,14 +129,22 @@ function home(data) {
   const input = document.querySelector('[data-q]');
   const pass = (c) => (!discipline || c.discipline === discipline) && (!use || c.uses.includes(use)) && (!onlyRead || read.has(c.id)) && matches(c, q);
   const render = () => {
-    for (const b of tags.querySelectorAll('button')) b.setAttribute('aria-pressed', String(b.dataset.d ? b.dataset.d === discipline : b.dataset.u === use));
+    for (const b of tags.querySelectorAll('button[data-d],button[data-u]')) b.setAttribute('aria-pressed', String(b.dataset.d ? b.dataset.d === discipline : b.dataset.u === use));
     const shown = list.filter(pass);
     ranks.classList.toggle('q', Boolean(q.trim()));
     ranks.innerHTML = bands(shown, { q, read, today: todayId, short });
     tot.innerHTML = shown.length !== list.length ? `<button type="button">${shown.length} / ${list.length} <span aria-hidden="true">×</span></button>` : '';
   };
-  // After a filter changes, the bar sits at the top and the results start right below it.
-  const jump = () => { const top = sieve.getBoundingClientRect().top + scrollY; if (Math.abs(scrollY - top) > 1) scrollTo({ top }); };
+  // After a filter changes, the bar sits at the top and the results start right below it. On phones the bar sticks with
+  // its search row scrolled away (a negative sticky top), so the jump is measured from where the bar sits in the page:
+  // a tag lands with just the tag row showing, and typing keeps the search row in view.
+  const phone = matchMedia('(max-width:720px)');
+  const jump = (search = false) => {
+    const top = phone.matches
+      ? sieve.previousElementSibling.getBoundingClientRect().bottom + scrollY - (search ? 0 : parseFloat(getComputedStyle(sieve).top) || 0)
+      : sieve.getBoundingClientRect().top + scrollY;
+    if (Math.abs(scrollY - top) > 1) scrollTo({ top });
+  };
   const url = () => history.replaceState(null, '', discipline ? `/d/${discipline}` : '/');
   tags.addEventListener('click', (event) => {
     const b = event.target.closest('button');
@@ -150,7 +158,17 @@ function home(data) {
     discipline = use = null; onlyRead = false; q = ''; input.value = '';
     url(); render();
   });
-  input.addEventListener('input', () => { q = input.value; render(); jump(); });
+  input.addEventListener('input', () => { q = input.value; render(); jump(true); });
+  // Phones: the magnifier at the start of the stuck tag row scrolls back to the search row and opens it.
+  sieve.querySelector('[data-look]')?.addEventListener('click', () => {
+    scrollTo({ top: sieve.previousElementSibling.getBoundingClientRect().bottom + scrollY });
+    input.focus({ preventScroll: true });
+  });
+  // Phones: the tag row fades at its right end while there is more to scroll to.
+  const fade = () => tags.classList.toggle('end', tags.scrollLeft + tags.clientWidth >= tags.scrollWidth - 1);
+  tags.addEventListener('scroll', fade, { passive: true });
+  addEventListener('resize', fade);
+  fade();
   addEventListener('hashchange', () => {
     const h = hash();
     if (h === 'read') onlyRead = true; else if (titles[h]) discipline = h; else return;
@@ -166,7 +184,7 @@ function card(root) {
   const qs = [...root.querySelectorAll('.qmain .q')];
   const nexts = [...root.querySelectorAll('.qmain .qnext')];
   const tasks = [...root.querySelectorAll('.tasks button')];
-  const boxes = [...root.querySelectorAll('.toc .tq i')];
+  const rows = [...root.querySelectorAll('.toc .tq, .hq .tq')].map((row) => [...row.querySelectorAll('i')]);
   const cont = root.querySelector('.tasks .cont');
   let current = 0;
   const show = () => {
@@ -177,7 +195,7 @@ function card(root) {
       t.classList.toggle('ok', qs[n].classList.contains('done'));
       if (n === current) t.setAttribute('aria-current', 'step'); else t.removeAttribute('aria-current');
     });
-    boxes.forEach((b, n) => b.classList.toggle('ok', qs[n]?.classList.contains('done')));
+    for (const boxes of rows) boxes.forEach((b, n) => b.classList.toggle('ok', qs[n]?.classList.contains('done')));
     cont?.classList.toggle('on', qs.every((q) => q.classList.contains('done')));
   };
   qs.forEach((q) => wire(q, show));
@@ -235,6 +253,19 @@ const NOTES = {
   off: '邮件订阅还没有开通。可以先用 RSS 订阅，或者每天打开今日一卡。',
 };
 function subscribe(form, note, box) {
+  // Phones: when the keyboard opens, keep the email box in the middle of what is still visible.
+  const email = form.querySelector('input[name=email]');
+  const center = () => {
+    const vv = window.visualViewport;
+    if (!vv || document.activeElement !== email) return;
+    const r = email.getBoundingClientRect();
+    if (r.top < vv.offsetTop + 8 || r.bottom > vv.offsetTop + vv.height - 8) scrollBy({ top: r.top + r.height / 2 - (vv.offsetTop + vv.height / 2) });
+  };
+  email.addEventListener('focus', () => {
+    if (!matchMedia('(max-width:720px)').matches || !window.visualViewport) return;
+    visualViewport.addEventListener('resize', center);
+    email.addEventListener('blur', () => visualViewport.removeEventListener('resize', center), { once: true });
+  });
   const query = new URLSearchParams(location.search);
   if (query.has('confirmed')) note.textContent = NOTES.confirmed;
   else if (query.has('expired')) note.textContent = NOTES.expired;

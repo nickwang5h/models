@@ -161,7 +161,8 @@ ${use.with.map((w, n) => toc(`s-w${n}`, `<span class="tx">×</span>${escape(card
 ${toc('s-quiz', `<span class="tq" aria-label="${use.questions.length} 道题">${use.questions.map(() => '<i></i>').join('')}</span>`)}
 <span class="ind"></span></ol></nav>
 <div class="body">
-<header class="head"><h1>${escape(card.name)}</h1><p class="en">${escape(card.en)}</p><p class="one">${escape(card.one_line)}</p></header>
+<header class="head"><h1>${escape(card.name)}</h1><p class="en">${escape(card.en)}</p><p class="one">${escape(card.one_line)}</p>
+<a class="hq" href="#s-quiz" aria-label="去答题"><span class="tq" aria-hidden="true">${use.questions.map(() => '<i></i>').join('')}</span></a></header>
 
 <section class="story" id="s-scene">
 <div class="col scene">${markdown(shallow.scene)}</div>
@@ -226,6 +227,7 @@ export function homePage(index, list, { discipline = null, today, figure = null,
 </section>
 <div class="sieve" id="sieve"><div class="wrap">
 <label class="find">${SEARCH_ICON}<input type="search" aria-label="找一张卡" autocomplete="off" data-q></label>
+<button class="look" type="button" aria-label="找一张卡" data-look>${SEARCH_ICON}</button>
 <div class="tg" data-tags>${index.disciplines.map((d) => `<button type="button" data-d="${d.id}" aria-pressed="${d.id === discipline}" title="${escape(d.title)}">${escape(d.short)}</button>`).join('')}<i aria-hidden="true"></i>${USES.map(([u, n]) => `<button type="button" data-u="${u}" aria-pressed="false">${n}</button>`).join('')}</div>
 <span class="tot" data-tot></span>
 </div></div>
