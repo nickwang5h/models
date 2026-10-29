@@ -18,7 +18,7 @@
   "uses": [
    {
     "use": "reason",
-    "text": "Someone says a city sends 5 million parcels a day. Run through three numbers, the number of residents, how many parcels each person sends a week, and the seven days in a week, and in a few minutes you know whether the figure is absurd."
+    "text": "Someone says a city sends 5 million parcels a day. Multiply the number of residents by how many parcels each person sends a week, divide by the seven days in a week, and in a few minutes you know whether the figure is absurd."
    },
    {
     "use": "act",
