@@ -73,7 +73,7 @@ export function todayJson(day, site) {
   const { date, id, card, questionIndex, question } = day;
   return {
     date, id, name: card.name, en: card.en ?? '', one_line: card.one_line, discipline: card.discipline ?? '',
-    url: `${site}/m/${id}`, page: `${site}/today?date=${date}`, question_index: questionIndex, question,
+    url: `${site}/m/${id}?day=${date}`, page: `${site}/today?date=${date}`, question_index: questionIndex, question,
   };
 }
 

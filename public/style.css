@@ -79,23 +79,31 @@ button,input{font:inherit;color:inherit}
 .foot{border-top:1px solid var(--rule);margin-top:96px;padding:28px 0 48px;font-size:13px;color:var(--ink3)}
 .foot .wrap{display:flex;gap:24px;flex-wrap:wrap}
 .foot a:hover{color:var(--ink)}
+/* phones only (≤720px): the bottom bar, a card's spine and outline sheet, the theme switch in the footer */
+.tabs,.spine,.scrim,.foot .ft,.toc .grip,.ex3dots{display:none}
 
 @media (max-width:720px){
   .wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-  .mark small{display:none}
-  .bar nav{gap:16px;font-size:15px}
+  /* the top bar keeps only the name: review and today are in the bottom bar, a random card under the sieve, the theme
+     switch in the footer, the dumpling at the end of a card */
+  .mark small,.bar nav{display:none}
   .bar .wrap{height:auto;min-height:56px}
-  .mark,.bar nav a{white-space:nowrap}
-  .mark{padding:7px 0;margin:-7px 0}
-  .bar nav a:not(.tip){padding:8px 7px;margin:-8px -7px}
-  .bar nav .tip,.theme{position:relative}
-  .bar nav .tip::before,.theme::before{content:"";position:absolute;inset:-6px}
+  .mark{white-space:nowrap;padding:7px 0;margin:-7px 0}
   .foot a{position:relative;padding:10px 9px;margin:-10px -9px}
-  /* the bar is full at 390, so the pill becomes a round dumpling in place of the count (also in the brand line on wide screens) */
-  .bar nav .count{display:none}
-  .tip.hd{width:32px;height:32px;padding:0;justify-content:center;margin:0 4px}
-  .tip.hd .tl{display:none}
-  .tip.hd .dp{width:21px;height:21px}
+  .foot .ft{display:inline-flex;align-items:center;gap:6px;width:auto;height:44px;margin:-10px 0;padding:0;border-radius:0;background:none;font-size:13px;color:var(--ink3);letter-spacing:.02em}
+  .foot .ft svg{width:16px;height:16px}
+  .foot .ft:hover{background:none;color:var(--ink)}
+  body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
+  .foot{margin-top:64px}
+  /* the bottom bar: today, find, review, under the thumb */
+  .tabs{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;left:0;right:0;bottom:0;z-index:20;height:calc(56px + env(safe-area-inset-bottom,0px));
+    padding:0 env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px);background:var(--paper);border-top:1px solid var(--rule)}
+  .tabs a{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:13px;line-height:1.2;font-weight:500;color:var(--ink3)}
+  .tabs a.on{color:var(--accent)}
+  .tabs svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .tabs .due{position:absolute;top:3px;left:calc(50% + 8px);min-width:20px;height:20px;padding:0 6px;border-radius:10px;background:var(--accent);color:var(--paper);font-size:13px;line-height:20px;font-weight:600;text-align:center;letter-spacing:0}
+  /* while the keyboard is up (a text box has focus), iOS would lift a fixed bar over the box */
+  html.kb .tabs{display:none}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important}
@@ -189,7 +197,7 @@ mark{background:none;color:var(--accent);font-weight:inherit}
 .sieve button[data-u][aria-pressed="true"]{background:var(--accent);color:var(--paper);font-weight:500}
 .sieve .tot{flex:none;font-size:13px;font-variant-numeric:tabular-nums}
 .sieve .tot button{border:1px solid var(--accent);background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:2px 10px;font-size:13px}
-.sieve .look{display:none}
+.sieve .rand{display:none}
 
 /* 名次 */
 .ranks{padding-top:40px}
@@ -249,20 +257,37 @@ a.e:hover .n{color:var(--accent)}
   .b4{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
 @media (max-width:720px){
-  /* stuck, only the row of disciplines stays: the search row (10 + 46 + 8) scrolls away; the magnifier brings it back */
-  .sieve{top:-64px}
-  .sieve .wrap{flex-direction:column;align-items:stretch;height:auto;gap:8px;padding-top:10px;padding-bottom:0}
-  .sieve .find{width:100%}
+  /* the sieve on phones does not stick: the search box, the twelve disciplines as a 4×3 grid with their counts, the
+     uses, a random card. Once something is chosen or typed the grid folds to what was chosen (app.js sets .on). */
+  .sieve{position:static;border-bottom:0}
+  .sieve .wrap{flex-wrap:wrap;align-items:center;height:auto;gap:0;padding-top:14px;padding-bottom:12px}
+  .sieve .find{flex:0 0 100%;width:100%}
   .sieve .find input{height:46px;font-size:16px}
-  .sieve .tg{margin:0 -16px 0 44px;padding:0 16px 0 0;-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 24px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 24px),transparent)}
-  .sieve .tg.end{-webkit-mask-image:none;mask-image:none}
-  .sieve button{font-size:14px;padding:2px 7px}
-  .sieve .tg button{min-height:44px;min-width:44px;padding-inline:8px}
-  .sieve button[data-d][aria-pressed="true"]::after{bottom:1px}
-  .sieve .look{display:grid;place-items:center;position:absolute;left:13px;bottom:0;width:44px;height:44px;padding:0;color:var(--ink3)}
-  .sieve .look svg{width:16px;height:16px}
-  .sieve .tot{position:absolute;right:24px;top:15px}
-  .sieve .tot button::before{content:"";position:absolute;inset:-7px 0}
+  .sieve .tg{flex:0 0 100%;flex-wrap:wrap;overflow:visible;margin-top:12px}
+  .sieve .tg i{flex:0 0 100%;width:auto;height:6px;margin:0;background:none}
+  .sieve .tg button{min-height:44px;border-radius:0}
+  .sieve .tg button[data-d]{flex:0 0 25%;padding:12px 0 10px;font-size:16px;font-weight:500;line-height:1.3;color:var(--ink);box-shadow:inset -1px -1px 0 var(--rule)}
+  .sieve .tg button[data-d]:nth-child(-n+4){box-shadow:inset -1px -1px 0 var(--rule),inset 0 1px 0 var(--rule)}
+  .sieve .tg button[data-d]:nth-child(4n+1){box-shadow:inset -1px -1px 0 var(--rule),inset 1px 0 0 var(--rule)}
+  .sieve .tg button[data-d]:first-child{box-shadow:inset -1px -1px 0 var(--rule),inset 1px 1px 0 var(--rule)}
+  .sieve .tg button[data-d]::after,.sieve .tg button[data-d][aria-pressed="true"]::after{content:attr(data-n);position:static;display:block;height:auto;margin-top:2px;background:none;font-size:13px;font-weight:400;color:var(--ink3)}
+  .sieve .tg button[data-u]{padding:0 8px;font-size:16px}
+  .sieve .tg i+button{margin-left:-8px}
+  .sieve .rand{display:flex;flex:0 0 100%;align-items:center;gap:8px;min-height:48px;margin-top:4px;font-size:16px;color:var(--ink2);border-bottom:1px solid var(--rule)}
+  .sieve .rand svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .sieve .rand circle{fill:currentColor;stroke:none}
+  .sieve.on .tg button[aria-pressed="false"],.sieve.on .tg i,.sieve.on .rand{display:none}
+  .sieve.on .tg{flex:0 1 auto;margin:12px 8px 0 0}
+  .sieve.on .tg button[aria-pressed="true"]{display:inline-flex;align-items:center;gap:6px;flex:none;min-height:0;height:34px;margin:0;padding:0 14px;border-radius:999px;
+    background:var(--accent-soft);color:var(--accent);font-size:15px;font-weight:600;line-height:1;box-shadow:none}
+  .sieve.on .tg button[aria-pressed="true"]::after{content:"×";margin:0;font-size:15px;font-weight:600;color:var(--accent)}
+  .sieve.on .tg button[aria-pressed="true"]::before{content:"";position:absolute;inset:-5px 0}
+  /* room under a short result list, so the search box can still sit at the top of the screen */
+  .sieve.on+.ranks{min-height:calc(100vh - 120px)}
+  .sieve .tot{position:static;flex:none;margin-top:12px}
+  .sieve .tot:empty{display:none}
+  .sieve .tot button{height:34px;padding:0 14px;font-size:15px}
+  .sieve .tot button::before{content:"";position:absolute;inset:-6px -1px}
   .ranks{padding-top:16px}
   .band{scroll-margin-top:110px}
   .b1{grid-template-columns:minmax(0,1fr);row-gap:0;padding-bottom:24px}
@@ -312,9 +337,9 @@ a.e:hover .n{color:var(--accent)}
 .toc .ts{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-top:2px}
 .toc .tx{color:var(--ink3);margin-right:5px;font-weight:400}
 .toc .tq{display:flex;gap:6px;padding-top:9px;padding-bottom:9px}
-.toc .tq i,.hq i{width:14px;height:14px;border:1.5px solid var(--ink3);border-radius:3px;display:grid;place-items:center;opacity:.7}
-.toc .tq i.ok,.hq i.ok{border-color:var(--accent);background:var(--accent);opacity:1}
-.toc .tq i.ok::after,.hq i.ok::after{content:"";width:6px;height:3px;border-left:1.6px solid var(--paper);border-bottom:1.6px solid var(--paper);transform:translateY(-1px) rotate(-45deg)}
+.toc .tq i,.hq i,.spine .sq i{width:14px;height:14px;border:1.5px solid var(--ink3);border-radius:3px;display:grid;place-items:center;opacity:.7}
+.toc .tq i.ok,.hq i.ok,.spine .sq i.ok{border-color:var(--accent);background:var(--accent);opacity:1}
+.toc .tq i.ok::after,.hq i.ok::after,.spine .sq i.ok::after{content:"";width:6px;height:3px;border-left:1.6px solid var(--paper);border-bottom:1.6px solid var(--paper);transform:translateY(-1px) rotate(-45deg)}
 
 .page .body{grid-column:2;min-width:0}
 .head{padding:14px 0 36px}
@@ -557,7 +582,7 @@ h3{scroll-margin-top:24px}
   /* the outline is hidden on phones; its row of question boxes stays under the name, a link to the questions */
   .hq{display:block;width:max-content;padding:15px 0;margin:2px 0 -15px}
   .hq .tq{display:flex;gap:6px}
-  #s-quiz{scroll-margin-top:16px}
+  #s-quiz,#s-day,.page section,.page h3,.page .blk,.ex3 article,.with a.w{scroll-margin-top:16px}
   .crumbs a{position:relative;padding:10px 0;margin:-10px 0}
   .crumbs a:last-of-type{padding-inline:10px;margin-inline:-10px}
   .crumbs .sep{opacity:1}
@@ -577,8 +602,52 @@ h3{scroll-margin-top:24px}
   .blk{margin-bottom:52px}
   .uses{grid-template-columns:56px 1fr}
   .uses dd{font-size:16px}
-  .ex3{grid-template-columns:1fr}
-  .ex3 article+article{border-top:1px solid var(--rule);margin-top:16px}
+  /* three examples from three fields: a swipe, the next one showing at the edge */
+  .blk.ex3{display:flex;gap:14px;margin:0 -16px;padding:0 16px 4px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 16px;scrollbar-width:none}
+  .ex3::-webkit-scrollbar{display:none}
+  .ex3 article{flex:0 0 calc(100% - 34px);scroll-snap-align:start}
+  .ex3 p{font-size:16px}
+  .ex3dots{display:flex;margin:2px 0 52px -13px}
+  .ex3dots button{display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;background:none;cursor:pointer}
+  .ex3dots i{width:18px;height:3px;border-radius:2px;background:var(--rule)}
+  .ex3dots button[aria-current="true"] i{background:var(--accent)}
+  /* the day's question, right after the opening when the card was opened from today (app.js) */
+  .dq{margin:0 0 56px;padding-top:18px;border-top:2px solid var(--ink)}
+  .dq .when{margin:0 0 6px;font-size:14px;font-weight:600;color:var(--accent)}
+  /* the spine: where the desk has its margin outline, a bar under the thumb */
+  .spine{display:grid;grid-template-columns:48px minmax(0,1fr) auto;align-items:center;position:fixed;left:0;right:0;bottom:0;z-index:20;height:calc(56px + env(safe-area-inset-bottom,0px));
+    padding:0 env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px);background:var(--paper);border-top:1px solid var(--rule)}
+  .spine .prog{position:absolute;left:0;right:0;top:-1px;height:2px}
+  .spine .prog i{display:block;width:0;height:2px;background:var(--accent)}
+  .spine button{height:56px;padding:0;border:0;background:none;color:inherit;cursor:pointer}
+  .spine svg{fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .spine .back{display:grid;place-items:center;width:48px}
+  .spine .back svg{width:24px;height:24px;stroke:var(--ink2);stroke-width:1.8}
+  .spine .here{display:flex;align-items:center;gap:6px;min-width:0;padding:0 6px;font-size:15px;line-height:1.4;color:var(--ink2);text-align:left}
+  .spine .hl{min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+  .spine .hl b{margin-right:6px;font-weight:600;color:var(--accent)}
+  .spine .hl .tx{margin-right:4px;color:var(--ink3)}
+  .spine .here svg{flex:none;width:18px;height:18px;stroke:var(--ink3);stroke-width:1.8}
+  .spine .sq{display:flex;align-items:center;justify-content:center;min-width:56px;height:56px;padding:0 12px}
+  .spine .sq .tq{display:flex;gap:5px}
+  /* the outline sheet: the desk's margin outline, risen from the bottom; nothing above it but a grip */
+  .page .toc{display:block;position:fixed;left:0;right:0;top:auto;bottom:0;z-index:31;max-height:76vh;overflow-y:auto;overscroll-behavior:contain;
+    padding:8px max(20px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));
+    background:var(--paper);border-radius:16px 16px 0 0;box-shadow:0 -10px 40px rgba(0,0,0,.12);font-size:15px;line-height:1.55;
+    transform:translateY(105%);visibility:hidden;transition:transform .25s ease,visibility 0s .25s}
+  html.sheet .page .toc{transform:none;visibility:visible;transition:transform .25s ease}
+  html.sheet{overflow:hidden}
+  .toc .grip{display:block;width:38px;height:4px;margin:2px auto 12px;border-radius:2px;background:var(--rule)}
+  .toc ol{border-left:0}
+  .toc .ind{display:none}
+  .toc li a{display:block;min-height:44px;padding:10.5px 0 10.5px 14px;border-left:2px solid var(--rule);color:var(--ink2)}
+  .toc li a.on{border-left-color:var(--accent);color:var(--ink);font-weight:500}
+  .toc li.gap{height:14px;border-left:2px solid var(--rule)}
+  .toc .ty,.toc a.on .ty{font-size:22px;color:var(--accent)}
+  .toc .tq{padding:0}
+  .toc a.td{display:flex;align-items:center;gap:8px}
+  .toc .tqd{font-weight:600;color:var(--accent)}
+  .scrim{display:block;position:fixed;inset:0;z-index:30;background:rgba(10,12,14,.32)}
   .ask li{grid-template-columns:32px 1fr;font-size:17px}
   .with a.w{grid-template-columns:1fr;gap:8px;margin:0 -16px;padding:18px 16px}
   .quiz{grid-template-columns:1fr;margin-left:-16px;margin-right:-16px;border-radius:0;border-left:0;border-right:0}
@@ -614,4 +683,30 @@ h3{scroll-margin-top:24px}
   .day .today{margin:0 -10px 8px}
   .qs .q{padding:18px 16px 20px;margin-left:-16px;margin-right:-16px;border-radius:0;border-left:0;border-right:0}
   .qs .from a,.qs .more a{position:relative;display:inline-block;min-width:44px;padding:12px 0;margin:-12px 0}
+  /* review on a phone: one question a screen, the next one under the thumb, a tally at the end (app.js) */
+  .rvmode{padding-top:16px}
+  .rvmode>h1{display:none}
+  .rvtop{display:flex;align-items:baseline;justify-content:space-between}
+  .rvtop h1{margin:0;font-size:22px;line-height:1.4;font-weight:600}
+  .rvtop small{font-size:13px;color:var(--ink3);font-variant-numeric:tabular-nums}
+  .segs{display:flex;gap:4px;margin:12px 0 0}
+  .segs i{flex:1;height:3px;border-radius:2px;background:var(--rule)}
+  .segs i.ok{background:var(--accent)}
+  .segs i.miss{background:var(--wrong)}
+  .segs i.cur{background:var(--ink)}
+  .rvq .src{margin:22px 0 8px;font-size:14px}
+  .rvq .src a{position:relative;display:inline-block;padding:12px 8px;margin:-12px -8px;font-weight:600;color:var(--accent)}
+  .rvq .src span{margin-left:6px;color:var(--ink3)}
+  .rvmode .qs .q{margin:0;padding:0;border:0}
+  .rnext,.again{display:block;width:100%;min-height:44px;margin-top:16px;border:0;border-radius:8px;background:var(--accent);color:var(--paper);font-size:16px;font-weight:600;cursor:pointer}
+  .rnext{position:sticky;bottom:calc(56px + env(safe-area-inset-bottom,0px) + 12px);box-shadow:0 6px 18px rgba(0,0,0,.12)}
+  .again{margin-top:24px;background:none;color:var(--accent);border:1.5px solid var(--accent)}
+  .sum .big{margin:40px 0 0;font-size:44px;line-height:1;font-weight:600;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+  .sum .big small{margin-left:6px;font-size:18px;font-weight:500;color:var(--ink3)}
+  .sum ul{list-style:none;margin:26px 0 0;padding:0;border-top:2px solid var(--ink)}
+  .sum li a{display:block;padding:12px 0;border-bottom:1px solid var(--rule)}
+  .sum li b{font-size:17px;font-weight:600}
+  .sum li .y{color:var(--accent)}
+  .sum li .n{color:var(--wrong)}
+  .sum li span{display:block;font-size:14px;line-height:1.7;color:var(--ink2)}
 }

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { markdown, validate, cardPage, homePage, listData, lede, storyYear } from '../src/render.mjs';
+import { markdown, validate, cardPage, homePage, listData, lede, reviewPage, storyYear } from '../src/render.mjs';
 import { bands, band, matches } from '../public/list.mjs';
 
 const question = (right = 0) => ({
@@ -103,7 +103,7 @@ test('the home page lists every card by rank, in bands that show less as the ran
   assert.deepEqual(list[0].uses, ['predict', 'act']);
   const html = homePage(index, list, { today: { id: 'b', date: '2026-10-23' } });
   assert.match(html, /10 月 23 日/);
-  assert.match(html, /<a class="today" href="\/m\/b"/);
+  assert.match(html, /<a class="today" href="\/m\/b\?day=2026-10-23"/);
   assert.match(html, /href="\/m\/a"[\s\S]*href="\/m\/b"[\s\S]*href="\/m\/c"/);
   assert.match(html, /<script type="application\/json" id="cards">/);
   assert.doesNotMatch(html.split('id="cards">')[1], /<b>/);   // the data can't close its own script
@@ -117,7 +117,7 @@ test('the home page lists every card by rank, in bands that show less as the ran
 test('a discipline page is the home page with that discipline chosen', () => {
   const html = homePage(index, listData(index, cards()), { discipline: 'math', today: { id: 'a', date: '2026-10-23' } });
   assert.match(html, /<title>数学与统计 · 思维模型<\/title>/);
-  assert.match(html, /data-d="math" aria-pressed="true"/);
+  assert.match(html, /data-d="math" data-n="3" aria-pressed="true"/);
 });
 
 test('every page can be installed and states both licenses; a card page reports errors against that card', () => {
@@ -162,7 +162,30 @@ test('a card page carries its question boxes under the name, as one wordless lin
   assert.match(html, /<p class="one">[^<]*<\/p>\n<a class="hq"/);
 });
 
-test('the sieve has a magnifier that leads back to the search box, outside the tag buttons', () => {
+test('phones get a bottom bar on every page but a card, which has its spine and outline sheet instead', () => {
+  const all = cards();
+  const home = homePage(index, listData(index, all), { today: { id: 'a', date: '2026-10-23' } });
+  const disc = homePage(index, listData(index, all), { today: { id: 'a', date: '2026-10-23' }, discipline: 'math' });
+  const card = cardPage(all.a, { cards: all, index });
+  assert.match(home, /<nav class="tabs" aria-label="主导航"><a href="\/" data-tab="today" class="on" aria-current="page">/);
+  assert.match(disc, /<a href="\/#sieve" data-tab="find" class="on" aria-current="page">/);
+  assert.match(reviewPage(3, index.disciplines), /data-tab="review" class="on"[\s\S]*<b class="due" data-due hidden><\/b>/);
+  assert.doesNotMatch(card, /class="tabs"/);
+  assert.match(card, /<div class="spine" data-spine>[\s\S]*data-back[\s\S]*data-here[\s\S]*<a class="sq" href="#s-quiz" aria-label="去答题">/);
+  assert.match(card, /<div class="scrim" data-scrim hidden><\/div>/);
+  assert.match(card, /<nav class="toc" aria-label="本页" data-toc><span class="grip" aria-hidden="true"><\/span><ol>/);
+  for (const page of [home, card]) assert.match(page, /<button class="theme ft" type="button" data-theme-toggle>/);
+});
+
+test('the sieve lists each discipline with its number of cards and ends with a random card', () => {
   const home = homePage(index, listData(index, cards()), { today: { id: 'a', date: '2026-10-23' } });
-  assert.match(home, /<button class="look" type="button" aria-label="找一张卡" data-look><svg[\s\S]*?<\/svg><\/button>\n<div class="tg" data-tags>/);
+  assert.match(home, /<button type="button" data-d="math" data-n="3"/);
+  assert.match(home, /<a class="rand" href="\/random" data-random>/);
+  assert.doesNotMatch(home, /data-look/);
+});
+
+test('a card page shows which of its three examples is in view, one button each', () => {
+  const all = cards();
+  const html = cardPage(all.a, { cards: all, index });
+  assert.equal(html.match(/<div class="ex3dots" data-dots>([\s\S]*?)<\/div>/)[1].match(/<button type="button" data-ex="\d"/g).length, 3);
 });

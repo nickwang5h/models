@@ -1,6 +1,6 @@
 // Offline use and "add to home screen". Pages come fresh from the network when it answers in time, else from the copy kept here;
 // after install every card is fetched in the background, so the whole lattice reads offline. Progress stays in localStorage.
-const CACHE = 'models-v4';
+const CACHE = 'models-v5';
 const SHELL = ['/', '/style.css', '/app.js', '/progress.mjs', '/quiz.mjs', '/display.mjs', '/keys.mjs', '/list.mjs', '/daily.mjs', '/figure.mjs', '/figs.js', '/questions.json', '/ids.json', '/review', '/icon.svg',
   '/fonts/inter-latin.woff2',
   '/icons/icon-192.png', '/manifest.webmanifest'];

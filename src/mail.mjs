@@ -262,7 +262,7 @@ export function dailyMailText(day, site = SITE) {
     '',
     `${card.name}（${card.en ?? ''}）`,
     card.one_line,
-    `读整张卡：${site}/m/${id}`,
+    `读整张卡：${site}/m/${id}?day=${date}`,
     '',
     question.stem,
     question.question,

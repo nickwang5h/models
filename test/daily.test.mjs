@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { EPOCH, addDays, cycleOrder, dailyPick, dayNumber, isDate, recentDates, secondsLeft, today, todayJson, utcDate } from '../src/daily.mjs';
 import { createFeedHandler, createTodayHandler, createTodayJsonHandler } from '../src/handlers.mjs';
-import { atomFeed, entryHtml, subscribePage } from '../src/today.mjs';
+import { atomFeed, entryHtml, subscribePage, todayPage } from '../src/today.mjs';
 
 const question = (n) => ({
   stem: `情境 ${n} <i>`, question: `问题 ${n}？`, explain: '解析',
@@ -111,7 +111,7 @@ test('/today.json carries what the Telegram push and the email need, for any dat
   const day = today(data, '2026-11-05');
   assert.deepEqual(body, todayJson(day, 'https://models.wuhua.app'));
   assert.equal(body.id, day.id);
-  assert.equal(body.url, `https://models.wuhua.app/m/${day.id}`);
+  assert.equal(body.url, `https://models.wuhua.app/m/${day.id}?day=${day.date}`);
   assert.equal(body.question.options.filter((o) => o.correct).length, 1);
   const later = await (await handler(new Request('https://models.wuhua.app/today.json?date=2027-03-01'))).json();
   assert.equal(later.id, dailyPick(ids, '2027-03-01').id);
@@ -151,4 +151,12 @@ test('the subscribe forms submit with the outlined envelope pill, still labelled
   const page = subscribePage(204);
   assert.equal(page.match(/<button class="letter" type="submit"><svg class="env"[\s\S]*?<span>订阅<\/span><\/button>/g).length, 1);
   assert.match(page, /data-subscribe-status/);
+});
+
+test('/today sends a phone to the card for that day, replacing itself in the history; wider screens stay', () => {
+  const day = today(data, '2026-11-05');
+  const html = todayPage(day, '2026-11-05', ids.length);
+  const head = html.split('</head>')[0];
+  assert.ok(head.includes(`<script>if (matchMedia('(max-width:720px)').matches) location.replace('/m/${day.id}?day=2026-11-05');</script>`));
+  assert.match(html.split('</head>')[1], /<div class="qs" data-today-quiz>/);
 });

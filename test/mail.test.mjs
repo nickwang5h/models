@@ -229,3 +229,11 @@ test('the mail body reads well without HTML too', () => {
   assert.match(text, /A\. 选项0\nB\. 选项1/);
   assert.match(dailyMailHtml(day), /<h1[^>]*>卡/);
 });
+
+test('the mail links the card for its day, so a phone shows the question inside it; answering stays on /today', () => {
+  const day = today(data, '2026-11-05');
+  const link = `https://models.wuhua.app/m/${day.id}?day=2026-11-05`;
+  assert.ok(dailyMailText(day).includes(`读整张卡：${link}`));
+  assert.ok(dailyMailHtml(day).includes(`<a href="${link}">读整张卡：`));
+  assert.ok(dailyMailText(day).includes('去网页作答，看解析：https://models.wuhua.app/today?date=2026-11-05'));
+});

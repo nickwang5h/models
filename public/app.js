@@ -6,7 +6,7 @@ import { escape, questionHtml } from './quiz.mjs';
 import { act, keyAction } from './keys.mjs';
 import { read as readDisplay, save as saveDisplay } from './display.mjs';
 import { bands, leadHtml, dayLabel, matches } from './list.mjs';
-import { dailyPick, recentDates, utcDate } from './daily.mjs';
+import { EPOCH, addDays, dailyPick, isDate, recentDates, utcDate } from './daily.mjs';
 
 let storage = null;
 try { storage = window.localStorage; } catch { /* no storage: progress stays in this page */ }
@@ -18,10 +18,16 @@ const commit = (next) => { state = next; save(store, state); };
 const lastAnswer = (qid) => state.answers.filter((a) => a.q === qid).pop();
 let ids = null;
 const allIds = async () => ids ?? (ids = await (await fetch('/ids.json')).json());
+// Phones (≤720px) get the bottom bar, a card's spine and outline sheet, the folding sieve and review one question at a
+// time; wider screens never see any of it. `touch` is a phone in the hand, whose keyboard covers the bottom of the screen.
+const phone = matchMedia('(max-width:720px)');
+const touch = matchMedia('(max-width:720px) and (pointer:coarse)');
+const firstSentence = (text) => (text.match(/^[^。！？]+/) ?? [text])[0];
 
 // A question: the reader picks until the right option; every pick shows that option's feedback. Only the first pick
 // counts as the answer, so review brings back what was missed. `onDone` runs when the right option is found; a question
 // answered right before opens already answered unless `restore` is false.
+// Returns `reveal`, so another copy of the same question can be shown answered too.
 function wire(q, onDone = () => {}, { restore = true } = {}) {
   const reveal = () => {
     q.classList.add('done');
@@ -50,14 +56,15 @@ function wire(q, onDone = () => {}, { restore = true } = {}) {
     }
     if (ok) { reveal(); onDone(); }
   });
+  return reveal;
 }
 
-// Top bar: how many cards this reader has read, the theme switch and the random card.
+// Top bar: how many cards this reader has read, the theme switch (also in the footer on phones) and the random card.
 function chrome() {
   const count = document.querySelector('[data-count]');
   const read = Object.keys(state.read).length;
   if (count && read) count.innerHTML = `读过 <b>${read}</b>`;
-  document.querySelector('[data-theme-toggle]')?.addEventListener('click', () => {
+  for (const toggle of document.querySelectorAll('[data-theme-toggle]')) toggle.addEventListener('click', () => {
     const root = document.documentElement;
     const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
     const prefs = { ...readDisplay(store), theme: dark ? 'light' : 'dark' };
@@ -65,6 +72,63 @@ function chrome() {
     saveDisplay(store, prefs);
   });
   for (const link of document.querySelectorAll('[data-random]')) link.addEventListener('click', (e) => { e.preventDefault(); goRandom(); });
+  tabs();
+}
+
+// Phones: the bottom bar. 找 on a page with the sieve scrolls to it and opens the keyboard in the same tap (iOS only
+// raises it from a tap); elsewhere it goes to /#sieve. 复习 counts the questions of read cards not yet answered right.
+function tabs() {
+  const bar = document.querySelector('.tabs');
+  if (!bar || !phone.matches) return;
+  bar.querySelector('[data-tab="find"]').addEventListener('click', (event) => {
+    const sieve = document.getElementById('sieve');
+    if (!sieve) return;
+    event.preventDefault();
+    findBox(sieve);
+  });
+  updateDue();
+}
+
+// Phones: while a text box has the keyboard up, the bottom bar hides (iOS would lift it over the box), and when the
+// keyboard opens the box moves to the middle of what is still visible.
+function keyboard() {
+  if (!phone.matches) return;
+  const typing = (el) => el?.matches?.('input:not([type=range]):not([type=checkbox]):not([type=radio]),textarea');
+  const center = () => {
+    const vv = window.visualViewport;
+    const box = document.activeElement;
+    if (!vv || !typing(box)) return;
+    const r = box.getBoundingClientRect();
+    if (r.top < vv.offsetTop + 8 || r.bottom > vv.offsetTop + vv.height - 8) scrollBy({ top: r.top + r.height / 2 - (vv.offsetTop + vv.height / 2) });
+  };
+  addEventListener('focusin', (e) => {
+    if (!typing(e.target)) return;
+    if (touch.matches) document.documentElement.classList.add('kb');
+    window.visualViewport?.addEventListener('resize', center);
+  });
+  addEventListener('focusout', () => {
+    document.documentElement.classList.remove('kb');
+    window.visualViewport?.removeEventListener('resize', center);
+  });
+}
+function findBox(sieve) {
+  const box = sieve.querySelector('.find');
+  scrollTo({ top: box.getBoundingClientRect().top + scrollY - 12 });
+  box.querySelector('input').focus({ preventScroll: true });
+}
+let questions = null;
+const allQuestions = async () => questions ?? (questions = await (await fetch('/questions.json')).json());
+async function updateDue() {
+  const badge = document.querySelector('[data-due]');
+  const read = Object.keys(state.read);
+  if (!badge) return;
+  if (!read.length) { badge.hidden = true; return; }
+  const all = await allQuestions().catch(() => null);
+  if (!all) return;
+  let due = 0;
+  for (const id of read) (all[id]?.questions ?? []).forEach((_, n) => { if (!lastAnswer(`${id}-${n}`)?.ok) due++; });
+  badge.textContent = Math.min(due, 10);
+  badge.hidden = !due;
 }
 
 // Support pills: the dumpling hops when pressed and lets off steam when focused from the keyboard (hover is CSS). The one at
@@ -99,8 +163,9 @@ function home(data) {
   const date = utcDate();
   const todayId = dailyPick(order, date).id;
   const lead = document.querySelector('[data-lead]');
-  if (lead && (lead.getAttribute('href') !== `/m/${todayId}` || lead.querySelector('.date b')?.textContent !== dayLabel(date))) {
-    lead.href = `/m/${todayId}`;
+  // Today's card and the days before carry their date, so a phone shows that day's question inside the card.
+  if (lead && (lead.getAttribute('href') !== `/m/${todayId}?day=${date}` || lead.querySelector('.date b')?.textContent !== dayLabel(date))) {
+    lead.href = `/m/${todayId}?day=${date}`;
     lead.innerHTML = leadHtml(byId[todayId], date, titles[byId[todayId].discipline]);
     if (byId[todayId].fig) {
       Promise.all([fetch(`/fig/${todayId}.json`).then((r) => r.json()), import('./figure.mjs')])
@@ -112,7 +177,7 @@ function home(data) {
   if (past) {
     past.innerHTML = recentDates(date, 4).slice(1).map((d) => {
       const card = byId[dailyPick(order, d).id];
-      return `<a href="/m/${card.id}"><span class="pd">${dayLabel(d)}</span><span class="pname">${escape(card.name)}</span></a>`;
+      return `<a href="/m/${card.id}?day=${d}"><span class="pd">${dayLabel(d)}</span><span class="pname">${escape(card.name)}</span></a>`;
     }).join('');
   }
 
@@ -120,13 +185,14 @@ function home(data) {
   const hash = () => decodeURIComponent(location.hash.slice(1));
   let discipline = data.discipline ?? (titles[hash()] ? hash() : null);
   let use = null;
-  let q = '';
+  let q = new URLSearchParams(location.search).get('q') ?? '';
   let onlyRead = hash() === 'read';
   const tags = document.querySelector('[data-tags]');
   const ranks = document.querySelector('[data-ranks]');
   const tot = document.querySelector('[data-tot]');
   const sieve = document.getElementById('sieve');
   const input = document.querySelector('[data-q]');
+  if (q) input.value = q;
   const pass = (c) => (!discipline || c.discipline === discipline) && (!use || c.uses.includes(use)) && (!onlyRead || read.has(c.id)) && matches(c, q);
   const render = () => {
     for (const b of tags.querySelectorAll('button[data-d],button[data-u]')) b.setAttribute('aria-pressed', String(b.dataset.d ? b.dataset.d === discipline : b.dataset.u === use));
@@ -134,18 +200,17 @@ function home(data) {
     ranks.classList.toggle('q', Boolean(q.trim()));
     ranks.innerHTML = bands(shown, { q, read, today: todayId, short });
     tot.innerHTML = shown.length !== list.length ? `<button type="button">${shown.length} / ${list.length} <span aria-hidden="true">×</span></button>` : '';
+    // Phones fold the grid of disciplines and uses to what was chosen.
+    sieve.classList.toggle('on', Boolean(discipline || use || onlyRead || q.trim()));
   };
-  // After a filter changes, the bar sits at the top and the results start right below it. On phones the bar sticks with
-  // its search row scrolled away (a negative sticky top), so the jump is measured from where the bar sits in the page:
-  // a tag lands with just the tag row showing, and typing keeps the search row in view.
-  const phone = matchMedia('(max-width:720px)');
-  const jump = (search = false) => {
-    const top = phone.matches
-      ? sieve.previousElementSibling.getBoundingClientRect().bottom + scrollY - (search ? 0 : parseFloat(getComputedStyle(sieve).top) || 0)
-      : sieve.getBoundingClientRect().top + scrollY;
+  // After a filter changes, the bar sits at the top and the results start right below it; on phones, where the bar
+  // does not stick, the search box sits at the top.
+  const jump = () => {
+    const top = (phone.matches ? sieve.querySelector('.find') : sieve).getBoundingClientRect().top + scrollY - (phone.matches ? 12 : 0);
     if (Math.abs(scrollY - top) > 1) scrollTo({ top });
   };
-  const url = () => history.replaceState(null, '', discipline ? `/d/${discipline}` : '/');
+  // Phones also keep the search words in the address, so coming back from a card finds them where they were.
+  const url = () => history.replaceState(null, '', (discipline ? `/d/${discipline}` : '/') + (phone.matches && q.trim() ? `?q=${encodeURIComponent(q)}` : ''));
   tags.addEventListener('click', (event) => {
     const b = event.target.closest('button');
     if (!b) return;
@@ -158,17 +223,7 @@ function home(data) {
     discipline = use = null; onlyRead = false; q = ''; input.value = '';
     url(); render();
   });
-  input.addEventListener('input', () => { q = input.value; render(); jump(true); });
-  // Phones: the magnifier at the start of the stuck tag row scrolls back to the search row and opens it.
-  sieve.querySelector('[data-look]')?.addEventListener('click', () => {
-    scrollTo({ top: sieve.previousElementSibling.getBoundingClientRect().bottom + scrollY });
-    input.focus({ preventScroll: true });
-  });
-  // Phones: the tag row fades at its right end while there is more to scroll to.
-  const fade = () => tags.classList.toggle('end', tags.scrollLeft + tags.clientWidth >= tags.scrollWidth - 1);
-  tags.addEventListener('scroll', fade, { passive: true });
-  addEventListener('resize', fade);
-  fade();
+  input.addEventListener('input', () => { q = input.value; render(); jump(); if (phone.matches) url(); });
   addEventListener('hashchange', () => {
     const h = hash();
     if (h === 'read') onlyRead = true; else if (titles[h]) discipline = h; else return;
@@ -176,16 +231,27 @@ function home(data) {
   });
   render();
   if (onlyRead || (discipline && !data.discipline) || (data.discipline && scrollY === 0)) sieve.scrollIntoView();
+  // 找 from another page lands on /#sieve: put the search box at the top, ready to type.
+  if (hash() === 'sieve' && phone.matches) findBox(sieve);
 }
 
 // A card: one question at a time beside the list of three, the outline that follows the reader, the reading mark.
+// On phones also: the spine (back, the part being read, the question boxes), the outline as a sheet from the bottom, the
+// day's question right after the opening when the card was opened for a day (?day=), and the examples as a swipe.
 function card(root) {
   const id = root.dataset.card;
   const qs = [...root.querySelectorAll('.qmain .q')];
   const nexts = [...root.querySelectorAll('.qmain .qnext')];
   const tasks = [...root.querySelectorAll('.tasks button')];
   const rows = [...root.querySelectorAll('.toc .tq, .hq .tq')].map((row) => [...row.querySelectorAll('i')]);
+  const spine = phone.matches ? document.querySelector('[data-spine]') : null;
+  if (spine) rows.push([...spine.querySelectorAll('.sq i')]);
   const cont = root.querySelector('.tasks .cont');
+  // The same question can be on the page twice (the day's copy); answered in one place, it shows answered in both.
+  const pristine = qs.map((q) => q.cloneNode(true));
+  const reveals = new Map();
+  const answered = (qid) => { for (const reveal of reveals.get(qid) ?? []) reveal(); show(); };
+  let dayBox = null;
   let current = 0;
   const show = () => {
     qs.forEach((q, n) => { q.hidden = n !== current; });
@@ -196,13 +262,14 @@ function card(root) {
       if (n === current) t.setAttribute('aria-current', 'step'); else t.removeAttribute('aria-current');
     });
     for (const boxes of rows) boxes.forEach((b, n) => b.classList.toggle('ok', qs[n]?.classList.contains('done')));
+    if (dayBox) dayBox.box.classList.toggle('ok', qs[dayBox.n].classList.contains('done'));
     cont?.classList.toggle('on', qs.every((q) => q.classList.contains('done')));
+    label();
   };
-  qs.forEach((q) => wire(q, show));
+  qs.forEach((q) => reveals.set(q.dataset.q, [wire(q, () => answered(q.dataset.q))]));
   current = Math.max(0, qs.findIndex((q) => !q.classList.contains('done')));
   for (const b of nexts) b.addEventListener('click', () => { current = Number(b.dataset.to); show(); qs[current].querySelector('.opt')?.focus({ preventScroll: true }); });
   for (const t of tasks) t.addEventListener('click', () => { current = Number(t.dataset.i); show(); });
-  show();
 
   const use = document.getElementById('s-use');
   if ('IntersectionObserver' in window && use) {
@@ -212,37 +279,183 @@ function card(root) {
     seen.observe(use);
   }
 
-  const links = [...root.querySelectorAll('.toc a')];
+  const toc = root.querySelector('[data-toc]');
+  let links = [];
+  let targets = [];
+  let k = 0;
   const marker = root.querySelector('.toc .ind');
-  const targets = links.map((a) => document.getElementById(a.dataset.t));
+  const collect = () => { links = [...toc.querySelectorAll('a')]; targets = links.map((a) => document.getElementById(a.dataset.t)); };
+  // What the spine says: the outline's own words for the part in view; in the questions, the current question.
+  function label() {
+    if (!spine || !links[k]) return;
+    const a = links[k];
+    let html = a.innerHTML;
+    if (a.dataset.t === 's-quiz') html = `<b>${current + 1}</b>${escape(firstSentence(qs[current].querySelector('.stem').textContent))}`;
+    else if (a.classList.contains('td')) html = `<b>${escape(a.querySelector('.tqd').textContent)}</b>${escape(firstSentence(document.querySelector('#s-day .stem').textContent))}`;
+    else if (a.querySelector('.ty')) html = `<b>${a.querySelector('.ty').innerHTML}</b>${a.querySelector('.ts').innerHTML}`;
+    spine.querySelector('.hl').innerHTML = html;
+  }
   const follow = () => {
-    let k = 0;
-    targets.forEach((el, n) => { if (el && el.getBoundingClientRect().top < innerHeight * 0.3) k = n; });
+    k = 0;
+    targets.forEach((el, n) => {
+      const r = el?.getBoundingClientRect();
+      // an example swiped out of view (phones) is not the one being read
+      if (r && r.top < innerHeight * 0.3 && (!phone.matches || (r.right > 0 && r.left < innerWidth))) k = n;
+    });
     links.forEach((a, n) => a.classList.toggle('on', n === k));
     if (links[k] && marker) { marker.style.top = `${links[k].offsetTop}px`; marker.style.height = `${links[k].offsetHeight}px`; }
+    if (spine) {
+      spine.querySelector('.prog i').style.width = `${(100 * scrollY / Math.max(1, document.documentElement.scrollHeight - innerHeight)).toFixed(1)}%`;
+      label();
+    }
   };
+  collect();
   addEventListener('scroll', follow, { passive: true });
   addEventListener('resize', follow);
   follow();
+  show();
 
-  const day = root.querySelector('[data-day]');
+  // The day: today's date beside the crumbs when this is today's card; on a phone opened for a day (?day= within the
+  // last 30 days and that day's card), that date, and the day's question after the opening.
+  const dayLabelEl = root.querySelector('[data-day]');
+  const asked = new URLSearchParams(location.search).get('day');
+  const now = utcDate();
+  const forDay = phone.matches && isDate(asked) && asked <= now && asked >= addDays(now, -30) && asked >= EPOCH;
   allIds().then((order) => {
-    const date = utcDate();
-    if (dailyPick(order, date).id === id) { day.textContent = dayLabel(date); day.hidden = false; }
+    const pick = forDay ? dailyPick(order, asked) : null;
+    if (pick?.id === id) {
+      dayLabelEl.textContent = dayLabel(asked); dayLabelEl.hidden = false;
+      insertDay(asked, ((pick.cycle % qs.length) + qs.length) % qs.length);
+    } else if (dailyPick(order, now).id === id) { dayLabelEl.textContent = dayLabel(now); dayLabelEl.hidden = false; }
   }).catch(() => {});
+  function insertDay(date, n) {
+    const qid = qs[n].dataset.q;
+    const q = pristine[n];
+    q.hidden = false;
+    const block = document.createElement('section');
+    block.className = 'dq'; block.id = 's-day';
+    block.innerHTML = `<p class="when">${dayLabel(date)}</p>`;
+    block.append(q);
+    root.querySelector('.story').after(block);
+    reveals.get(qid).push(wire(q, () => answered(qid)));
+    // the outline gets the day too, after the story: its date and one box
+    const item = document.createElement('li');
+    item.innerHTML = `<a href="#s-day" data-t="s-day" class="td"><span class="tqd">${dayLabel(date)}</span><span class="tq"><i></i></span></a>`;
+    toc.querySelector('ol > li').after(item);
+    dayBox = { box: item.querySelector('i'), n };
+    collect(); follow(); show();
+  }
+
+  if (!spine) return;
+  // The spine's back arrow: back where the reader came from on this site, else today.
+  spine.querySelector('[data-back]').addEventListener('click', () => {
+    let fromHere = false;
+    try { fromHere = Boolean(document.referrer) && new URL(document.referrer).origin === location.origin; } catch { /* no referrer */ }
+    if (fromHere && history.length > 1) history.back(); else location.href = '/';
+  });
+  // The outline sheet. Opening it adds a history entry, so the phone's back button closes it without leaving the card;
+  // closing it any other way goes back over that entry first, then jumps.
+  const here = spine.querySelector('[data-here]');
+  const scrim = document.querySelector('[data-scrim]');
+  let open = false;
+  let then = null;
+  const openSheet = () => {
+    if (open) return;
+    open = true;
+    document.documentElement.classList.add('sheet');
+    scrim.hidden = false;
+    toc.setAttribute('role', 'dialog'); toc.setAttribute('aria-modal', 'true');
+    here.setAttribute('aria-expanded', 'true');
+    history.pushState({ sheet: true }, '');
+    const item = links[k] ?? links[0];
+    if (item) {
+      item.focus({ preventScroll: true });
+      // only the sheet scrolls, so the item being read shows; the page behind stays where it is
+      if (item.offsetTop + item.offsetHeight > toc.scrollTop + toc.clientHeight) toc.scrollTop = item.offsetTop - toc.clientHeight / 3;
+    }
+  };
+  const closed = () => {
+    open = false;
+    document.documentElement.classList.remove('sheet');
+    scrim.hidden = true;
+    toc.removeAttribute('role'); toc.removeAttribute('aria-modal');
+    here.setAttribute('aria-expanded', 'false');
+    const next = then; then = null;
+    if (next) requestAnimationFrame(next); else here.focus({ preventScroll: true });
+  };
+  const close = (action = null) => { if (!open) return; then = action; history.back(); };
+  addEventListener('popstate', () => { if (open) closed(); });
+  here.addEventListener('click', openSheet);
+  scrim.addEventListener('click', () => close());
+  addEventListener('keydown', (e) => { if (e.key === 'Escape' && open) close(); });
+  const ex3 = root.querySelector('[data-ex3]');
+  const goTo = (t) => {
+    const el = document.getElementById(t);
+    if (!el) return;
+    scrollTo({ top: el.getBoundingClientRect().top + scrollY - 16 });
+    if (el.parentElement === ex3) ex3.scrollLeft += el.getBoundingClientRect().left - ex3.getBoundingClientRect().left - 16;
+    here.focus({ preventScroll: true });
+  };
+  toc.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (!a || !open) return;
+    e.preventDefault();
+    close(() => goTo(a.dataset.t));
+  });
+  // The examples: a swipe, with a button per example under it.
+  const dots = [...root.querySelectorAll('[data-dots] button')];
+  const articles = [...ex3.children];
+  const at = () => articles.reduce((best, el, n) => (Math.abs(el.getBoundingClientRect().left - ex3.getBoundingClientRect().left - 16) < Math.abs(articles[best].getBoundingClientRect().left - ex3.getBoundingClientRect().left - 16) ? n : best), 0);
+  const mark = () => { const n = at(); dots.forEach((d, i) => { if (i === n) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current'); }); };
+  ex3.addEventListener('scroll', () => { mark(); follow(); }, { passive: true });
+  dots.forEach((d, n) => d.addEventListener('click', () => { ex3.scrollTo({ left: ex3.scrollLeft + articles[n].getBoundingClientRect().left - ex3.getBoundingClientRect().left - 16, behavior: 'smooth' }); }));
 }
 
 async function review(box) {
-  const all = await (await fetch('/questions.json')).json();
+  const all = await allQuestions();
   const cards = Object.entries(all).map(([id, c]) => ({ id, questions: c.questions.map((_, n) => `${id}-${n}`) }));
   const queue = reviewQueue(state, cards).slice(0, 10);
   if (!queue.length) return;
+  if (phone.matches) { reviewOne(box, all, queue); return; }
   box.innerHTML = queue.map((qid) => {
     const id = qid.replace(/-\d+$/, '');
     return questionHtml(all[id].questions[Number(qid.split('-').pop())], qid, { id, name: all[id].name });
   }).join('') + '<p class="more"><a href="/review">再来一组</a></p>';
   // Review asks again even when the last answer was right.
   for (const q of box.querySelectorAll('.q')) wire(q, undefined, { restore: false });
+}
+
+// Review on a phone: one question a screen. Once the right option is found, 下一题 (做完了 on the last) waits above the
+// bottom bar; at the end, how many were right at the first pick, each card marked ✓ or ✗ and linked.
+function reviewOne(box, all, queue) {
+  const section = box.closest('.plainpage');
+  section.classList.add('rvmode');
+  const titles = JSON.parse(document.getElementById('disciplines')?.textContent || '{}');
+  const right = [];
+  let i = 0;
+  const top = (count) => `<div class="rvtop"><h1>复习</h1>${count}</div><div class="segs" aria-hidden="true">${queue.map((_, n) => `<i class="${n < right.length ? (right[n] ? 'ok' : 'miss') : n === i ? 'cur' : ''}"></i>`).join('')}</div>`;
+  const render = () => {
+    if (i >= queue.length) {
+      const score = right.filter(Boolean).length;
+      box.innerHTML = `${top('')}<div class="sum"><p class="big">${score}<small>/ ${queue.length}</small></p><ul>${queue.map((qid, n) => {
+        const id = qid.replace(/-\d+$/, '');
+        return `<li><a href="/m/${escape(id)}"><b class="${right[n] ? 'y' : 'n'}">${right[n] ? '✓' : '✗'}</b> <b>${escape(all[id].name)}</b><span>${escape(all[id].one_line)}</span></a></li>`;
+      }).join('')}</ul><a class="again" href="/review">再来一组</a></div>`;
+      return;
+    }
+    const qid = queue[i];
+    const id = qid.replace(/-\d+$/, '');
+    box.innerHTML = `${top(`<small>${i + 1} / ${queue.length}</small>`)}<div class="rvq"><p class="src"><a href="/m/${escape(id)}">${escape(all[id].name)}</a><span>${escape(titles[all[id].discipline] ?? '')}</span></p>`
+      + `${questionHtml(all[id].questions[Number(qid.split('-').pop())], qid)}<button class="rnext" type="button" hidden>${i < queue.length - 1 ? '下一题' : '做完了'}</button></div>`;
+    const next = box.querySelector('.rnext');
+    wire(box.querySelector('.q'), () => {
+      right[i] = Boolean(lastAnswer(qid)?.ok);
+      next.hidden = false;
+      updateDue();
+    }, { restore: false });
+    next.addEventListener('click', () => { i += 1; render(); scrollTo({ top: 0 }); });
+  };
+  render();
 }
 
 // Email: the form shows only when the site can send (GET /api/subscribe).
@@ -253,19 +466,6 @@ const NOTES = {
   off: '邮件订阅还没有开通。可以先用 RSS 订阅，或者每天打开今日一卡。',
 };
 function subscribe(form, note, box) {
-  // Phones: when the keyboard opens, keep the email box in the middle of what is still visible.
-  const email = form.querySelector('input[name=email]');
-  const center = () => {
-    const vv = window.visualViewport;
-    if (!vv || document.activeElement !== email) return;
-    const r = email.getBoundingClientRect();
-    if (r.top < vv.offsetTop + 8 || r.bottom > vv.offsetTop + vv.height - 8) scrollBy({ top: r.top + r.height / 2 - (vv.offsetTop + vv.height / 2) });
-  };
-  email.addEventListener('focus', () => {
-    if (!matchMedia('(max-width:720px)').matches || !window.visualViewport) return;
-    visualViewport.addEventListener('resize', center);
-    email.addEventListener('blur', () => visualViewport.removeEventListener('resize', center), { once: true });
-  });
   const query = new URLSearchParams(location.search);
   if (query.has('confirmed')) note.textContent = NOTES.confirmed;
   else if (query.has('expired')) note.textContent = NOTES.expired;
@@ -296,6 +496,7 @@ function subscribe(form, note, box) {
 
 chrome();
 tips();
+keyboard();
 const data = document.getElementById('cards');
 if (data) home(JSON.parse(data.textContent));
 if (document.querySelector('[data-go-random]')) goRandom();

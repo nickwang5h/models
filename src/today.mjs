@@ -25,7 +25,10 @@ export function todayPage(day, current, total) {
 <div class="qs" data-today-quiz>${questionHtml(question, `${id}-${questionIndex}`)}</div>
 <nav class="pn">${prev}${next}</nav>
 </section>`;
-  return shell({ title: `今日一卡：${card.name} · 思维模型`, description: card.one_line, body, total, report: reportUrl(id) });
+  // Phones read the day on the card itself, its question right after the opening (app.js); replace() keeps /today out
+  // of the back stack.
+  const head = `<script>if (matchMedia('(max-width:720px)').matches) location.replace('/m/${escape(id)}?day=${date}');</script>\n`;
+  return shell({ title: `今日一卡：${card.name} · 思维模型`, description: card.one_line, body, total, report: reportUrl(id), head });
 }
 
 export function subscribePage(total) {
@@ -52,7 +55,7 @@ export function entryHtml(day, site = SITE) {
   const { date, id, card, question } = day;
   const options = question.options.map((option, n) => `<li>${'ABCD'[n]}. ${escape(option.text)}</li>`).join('');
   return `<p>${escape(card.one_line)}</p>`
-    + `<p><a href="${site}/m/${escape(id)}">读整张卡：${escape(card.name)}</a></p>`
+    + `<p><a href="${site}/m/${escape(id)}?day=${date}">读整张卡：${escape(card.name)}</a></p>`
     + `<p>${escape(question.stem)}</p><p><strong>${escape(question.question)}</strong></p><ol>${options}</ol>`
     + `<p><a href="${site}/today?date=${date}">去网页作答，看解析</a></p>`;
 }

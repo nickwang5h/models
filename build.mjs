@@ -40,7 +40,7 @@ const figure = cards[today.id].figure ?? null;
 for (const d of index.disciplines) await writeFile(join(DIST, 'd', `${d.id}.html`), homePage(index, list, { discipline: d.id, today, figure }));
 await writeFile(join(DIST, 'index.html'), homePage(index, list, { today, figure }));
 await writeFile(join(DIST, 'random.html'), homePage(index, list, { today, figure, random: true }));
-await writeFile(join(DIST, 'review.html'), reviewPage(total));
+await writeFile(join(DIST, 'review.html'), reviewPage(total, index.disciplines));
 await writeFile(join(DIST, 'subscribe.html'), subscribePage(total));
 await writeFile(join(DIST, 'ids.json'), JSON.stringify(order));
 await writeFile(join(DIST, 'questions.json'), JSON.stringify(Object.fromEntries(order.map((id) => [id, { name: cards[id].name, en: cards[id].en, discipline: cards[id].discipline, one_line: cards[id].one_line, questions: cards[id].use.questions }]))));

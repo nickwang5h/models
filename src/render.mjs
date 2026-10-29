@@ -150,7 +150,7 @@ export function cardPage(card, { cards, index }) {
 
   const body = `<div class="page wrap" data-card="${escape(card.id)}">
 <p class="crumbs"><a href="/">思维模型</a><span class="sep">/</span><a href="/d/${escape(discipline.id)}">${escape(discipline.title)}</a><span class="day" data-day hidden></span></p>
-<nav class="toc" aria-label="本页"><ol>
+<nav class="toc" aria-label="本页" data-toc><span class="grip" aria-hidden="true"></span><ol>
 ${toc('s-scene', `${year ? `<span class="ty">${escape(year)}</span>` : ''}<span class="ts">${escape(year ? storyRest(entry.story ?? '') : (entry.story || shallow.scene.slice(0, 40)))}</span>`)}
 <li class="gap" aria-hidden="true"></li>
 ${heads.map((t, n) => toc(`m${n}`, md0(t))).join('\n')}
@@ -180,7 +180,8 @@ ${card.figure ? figureHtml(card.figure, { live: true, id: card.id }) : ''}
 <dl class="uses">${use.uses.map((u) => `<dt>${USE_NAME[u.use]}</dt><dd>${md0(u.text)}</dd>`).join('')}</dl>
 <ol class="ask">${use.ask.map((a) => `<li><span>${md0(a)}</span></li>`).join('')}</ol>
 </div>
-<div class="blk ex3">${use.examples.map((e, n) => `<article id="s-ex${n}"><p class="f">${escape(e.field)}</p><h4>${escape(e.title)}</h4>${markdown(e.text)}</article>`).join('')}</div>
+<div class="blk ex3" data-ex3>${use.examples.map((e, n) => `<article id="s-ex${n}"><p class="f">${escape(e.field)}</p><h4>${escape(e.title)}</h4>${markdown(e.text)}</article>`).join('')}</div>
+<div class="ex3dots" data-dots>${use.examples.map((e, n) => `<button type="button" data-ex="${n}" aria-label="${escape(e.title)}"${n ? '' : ' aria-current="true"'}><i></i></button>`).join('')}</div>
 <div class="blk with">${use.with.map((w, n) => {
     const other = cards[w.id];
     return `<a class="w" id="s-w${n}" href="/m/${escape(w.id)}"><span><span class="pair"><span class="me">${escape(card.name)}</span><span class="x" aria-hidden="true">×</span>`
@@ -200,12 +201,18 @@ ${prev ? `<a href="/m/${escape(prev.id)}" rel="prev"><span>← ${escape(discipli
 ${next ? `<a class="r" href="/m/${escape(next.id)}" rel="next"><span>${escape(discipline.title)} →</span><b>${escape(next.name)}</b></a>` : ''}
 </nav>
 </div>
-</div>`;
+</div>
+<div class="spine" data-spine><span class="prog" aria-hidden="true"><i></i></span>
+<button class="back" type="button" aria-label="返回" data-back><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+<button class="here" type="button" aria-label="本页目录" aria-haspopup="dialog" aria-expanded="false" data-here><span class="hl"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 14l5-5 5 5"/></svg></button>
+<a class="sq" href="#s-quiz" aria-label="去答题"><span class="tq" aria-hidden="true">${use.questions.map(() => '<i></i>').join('')}</span></a></div>
+<div class="scrim" data-scrim hidden></div>`;
   const math = /\$/.test([shallow.scene, shallow.plain, deep.mechanism, deep.origin, deep.limits, ...use.examples.map((e) => e.text), ...use.uses.map((u) => u.text), ...use.with.map((w) => w.sees)].join(''));
   const script = card.figure?.kind === 'demo' ? '<script type="module" src="/figs.js"></script>' : '';
-  return shell({ title: `${card.name} · 思维模型`, description: card.one_line, body, total: index.cards.length, math, script, report: reportUrl(card.id) });
+  return shell({ title: `${card.name} · 思维模型`, description: card.one_line, body, total: index.cards.length, math, script, report: reportUrl(card.id), tab: null });
 }
 
+const DICE = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r=".9"/><circle cx="15" cy="15" r=".9"/><circle cx="15" cy="9" r=".9"/><circle cx="9" cy="15" r=".9"/></svg>';
 const SEARCH_ICON = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg>';
 
 // The home page: today's card, then every card by rank with search and filters. `discipline` pre-selects one (/d/<id>);
@@ -215,8 +222,10 @@ export function homePage(index, list, { discipline = null, today, figure = null,
   const title = Object.fromEntries(index.disciplines.map((d) => [d.id, d.title]));
   const first = list.find((c) => c.id === today.id);
   const shown = discipline ? list.filter((c) => c.discipline === discipline) : list;
+  const count = {};
+  for (const c of list) count[c.discipline] = (count[c.discipline] ?? 0) + 1;
   const body = `<section class="lead wrap"${random ? ' data-go-random' : ''}>
-<a class="today" href="/m/${escape(first.id)}" data-lead>${leadHtml(first, today.date, title[first.discipline], figure ? figureHtml(figure) : '')}</a>
+<a class="today" href="/m/${escape(first.id)}?day=${today.date}" data-lead>${leadHtml(first, today.date, title[first.discipline], figure ? figureHtml(figure) : '')}</a>
 <aside class="sub">
 <div data-mail hidden><h2>每天一张，发到邮箱</h2>
 <form data-subscribe><input name="email" type="email" required maxlength="254" autocomplete="email" aria-label="邮箱" placeholder="you@example.com"><span class="trap" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></span>${subButton()}</form>
@@ -227,18 +236,20 @@ export function homePage(index, list, { discipline = null, today, figure = null,
 </section>
 <div class="sieve" id="sieve"><div class="wrap">
 <label class="find">${SEARCH_ICON}<input type="search" aria-label="找一张卡" autocomplete="off" data-q></label>
-<button class="look" type="button" aria-label="找一张卡" data-look>${SEARCH_ICON}</button>
-<div class="tg" data-tags>${index.disciplines.map((d) => `<button type="button" data-d="${d.id}" aria-pressed="${d.id === discipline}" title="${escape(d.title)}">${escape(d.short)}</button>`).join('')}<i aria-hidden="true"></i>${USES.map(([u, n]) => `<button type="button" data-u="${u}" aria-pressed="false">${n}</button>`).join('')}</div>
+<div class="tg" data-tags>${index.disciplines.map((d) => `<button type="button" data-d="${d.id}" data-n="${count[d.id] ?? 0}" aria-pressed="${d.id === discipline}" title="${escape(d.title)}">${escape(d.short)}</button>`).join('')}<i aria-hidden="true"></i>${USES.map(([u, n]) => `<button type="button" data-u="${u}" aria-pressed="false">${n}</button>`).join('')}</div>
 <span class="tot" data-tot></span>
+<a class="rand" href="/random" data-random>${DICE}<span>随机一张</span></a>
 </div></div>
 <section class="ranks wrap" data-ranks aria-label="全部卡片">${bands(shown, { short, today: today.id })}</section>
 <script type="application/json" id="cards">${JSON.stringify({ list, short, titles: title, discipline }).replace(/</g, '\\u003c')}</script>`;
   const what = discipline ? `${title[discipline]} · 思维模型` : '思维模型';
-  return shell({ title: what, description: `${list.length} 张跨学科思维模型卡，按重要程度排列`, body, total: list.length });
+  return shell({ title: what, description: `${list.length} 张跨学科思维模型卡，按重要程度排列`, body, total: list.length, tab: discipline ? 'find' : 'today' });
 }
 
-export function reviewPage(total) {
+// `disciplines` name each question's discipline in the phone layout (one question a screen, app.js).
+export function reviewPage(total, disciplines = []) {
   const body = `<section class="plainpage wrap"><h1>复习</h1>
-<div id="review" class="qs"><p class="empty">还没有读过的卡片。</p></div></section>`;
-  return shell({ title: '复习 · 思维模型', description: '复习读过的思维模型', body, total });
+<div id="review" class="qs"><p class="empty">还没有读过的卡片。</p></div></section>
+<script type="application/json" id="disciplines">${JSON.stringify(Object.fromEntries(disciplines.map((d) => [d.id, d.title]))).replace(/</g, '\\u003c')}</script>`;
+  return shell({ title: '复习 · 思维模型', description: '复习读过的思维模型', body, total, tab: 'review' });
 }

@@ -29,8 +29,18 @@ export const subButton = () => `<button class="letter" type="submit">${ENVELOPE}
 
 const THEME_ICON = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="7.2"/><path d="M10 2.8a7.2 7.2 0 0 1 0 14.4z" fill="currentColor"/></svg>';
 
-// `total` is the number of cards, shown in the top bar until the reader has read some.
-export function shell({ title, description, body, total, math = false, script = '', report = reportUrl() }) {
+// Phones (≤720px) navigate from a bar at the bottom: today, find, review. A card page has its spine there instead
+// (render.mjs), so it passes `tab: null`. Hidden on wider screens.
+const TABS = [
+  ['today', '/', '今日', '<rect x="4.5" y="5" width="15" height="15" rx="2"/><path d="M4.5 9.5h15M9 3v4M15 3v4"/>'],
+  ['find', '/#sieve', '找', '<circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5 5"/>'],
+  ['review', '/review', '复习', '<path d="M5 12a7 7 0 1 0 2.1-5"/><path d="M5 4.5V8h3.5"/>'],
+];
+const tabs = (tab) => `<nav class="tabs" aria-label="主导航">${TABS.map(([key, href, name, icon]) => `<a href="${href}" data-tab="${key}"${key === tab ? ' class="on" aria-current="page"' : ''}>`
+  + `<svg viewBox="0 0 24 24" aria-hidden="true">${icon}</svg><span>${name}</span>${key === 'review' ? '<b class="due" data-due hidden></b>' : ''}</a>`).join('')}</nav>`;
+
+// `total` is the number of cards, shown in the top bar until the reader has read some. `head` goes at the end of <head>.
+export function shell({ title, description, body, total, math = false, script = '', report = reportUrl(), tab = 'today', head = '' }) {
   return `<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -51,7 +61,7 @@ export function shell({ title, description, body, total, math = false, script = 
 <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/style.css">
 ${math ? '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">' : ''}
-</head>
+${head}</head>
 <body>
 <header class="bar"><div class="wrap">
 <a class="mark" href="/">思维模型<small>${total} 张卡 · 12 门学科</small></a>
@@ -60,7 +70,8 @@ ${math ? '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Ka
 <main>
 ${body}
 </main>
-<footer class="foot"><div class="wrap"><span>思维模型 · models.wuhua.app</span><a href="/today">今日一卡</a><a href="/feed.xml">RSS</a><a href="${REPO}">源代码</a><a href="${escape(report)}">报告错误</a><span>卡片内容 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">CC BY-NC-SA 4.0</a> · 代码 <a href="${REPO}/blob/main/LICENSE">MIT</a></span></div></footer>
+<footer class="foot"><div class="wrap"><span>思维模型 · models.wuhua.app</span><a href="/today">今日一卡</a><a href="/feed.xml">RSS</a><a href="${REPO}">源代码</a><a href="${escape(report)}">报告错误</a><button class="theme ft" type="button" data-theme-toggle>${THEME_ICON}<span>深浅色</span></button><span>卡片内容 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">CC BY-NC-SA 4.0</a> · 代码 <a href="${REPO}/blob/main/LICENSE">MIT</a></span></div></footer>
+${tab ? tabs(tab) : ''}
 <script type="module" src="/app.js"></script>
 ${script}
 </body>
