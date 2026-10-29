@@ -1,0 +1,219 @@
+{
+ "id": "occams-razor",
+ "name": "Occam's Razor",
+ "en": "奥卡姆剃刀",
+ "discipline": "thinking",
+ "one_line": "When several explanations all fit, start with the one that needs the fewest assumptions.",
+ "story": "Newton's first rule of reasoning in Book 3 of the Principia, and the Moon test: one inverse-square law of gravity explains both the falling apple and the Moon's motion",
+ "shallow": {
+  "scene": "A ball you throw always comes down, and a ripe apple always falls, yet the Moon hangs in the sky and never falls. Could the force that pulls the apple to the ground also be what holds on to the Moon?\n\nIn 1687, Isaac Newton answered this question in *Mathematical Principles of Natural Philosophy*, published in London. At the very start of Book 3, he first laid down a rule for reasoning: to explain things in nature, we should admit causes that are true and enough to explain them, and no more than that.\n\nThen he used the Moon as a test. The Moon's distance from the center of the Earth is about sixty times the apple's distance from the center of the Earth. If the force at the Earth's surface grew weaker with the square of the distance, then out at the Moon only one sixtieth times one sixtieth would be left, that is, one 3,600th. Working with a pull that weak, the result matched exactly how the Moon really moves around the Earth. Since the same force that makes the apple fall also holds on to the Moon, setting up a separate \"heavenly force\" for the sky would be unnecessary: when one cause is enough, you don't add a second.",
+  "plain": "Your home internet slows down every night at eight, and it has for two weeks. One explanation: everyone in the building is watching videos at that hour, so the line is crowded. Another: a neighbor is using your Wi-Fi, the internet company also throttles your speed right at that hour, and your router has picked up a virus. Both explanations fit the eight o'clock timing. Occam's razor says to keep the first one for now: it needs just one thing to be true, while the second needs three things true at once. You test your speed once before the evening peak and once during it. If the two are far apart, you leave the router alone for now and call the broadband company."
+ },
+ "deep": {
+  "mechanism": "### Each extra premise you have to believe makes the whole explanation less likely to hold\n\nSuppose an explanation rests on $n$ premises that have nothing to do with one another, and you are $p$ sure of each. Of the times when the first one holds, the second holds only a share $p$ of them, so the two together hold $p\\times p$ of the time. Each extra premise multiplies by $p$ once more, so all $n$ holding together comes to\n\n$$p^n$$\n\nAs long as $p$ is below 100%, every extra thing you believe marks the whole explanation down once more. With three premises each 90% sure, $0.9^3\\approx0.73$, a bit over 70%; if each is only 50% sure, all three together come to just one eighth. When the premises have all been confirmed in the records and can be counted as 100%, three of them are still 100%, and an extra premise costs nothing.\n\n### Remove premises one at a time; only those you can remove and still have it make sense are extra\n\nA dish you cooked today is especially salty. One explanation: your hand slipped and you added an extra spoonful of salt. Someone adds: the salt jar got damp and clumped, so this spoonful was much bigger than usual. Remove \"got damp,\" and the extra spoonful still explains the saltiness; keep only \"got damp,\" and the saltiness no longer makes sense. The dampness gets shaved off, and the extra spoonful stays.\n\n### What you count is how many things you must believe, and one rare thing can outweigh several\n\nYou come downstairs in the morning and your bike's back tire is flat. A one-line explanation: someone deliberately punctured your tire. A longer one: yesterday you rode along a stretch of road under repair, with gravel and nails scattered on it; one went into your tire, and the air leaked out overnight. The second needs you to believe three things, but each is ordinary. \"Rode that stretch yesterday\" is already confirmed, and if each of the other two is 90% sure, together they still come to $0.9^2=0.81$. The first has only one thing, but \"someone targeted you on purpose\" is rare in itself, and you'd be far less than 90% sure of it; as long as it's below 0.81, that one thing is harder to hold up than the three.\n\nCounting works because ordinary premises are all about equally sure. So first check whether there is a rare premise like this, and then count.",
+  "origin": "The name honors William of Ockham, a 14th-century English philosopher who kept using the idea of \"plurality should not be posited without necessity\" in his arguments; the Latin maxim passed down under his name was a summary made by later writers. In 1687, Newton put this idea into Book 3 of the *Principia*: the first edition listed it as Hypothesis 1, and the second edition of 1713 renamed it Rule 1 of reasoning. He used one law of gravity to explain falling bodies, the Moon and the planets all at once.",
+  "limits": "When several explanations work equally well for the same set of facts, Occam's razor is best for tracking down faults and deciding where to check first. It only sets the order; it doesn't prove what's true. A saying passed around among doctors puts it the other way: a patient can have as many diseases as they please. Explaining every symptom with one disease is the least effort, but not necessarily right. Turning \"check this one first\" into \"it's this one\" is the favorite mistake of people who lean on the razor."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When every light on one floor of a stairwell is out, first check the main switch for that floor, before you wonder whether a dozen-odd lights all broke at once."
+   },
+   {
+    "use": "reason",
+    "text": "Two colleagues each have their own explanation for a drop in sales. You ask them to list the premises each one relies on, cross out the ones backed by records, and use first the list with fewer unrecorded premises left."
+   },
+   {
+    "use": "communicate",
+    "text": "When explaining to a client why a delivery is late, give one main reason, list the other one not yet ruled out separately as still being checked, and don't lay out five reasons side by side."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Work",
+    "title": "The 120 extra rows",
+    "text": "You merge the sales team's and the finance team's customer lists, and the merged list has 120 more rows than the finance one. One explanation: sales has 120 other customers that finance never knew about, which means believing someone collected payments and issued invoices outside of finance. Another: the same customers are written differently in the two lists, which needs you to believe only this one thing. You check the second first and sort by phone number. You find each of those 120 numbers appears once in each list, with \"+86\" added in front of the numbers in the sales list. After making the number format the same and merging again, only 3 extra rows are left, and only those 3 do you check one by one."
+   },
+   {
+    "field": "Personal life",
+    "title": "The front door at six",
+    "text": "Your cat sits by the front door at exactly six every evening. A says: the neighbor next door gets home at six, and the sound of the door closing comes through the wall. B says: the cat has a clock inside it that happens to reach that time; the neighbor's door closing is a coincidence, and the light in the hallway getting dimmer is also a coincidence. The two sentences are about the same length, but the number of things they ask you to believe differs by several. The week the neighbor was away on a business trip, the cat never sat by the door."
+   },
+   {
+    "field": "Community",
+    "title": "The register with a missing page",
+    "text": "Going through an old register in your neighborhood's records room, you find that page 47 is missing, and the binding thread is broken at exactly that spot. One explanation is that the thread wore out and the page fell out by itself; another is that someone tore it out on purpose, which would mean checking who borrowed the book. The only visible clue you have is the broken thread, so you go with the worn thread first: if the page fell out by itself, it should still be near this book. You go through the neighboring books on the same shelf and find the page tucked inside the next one. There's no need to check the borrowing records."
+   }
+  ],
+  "ask": [
+   "What does each explanation predict will happen next? Which is the cheapest to test, and can I test it today?",
+   "For the link farthest from the conclusion, has a second person brought it up independently? Go find another source.",
+   "If this one is wrong, what's the worst that could happen? Should someone check the other one at the same time?"
+  ],
+  "with": [
+   {
+    "id": "avoid-ruin",
+    "sees": "A gas alarm goes off at a chemical plant, but two independent sensors next to it stay silent. One explanation is that this sensor is broken; the other needs you to believe three things at once: the leak happened right beside it, the air flow happened not to carry the gas to the other two sensors, and neither of those two is broken. Occam's razor leans toward the first and says go check the readings on site. Avoiding ruin looks at the other side: if there really is a leak, the cost is people dead, while evacuating once only costs half a day. The two give opposite advice. When the cost of getting it wrong is about the same either way, check things in the razor's order; when missing it once can't be undone, get people out first, then use the razor to track down the fault."
+   },
+   {
+    "id": "bayesian-updating",
+    "sees": "In the same week, three households in an old building all say yellow water is coming out of their taps. One shared cause (a problem with the water tank on the roof) needs you to believe just one thing; the three households' pipes rusting separately needs three, so the razor leans toward the first. Bayesian updating first asks how common each explanation usually is. Suppose the building's pipes are so old that a few households get yellow water every week: three in the same week needs no explanation at all, and the water tank is the extra one. Suppose it normally happens to barely one household a year: only then does three landing in the same week make the water tank explanation stand up."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A finance account you follow has posted for three months straight that \"rain always means a fall\": on rainy days the stock market always drops. Last week it rained and the market rose instead. The author added: \"That day a large amount of foreign money happened to come in, which canceled out the fall.\"",
+    "question": "Which explanation do you believe first?",
+    "explain": "The foreign-money line was added only to rescue this one failure; it says nothing about any other day. When a rule gets a new patch every time it meets a counterexample, the things you must believe pile up while the explanation gains nothing.",
+    "options": [
+     {
+      "text": "The rule never held, and the foreign-money line is just there to save it",
+      "correct": true,
+      "feedback": "One rainy day when the market rose is a counterexample, and the added line serves only this one failure."
+     },
+     {
+      "text": "The rule holds; foreign money coming in that day just canceled it out",
+      "correct": false,
+      "feedback": "There's no record of any foreign money coming in; this line was added only to rescue the rule and explains nothing else."
+     },
+     {
+      "text": "Believe each half way, and look at both again next month",
+      "correct": false,
+      "feedback": "The rule plus foreign money needs you to believe two things; the rule failing needs one. Splitting it evenly counts the extra thing as evidence."
+     },
+     {
+      "text": "Watch for another month and see whether rainy days still have exceptions",
+      "correct": false,
+      "feedback": "Next month the author can add another line the same way; patches like this can always save the rule."
+     }
+    ]
+   },
+   {
+    "stem": "This term, ninth-grade Class 1 scored 9 points higher on average in the midterm than last term. The principal's report gave three reasons: a new textbook, an extra study period every evening, and a new head teacher. Class 2 in the same year only got a new head teacher, with the same textbook and no extra study, and its average also rose by 9 points.",
+    "question": "In this comparison, which of the principal's three reasons look unnecessary?",
+    "explain": "Class 2 rose 9 points with only a new head teacher. It had neither the textbook nor the study period, yet its rise wasn't any smaller. Those two explain nothing extra, while the head teacher can't be removed.",
+    "options": [
+     {
+      "text": "The new head teacher: both classes got one, so it can't explain a difference.",
+      "correct": false,
+      "feedback": "Class 2 rose 9 points with this as its only change. Remove it, and Class 2's rise has no explanation."
+     },
+     {
+      "text": "Remove all three; the rise was most likely because this exam was easier.",
+      "correct": false,
+      "feedback": "There's no sign at all in the question that the exam got easier, and with all three removed, nothing explains either class's 9 points."
+     },
+     {
+      "text": "The new textbook and the extra study: Class 2 had neither, and rose just as much.",
+      "correct": true,
+      "feedback": "Class 2 had neither of these and rose just as much, so here they explain nothing extra."
+     },
+     {
+      "text": "Keep all three; each might have some effect on its own.",
+      "correct": false,
+      "feedback": "Keeping them means believing two more things the comparison doesn't support, and in the comparison those two produced no extra rise."
+     }
+    ]
+   },
+   {
+    "stem": "A stamping press stopped 8 times last quarter. The equipment department says the cause is voltage swings. The voltage records match 5 of the stops, but during the other 3 the voltage was steady. During repairs, signs of wear were found on a bearing, and all 3 of those stops came after the machine had run nonstop for more than 6 hours.",
+    "question": "How should the repair report be written?",
+    "explain": "Blaming voltage alone leaves 3 stops unexplained. The extra premise of bearing wear covers exactly those, and it is backed by the wear marks found in repairs and by the running times. One more premise in exchange for explaining 3 stops is worth keeping.",
+    "options": [
+     {
+      "text": "First find a single cause that explains all 8, then write it up.",
+      "correct": false,
+      "feedback": "The two causes already account for all 8 between them. Waiting for a cause that hasn't turned up leaves the report stuck with no explanation."
+     },
+     {
+      "text": "Treat the other 3 as chance events and leave them out of this report.",
+      "correct": false,
+      "feedback": "All 3 have stop records, backed up by the bearing marks. Treating them as chance is deleting facts."
+     },
+     {
+      "text": "Write only voltage swings, because one cause reads more simply.",
+      "correct": false,
+      "feedback": "That cause matches only 5 stops; nobody has explained the other 3."
+     },
+     {
+      "text": "Write both: voltage for 5 stops, the bearing for 3.",
+      "correct": true,
+      "feedback": "Each cause matches records, and the bearing covers the 3 stops voltage can't explain."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Each 90% sure, all three just over 70%",
+  "caption": "Drag how sure you are of each premise: at 50%, all three together are only one eighth; at 100%, adding more doesn't lower it.",
+  "x": {
+   "label": "Premises to believe",
+   "ticks": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ]
+  },
+  "y": {
+   "label": "Explanation holds",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "Sure of each",
+    "min": 50,
+    "max": 100,
+    "step": 5,
+    "value": 90,
+    "unit": "%"
+   }
+  ],
+  "model": {
+   "steps": 6,
+   "init": {
+    "j": 1
+   },
+   "next": {
+    "j": "j*p/100"
+   }
+  },
+  "series": [
+   {
+    "name": "All hold",
+    "expr": "j*100",
+    "tone": "accent",
+    "dots": true,
+    "from": 1
+   }
+  ],
+  "marks": [
+   {
+    "x": 3,
+    "text": "Three"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "One holds",
+    "expr": "p",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "All three hold",
+    "expr": "(p/100)^3*100",
+    "unit": "%",
+    "digits": 1
+   }
+  ]
+ }
+}

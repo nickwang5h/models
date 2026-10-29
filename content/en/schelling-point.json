@@ -1,0 +1,178 @@
+{
+ "id": "schelling-point",
+ "name": "Schelling Point",
+ "en": "谢林点",
+ "discipline": "games",
+ "one_line": "When you can't talk it over, everyone picks the answer that stands out most.",
+ "story": "Schelling's The Strategy of Conflict reports the New York meeting puzzle: answers cluster on Grand Central Station and noon",
+ "shallow": {
+  "scene": "In 1960 the economist Thomas Schelling set a puzzle in *The Strategy of Conflict*. You have to meet someone in New York. You haven't agreed on a place or a time, and you can't reach them. Where do you go, and at what time? Schelling reported that most people wrote down Grand Central Station, at noon. New York has thousands upon thousands of street corners, and a day has 1,440 minutes, yet two people who had no way of conferring wrote down the same answer.",
+  "plain": "A music festival ends, and you lose your friend among tens of thousands of people. Your phone is dead, and you never agreed where to wait. You don't think about which place is most convenient; you think only about which place he would think of too. So you think of the big arched entrance that nobody can avoid passing. It's not that it's a good spot; it's just that you know it, and you trust he knows it too. You walk over, and ten minutes later he arrives from the other side. That arch is a Schelling point."
+ },
+ "deep": {
+  "mechanism": "### With no clue, meeting is pure luck\n\nSuppose there are a hundred places you could both get into. If each of you picks one at random, the chance of meeting is only one in a hundred. With just three places to choose from, the chance is one in three.\n\n### Go where the other person is most likely to go\n\nOf these hundred places, you reckon there's a 30% chance the other person goes to Grand Central, and the remaining 70% is spread over the other ninety-nine, less than 1% each. If you go to the station, your chance of meeting is 30%. Even if that chance drops to 10%, the station still has 10%, while every other place still has less than 1%. The other person reasons about you the same way: expecting that you will most likely go to the station, he has all the more reason to go. So both people's guesses land on the station together.\n\n### Change the group, and the answer that stands out changes\n\nSend the same words, \"the usual place,\" to an old friend you've stayed close to for ten years, and they go straight to the spot under that bridge. Send them to a colleague you met only last week, and the reply comes back: Where?",
+  "origin": "In 1957 Schelling published \"Bargaining, Communication, and Limited War\" in the *Journal of Conflict Resolution*, and it already discussed answers that \"stand out\" like this. *The Strategy of Conflict* in 1960 turned the idea into a method, and the New York meeting puzzle is the book's most famous demonstration. He won the 2005 Nobel Prize in economics for his work on game theory.",
+  "limits": "Schelling points work best when both sides want to end up choosing the same thing and share some history. When two groups mean different things by the same word, there is no answer that stands out to both. A Schelling point also only gets people to think of the same place. If everyone watches a round-number price, that only shows they will all pay attention to it at once; whether the price stops falling there depends on how much buyers and sellers are willing to pay."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When you write the meeting notice for an in-person event, say \"under the clock tower in Fountain Plaza,\" not \"meet at the entrance\": the whole campus has only one clock tower, so even latecomers can find it without phoning to ask."
+   },
+   {
+    "use": "predict",
+    "text": "To guess what discount two stores that don't talk to each other will offer for the same holiday, first list the offers every customer recognizes, like \"half price\" or \"buy one, get one free\"; the rival will most likely land on one of them."
+   },
+   {
+    "use": "act",
+    "text": "When you have to move first and can't confirm anything, pick the option that you yourself find \"way too obvious\": you only meet if the other person thinks the same way you do."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Personal life",
+    "title": "Everyone buys their own concert outfit",
+    "text": "Twelve members of a choir each buy their concert clothes online. Nobody in the group chat ever set a rule; there was only one line: \"Dress formally.\" At Friday's rehearsal, ten of them showed up in white shirts and black trousers, and the other two went off to borrow shirts on the spot."
+   },
+   {
+    "field": "Business",
+    "title": "A meeting with no time set",
+    "text": "Next Wednesday you are going to a client's office park to talk business. The client's assistant replied only \"See you Wednesday morning,\" with no time, and you didn't ask again. You thought about which hour of the morning anyone would think of first and arrived at the front desk at nine sharp, just as someone from the client's side was stepping out of the elevator."
+   },
+   {
+    "field": "Work",
+    "title": "The handover folder",
+    "text": "Before leaving the job, a colleague left one line: \"The handover materials are on the shared drive,\" without saying which folder. You open the shared drive, and at the top level there is only one folder, called \"Handover.\" You click on it, and three documents and a to-do list are all inside."
+   }
+  ],
+  "ask": [
+   "When I can't get any word from the other person, which of the things we have both been through are we most likely to recall at the same time?",
+   "Am I choosing this answer because I like it, or because there's evidence the other person knows it too? Ask someone who knows both of us: if you had to guess where I'd go, what would you guess?"
+  ],
+  "with": [
+   {
+    "id": "credible-commitment",
+    "sees": "In a pay negotiation, the workers want 8% and management will only give 2%, and neither side has anything more to say. The Schelling point route is to find a number both sides recognize: 5% is right in the middle and a round number, and as the talks go on, both sides drift toward it. Credible commitment goes the other way: you announce in public that you won't sign for less than 6%, and make sure you can't take it back, so the other side has to follow your number. When the other side can also hold its bottom line, take the first route and save yourselves a head-on clash; when the other side is in a hurry to close the deal and you have a way to make your words impossible to take back, take the second."
+   },
+   {
+    "id": "nash-equilibrium",
+    "sees": "Nash equilibrium tells you that in a game where two people need to meet, every place is stable: as long as the other person goes there, going there is right for you. Which of a hundred stable places to go to, it doesn't say; it takes a Schelling point to pick one out."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Two publishers are each bringing out a book by the same foreign author. There's no time to confer, and all they want is for bookstores to shelve the two books under the same author's name. Ten years ago one of this author's books came out in Chinese, and the name on its cover was written as A. The version of the name that sounds closest to the original is B. The version one editor likes best is C.",
+    "question": "Which name, printed by each publisher on its own, is most likely to match?",
+    "explain": "What the two publishers want is the same name. A was printed on the cover of the old translation, which readers and people in the trade have all seen, so each publisher has reason to believe the other will think of it.",
+    "options": [
+     {
+      "text": "A: it was printed on the cover of the old translation, and both publishers have seen it.",
+      "correct": true,
+      "feedback": "A is the name both publishers have seen, so the reason for picking it is also the other side's reason for picking it."
+     },
+     {
+      "text": "A new name that is short and easy to remember.",
+      "correct": false,
+      "feedback": "Nobody has seen a new name. Each publisher would make up its own, and they would almost never match."
+     },
+     {
+      "text": "B: its sound is the most accurate, and the other publisher's editor will also aim for accuracy.",
+      "correct": false,
+      "feedback": "There is more than one accurate way to write the name. If two editors each aim for accuracy, the names they print may not be the same."
+     },
+     {
+      "text": "C: it's the version this publisher's editor is surest of.",
+      "correct": false,
+      "feedback": "C is only one editor's preference; the other publisher has no reason at all to guess it."
+     }
+    ]
+   },
+   {
+    "stem": "You and another person are led into two separate rooms, and each of you writes one positive whole number on a piece of paper. If you write the same number, you each get a prize. You can't communicate, and apart from this rule, the other person knows nothing.",
+    "question": "Which number is most likely to be written for the same reason the other person writes theirs?",
+    "explain": "With no other information, the smallest positive whole number can be recognized without any background, and everyone has reason to think the other person will think of it.",
+    "options": [
+     {
+      "text": "Today's date, since you're both living the same day.",
+      "correct": false,
+      "feedback": "The date changes from day to day, and the other person may think of the month or the day of the week, not necessarily the date."
+     },
+     {
+      "text": "1: the smallest positive whole number.",
+      "correct": true,
+      "feedback": "Anyone can think of the reason for this number, and it is also the easiest one to believe is the other person's reason."
+     },
+     {
+      "text": "A very large random number, so it won't be the same as anyone else's.",
+      "correct": false,
+      "feedback": "The question needs the two of you to write the same number, and random large numbers almost never match."
+     },
+     {
+      "text": "Your favorite number, the one you're surest of.",
+      "correct": false,
+      "feedback": "Only you know your preference, so the other person has no way to guess you from it."
+     }
+    ]
+   },
+   {
+    "stem": "Two street vendors compete for the same intersection every day. Each wants a side to themselves rather than being crammed together, and they can't communicate. On the first day both stood on the most visible side, the east, crammed together. On the second day both thought, \"Yesterday's busy side must have more customers,\" and stood together again.",
+    "question": "Why is it that the harder each guesses where the other will think of, the more they collide?",
+    "explain": "What the two want is to end up apart. A spot both can think of draws both of them, so the better they guess, the more surely it brings them to the same place.",
+    "options": [
+     {
+      "text": "Both sides of the intersection get the same number of passers-by anyway, so either side gives the same result.",
+      "correct": false,
+      "feedback": "In the question the two collide every day. The cause lies in how they choose, not in the passers-by."
+     },
+     {
+      "text": "Keep standing on the same side, and sooner or later the other one will move.",
+      "correct": false,
+      "feedback": "The other one thinks the same, so neither moves, and they stay crammed together."
+     },
+     {
+      "text": "Both can think of the visible spot, so the more they guess, the more they are drawn together.",
+      "correct": true,
+      "feedback": "Ending up apart depends on the other person not being able to guess you, and a visible spot does exactly the opposite."
+     },
+     {
+      "text": "They don't know enough about the passers-by; a few more days of watching will separate them.",
+      "correct": false,
+      "feedback": "More watching only makes both more sure that the same side is best, and they will still both go there."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "type": "hbar",
+  "title": "At 30% odds they go, the station is your best bet",
+  "caption": "100 places you can both reach. At random, you meet 1% of the time. You guess they pick Grand Central 30% of the time; 99 other places share 70%, under 1% each.",
+  "categories": [
+   "No clue, random pick",
+   "Go to Grand Central",
+   "Go to one other place"
+  ],
+  "y": {
+   "unit": "%",
+   "min": 0,
+   "max": 35
+  },
+  "series": [
+   {
+    "name": "Chance of meeting",
+    "values": [
+     1,
+     30,
+     0.7
+    ],
+    "tones": [
+     "muted",
+     "accent",
+     "muted"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,274 @@
+{
+ "id": "tragedy-of-commons",
+ "name": "Tragedy of the Commons",
+ "en": "公地悲剧",
+ "discipline": "economics",
+ "one_line": "When I keep the gain and everyone shares the cost, shared things get used up.",
+ "story": "Canada's fisheries minister John Crosbie halts fishing for northern cod off Newfoundland after overfishing makes the stocks collapse",
+ "shallow": {
+  "scene": "On July 2, 1992, Canada's fisheries minister, John Crosbie, announced a halt to fishing for northern cod on the Grand Banks off Newfoundland. The cod there had fed the coastal fishing villages for centuries, but over a few decades trawlers had caught the stocks down further and further. No boat was willing to hold back first, because any fish one boat didn't catch, the other boats could still take. There were quotas, and had been for a long time, but they were based on estimates of the stock that were too high, so the catch they allowed was more than the cod could withstand. When the ban came, fishermen and fish-plant workers lost their jobs together.",
+  "plain": "Ten of you share a bag of coffee beans in the office kitchen; say it makes 100 cups. If you make yourself one more cup, you're the one who drinks it. The cup's worth of beans that disappears, though, is shared among ten people, so you only lose a tenth of a cup. If everyone does the same sum, the beans won't last until the end of the month. In his 1968 essay \"The Tragedy of the Commons,\" Garrett Hardin did the same sum with a shared pasture: the pasture didn't last the summer."
+ },
+ "deep": {
+  "mechanism": "### The gain from using more is yours; the wear is shared by everyone\n\nTen herding families share a pasture that is already close to what it can support. If you keep one more cow, you earn 100 yuan more a year. But the grass it eats costs the ten families 200 yuan in total. Split ten ways, you bear only 20 yuan, so you come out 80 yuan ahead; the ten families together come out 100 yuan behind. Each of the other nine families, doing its own sums, also comes out 80 yuan ahead.\n\nWhen $n$ families share, the net yuan you get from keeping one more cow is:\n\n$$100-\\frac{200}{n}$$\n\nThe extra 100 yuan is all yours, while the 200 yuan of lost grass is split by family, and you bear only one $n$th of it. With just two families, you bear 100 yuan, which exactly cancels what you earn; with twenty, you bear only 10 yuan and come out 90 ahead. The more people share, the less using more hurts.\n\n### If you hold back, others take it anyway\n\nThe pasture can't keep outsiders out, so if you graze one cow fewer, someone else eats the grass you saved. Every family knows the grass will be eaten up in the end, yet no family can save it by holding back on its own. The less grass there is, the harder the cows are to raise; but since the grass can't be saved anyway, everyone just rushes to graze more before it's gone.\n\n### Rules that can be enforced can change the sums\n\nThe communities Elinor Ostrom studied spelled out clearly who could use the resource and how much each household could use. The users took part in making the rules themselves, someone patrolled, penalties got heavier with each offense, and there were cheap ways to settle disputes. That way, people who grazed extra cows had to pay more for it, and people who kept the rules could hold on to their share.",
+  "origin": "In 1833 the British economist William Forster Lloyd used a shared pasture to describe this dilemma. In 1968 the ecologist Garrett Hardin published \"The Tragedy of the Commons\" in *Science*, and it became widely known. In 1990 Elinor Ostrom's *Governing the Commons* gathered field cases of pastures, irrigation and more, showing that users who make their own rules can often avoid the tragedy; she won the Nobel Prize in economics in 2009.",
+  "limits": "The tragedy of the commons fits best with resources where one person using more crowds out someone else's share and newcomers can't be kept out: coastal fishing grounds, groundwater, crowded network bandwidth. If a resource is shrinking because of pollution or climate, with nobody taking more, then it's not the thing to explain it. Hardin's essay is often read to mean that shared things can only be divided up among private owners or taken over by the state. But many of the irrigation communities, mountain forests and fisheries Ostrom visited had managed themselves with their own rules for decades or even centuries."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "Hundreds of farming households each drill their own wells and pump groundwater, with no agreement on how much. The water table will be lower every year, and pumping will cost more every year; you don't have to wait for the wells to run dry to see it coming."
+   },
+   {
+    "use": "design",
+    "text": "Setting rules for the shared chargers in a housing complex: someone who doesn't move their car after it's fully charged saves themselves the bother, and the cost lands on the people waiting in line. So put an overtime fee on that person; a sign asking people to be considerate won't stop it."
+   },
+   {
+    "use": "act",
+    "text": "When something shared is running low, first look at who is using it and whether they can be kept out, then decide whether to set rules, charge for it or add capacity."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Governance",
+    "title": "A shared pasture run for centuries",
+    "text": "In Törbel, a village in the Swiss Alps, a written village rule from 1517 says that no household may send more cows up the mountain in summer than it can feed through the winter, and people chosen by the village check on it. The pasture has always been owned by the whole village, the rule has been passed down for centuries, and the grass has never been grazed bare."
+   },
+   {
+    "field": "Technology",
+    "title": "Test machines nobody turns off",
+    "text": "You manage your company's shared test servers. A dozen or so small teams each start their own machines and nobody shuts them down after use. The company pays the bill centrally, so it isn't in any team's budget. Once the machines are all taken, new jobs can't get in the queue. You set a cap on how many machines each team can run and make machines that sit idle for more than three days shut down automatically."
+   },
+   {
+    "field": "Personal life",
+    "title": "The office mini-fridge",
+    "text": "A dozen or so people in an office share a small fridge. Some stock whole cases of drinks, some leave their lunch until Friday, and nobody cleans it out. One day you need to put in a boxed cake for a client and it won't fit. Later the office manager makes a rule: the fridge is cleared every Friday afternoon, and only things labeled with a name stay."
+   }
+  ],
+  "ask": [
+   "Is this running low because someone is using more, or because it can't replenish itself?",
+   "Who gets the benefit when one person uses more, and on whom does the cost land?",
+   "Do the users know each other and see each other? Can they make their own rules and keep an eye on each other?"
+  ],
+  "with": [
+   {
+    "id": "externalities",
+    "sees": "Ten guesthouses on a lake all discharge wastewater into it. Externalities suggests charging each one a pollution fee, so the lake's losses show up on each guesthouse's books. The tragedy of the commons, plus Ostrom's findings, notices that the ten owners live in the same village, know each other well, and can see each other's drainpipes just by looking up. Setting their own discharge limits and taking turns checking is less trouble than having outsiders come and collect fees. When discharge is hard to measure and owners change often, a fee works better; when the neighbors are settled and can keep an eye on each other, let them make their own rules first."
+   },
+   {
+    "id": "stocks-and-flows",
+    "sees": "When should a fishing ground limit the catch? The tragedy of the commons only tells you that every boat has a reason to overfish; it can't tell you how close the fish are to collapse. Stocks and flows counts the stock of fish, how many are added each year and how many are caught. When the catch is bigger than what's added, the stock is falling, and that is the signal it's time for rules."
+   },
+   {
+    "id": "repeated-games",
+    "sees": "The same herders share a pasture year after year; if you graze more this year, others graze more next year. Repeated games and tit for tat see that holding back becomes an investment worth making, without waiting for outsiders to take charge. People just passing through once have no next year; they take whatever they can, and then you need limits on who gets in, and penalties."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Several product teams at your company share one meeting room for outside visitors. Bookings have no limit on how many or how long, first come, first served. Each team is judged only on its own project's progress, and the cost of not getting the room falls on the company as a whole. In the past month, three teams have started booking every slot for the whole week on Monday, then canceling the ones they don't need as the week goes on.",
+    "question": "If the rules stay the same, what is most likely to happen next?",
+    "explain": "The benefit of booking a slot goes to your own team, while the cost of booking too much, other teams not being able to meet, is shared by everyone. So booking everything and canceling later becomes a smart move. What has to change is the cost of booking and not using, for example a limit on bookings, or losing booking rights for canceling too late.",
+    "options": [
+     {
+      "text": "If teams are judged on how much they use the room instead of on progress, holding slots will drop.",
+      "correct": false,
+      "feedback": "A usage rate only counts how much was booked, so it rewards booking more, and the problem of booking without using is still there."
+     },
+     {
+      "text": "The teams will see that booking everything doesn't help and soon go back to booking only what they need.",
+      "correct": false,
+      "feedback": "Booking everything costs them nothing, and the loss to the teams squeezed out doesn't fall on them, so they have no reason to go back on their own."
+     },
+     {
+      "text": "As long as the company doubles the number of meeting rooms, holding slots will stop.",
+      "correct": false,
+      "feedback": "New rooms can be filled by early bookers just the same; booking without using still costs nothing."
+     },
+     {
+      "text": "Holding slots early will spread, the room will always be fully booked, and people who really need to meet won't get in.",
+      "correct": true,
+      "feedback": "Every extra slot a team holds helps its own progress, and the cost of squeezing out other teams is borne by everyone, so every team will do it."
+     }
+    ]
+   },
+   {
+    "stem": "A research institute keeps a public dataset on its own server, and anyone can download it for free. The server has plenty of bandwidth: one more person downloading neither adds to the institute's costs nor slows anyone else's download. This year the institute is short of money for upkeep, and someone suggests limiting how many times each person can download, saying that's the only way to keep the dataset from being \"used up.\"",
+    "question": "How should this funding gap be seen?",
+    "explain": "Downloading a copy doesn't leave anyone else with one fewer, and it doesn't slow the server. What's missing is a way to raise the upkeep money. Limiting downloads neither saves money nor frees up a share for anyone.",
+    "options": [
+     {
+      "text": "It's a question of how to raise money for upkeep, unrelated to how much is taken; limiting downloads won't solve it.",
+      "correct": true,
+      "feedback": "Downloading doesn't crowd out anyone else's share, so there's nothing being used up. The thing to think about is who pays for upkeep and how to collect it."
+     },
+     {
+      "text": "The dataset should be handed to a private company: once ownership is clear, the funding will have a steady source.",
+      "correct": false,
+      "feedback": "A change of owner doesn't create income out of thin air. Who pays, and how, is still the same question."
+     },
+     {
+      "text": "This is a case of a resource being overused, and downloads should be limited until the funding improves.",
+      "correct": false,
+      "feedback": "There's no overuse here: one person downloading doesn't crowd out anyone else's share, and limiting downloads won't bring in money."
+     },
+     {
+      "text": "The more people download, the easier it is for the institute to get donations, so the gap will fill itself.",
+      "correct": false,
+      "feedback": "More people downloading doesn't mean anyone is willing to pay; they can download without paying."
+     }
+    ]
+   },
+   {
+    "stem": "Two neighboring mountain villages, neither overseen by the government, each have a collectively owned forest, and the villagers rely on cutting firewood to keep warm. Twenty years later, one village's forest is almost cut bare, while the other's is still thick. The two villages have about the same population and need about the same amount of firewood.",
+    "question": "Which best explains the difference between the two forests?",
+    "explain": "The benefit of taking wood goes to the individual, and the loss as the forest shrinks is shared by the whole village; the sums are the same in both villages. The difference has to be found in whether there are rules that can be enforced: who may go into the forest, how much each household may cut, who patrols and how breaking the rules is punished.",
+    "options": [
+     {
+      "text": "The villagers in the thick-forest village care more about the environment, and cut less of their own accord without needing rules.",
+      "correct": false,
+      "feedback": "Nothing in the question says the two villages' people differ in character. And holding back of your own accord can't save the forest; wood you don't cut, someone else still cuts."
+     },
+     {
+      "text": "The village whose forest is gone has more people, so it was bound to use the forest up.",
+      "correct": false,
+      "feedback": "The question says the two villages have about the same population, so numbers aren't the difference."
+     },
+     {
+      "text": "The thick-forest village set rules on who may go into the forest and how much each household may cut, with patrols and penalties for cutting too much.",
+      "correct": true,
+      "feedback": "The rules make people who cut more pay more for it, and let those who keep the rules hold on to their share, so the forest wasn't used up."
+     },
+     {
+      "text": "The bare forest is collectively owned, so the thick one must have been divided up among households as private property.",
+      "correct": false,
+      "feedback": "In the question both forests are collectively owned. Sharing a forest doesn't doom it to be cut bare."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "title": "The more who share, the more an extra cow pays",
+  "caption": "One more cow earns 100 yuan a year; the 200 yuan of grass it eats is split among families. At two it cancels; at ten you net 80. All together always lose 100.",
+  "x": {
+   "label": "Families sharing the pasture"
+  },
+  "y": {
+   "label": "Net per year from one more cow",
+   "unit": " yuan"
+  },
+  "series": [
+   {
+    "name": "You",
+    "points": [
+     [
+      1,
+      -100
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      3,
+      33.3
+     ],
+     [
+      4,
+      50
+     ],
+     [
+      5,
+      60
+     ],
+     [
+      6,
+      66.7
+     ],
+     [
+      7,
+      71.4
+     ],
+     [
+      8,
+      75
+     ],
+     [
+      9,
+      77.8
+     ],
+     [
+      10,
+      80
+     ],
+     [
+      11,
+      81.8
+     ],
+     [
+      12,
+      83.3
+     ],
+     [
+      13,
+      84.6
+     ],
+     [
+      14,
+      85.7
+     ],
+     [
+      15,
+      86.7
+     ],
+     [
+      16,
+      87.5
+     ],
+     [
+      17,
+      88.2
+     ],
+     [
+      18,
+      88.9
+     ],
+     [
+      19,
+      89.5
+     ],
+     [
+      20,
+      90
+     ]
+    ],
+    "tone": "accent"
+   },
+   {
+    "name": "Everyone together",
+    "points": [
+     [
+      1,
+      -100
+     ],
+     [
+      20,
+      -100
+     ]
+    ],
+    "tone": "warn",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "x": 10,
+    "y": 80,
+    "text": "Ten families: you net 80"
+   }
+  ]
+ }
+}

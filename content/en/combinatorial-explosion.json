@@ -1,0 +1,213 @@
+{
+ "id": "combinatorial-explosion",
+ "name": "Combinatorial Explosion",
+ "en": "指数爆炸",
+ "discipline": "computing",
+ "one_line": "Each new choice multiplies the options, and soon there are too many to count.",
+ "story": "Deep Blue beats Kasparov 3.5 to 2.5, and even evaluating about 200 million positions a second it still has to prune",
+ "shallow": {
+  "scene": "In May 1997, in New York, Garry Kasparov sat across from IBM's Deep Blue and lost the six-game match 2.5 to 3.5. Deep Blue could evaluate about 200 million positions a second, and it still couldn't look at them all. In chess, every move you make gives your opponent many possible replies, and each reply leads to new choices of its own. Look a few more moves ahead and the number of positions grows thousands of times over. So the engineers never hoped to look at everything. Instead, as Deep Blue calculated, it cut off the branches that were clearly not worth calculating further.",
+  "plain": "You can see combinatorial explosion with a luggage lock. A four-digit code has 10,000 possibilities. Trying them from 0000 to 9999 at one a second takes nearly three hours. Add one more digit and there are 100,000, which takes more than a day: every extra digit splits each existing combination into ten more. Every extra digit multiplies the time by ten, so doubling your computing power only buys you 0.3 of a digit. Search programs, test checklists and staff rotas all run into the same thing."
+ },
+ "deep": {
+  "mechanism": "### Each extra step multiplies the candidates once more\n\nIf each step has $b$ choices and every combination is allowed, $n$ steps give $b^n$ candidates. First let $n$ grow. With only two choices per step, on or off, ten switches give 1,024 settings, twenty give more than a million, and thirty more than a billion. Now let $b$ grow. With three choices per step, ten steps give 59,049.\n\n### No machine is ever fast enough to catch up\n\nSixty switches have about $1.15\\times10^{18}$ settings. Checking a billion a second still takes more than thirty years. A machine 1,024 times faster only handles ten more switches, because every extra switch doubles the number of settings.\n\n### Cutting whole batches works better than checking faster\n\nIn a ten-step problem with three choices per step, if you can rule out one option at each step before you start, the candidates drop from 59,049 to 1,024, less than 2% of the original. If a path goes over budget halfway through the search, every way of continuing it is thrown out at once, and not one of them needs checking.",
+  "origin": "This comes from combinatorics, and no single person is credited with first describing it. In his 1950 paper \"Programming a Computer for Playing Chess,\" Claude Shannon estimated that a typical game of chess has about $10^{120}$ possible sequences of moves, showing that checking them one by one is hopeless.",
+  "limits": "However many candidates there are, they are only a burden when each one has to be checked. When the items' scores simply add up and don't affect each other, picking the best of each item gives the best overall. A common mistake is to cry explosion whenever a few factors come together. In fact $n$ factors have only $n(n-1)/2$ pairs between them, which grows as a square, far slower than $2^n$. When you need to prove a plan is the best, cutting branches by rule of thumb won't do: the best answer may be in one of the branches you cut."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "Estimate how many complete models a product can come in: multiply the numbers of options for color, size and accessories, then see whether the warehouse and test line can cope."
+   },
+   {
+    "use": "design",
+    "text": "When designing a hiring process, put hard requirements like degrees, certificates and start dates first, so each one cuts out a batch of résumés before anything else. Then interviewers have time to look closely at the people left."
+   },
+   {
+    "use": "act",
+    "text": "When you face a list of options that must be chosen in combination, first work out the total number of candidates, then decide whether to check them all or set conditions to cut a batch first."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Logistics",
+    "title": "Delivery order",
+    "text": "Around 2013, UPS began rolling out ORION, its route-optimizing system. Ten addresses can be visited in 3,628,800 different orders, and once delivery time windows are added, nobody can compare them one by one. ORION uses heuristic search: it first rules out routes that clearly go the long way around, and gives the driver a route that is short enough."
+   },
+   {
+    "field": "Security",
+    "title": "One more character",
+    "text": "Suppose an attacker can make a billion guesses a second and your password uses only lowercase letters. Eight letters give about 200 billion combinations, which can be guessed in a few minutes; twelve give about $10^{17}$, which takes about three years."
+   },
+   {
+    "field": "Personal life",
+    "title": "Matching a renovation",
+    "text": "You and your partner keep three choices each for eight items, including the floor, wall paint and kitchen cabinets. That leaves 6,561 combinations to compare at home. At one minute each, that's more than a hundred hours. So you first cross out the combinations that break your total budget or don't fit the space, then settle the few items you're already happy with, and only compare what's left one by one."
+   }
+  ],
+  "ask": [
+   "Does this need the items judged in combination, or can each be picked on its own?",
+   "If I add one more option or one more step, what does the total number of candidates get multiplied by?",
+   "Is there a hard requirement that could rule out a whole batch of options before I look closely?"
+  ],
+  "with": [
+   {
+    "id": "divide-and-conquer",
+    "sees": "Thirty switches that affect one another, checked together, give a billion settings. If divide and conquer can split them into two groups that don't affect each other, checking fifteen switches in each takes just over 30,000 settings, and the two together come to less than 70,000. If it can be split, split it first; if it can't, you have to rely on cutting branches."
+   },
+   {
+    "id": "explore-exploit",
+    "sees": "You're choosing where to open a store, with forty candidate shopping districts, and three of your stores are already doing well. Combinatorial explosion tells you not to check every district, but to set conditions and narrow the field first. Explore and exploit tells you not to stop at those three, and to keep a small part of the budget for trying districts you haven't touched. One tells you to close in, the other to leave a gap open. Narrow the field first, and once that's done, set aside a budget for trial and error among the districts that are left."
+   },
+   {
+    "id": "local-optimum",
+    "sees": "When a full search is too costly, a common fallback is to start from the plan you have, change one thing at a time, and accept only changes that make it better. It's fast, but it can get stuck on a local optimum, like a small hilltop, and a different starting point gives a different result. If you need the very best, find ways to prune; if good enough will do, climb from several different starting points."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A lab is testing a thermostat with 14 settings, each with two choices. Every configuration has to be tested once, at one minute each. Now 3 more settings of the same kind are added, and the staff grows to 8 times its old size, working in parallel with no repeated tests.",
+    "question": "What happens to the time it takes to test every configuration?",
+    "explain": "The 3 new settings make 8 times as many configurations, and there are 8 times as many people, so the two cancel out and the time stays the same.",
+    "options": [
+     {
+      "text": "The time stays the same.",
+      "correct": true,
+      "feedback": "The configurations are multiplied by 8 and so are the people, so each person has as many to test as before."
+     },
+     {
+      "text": "It goes up by about a fifth, since the settings went from 14 to 17.",
+      "correct": false,
+      "feedback": "Estimating by the number of settings misses that each new setting combines with every old configuration. The configurations multiply."
+     },
+     {
+      "text": "It drops to an eighth, because there are 8 times as many people.",
+      "correct": false,
+      "feedback": "There are more people, but also 8 times as many configurations to test, and once they cancel out the time stays the same."
+     },
+     {
+      "text": "It becomes 8 times as long, because the configurations went up 8 times.",
+      "correct": false,
+      "feedback": "The configurations went up 8 times, and so did the staff, so each person's share of the work didn't change."
+     }
+    ]
+   },
+   {
+    "stem": "A club has 9 events it can either hold or skip. What each event would bring in has already been listed: some are positive, some negative, and they simply add up. The events don't compete for venues and there's no budget limit. The goal is the highest total.",
+    "question": "Which approach is easy and also guarantees the highest total?",
+    "explain": "The total is the events' results added up, and the events don't affect each other, so holding every event with a positive result gives the highest total. There's no need to check all 512 ways one by one.",
+    "options": [
+     {
+      "text": "Pick a few dozen ways at random and take the best of them.",
+      "correct": false,
+      "feedback": "Sampling might miss the best one, and here the answer can be had directly."
+     },
+     {
+      "text": "Hold every event with a positive result and skip every one with a negative result.",
+      "correct": true,
+      "feedback": "The choice for each event doesn't affect the others, so choosing well for each one gives the best overall."
+     },
+     {
+      "text": "Hold only the three events that bring in the most.",
+      "correct": false,
+      "feedback": "Every extra event with a positive result adds to the total, so cutting them means earning less."
+     },
+     {
+      "text": "Work out the total for all 512 ways one by one and take the highest.",
+      "correct": false,
+      "feedback": "Here the choices for the events don't affect each other, so choosing each separately gives the best. Comparing them one by one is wasted effort."
+     }
+    ]
+   },
+   {
+    "stem": "A process has 5 steps, and each step can be done in 4 ways. The total time is the days for each step added up, and every step takes a positive number of days. The ways chosen for neighboring steps have to fit together, so not every combination works. A program has already found one complete plan taking 30 days in total, and is searching for others step by step, aiming for the shortest time.",
+    "question": "The program reaches a set of ways for the first three steps that already adds up to 31 days. What should it do next to save time and still be sure of the best?",
+    "explain": "The later steps take a positive number of days, so the total can only get longer. Every way of continuing this set takes more than 30 days, so skipping them all at once can't lose a better plan.",
+    "options": [
+     {
+      "text": "For each step, keep only the way that is currently shortest, and ignore the rest.",
+      "correct": false,
+      "feedback": "Neighboring steps have to fit together. The way that is shortest right now may leave only very long ways for later steps, making the whole slower."
+     },
+     {
+      "text": "Keep checking every continuation of this set, then compare.",
+      "correct": false,
+      "feedback": "Checking them all only turns up results longer than 30 days. It's wasted time."
+     },
+     {
+      "text": "Skip every continuation of this set, and go back to try the next set.",
+      "correct": true,
+      "feedback": "The later steps can only make it longer. Cut the whole batch, and the best plan is still among what remains."
+     },
+     {
+      "text": "Check a few continuations at random, and drop this set if they are all longer than 30 days.",
+      "correct": false,
+      "feedback": "A sample that finds nothing better doesn't mean nothing better exists, so this can't guarantee the best."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Each extra digit means ten times as many to try",
+  "caption": "A 4-digit lock: 10,000 codes, nearly 3 hours at one a second. Drag to 5 digits: 100,000, over a day. Even 2 choices give 1,024 in 10 steps.",
+  "x": {
+   "label": "Digits"
+  },
+  "y": {
+   "label": "Combinations to try",
+   "format": "en"
+  },
+  "params": [
+   {
+    "id": "b",
+    "label": "Choices per digit",
+    "min": 2,
+    "max": 10,
+    "step": 1,
+    "value": 10
+   },
+   {
+    "id": "m",
+    "label": "Digits",
+    "min": 1,
+    "max": 10,
+    "step": 1,
+    "value": 4
+   }
+  ],
+  "model": {
+   "steps": "m",
+   "init": {
+    "c": 1
+   },
+   "next": {
+    "c": "c*b"
+   }
+  },
+  "series": [
+   {
+    "name": "Combinations",
+    "expr": "c",
+    "tone": "accent",
+    "dots": true
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Combinations",
+    "expr": "c",
+    "format": "en"
+   },
+   {
+    "label": "At one a second",
+    "expr": "c/3600",
+    "unit": " hours",
+    "format": "en",
+    "digits": 1
+   }
+  ]
+ }
+}

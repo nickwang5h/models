@@ -1,0 +1,202 @@
+{
+ "id": "discounting",
+ "name": "Discounting",
+ "en": "贴现",
+ "discipline": "economics",
+ "one_line": "Money later is worth less than money now, so convert it to today before comparing.",
+ "story": "The New York Mets and Bobby Bonilla agree to put off 5.9 million dollars and pay about 1.19 million a year from 2011 to 2035",
+ "shallow": {
+  "scene": "Buy a phone in 24 monthly installments, and the 24 payments add up to a few hundred yuan more than paying all at once. Nobody feels cheated by that: if you pay later, you ought to pay a bit more. One deal in baseball blew this idea up to the extreme.\n\nIn 2000, the New York Mets decided not to keep the outfielder Bobby Bonilla, but they still owed him the guaranteed salary for the last year of his contract, about 5.9 million dollars. The team and Bonilla agreed that the money would be owed for now, with interest at 8% a year. Starting in 2011, the team would pay about 1.19 million dollars a year for 25 years, with the last payment due in 2035.\n\nThe payments in the contract add up to nearly 30 million dollars, about five times the original sum, so it looks as if the team lost badly. But all the extra money is the 8% interest. So if you take the 25 payments back to 2000 at 8% a year, together they come to almost exactly the 5.9 million of that year. As long as the team could earn more than 8% a year with that money, paying later cost it nothing.",
+  "plain": "A friend owes you some money and gives you a choice: 1,000 yuan today, or 1,100 yuan a year from now. Your fixed deposit pays 5% a year. Deposit about 1,048 yuan today, and in a year it becomes exactly 1,100, so 1,100 yuan a year from now is worth about 1,048 today. Converting future money back to today using an interest rate like this is called discounting; here it means dividing by 1.05.\n\n1,048 yuan is 48 more than taking the money now, so it's worth waiting. If your friend would only pay 1,040 yuan in a year, that money is worth only about 990 today, and you're better off taking the money now."
+ },
+ "deep": {
+  "mechanism": "### The longer the wait and the higher the rate, the less the same money is worth today\n\nA sum $F$ that arrives in $t$ years, brought back to today at a yearly rate $r$, is worth\n\n$$V=\\frac{F}{(1+r)^t}$$\n\nIf you put away $V$ today and let it grow at $r$ for $t$ years, it becomes exactly $F$, so the two sums are worth the same. Each extra year of waiting means dividing once more by 1 plus the rate. At 5%, 100 yuan a year from now is worth about 95 today; ten years from now it is worth $100\\div1.05^{10}\\approx61$ yuan, and fifty years from now only about 9. With the same ten-year wait, at 2% the 100 yuan is worth about 82; at 10%, only about 39.\n\n### The rate holds three things\n\nMoney that sits can earn a return: that's the first. People simply like to enjoy things sooner, even when prices aren't rising: that's the second, which economists call time preference. Money in the future might never arrive: that's the third. When choosing a rate, look for a return you could really get in the market over a similar length of time and with similar risk. If the future amounts are in future prices and so include inflation, pair them with a nominal rate, one that includes inflation.\n\n### To compare plans, first move every payment to the same day\n\nYou spend 10,000 yuan on a piece of power-saving equipment, and it saves 4,000 yuan in electricity at the end of each of the next three years, 12,000 in all. All of this money arrives later than the payment for the equipment, so it has to be brought back to today before comparing. Discounted at 8%, the three payments of 4,000 are worth about 10,308 today together, slightly more than the price of the equipment, so it's worth buying. At 15%, they are worth only about 9,133, and buying it loses money. At about 9.7%, it exactly breaks even.",
+  "origin": "Discounting was in use in trade long ago. Simon Stevin's interest tables, published in 1582, already listed what future amounts were worth today. In 1889 Böhm-Bawerk discussed why goods now are worth more than goods in the future. In 1930 Fisher explained interest by combining time preference with the return on investment. In 1937 Samuelson put forward the discounted utility model, which marks down future satisfaction too.",
+  "limits": "Payments whose amounts and dates are written down can be brought back to today precisely: loans, bonds and installments, for example. For things with no price, such as health or how long a river lasts, how much to mark down the future is a value judgment, and an interest rate can't answer it. If a company discounts every project at the same rate, a business that pays back in three months and a power plant that runs for thirty years get the same number, and the long-term projects all come out skewed: a small difference in the rate, divided again and again for thirty years, becomes a big gap."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When setting year-end bonuses for a sales team, paid all at once or spread over three years, work out how much to add to the later parts so that employees feel they are worth as much as being paid early."
+   },
+   {
+    "use": "explain",
+    "text": "After interest rates go up, a company that won't start making money for twenty years sees its share price fall harder than one that makes money every day: profits far in the future, brought back to today, are the most sensitive to the rate."
+   },
+   {
+    "use": "act",
+    "text": "You have some money, and in front of you is an outlay that takes a few years to pay back, such as putting in solar panels or signing up for a training course: work out the rate at which it just breaks even."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Public policy",
+    "title": "What future generations' losses are worth today",
+    "text": "In 2006, the British government had Nicholas Stern produce a report on the economics of climate change. The report set pure time preference at 0.1% a year and added a part that grows with consumption, for a discount rate of about 1.4%: a 1-yuan loss a hundred years from now is worth about 0.25 yuan today. Nordhaus and other economists argued for a much higher discount rate, which brings the same loss back to today as just a few cents. Their conclusion was that there was no need to rush into deep emission cuts."
+   },
+   {
+    "field": "Personal life",
+    "title": "The hidden interest rate in paying rent for a year",
+    "text": "Your landlord says the rent is 2,000 yuan a month, but if you pay a whole year at once, it's only 22,000 yuan. You bring each payment, due at the start of each month, back to today, and find that paying early is like lending the landlord money at about 21% a year. Your savings earn nowhere near that, so you choose to pay for the year."
+   },
+   {
+    "field": "Finance",
+    "title": "The price of a zero-coupon bond",
+    "text": "You see a zero-coupon bond with a face value of 1,000 yuan that matures in fifteen years. It pays no interest; it just pays back 1,000 yuan at the end. When the market interest rate is 5%, its price should be about 481 yuan; if the market rate rises to 7%, the same bond's price drops to about 362."
+   }
+  ],
+  "ask": [
+   "On exactly what day does this money arrive? Brought back to today from the date on the contract or repayment schedule, is it still more than the cash in front of me?",
+   "In which years does each plan's money arrive? Line the years up in two rows: the payments that come latest are the ones most hurt by a wrong rate.",
+   "If I move the rate a few points up or down, does the order of the two plans flip? If it does, first work out what the rate should be."
+  ],
+  "with": [
+   {
+    "id": "present-bias",
+    "sees": "You make a plan: don't save this year, and from next year put away 2,000 yuan a month. By discounting, starting a year late only costs one year of interest, so spending it this year is no big deal. Present bias sees that when next year comes, \"next year\" has become \"now\" again, and the plan gets pushed back year after year. Use discounting to work out how much to save, then set up an automatic monthly transfer instead of leaving it to willpower each month."
+   },
+   {
+    "id": "compounding",
+    "sees": "You are saving for your child's education and need 300,000 yuan in eighteen years. Asking how much to put away today is discounting, working backward; asking how much 1,000 yuan a month will grow to by then is compounding, working forward. The two answers share one rate. Guess it a bit high, and you work out too little to save today and too big a balance at the end. So work out both with a lowish rate first."
+   },
+   {
+    "id": "risk-uncertainty",
+    "sees": "There is a one-in-ten chance that a debt will never be repaid. You can cut the expected payment by 10% and then discount it, or keep the full payment and use a higher rate. Either way makes sense, but doing both counts the risk twice. Risk and uncertainty asks: is this one in ten a probability you can estimate, or an unknown nobody can say? If it can be estimated, put it into the amount you expect to get; only if it can't should you raise the rate, or not do the deal at all."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You are 62, and your employer gives you two choices: take a 400,000-yuan retirement payment in one lump sum now, or a 500,000-yuan lump sum in 5 years. Both are certain to be paid. Your savings earn 6% a year, and that won't change in the meantime.",
+    "question": "Which of the two sums is worth more today?",
+    "explain": "Money on different days has to be moved to the same day first. The 500,000 in 5 years has to be divided by 1.06 five times, which makes it worth about 374,000 today, less than the 400,000 now.",
+    "options": [
+     {
+      "text": "The 500,000 in 5 years is worth more: put the 400,000 in the bank for 5 years and you'd only have about 424,000.",
+      "correct": false,
+      "feedback": "That adds only one year of interest. Five years means multiplying five times: 400,000 for 5 years is 400,000 × 1.06 to the fifth power, about 535,000."
+     },
+     {
+      "text": "The 500,000 in 5 years is worth more: it's 100,000 more than the 400,000 now.",
+      "correct": false,
+      "feedback": "That 100,000 comes from simply subtracting amounts on two different dates, without bringing the money in 5 years back to today."
+     },
+     {
+      "text": "The 500,000 in 5 years is worth more: brought back to today, it's about 472,000, more than 400,000.",
+      "correct": false,
+      "feedback": "That divides by 1.06 only once, discounting just one year. Waiting 5 years means dividing five times: 500,000 divided by 1.06 to the fifth power is about 374,000 today."
+     },
+     {
+      "text": "The 400,000 now is worth more: the 500,000 in 5 years is worth about 374,000 today, less than 400,000.",
+      "correct": true,
+      "feedback": "Dividing by 1.06 five times for 5 years, the 500,000 is worth only about 374,000 today, so the cash now is more."
+     }
+    ]
+   },
+   {
+    "stem": "An injury settlement says the other side will pay you 40,000 yuan at the end of each year for 10 years. The amount is fixed and doesn't change with prices. Bank deposits earn 4% a year, and prices rise about 2% a year. You want to work out what these 10 payments are worth today in total.",
+    "question": "Which yearly rate should you use to bring them back to today?",
+    "explain": "The settlement fixes each payment, so these amounts are nominal figures, with inflation included, and they go with the nominal rate of 4%. A real rate only goes with amounts that already have inflation taken out.",
+    "options": [
+     {
+      "text": "2%: future money should lose as much value as prices rise each year.",
+      "correct": false,
+      "feedback": "Inflation is only one part of the nominal rate. The other part is the return money can earn while it sits, and using only 2% leaves that out."
+     },
+     {
+      "text": "0: the amount is the same every year, so there's nothing to convert.",
+      "correct": false,
+      "feedback": "The same amount doesn't mean the same value today. 40,000 yuan received later misses out on the savings return while you wait."
+     },
+     {
+      "text": "4%: the amounts in the settlement are nominal, so they go with a nominal rate that includes inflation.",
+      "correct": true,
+      "feedback": "The amounts don't change with prices. Nominal figures go with a nominal rate, so the inflation in the rate matches the inflation in the amounts."
+     },
+     {
+      "text": "About 2%: only the real rate, with price rises taken out, reflects true buying power.",
+      "correct": false,
+      "feedback": "A real rate goes with amounts that already have inflation taken out. The 40,000 here is a fixed nominal figure, and using a real rate would put the settlement's value too high."
+     }
+    ]
+   },
+   {
+    "stem": "You have 20,000 yuan of spare cash and nothing else urgent to spend it on. You have a credit card balance at 18% a year; nobody will chase you if you don't pay it off right away, but it keeps charging 18%. Bank deposits pay 1% a year. A friend asks you to go in on a small project expected to return 12% a year, with about the same risk as the rest of your money. You want to judge whether the project is worth it to you.",
+    "question": "In judging it, which rate should you use as the cost of waiting?",
+    "explain": "The discount rate should be the best place, at the same risk, that you could put your money. Paying off the credit card is like earning a sure 18%, and the project's expected 12% can't beat it.",
+    "options": [
+     {
+      "text": "1%: the money is sitting in deposits right now and that's all it earns.",
+      "correct": false,
+      "feedback": "The deposit rate isn't the best place for your money. Paying off the card earns a sure 18%, and using 1% makes the project look far too good."
+     },
+     {
+      "text": "18%: paying off the card first saves that much for sure, so the project has to beat it.",
+      "correct": true,
+      "feedback": "Paying off the card carries no risk and saves 18% a year. That is the best place for your money at the same risk, so the project is only worth it if it beats that."
+     },
+     {
+      "text": "9.5%: the average of the deposit rate and the credit card rate.",
+      "correct": false,
+      "feedback": "The average doesn't match anything you could actually do. The money either pays off the card or sits in deposits; you don't get half the benefit of each."
+     },
+     {
+      "text": "12%: the project's own expected return, used to measure itself.",
+      "correct": false,
+      "feedback": "Discounting the project at its own return always comes out exactly even, so nothing is being compared."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "At 5%, 100 yuan in 50 years is worth 9 today",
+  "caption": "Each extra year means dividing once more by 1 plus the rate. Drag the rate: at 2%, 100 yuan in ten years is still worth 82; at 10%, only 39.",
+  "x": {
+   "label": "Years to wait",
+   "min": 0,
+   "max": 50,
+   "step": 1
+  },
+  "y": {
+   "label": "Worth today",
+   "unit": " yuan",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "r",
+    "label": "Rate per year",
+    "min": 1,
+    "max": 15,
+    "step": 1,
+    "value": 5,
+    "unit": "%"
+   }
+  ],
+  "series": [
+   {
+    "name": "Value of 100 yuan",
+    "expr": "100/(1+r/100)^x",
+    "tone": "accent",
+    "fill": true
+   }
+  ],
+  "readouts": [
+   {
+    "label": "100 yuan in 10 years",
+    "expr": "100/(1+r/100)^10",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "100 yuan in 50 years",
+    "expr": "100/(1+r/100)^50",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

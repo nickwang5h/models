@@ -1,0 +1,213 @@
+{
+ "id": "optionality",
+ "name": "Optionality",
+ "en": "可选性",
+ "discipline": "investing",
+ "one_line": "Paying a little to look first and decide later buys a chance that's valuable in itself.",
+ "story": "Berkshire puts 5 billion dollars into Bank of America preferred shares, gets warrants with them, and uses the warrants in 2017",
+ "shallow": {
+  "scene": "When you book a hotel and pay a bit more for \"free cancellation,\" you're buying room to change your mind: if you can go, you stay; if you can't, you cancel. In August 2011, Berkshire Hathaway, the company run by Warren Buffett, made a much bigger deal of the same kind.\n\nBank of America's share price had fallen sharply. Berkshire put 5 billion dollars into the bank in return for a fixed dividend every year. On top of that came a warrant, that is, the right to buy shares at a fixed price: at any time before September 2021, it could buy 700 million Bank of America shares at about 7.14 dollars each. If the share price went up, it would buy at that price. If it didn't, it would buy none, the warrant would expire worthless, and Berkshire wouldn't have to pay a cent more.\n\nIn 2017, with Bank of America's share price at around 24 dollars, Berkshire bought at 7.14 dollars. The difference on 700 million shares came to more than 10 billion dollars. Had the price fallen, it wouldn't have had to buy; with the price up, every bit of the rise was its own.",
+  "plain": "You've got your eye on a used washing machine priced at 800 yuan, and you don't know whether it works well. A good one is worth 1,000 yuan, a bad one only 200, with even odds of each. Pay the seller 50 yuan to hold it for three days, and what you've bought is optionality: bring a repairman to check it, buy it if it's good and gain 200 yuan; if it's bad, don't buy it and spend nothing more. Half the time you gain 200 yuan and half the time 0, an average gain of 100 yuan, and taking off the 50 yuan deposit leaves 50 yuan net. Buy it outright, and on average it's worth only 600 yuan, yet you've paid 800, an average loss of 200 yuan."
+ },
+ "deep": {
+  "mechanism": "### When you can walk away, losses are kept out\n\nSomeone who buys outright has to take the bad-machine side too. Someone holding the right doesn't, and a bad machine costs him at most his deposit. So the further apart good and bad are, the more this right is worth: however bad the bad one is, it doesn't touch him, and however good the good one is, all of it is his.\n\nSay a good one is worth 1,200 yuan and a bad one nothing. The average is still 600 yuan, so buying outright still loses 200 yuan on average. The person holding the right buys a good one and gains 400 yuan, doesn't buy a bad one, and gains 200 yuan on average; after the deposit that's 150 yuan net, 100 yuan more than the 50 before.\n\n### If the deposit is more than the average gain, the right was a bad buy\n\nWhat the right is worth depends on how much it gains on average. Write $G$ for what a good machine is worth and $V$ for what the right is worth:\n\n$$V=\\frac{1}{2}\\,(G-800)$$\n\nThat is: if the machine is good, you gain the amount it's worth above the asking price; if it's bad, you don't buy and gain 0. Each happens half the time, so take half. When $G$ is 1,000 yuan, $V$ is 100 yuan, and paying a 50 yuan deposit gains 50 net. When $G$ is 1,200 yuan, $V$ is 200 yuan; a deposit of 200 yuan exactly breaks even, and at 250 yuan, paying it loses 50 on average, and you'd be better off not wanting the machine at all.\n\n### The longer it's held, the more you see, and on the expiry date it's all void\n\nChange a three-day hold to a month, and you have time to ask the neighbors, look up the model and wait for the repairman, so you know more; but the seller is stuck with the machine for a month longer, so he asks a bigger deposit. If you haven't said anything by the expiry date, the right is void and the machine goes to the next buyer. If the seller can sell it on at any time, the right is worth nothing.",
+  "origin": "In 1973, Fischer Black, Myron Scholes and Robert C. Merton published their work on pricing options. They took into account how long an option runs and how much the price moves around, and for the first time options had a price that could be worked out. In 1977, discussing a company's future chances to grow, Stewart Myers put forward the idea of \"real options,\" carrying this way of thinking from securities to business decisions such as factories, technology and leases.",
+  "limits": "Optionality works most smoothly where a small payment up front keeps open room to look first and decide later, with the loss capped and the upside not. If the right doesn't say how long it lasts, or the other side can sell to someone else at any time, that room is just empty words. Simply saying \"let's wait and see\" doesn't keep a choice open, because nobody is holding it for you: put it off for three years and the chance has long since been signed away to someone else, and all you have left is the hesitation that kept it on your mind."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "Before signing a two-year office lease, ask the landlord whether he'll add a clause letting you leave after one year, then work out whether the extra monthly charge for that clause is worth it."
+   },
+   {
+    "use": "explain",
+    "text": "In the same project, the more uncertain things are, the happier the person holding the choice is: he can turn down the bad outcome and still take the good one."
+   },
+   {
+    "use": "design",
+    "text": "Add a clause to a supply contract that lets the order size change: pay a bit more per unit in return for the right to order less in the slow season and still get your usual amount in the busy season."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Personal life",
+    "title": "Holding a place at school",
+    "text": "You're admitted to a graduate school, and you also have a good job. The school lets you pay 2,000 yuan to hold your place for a year. If your industry goes through a hard winter that year, you go and study; if it picks up and you're promoted, you give up the place, and the 2,000 yuan isn't refunded. For 2,000 yuan you bought a year to see how things go."
+   },
+   {
+    "field": "Business",
+    "title": "The right to order more before the busy season",
+    "text": "You run a toy company and sign a contract with the factory that makes your toys: you pay a little more each month for the right to increase orders by 30% in the two months before the busy season. That year a certain building-block set suddenly takes off, you order more at the original price, and your rivals have to wait in line."
+   },
+   {
+    "field": "Technology",
+    "title": "One extra column",
+    "text": "Three people are building a bookkeeping app. When setting up the database tables, they spend two extra days adding an \"account book ID\" column to every record, though at the time there's only one account book. A year later users ask for an account book the family can share, and the team ships it with a few lines of code. If nobody had asked, those two days would have been wasted."
+   }
+  ],
+  "ask": [
+   "How much do I have to pay to buy this right to look first and decide later? On what day does it expire?",
+   "What information will turn up while I wait that could really change my decision? Without that kind of information, waiting is just putting it off.",
+   "Can the other side back out, raise the price or sell the thing to someone else? Is my right written down?"
+  ],
+  "with": [
+   {
+    "id": "credible-commitment",
+    "sees": "You're negotiating a long-term deal with a factory, and it has to invest in a custom mold for you first. Optionality makes you want to keep a way out, so you can switch factories at any time; credible commitment wants you to lock that way out, because without that guarantee the factory won't dare make the mold. If the mold can only be used by this one factory, sign an exclusive clause; if you're using standard parts, the way out is worth more than the commitment, and there's no need to sign."
+   },
+   {
+    "id": "explore-exploit",
+    "sees": "You've tried three side businesses for three months, and one of them brings in orders steadily every week. Optionality urges you to keep the other two as well; explore and exploit urges you to put your time into the one that brings in orders. The dividing line is what it costs to keep them: if the other two only take a membership fee of a few dozen yuan a month, keep them; if they take an evening a week, drop them."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You run a guesthouse and want to take on the courtyard next door. If you lease it now, there's a 50% chance it's full in the busy season and makes 300,000 yuan net in a year, and a 50% chance it's quiet and loses 200,000 yuan net. The landlord agrees that for 40,000 yuan you get the right to decide whether to lease it after one quarter. The rent stays the same, and waiting a quarter costs you no income. During that quarter you run a trial in your own courtyard, which will show you exactly whether next door would be busy.",
+    "question": "Of leasing now, not leasing, and paying 40,000 yuan to keep the right, which has the highest average net gain (after all costs)?",
+    "explain": "Leasing now gains 50,000 yuan on average. Paying 40,000 yuan to keep the right: in the busy half you lease and make 300,000, in the quiet half you don't lease, so the average is 150,000. The deposit has to be paid whatever happens, so after taking it off, the average net gain is 110,000 yuan.",
+    "options": [
+     {
+      "text": "Pay 40,000 yuan to keep the right, for an average net gain of 150,000 yuan.",
+      "correct": false,
+      "feedback": "150,000 yuan is the figure before taking off the 40,000; that money is paid in both outcomes."
+     },
+     {
+      "text": "Lease it now, for an average net gain of 50,000 yuan.",
+      "correct": false,
+      "feedback": "Leasing now means taking on the loss in a quiet year too; paying 40,000 first to see clearly gives a higher average net gain."
+     },
+     {
+      "text": "Don't lease, for a net gain of zero.",
+      "correct": false,
+      "feedback": "Not leasing avoids the loss, but it also gives up the 300,000 from a busy year; on average, keeping the right and deciding later pays better."
+     },
+     {
+      "text": "Pay 40,000 yuan to keep the right, for an average net gain of 110,000 yuan.",
+      "correct": true,
+      "feedback": "Lease if busy, don't if quiet: an average of 150,000 yuan, minus the 40,000 paid whatever happens, gives 110,000 net."
+     }
+    ]
+   },
+   {
+    "stem": "You run a small publishing house and could publish two manuscripts, each costing 1 million yuan to publish. You're thinking of spending the same 80,000 yuan on each to buy a year's first right to publish it, then deciding a year later whether to go ahead. Manuscript A, once published, is expected to bring in 900,000 yuan or 1.1 million yuan, at even odds; manuscript B, 600,000 yuan or 1.4 million yuan, at even odds. Both have an average income of 1 million yuan.",
+    "question": "How should the 80,000 yuan be spent?",
+    "explain": "The value of the right comes from being able to walk away from the losing side and take the winning side. A gets published only at 1.1 million, gaining 50,000 on average, which doesn't cover the 80,000; B gets published only at 1.4 million, gaining 200,000 on average, which leaves 120,000 net.",
+    "options": [
+     {
+      "text": "Buy both: the two have the same average income, so each will pay for itself.",
+      "correct": false,
+      "feedback": "The same average income doesn't make the rights worth the same; A's average gain is only 50,000, so buying it loses 30,000 net."
+     },
+     {
+      "text": "Buy neither: the average income doesn't exceed the cost of publishing.",
+      "correct": false,
+      "feedback": "Average income equal to cost doesn't mean the right has no value: if B isn't published there's no loss, and if it is, it makes 400,000."
+     },
+     {
+      "text": "Buy the right only to manuscript B, for an average net gain of 120,000 yuan.",
+      "correct": true,
+      "feedback": "B's income varies widely. Taking only the 1.4 million side gains 200,000 on average, which leaves 120,000 net after the 80,000."
+     },
+     {
+      "text": "Buy the right only to manuscript A, since its income varies less and is safer.",
+      "correct": false,
+      "feedback": "At best A makes only 100,000 more than its cost, and its average gain doesn't cover the 80,000 fee."
+     }
+    ]
+   },
+   {
+    "stem": "You paid 20,000 yuan for the first right to buy a home for 3 million yuan within six months, and that money isn't refundable. A week before it expires, you run the numbers again: the home is now worth about 2.8 million yuan, and mortgage rates have gone up. The agent says you've already spent 20,000 yuan, so if you don't buy, it's wasted.",
+    "question": "What should you do before it expires?",
+    "explain": "The 20,000 yuan is already spent whether you buy or not, so it shouldn't affect the decision any more. Buying now means paying 3 million yuan for a home worth about 2.8 million, a losing deal in itself, so walking away is right.",
+    "options": [
+     {
+      "text": "Buy, because once you give up the right you'll never get the chance again.",
+      "correct": false,
+      "feedback": "The right only lets you buy; it doesn't make you. The price is now higher than the home is worth, so missing it costs you nothing."
+     },
+     {
+      "text": "Walk away, judging only whether buying this home for 3 million yuan now is worth it.",
+      "correct": true,
+      "feedback": "The deposit is money already sunk, and the decision depends only on what's in front of you: paying 3 million yuan for a home worth about 2.8 million loses 200,000."
+     },
+     {
+      "text": "Buy, or the 20,000 yuan is wasted.",
+      "correct": false,
+      "feedback": "The 20,000 yuan is gone whether you buy or not. Paying another 200,000 for its sake trades a small loss for a big one."
+     },
+     {
+      "text": "Ask the agent for an extension, and get the full six months' use out of the 20,000 yuan first.",
+      "correct": false,
+      "feedback": "There's no extension clause in the question, so the right is void when it expires; and waiting a few more days won't close the gap between the price and what the home is worth."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Bigger gap, more value in checking first",
+  "caption": "A used washer at 800 yuan: good or bad at even odds, worth 600 on average. Raise a good one's worth and the slope rises; where it hits zero is the top deposit.",
+  "x": {
+   "label": "Deposit paid",
+   "unit": " yuan",
+   "min": 0,
+   "max": 250
+  },
+  "y": {
+   "label": "Average net gain",
+   "unit": " yuan",
+   "min": -300,
+   "max": 250
+  },
+  "params": [
+   {
+    "id": "g",
+    "label": "Good one is worth",
+    "min": 800,
+    "max": 1200,
+    "step": 50,
+    "value": 1000,
+    "unit": " yuan"
+   }
+  ],
+  "series": [
+   {
+    "name": "Pay deposit, check",
+    "expr": "(g-800)/2 - x",
+    "tone": "accent"
+   },
+   {
+    "name": "Buy outright",
+    "expr": "-200",
+    "tone": "warn"
+   }
+  ],
+  "marks": [
+   {
+    "y": 0,
+    "text": "Don't buy: break even"
+   },
+   {
+    "x": "(g-800)/2",
+    "y": 0,
+    "text": "Most the right is worth"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Right worth at most",
+    "expr": "(g-800)/2",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "Net after 50 deposit",
+    "expr": "(g-800)/2-50",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

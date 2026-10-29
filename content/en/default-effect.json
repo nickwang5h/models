@@ -1,0 +1,228 @@
+{
+ "id": "default-effect",
+ "name": "Default Effect",
+ "en": "默认效应",
+ "discipline": "psychology",
+ "one_line": "Most people can't be bothered to change, so the preset option decides for them.",
+ "story": "Johnson and Goldstein compare organ-donor defaults in Science: Germany 12%, Austria 99.98%",
+ "shallow": {
+  "scene": "You have most likely never filled in an organ-donor registration form. If you live in Germany, not filling it in means you don't count as a donor; if you live in Austria, it means you do. In 2003 two researchers who study decision-making, Johnson and Goldstein, compared organ-donation consent rates across European countries in the journal *Science*: Germany 12%, Austria 99.98%. Germany counts you only if you sign to say you agree. Austria does the opposite: unless you have stated that you object, you are treated as agreeing.\n\nOn this matter, most people in both countries did the same amount: nothing at all. The only difference was whether the people who designed the system recorded \"did nothing\" as \"does not agree\" or as \"agrees.\"",
+  "plain": "Suppose that on the day you get a new phone plan, the form the clerk hands you already has one box ticked: a ringback tone, the music callers hear while they wait for you to pick up, at 5 yuan a month. You sign. After that, every monthly bill has this 5 yuan on it. You notice it a few times and think you'll cancel it later. But canceling means calling customer service and waiting to be put through to a person, so you put it off again. Besides, something that came ticked when you signed up is probably something everyone has. Two years later, when you switch numbers, you add it up: 120 yuan gone. Nobody forced you to choose the ringback tone; that box ticked in advance chose it for you.\n\nThis is the default effect. When an option is set in advance, or you're already in some state, most people stay there, even if changing would take only a few minutes. So whoever sets the default makes the decision for everyone who doesn't act."
+ },
+ "deep": {
+  "mechanism": "### Changing takes effort; not changing takes nothing\n\nAccepting the default saves you the effort of looking things up, comparing options and doing the paperwork. The more complicated a matter is and the easier it is to put off, the more people never get around to it, and all of them stay on the default. A state you're already in works the same way: the ringback tone is on, and if you do nothing, it stays on. This habit of holding on to the way things are is called status quo bias. Even when changing takes a single click, it stops a lot of people.\n\nJohnson and Goldstein ran an online experiment in which changing likewise took only one click. When the default was not donating, 42% of people said they were willing to donate; when the default was donating, it was 82%. The step was just as light, yet the two groups were still 40 percentage points apart.\n\n### The default is read as the designer's advice\n\nPeople who aren't sure think: since it was ticked for me, there must be a reason, and it's probably the one everyone picks. So the default doesn't just save effort. It also looks like a recommendation, and people feel at ease staying on it.\n\n### If you change and get it wrong, it's on you; stay on the default and you can blame someone else\n\nIf you actively change your choice and it turns out badly, the regret and the blame fall on you: I chose this. If you stayed on the default and it goes wrong, you can say \"that's how it was set.\" The same bad result hurts more when you caused it by acting than when it came from not acting. So when they're unsure, people would rather not move.",
+  "origin": "In 1988 Samuelson and Zeckhauser published \"Status Quo Bias in Decision Making,\" using experiments and records of real-world choices to study why people stick with the way things are. Johnson and Goldstein's 2003 paper reported effective consent rates, that is, the share of people the system counts as agreeing, not the share who in the end actually donate organs. Nor does the whole gap between Germany and Austria come from the default; the two countries differ in other rules too. The online experiment split people at random into two groups that differed only in the default, which is why that 40-point gap can be put down to the default alone.",
+  "limits": "Defaults work best on matters where people have no clear preference and changing is a hassle, such as tick boxes on forms and the starting settings of a new account. People with a clear preference don't go along with them. And when changing really costs more than it gains, staying put is also a choice made with the sums done. Preselecting a paid extra, like the ringback tone at the start, so that people who don't notice pay for nothing, turns the default into a trap."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When you set the starting settings for new users, whichever option you preselect is a decision made for everyone who doesn't notice. Which way privacy and paid options are preselected needs far more care than feature options."
+   },
+   {
+    "use": "explain",
+    "text": "For twenty years the company's expense form has needed three signatures: go and find out the last year anyone proposed changing it."
+   },
+   {
+    "use": "predict",
+    "text": "To estimate how many fewer people will choose a setting once it goes from preselected to not preselected, first look at how complicated the matter is and how much hassle changing it is."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Investing and retirement",
+    "title": "Enrolled in the retirement plan automatically",
+    "text": "The company you join puts new employees into a retirement savings plan automatically; to get out, you have to fill in a form yourself. In 2001 Choi, Laibson, Madrian and Metrick studied three American companies that did this, and participation was above 85% at all of them. At first, about eight in ten participants also kept the default contribution rate and the default fund exactly as they were."
+   },
+   {
+    "field": "Management",
+    "title": "The meeting that keeps itself alive",
+    "text": "You lead a project team, and the Friday afternoon sync meeting sits in the calendar as a recurring invitation. The project has settled down and the meeting is over in ten minutes, yet everyone still shows up on time. You cancel the recurring invitation and send an invite only when there's something on the agenda, and after that several Friday afternoons open up."
+   },
+   {
+    "field": "Personal life",
+    "title": "A subscription that keeps charging",
+    "text": "You signed up for a video subscription at 30 yuan a month, meaning to cancel once you finished the show, and kept putting it off. You haven't opened the app in six months, and 180 yuan has been charged. You turn off auto-renewal on your phone, and the subscription ends when the current period runs out."
+   }
+  ],
+  "ask": [
+   "If I do nothing, how will my money, time or rights be arranged? Go through contracts, settings pages and bills, and count which things I chose myself and which I've never touched.",
+   "If I were starting from scratch today, with nothing preselected, would I still choose what I have now?",
+   "When I set defaults for other people, can they understand the consequences and change them without much effort?"
+  ],
+  "with": [
+   {
+    "id": "switching-costs",
+    "sees": "You've used a note-taking app for six years. A new app is free and does about as much, and moving over would take a weekend. The default effect would say you're probably staying only because you can't be bothered to move, and you should switch. Switching costs would say that weekend is a real cost, and staying may be right. First estimate how many hours the move would take, then see how much the new app would save you each month. If the sums show you'd save more than you spend, switch. If you can't work it out, stay."
+   },
+   {
+    "id": "friction",
+    "sees": "You want coworkers to fill in a questionnaire, and you want more of them back. The friction view is to cut the steps until it takes a minute to fill in. The default view is to fill in the most common answers in advance, so coworkers only need to change one item. Use both together and you get the most responses back, but the answers you read are already mixed with your prefilled ones. If you only want to know what your coworkers really think, drop the prefilling and just cut the steps."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A power company launches a time-of-use rate that saves most households money. Existing customers on the old rate who want to switch have to phone in and apply. New customers opening an account choose between the old and new rates themselves, and the page preselects neither.",
+    "question": "A year later, which group has a higher share choosing the time-of-use rate?",
+    "explain": "For existing customers, their current rate is the starting point, and doing nothing keeps them on it. New customers have nothing to keep and must pick one. The prices are the same; what separates the two groups' choices is whether there's a state they're already in.",
+    "options": [
+     {
+      "text": "Existing customers: after years on the old rate, they know their own usage best and are better at doing the sums.",
+      "correct": false,
+      "feedback": "Nothing in the question suggests existing customers are better at the sums. Most of them did nothing and are still on the old rate."
+     },
+     {
+      "text": "About the same: the new rate saves both groups the same amount, so the sums come out the same and so should the choices.",
+      "correct": false,
+      "feedback": "The savings are the same, but the two groups' situations differ. Existing customers stay on the old rate unless they act, while new customers must pick one, so the shares will pull apart."
+     },
+     {
+      "text": "Both very low: the time-of-use rate means changing how you use power, and households generally don't want the bother.",
+      "correct": false,
+      "feedback": "Whether both are low overall doesn't explain whether there's a gap between the groups. The gap comes from existing customers having an old rate to stay on."
+     },
+     {
+      "text": "New customers: existing customers stay on the old rate unless they act, while new customers have to choose.",
+      "correct": true,
+      "feedback": "New customers have no old state to stay in, so more of them choose the new rate. Many existing customers simply never acted."
+     }
+    ]
+   },
+   {
+    "stem": "A company has employees choose one of three health insurance tiers. HR wants to read employees' own preferences, not the effect of where the form starts. Last year's form preselected the middle tier, and most people didn't change it.",
+    "question": "How should this year's form be designed so that the sign-ups reflect employees' own preferences?",
+    "explain": "With none of the three preselected and no way to submit without choosing, everyone has to make a choice once, so no one in the sign-ups is there because of a default.",
+    "options": [
+     {
+      "text": "Preselect none of the three tiers, and don't allow the form to be submitted without a choice.",
+      "correct": true,
+      "feedback": "Everyone has to choose once, so no one in the sign-ups stayed on a preselected option."
+     },
+     {
+      "text": "Preselect each person's choice from last year, and let them change it.",
+      "correct": false,
+      "feedback": "Preselecting last year's choice makes an existing state the starting point. Among those who keep it, you can't tell who chose carefully from who didn't notice."
+     },
+     {
+      "text": "Preselect the cheapest tier, and let people who need more change it themselves.",
+      "correct": false,
+      "feedback": "Preselecting the cheapest tier likewise leaves people who never decided on that tier, so the results are still mixed with the effect of the starting point."
+     },
+     {
+      "text": "Still preselect the middle tier, with a note beside it: \"Most colleagues choose this tier.\"",
+      "correct": false,
+      "feedback": "The preselection and the note about most people both push employees toward the middle tier, so what the sign-ups measure is how strong the push is."
+     }
+    ]
+   },
+   {
+    "stem": "In a university's student system, the option \"Send a copy of my transcript to my parents\" is ticked in advance, and students can untick it with one click after logging in. A count at the end of term shows that 96% of students didn't untick it. The registrar's office writes in a notice that students broadly welcome their parents knowing their grades.",
+    "question": "Does this 96% support the notice's claim?",
+    "explain": "Ticking the box in advance puts the students who approve, the ones who haven't decided and the ones who never noticed all into the same number. To find out whether students welcome it, you have to ask them separately.",
+    "options": [
+     {
+      "text": "No: the 96% shows that most students actually object, but find unticking a hassle or don't dare.",
+      "correct": false,
+      "feedback": "Nothing in the question suggests students object. This reading likewise treats everyone who kept the setting as the same kind of person."
+     },
+     {
+      "text": "No: the 96% only shows the box was left ticked; whether students approve has to be asked separately.",
+      "correct": true,
+      "feedback": "96% is the share who kept the setting, not an approval rate. Explain clearly what it's for and then let students choose for themselves; only then can you read their attitude."
+     },
+     {
+      "text": "Yes: 96% is far over half, an overwhelming majority, so there's no need to look at other data.",
+      "correct": false,
+      "feedback": "A high share only shows that many people kept it; it says nothing about what they thought at the time."
+     },
+     {
+      "text": "Yes: unticking takes one click, and if nobody unticks something that easy, students must want it.",
+      "correct": false,
+      "feedback": "One-click unticking doesn't mean everyone saw the option. Those who didn't untick include students who never noticed and students who didn't care."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Three reasons keep people put; the setter decides",
+  "caption": "Left to right: hassle, taking it as advice and fear of blame all keep people on the pre-ticked ringback tone; once enough don't act, the default's setter decides.",
+  "nodes": [
+   {
+    "id": "d",
+    "label": "Box pre-ticked",
+    "sub": "Ringback on",
+    "layer": 0
+   },
+   {
+    "id": "a",
+    "label": "Changing is work",
+    "sub": "Call, hold, wait",
+    "layer": 1
+   },
+   {
+    "id": "b",
+    "label": "Read as advice",
+    "sub": "Ticked, so normal",
+    "layer": 1
+   },
+   {
+    "id": "c",
+    "label": "Blame if wrong",
+    "sub": "Not acting is safe",
+    "layer": 1
+   },
+   {
+    "id": "s",
+    "label": "Stay on default",
+    "sub": "120 yuan gone",
+    "tone": "warn",
+    "layer": 2
+   },
+   {
+    "id": "r",
+    "label": "Setter decides",
+    "sub": "Germany 12%, Austria 99.98%",
+    "tone": "accent",
+    "layer": 3
+   }
+  ],
+  "edges": [
+   {
+    "from": "d",
+    "to": "a"
+   },
+   {
+    "from": "d",
+    "to": "b"
+   },
+   {
+    "from": "d",
+    "to": "c"
+   },
+   {
+    "from": "a",
+    "to": "s",
+    "label": "Delay"
+   },
+   {
+    "from": "b",
+    "to": "s",
+    "label": "Fine"
+   },
+   {
+    "from": "c",
+    "to": "s",
+    "label": "Afraid"
+   },
+   {
+    "from": "s",
+    "to": "r",
+    "label": "Add up"
+   }
+  ]
+ }
+}

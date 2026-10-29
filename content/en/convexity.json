@@ -1,0 +1,220 @@
+{
+ "id": "convexity",
+ "name": "Convexity and Asymmetric Payoffs",
+ "en": "凸性与非对称回报",
+ "discipline": "investing",
+ "one_line": "When losses have a floor and gains have no ceiling, bigger swings work in your favor.",
+ "story": "Peter Thiel puts 500,000 dollars into Facebook, with a limited downside and no cap on the upside, and after the 2012 IPO makes a huge profit",
+ "shallow": {
+  "scene": "In August 2004, Peter Thiel lent 500,000 dollars to Facebook, then only six months old, and the loan was later turned into 10.2% of the company. Facebook went public in May 2012, and over that year he sold his shares bit by bit, cashing out more than 1 billion dollars, over 2,000 times the original sum. If Facebook had failed, the most he could lose was that 500,000 dollars; if it succeeded, there was no ceiling on what he could make.",
+  "plain": "You want to fly somewhere next month, and the fare isn't set yet. Suppose the booking site has a price lock: pay a 50 yuan fee today, and for a month you can buy at 800 yuan. By then the fare is equally likely to be 600 or 1,000, an average of 800. If it falls to 600, you skip the locked price and just buy at 600, paying 650 with the fee, 50 yuan more than if you hadn't locked. If it rises to 1,000, you buy at 800, paying 850 in all, 150 yuan less than if you hadn't locked. However low the fare falls, the most extra you pay is the 50 yuan fee; the higher it rises, the more you save.\n\nDraw what you save against the fare as a line: flat below 800, and climbing steadily above 800. The line bends upward at 800, and that bend is convexity. Averaging the two outcomes, you pay 750, 50 yuan less than without the lock. Those 50 yuan come entirely from the ups and downs: if the fare stayed at 800 the whole time, the fee would be wasted."
+ },
+ "deep": {
+  "mechanism": "### The wider the swings, the more the bend is worth\n\nTake the same 800 yuan price lock with its 50 yuan fee. Half the time the fare is $800+d$ and half the time $800-d$, where $d$ is the size of the swing. On the upside the bend stops you, so you pay at most 850; on the downside you buy at the low price and pay $850-d$. Averaging the two, what you pay on average is:\n\n$$\\bar{C}=850-\\frac{d}{2}$$\n\nIn other words, every 100 yuan wider the swing, you pay 50 yuan less on average. With a swing of 100 yuan either way (700 and 900), you pay 800 on average, the same as not locking, and the fee is wasted. With 200 (600 and 1,000), you pay 750 on average; with 400 (400 and 1,200), only 650. The other way round, with a swing of only 50 (750 and 850), you pay 25 yuan more on average.\n\n### The same swings mean losses on the other side of the bend\n\nSwitch to the seller's side. You have a secondhand generator worth about 2,000 yuan on the market. Someone pays you 100 yuan in exchange for your promise to sell it to him for 2,000 within a month. The market price is equally likely to be 1,800 or 2,200.\n\nAt 1,800 he doesn't buy, and you keep the 100 yuan for nothing. At 2,200 he buys it, and you've sold for 200 less than you could have; take off the 100 you were paid and you lose 100 net. Averaging the two, you neither gain nor lose. Widen the market price to 1,500 and 2,500, and you lose 150 yuan on average; widen it to 1,000 and 3,000, and you lose 400 on average.",
+  "origin": "Convex functions had long been studied in mathematics, and the bent line traced by the money a price lock saves is one of them. In 1906 the Danish mathematician Johan Jensen proved that for a convex function, averaging the inputs first and then working out the result never gives more than working out the results first and then averaging. Put back into the airfare sums, leaving the fee aside for now: average first, and the fare is 800 yuan, saving 0. Average afterward: at 600 you save 0, at 1,000 you save 200, so on average you save 100. Those extra 100 yuan are what the ups and downs are worth.",
+  "limits": "Convexity is most useful where the payoff is fixed in a contract or its terms, so the bend is there to see: options, royalties, insurance. If you simply hold an asset, your gains and losses move in a straight line with its price. There is no bend, and swings won't earn you anything extra. Someone also has to make good on the bend: if the party that wrote the floor can't pay, the loss you thought was capped lands back on you."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When launching software with a free trial, first work out the most each trial user can cost you in service, and only then set how long the trial runs. Once the cost is capped, income from paying users has room to keep growing."
+   },
+   {
+    "use": "act",
+    "text": "When signing a new employee, write in that during the probation period either side can end the contract with a week's notice. What you stand to lose is limited, and if you find the right person, what you gain by keeping them has no ceiling."
+   },
+   {
+    "use": "predict",
+    "text": "When a product claims a steady 8% return, first ask whether the gains are capped and whether the losses have a floor. If the gains are capped and the losses aren't, then when the market turns wild, it's mostly the buyers who lose out."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Film",
+    "title": "Giving up pay for the side rights",
+    "text": "In the 1970s, when George Lucas negotiated his contract with 20th Century Fox for *Star Wars*, he stopped pushing for a bigger director's fee and asked instead for the merchandising rights and the sequel rights. The film came out in 1977, the toys sold for years, and the sequel rights were his. What he gave up was the extra director's fee he could have fought for; at worst, he'd miss out on that money. What he got in return, merchandise and sequels, paid him more the more toys sold and the more sequels were made, with no ceiling."
+   },
+   {
+    "field": "Agriculture",
+    "title": "A floor price with no ceiling",
+    "text": "In China, the state sets minimum purchase prices for wheat and rice in the main growing regions. If the market price falls below the floor, state granaries buy at the floor price; if the market price is above it, farmers sell at the market price. In a bumper year, when prices collapse, farmers sell at the floor price; in a poor harvest, when prices rise, farmers sell at the market price and get the full benefit of however much it rises."
+   },
+   {
+    "field": "Art collecting",
+    "title": "A box of negatives",
+    "text": "In 2007 John Maloof, from Chicago, paid about 380 dollars at a storage auction for a box of negatives taken by Vivian Maier, a nanny almost nobody had heard of. He sorted and scanned the negatives, and later put on exhibitions, published books and made a documentary. The worst outcome was losing 380 dollars; if there were good photographs among the negatives, there was no ceiling, known in advance, on what exhibitions, books and a documentary could bring in."
+   }
+  ],
+  "ask": [
+   "What's the most I could lose here? Count in borrowed money, money I might have to add later and guarantees I've given for others, and go through the books and contracts to add it up.",
+   "Who gets the payoff from a good outcome, and is any of it taken away? Go through the contract and look for clauses on revenue sharing, caps and guaranteed floors.",
+   "How far is the bend from where things are now? Write today's level next to the line in the contract. If they're far apart, the swings will probably never reach it."
+  ],
+  "with": [
+   {
+    "id": "avoid-ruin",
+    "sees": "A friend asks you to put all your savings, 50,000 yuan, into his new shop: the most you can lose is 50,000, and if it works you make ten times that. Convexity sees a payoff that bends upward and urges you to go in; avoiding ruin looks at what you'd have left after losing the 50,000, and urges you not to. If this is all the savings you have, don't put it in; if it's only a tenth of your savings, then go ahead."
+   },
+   {
+    "id": "expected-value",
+    "sees": "A coworker asks you to chip in on a joint purchase: the most you can lose is 100 yuan, and if it wins you get 3,000. A floor below and a big upside above make the curve tempting. Expected value has you multiply in the chance of winning: if it's below one in thirty, you lose on average. The curve only tells you how big the win and the loss are; whether to buy depends on estimating that chance first."
+   },
+   {
+    "id": "optionality",
+    "sees": "When you rent an office, the landlord offers a renewal option: in two years you can renew at the current rent, for an extra fee. Optionality asks whether you'll want to stay in two years, and whether having a fallback is worth it. Convexity asks how much the rent has to rise before you start coming out ahead; if it rises only a little, the fee is wasted. Work out the second first, how much the rise has to be to break even, then ask the first: will you really use it when the time comes?"
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're a salesperson with average monthly sales of 200,000 yuan. This year the market is unsteady: some months are very high and some very low, with bigger swings than in past years, but the average is still 200,000. The company offers four pay plans, and you pick one.",
+    "question": "Looking only at what you take home on average each month, which plan pays more now that the swings are bigger than when they were small?",
+    "explain": "A fixed salary has nothing to do with sales. Pure commission is a straight line, so what you gain in high months and lose in low months cancels out exactly. The plan with no commission above 200,000 cuts a piece off the good months. Only base pay plus commission on the amount above the target has a floor in low months and climbs in high months, so only it raises the average.",
+    "options": [
+     {
+      "text": "A base of 4,000 yuan plus 5% commission on sales, with no commission on anything above 200,000.",
+      "correct": false,
+      "feedback": "Good months are cut off at 200,000, while bad months still pay less, so the bigger the swings, the lower the average."
+     },
+     {
+      "text": "A base of 4,000 yuan, plus an extra 10% commission on sales above 200,000.",
+      "correct": true,
+      "feedback": "In low months the 4,000 yuan is a safety net, and in high months you earn more on the part above the target, so the bigger the swings, the higher the average."
+     },
+     {
+      "text": "No base pay, just 5% commission on each month's sales; sell more, earn more.",
+      "correct": false,
+      "feedback": "Commission is in proportion to sales, a straight line. What you gain in high months just makes up for what you lose in low months, so the average doesn't change."
+     },
+     {
+      "text": "A fixed salary of 8,000 yuan a month, whatever the sales.",
+      "correct": false,
+      "feedback": "The pay doesn't change with sales, so however big the swings, the average is still 8,000 yuan."
+     }
+    ]
+   },
+   {
+    "stem": "You're considering all four of the things below, and in each one a good outcome is worth a fair amount of money.",
+    "question": "Which one has a worst case with a clear limit, but a good outcome with no ceiling written in advance?",
+    "explain": "Spending 1,500 yuan to register a copyright, the worst case is that the money is spent; however many times the song is covered, you collect royalties that many times, and no contract caps it. In the other three, either the loss has no stated limit, or the gain is fixed in advance.",
+    "options": [
+     {
+      "text": "Spend 1,500 yuan registering the copyright on a song you wrote, so that every cover from now on has to pay you royalties.",
+      "correct": true,
+      "feedback": "The worst case is losing the 1,500 yuan, and there's no stated ceiling on the royalties: a floor below and no ceiling above."
+     },
+     {
+      "text": "Guarantee a friend's loan, so that if the friend can't pay, you pay.",
+      "correct": false,
+      "feedback": "The gain is just your friend's thanks, while the loss is the whole loan, and the limit isn't in your hands. It's the wrong way round."
+     },
+     {
+      "text": "Pay a client's full materials bill up front, and collect only a fixed service fee when the client pays on time.",
+      "correct": false,
+      "feedback": "The gain is a fixed service fee, and if the client doesn't pay, you lose the whole materials bill. The shape is the opposite of what the question asks."
+     },
+     {
+      "text": "Sign a long-term supply contract at a fixed price, with any rise in raw material costs borne by you.",
+      "correct": false,
+      "feedback": "Your income is capped by the fixed price, and you lose as much as raw materials rise, so the loss has no limit."
+     }
+    ]
+   },
+   {
+    "stem": "You buy a stock at 100 yuan a share and place a stop-loss order: sell if it falls to 90, so you lose at most 10 yuan a share. One night the company announces it has faked its accounts, the next morning it opens straight at 60 yuan, and your stop-loss order is filled at that opening price.",
+    "question": "What does this sale show?",
+    "explain": "The stop price is only a trigger; once triggered, the shares are sold at the market price of the moment. The price jumped straight past 90 overnight, so the only price to sell at was 60 yuan. You lost 40 yuan a share, and the cap didn't hold.",
+    "options": [
+     {
+      "text": "An announcement of faked accounts is extremely unlikely, so it shouldn't be used to judge stop-loss orders.",
+      "correct": false,
+      "feedback": "What's being judged here is whether the cap held, and it didn't. That this rarely happens doesn't change that."
+     },
+     {
+      "text": "The stop price was set too low; setting it at 95 would have capped the loss at 5 yuan a share.",
+      "correct": false,
+      "feedback": "The price jumped over everything in one go overnight. It would have jumped over 95 as well, so no setting could have capped it."
+     },
+     {
+      "text": "Once triggered, a stop-loss sells at the market price; when the price jumps past 90 the sale price is lower, and the loss goes beyond the limit you planned.",
+      "correct": true,
+      "feedback": "90 yuan is only the trigger price, not the sale price. When the price gaps down, the sale price is lower and the cap breaks."
+     },
+     {
+      "text": "The system made an error and should pay you the difference up to 90 yuan.",
+      "correct": false,
+      "feedback": "The order was carried out by the rules. 90 yuan was never a promised sale price, so there's no difference to pay back."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "The bend blocks the fall; bigger swings save more",
+  "caption": "The 0 line is no lock. The lock line sits at −50 below 800, then climbs. Drag the swing: past 100 yuan, the midpoint rises above 0.",
+  "x": {
+   "label": "Fare at month end (yuan)",
+   "min": 400,
+   "max": 1200
+  },
+  "y": {
+   "label": "Saved vs. no lock (yuan)",
+   "min": -100,
+   "max": 400
+  },
+  "params": [
+   {
+    "id": "d",
+    "label": "Fare swing",
+    "min": 0,
+    "max": 400,
+    "step": 50,
+    "value": 200,
+    "unit": " yuan"
+   }
+  ],
+  "series": [
+   {
+    "name": "Price lock",
+    "expr": "max(x-800,0)-50",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "y": 0,
+    "text": "No lock"
+   },
+   {
+    "x": "800-d",
+    "y": -50,
+    "text": "If it falls"
+   },
+   {
+    "x": "800+d",
+    "y": "d-50",
+    "text": "If it rises"
+   },
+   {
+    "x": 800,
+    "y": "d/2-50",
+    "text": "Average"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Lock: avg paid",
+    "expr": "850-d/2",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "No lock: avg paid",
+    "expr": "800",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

@@ -1,0 +1,235 @@
+{
+ "id": "pareto-efficiency",
+ "name": "Pareto Efficiency",
+ "en": "帕累托效率",
+ "discipline": "economics",
+ "one_line": "When no one can gain without someone losing, nothing is wasted, but that isn't fairness.",
+ "story": "In Radford's World War II prison camp, prisoners swap Red Cross parcels and cigarettes become the money everyone uses (Economica, November)",
+ "shallow": {
+  "scene": "During World War II, an Englishman named Radford was held in a prisoner-of-war camp. The Red Cross parcels each prisoner received were roughly the same: tinned milk, jam, biscuits, chocolate, cigarettes.\n\nBut people's tastes differed. Non-smokers swapped their cigarettes for food, and those with a sweet tooth found ways to get more chocolate. Over time the camp settled on going rates of exchange, and cigarettes became the money everyone used.\n\nNot a single extra parcel arrived; the goods only changed hands. The non-smokers ate more chocolate, and the heavy smokers smoked more. Every swap was one both sides wanted, and nobody ended up worse off. In 1945 he wrote up this experience as \"The Economic Organisation of a P.O.W. Camp\" and published it in the journal Economica.",
+  "plain": "You have 4 apples and your neighbor has 4 oranges. You like oranges better, and he likes apples better. You swap one for one, three times, and now you hold 1 apple and 3 oranges while he holds 3 apples and 1 orange. Both of you are happier than before. You'd like to swap again, but he won't: one more swap would leave him worse off than he is now. A split where nobody can be made better off without making someone else worse off is called Pareto efficient."
+ },
+ "deep": {
+  "mechanism": "### The less you have of something, the more you value it, so your views move closer with each swap\n\nFor the first orange, you'd give as many as 3 apples, and your neighbor would let it go for just 0.4 of an apple. So swapping one for one, both of you gain. Each swap gives you one more orange, so you want another one a little less; it leaves him one orange fewer, so he's less willing to part with the rest. By the fourth orange, you'd give at most 1.1 apples and he wants at least 1.4. There's a gap between you, and whatever rate you swap at, one of you loses out, so the swapping stops.\n\nAs long as an orange is worth more apples to you than to him, there's a swap that leaves both better off. Once it's no longer worth more to you, the split can't get any better.\n\n### Free trade stops at a split with no waste, and which one depends on where it started\n\nIn a market everyone faces the same price, and each person keeps swapping until they don't want to swap any more. At that point, how many apples an orange is worth to each person equals that price exactly, so no two people can find a swap that helps both of them. Under conditions such as perfect competition and no side effects on others, free trade always stops at a Pareto efficient split. This is the first welfare theorem. There is more than one such split, and which one trade stops at depends on who held what at the start: one person owning everything also counts as no waste, because any change would mean taking something from him.",
+  "origin": "The Italian economist Pareto set out this standard in 1906 in his Manual of Political Economy. Edgeworth had already drawn the contract curve in 1881; the diagram later called the Edgeworth box was in fact first drawn by Pareto. In 1951 Arrow and Debreu each gave a rigorous proof of the welfare theorems. Pareto's 80/20 rule comes from the same man but is a different thing; see power laws.",
+  "limits": "For swaps, group orders and contracts, where everyone takes part willingly and knows what they gain and lose, Pareto efficiency gives the clearest verdict: if a swap that helps both sides goes unused, that's waste. It only compares the people in front of it; on trade-offs such as climate, where later generations bear the cost, it has nothing to say. Reading no protest as no harm is a mistake: people who are harmed but have nowhere to speak up are still worse off."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When a negotiation is stuck, first look for a way of dividing things where nobody loses and someone gains. If you find one, there's still value on the table nobody has taken. Take that piece first, then argue over the rest."
+   },
+   {
+    "use": "explain",
+    "text": "Someone will sell you a thing because it's worth less to them than the money you give, which is why the deal happens. When everyone in a market swaps this way, things flow to the people who value them most."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Farming",
+    "title": "Two plots swapped",
+    "text": "Your family has a plot wedged in the middle of your neighbor's big field, and the neighbor has one wedged in the middle of your land. The two plots are about the same size and just as fertile. After the two families swap them, each family's land is one piece, the farm machines no longer have to go the long way round to get in and out, and neither family's harvest is any smaller."
+   },
+   {
+    "field": "Public policy",
+    "title": "Cut tariffs, but first help those who lose their jobs",
+    "text": "In 1962 the US Congress passed the Trade Expansion Act, which let the president cut tariffs sharply. Lower tariffs let buyers get cheaper imports and brought exporters more orders; but factories competing head-on with imports would lay off workers. By the standard of \"nobody worse off,\" cutting tariffs alone is not an improvement. The same law set up Trade Adjustment Assistance: workers who lost their jobs because of imports could get payments, training and money to move. Only by making up the losers' losses in full did cutting tariffs go from \"most people gain\" to a change that leaves nobody worse off."
+   },
+   {
+    "field": "Personal life",
+    "title": "Two shifts swapped",
+    "text": "You have a licensing exam on Saturday, and a coworker has to take his mother to a follow-up appointment on Tuesday. As luck would have it, each of you is scheduled on the day the other wants off. After you swap, both of you make it, and the rota has just as many people on every day. Your manager wants to move one more person, finds that whoever he moves would have to give up a day they want off, and stops."
+   }
+  ],
+  "ask": [
+   "Under the current split, could two people swap something and both be happier? Ask each of them what they'd trade for what.",
+   "In this change, does anyone end up with less than before? Ask them, not just the people who are cheering.",
+   "Is the rate at which people are willing to swap already the same for everyone?"
+  ],
+  "with": [
+   {
+    "id": "prisoners-dilemma",
+    "sees": "Two gas stations facing each other at a crossroads are both wondering whether to cut prices. The prisoner's dilemma sees this: if the other doesn't cut, I win customers by cutting; if the other cuts and I don't, I lose customers, so both will cut. Pareto efficiency sees this: when both cut, their profits are lower than if neither had, so both could have done better. If the two can sign an agreement, or see each other every day and can punish each other, negotiate toward neither cutting; if they can't, don't expect the other to stop first of their own accord."
+   },
+   {
+    "id": "envy",
+    "sees": "The neighborhood installs an elevator for one household only. Nothing changes for the other households, and nobody is charged. By the standard of \"nobody worse off\" this is an improvement. Envy sees the other side: the neighbors in the building watch that household get it first and feel bad about it, so for them things haven't stayed the same. If the residents don't compare themselves with each other, go ahead; if they compare a lot, first find a way to give the others something too."
+   },
+   {
+    "id": "mechanism-design",
+    "sees": "If you want each person to choose according to their own interest and still end up at a split with no waste, you need mechanism design. How the rules are written decides whether everyone's own best choices add up to an efficient split. Pareto efficiency gives the goal; mechanism design looks for the rules that reach it."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A city turns a main road into a one-way street. Each of 900 commuters spends 10 minutes less a day, the 12 small shops along the street get noticeably fewer customers, and the city doesn't compensate the shopkeepers at all.",
+    "question": "Does this change count as one that \"makes some people better off without making anyone worse off\"?",
+    "explain": "If even one person is worse off than before, it isn't this kind of change, however many people gain. The 12 small shops are worse off; for it to count, they would first have to be compensated so they lose nothing.",
+    "options": [
+     {
+      "text": "Yes: 900 people gain and only 12 shops lose.",
+      "correct": false,
+      "feedback": "Numbers can't cancel out someone being worse off. As long as the 12 shops are worse off than before, it doesn't count."
+     },
+     {
+      "text": "No: the 12 small shops are worse off, however many people gain.",
+      "correct": true,
+      "feedback": "If anyone is worse off, it isn't a change that \"harms nobody.\""
+     },
+     {
+      "text": "Yes: the time saved across the city far outweighs the shopkeepers' losses.",
+      "correct": false,
+      "feedback": "Adding up gains and losses and comparing them is a different standard. This one requires that not a single person be worse off."
+     },
+     {
+      "text": "No: the 900 commuters save different amounts of time, so the gain isn't shared evenly.",
+      "correct": false,
+      "feedback": "How much each gains doesn't matter; every commuter is better off than before. The ones worse off are the 12 shops."
+     }
+    ]
+   },
+   {
+    "stem": "A company has a year-end bonus of 100,000 yuan and only two employees, A and B. Both are happier the more money they get. The plan gives 90,000 yuan to A and 10,000 yuan to B, and coworkers say that's unfair.",
+    "question": "If you ask only \"is there a way to make one person better off without making the other worse off,\" can this plan be improved?",
+    "explain": "The total is fixed, so giving more to one means giving less to the other. Even though the split is unfair now, there's no change that leaves nobody worse off. This question only asks whether there's still a gain for both to be had; whether the split is fair is a separate matter.",
+    "options": [
+     {
+      "text": "Yes: with a fair split, both would be happier.",
+      "correct": false,
+      "feedback": "With a fair split A gets less, so A is worse off; the question says both are happier the more money they get."
+     },
+     {
+      "text": "Yes: move 40,000 yuan from A to B. B is better off, and A losing a bit doesn't matter much.",
+      "correct": false,
+      "feedback": "A is happier the more money he has, so losing 40,000 yuan leaves him worse off, however much he has."
+     },
+     {
+      "text": "No: the total is fixed, so giving more to one means giving less to the other.",
+      "correct": true,
+      "feedback": "The bonus total doesn't change, so any adjustment leaves one person worse off."
+     },
+     {
+      "text": "Can't tell: you'd first need to know how much each of them values money.",
+      "correct": false,
+      "feedback": "The question already says both are happier the more money they get. However much each values it, the total is still fixed."
+     }
+    ]
+   },
+   {
+    "stem": "A university's small auditorium always sits empty on Wednesday afternoons. Only the student union may use it, and it's used fewer than five times a term. The drama club is looking for somewhere to rehearse.",
+    "question": "Which of these makes some people better off without making anyone worse off?",
+    "explain": "The drama club gets a space, and the student union still has priority when it books ahead, so it loses none of its old use and nobody is worse off. Each of the other options takes away something one side had before.",
+    "options": [
+     {
+      "text": "Open Wednesday afternoons to the drama club for rehearsals, with the student union still having priority when it books ahead.",
+      "correct": true,
+      "feedback": "The drama club gets a space, and the student union keeps its use exactly as before."
+     },
+     {
+      "text": "Take the auditorium back from the student union and give it to the drama club for good.",
+      "correct": false,
+      "feedback": "The student union could still use it before; once it's taken back, they're worse off."
+     },
+     {
+      "text": "End the student union's priority, so on Wednesday afternoons whoever books first gets it.",
+      "correct": false,
+      "feedback": "The student union might not get its old time slot, so they're the ones worse off."
+     },
+     {
+      "text": "Charge every club a fee for upkeep of the auditorium and give the money to the student union.",
+      "correct": false,
+      "feedback": "The clubs that are charged are worse off."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "title": "By the 4th orange, he asks more than you'd give",
+  "caption": "The gap between the lines is room for both to gain. More oranges, and you offer less; fewer, and he asks more. At the 4th, his price passes your offer.",
+  "x": {
+   "label": "Which orange is swapped",
+   "min": 1,
+   "max": 4,
+   "ticks": [
+    {
+     "at": 1,
+     "label": "1st"
+    },
+    {
+     "at": 2,
+     "label": "2nd"
+    },
+    {
+     "at": 3,
+     "label": "3rd"
+    },
+    {
+     "at": 4,
+     "label": "4th"
+    }
+   ]
+  },
+  "y": {
+   "label": "An orange's worth, in apples",
+   "min": 0,
+   "max": 3.5
+  },
+  "series": [
+   {
+    "name": "You'd give",
+    "points": [
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      2.2
+     ],
+     [
+      3,
+      1.6
+     ],
+     [
+      4,
+      1.1
+     ]
+    ],
+    "tone": "accent",
+    "dots": true
+   },
+   {
+    "name": "Neighbor wants",
+    "points": [
+     [
+      1,
+      0.4
+     ],
+     [
+      2,
+      0.6
+     ],
+     [
+      3,
+      0.8
+     ],
+     [
+      4,
+      1.4
+     ]
+    ],
+    "tone": "ink",
+    "dots": true
+   }
+  ],
+  "marks": [
+   {
+    "y": 1,
+    "text": "One for one"
+   }
+  ]
+ }
+}

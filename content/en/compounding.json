@@ -1,0 +1,223 @@
+{
+ "id": "compounding",
+ "name": "Compounding",
+ "en": "复利",
+ "discipline": "math",
+ "one_line": "Money you earn goes on to earn money too, and the gap widens with time.",
+ "story": "Franklin's will leaves Boston and Philadelphia 1,000 pounds each, lent at 5% to young tradesmen and not to be spent for two hundred years",
+ "shallow": {
+  "scene": "Benjamin Franklin died in 1790. In his will he left 1,000 pounds each to Boston and Philadelphia, with an odd condition: for two hundred years the money was not to be spent. It was to be lent at 5% a year to young married tradesmen who had just finished their apprenticeships, and whatever came back, principal and interest, was to be lent out again.\n\nHe had done the sums for both cities. After a hundred years each fund would have grown to about 131,000 pounds. They would then take out 100,000 pounds for public works and let the remaining 31,000 roll on for another century. By the end of the second hundred years, his figure was about 4,061,000 pounds.\n\nWhen the two hundred years ran out in 1990, Boston's fund held a little over 4.6 million dollars and Philadelphia's about 2.3 million. Those were dollars, so in pounds it was even less, and neither came near his figure. The books showed loans never repaid, money left sitting idle, and money stolen by the people handling it. Once the money stopped being lent out again, it stopped growing.",
+  "plain": "Put 10,000 yuan in an account at 10% a year. Compounding means adding the interest back to the principal. The first year earns 1,000 yuan, and the account becomes 11,000. The second year's interest is worked out on 11,000, so it earns 1,100; the extra 100 is interest earned by interest. If you take the interest out every year instead, the principal stays at 10,000 and you earn 1,000 a year. After thirty years, the account that kept its interest holds 174,000 yuan; the one that paid it out has 40,000, principal and interest together."
+ },
+ "deep": {
+  "mechanism": "### Multiply by the same factor each period, and growth keeps speeding up\n\nStart with a principal $P$ and a net growth rate $r$ per period. After $n$ periods you have $A_n$:\n\n$$A_n=P(1+r)^n$$\n\nEach period the whole amount is multiplied by $1+r$. Earlier interest is part of what gets multiplied, so the amount being multiplied keeps getting bigger, and each period adds more money than the one before. Franklin's 1,000 pounds at 5% for a hundred years gives $1000\\times1.05^{100}\\approx131500$, which is his 131,000.\n\n### Double the rate and the money more than doubles\n\nLeave 10,000 yuan for twenty years. At 5% a year it becomes about 26,500; at 10% it becomes about 67,300. The rate only doubled, but the money you end up with is 2.5 times as much. Now look at the years instead. Keep the rate at 5% and leave it for forty years, and it becomes about 70,400. The first twenty years add 16,500; the next twenty add 43,900.\n\n### What you can't keep can't compound\n\nFees, losses and withdrawals all shrink the base for the next round. Losses work the same way, because each period's factors multiply together: up 50% and then down 50% is $1.5\\times0.5=0.75$, a quarter gone. The same holds outside finance. A small factory that spends all of each year's profit on new machines grows its capacity by the same proportion year after year; if it pays out all its profit every year, it is left running the machines it started with.",
+  "origin": "Compounding grew out of charging interest on loans; nobody is credited with inventing it. In 1683 Jacob Bernoulli worked on a question about interest. At 100% a year, if the year's interest is added to the principal in more and more instalments, how many times the principal do you have at the end of the year? The finer the split, the bigger the multiple, but he found that it does not grow without limit. It approaches a fixed value, later written as the constant $e$. Working out interest, an everyday chore, was now tied to exponential functions and calculus.",
+  "limits": "For an account whose interest goes back into the principal and which nobody touches for decades, the compounding formula is exact to the cent. Applied to knowledge or relationships it goes wrong, because the gains may not stay. Copy out ten pages of a book every day and never use them, and the page count grows while what you can do does not; five years of trust can lose a large piece to one broken promise. The formula also needs the same $r$ every period. Suppose someone sees that a fund rose 30% last year and works out thirty years at 30% a year: it comes to more than 2,600 times the money, but nobody promised that 30% every year."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "Estimate what one point of difference in two funds' fees adds up to over thirty years: compound 7% and 6% for thirty years each, and the money you end up with differs by about a quarter."
+   },
+   {
+    "use": "act",
+    "text": "Decide whether to save a sum now or in ten years: at the same 7% a year, saving ten years earlier leaves you with about twice as much after thirty years."
+   },
+   {
+    "use": "explore",
+    "text": "Go through your own work and find which results can come back and speed up the next round. Suppose a written-down procedure gets the next new hire up to speed a month sooner; that frees the person training them a month sooner too."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "Users bring in users",
+    "text": "From September 2008, the file-storage company Dropbox let existing users invite friends to sign up, and each successful invite gave both people 500MB of free space. New users who wanted more space invited their own friends, so every batch of new users became the next round of people sending invites. By December 2009 it had gone from about 100,000 users to about 4 million."
+   },
+   {
+    "field": "Biology",
+    "title": "What divides goes on dividing",
+    "text": "In the right conditions E. coli divides about once every 20 minutes, and each of the two new cells divides again: one becomes two, two become four, and in seven hours there are more than two million. But the flask holds only so much food. As the food runs out and waste builds up, division slows, and in the end the number stops growing."
+   },
+   {
+    "field": "Personal life",
+    "title": "Debt can snowball too",
+    "text": "Someone who spends every paycheck borrows 10,000 yuan. Suppose the contract charges 1% a month and unpaid interest is added to the principal: after one month he owes 10,100 yuan, after two months 10,201. Even if he never spends another cent, the debt keeps growing; if he borrows more to cover the hole, next month's interest is charged on a bigger principal."
+   }
+  ],
+  "ask": [
+   "What gains does this leave behind, and by what concrete route do they let the next round do more?",
+   "After fees, losses and withdrawals each round, how much is left to go into the next one? What would force me to empty it?",
+   "Is the thing I keep doing growing the stake for the next round, or the debt I'll owe in the next round?"
+  ],
+  "with": [
+   {
+    "id": "avoid-ruin",
+    "sees": "Every year you put your whole bonus into the same stock. It climbs for five years, then loses more than half in the sixth. Compounding tells you to take nothing out and keep it rolling; avoiding ruin tells you to keep some money out of that stock, even if it compounds a little less. When the outlook is uncertain and a loss would leave you unable to recover, listen to avoiding ruin first; when the outlook is steady and you can afford the loss, let the money roll."
+   },
+   {
+    "id": "ergodicity",
+    "sees": "Ergodicity asks you to tell \"the average over many people\" from \"one person's average over time.\" A scheme gains 50% or loses 30% in a year, each with even odds. If a hundred people each invest once, the average person makes 10%, which looks like a good deal. If you invest year after year yourself and get one up year and one down year, two years give 1.5×0.7=1.05 times the money, only about 2.5% a year. When a bet is made once and spread over many people, look at the average; when you yourself keep rolling it year after year, multiply it through."
+   },
+   {
+    "id": "diminishing-returns",
+    "sees": "A small bakery's first extra oven doubles what it can bake; a fifth one barely gets used. Compounding says to keep putting the profit back in; diminishing returns says each extra unit you put in brings back less than the one before. How many ovens to add before taking the money out for something else is a count that diminishing returns does."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Your software team writes the steps for handling common failures into automation tools. Half of the hours the tools save each week always go into building new tools. A few months later, the new tools are saving hours too. The team still has plenty of tasks that are worth automating.",
+    "question": "Over the next few months, how will the pace at which the team builds new tools change, and why?",
+    "explain": "The gain that goes into the next round is the hours the tools save. Put into building more tools, the results go on producing results. The momentum only slows as the tasks worth automating run out and the old tools need upkeep.",
+    "options": [
+     {
+      "text": "It will keep speeding up at the current rate, as long as the team keeps putting the saved hours in.",
+      "correct": false,
+      "feedback": "The tasks worth automating will run out, and the old tools take hours to maintain, so the current momentum can't go on forever."
+     },
+     {
+      "text": "It will speed up: half the hours the new tools save go into building more tools.",
+      "correct": true,
+      "feedback": "The saved hours are the gains that stay, and they go into the next round of building, so each round's results raise the next round's capacity."
+     },
+     {
+      "text": "It will stay about the same: the share they put in each week is fixed.",
+      "correct": false,
+      "feedback": "The saved hours keep growing, so the same half means more and more building time. A fixed share is not a fixed amount."
+     },
+     {
+      "text": "It will speed up, but because the team gets better at writing code, not because of the saved hours.",
+      "correct": false,
+      "feedback": "The mechanism in the question is that half the saved hours go into building. Without that link, the pace would not speed up for this reason."
+     }
+    ]
+   },
+   {
+    "stem": "You invest 100,000 yuan. The first year it gains 20% after costs, and all of the gain stays in the account; the second year it loses 20% after costs. In those two years you add nothing and take nothing out, and the returns are after all fees.",
+    "question": "How much is in the account at the end of the two years?",
+    "explain": "The result of two years is the two years' factors multiplied together: 100,000 × 1.2 × 0.8 = 96,000 yuan. The gain left in the account shared in the second year's loss. Getting back to 100,000 would take another rise of about 4.17%.",
+    "options": [
+     {
+      "text": "104,000 yuan: gain first and lose later, and part of the first year's gain is left over.",
+      "correct": false,
+      "feedback": "The extra 20,000 from the first year was in the account too, and it fell along with everything else in the second year; nothing protected it."
+     },
+     {
+      "text": "100,000 yuan: the rise and the fall are the same size, so they cancel out.",
+      "correct": false,
+      "feedback": "The percentages are the same, the amounts are not. The second year's 20% is taken from 120,000, a loss of 24,000, more than the 20,000 gained in the first year."
+     },
+     {
+      "text": "96,000 yuan: the second year's loss applies to the whole balance left after the first year.",
+      "correct": true,
+      "feedback": "At the end of the first year there is 120,000; the second year keeps 80% of it, which is 96,000."
+     },
+     {
+      "text": "80,000 yuan: the second year's loss wipes out the gain first and then eats into the principal.",
+      "correct": false,
+      "feedback": "That wipes out the 20,000 gain and then takes 20% of the 100,000 principal. The second year's 20% applies only to the 120,000 there at the time."
+     }
+    ]
+   },
+   {
+    "stem": "Your house has rooftop solar panels that generate about 4,000 kWh a year. All the money from selling the power goes on everyday spending, and the number and efficiency of the panels stay the same. The installer says, \"The power you've generated keeps adding up, so in ten years your yearly output will naturally be far higher than in the first year.\"",
+    "question": "At which step does the installer's reasoning go wrong?",
+    "explain": "All this household has is output piling up; none of that output goes back to enlarge the next round's capacity. Spending the money from selling power on more panels would connect the chain that compounding needs.",
+    "options": [
+     {
+      "text": "He treats the total power generated as the capacity to generate: power already produced does not turn into new equipment.",
+      "correct": true,
+      "feedback": "The total power generated has not become new panels or better efficiency, so next year's capacity is the same as this year's."
+     },
+     {
+      "text": "He forgot the income from selling power: having that income every year raises later capacity by itself.",
+      "correct": false,
+      "feedback": "The income all goes on everyday spending and buys no new equipment, so the capacity does not change."
+     },
+     {
+      "text": "He underestimates the wait: ten years is too short, and growth will speed up if you wait longer.",
+      "correct": false,
+      "feedback": "However long you wait, only the total generated gets bigger. Nothing here is enlarging the capacity to generate."
+     },
+     {
+      "text": "He left out wear on the equipment: with regular maintenance, yearly output rises along with the total generated.",
+      "correct": false,
+      "feedback": "Maintenance only keeps the panels at their original capacity; it doesn't make them produce more and more. How much power has been generated so far has nothing to do with how much can be generated next year."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Interest kept in ends up 4× interest taken out",
+  "caption": "10,000 yuan, the same rate for both. Drag the years: early on the two lines almost overlap, and the gap grows wider each year after that.",
+  "x": {
+   "label": "Years"
+  },
+  "y": {
+   "format": "en"
+  },
+  "params": [
+   {
+    "id": "r",
+    "label": "Rate per year",
+    "min": 1,
+    "max": 20,
+    "step": 1,
+    "value": 10,
+    "unit": "%"
+   },
+   {
+    "id": "yrs",
+    "label": "Years",
+    "min": 1,
+    "max": 50,
+    "step": 1,
+    "value": 30
+   }
+  ],
+  "model": {
+   "steps": "yrs",
+   "init": {
+    "c": 10000,
+    "s": 10000
+   },
+   "next": {
+    "c": "c*(1+r/100)",
+    "s": "s + 10000*r/100"
+   }
+  },
+  "series": [
+   {
+    "name": "Interest kept in",
+    "expr": "c",
+    "tone": "accent"
+   },
+   {
+    "name": "Interest taken out",
+    "expr": "s",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Interest kept in",
+    "expr": "c",
+    "format": "en"
+   },
+   {
+    "label": "Interest taken out",
+    "expr": "s",
+    "format": "en"
+   },
+   {
+    "label": "Interest on interest",
+    "expr": "c-s",
+    "format": "en"
+   }
+  ]
+ }
+}

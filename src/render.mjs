@@ -3,6 +3,7 @@ import katex from 'katex';
 import { Marked } from 'marked';
 import { escape, questionHtml } from '../public/quiz.mjs';
 import { USES, bands, leadHtml } from '../public/list.mjs';
+import { T, href, uses } from '../public/i18n.mjs';
 import { reportUrl, shell, subButton, tipAfter } from './shell.mjs';
 import { figureHtml, figureProblems } from '../public/figure.mjs';
 
@@ -37,7 +38,6 @@ export function markdown(text, { inline = false } = {}) {
 }
 
 const USE_KEYS = USES.map(([key]) => key);
-const USE_NAME = Object.fromEntries(USES);
 const filled = (value) => typeof value === 'string' && value.trim() !== '';
 const TEXTS = [['shallow', 'scene'], ['shallow', 'plain'], ['deep', 'mechanism'], ['deep', 'origin'], ['deep', 'limits']];
 
@@ -93,7 +93,11 @@ export function validate(index, cards) {
 
 // The year of the opening story: from index.json, or read from the story sentence when the index has none.
 const CN_DIGIT = { 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9 };
-export function storyYear(entry) {
+export function storyYear(entry, lang = 'zh') {
+  const label = yearOf(entry);
+  return lang === 'en' ? label.replace(/^前 (\d+)$/, '$1 BC').replace(/^(\d)0 年代$/, '19$10s') : label;
+}
+function yearOf(entry) {
   if (entry.year != null && entry.year !== '') return Number(entry.year) < 0 ? `前 ${-Number(entry.year)}` : String(entry.year);
   const story = entry.story ?? '';
   let m = story.match(/公元前\s*(\d+)\s*年/);
@@ -110,8 +114,16 @@ export function storyYear(entry) {
 const storyRest = (story) => story.replace(/^\d{3,4}\s*年(?![起代间])\s*/, '').replace(/^[，、]/, '');
 
 // The first sentences of the opening story, about 70 characters: the home page shows them under today's card.
-export function lede(scene) {
+export function lede(scene, lang = 'zh') {
   let text = '';
+  if (lang === 'en') {
+    const flat = scene.replace(/\s*\n+\s*/g, ' ').replace(/\*+/g, '');   // shown as plain text: no *italics*
+    for (const sentence of flat.match(/[^.!?]+[.!?]+["”’)]*\s*/g) ?? [flat]) {
+      text += sentence;
+      if (text.length > 160) break;
+    }
+    return text.trim();
+  }
   const flat = scene.replace(/\s*\n\s*/g, '');
   for (const sentence of flat.match(/[^。！？]+[。！？]/g) ?? [flat]) {
     text += sentence;
@@ -119,38 +131,44 @@ export function lede(scene) {
   }
   return text;
 }
+// A question's first sentence, for the list of three beside it (and the spine on phones).
+export const firstSentence = (text, lang = 'zh') => (lang === 'en' ? (text.match(/^.*?[.!?](?=\s|$)/) ?? [text])[0].replace(/[.!?]$/, '') : (text.match(/^[^。！？]+/) ?? [text])[0]);
 
 // What the browser needs for the list, search and today's card: one entry per card, in rank order.
-export function listData(index, cards) {
+export function listData(index, cards, lang = 'zh') {
   return [...index.cards].sort((a, b) => a.rank - b.rank).map((e) => ({
     id: e.id, name: e.name, en: e.en, discipline: e.discipline, one_line: e.one_line, rank: e.rank, story: e.story ?? '',
-    uses: cards[e.id].use.uses.map((u) => u.use), lede: lede(cards[e.id].shallow.scene), fig: cards[e.id].figure != null,
+    uses: cards[e.id].use.uses.map((u) => u.use), lede: lede(cards[e.id].shallow.scene, lang), fig: cards[e.id].figure != null,
   }));
 }
 
 const md0 = (text) => markdown(text, { inline: true });
 const toc = (target, html, cls = '') => `<li><a href="#${target}" data-t="${target}"${cls ? ` class="${cls}"` : ''}>${html}</a></li>`;
 
-// `siblings` are the cards of the same discipline in rank order, for the previous and next links.
-export function cardPage(card, { cards, index }) {
+// `siblings` are the cards of the same discipline in rank order, for the previous and next links. An English page
+// (`lang: 'en'`) takes the years from the Chinese card and index entry (`zh`), where they are written as dates.
+export function cardPage(card, { cards, index, lang = 'zh', zh = null }) {
+  const t = T[lang];
+  const at = (path) => href(lang, path);
+  const USE_NAME = Object.fromEntries(uses(lang));
   const discipline = index.disciplines.find((d) => d.id === card.discipline);
   const entry = index.cards.find((e) => e.id === card.id);
   const siblings = index.cards.filter((e) => e.discipline === card.discipline).sort((a, b) => a.rank - b.rank);
-  const at = siblings.findIndex((e) => e.id === card.id);
-  const prev = siblings[at - 1];
-  const next = siblings[at + 1];
+  const place = siblings.findIndex((e) => e.id === card.id);
+  const prev = siblings[place - 1];
+  const next = siblings[place + 1];
   const { shallow, deep, use } = card;
 
   const heads = [...deep.mechanism.matchAll(/^###\s+(.+)$/gm)].map((m) => m[1].trim());
   let h = 0;
   const mechanism = markdown(deep.mechanism).replace(/<h3>/g, () => `<h3 id="m${h++}">`);
-  const originYear = (deep.origin.match(/(\d{3,4}) ?年/) ?? [])[1];
-  const year = storyYear(entry);
+  const originYear = ((zh?.card ?? card).deep.origin.match(/(\d{3,4}) ?年/) ?? [])[1];
+  const year = storyYear(zh?.entry ?? entry, lang);
   const after = cards[use.with[0].id] ?? cards[next?.id];
 
   const body = `<div class="page wrap" data-card="${escape(card.id)}">
-<p class="crumbs"><a href="/">思维模型</a><span class="sep">/</span><a href="/d/${escape(discipline.id)}">${escape(discipline.title)}</a><span class="day" data-day hidden></span></p>
-<nav class="toc" aria-label="本页" data-toc><span class="grip" aria-hidden="true"></span><ol>
+<p class="crumbs"><a href="${at('/')}">${t.site}</a><span class="sep">/</span><a href="${at(`/d/${escape(discipline.id)}`)}">${escape(discipline.title)}</a><span class="day" data-day hidden></span></p>
+<nav class="toc" aria-label="${t.outline}" data-toc><span class="grip" aria-hidden="true"></span><ol>
 ${toc('s-scene', `${year ? `<span class="ty">${escape(year)}</span>` : ''}<span class="ts">${escape(year ? storyRest(entry.story ?? '') : (entry.story || shallow.scene.slice(0, 40)))}</span>`)}
 <li class="gap" aria-hidden="true"></li>
 ${heads.map((t, n) => toc(`m${n}`, md0(t))).join('\n')}
@@ -158,16 +176,16 @@ ${heads.map((t, n) => toc(`m${n}`, md0(t))).join('\n')}
 ${toc('s-uses', use.uses.map((u) => USE_NAME[u.use]).join(' · '))}
 ${use.examples.map((e, n) => toc(`s-ex${n}`, escape(e.title))).join('\n')}
 ${use.with.map((w, n) => toc(`s-w${n}`, `<span class="tx">×</span>${escape(cards[w.id].name)}`)).join('\n')}
-${toc('s-quiz', `<span class="tq" aria-label="${use.questions.length} 道题">${use.questions.map(() => '<i></i>').join('')}</span>`)}
+${toc('s-quiz', `<span class="tq" aria-label="${t.questionsCount(use.questions.length)}">${use.questions.map(() => '<i></i>').join('')}</span>`)}
 <span class="ind"></span></ol></nav>
 <div class="body">
 <header class="head"><h1>${escape(card.name)}</h1><p class="en">${escape(card.en)}</p><p class="one">${escape(card.one_line)}</p>
-<a class="hq" href="#s-quiz" aria-label="去答题"><span class="tq" aria-hidden="true">${use.questions.map(() => '<i></i>').join('')}</span></a></header>
+<a class="hq" href="#s-quiz" aria-label="${t.toQuestions}"><span class="tq" aria-hidden="true">${use.questions.map(() => '<i></i>').join('')}</span></a></header>
 
 <section class="story" id="s-scene">
 <div class="col scene">${markdown(shallow.scene)}</div>
 <div class="col plain">${markdown(shallow.plain)}</div>
-${card.figure ? figureHtml(card.figure, { live: true, id: card.id }) : ''}
+${card.figure ? figureHtml(card.figure, { live: true, id: card.id, lang }) : ''}
 </section>
 
 <section class="why">
@@ -184,32 +202,32 @@ ${card.figure ? figureHtml(card.figure, { live: true, id: card.id }) : ''}
 <div class="ex3dots" data-dots>${use.examples.map((e, n) => `<button type="button" data-ex="${n}" aria-label="${escape(e.title)}"${n ? '' : ' aria-current="true"'}><i></i></button>`).join('')}</div>
 <div class="blk with">${use.with.map((w, n) => {
     const other = cards[w.id];
-    return `<a class="w" id="s-w${n}" href="/m/${escape(w.id)}"><span><span class="pair"><span class="me">${escape(card.name)}</span><span class="x" aria-hidden="true">×</span>`
+    return `<a class="w" id="s-w${n}" href="${at(`/m/${escape(w.id)}`)}"><span><span class="pair"><span class="me">${escape(card.name)}</span><span class="x" aria-hidden="true">×</span>`
       + `<span class="wn">${escape(other.name)}<span aria-hidden="true">→</span></span></span><span class="wo">${escape(other.one_line)}</span></span><span class="ws">${md0(w.sees)}</span></a>`;
   }).join('')}</div>
 <div class="blk" id="s-quiz"><div class="quiz">
 <div class="qmain" aria-live="polite">${use.questions.map((q, n) => questionHtml(q, `${card.id}-${n}`)
-    + (n < use.questions.length - 1 ? `<button class="qnext" type="button" data-to="${n + 1}" hidden>第 ${n + 2} 题</button>` : '')).join('')}</div>
-<aside class="tasks"><ol>${use.questions.map((q, n) => `<li><button type="button" data-i="${n}"><span class="ti">${n + 1}</span><span class="tq">${escape((q.stem.match(/^[^。！？]+/) ?? [q.stem])[0])}</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5"/></svg></button></li>`).join('')}</ol>
-${after ? `<a class="cont" href="/m/${escape(after.id)}">${escape(after.name)} →</a>` : ''}</aside>
+    + (n < use.questions.length - 1 ? `<button class="qnext" type="button" data-to="${n + 1}" hidden>${t.nextQuestion(n + 2)}</button>` : '')).join('')}</div>
+<aside class="tasks"><ol>${use.questions.map((q, n) => `<li><button type="button" data-i="${n}"><span class="ti">${n + 1}</span><span class="tq">${escape(firstSentence(q.stem, lang))}</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5"/></svg></button></li>`).join('')}</ol>
+${after ? `<a class="cont" href="${at(`/m/${escape(after.id)}`)}">${escape(after.name)} →</a>` : ''}</aside>
 </div></div>
 </section>
 
-${tipAfter()}
-<nav class="pn" aria-label="同学科">
-${prev ? `<a href="/m/${escape(prev.id)}" rel="prev"><span>← ${escape(discipline.title)}</span><b>${escape(prev.name)}</b></a>` : ''}
-${next ? `<a class="r" href="/m/${escape(next.id)}" rel="next"><span>${escape(discipline.title)} →</span><b>${escape(next.name)}</b></a>` : ''}
+${tipAfter(lang)}
+<nav class="pn" aria-label="${t.sameField}">
+${prev ? `<a href="${at(`/m/${escape(prev.id)}`)}" rel="prev"><span>← ${escape(discipline.title)}</span><b>${escape(prev.name)}</b></a>` : ''}
+${next ? `<a class="r" href="${at(`/m/${escape(next.id)}`)}" rel="next"><span>${escape(discipline.title)} →</span><b>${escape(next.name)}</b></a>` : ''}
 </nav>
 </div>
 </div>
 <div class="spine" data-spine><span class="prog" aria-hidden="true"><i></i></span>
-<button class="back" type="button" aria-label="返回" data-back><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-<button class="here" type="button" aria-label="本页目录" aria-haspopup="dialog" aria-expanded="false" data-here><span class="hl"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 14l5-5 5 5"/></svg></button>
-<a class="sq" href="#s-quiz" aria-label="去答题"><span class="tq" aria-hidden="true">${use.questions.map(() => '<i></i>').join('')}</span></a></div>
+<button class="back" type="button" aria-label="${t.back}" data-back><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+<button class="here" type="button" aria-label="${t.outlineButton}" aria-haspopup="dialog" aria-expanded="false" data-here><span class="hl"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 14l5-5 5 5"/></svg></button>
+<a class="sq" href="#s-quiz" aria-label="${t.toQuestions}"><span class="tq" aria-hidden="true">${use.questions.map(() => '<i></i>').join('')}</span></a></div>
 <div class="scrim" data-scrim hidden></div>`;
   const math = /\$/.test([shallow.scene, shallow.plain, deep.mechanism, deep.origin, deep.limits, ...use.examples.map((e) => e.text), ...use.uses.map((u) => u.text), ...use.with.map((w) => w.sees)].join(''));
   const script = card.figure?.kind === 'demo' ? '<script type="module" src="/figs.js"></script>' : '';
-  return shell({ title: `${card.name} · 思维模型`, description: card.one_line, body, total: index.cards.length, math, script, report: reportUrl(card.id), tab: null });
+  return shell({ title: t.cardTitle(card.name), description: card.one_line, body, total: index.cards.length, math, script, report: reportUrl(card.id), tab: null, lang, path: `/m/${card.id}` });
 }
 
 const DICE = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r=".9"/><circle cx="15" cy="15" r=".9"/><circle cx="15" cy="9" r=".9"/><circle cx="9" cy="15" r=".9"/></svg>';
@@ -217,7 +235,9 @@ const SEARCH_ICON = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" 
 
 // The home page: today's card, then every card by rank with search and filters. `discipline` pre-selects one (/d/<id>);
 // `today` is {id, date} for the first paint, and `figure` today's figure, if the card has one.
-export function homePage(index, list, { discipline = null, today, figure = null, random = false } = {}) {
+export function homePage(index, list, { discipline = null, today, figure = null, random = false, lang = 'zh' } = {}) {
+  const t = T[lang];
+  const at = (path) => href(lang, path);
   const short = Object.fromEntries(index.disciplines.map((d) => [d.id, d.short]));
   const title = Object.fromEntries(index.disciplines.map((d) => [d.id, d.title]));
   const first = list.find((c) => c.id === today.id);
@@ -225,31 +245,32 @@ export function homePage(index, list, { discipline = null, today, figure = null,
   const count = {};
   for (const c of list) count[c.discipline] = (count[c.discipline] ?? 0) + 1;
   const body = `<section class="lead wrap"${random ? ' data-go-random' : ''}>
-<a class="today" href="/m/${escape(first.id)}?day=${today.date}" data-lead>${leadHtml(first, today.date, title[first.discipline], figure ? figureHtml(figure) : '')}</a>
+<a class="today" href="${at(`/m/${escape(first.id)}`)}?day=${today.date}" data-lead>${leadHtml(first, today.date, title[first.discipline], figure ? figureHtml(figure, { lang }) : '', lang)}</a>
 <aside class="sub">
-<div data-mail hidden><h2>每天一张，发到邮箱</h2>
+${lang === 'zh' ? `<div data-mail hidden><h2>每天一张，发到邮箱</h2>
 <form data-subscribe><input name="email" type="email" required maxlength="254" autocomplete="email" aria-label="邮箱" placeholder="you@example.com"><span class="trap" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></span>${subButton()}</form>
 <p class="done" data-subscribe-status role="status" aria-live="polite"></p></div>
 <p class="rss"><a href="/feed.xml">RSS</a> · <a href="/today">今天的题</a></p>
-<nav class="past" data-past aria-label="前几天"></nav>
+` : ''}<nav class="past" data-past aria-label="${t.pastDays}"></nav>
 </aside>
 </section>
 <div class="sieve" id="sieve"><div class="wrap">
-<label class="find">${SEARCH_ICON}<input type="search" aria-label="找一张卡" autocomplete="off" data-q></label>
-<div class="tg" data-tags>${index.disciplines.map((d) => `<button type="button" data-d="${d.id}" data-n="${count[d.id] ?? 0}" aria-pressed="${d.id === discipline}" title="${escape(d.title)}">${escape(d.short)}</button>`).join('')}<i aria-hidden="true"></i>${USES.map(([u, n]) => `<button type="button" data-u="${u}" aria-pressed="false">${n}</button>`).join('')}</div>
+<label class="find">${SEARCH_ICON}<input type="search" aria-label="${t.findLabel}" autocomplete="off" data-q></label>
+<div class="tg" data-tags>${index.disciplines.map((d) => `<button type="button" data-d="${d.id}" data-n="${count[d.id] ?? 0}" aria-pressed="${d.id === discipline}" title="${escape(d.title)}">${escape(d.short)}</button>`).join('')}<i aria-hidden="true"></i>${uses(lang).map(([u, n]) => `<button type="button" data-u="${u}" aria-pressed="false">${n}</button>`).join('')}</div>
 <span class="tot" data-tot></span>
-<a class="rand" href="/random" data-random>${DICE}<span>随机一张</span></a>
+<a class="rand" href="${at('/random')}" data-random>${DICE}<span>${t.random}</span></a>
 </div></div>
-<section class="ranks wrap" data-ranks aria-label="全部卡片">${bands(shown, { short, today: today.id })}</section>
+<section class="ranks wrap" data-ranks aria-label="${t.allCards}">${bands(shown, { short, today: today.id, lang })}</section>
 <script type="application/json" id="cards">${JSON.stringify({ list, short, titles: title, discipline }).replace(/</g, '\\u003c')}</script>`;
-  const what = discipline ? `${title[discipline]} · 思维模型` : '思维模型';
-  return shell({ title: what, description: `${list.length} 张跨学科思维模型卡，按重要程度排列`, body, total: list.length, tab: discipline ? 'find' : 'today' });
+  const what = discipline ? t.disciplineTitle(title[discipline]) : t.homeTitle;
+  return shell({ title: what, description: t.homeDescription(list.length), body, total: list.length, tab: discipline ? 'find' : 'today', lang, path: random ? '/random' : discipline ? `/d/${discipline}` : '/' });
 }
 
 // `disciplines` name each question's discipline in the phone layout (one question a screen, app.js).
-export function reviewPage(total, disciplines = []) {
-  const body = `<section class="plainpage wrap"><h1>复习</h1>
-<div id="review" class="qs"><p class="empty">还没有读过的卡片。</p></div></section>
+export function reviewPage(total, disciplines = [], lang = 'zh') {
+  const t = T[lang];
+  const body = `<section class="plainpage wrap"><h1>${t.review}</h1>
+<div id="review" class="qs"><p class="empty">${t.reviewEmpty}</p></div></section>
 <script type="application/json" id="disciplines">${JSON.stringify(Object.fromEntries(disciplines.map((d) => [d.id, d.title]))).replace(/</g, '\\u003c')}</script>`;
-  return shell({ title: '复习 · 思维模型', description: '复习读过的思维模型', body, total, tab: 'review' });
+  return shell({ title: t.reviewTitle, description: t.reviewDescription, body, total, tab: 'review', lang, path: '/review' });
 }

@@ -1,0 +1,195 @@
+{
+ "id": "five-forces",
+ "name": "Porter's Five Forces",
+ "en": "波特五力",
+ "discipline": "business",
+ "one_line": "How much an industry earns depends on how much five forces each squeeze out of it.",
+ "story": "Carter signs the Airline Deregulation Act; fares fall and airlines struggle to keep their profits",
+ "shallow": {
+  "scene": "Anyone who buys plane tickets has come across discount fares, yet airlines complain year after year that they are losing money. In the US this state of affairs has a clear starting point. In October 1978, President Carter signed the Airline Deregulation Act, and the government stopped deciding who could fly which routes and what tickets cost. New airlines opened one after another, and the old ones raced to cut prices to win passengers.\n\nOnce a plane takes off, an empty seat can never be sold, so airlines would rather sell it cheap than not at all. Passengers can easily buy from a different airline and fly whichever is cheapest, while the airlines still have to pay for planes, fuel and staff.\n\nIn the first quarter of 1982, 11 of the 12 largest US airlines lost money. In May that year Braniff International stopped flying, the first major airline to fall after deregulation. Once fares were set free, passengers got cheap tickets, and what got squeezed out was the airlines' profit.",
+  "plain": "You run a tofu workshop that supplies three supermarket chains in town. A block of tofu sells for 3 yuan, soybeans and labor cost 2 yuan, and you make 1 yuan a block. The three supermarkets take 90% of what you make, but switching to another tofu workshop takes them just a phone call, so at the start-of-year talks they push your price down by 0.3 yuan a block. Only one co-op supplies decent soybeans locally, and when it raises its price, you lose another 0.2 yuan a block. You want to raise your price to make it back, but the three other workshops in town have idle machines and are eager for orders; opening a new workshop takes only tens of thousands of yuan of equipment; and if tofu gets too expensive, shoppers just turn around and buy eggs.\n\nBuyers, suppliers, rivals, new competitors and substitutes: these are the five directions Porter's Five Forces is about. The first two take 0.5 yuan straight out of your 1 yuan; the last three stop you from raising your price to win it back."
+ },
+ "deep": {
+  "mechanism": "### Whoever needs the other more has to give way on price\n\nThe supermarkets can push your price down because switching to another tofu workshop takes them one phone call, while 90% of your output depends on them, and if they leave you have nowhere to sell. The co-op can raise its price because it is the only one with soybeans, and you can't get them anywhere else. In other words, bargaining power depends not on how big the other side is but on which side has more ways out. It's the same in other industries. When customers buy in large amounts, can switch suppliers easily, or could even make the thing themselves, a seller can hardly refuse when they push the price down. When raw materials or talent are in a few hands and a company can't get them anywhere else, suppliers can take more.\n\nHowever big the business, a price cut or a cost rise comes straight out of profit, and profit is only a thin layer of revenue. Suppose an order brings in 100 yuan and costs 80, leaving 20. If the customer pushes the price down by 5 yuan, 15 is left; once the cuts add up to 20, profit is zero; if the raw-material supplier then adds 10 yuan, each order loses 10.\n\n### Rivals, new competitors and substitutes block the road to raising prices\n\nIf you try to raise your price per block to win back the 0.5 yuan, you hit three walls. The three other workshops in town still have to pay off their machines and pay rent while the machines sit idle, so they would rather earn less than turn down an order; raise your price, and the supermarkets move their orders to them. Even if your rivals don't grab orders, as soon as tofu looks profitable, someone will spend tens of thousands of yuan to open a new workshop, so you have to keep your price at a level where outsiders think it's not worth coming in. Eggs put a ceiling on the price: once tofu costs more than a certain amount, shoppers buy eggs instead.\n\nIn other industries it works the same way. When products differ little, idle equipment loses money, and leaving the business is costly, rivals like to cut prices. When money, licenses and sales channels are easy to get, new competitors will come. When something else can do the same job, it caps the price; for example, video calls have replaced some business travel, so plane tickets can't go up very far.\n\n### One strongest force is enough to make a whole industry hard to profit from\n\nYou can't give the five forces scores and take an average. Suppose the other four forces on the tofu workshop are all weak; as long as the three supermarkets still take 90% of its output, their price cuts year after year are enough to squeeze its profit thin. Whether the five forces push prices down, push costs up, or force more investment, it all comes down to one thing: for every hundred yuan put into this industry, how many yuan come back, year after year.",
+  "origin": "Michael Porter, a professor at Harvard Business School, set out the five competitive forces in the *Harvard Business Review* in 1979 and developed them in *Competitive Strategy* in 1980. The analysis builds on industrial organization economics, which studies how the structure of a market relates to profit. It rests on industry cases, with no single experiment behind it; the long squeeze on airline profits is an often-cited example.",
+  "limits": "Five forces analysis works best for industries with clear boundaries that change little over a few years, such as cement, testing and inspection, and airlines. When a platform serves several kinds of customers, you have to find the buyers, suppliers and substitutes for each kind of deal separately; crammed into one chart, they get mixed up. When technology and rules are rewriting an industry, the chart soon goes out of date. An industry being profitable doesn't mean a particular company is well run, still less that its stock is a good buy right now. Buying an industry's stocks because the industry looks good is not a safe bet."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "An online shop has plenty of orders but thin profits: buyers compare prices at a click, and there are only a few platforms and delivery companies, so both ends are bargaining down the profit on each order."
+   },
+   {
+    "use": "predict",
+    "text": "When an industry is very profitable and anyone can get the licenses and sales channels, you can predict that within a few years new competitors will pour in and pull prices down."
+   },
+   {
+    "use": "act",
+    "text": "Before you bet on an industry, first find the strongest of its five forces; if it can't be held in check, you'll struggle to make money even once you're in."
+   },
+   {
+    "use": "explore",
+    "text": "Someone running a car wash who asks what car owners do instead of coming often finds that the rival is the self-service car wash machine in their apartment complex, not the shop next door."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "More PCs sold, profits flow to chips and the OS",
+    "text": "In 1981 IBM launched its personal computer in the US, with an Intel processor and a Microsoft operating system. Makers of compatible PCs then came in. The sellers of whole machines competed with each other, but all of them depended on these two companies for key parts. More computers were sold, but the companies assembling them did not keep more profit because of it."
+   },
+   {
+    "field": "Investing",
+    "title": "Shipping costs keep distant rivals out",
+    "text": "You are looking into a cement plant. Cement is heavy and sells for a relatively low price, so distant producers find it hard to compete on price once they've shipped it in. But if several local plants expand at the same time while demand from building sites doesn't grow, the idle capacity will push them to cut prices to win orders."
+   },
+   {
+    "field": "Careers",
+    "title": "Plenty of clients, but prices won't rise",
+    "text": "You take orders designing posters for online shops. Clients can ask several people for quotes at once, new designers can easily get into the work, and ready-made templates can stand in for simple designs. However many orders you get, it's hard to raise your price."
+   }
+  ],
+  "ask": [
+   "Which product, region and customer group am I analyzing, and do they face the same set of competitors?",
+   "What ways out do the buyers and the suppliers each have, and who can force whom to accept a worse price?",
+   "Once the industry's profits are high, what can keep new entrants out, and what other ways do customers have to get the same job done?"
+  ],
+  "with": [
+   {
+    "id": "moat",
+    "sees": "You are looking at the stock of a regional airline. The five forces look at the industry: fares are easy for everyone to compare, passengers can switch flights at any time, plane and fuel suppliers are few, and profits have always been squeezed, so the verdict is to stay away. A moat asks about this one company: if it holds most of the takeoff and landing slots at certain airports, so other airlines can't get in, it may earn more than its rivals. When the industry as a whole is poor, first look for whether this company has a lasting advantage outside the five forces; if you can't find one, follow the five forces and stay away."
+   },
+   {
+    "id": "substitutes-complements",
+    "sees": "You want to open in-person coding classes for children in a city. The five forces remind you that online courses and parents teaching their own kids are substitutes, so fees can't go up. Complements show the other side: as tablets spread and schools start coding classes, more children will want to learn. Set the price by the five forces; to decide whether to go in at all, look at both."
+   },
+   {
+    "id": "batna",
+    "sees": "You are a small supplier with only one big customer. Porter's Five Forces tells you that in this position the customer has the power, and you should go and find a second customer early. BATNA, your best alternative if the deal falls through, looks at next week's talks: if they fail, what do you have in hand? The first decides how you set yourself up for the long run; the second sets your bottom line at the table."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You run a company that makes delivery-route software. Several big customers have formed a joint buying group and can easily switch to software with similar features. You and your rivals all rely on the same map service provider, which is hard to replace, and it has just raised its charge per request. Customer usage and other costs haven't changed.",
+    "question": "At the next contract renewal, what happens to the company's profit per order?",
+    "explain": "The customers have a way out, so they can push prices down; the map provider is hard to replace, so it can push its price up. Revenue is pushed down and costs are pushed up, squeezing the profit on each order from both ends.",
+    "options": [
+     {
+      "text": "Customers can push prices down harder and the map provider has raised its price, so profit per order narrows.",
+      "correct": true,
+      "feedback": "The customers have a way out and the map provider is hard to replace, so revenue and costs are squeezed at the same time."
+     },
+     {
+      "text": "Customers' orders are concentrated, so the company can raise its profit through the scale of their buying.",
+      "correct": false,
+      "feedback": "What is concentrated is the customers' buying power. The map charge still rises with the number of requests, and the company's other costs haven't fallen."
+     },
+     {
+      "text": "Everyone uses the same map service, so competitive positions haven't changed and profit can stay at its old level.",
+      "correct": false,
+      "feedback": "The rivals all hand more of their profit to the map provider together. Their positions relative to each other don't change, but profit still gets thinner."
+     },
+     {
+      "text": "All the rivals face the higher map charge, so each of them can pass the new cost on to customers.",
+      "correct": false,
+      "feedback": "Customers can switch software, and the joint buying group has strengthened their power to push prices down, so the higher cost can't be passed on."
+     }
+    ]
+   },
+   {
+    "stem": "You are studying a listed industrial testing company. Demand in its market is steady, new entrants find it very hard to get licensed, and customers who change testing firms have to halt production and get retested. On this basis a friend advises buying: \"This industry makes it easy to keep profits, so the stock is sure to do well in the long run.\" You haven't yet checked the company's finances or its current share price.",
+    "question": "What is this advice still missing?",
+    "explain": "Industry conditions show how much room a company has to keep its profits. Your friend turned \"good industry\" straight into \"buy,\" skipping two judgments: how the company is run, and the price you pay.",
+    "options": [
+     {
+      "text": "Getting in and switching firms are both hard, so the price you pay only matters in the short run; long-term returns are already assured.",
+      "correct": false,
+      "feedback": "If you pay too much, long-term returns can be poor however profitable the company is."
+     },
+     {
+      "text": "Demand in the industry is steady, so as long as the share price moves little, buying is confirmed to be safe.",
+      "correct": false,
+      "feedback": "A share price that moves little doesn't prove the company is well run, nor that the current price is a good deal."
+     },
+     {
+      "text": "The industry conditions support long-term profits, but you still need to check how the company is run and the price you pay before judging the return.",
+      "correct": true,
+      "feedback": "The industry gives room to keep profits; how this company is run and what price you pay still decide the return on the investment."
+     },
+     {
+      "text": "Its rivals all have barriers to entry too, so buying several of them spreads out the risk of paying too much.",
+      "correct": false,
+      "feedback": "Spreading out only reduces the risk of betting on the wrong company. If you overpay for all of them, the loss from paying too much is still there."
+     }
+    ]
+   },
+   {
+    "stem": "You're about to renew your cable TV package in a small town. The town has only one cable company; laying lines costs a lot, so new companies find it hard to come in. Streaming subscriptions have recently become cheaper, and TV boxes have become easier to use. Many households that watch only a few channels have started switching to streaming and canceling cable. The company still wants to raise its yearly fee.",
+    "question": "How much room does the cable company have to raise its price?",
+    "explain": "A substitute doesn't have to come from the same industry; it only has to do the same job. Switching to streaming is the better deal, and that puts a ceiling on the yearly fee. New companies being unable to come in doesn't block this way out.",
+    "options": [
+     {
+      "text": "New companies still can't come in, so this company has plenty of room to raise its yearly fee.",
+      "correct": false,
+      "feedback": "New companies being unable to come in only means there won't be more rivals of the same kind. Users can switch to streaming, and the cost of laying lines can't block that."
+     },
+     {
+      "text": "Streaming meets the need to watch shows more cheaply, which limits the fee the cable company can charge.",
+      "correct": true,
+      "feedback": "What users are buying is something to watch. Switching to streaming is cheaper, so even with no new rival, the price has a ceiling."
+     },
+     {
+      "text": "Users renew one by one and are scattered, so the company still has plenty of room to raise prices.",
+      "correct": false,
+      "feedback": "Scattered users find it hard to bargain together, but they can simply cancel. Whether there is a cheaper alternative matters more than whether they can band together."
+     },
+     {
+      "text": "Streaming belongs to another industry, so the yearly fee mostly follows the prices of similar local packages.",
+      "correct": false,
+      "feedback": "Comparing only with similar packages ignores streaming and overestimates how much users depend on cable TV."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "type": "bar",
+  "title": "Squeezed from both ends, a block earns 0.5 yuan",
+  "caption": "Left per block: the supermarkets take 0.3 yuan, pricier beans 0.2 more. The line is the old 1 yuan; rivals, new workshops and eggs keep you from getting back to it.",
+  "categories": [
+   "At first",
+   "After supermarket cut",
+   "After bean price rise"
+  ],
+  "y": {
+   "label": "Profit per block",
+   "unit": " yuan",
+   "min": 0,
+   "max": 1.2,
+   "step": 0.2
+  },
+  "series": [
+   {
+    "name": "Left per block",
+    "values": [
+     1,
+     0.7,
+     0.5
+    ],
+    "tones": [
+     "ink",
+     "muted",
+     "warn"
+    ]
+   }
+  ],
+  "marks": [
+   {
+    "y": 1,
+    "text": "Can't price back up to here"
+   }
+  ]
+ }
+}

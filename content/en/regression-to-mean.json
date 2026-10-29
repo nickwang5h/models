@@ -1,0 +1,228 @@
+{
+ "id": "regression-to-mean",
+ "name": "Regression to the Mean",
+ "en": "回归均值",
+ "discipline": "math",
+ "one_line": "An unusually good or bad result has luck in it, so the next one usually falls back toward normal.",
+ "story": "In the mid-1960s Kahneman lectures to Israeli Air Force instructors, who believe criticism is what makes cadets improve",
+ "shallow": {
+  "scene": "In the mid-1960s, Daniel Kahneman was teaching flight instructors in the Israeli Air Force, telling them that rewards do more for learning than punishment. A senior instructor pushed back. When a cadet flew a maneuver beautifully, he praised him, and the next attempt was usually worse; when a cadet botched it, he yelled at him, and the next attempt was usually better. Kahneman saw on the spot what was going on. The instructor only spoke up after an unusually good or unusually bad attempt, and either kind of attempt would tend to move back toward the middle next time anyway.",
+  "plain": "You and a dozen or so coworkers play darts every Friday night. Everyone averages around 60 points; some have steady hands, some shaky ones. One night you throw 90, which is 30 points above the group's average.\n\nPart of those 30 points is that you really are better than the others, and part is luck: a few darts happened to land in high-scoring spots. Suppose skill and luck each account for half of how scores vary across the group. Then the extra 30 points are 15 from skill and 15 from luck, and your skill is worth about 75. Next Friday your skill comes with you, but the luck is drawn fresh, so you will most likely throw somewhere around 75.\n\nThis is regression to the mean. When you pick people out because of one extreme result, you also pick out the luck that went into that result. So when you measure them again, their average moves toward their usual level. The instructor only spoke up when a cadet flew at his best or worst, so he too was picking exactly that kind of attempt."
+ },
+ "deep": {
+  "mechanism": "### Pick an extreme result and you pick its luck along with it\n\nA single result is made of two layers: a steady level of skill, plus that time's luck. If you pick the top scorers from a group, you get some who are truly skilled and some who just got lucky; picking the bottom scorers works the other way round. Next time the skill is still there, but the luck is drawn again. So when you test again, the high group falls back and the low group comes up, both toward the group's usual level.\n\n### The more alike two results are, the less they fall back\n\nHow far they move back depends on the correlation coefficient $\\rho$ between the two results. The closer $\\rho$ is to 1, the more the two rankings agree; at $\\rho$ of 0, the two have nothing to do with each other. Call the whole group's average $m$ and this batch's average this time $x$. If the two results have the same spread and are roughly related by a straight line, this batch's average next time is about\n\n$$m+\\rho(x-m)$$\n\nIn other words, of the amount by which they beat the average this time, only $\\rho$ times as much is left next time. The only thing the two results share is skill; each draws its own luck. So $\\rho$ is exactly the share of the variation in results that comes from skill. In the darts example $\\rho=0.5$, so 15 of the extra 30 points remain, which gives 75.\n\nTry other numbers. The whole group averages 100, and one batch averages 120 this time, 20 above. With $\\rho$ at 0.5, $100+0.5\\times20=110$; with $\\rho$ at 0.9, about 118; with $\\rho$ at 0, it goes back to 100, and none of the extra 20 is left. These are all averages for the whole batch; within it, each person may come out higher or lower.\n\n### It works looking backward too; the order in time doesn't matter\n\nPick people by their second result and look back at their first, and you get the same thing. In Galton's data, the parents of tall children were on average shorter than their children; the parents of short children were on average taller. This time the picking is done by the children's height, so it takes in the children's share of luck as well. That luck is not in the parents, so the parents are on average closer to the middle.",
+  "origin": "In 1885 Francis Galton reported on the height records he had collected from more than two hundred families. He multiplied the mother's height by 1.08 to convert it to a male height, then averaged it with the father's to get the parents' height. In families where the parents were very tall, the grown children were on average a bit shorter than the parents; where the parents were very short, the children were on average a bit taller. His 1886 paper was titled \"Regression towards Mediocrity in Hereditary Stature.\"",
+  "limits": "Regression to the mean shows up most in numbers that have luck mixed in and are measured again and again: monthly sales, readings from a health checkup, crop yields from a field. If the process has been changed, or someone has practiced for six months, the steady level itself has moved, and the old average is no longer where things should fall back to. Regression is not payback either. Next time, luck only goes back to ordinary; it does not swing the other way to settle a debt. In 1913 the roulette wheel at the Monte Carlo casino came up black twenty-six times in a row. More and more people bet on red, but every spin was a new one."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "A new shop takes in the most money in its first month and less in the second. That doesn't necessarily mean word of mouth got worse: the opening month included friends and family coming to support it and one-off group-buying deals."
+   },
+   {
+    "use": "design",
+    "text": "A top-salesperson award based on a single quarter mostly rewards luck. Judge on the whole year instead, and some of the chance part averages out."
+   },
+   {
+    "use": "act",
+    "text": "When someone shows you one dazzling result, look up their earlier record before you make an offer."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Farming",
+    "title": "The best fields don't stay on top",
+    "text": "You manage the test fields in your village. You pick the five plots with the highest yield per mu last year (a mu is a Chinese unit of land, about a sixth of an acre), and this year they grow the same variety with the same fertilizer. At harvest, these five plots' average yield is noticeably lower than last year's, though still above the village average. Last year's worst five plots have, on average, gone up."
+   },
+   {
+    "field": "Sports",
+    "title": "Should you buy the Golden Boot?",
+    "text": "You are a scout for a soccer team. Last season's league top scorer, the Golden Boot winner, comes with a very high asking price. You dig up his goal counts for the three seasons before that: all in the middle of the scoring table. The number of goals you tell the club to expect falls between his top season and the three before it, closer to the three before."
+   },
+   {
+    "field": "Business",
+    "title": "Don't restock a hit at hit levels",
+    "text": "You handle restocking for an online store. Of last month's ten best-selling products, three sold several times their usual amount because an influencer happened to recommend them. You stock up based on last month's sales, and by the end of the month these ten products have sold, on average, only 60% of what you stocked, leaving a pile in the warehouse. The next month you split the sales figures apart: you count the part the influencer brought in separately, and stock the rest according to normal sales."
+   }
+  ],
+  "ask": [
+   "Did I notice this extreme result precisely because it was extreme?",
+   "If the same thing is measured again, which part will still be there, and which part gets drawn again?"
+  ],
+  "with": [
+   {
+    "id": "matthew-effect",
+    "sees": "A foundation is dividing next year's funding among its labs. For the lab that produced the most this year, regression to the mean expects next year to fall back, so it shouldn't get a full increase based on this year's peak. The Matthew effect sees that being ahead brings money, people and reputation in its own right, so the lab may really be stronger next year. First pull out the lab's output for the past few years. If it has always been near the front, its lead builds on itself, and extra funding will be amplified; if only this year stands out, discount this year's figure before working anything out."
+   },
+   {
+    "id": "luck-and-skill",
+    "sees": "Topping the rankings in a dice-rolling game and topping the rankings in a marathon lead to very different falls next time. Luck and skill measures how much of an activity is luck; regression to the mean then uses that to work out how much of this lead will be taken back."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "The city's youth swim team picks the fastest eight swimmers from one test meet's 50-meter freestyle times. On average they were 2 seconds faster than all the swimmers taken together. Swimmers differ in skill, and each one's performance also goes up and down from race to race. Two weeks later, these eight swim again.",
+    "question": "This time, how will the eight swimmers' average time compare with the whole group's?",
+    "explain": "Some of the eight are truly skilled, and some just happened to swim well that day. Two weeks later the skill is still there, but the luck is drawn again, so they are still ahead, only by less than last time.",
+    "options": [
+     {
+      "text": "Still ahead, but by less than this time.",
+      "correct": true,
+      "feedback": "Skill keeps part of the lead; the part that came from luck is drawn again. The average lead shrinks, but it doesn't disappear."
+     },
+     {
+      "text": "Still ahead by about 2 seconds, since the same eight swimmers haven't changed in ability.",
+      "correct": false,
+      "feedback": "This treats the whole result as ability. The chance part won't show up the same way two weeks later, so the lead will shrink."
+     },
+     {
+      "text": "Level with the whole group: this time's lead came entirely from how they swam that day.",
+      "correct": false,
+      "feedback": "This counts the whole lead as luck. Some of the eight really are more skilled, and that part is still there two weeks later."
+     },
+     {
+      "text": "Behind the whole group: their luck has run out, and they have to give back the advantage they got.",
+      "correct": false,
+      "feedback": "Luck keeps no accounts. Next time's performance is drawn fresh; it doesn't lean toward the bad side to make up for last time."
+     }
+    ]
+   },
+   {
+    "stem": "The city installs speed cameras at the 12 intersections that had the most accidents last year. A year later, accidents at these 12 intersections are down on average. Someone writes a report saying the cameras work. You want to know whether that conclusion holds up.",
+    "question": "To judge whether the cameras really help, what comparison still needs to be added?",
+    "explain": "These 12 intersections were picked for last year's accident counts, so some of the drop would have happened without cameras. You need to compare them with intersections that had just as many accidents but got no cameras. The difference between the two is what the cameras did.",
+    "options": [
+     {
+      "text": "Ask the traffic police whether drivers have obeyed the rules better since the cameras went in.",
+      "correct": false,
+      "feedback": "The police's impressions can't tell you how many fewer accidents there were, and they can't separate the cameras' effect from the accident count falling back on its own."
+     },
+     {
+      "text": "How accidents changed over the same period at intersections that also had the most accidents last year but got no cameras.",
+      "correct": true,
+      "feedback": "Both groups start equally extreme, so the natural fall-back is the same size for both. The extra drop where cameras went in, beyond where they didn't, is what counts as the cameras' effect."
+     },
+     {
+      "text": "Watch these 12 intersections for another year to see whether accidents keep falling, and by how much.",
+      "correct": false,
+      "feedback": "Another year still only covers intersections with cameras. It can't show how much they would have dropped without them."
+     },
+     {
+      "text": "The average change in accidents over the same period at all the city's other intersections.",
+      "correct": false,
+      "feedback": "The other intersections weren't picked for having the most accidents. They start from a different place than these 12, so the size of the fall-back can't be compared."
+     }
+    ]
+   },
+   {
+    "stem": "In a citywide exam, the advanced class averages 80 and the regular class averages 55. One student in the advanced class scores 65, and one student in the regular class also scores 65. In both classes students differ in ability, and each one's performance also goes up and down from test to test.",
+    "question": "On the next citywide exam of the same difficulty, what will each of these two students most likely score?",
+    "explain": "A single score holds both ability and that time's luck. In the advanced class, 65 is on the low side, which likely includes some bad luck, so next time it goes up. In the regular class, 65 is on the high side, so next time it goes down. Each moves toward their own class's usual level.",
+    "options": [
+     {
+      "text": "Both will most likely go up next time, since a low score is always followed by improvement.",
+      "correct": false,
+      "feedback": "The regular-class student's 65 is above their class average, so the fall-back for them is downward."
+     },
+     {
+      "text": "Both will most likely stay around 65, since the same score means the same ability.",
+      "correct": false,
+      "feedback": "The same score doesn't mean the same ability. The two classes' usual levels are far apart, so the same 65 means different luck in each class."
+     },
+     {
+      "text": "The advanced-class student keeps sliding, and the regular-class student goes up.",
+      "correct": false,
+      "feedback": "That's exactly backward. The advanced-class student's 65 is below their class average, so it will most likely go up; the regular-class student's is above theirs, so it goes down."
+     },
+     {
+      "text": "The advanced-class student will most likely score above 65, and the regular-class student below 65.",
+      "correct": true,
+      "feedback": "Each moves toward their own class's usual level: the advanced-class student is on the low side, so up; the regular-class student is on the high side, so down."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "The more luck counts, the more the picks fall back",
+  "caption": "Say 1,000 people throw on two nights. Average 60, skill varies. Pick those with 85+ the first night and see their next. Drag luck to 0 or 100 to see the lines part.",
+  "x": {
+   "label": "People seen"
+  },
+  "y": {
+   "label": "Average points",
+   "min": 40,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "Share of luck",
+    "min": 0,
+    "max": 100,
+    "step": 10,
+    "value": 50,
+    "unit": "%"
+   }
+  ],
+  "model": {
+   "steps": 1000,
+   "init": {
+    "z": 0,
+    "u": 0,
+    "w": 0,
+    "c": 0,
+    "a": 0,
+    "b": 0
+   },
+   "next": {
+    "z": "randn()",
+    "u": "randn()",
+    "w": "randn()",
+    "c": "c+((60+15*(sqrt(1-p/100)*z+sqrt(p/100)*u))>=85)",
+    "a": "a+((60+15*(sqrt(1-p/100)*z+sqrt(p/100)*u))>=85)*(60+15*(sqrt(1-p/100)*z+sqrt(p/100)*u))",
+    "b": "b+((60+15*(sqrt(1-p/100)*z+sqrt(p/100)*u))>=85)*(60+15*(sqrt(1-p/100)*z+sqrt(p/100)*w))"
+   }
+  },
+  "series": [
+   {
+    "name": "Picks, that night",
+    "expr": "if(c>0, a/max(c,1), 85)",
+    "tone": "ink"
+   },
+   {
+    "name": "Same picks, next night",
+    "expr": "if(c>0, b/max(c,1), 85)",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "y": 60,
+    "text": "Group average 60"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Picks, that night",
+    "expr": "if(c>0, a/max(c,1), 85)",
+    "unit": " pts",
+    "digits": 0
+   },
+   {
+    "label": "Same picks, next night",
+    "expr": "if(c>0, b/max(c,1), 85)",
+    "unit": " pts",
+    "digits": 0
+   },
+   {
+    "label": "People picked",
+    "expr": "c",
+    "unit": " people",
+    "digits": 0
+   }
+  ]
+ }
+}

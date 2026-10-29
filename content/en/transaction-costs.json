@@ -1,0 +1,207 @@
+{
+ "id": "transaction-costs",
+ "name": "Transaction Costs",
+ "en": "交易成本",
+ "discipline": "economics",
+ "one_line": "Finding someone, haggling and making sure they deliver all cost money that no price tag shows.",
+ "story": "On a Cassel travelling scholarship to the US in 1931–32, Coase visits Ford and General Motors and asks why firms exist; he gives a first version in Dundee that October and publishes \"The Nature of the Firm\" in 1937",
+ "shallow": {
+  "scene": "Most people who have renovated a home have agonized over this: hire one contractor to do the whole job, or find the electrician and plumber, the tiler and the carpenter yourself? Finding them yourself, each person's pay is a bit cheaper, but you have to ask each one for a price, explain what you want, schedule who comes in first, and when something has to be redone, chase each of them in turn. The whole-job contractor costs a good deal more, and he handles all this hassle for you.\n\nIn 1931 Ronald Coase, then twenty, went from the London School of Economics to the United States on a travelling scholarship and toured the factories of Ford and General Motors. He was puzzling over this very choice, only scaled up to a big company: parts could clearly be bought on the market, so why did these companies insist on hiring huge numbers of people to make them in-house, relying on orders from above rather than on haggling?\n\nIn October 1932, in a lecture in Dundee, Scotland, he gave his answer. Buying on the market costs money: finding someone, haggling over the price, drawing up a contract. When that costs more than simply giving orders inside the company, the work is brought into the company and done in-house.",
+  "plain": "You spot a secondhand projector online from another city, priced at 1,800 yuan. You have to check the seller's reviews, ask how many hours the bulb has been used, arrange for someone to inspect it, and if something is wrong, go back and forth arguing about it; suppose all this time and effort comes to 300 yuan. That 300 yuan is a transaction cost. It isn't on the price tag, but every cent of it falls on you, so the projector online really costs 2,100 yuan. A local shop sells the same projector for 2,000 yuan, with a warranty and nothing to ask about: the price tag is 200 yuan higher, but it actually works out 100 yuan cheaper."
+ },
+ "deep": {
+  "mechanism": "### Three bills beyond the price tag\n\nTransaction costs come in three bills: finding someone to deal with takes the effort of searching, settling the terms takes time spent haggling, and making sure the other side does what was agreed takes the effort of checking and holding them to account. The projector's 300 yuan is exactly these three: checking reviews is finding someone, asking how long the bulb has been used is settling the terms, and inspecting it and arguing is making sure they deliver. The materials and labor that go into making the thing itself are production costs and are not in these three bills.\n\n### The more you use one contract, the less each order carries\n\nSuppose you outsource a job at a quoted 1,000 yuan an order. Finding someone, comparing prices and drafting the terms costs 600 yuan in all, and you pay that only once. Do just one order, and the whole 600 yuan lands on that order; use the same contract 12 times, and each order carries only 50 yuan; use it 20 times, and each carries 30. Let $C$ be the total cost of each outsourced order and $n$ the number of times the same contract is used:\n\n$$C = 1000 + \\frac{600}{n}$$\n\nThe more times, the thinner the 600 yuan is spread, and the closer each outsourced order gets to the quoted 1,000 yuan itself.\n\n### A company saves the haggling but not the managing\n\nPeople you employ do what they're told, so handing out a new job doesn't mean finding someone, haggling over a price and signing a contract all over again. That's how a company saves on transaction costs. But the bigger the company, the more the bosses can't keep an eye on everything: messages get passed down layer after layer, people pass the buck, and coordinating inside gets more and more expensive, so a company doesn't keep growing without limit. Suppose the company did that same job itself: materials and labor come to 1,100 yuan, and managers assigning the task and checking the result cost another 100, so each order costs 1,200 yuan.\n\n### When outsourcing gets cheaper, the company's boundary moves in\n\nFor a single order, outsourcing costs 1,600 yuan, more than the 1,200 of doing it yourself, so the job stays in the company. Use the same contract 3 times, and each order carries 200 yuan, so outsourcing also comes to 1,200 and the two break even; use it once more, and outsourcing is cheaper than doing it yourself. Once standard contracts and public reviews push the cost of finding someone and negotiating a contract down to 100 yuan, outsourcing costs only 1,100 yuan even for a single order, and the job goes outside.",
+  "origin": "In 1937 Coase wrote up the answer from his Dundee lecture as \"The Nature of the Firm\": using the market costs money, because finding out prices, negotiating and making contracts all have costs; when those costs are higher than the cost of arranging things inside the company, the work is brought into the company. His 1960 paper \"The Problem of Social Cost\" went on to point out that if bargaining cost nothing, the two sides could reach the same result no matter who held the rights; it is precisely because bargaining has costs that who holds the rights affects the result. Oliver Williamson later studied contracts and the boundaries of firms, and won the Nobel Prize in economics in 2009.",
+  "limits": "The sums are easiest to do when you can put a number on both sides of \"make it yourself or buy it outside\": finding someone, negotiating, checking the work and coordinating inside. When you can't put a number on them, any outcome can be put down to transaction costs after the fact, and the explanation becomes empty. If, when buying up a supplier, you talk only about the contract costs saved on each order and never check the extra coordination and supervision costs after the merger, transaction costs have become a way of endorsing a decision already made."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "A renovation company keeps its own electricians and plumbers because there's plumbing and wiring work every month. Finding someone, explaining what's needed and chasing redos every time would add up to more than keeping one worker on staff."
+   },
+   {
+    "use": "act",
+    "text": "When you get an outsourcing quote, turn what it doesn't mention, finding someone, checking the work and arguing over problems, into money and add it on, then compare that total with doing it yourself."
+   },
+   {
+    "use": "design",
+    "text": "Set expense rules so that only one in ten small receipts is spot-checked, because the labor of checking every one costs more than the small amount of false claims it would catch."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Personal life",
+    "title": "A wedding company takes on the whole chain",
+    "text": "You're planning a wedding. The hotel, the flowers, the photographer and the host all have to be contacted separately, each with its own price to negotiate and its own progress to chase, and in the week before the wedding you still have to confirm with each one. You switch to a wedding company instead, whose fee is a good deal higher than the separate quotes added together. You settle accounts only with it, and if something goes wrong on the day, you only have one company to go to."
+   },
+   {
+    "field": "Technology",
+    "title": "A license saves the negotiating",
+    "text": "Your team wants to use an open-source library in its product. The license terms are public and standard, so the legal team checks the type of license and approves it, with no need to contact the authors, get a quote or sign a contract. With a closed-source component doing the same job, you'd first have to find a salesperson, get a quote and negotiate what the license covers. This time the team chooses the open-source library."
+   },
+   {
+    "field": "Farming",
+    "title": "The co-op steps in",
+    "text": "You run your village's vegetable cooperative. Before, dozens of farming households each found their own buyers, each asked for prices, explained their quality and waited for payment, and when payment was late, each chased it on their own. Since the co-op was set up, the supermarket signs a single supply contract with the co-op, inspects the produce in one place, and payment is chased in one place too."
+   }
+  ],
+  "ask": [
+   "Beyond the quoted price, how much money and how many days will these three bills cost me: finding someone, settling terms and making sure they deliver?",
+   "How many times a year does this happen? If it's often enough, can I negotiate a long-term agreement to spread the cost of negotiating thin?",
+   "If I do it myself, how much staff time will assigning the work and checking the results take? Look up the hours logged on the most recent project instead of guessing from memory."
+  ],
+  "with": [
+   {
+    "id": "comparative-advantage",
+    "sees": "You take on translation jobs, and you're also the more skilled one at layout. By comparative advantage, you should outsource the layout to a layout designer and keep your time for translating. But if each time you find someone, explain the format and check the redone work, it takes about as much time as doing the layout yourself, then outsourcing saves you nothing. Before outsourcing, estimate how many hours one complete round of working together takes you: if it's less than doing the layout yourself, outsource it; if it's about the same, do it yourself."
+   },
+   {
+    "id": "switching-costs",
+    "sees": "You sign a three-year framework agreement with a supplier, so you no longer negotiate each order, and your transaction costs fall. But over those three years your processes and systems all get built around it, and when it raises prices in the third year, you can't switch even if you want to. The transaction-cost sums tell you to sign for longer; the switching-cost sums tell you not to lock yourself in. A way to get both is to write into the agreement that you can leave when it ends, and to keep the contact details of a backup supplier."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "In one city, landlords and tenants used to draw up their own lease terms: how the deposit is returned, who pays for repairs, what happens if the tenant leaves early. Every lease had to be negotiated clause by clause. Now the city has introduced a standard lease, with the common clauses fixed, and the two sides only fill in the rent, the start and end dates and the deposit. Rents and the homes themselves haven't changed.",
+    "question": "What does the standard lease most directly reduce?",
+    "explain": "The rent and the homes haven't changed. What has changed is what both sides spend on drawing up terms and haggling clause by clause for every lease, and with the clauses fixed, that cost falls sharply.",
+    "options": [
+     {
+      "text": "What the landlord spends on materials and workers for routine repairs.",
+      "correct": false,
+      "feedback": "Who pays for repairs is one clause in the lease, but how much material and labor the repairs themselves take is beyond what a standard lease controls."
+     },
+     {
+      "text": "The time and effort both sides spend drawing up terms and negotiating clause by clause for every lease.",
+      "correct": true,
+      "feedback": "With the common clauses fixed, both sides just fill in a few numbers, and the cost of settling terms falls sharply."
+     },
+     {
+      "text": "The rent the tenant pays the landlord each month.",
+      "correct": false,
+      "feedback": "The question says rents haven't changed. The standard lease changes how the contract is signed, not the rent."
+     },
+     {
+      "text": "What the landlord originally paid to buy the home.",
+      "correct": false,
+      "feedback": "Buying the home happened before the renting, and a lease form can't change it."
+     }
+    ]
+   },
+   {
+    "stem": "You run an online shop selling phone cases and need packaging boxes for each batch. Ordering from a local box factory: you order online, the sizes are standard, and on delivery you spot-check a few. The effort of finding the factory and checking is small enough to ignore, and each box costs 1.2 yuan. Buying equipment and making them yourself: the materials and labor for each box come to 1.7 yuan, and the effort of arranging and checking is just as small. The boxes are the same quality.",
+    "question": "What does this choice mainly depend on?",
+    "explain": "Finding, negotiating, checking and coordinating are small enough to ignore whether you order or make them, so transaction costs cancel out between the two, and the only difference left is the cost of making each box.",
+    "options": [
+     {
+      "text": "The factory's price includes its profit, which counts as an extra expense, so you should make them yourself.",
+      "correct": false,
+      "feedback": "The factory's profit is part of the product's price, not a cost of finding someone, settling terms or making sure they deliver."
+     },
+     {
+      "text": "Ordering takes extra effort to negotiate and supervise, so you should make them yourself.",
+      "correct": false,
+      "feedback": "The question says the effort of finding and checking when ordering is small enough to ignore, so there's no such extra cost."
+     },
+     {
+      "text": "Making them yourself avoids the risk of an outside contract, so you should make them yourself.",
+      "correct": false,
+      "feedback": "Ordering means standard sizes and spot-check inspection, leaving no contract risk to guard against, so making them yourself saves nothing there."
+     },
+     {
+      "text": "The cost of making each box; finding and negotiating are small either way.",
+      "correct": true,
+      "feedback": "Transaction costs are close to zero on both sides, so the difference comes down to the cost of making each box: 1.2 yuan against 1.7."
+     }
+    ]
+   },
+   {
+    "stem": "An art auction house has these rules: bidders must register their identity in advance and pay a deposit; when the hammer falls, the buyer pays in full on the spot, and the auction house hands over the item only after receiving payment; if a buyer backs out, the deposit is not returned. The bidders in the room don't know each other.",
+    "question": "What do these rules mainly save?",
+    "explain": "For strangers to close a deal, each first has to find out whether the other can pay and whether they'll back out. Registration, deposits and payment before handover get all this done in advance, so when the deal is closed, nobody has to check up on or keep watch over the other side.",
+    "options": [
+     {
+      "text": "The extra amount buyers are willing to bid for an item.",
+      "correct": false,
+      "feedback": "The rules govern who can bid and how the handover works after a sale; they don't directly affect how high the bids go."
+     },
+     {
+      "text": "What the auction house spends on setting up the room, the lighting and hiring staff.",
+      "correct": false,
+      "feedback": "The room and the lighting have nothing to do with who the bidders are or whether they pay."
+     },
+     {
+      "text": "What buyers and sellers spend on checking that the other side is reliable and making sure they deliver.",
+      "correct": true,
+      "feedback": "Deposits and payment before handover let people who don't know each other close a deal with confidence, saving the checking of each person and the chasing afterward."
+     },
+     {
+      "text": "The cost of making the items themselves.",
+      "correct": false,
+      "feedback": "The items were finished long ago. These rules govern how the sale happens and can't change how the items were made."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Reuse a contract and its setup cost spreads thin",
+  "caption": "Outsourced = 1,000 quote + setup ÷ uses; yourself, 1,200 yuan. Look right for more uses, or drag setup cost down as standard contracts do: outsourcing drops.",
+  "x": {
+   "label": "Uses of the same contract",
+   "min": 1,
+   "max": 20
+  },
+  "y": {
+   "label": "Total cost per order",
+   "unit": " yuan",
+   "min": 800,
+   "max": 2400
+  },
+  "params": [
+   {
+    "id": "c",
+    "label": "Setup cost",
+    "min": 0,
+    "max": 1200,
+    "step": 100,
+    "value": 600,
+    "unit": " yuan"
+   }
+  ],
+  "series": [
+   {
+    "name": "Outsourced",
+    "expr": "1000 + c/x",
+    "tone": "accent"
+   },
+   {
+    "name": "Do it yourself",
+    "expr": "1200",
+    "tone": "ink"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Outsource once",
+    "expr": "1000 + c",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "Each, 12 uses",
+    "expr": "1000 + c/12",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "Do it yourself",
+    "expr": "1200",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

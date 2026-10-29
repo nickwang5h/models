@@ -1,0 +1,218 @@
+{
+ "id": "arms-race",
+ "name": "Arms Race",
+ "en": "军备竞赛",
+ "discipline": "games",
+ "one_line": "You add, I add, nobody gets ahead, and both our costs go up.",
+ "story": "Nixon and Brezhnev sign the Strategic Arms Limitation agreement and the Anti-Ballistic Missile Treaty in Moscow",
+ "shallow": {
+  "scene": "At a concert, someone in the front row stands up, and the row behind has to stand too to see the stage. Row after row stands, until the whole crowd is on its feet. Nobody sees any better than when they were sitting; they're just more tired.\n\nIn the 1960s, the United States and the Soviet Union stood up row by row in the same way. Both sides kept building more nuclear missiles, and both were developing missile defense, weapons that shoot down incoming missiles in midair. When one side built missile defense, the other side needed to make sure its own missiles could still get through, and the most direct way was to build more missiles, more than the other side could stop. Once the other side had more missiles, the first side had to expand its missile defense again. Both kept building more and more, and neither escaped the other's nuclear weapons because of it.\n\nOn May 26, 1972, Nixon and Brezhnev signed two documents in Moscow. One limited both sides' missile defense systems to a very small size; the other froze both sides' missile launchers at the numbers they had then. With missile defense limited, neither side needed to build more missiles to break through the other's defenses. And because both sides stopped on the same day, neither had to fear losing out by stopping first. It's like getting everyone at a concert to sit down: the whole crowd has to sit at once.",
+  "plain": "Your tutoring center competes with the one next door for the same students. You raise class hours from four to six a week, and you get more students. Three weeks later the one next door also goes to six hours, and the students split back the way they were. That's an arms race: every step has a reason, because if you don't add hours you lose students. After this round, each center pays its teachers for two more hours a week, and neither has gained a single student."
+ },
+ "deep": {
+  "mechanism": "### Every step pays, and together they burn half the fees\n\nPut the tutoring story into numbers that are easy to work with. Suppose the parents in a neighborhood pay 1 million yuan in fees a year altogether, and the two centers split it in proportion to what each spends on class hours.\n\nAt first each puts in 100,000 and gets 500,000, leaving each with 400,000 net. You go up to 150,000 and get 600,000, a net 450,000. So your rival follows to 150,000, the two again get 500,000 each, and each is left with 350,000 net.\n\nRaising round after round like this, they stop only when each puts in 250,000, because raising any more loses money. If you put in another 10,000, your fees only go from 500,000 to about 510,000, less than 10,000 more. At this point each center is left with 250,000 net, and 500,000 of the 1 million in fees has gone on class hours.\n\nThe more centers compete, the more gets spent. When $n$ centers compete for this 1 million, each puts in $\\frac{100(n-1)}{n^2}$ × 10,000 yuan, and together they're left with $\\frac{100}{n}$ × 10,000 yuan. In other words, two centers competing leave half. With four, each puts in about 190,000, and together only 250,000 is left.\n\n### When rivals improve, old skills lose their value\n\nSpecies raise the stakes on each other this way too. When foxes run faster, the rabbits that survive are the ones better at escaping; when rabbits get better at escaping, the foxes that remain are the ones better at chasing. If a species could adapt to its surroundings once and for all, the longer it existed the safer it should be. But its rivals are improving too, and yesterday's skills aren't enough today. That is exactly what Leigh Van Valen saw in the fossil record in 1973: however long a group had existed, its risk of extinction did not go down. He called this the Red Queen hypothesis.\n\n### A race downward, pulled back by fines\n\nAn arms race can also run downward, competing over whose standards are lower; this is called a race to the bottom. Two factories compete for the same buyers. If both keep to standards, each earns 50,000. If one quietly skips inspections and cuts prices to win orders, it earns 70,000 and the other is left with only 20,000. If both skip them, each earns 40,000. Whatever the rival does, lowering standards earns 20,000 more (50,000 becomes 70,000, or 20,000 becomes 40,000), so both lower them. Set the fine at 30,000, and lowering standards earns 10,000 less instead, so keeping to standards pays. With a fine of only 10,000, lowering them still earns 10,000 more, and the race goes on.",
+  "origin": "The arms race has no single inventor. In the 1930s Lewis Fry Richardson used equations to describe how countries build up their forces when they see a rival doing so, and this work was collected in 1960 as *Arms and Insecurity*. The Red Queen hypothesis comes from Van Valen's 1973 paper on evolution. It is named after the Red Queen in *Through the Looking-Glass*, who has to run as hard as she can to stay in the same place. The race to the bottom comes from criticism of US states competing to loosen their corporate laws; William Cary wrote the classic account in 1974.",
+  "limits": "For things handed out by relative position, like rankings, quotas and fixed prize money, whether spending is worth it depends on whether rivals follow. Repairs as equipment ages, or adjustments when the weather changes, have no rival responding, so they aren't arms races. Investment in technology that rivals can't catch up with can leave a lasting advantage. If you treat every step-up by your competitors as wasted and cut back on your own, what you lose will be real customers."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When setting bonuses for a sales team, rewarding only the top three makes everyone compete on number of client visits. Pay everyone who passes a target instead, and the same money no longer forces pointless overtime."
+   },
+   {
+    "use": "explain",
+    "text": "Each housing development's show apartment is more lavish than the last, yet the sales rankings haven't changed. Each upgrade only buys keeping your old place in the ranking."
+   },
+   {
+    "use": "predict",
+    "text": "Two bubble-tea shops on the same street compete on cup size. When one goes up to a large cup, the other will follow next month: the split of customers between them stays the same, and both make thinner profits."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Sports",
+    "title": "Swimsuits force a change",
+    "text": "At the 2008 Beijing Olympics, Michael Phelps won eight gold medals wearing Speedo's LZR suit. At the 2009 World Championships in Rome, Paul Biedermann switched to Arena's polyurethane X-Glide and beat Phelps, still in an LZR, in the men's 200-meter freestyle final, breaking the world record. Manufacturers raced to cut the water's drag, and a swimmer who didn't change suits was as good as giving up. Swimming's world governing body, FINA, banned suits made of these non-textile materials from 2010."
+   },
+   {
+    "field": "Finance",
+    "title": "Ratings get looser and looser",
+    "text": "When banks bundled mortgages into securities, they could choose among Moody's, S&P and Fitch for ratings, and the business went to whichever agency gave the higher grade. The agencies raced to loosen their requirements, and large numbers of securities got the top AAA rating. When the housing market turned bad, these securities were downgraded one after another, and investors suffered huge losses. In October 2008, a hearing in the US Congress made Moody's internal documents public."
+   },
+   {
+    "field": "Work",
+    "title": "The office lights stay on later and later",
+    "text": "Five people on your team are competing for one promotion, and the manager goes by an impression of who leaves last. Someone stays half an hour late; the next day someone else stays an hour late; a month later the office lights don't go off until ten. There's still only one promotion, and no more work is getting done. The year-end reviews say who tried hardest but can't say who got anything done. The team switched to judging people by what they delivered each quarter, and the ten o'clock lights went off."
+   }
+  ],
+  "ask": [
+   "Go through my industry's accounts for the last three years: by how much has spending gone up, and by how many percentage points has each company's share moved?",
+   "If I stopped on my own, which specific customer, place or position would I lose?",
+   "Can my rivals match this step-up of mine? If they can, all this money buys is not falling behind."
+  ],
+  "with": [
+   {
+    "id": "repeated-games",
+    "sees": "Two suppliers compete on price in front of the same customers year after year. Repeated games advise you to stop for one round and signal goodwill to your rival, who will most likely learn from it and stop too. An arms race sees that as long as falling behind still costs something, whoever stops first gets left behind by the next round of raises. When you know your rival well and the relationship is a long one, try a round of goodwill. Once new people are running your rival, or falling behind at all means losing customers, don't stop yet; first look for a rule that makes both sides stop at the same time."
+   },
+   {
+    "id": "first-mover",
+    "sees": "Two supermarket chains are racing for locations in a new city. First-mover advantage says whoever opens first locks up the good spots, so move fast. An arms race says any lead is temporary: once the rival follows, the extra money is wasted. Where a location can only be taken once, speed is right; where rivals can copy your spending in a few months, don't mistake going first for an advantage."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Three neighboring cities are competing for the same battery factory, each offering land and tax breaks and raising the offer round after round. In the end the factory goes to one of them, and the breaks have eaten most of what that city gains from it. The province wants to stop this happening next time.",
+    "question": "Which of these would do most to cut the bidding-up next time?",
+    "explain": "Losing means losing the factory, so no city dares stop first. A single cap on incentives binds everyone at the same time, and the fear of losing out alone goes away.",
+    "options": [
+     {
+      "text": "Reward the city that wins the factory, so the cities are more motivated.",
+      "correct": false,
+      "feedback": "A reward makes winning worth more, and the cities will only bid more."
+     },
+     {
+      "text": "Set a single cap on incentives for the whole province, and don't approve anything above it.",
+      "correct": true,
+      "feedback": "The fear of losing the factory by falling behind goes away: every city is bound at the same time, and nobody loses out alone."
+     },
+     {
+      "text": "Issue a call for the cities to show restraint and stop competing on incentives.",
+      "correct": false,
+      "feedback": "A call can't change the cost of losing the factory, and the next city that wants a factory will still bid up."
+     },
+     {
+      "text": "Have the cities file their incentive offers with the province in advance, with no limit on the amount.",
+      "correct": false,
+      "feedback": "Filing doesn't limit the amount, so the cost of losing and the reason to bid up are both still there."
+     }
+    ]
+   },
+   {
+    "stem": "Three home-cleaning platforms are competing for customers, and all are cutting the cleaners' training before they start work, to lower prices. Customers can't tell who has been trained, and complaints only appear three months later. You run one of the platforms and plan to bring back full training on your own, which costs more per job.",
+    "question": "Once you bring back training on your own, what is most likely to happen first?",
+    "explain": "Customers can't see the difference, so the cheaper platforms get the orders first. Only once complaints appear and the difference can be seen does sticking with training start to pay off.",
+    "options": [
+     {
+      "text": "Customers soon notice your cleaners are more professional, and orders start shifting to you.",
+      "correct": false,
+      "feedback": "Customers can't tell who has been trained, and complaints only appear three months later, so orders won't shift to you right away."
+     },
+     {
+      "text": "All three platforms raise their prices together to protect their profits.",
+      "correct": false,
+      "feedback": "Your price going up doesn't make your rivals raise theirs. A low price is exactly how they win orders."
+     },
+     {
+      "text": "Your rivals see you sticking with training, worry about their reputation, and bring back training the next month.",
+      "correct": false,
+      "feedback": "Your rivals' orders are growing precisely because of their low prices, so they have no reason to turn back."
+     },
+     {
+      "text": "Orders flow first to your cheaper rivals; your costs are higher, and you have to wait for complaints to appear.",
+      "correct": true,
+      "feedback": "Customers can't tell who has been trained, so the cheaper ones get the orders first. The difference only becomes visible once complaints appear."
+     }
+    ]
+   },
+   {
+    "stem": "You work in finance at a phone maker. The R&D budget has gone up three years in a row. Over the same period your three main rivals each raised their R&D by about the same, and each company's share of phones shipped has barely moved in three years. You want to know whether this year's budget increase buys new revenue or only holds your position.",
+    "question": "Which of these numbers answers the question most directly?",
+    "explain": "Freeze the budget at its old level, then work out from your rivals' moves how much share you'd lose. That shows directly whether this money holds your position or buys growth.",
+    "options": [
+     {
+      "text": "Whether the company's patent applications kept rising over the same period.",
+      "correct": false,
+      "feedback": "More patents doesn't mean more share, and it says nothing about how rivals respond."
+     },
+     {
+      "text": "Whether the R&D team's internal satisfaction survey has gone up.",
+      "correct": false,
+      "feedback": "Satisfaction has nothing to do with what this money bought."
+     },
+     {
+      "text": "How many points your share would drop if your budget stayed put while your rivals kept raising theirs.",
+      "correct": true,
+      "feedback": "This number measures, on its own, the part of the extra budget that just holds your position."
+     },
+     {
+      "text": "Whether R&D spending as a share of revenue is above the industry average.",
+      "correct": false,
+      "feedback": "The ratio only shows whether you spend a lot. It can't say whether this money bought growth or only held your position."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "2 rivals burn half the fees; 4 burn three-quarters",
+  "caption": "1 million in fees, split by what each center pays for its own hours. Drag the count to see where each stops raising and what's left: 500,000 for 2, 250,000 for 4.",
+  "x": {
+   "label": "Centers competing",
+   "min": 1,
+   "max": 10
+  },
+  "y": {
+   "label": "Amount (× 10k yuan)",
+   "unit": "",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "c",
+    "label": "Competing",
+    "min": 1,
+    "max": 10,
+    "step": 1,
+    "value": 2,
+    "unit": " centers"
+   }
+  ],
+  "series": [
+   {
+    "name": "Total left over",
+    "expr": "100/x",
+    "tone": "accent"
+   },
+   {
+    "name": "Total on hours",
+    "expr": "100*(x-1)/x",
+    "tone": "ink"
+   },
+   {
+    "name": "Each puts in",
+    "expr": "100*(x-1)/x^2",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "x": "c"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Each puts in",
+    "expr": "100*(c-1)/c^2",
+    "unit": " × 10k yuan",
+    "digits": 0
+   },
+   {
+    "label": "Total on hours",
+    "expr": "100*(c-1)/c",
+    "unit": " × 10k yuan",
+    "digits": 0
+   },
+   {
+    "label": "Total left over",
+    "expr": "100/c",
+    "unit": " × 10k yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

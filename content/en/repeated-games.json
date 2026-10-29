@@ -1,0 +1,194 @@
+{
+ "id": "repeated-games",
+ "name": "Repeated Games and Tit for Tat",
+ "en": "重复博弈与以牙还牙",
+ "discipline": "games",
+ "one_line": "If you'll meet again, cooperate first, then do what they did. It usually pays best.",
+ "story": "Axelrod's computer tournament of the prisoner's dilemma, where Rapoport's Tit for Tat wins twice",
+ "shallow": {
+  "scene": "There's a little game for two players. Each round, both choose at the same time to \"cooperate\" or \"defect.\" If both cooperate, each gets a decent score. If one defects, the defector gets more and the one who cooperated gets nothing. If both defect, each gets a little. Looking at one round alone, defecting gets you more whatever the other player does; but if both players think this way, they both end up with a little each.\n\nIn 1980, the American political scientist Robert Axelrod invited experts from many fields to write their strategies as computer programs. He paired the programs off against each other, had each pair play this game for many rounds, and in the end compared whose total score was highest. Of the 14 programs sent in, quite a few were very complicated. But the top scorer was the one sent in by Anatol Rapoport of the University of Toronto, and it had just two lines: cooperate in the first round, and after that, do whatever the opponent did in the round before. A second tournament had 62 programs, and it came first again.\n\nIt won by making opponents understand quickly: cooperate with it and there are points to be had; defect against it, and you pay it back in the next round.",
+  "plain": "A fruit stall at a train station exit rigs the scale when weighing your fruit and makes an extra 10 yuan, since you'll never be back anyway. The fruit stall at the gate of a housing complex doesn't dare. One household comes twice a week and the stall makes 10 yuan each time; at 50 weeks a year, that's 1,000 yuan. Cheat on the scale and drive that household away, and it has given up 1,000 yuan for 10. The stall at the gate and the residents will keep running into each other again and again, so its scale stays honest. Dealings like this are exactly what the study of repeated games looks at."
+ },
+ "deep": {
+  "mechanism": "### When the chance of meeting again is big enough, helping first pays\n\nYou take in a delivery for the neighbor across the hall once, which costs you 10 minutes. Some day when you come home loaded with bags, if he's willing to lend a hand, he can save you 40 minutes. Call the chance that the two of you run into this kind of thing again and he's willing to return the favor $p$. On average, the time you can expect to get back is this chance times 40 minutes, that is, $40p$ minutes. Helping first is only worth it if this is more than the 10 minutes you spend:\n\n$$40p>10$$\n\nDivide both sides by 40, and $p$ has to be more than a quarter: out of four times, more than one has to bring a chance to meet again and get paid back. If the chance is only one in ten, you can expect 4 minutes, which isn't worth it; if the chance is a half, you can expect 20 minutes, and helping pays.\n\n### Defect once and it pays you back once; come back and it goes back to normal\n\nSuppose the scoring is: both cooperate, 3 each; both defect, 1 each; one defects alone and gets 4, while the one defected against gets 0. Your opponent plays tit for tat. In round 10 he cooperates as usual and you defect, gaining 1 extra point. In round 11 he defects in turn. If you keep defecting, you both get 1, which is 2 less than cooperating, and he'll keep hitting back, so you lose 2 every round. If you go back to cooperating, you get 0 this round, 3 less; in round 12 he follows you and cooperates, and you're both back to 3 each. The cheapest path is to gain 1 and then lose 3: a net loss of 2 points.\n\n### It never beat a single opponent, yet its total ranked first\n\nTit for tat never defects first, so in each match the best it can do is tie with its opponent. But the tournament compares the scores added up across all matches. With opponents willing to cooperate, it gets 3 each the whole way; against one that always defects, it only loses out in the first round. The programs that tried to get a little ahead in every match got stuck defecting as soon as they met one another, and their totals couldn't climb.",
+  "origin": "In 1971, Robert Trivers published \"The Evolution of Reciprocal Altruism,\" showing that between animals that aren't close relatives, helping at a cost to yourself can keep going as long as it gets paid back later. Axelrod's tournament was published in 1980, and his 1984 book *The Evolution of Cooperation* explained the results. Tit for tat winning only holds for that set of entries and that scoring system: later simulations added mistakes, and versions that forgive once in a while beat tit for tat.",
+  "limits": "This approach works best when the dealings will continue, you can recognize each other, and defecting can be seen. If you meet only once, or one side will never be able to pay back, helping and keeping your word can't earn back their cost; and if nobody notices defecting, the defector has no reason to fear being hit back. Treat every kind act as an investment, asking what you'll get back even for helping a stranger, and human warmth gets thinned out by the counting."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When you've just joined a team of strangers and want others to help you, first pick a small favor that costs you a few minutes and do it; when the other person has a chance, see how they respond, and then decide how far to go in helping."
+   },
+   {
+    "use": "design",
+    "text": "When setting rules for a small neighborhood circle that swaps books and lends tools: members use fixed nicknames, everyone can see the borrowing and returning records, and whoever keeps borrowing without returning, nobody lends to anymore."
+   }
+  ],
+  "examples": [
+   {
+    "field": "History",
+    "title": "The understanding in the trenches",
+    "text": "On the Western Front in World War I, two units in the same stretch of trenches faced each other for long periods. In some relatively quiet sectors, an understanding of \"live and let live\" grew up: during mealtimes, when food was brought up, both sides fired less, sparing the other side and getting their own safety in return. Later, commanders ordered raids and checked that they were carried out, and in these sectors the understanding couldn't last."
+   },
+   {
+    "field": "Biology",
+    "title": "Bats share blood",
+    "text": "A vampire bat that goes two or three days in a row without a blood meal will starve to death. In 1984, Gerald Wilkinson recorded in Costa Rica that bats returning to the roost with empty stomachs were given blood brought back up by roost mates, some of them relatives and some familiar companions with no close kinship. In biology, \"altruism\" is counted only in gains and losses for survival and reproduction, without asking about motives. Sharing between long-term partners goes both ways: a companion that has shared blood with a bat in the past is also more likely to get blood from it."
+   },
+   {
+    "field": "Business",
+    "title": "Ratings stay on the account",
+    "text": "eBay shows buyers' ratings of a seller on the seller's account, where the next buyer can see them before ordering. If a seller hides a defect in an item this time, that buyer may never come back, but the bad rating stays on the page and comes along with every order after that."
+   }
+  ],
+  "ask": [
+   "How many more times will I run into this person? Will they remember what I did, and will I remember what they did?",
+   "If they take advantage of me, will I be able to see it? What response do I have that would cost them next time?",
+   "Look back over our past few dealings: when I lost out, did they ever once come back around?"
+  ],
+  "with": [
+   {
+    "id": "backward-induction",
+    "sees": "Two companies sign a joint operating agreement that runs for exactly 12 months, with no renewal. Backward induction works back from the last month: the last month has no next month, so everyone will cut corners. Knowing the other side will cut corners in the last month, the second-to-last month can't hold either, and reasoning all the way back to the first month, the cooperation can't be kept from the start. Repeated games advise the opposite: every month before the end has a next month backing it up, so cooperate as usual, and only build in extra protection for the last few months, such as holding back the final payment until after the handover is checked. When the end is clear and close, protect yourself as backward induction says; when you don't know which round will be the last, cooperate as if there's always a next month."
+   },
+   {
+    "id": "signal-noise",
+    "sees": "A colleague hasn't answered either of your two emails this week, and last week you had just turned down one of his requests. The repeated-games reaction is to give him the cold shoulder once. Signal and noise first asks something else: how often does he usually reply, and does this fall within the range of his usual missed replies? If he often misses replies anyway, this is noise, and hitting back right away will only get you hit back in return, with the two of you taking turns getting even. If he always replies at once, this time is a signal, and there's still time to hit back."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're doing a study at a fishing harbor and record how many times twelve boat owners towed each other's boats over two years. The more times owner A towed B's boat, the more times B came to tow A when A broke down. None of the several people B towed ever towed him back, and B later stopped towing them.",
+    "question": "What do these records show most directly?",
+    "explain": "How often boats get towed follows past dealings: those who helped you get helped more, and those who don't come back get no more help. This is what costly help held up by later payback looks like.",
+    "options": [
+     {
+      "text": "Most of the twelve boat owners are brothers, and they tow out of family ties.",
+      "correct": false,
+      "feedback": "Nothing in the question hints at family ties; the difference in the records is whether the other person came back around in the past, not how closely related they are."
+     },
+     {
+      "text": "The owner who towed most won more business that way.",
+      "correct": false,
+      "feedback": "The records have no data on business; all you can see is that towing and being paid back rise and fall together."
+     },
+     {
+      "text": "Towing follows past dealings: those who helped you get helped more, and those who don't come back get no more help.",
+      "correct": true,
+      "feedback": "The more you help, the more you get back, and those who don't come back are cut off: that's payback deciding whether to help next time."
+     },
+     {
+      "text": "Nobody in the harbor cares about payback; everyone only looks at whose boat needs help more.",
+      "correct": false,
+      "feedback": "B stopped helping the few people who never towed him back, which shows he cares how the other side responds."
+     }
+    ]
+   },
+   {
+    "stem": "You have an old cutting machine you don't use, and someone in your line of work urgently needs one. You agree on a price on the spot, and the money and machine change hands then and there. Afterward he says, \"I got you out of a jam this time, so you'll owe me later.\"",
+    "question": "Which of these judgments is right?",
+    "explain": "In this sale, both sides got what they needed on the spot, and the deal is already settled. Payback later depends on dealings that go on into the future; this one sale leaves no debt in itself.",
+    "options": [
+     {
+      "text": "The sale should be discounted, and the discount counts as the favor he did.",
+      "correct": false,
+      "feedback": "The price was agreed on the spot and both sides accepted the exchange; knocking off an amount afterward is setting a new price."
+     },
+     {
+      "text": "A sale settled on the spot rests on both sides gaining right then; nobody owes anybody a favor.",
+      "correct": true,
+      "feedback": "The sale has already given both sides what they needed, so there's no need for later payback to balance the books, and no debt."
+     },
+     {
+      "text": "As long as he comes back to buy again, this sale counts as him owing you.",
+      "correct": false,
+      "feedback": "If he buys again, that's another sale settled on the spot, and neither of the two sales leaves anyone owing anyone."
+     },
+     {
+      "text": "He's right: you owe him a favor and should find a chance to pay it back.",
+      "correct": false,
+      "feedback": "You paid the money and he got the machine; both sides got what they wanted on the spot, and neither owes the other."
+     }
+    ]
+   },
+   {
+    "stem": "You have a stall at a morning market and have agreed with the stall next door to take turns watching each other's stall: whoever needs to step away for a bit, the other keeps an eye on things. Last month he said straight out that he didn't want to watch your stall that day, and went off to take another job. This was the first time in your two years of dealings.",
+    "question": "Of these four approaches, which both makes him pay for this and leaves him a way back?",
+    "explain": "Turn him down once in kind and explain why, and he knows breaking his word has a cost; go back to taking turns once he makes it up, and he has a reason to return to cooperating as before.",
+    "options": [
+     {
+      "text": "The next time he asks you to watch his stall, turn him down once and explain why; once he makes it up, take turns as before.",
+      "correct": true,
+      "feedback": "Turning him down once is an equal cost, explaining why tells him how to make it right, and once he makes it up, the cooperation goes on as before."
+     },
+     {
+      "text": "Write down the time for each turn watching the stall, and have him pay back every turn he owes until it's back to zero.",
+      "correct": false,
+      "feedback": "This is collecting a debt item by item. One broken promise gets dragged into a long settling of accounts, and the dealings where you look out for each other fall apart first."
+     },
+     {
+      "text": "Never speak to him again, and tell the other stall owners not to team up with him, so they don't lose out.",
+      "correct": false,
+      "feedback": "This path has no way out: even if he comes back around, he gets no chance to restore the cooperation."
+     },
+     {
+      "text": "Watch his stall next time as usual, and wait until he feels bad and comes to make it up himself.",
+      "correct": false,
+      "feedback": "Breaking his word that time cost him nothing, so the next time he doesn't feel like watching your stall, it won't cost him anything either."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "grid",
+  "title": "Tit for tat wins no match, yet tops the total",
+  "rowLabel": "Program",
+  "colLabel": "10 rounds per pairing",
+  "rows": [
+   "Tit for tat",
+   "Always cooperate",
+   "Sneak every 4th",
+   "Always defect"
+  ],
+  "cols": [
+   "Matches won",
+   "Total score"
+  ],
+  "cells": [
+   [
+    {
+     "text": "0",
+     "sub": "At most a draw"
+    },
+    {
+     "text": "90",
+     "sub": "First",
+     "tone": "accent"
+    }
+   ],
+   [
+    "0",
+    "84"
+   ],
+   [
+    "2",
+    "82"
+   ],
+   [
+    {
+     "text": "3",
+     "sub": "Never loses",
+     "tone": "warn"
+    },
+    {
+     "text": "76",
+     "sub": "Last",
+     "tone": "warn"
+    }
+   ]
+  ],
+  "caption": "Pairs play 10 rounds, and each plays itself; scoring as in the text. Sneak copies the last move but defects every 4th round. Always defect never loses, yet is last."
+ }
+}

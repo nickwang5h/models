@@ -1,0 +1,202 @@
+{
+ "id": "five-whys",
+ "name": "Five Whys",
+ "en": "五个为什么",
+ "discipline": "thinking",
+ "one_line": "When something goes wrong, keep asking why until you reach a cause you can fix.",
+ "story": "The Mars Climate Orbiter goes silent as it enters orbit on September 23, and investigators trace it to ground software that wrote out pound-force seconds while navigation read them as newton-seconds",
+ "shallow": {
+  "scene": "When you buy clothes online, the size chart often has one column in inches and one in centimeters. Read the wrong column and the same number is off by a factor of two and a half, and the clothes that arrive are far too small. On September 23, 1999, NASA's Mars Climate Orbiter was brought down by the same kind of mistake. After more than nine months in flight, it lost contact as it fired its engine to go into orbit around Mars.\n\nThe investigation board traced it back layer by layer. Why was contact lost? The craft passed much lower over Mars than planned and was most likely destroyed in the atmosphere. Why was it so low? Each time the small thrusters fired, the ground team kept underestimating how far they pushed the craft. Why the underestimate? A piece of ground software wrote out the firing data in imperial units, while the navigation program read it as metric, so the thrust it read was only 1/4.45 of the real thing. The board named this unit error the root cause.\n\nAt this point the causes split into two. The specification required metric units, so why didn't the output file follow it? And why didn't reviews catch the error? Just fixing the units wasn't enough; each of the two had to be traced further on its own.",
+  "plain": "Toyota's shop-floor engineers tracked down machine faults by asking back like this, layer by layer, about five times, which is where the name \"five whys\" comes from. The collar of your white shirt keeps turning yellow. Why? The sweat stains won't wash out. Why won't they wash out? The sweat dries into the fabric overnight. Why overnight? The laundry basket is in the bedroom, and by evening nobody remembers to do the washing. By the third why, the answer is no longer about the shirt. It's about where the basket is."
+ },
+ "deep": {
+  "mechanism": "### Stop at the first layer and the problem comes back\n\nThe collar turns yellow. The first answer is that the sweat stains won't wash out, so you buy a stronger detergent, and three weeks later it's yellow again: the first answer was only a symptom. The second layer is that the sweat dries in overnight; the third is that the basket is in the bedroom. Move the basket to the bathroom door so clothes get washed that same evening, and the yellowing stops.\n\n### Ask too deep and there's nothing to work on\n\nWhere to stop depends on whether you can change it with what you have at hand. Your expense claim has been sent back by finance for the third time. Why? The name on the invoice is wrong. Why is it wrong? When the invoice was issued, you gave the company's old name from before it was renamed. Why the old name? The department's expense guide still has the old name printed on it. Fix that line in the guide and the mistake won't happen again, so you can stop there. If you keep going: why didn't you check the name? Because you were careless. Why careless? Because you're impatient by nature. Nobody can change either of those answers. The number of layers you ask is like a dial: too shallow and you fix a symptom, too deep and you land on personality.\n\n### Every layer needs something holding it up\n\nCheck each answer is true before moving on. \"The sweat dries in overnight\" can be tested with two shirts, one washed that evening and one washed the next day. If an answer doesn't hold up, gather evidence first instead of forcing the next question. If two causes with evidence turn up at one layer, follow each of them down. After moving the basket, keep a count of how often the collar turns yellow. If it's still yellow after two weeks, that layer's answer was wrong, so come back and ask again.",
+  "origin": "From the 1950s, Taiichi Ohno had people on Toyota's shop floor ask why again and again. His book *Toyota Production System* recorded the practice, and its English edition came out in 1988. The method rests on Toyota's shop-floor experience and Ohno's own account; no controlled experiment has shown that asking five times finds causes more accurately than other methods. In a 2017 article in *BMJ Quality & Safety*, Alan Card argued that its popularity in analyzing medical errors comes from its history and how easy it is to teach, not from evidence that it works.",
+  "limits": "Asking why works best when the same machine keeps having the same fault and there are records from the floor. Behind a share price, a disease or a major disaster are several causes acting on each other, and a single chain of questions can light up only one of them. Something that has happened only once has no second time to compare against, so however many layers you ask, you can't test whether your fix was right."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Work out why the same printer jams at the end of every month: ask back from the jam, checking each layer against the repair tickets and the paper supply records."
+   },
+   {
+    "use": "act",
+    "text": "When the same kind of mistake happens a second time, replace the reminder meeting you were going to call with one round of asking why, and pick one place to change: add a check, or change a form."
+   },
+   {
+    "use": "design",
+    "text": "To add checkpoints to a new process, ask back which step the last mistake slipped in at, and put a checkpoint just before that step."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "Slow Monday mornings",
+    "text": "Every Monday morning, your website's login page slows down. The operations engineer goes through the logs. From 9 a.m. the database connection pool is full, because the report jobs that piled up over the weekend all start at 9, because every scheduled job was set to \"Mondays at 9.\" He spreads the jobs out between 6 and 8:30, and the next Monday the connection pool doesn't fill up again."
+   },
+   {
+    "field": "Business",
+    "title": "Returns traced to the size chart",
+    "text": "In December, returns of long-sleeved shirts from your online shop go up, and most of the return forms say the sleeves are too short. Why didn't customers notice before ordering? The size chart only gives height and weight. Why no sleeve length? The listing template was carried over from short-sleeved items. You add measured sleeve lengths to the long-sleeved items, and a month later the number returned for short sleeves has dropped from over thirty to single digits."
+   },
+   {
+    "field": "Home",
+    "title": "The musty cupboard",
+    "text": "The cupboard under the kitchen sink always smells musty. Why is the bottom of the cupboard damp? The drainpipe joint drips a few drops every time water goes down. Why does it drip? The rubber washer in the joint has aged and gone hard. You replace the washer, lay a sheet of absorbent paper on the cupboard floor, and feel whether it's damp every three days. Three weeks later the paper is still dry."
+   }
+  ],
+  "ask": [
+   "For this layer's answer, can I point someone to a record, or a time I saw it happen?",
+   "If someone else just as capable were in this position, would they run into the same situation?",
+   "Which link can I change right now? After I change it, which number will I watch, and how many weeks later will I look?"
+  ],
+  "with": [
+   {
+    "id": "swiss-cheese",
+    "sees": "A hospital gives a patient the wrong drug. Asking why leads all the way to \"the two drugs come in boxes that look almost the same.\" Five whys says: change the boxes, fix this link, and this kind of mistake becomes rarer. The Swiss cheese model sees the box as just one of the holes; in the same incident, the checklist wasn't signed and only one person was on the night shift. Fixing the boxes isn't enough here; two more layers of protection are needed. For a small fault that keeps recurring, where one link decides the outcome, one chain of whys will do. Where any incident has serious consequences and safety depends on layer after layer of checks, first count how many layers of protection were broken through."
+   },
+   {
+    "id": "feedback-loops",
+    "sees": "A convenience store keeps running out of stock. Why does it run out? It orders too little. Why does it order too little? Sales were low last month. Why were sales low? It was out of stock that month. At this point the answer has looped back to the start. Five whys would keep digging; feedback loops says stop asking, this is a circle. Every step in the circle pushes the next one, so start with whichever step is easiest to change, such as basing orders on sales from before the shortage."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You lead a team at a neighborhood pharmacy, and two or three times a week a customer gets the wrong bag of medicine. You ask why: Why the wrong bag? The assistant misread the name. Why misread it? The afternoons are too busy. Why so busy? Not enough staff. You're about to ask for another person. Then you look at the records of the mistakes: 9 out of 11 involved customers with the same surname picking up medicine at around the same time, and some happened in the morning, when it wasn't busy.",
+    "question": "What is the best thing to do now?",
+    "explain": "The third answer doesn't match the records: mistakes happen when it isn't busy too. Go back to the second layer, check why bags for customers with the same surname are hard to tell apart, and change how they're checked based on what you find.",
+    "options": [
+     {
+      "text": "Train all the assistants to check carefully, then spot-check the handouts a few times a week.",
+      "correct": false,
+      "feedback": "The records show the mistakes are with customers who share a surname, and training doesn't target that."
+     },
+     {
+      "text": "Go back to the \"misread the name\" layer, find out why bags for same-surname customers are hard to tell apart, and change how they're checked.",
+      "correct": true,
+      "feedback": "The records point to customers with the same surname. Following that to how the bags are placed and checked finds something you can change, and next month's numbers will show whether it worked."
+     },
+     {
+      "text": "Ask the manager for one more person as planned, and see next month whether the mistakes go down.",
+      "correct": false,
+      "feedback": "The records show mistakes in the quiet mornings too. Adding staff targets a cause with no evidence behind it."
+     },
+     {
+      "text": "Keep asking from \"not enough staff\" until you reach the root cause in how the pharmacy is managed.",
+      "correct": false,
+      "feedback": "This chain has no evidence holding it up. Asking further down it only takes you further from anything you can change."
+     }
+    ]
+   },
+   {
+    "stem": "The pothos on your balcony keeps getting yellow leaves. You pull it out and find the roots black and soft. The saucer under the pot is always full of water, and the drainage hole at the bottom of the pot sits soaking in it. A friend says, \"You haven't asked five times yet, so don't rush to act. Why do you always overwater? Figure out your personality first.\"",
+    "question": "What's the best thing to do now?",
+    "explain": "The layer about the roots sitting in water has evidence, and the change is simple and can be checked. \"Five\" is only a rough number. Once you've found a link you can change, change it first, then watch the numbers.",
+    "options": [
+     {
+      "text": "Empty the saucer after each watering, and count how many new leaves and yellow leaves appear over three weeks.",
+      "correct": true,
+      "feedback": "The evidence points to standing water soaking the roots. Emptying it fixes that, and three weeks of records will test whether the explanation is right."
+     },
+     {
+      "text": "Switch to misting the leaves a little every day, and stop watering the soil around the roots.",
+      "correct": false,
+      "feedback": "This sidesteps the standing water, but it doesn't address the cause you've found, roots soaking in water, and it can't test it either."
+     },
+     {
+      "text": "Buy a new pothos, and keep watering it the same way, sitting in the saucer.",
+      "correct": false,
+      "feedback": "Nothing about the standing water has changed, so the new one's roots will rot too."
+     },
+     {
+      "text": "Keep asking why you like to overwater, and decide how to care for it once you understand your personality.",
+      "correct": false,
+      "feedback": "When there is a link you can change, digging down to personality only leads to answers that are harder and harder to act on."
+     }
+    ]
+   },
+   {
+    "stem": "In one week, the warehouse you manage sends goods to the wrong floor three times. Your supervisor looks at the records and says, \"The pickers are careless; dock everyone's performance pay.\" You go and look for yourself. The three mistakes were made by three different people, all involved goods for the third and fifth floors, and the shelf labels for those two floors are similar pale colors with very small print.",
+    "question": "What line of asking why would be most useful next?",
+    "explain": "Three different people making the same mistake shows that the conditions lie outside the people. Tracing what was in front of them at the moment they picked the goods is how you find something you can change.",
+    "options": [
+     {
+      "text": "Ask where the carelessness comes from, all the way down to each person's sleep and daily routine.",
+      "correct": false,
+      "feedback": "This steers the investigation toward each person's state, further and further from anything you can change."
+     },
+     {
+      "text": "Check whether the three pickers have something in common, like years on the job, shift or team.",
+      "correct": false,
+      "feedback": "The three people are different. The clue is in what they all faced, not in each of them."
+     },
+     {
+      "text": "Move all the goods for the third and fifth floors onto one floor, so the two floors' goods are no longer mixed up.",
+      "correct": false,
+      "feedback": "Moving the goods works around the problem without finding where the mistake came from, and other floors will still get it wrong."
+     },
+     {
+      "text": "Stand at the shelves and ask the pickers which step they're unsure about when picking, then see how the labels should change.",
+      "correct": true,
+      "feedback": "Asking what they saw at the time confirms that the labels look alike and the print is too small. Changing the labels is a link you can check."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Third why: the answer is where the basket is",
+  "caption": "The first layer is a symptom; the third you can fix right away. Ask further and you land on personality, which you can't change.",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "Yellow collar",
+    "sub": "New soap fails"
+   },
+   {
+    "id": "b",
+    "label": "Stains stay"
+   },
+   {
+    "id": "c",
+    "label": "Dried in"
+   },
+   {
+    "id": "d",
+    "label": "Bedroom basket",
+    "sub": "Move to bathroom",
+    "tone": "accent"
+   },
+   {
+    "id": "e",
+    "label": "Undisciplined",
+    "sub": "Too deep to fix",
+    "tone": "muted"
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b",
+    "label": "Why?"
+   },
+   {
+    "from": "b",
+    "to": "c"
+   },
+   {
+    "from": "c",
+    "to": "d"
+   },
+   {
+    "from": "d",
+    "to": "e",
+    "dashed": true,
+    "tone": "muted"
+   }
+  ]
+ }
+}

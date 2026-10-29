@@ -1,0 +1,227 @@
+{
+ "id": "peter-principle",
+ "name": "Peter Principle",
+ "en": "彼得原理",
+ "discipline": "society",
+ "one_line": "Promote people for doing well, and they often rise to a job they can't do well.",
+ "story": "Burnside is made commander of the Army of the Potomac and suffers a crushing defeat at Fredericksburg",
+ "shallow": {
+  "scene": "In November 1862, Ambrose Burnside received Lincoln's order to take command of the Army of the Potomac. He had already turned the post down twice, saying he couldn't handle an army that large. He had been chosen because he had led an expeditionary force on the North Carolina coast and fought well there. In December, at Fredericksburg, Virginia, he ordered an attack on high ground held by the Confederate army. Wave after wave of charges was driven back, with terrible losses. The following January, he was removed from command.",
+  "plain": "The factory's most skilled machine repairman is promoted to run the workshop. This is a typical Peter principle scene: people rise on their record in the old job, then stop in a job they aren't up to. He could fix machines with his eyes shut. But as workshop head he has to schedule shifts for twenty people, settle quarrels and haggle with the purchasing side. He had never done any of that, and before the promotion nobody had seen him do it. He doesn't do it well, but the factory can't bring itself to ask him to go back to fixing machines, so he stays in the head's chair."
+ },
+ "deep": {
+  "mechanism": "### A promotion changes the work you have to do\n\nA cook can handle the busiest stove on his own, but once promoted to restaurant manager he can't get the staff schedule right or bring new people along. What the organization saw was his record as a cook; nobody had tested whether he could run a restaurant. A manager's work is no longer cooking: the higher the job, the more the work shifts from doing things yourself to teaching others, coordinating and making trade-offs.\n\n### The more the new job differs from the old, the more people stop halfway\n\nSuppose the new job differs a lot from the old one, so at each promotion only six in ten people are up to it; those who are up to it keep rising, and those who aren't stay in the new job. Take a hundred people through three levels. The first level stops forty people and sends sixty up; the second stops twenty-four and sends thirty-six up; the third stops about fourteen. In all, about seventy-eight people end up in jobs they don't do well. If the new and old jobs are very alike, and nine in ten are up to it, three levels stop only about twenty-seven people.\n\n### Those who succeed move on; those who fail stay\n\nPeople get stuck in jobs they don't do well because of two conditions: promotion looks only at results in the current job, and going back to the old job is seen as admitting defeat. So the organization loses twice: a strong performer leaves the job where they contributed most, and then occupies a job they don't do well. To remove these two conditions, you can have candidates do the core tasks of the new job once before appointing them. Or you can let specialists who don't move into management get raises and status too, so employees don't need to move into management to prove themselves.",
+  "origin": "Laurence J. Peter was a Canadian educator. In 1969 he and the writer Raymond Hull wrote *The Peter Principle*, a book with a satirical tone. Serious tests against evidence came much later: in 2019, Benson, Li and Shue used data on salespeople's promotions and their performance as managers to give evidence supporting it in the *Quarterly Journal of Economics*.",
+  "limits": "The principle fits best in organizations where promotion looks only at results in the current job, the new and old jobs differ a lot, and a wrong promotion can't be undone. If an organization lets people try the job first, checks their skill in the new role, and allows moves to other jobs, people won't get stuck in jobs they aren't up to. Someone new in a job who is scrambling to keep up doesn't count as incompetent yet. And saying a boss has hit their ceiling after seeing one mistake counts bad luck and a lack of resources against them too."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Design the promotion rules for a technical track so that the expert path also brings raises and higher grades, and engineers don't have to move into management to get a raise."
+   },
+   {
+    "use": "explain",
+    "text": "When a company's middle management keeps buckling, it's often because the best workers have been promoted to supervisor one after another."
+   },
+   {
+    "use": "predict",
+    "text": "Given a list of promotions, compare how alike the day-to-day work of each new job is to the old one, and you can predict who is most likely to get stuck."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "Top seller, not necessarily a team leader",
+    "text": "Benson, Li and Shue studied salespeople at US companies. They found that when companies chose managers, they leaned on individual sales results, yet the higher a person's sales, the worse they did as a manager after promotion. The companies rewarded the people best at closing deals and passed over the people better at lifting the team's results."
+   },
+   {
+    "field": "Education",
+    "title": "Star teacher becomes principal",
+    "text": "A math teacher who turned out excellent graduating classes for years in a row is promoted to principal. Faced with timetables, hiring and parents' complaints, he still spends much of his time revising lesson plans himself, and empty teaching posts stay unfilled for a long time. The habits that once made him succeed, in the new job, crowd out the things he most needs to do."
+   },
+   {
+    "field": "Investing",
+    "title": "An analyst runs a fund",
+    "text": "An industry analyst who found good companies again and again is promoted to fund manager. He knows companies well but has never managed position sizes or redemptions, and he piles the portfolio into a single industry. When clients pull their money out, he can only sell holdings at low prices. The promotion review rewarded stock picking and missed money management."
+   }
+  ],
+  "ask": [
+   "After this promotion, what are the three core things I'll do every day? Which of them has my past record proved?",
+   "Setting aside titles and past achievements, what direct evidence shows he can do the new job well? Whom should I ask, and which records should I look at?",
+   "If he still isn't doing it well after a trial, is there a ready path for him to go back to a job where he does better?"
+  ],
+  "with": [
+   {
+    "id": "regression-to-mean",
+    "sees": "A newly promoted supervisor's results drop after six months. The Peter principle would say he has been put in the wrong job and should be moved or given more training; regression to the mean would say he was promoted because his last few quarters were unusually lucky, so dropping back to normal is no surprise, and you should wait. First see whether he keeps doing badly at the core tasks of the new job, then see whether others promoted at the same time are also dropping: only if he alone drops is it a mismatch."
+   },
+   {
+    "id": "incentives",
+    "sees": "A company wants to keep its best engineers, and the only way to a raise is to move into management. This set of incentives pushes one good engineer after another into jobs they don't want and may not do well. What needs changing is where the rewards come out: raises and status should no longer follow only the job title."
+   },
+   {
+    "id": "circle-of-competence",
+    "sees": "Faced with an appointment, the circle of competence has you ask: of the skills the new job needs, is any one outside what this person has evidence for? If so, get the evidence first, then sign."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "The on-call engineer for a payment system was the fastest at fixing outages three years running, and was promoted to head of development. After the promotion he still spends whole nights fixing outages himself, but keeps putting off setting up a rotation and doesn't run drills for new staff. Two years on, he is still the only one who can handle the alerts at night, and releases keep slipping. The company decides promotions by results in the current job, and a head going back to an engineering job is treated as a punishment.",
+    "question": "If the appointment rules stay the same, what is most likely to happen next?",
+    "explain": "Fixing outages fast proved the engineer's skill; it didn't prove he could build a rotation or train new people. His old record drove the promotion, he keeps doing the new tasks badly, and going back is treated as a punishment, so this mismatch will stay put.",
+    "options": [
+     {
+      "text": "He'll be promoted to technical director, because a higher post would let him focus on major outages.",
+      "correct": false,
+      "feedback": "His performance as a manager isn't good, so it won't be a reason for another promotion; and a higher post only means more coordinating work."
+     },
+     {
+      "text": "He'll gradually get the team in shape, because handling outages himself lets new staff pick up key experience.",
+      "correct": false,
+      "feedback": "What new staff need to learn is the rotation and the drills, and in two years neither has appeared; the team shows no sign of growing."
+     },
+     {
+      "text": "He'll stay on as head, because his performance as a manager blocks another promotion and there's resistance to his going back to an engineering job.",
+      "correct": true,
+      "feedback": "That's right: his record at fixing outages drove the promotion, his performance as a manager blocks the next one, and going back is treated as a punishment, so he can only stay where he is."
+     },
+     {
+      "text": "He'll soon go back to an engineering job, because the slipping releases will push the company to rearrange jobs.",
+      "correct": false,
+      "feedback": "The company treats going back to an engineering job as a punishment, so even when the losses show, nobody dares suggest moving him."
+     }
+    ]
+   },
+   {
+    "stem": "A weekend hiking group has always made the member with the most summits that year its leader. The leader has to check the weather, assign someone to bring up the rear, and adjust the route to suit the weakest member. The last two leaders both walked fast but more than once left beginners behind at a fork in the trail; stepping down was seen as admitting defeat, so both hung on until their terms ended. This year's member with the most summits is happy to keep coming on hikes but doesn't like looking after the whole group's pace.",
+    "question": "Which arrangement would do most to stop the same kind of problem from happening again?",
+    "explain": "Walking fast and getting the whole group through safely take different skills. Keep the recognition for summits separate, choose the leader separately, and look first at how candidates lead a group; that cuts off the path of being promoted straight on an old record.",
+    "options": [
+     {
+      "text": "Choose the leader by total summits over the last three years instead, to reduce the effect of one year's ups and downs.",
+      "correct": false,
+      "feedback": "A three-year total is steadier, but it still measures personal climbing ability; none of the skills a leader needs gets measured."
+     },
+     {
+      "text": "Let the person with the most summits take over if they volunteer; being willing to take on the responsibility shows they're fit to lead.",
+      "correct": false,
+      "feedback": "Being willing is one thing, being able is another; and this person has said plainly that they don't like looking after the group's pace."
+     },
+     {
+      "text": "Keep choosing the leader by summits, but have the previous leaders pass on their experience and allow a season to settle in.",
+      "correct": false,
+      "feedback": "The appointment still rests on personal summit records. The last two leaders were chosen this way too, and nobody tested whether they could lead a group."
+     },
+     {
+      "text": "Recognize summit records separately, and have candidates lead one short hike before deciding who becomes leader.",
+      "correct": true,
+      "feedback": "That's right: a trial hike shows their judgment of the weather, how they arrange the rear and how they adjust the route, which is exactly the evidence the new duties call for."
+     }
+    ]
+   },
+   {
+    "stem": "You own shares in a listed cold-chain logistics company. It promoted its warehouse manager to operations director, first letting him run three regions on trial for six months; vehicle scheduling, temperature control and costs all met their targets. Two months after he formally took the post, electricity prices jumped and the company's quarterly profit fell; profits at its rivals generally fell too, and the company's rate of spoiled goods held steady. Someone in an investing group chat says: \"He was excellent at running the warehouse, and the moment he got promoted, profit fell. That shows he's reached a job he can't do well.\"",
+    "question": "What is a reasonable way to assess the judgment in the group chat?",
+    "explain": "A fall in profit isn't enough to conclude he was promoted to a job he isn't up to. Before the appointment there was his trial record in the new job; right now there's a cost shock shared by his rivals, and the spoilage rate is steady. There's no evidence yet that he keeps doing badly.",
+    "options": [
+     {
+      "text": "The evidence so far isn't enough: the trial record supports the appointment, and the fall in profit has a shared cost cause.",
+      "correct": true,
+      "feedback": "That's right: his skill in the new job was checked before the appointment, and the recent fall has a cause shared with his rivals; so far there's no evidence of a lasting mismatch."
+     },
+     {
+      "text": "The judgment holds: his area of management has grown, and even meeting the targets on trial could miss key skills.",
+      "correct": false,
+      "feedback": "That's only a possibility; the question shows no sign of him doing badly over time, so it's too early to conclude anything from this alone."
+     },
+     {
+      "text": "The judgment holds: profit is what a director answers for, and a steady spoilage rate isn't enough to show he's up to the job.",
+      "correct": false,
+      "feedback": "Profits at his rivals generally fell too, and the jump in electricity prices hit them all, so this part of the fall can't be put down to him."
+     },
+     {
+      "text": "This can be ruled out: he met the targets on trial, so he should be up to the job now that he formally holds it.",
+      "correct": false,
+      "feedback": "The trial lasted only six months and covered three regions; that doesn't mean he'll stay up to the job after taking on all its duties, so it can't be ruled out."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "At 60% per level, 78 are stuck after three",
+  "caption": "100 people. Each promotion, those up to it rise; the rest stay. Drag the share: the more alike the jobs, the higher it is. At 90%, three levels leave only 27 stuck.",
+  "x": {
+   "label": "Promotions",
+   "ticks": [
+    {
+     "at": 0,
+     "label": "Hired"
+    },
+    {
+     "at": 1,
+     "label": "Level 1"
+    },
+    {
+     "at": 2,
+     "label": "Level 2"
+    },
+    {
+     "at": 3,
+     "label": "Level 3"
+    }
+   ]
+  },
+  "y": {
+   "label": "People",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "Share up to it",
+    "min": 50,
+    "max": 95,
+    "step": 5,
+    "value": 60,
+    "unit": "%"
+   }
+  ],
+  "model": {
+   "steps": 3,
+   "init": {
+    "up": 100,
+    "stuck": 0
+   },
+   "next": {
+    "stuck": "stuck + up*(1-p/100)",
+    "up": "up*p/100"
+   }
+  },
+  "series": [
+   {
+    "name": "Stuck halfway",
+    "expr": "stuck",
+    "tone": "warn",
+    "dots": true
+   },
+   {
+    "name": "Still up to it",
+    "expr": "up",
+    "tone": "ink",
+    "dots": true
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Stuck after three",
+    "expr": "stuck",
+    "unit": " people",
+    "digits": 0
+   }
+  ]
+ }
+}

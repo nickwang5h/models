@@ -1,0 +1,232 @@
+{
+ "id": "cannibalization",
+ "name": "Cannibalization",
+ "en": "自我蚕食",
+ "discipline": "business",
+ "one_line": "A new product selling well may just be taking your old product's customers.",
+ "story": "On January 9, Steve Jobs unveils the iPhone, which also plays music, at Macworld in San Francisco, while the iPod is one of Apple's main products",
+ "shallow": {
+  "scene": "On January 9, 2007, Steve Jobs showed the iPhone to the audience at the Macworld conference in San Francisco. Apple was already selling the iPod then, and it was one of the company's main products. The iPhone could make calls and go online, and it could also play music. Someone who wanted to carry music around had less reason to buy an iPod once they had an iPhone: Apple had put the core use of its own main product into its own new product with its own hands.\n\nAs early as 2005, Jobs worried that phones with more and more features would take away the iPod's business. His rule was that if you don't cannibalize yourself, someone else will. Since phones playing music was bound to happen sooner or later, it was better for the iPod's business to stay on Apple's own books than to be taken by other companies' phones.",
+  "plain": "You run a driving school, and a regular course earns you 1,000 yuan per student. This year you add a weekend crash course that earns 1,800 yuan per student. In the first month 50 people sign up, which on the surface means 90,000 yuan more. But you ask them one by one, and 30 of them would have signed up for the regular course if there were no crash course. Those 30 people would have earned you 30,000 yuan anyway; they've just moved from the regular course to the crash course. 90,000 minus this 30,000 means you really earn 60,000 yuan more.\n\nThe buyers a new product takes from your own old product are called cannibalization. To work out what the new product earned, take this part out first."
+ },
+ "deep": {
+  "mechanism": "### Measure the old product's loss against the world with no new product\n\nSplit the 50 crash-course students by what they would have done without the crash course. 30 would have signed up for your regular course anyway, and only they count as taken by the crash course. Of the other 20, some were going to another driving school, and some weren't planning to learn to drive this year at all. Without the crash course they wouldn't pay you anything, so they aren't a loss to the regular course.\n\nIf the driving school across the street is also opening a crash course next month, the comparison should switch to the world after the rival moves. Of those 30 people, if you don't open one, some will be pulled across the street anyway. You couldn't have kept those people, so their money shouldn't all be counted as a loss caused by the crash course.\n\n### The share who switch decides whether the new product gains or loses\n\nEach unit of the new product contributes $a$ yuan, each unit of the old product it replaces contributes $b$ yuan, and the share of the new product's buyers who switched from the old product is $p$. For each unit of the new product sold, on average $p$ units of the old product stop selling, so the business as a whole earns this much more:\n\n$$a-pb$$\n\nIn other words, what the new product earns has to have the old product's contribution it replaces, on average, taken off first. Of the driving school's 50 crash-course students, 30 switched, so $p$ is 60%. Plug it in: $1800-0.6\\times1000=1200$. Each crash-course student really earns 1,200 yuan more, and 50 of them come to exactly 60,000 yuan. Even if all 50 had switched, each would still bring in 800 yuan more, because a crash-course student already earns 800 yuan more than a regular one.\n\nBut if the crash course cuts its price to win people and earns only 600 yuan per student, the result changes. When 60% switched, $600-0.6\\times1000=0$: the new earnings and the old losses cancel out exactly. If more than 60% switched, the more students you sign up, the more you lose.",
+  "origin": "The word \"cannibalization\" comes from product line management in marketing, and no one person is credited with it. In 1976, William Copulsky published \"Cannibalism in the Marketplace\" in the *Journal of Marketing*, one of the earlier articles devoted to the subject.",
+  "limits": "This calculation is clearest when the old and new products belong to the same owner and their buyers overlap. It doesn't apply when they are run by different owners: a rival's new product taking your customers is competition. Calling a halt as soon as you see old customers switching to the new product is also wrong: the people who switch may buy more, or pay more, and sometimes the sums still come out ahead."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When you're not sure whether to roll a new product out everywhere, put it in half your stores first and compare the old product's sales in the two groups of stores. The difference is what the new product took."
+   },
+   {
+    "use": "communicate",
+    "text": "When reporting a new product's results to your boss, don't report only total sales. Report new buyers and buyers who switched from the old product separately."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "Subscriptions replace one-time purchases",
+    "text": "In 2013, Adobe announced it would stop releasing new boxed versions of Creative Suite and move its professional software to Creative Cloud, a monthly subscription. The boxed version was one big payment to buy it outright; the subscription split that into small monthly payments. As existing users switched over, revenue fell first that year: total revenue for fiscal 2013 was 4.06 billion dollars, 8% less than the year before. Subscribers built up year after year, and by fiscal 2017 total revenue had risen to 7.3 billion dollars."
+   },
+   {
+    "field": "Investing",
+    "title": "Total revenue up, same-store sales down",
+    "text": "You're reading a drugstore chain's annual report (the numbers are made up). Its stores grew from 400 to 500, and total revenue rose 20%, but revenue at comparable stores, the ones open in both years, fell 2%. You don't project the total revenue growth forward. Instead you split the 100 new stores into two kinds: those opened in new neighborhoods, and those opened next to existing stores. For the second kind, first take out the share taken from the old stores before counting their revenue."
+   },
+   {
+    "field": "Personal life",
+    "title": "E-books and paper books side by side",
+    "text": "You buy a Kindle in November 2007. On Amazon's store, the e-book editions of most new books cost only 9.99 dollars, cheaper than the hardcovers. You switch the paper books you would have bought to e-books, and on Amazon's own books that is a loss for paper books. Jeff Bezos was looking at a different sum: if Amazon didn't lead people into e-reading, Apple or Google would. The task he gave Steve Kessel, who ran Kindle, was to kill off Amazon's own book-selling business."
+   }
+  ],
+  "ask": [
+   "How much does each unit of the new product, and of the old product it takes buyers from, earn? Look in finance's per-item profit report, not at sales.",
+   "How much new fixed spending does the new product add each month? Spread over each unit, what share of the profit is left?",
+   "Among the buyers the new product aims at, which kind has the old product never managed to sell to?"
+  ],
+  "with": [
+   {
+    "id": "price-discrimination",
+    "sees": "You want to add a cheap basic tier to your cloud storage service to bring in students. Price discrimination sees that the cheap tier brings in people who can't afford the full price, so total revenue goes up. Cannibalization keeps an eye on whether people who would have paid full price also click into the cheap tier. The two give opposite advice: the first tells you to make the cheap tier; the second tells you to first cut its features until people willing to pay full price wouldn't want it. First check what share of your current paying users are students: if it's a large share, the cheap tier is mostly just taking away full-price revenue."
+   },
+   {
+    "id": "creative-destruction",
+    "sees": "Your old product earns steadily every year, and a new product built on new technology would take a good number of its buyers. Work out the cannibalization with today's numbers and the sums show a loss, so the conclusion is to hold off. Creative destruction is a reminder about next year: rivals will build this technology sooner or later, and if you don't, the old product's money will shrink anyway, just taken by someone else. Then replace \"how much the old product would have earned without the new one\" with \"how much the old product can still earn after the rival moves,\" and do the sums again."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You manage travel guides at a publisher. In the past few years, yearly sales of the print edition fell by about 6% a year, and the year before last it sold 50,000 copies. Last year an e-book edition came out and sold 8,000 copies, and the print edition sold 45,000. Suppose that without the e-book, the print edition would have kept falling along the earlier trend, with everything else the same.",
+    "question": "Roughly how many print sales did the e-book take last year?",
+    "explain": "Without the e-book, the print edition would have sold 47,000 copies on the 6% trend. It actually sold 45,000, and the 2,000-copy gap is what the e-book took.",
+    "options": [
+     {
+      "text": "5,000 copies: everything the print edition sold less last year.",
+      "correct": false,
+      "feedback": "The print edition was already falling about 6% a year, so part of the 5,000 has nothing to do with the e-book."
+     },
+     {
+      "text": "2,000 copies: the shortfall from what the trend said it should sell.",
+      "correct": true,
+      "feedback": "The trend said 47,000 copies and it actually sold 45,000. The 2,000 shortfall was caused by the e-book; the rest of the fall would have happened anyway."
+     },
+     {
+      "text": "0 copies: the print edition was already falling.",
+      "correct": false,
+      "feedback": "The trend only explains a 6% fall a year. Last year it actually fell about 10%, and the extra part has to be put down to the e-book."
+     },
+     {
+      "text": "8,000 copies: all the e-books sold.",
+      "correct": false,
+      "feedback": "Some e-book buyers would never have bought the print edition, so the 8,000 can't all be counted against print."
+     }
+    ]
+   },
+   {
+    "stem": "You sell fountain pens; the old model is 200 yuan. You're about to launch a new model and have two plans. Plan A is priced at 210 yuan with almost the same body, just one more color. Plan B is priced at 800 yuan, with a gold nib and a gift box. In both plans, each new pen earns more than an old one.",
+    "question": "In which plan is the share of new pens sold that come from your own old model higher?",
+    "explain": "People who buy the old model are most likely to switch on a whim to a new model that's almost the same and only ten yuan more. The further the new model is from the old one, the more only the people who want an upgrade will switch.",
+    "options": [
+     {
+      "text": "Plan A: the two models are almost the same, so old-model buyers switch on a whim.",
+      "correct": true,
+      "feedback": "The price gap is small and the pens are alike, so almost all old-model buyers will switch. Plan B's buyers are mostly people who couldn't otherwise afford it and wouldn't have bought the old model."
+     },
+     {
+      "text": "Plan B: the pricier the pen, the more willing buyers are to give up the old model.",
+      "correct": false,
+      "feedback": "The price is a big step up and the pen is different too, so most old-model buyers won't switch for it."
+     },
+     {
+      "text": "The same: in both plans each pen earns more than the old model.",
+      "correct": false,
+      "feedback": "What each pen earns decides how much you make once people switch, not how many switch."
+     },
+     {
+      "text": "Can't compare: we don't know whether rivals have similar pens.",
+      "correct": false,
+      "feedback": "The share coming from your own old model depends only on how much the buyers of the old and new models overlap. You don't need to know about rivals."
+     }
+    ]
+   },
+   {
+    "stem": "You run a chain of in-person calligraphy classes and want to launch cheap online classes. By today's numbers, the online classes would take 30% of your in-person students, and the business as a whole would earn 200,000 yuan less a year. You also hear that two rivals in town are both launching similar online classes next year.",
+    "question": "How should these sums be redone?",
+    "explain": "The rivals will do it sooner or later, so the comparison is no longer \"today, with no online classes\" but the world after the rivals launch. You'd lose that 30% of students even if you didn't launch; launching your own keeps at least some of them on your own books.",
+    "options": [
+     {
+      "text": "By today's numbers you'd earn 200,000 yuan less a year, so hold off for now.",
+      "correct": false,
+      "feedback": "This compares against today's world. Once the rivals launch next year, you can't keep that 30% of students even if you do nothing."
+     },
+     {
+      "text": "Wait for the rivals to launch, see how well they do, then decide whether to follow.",
+      "correct": false,
+      "feedback": "By the time the rivals are up and running, the students have already moved to them, and if you launch then you have to win them back from someone else."
+     },
+     {
+      "text": "Cut in-person fees a bit so students have no reason to move online.",
+      "correct": false,
+      "feedback": "Cutting prices doesn't answer how to do the sums, and it makes each in-person student who stays earn you less."
+     },
+     {
+      "text": "Switch the comparison to the world after the rivals launch: the 30% of students will be taken even if you don't act, then work out whether launching your own classes earns more or less.",
+      "correct": true,
+      "feedback": "Once the rivals move, the old classes' income would shrink anyway. Only by comparing against that world do the sums for launching your own online classes come out right."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "90,000 on paper, 60,000 after switchers",
+  "caption": "Across: share who'd have taken the regular class anyway; line at 60% (30 of 50). Drag crash-course profit under 1,000 to see when the solid line drops below 0.",
+  "x": {
+   "label": "Would've gone regular",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "y": {
+   "label": "Gain per crash sign-up",
+   "unit": " yuan",
+   "min": -2000,
+   "max": 2000
+  },
+  "params": [
+   {
+    "id": "a",
+    "label": "Per crash course",
+    "min": 200,
+    "max": 2000,
+    "step": 100,
+    "value": 1800,
+    "unit": " yuan"
+   },
+   {
+    "id": "b",
+    "label": "Per regular class",
+    "min": 500,
+    "max": 2000,
+    "step": 100,
+    "value": 1000,
+    "unit": " yuan"
+   },
+   {
+    "id": "p",
+    "label": "Share switched",
+    "min": 0,
+    "max": 100,
+    "step": 10,
+    "value": 60,
+    "unit": "%"
+   }
+  ],
+  "series": [
+   {
+    "name": "Real gain overall",
+    "expr": "a - x/100*b",
+    "tone": "accent"
+   },
+   {
+    "name": "Gain on paper",
+    "expr": "a",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "y": 0,
+    "text": "Break even"
+   },
+   {
+    "x": "p"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "50 on paper (10k)",
+    "expr": "50*a/10000",
+    "unit": "",
+    "digits": 1
+   },
+   {
+    "label": "50 for real (10k)",
+    "expr": "50*(a - p/100*b)/10000",
+    "unit": "",
+    "digits": 1
+   },
+   {
+    "label": "Real gain each",
+    "expr": "a - p/100*b",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

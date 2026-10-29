@@ -1,0 +1,268 @@
+{
+ "id": "supernormal-stimulus",
+ "name": "Supernormal Stimulus",
+ "en": "超常刺激",
+ "discipline": "biology",
+ "one_line": "A fake signal more extreme than the real thing can make an instinct fire harder.",
+ "story": "Tinbergen's The Study of Instinct reports oystercatchers leaving their real eggs to sit on giant fake ones",
+ "shallow": {
+  "scene": "In 1951, the Dutch animal behavior scientist Niko Tinbergen published *The Study of Instinct* in Oxford. The book reported a set of experiments in which oystercatchers chose between eggs. The researchers put a man-made fake egg in front of a bird and let it choose between its own real egg and the fake. The fake egg was far bigger than the real one. The bird passed over its own egg, struggled to climb up, and sat on the fake. The fake egg held no embryo and could never hatch a chick, yet it won all the bird's care, while the real egg was left out in the cold.",
+  "plain": "You open a bag of chips meaning to eat just two, and by the time you notice, the bag is empty. Saltiness, crunch and the smell of oil were originally clues the body used to spot high-energy food. But no fruit or root in the wild is anywhere near this salty or this crunchy. This bag of chips is a supernormal stimulus: the clues are turned up to a strength that doesn't exist in nature, and the body reacts to the clues without checking how much good is actually inside. So two chips become a bag; what you eat more of is calories, and the satisfaction doesn't grow by much."
+ },
+ "deep": {
+  "mechanism": "### Animals recognize things by one or two clues, not by checking the whole thing\n\nWhen a herring gull chick sees the red spot near the tip of its parent's beak, it pecks at it to ask for food. Swap in a piece of cardboard with a red spot, and it pecks just the same. The chick doesn't first check whether what's in front of it is a parent; as soon as the red spot appears, the pecking comes out. Features like the red spot, the size of an egg or its speckles, which directly set off a fixed set of actions, are called sign stimuli in animal behavior science.\n\n### The higher the clue is turned up, the stronger the reaction, and the payoff stays put\n\nThe oystercatcher's instinct holds the rule \"the bigger the egg, the better,\" because in nature this rule has always worked. A bigger egg usually means a stronger chick inside, so parents that preferred big eggs left more offspring, and the preference was passed down. But nature has no absurdly big eggs, so the rule never met a case where it went wrong, and the instinct never grew a limit that says \"big enough, stop here.\"\n\nSuppose you make the fake egg bigger, one size at a time. Each size up, the bird's urge to climb on gets one notch stronger. Once the fake egg is bigger than anything in nature, there's no limit to stop it, and the reaction keeps climbing with the size, while the number of chicks hatched stays at zero.\n\n### Man-made food turns up the clues in this direction\n\nWhen the tongue tastes sweetness, it only knows there is energy here, not whether this meal has enough nutrients. Food makers use exactly this, piling sweetness, fat and texture together: the clues are maxed out, and the nutrition doesn't have to rise with them. Suppose each new version of a snack turns saltiness and crunch up one notch. People reach for it one notch more often, but the nutrients they take in don't go up.",
+  "origin": "Tinbergen studied animals' fixed behaviors in the mid-20th century, proposed the idea of sign stimuli, and set out supernormal stimuli systematically in *The Study of Instinct* in 1951. Oystercatchers preferring huge fake eggs are the classic evidence for supernormal stimuli. Carrying these findings over to people is an analogy, not the same kind of experiment: people's experience, learning and situation all change how they react.",
+  "limits": "Supernormal stimuli explain the most where the clue is clear and the reaction nearly automatic: animal experiments, over-seasoned snacks, an endless stream of notifications. If a stronger reaction also brings more real benefit, it isn't a supernormal stimulus: turn a fire alarm up louder, people get out faster, and fewer really end up trapped. Using supernormal stimuli to explain everything popular is also wrong: a TV show is often a hit simply because it really is good."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "In front of a supermarket shelf, before your hand reaches for that \"double flavor\" snack, first look at which clue the package turns up: salt, crunch, or the steam in the big photo."
+   },
+   {
+    "use": "design",
+    "text": "Set rules for your own phone: first turn off the red badges and the alert sounds, and keep only the message text. Once the turned-up clues are gone, the number of times you pick up your phone will come down."
+   },
+   {
+    "use": "explore",
+    "text": "At the supermarket, put the plain and the extra-strong versions of the same food side by side, and see which clue the strong version adds and what else shows up on its nutrition label."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Diet and health",
+    "title": "Two weeks in hospital on each diet",
+    "text": "In 2019, Kevin Hall at the US National Institutes of Health had 20 adults stay in a research hospital and eat two diets for two weeks each, as much as they wanted. In the two weeks on the ultra-processed diet, they took in about 500 more kcal a day on average and gained about 0.9 kg; in the two weeks on the unprocessed diet, they lost about 0.9 kg. The sugar, fat, salt and fiber served in the two diets were matched. Hall's explanation: ultra-processed meals are soft and easy to chew, so people eat faster, and before the gut has time to report that it's full, the extra calories are already down."
+   },
+   {
+    "field": "Digital products",
+    "title": "One after another",
+    "text": "After work you want to watch a cooking video. Swipe to the next one, and it's two people fighting in the street; the next, a cat almost falling off a balcony; then a short drama with a twist ending. Half an hour later, you can't remember a single dish, and your finger is still swiping up."
+   },
+   {
+    "field": "Shopping and design",
+    "title": "The teddy bear on the shelf",
+    "text": "The teddy bears in the toy store have heads almost as big as their bodies, eyes that take up half the face and short little limbs, far more exaggerated than a real bear cub. You only meant to pick a birthday present for your niece, but the moment you pick one up it feels soft and cuddly, and you put it straight in the basket without checking the seams or the stuffing."
+   }
+  ],
+  "ask": [
+   "Which clue does this thing turn up: sweetness, a baby-like shape, novelty, or an emotional jolt?",
+   "Compared with a plainer version, what extra benefit do I get, and how many extra times do I reach for it?",
+   "Without the exaggerated packaging, the jumping numbers or the packed-in climaxes, would I still choose it?"
+  ],
+  "with": [
+   {
+    "id": "diminishing-returns",
+    "sees": "By the tenth chip in a bag, the satisfaction has long since been falling, and diminishing returns predicts you should stop. Supernormal stimulus predicts you'll keep reaching: your hand follows the two turned-up clues, salt and crunch, not your satisfaction. With a snack you can't stop eating, don't wait for satisfaction to hit the brakes; set aside a small portion in advance."
+   },
+   {
+    "id": "friction",
+    "sees": "A supernormal stimulus makes people reach for something again and again; friction raises the cost of each reach. Pack snacks into small bags, move the short-video app to your phone's third screen, and the turned-up clues are still there, but there's an extra pause before you reach."
+   },
+   {
+    "id": "goodharts-law",
+    "sees": "Goodhart's law says that once a measure becomes a target, it stops telling the truth. If a team is judged on time spent in the app, the designers will keep raising the stakes, piling the most gripping clues ever higher. The numbers look better and better, but what users get out of it doesn't keep up. To tell whether this is happening, record time spent separately from what users learned or got done afterward."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A drinks company makes two juices at the same price and in the same amount. Juice B is made sweeter than any natural fruit. In a blind test, people choose B more often; after drinking, they rate their \"satisfaction,\" and the two juices score the same.",
+    "question": "Why is Juice B chosen more often?",
+    "explain": "Juice B pushes sweetness to a strength natural fruit can't reach, which draws a stronger choice reaction. Satisfaction is the same, which shows the extra pull didn't bring any extra benefit.",
+    "options": [
+     {
+      "text": "Juice B is better overall, so both its satisfaction and how often it's chosen should be higher.",
+      "correct": false,
+      "feedback": "The two juices got the same satisfaction score, so you can't say B is better."
+     },
+     {
+      "text": "People who choose B know more about nutrition and know that sweeter juice is better for the body.",
+      "correct": false,
+      "feedback": "Nothing in the question hints at nutrition knowledge, and the satisfaction score wasn't higher either."
+     },
+     {
+      "text": "Juice B pushes sweetness beyond the natural range, so the reaction is stronger, but satisfaction doesn't increase.",
+      "correct": true,
+      "feedback": "The sweetness is turned up, the reaction gets stronger with it, and the benefit stays put."
+     },
+     {
+      "text": "The people saw that everyone else chose B, so they chose B too.",
+      "correct": false,
+      "feedback": "In a blind test, nobody can see what anyone else chooses."
+     }
+    ]
+   },
+   {
+    "stem": "In each of the four situations below, someone is making a choice.",
+    "question": "In which situation does the choice look most like it's being led by a clue turned up beyond the natural range?",
+    "explain": "The flavoring makes the pear smell much stronger than a real pear's, the reaction goes toward the exaggerated clue, and the real fruit is left aside.",
+    "options": [
+     {
+      "text": "A pear-flavored syrup smells much stronger than a real pear, and plenty of people would rather buy the syrup than eat a pear.",
+      "correct": true,
+      "feedback": "The smell is exaggerated beyond what a real pear can reach, and the preference it draws out beats the real thing."
+     },
+     {
+      "text": "A blood pressure drug really works, so doctors prescribe it more every year.",
+      "correct": false,
+      "feedback": "It's prescribed more because it works; benefit and use grow together."
+     },
+     {
+      "text": "A restaurant always has a long line out the door, and people walking past are more willing to go in and try it.",
+      "correct": false,
+      "feedback": "This is judging by other people's choices, not some feature being exaggerated."
+     },
+     {
+      "text": "A laptop sells more every year because it's built to last and word of mouth keeps spreading.",
+      "correct": false,
+      "feedback": "The extra sales come from the real benefit of lasting longer; no clue is exaggerated."
+     }
+    ]
+   },
+   {
+    "stem": "You want to know which clue in your child's favorite game is making him play longer. At the end of every level, the screen shows fireworks along with a rising string of sound effects. You plan to test it over four weeks.",
+    "question": "How should you test it so this clue can be seen on its own?",
+    "explain": "Turn off the fireworks and sound effects in weeks one and three, leave them on in weeks two and four, and keep everything else the same. Only then can the difference in play time between the two kinds of weeks be put down to these two clues, and the effect of the novelty wearing off is split evenly between them. Switching games or asking the child both mix in other factors.",
+    "options": [
+     {
+      "text": "Delete the game and watch how upset the child gets; the more upset, the stronger the clue.",
+      "correct": false,
+      "feedback": "How upset he gets reflects the pull of the whole game; it can't tell you which clue it is."
+     },
+     {
+      "text": "Give the child a different game without fireworks or sound effects for four weeks, and compare how long he plays each day.",
+      "correct": false,
+      "feedback": "The two games differ in how they play and how hard they are, so the difference in time can't be put down to the fireworks."
+     },
+     {
+      "text": "Just ask the child why he likes this game, and draw a conclusion from his own answer.",
+      "correct": false,
+      "feedback": "A child can say \"it's fun,\" but can't say which clue is at work."
+     },
+     {
+      "text": "With the same game, turn off the fireworks and sound effects in weeks one and three, leave them on in weeks two and four, and compare play time in the two kinds of weeks.",
+      "correct": true,
+      "feedback": "Only the clue being tested changes, and switching every other week cancels out the effect of time, so the change in play time can be put down to it."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "title": "Past nature's range, urge rises, payoff hits zero",
+  "caption": "Made-up numbers. In nature, bigger eggs mean stronger chicks, and both lines rise. As fake eggs grow, the bird's urge keeps rising, but no chicks hatch.",
+  "x": {
+   "label": "Egg size",
+   "min": 0,
+   "max": 6,
+   "ticks": [
+    {
+     "at": 0,
+     "label": "Small egg"
+    },
+    {
+     "at": 3,
+     "label": "Biggest real egg"
+    },
+    {
+     "at": 5,
+     "label": "Fake egg"
+    }
+   ]
+  },
+  "y": {
+   "label": "Strength (notches)",
+   "min": 0,
+   "max": 8,
+   "step": 2
+  },
+  "series": [
+   {
+    "name": "Bird's urge",
+    "points": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      3,
+      4
+     ],
+     [
+      4,
+      5
+     ],
+     [
+      5,
+      6
+     ],
+     [
+      6,
+      7
+     ]
+    ],
+    "tone": "warn",
+    "dots": "small"
+   },
+   {
+    "name": "Chicks hatched",
+    "points": [
+     [
+      0,
+      0.6
+     ],
+     [
+      1,
+      1.4
+     ],
+     [
+      2,
+      2.2
+     ],
+     [
+      3,
+      3
+     ]
+    ],
+    "tone": "accent",
+    "dots": "small"
+   },
+   {
+    "name": "Fakes hatch zero",
+    "points": [
+     [
+      4,
+      0
+     ],
+     [
+      5,
+      0
+     ],
+     [
+      6,
+      0
+     ]
+    ],
+    "tone": "muted",
+    "line": false,
+    "dots": true
+   }
+  ],
+  "marks": [
+   {
+    "x": 3.5,
+    "text": "Nature's range ends here"
+   }
+  ]
+ }
+}

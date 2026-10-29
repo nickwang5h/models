@@ -1,0 +1,214 @@
+{
+ "id": "simpsons-paradox",
+ "name": "Simpson's Paradox",
+ "en": "辛普森悖论",
+ "discipline": "math",
+ "one_line": "The side that wins in every group can still lose once the groups are added up.",
+ "story": "Charig and colleagues' kidney stone study: open surgery comes out ahead in each group, yet behind overall",
+ "shallow": {
+  "scene": "When people choose a hospital, they like to compare success rates. But famous hospitals take more seriously ill patients, so their overall record can end up worse than a small hospital's. In 1986 a London doctor, Charig, and his colleagues published a kidney stone study in the *British Medical Journal* that laid out this illusion very clearly. They compared two ways of removing stones. Open surgery cuts into the side of the lower back and takes the stone out. Percutaneous removal makes a small hole in the back, passes instruments in, breaks the stone up and takes it out.\n\nTaken all together, percutaneous removal wins, with a success rate of 83% against 78% for open surgery. Split the patients by stone size, though, and open surgery wins in both groups: for small stones, 93% for open surgery and 87% for percutaneous removal; for large stones, 73% against 69%.\n\nIt turned out that most of the hard-to-treat large stones had gone to open surgery, and most of the easy small stones had gone to percutaneous removal. Open surgery wasn't worse; the patients it got were harder to treat.",
+  "plain": "You and a friend each take 100 basketball shots, and each of you picks where to shoot from. At the free-throw line you make 9 of 10 and your friend makes 68 of 80; beyond the three-point line you make 36 of 90 and your friend makes 6 of 20. In both places your percentage is higher: 90% against 85%, and 40% against 30%. But when all 100 shots are taken, you have made 45 and your friend has made 74, because he shot mostly from the easy spot close in and you shot mostly from the hard spot far out.\n\nYou are more accurate in every spot, yet you lose once it's all added up. That is Simpson's paradox."
+ },
+ "deep": {
+  "mechanism": "### The overall rate is an average of each spot's rate, weighted by its share of the shots\n\nOf your 100 shots, only 10 are from the free-throw line, so your overall rate is 10% × 90% + 90% × 40%, which is 45%. Your friend took 80 from the free-throw line: 80% × 85% + 20% × 30%, which is 74%. The spot with the bigger share all but decides each person's total.\n\n### The fewer shots your friend takes close in, the smaller his lead\n\nHave your friend move his free-throw shots, a few at a time, out beyond the three-point line. You stay at 45%. When he is down to 28, his overall rate is 45.4%, still ahead of you; at 27 it is 44.85%, and you are back in front. If each of you took half from the free-throw line and half from beyond the three-point line, you would have 65% and your friend 57.5%. Once the shares are evened out, the totals rank the two of you the same way every spot does.\n\n### If the grouping was settled beforehand, look at the groups; if the thing being compared caused it, look at the total\n\nWhen the total and the groups point in opposite directions, first ask what the groups were split by and when that was settled. Where to shoot from was chosen by each person before the shooting started; the size of a kidney stone was set before the surgery. These were settled before the comparison, and they also affect success or failure, so look at the groups: shooting from the same spot beyond the three-point line, you are more accurate.\n\nIf the thing the groups are split by was caused by the method being compared, look at the total. Suppose a new teaching method gets more students to keep handing in their homework, and handing in homework raises grades. If you then split students by whether they handed in homework, the part of the improvement the new method brought about by getting people to hand in homework gets split away.",
+  "origin": "In 1951 the British statistician E. H. Simpson published *The Interpretation of Interaction in Contingency Tables*, which worked out when a combined table and its separate tables give opposite conclusions. Yule had already discussed a similar effect in 1903, but the name went to Simpson.",
+  "limits": "Simpson's paradox turns up most easily when the two sides have very different shares of people in each group and you compare rates or averages. It can't flip when you compare quantities that can simply be added, such as total items or total money: if one side has more in every group, it must have more in total. If you try every possible way of splitting the data and keep the one that flips the conclusion, all you have is a story you picked out."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Every department's satisfaction score is higher than last year, yet the company's overall score is lower. Lay out each department's share of the staff, and most likely a big department with low scores hired even more people this year."
+   },
+   {
+    "use": "act",
+    "text": "Before the company ranks stores in each district by average spend per customer and cuts the bottom two, lay out each store's share of new and returning customers: stores with many new customers have a lower average spend to begin with."
+   },
+   {
+    "use": "communicate",
+    "text": "When you report two teams' results to your boss and the total and the breakdown point in opposite directions, first explain who took on the harder work, then give the figures with both sides at the same shares, so the boss doesn't remember only the total."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Society and education",
+    "title": "Where people applied changed the conclusion",
+    "text": "In fall 1973, the graduate school at the University of California, Berkeley admitted about 44% of the men who applied and only about 35% of the women. The statistician Bickel and his colleagues split this up department by department. Of the six departments that admitted the most students, four admitted women at a higher rate. Women more often applied to departments that admitted few applicants, and men more often to departments that admitted many. Their analysis was published in *Science* in 1975."
+   },
+   {
+    "field": "Sports",
+    "title": "Batting averages over two seasons",
+    "text": "In both 1995 and 1996, Derek Jeter's batting average was lower than that of the Braves' David Justice: .250 against .253 in 1995, and .314 against .321 in 1996. Over the two seasons together, though, Jeter hit .310 and Justice .270. Jeter had only 48 at-bats in 1995, so most of his at-bats came in his strong 1996 season; 411 of Justice's at-bats fell in 1995."
+   },
+   {
+    "field": "Medicine",
+    "title": "Split by birth weight, smoking seems to protect babies",
+    "text": "In US birth records from 1991, more babies of mothers who smoked had a low birth weight, and more died before age one. Yet among low-birth-weight babies only, those of smoking mothers had a death rate about a fifth lower. In 2006, Hernández-Díaz and colleagues explained why in the *American Journal of Epidemiology*: birth weight itself is pulled down by smoking. A low-weight baby of a smoking mother is usually light only because of the smoke, while other low-weight babies often have a more dangerous cause, such as a birth defect. Once you split by something smoking causes, you are no longer comparing the same kind of babies. To judge the harm of smoking, look at the total."
+   }
+  ],
+  "ask": [
+   "On each side of the comparison, how did people end up in each group, and who chose?",
+   "Do the combined numbers and the group numbers answer the same question?"
+  ],
+  "with": [
+   {
+    "id": "law-of-large-numbers",
+    "sees": "You want to compare the pass rates of two teachers' classes, so you split the students into bands by their level when they started, and each band has only seven or eight students left. Simpson's paradox tells you to split; the law of large numbers says that with samples this small, a rate jumps around because of one or two students. If each band has enough people, split and compare; if each band is down to single digits, first merge them into a few coarser bands, or collect a few years of data before comparing."
+   },
+   {
+    "id": "correlation-causation",
+    "sees": "You find that orders placed with a discount code have a lower repeat-purchase rate. Split into new and returning customers, and in both groups the people who used a code repeat more. Simpson's paradox shows that a total can mislead, but it doesn't say how to split; correlation is not causation reminds you to check what decided who used a code in the first place. Returning customers buy again anyway, yet fewer of them use codes. Check that first, then decide how to split."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You are comparing two phone repair shops on how often they fix a phone on the first try. Repairs fall into two kinds: replacing the screen and repairing the motherboard. Shop A's first-try rate is higher than Shop B's for both kinds.",
+    "question": "In which of these situations could Shop A's overall first-try rate still be lower than Shop B's?",
+    "explain": "The overall rate is an average of each kind's rate, weighted by each kind's share of the jobs. If most of Shop A's jobs are hard ones like motherboard repairs, and most of Shop B's are easy ones like screen replacements, the weights differ and the totals can flip.",
+    "options": [
+     {
+      "text": "Shop A takes more motherboard repairs than Shop B, but they are a smaller share of its jobs.",
+      "correct": false,
+      "feedback": "More motherboard repairs doesn't mean a bigger share. Hard jobs are a smaller share at Shop A, so its total would only look better."
+     },
+     {
+      "text": "At both shops, screen replacements and motherboard repairs are half the jobs each.",
+      "correct": false,
+      "feedback": "With the same shares, Shop A is higher in each kind, so its total can only be higher."
+     },
+     {
+      "text": "Shop A takes far fewer jobs in total than Shop B.",
+      "correct": false,
+      "feedback": "The number of jobs only affects how steady the rates are; it doesn't decide which way the totals go. A flip needs the two shops' shares to differ."
+     },
+     {
+      "text": "Most of Shop A's jobs are motherboard repairs, and most of Shop B's are screen replacements.",
+      "correct": true,
+      "feedback": "Shop A's total is pulled down by the hard kind, and Shop B's is pushed up by the easy kind, so Shop A's lead in each kind gets covered up."
+     }
+    ]
+   },
+   {
+    "stem": "You are renovating an old home and want to choose between two building crews. Overall, Crew A finishes on time 75% of the time and Crew B 84%. Split by type of job: for new homes, Crew A 95% and Crew B 90%; for renovating old homes, Crew A 70% and Crew B 60%. Of Crew A's 100 jobs, 80 were old-home renovations; Crew B had only 20.",
+    "question": "Which crew should you choose?",
+    "explain": "For old-home renovation, Crew A is at 70% and Crew B at 60%, and that matches your situation. Crew B's total looks good because most of its jobs are easy new homes.",
+    "options": [
+     {
+      "text": "Crew B, because its overall on-time rate is higher.",
+      "correct": false,
+      "feedback": "Crew B's total is high because most of its jobs are new homes. Your job is an old-home renovation, so this total doesn't match your situation."
+     },
+     {
+      "text": "Crew A, because its on-time rate is higher for renovations.",
+      "correct": true,
+      "feedback": "Your home is an old-home renovation. In that kind of job Crew A is at 70% and Crew B at 60%, and that is the box to look at."
+     },
+     {
+      "text": "Neither, because the total and the breakdown rank them in opposite order, which shows the data can't be trusted.",
+      "correct": false,
+      "feedback": "The opposite rankings come from the two crews taking different shares of each kind of job, not from bad data. The renovation figures are perfectly usable."
+     },
+     {
+      "text": "Crew B, because it has more jobs in the new-home group, so its data are more reliable.",
+      "correct": false,
+      "feedback": "The new-home group has nothing to do with your home. In the renovation group, Crew A's on-time rate is higher."
+     }
+    ]
+   },
+   {
+    "stem": "A budgeting app randomly shows a getting-started guide to half its new users. After 30 days, 45% of the guide group are still using the app, against about 40% of the control group. The product manager then splits users by whether they recorded their first entry. Among those who did, 80% of the guide group stayed, against 85% of the control group; among those who didn't, 10% of the guide group stayed, against 12% of the control group. Half of the guide group recorded a first entry; in the control group, fewer than four in ten did.",
+    "question": "To judge the overall effect of the guide on whether users stay, what should you do?",
+    "explain": "Whether users recorded a first entry is itself something the guide changed. Splitting by it splits away part of the guide's effect. Comparing the two randomly assigned groups as wholes is what matches the guide's overall effect.",
+    "options": [
+     {
+      "text": "Compare the two randomly assigned groups as wholes: 45% against about 40%.",
+      "correct": true,
+      "feedback": "The groups were assigned before the guide was shown, so comparing them as wholes keeps the effect of the guide getting more people to record a first entry."
+     },
+     {
+      "text": "The two views point in opposite directions, so the data are unusable and the experiment needs to be run again.",
+      "correct": false,
+      "feedback": "Comparing the two randomly assigned groups as wholes already answers the question; there's no need to run it again."
+     },
+     {
+      "text": "Split by whether users recorded a first entry and compare, because the guide group is lower in each group.",
+      "correct": false,
+      "feedback": "The guide group is lower in both groups because the split happened after the guide, so the people within each group are no longer randomly comparable."
+     },
+     {
+      "text": "Go by the users who recorded a first entry: they stay the most, and the guide group is lower there, which shows the guide does harm.",
+      "correct": false,
+      "feedback": "Recording a first entry is itself affected by the guide. Looking only at this group removes the path by which the guide gets people to record one."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Who wins overall depends on shots at the line",
+  "caption": "The x-axis is your friend's free throws. His total runs up the slope, yours is flat; they cross between 27 and 28. Drag \"Your free throws\" to move the flat line.",
+  "x": {
+   "label": "Friend's free throws",
+   "min": 0,
+   "max": 100
+  },
+  "y": {
+   "label": "Rate over 100 shots",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "a",
+    "label": "Your free throws",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "value": 10,
+    "unit": " shots"
+   },
+   {
+    "id": "b",
+    "label": "His free throws",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "value": 80,
+    "unit": " shots"
+   }
+  ],
+  "series": [
+   {
+    "name": "Friend's overall rate",
+    "expr": "30+0.55*x",
+    "tone": "ink"
+   },
+   {
+    "name": "Your overall rate",
+    "expr": "40+0.5*a",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "x": "b"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Your overall rate",
+    "expr": "40+0.5*a",
+    "unit": "%",
+    "digits": 1
+   },
+   {
+    "label": "Friend's overall rate",
+    "expr": "30+0.55*b",
+    "unit": "%",
+    "digits": 1
+   }
+  ]
+ }
+}

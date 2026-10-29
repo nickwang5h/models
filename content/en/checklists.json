@@ -1,0 +1,201 @@
+{
+ "id": "checklists",
+ "name": "Checklists",
+ "en": "检查清单",
+ "discipline": "thinking",
+ "one_line": "Even experts miss steps, so write the key ones down and check them off one by one.",
+ "story": "On October 30 the Boeing Model 299 crashes on a test flight at Wright Field with its control locks still on, and written checks follow",
+ "shallow": {
+  "scene": "On October 30, 1935, at Wright Field in Ohio, a Boeing Model 299 bomber crashed just after taking off on a test flight. Its pilot, Major Ployer Hill, was highly experienced, but the crew had not released the locks on the rudder and elevators. These locks hold the control surfaces still while the plane is parked, so the wind can't knock them about, and they must be released before takeoff; with them on, the plane can't be steered. After that, crews of this plane had to go through a written checklist item by item before takeoff, and steps like releasing the locks no longer depended on memory.",
+  "plain": "Before a long trip you have twenty small jobs to do: passport, charger, the medicine you take regularly, turning off the water and gas, unplugging things... You know how to do every one of them, and every one also has a 1% chance of being missed in the rush. To get all twenty without missing one, you have to multiply 99% by itself twenty times: $0.99^{20}\\approx0.82$. In other words, on the other 18% of trips you'll leave something behind, roughly one trip in every five or six.\n\nLater you write these twenty jobs down as a checklist on your phone. Just before leaving, you stand at the door and go through it from top to bottom, looking at each actual thing before you tick it. The list pilots go through before takeoff works the same way: it doesn't rely on memory. The next time you tick through it, you find the gas valve still on."
+ },
+ "deep": {
+  "mechanism": "### People who know how still miss things, so the check must come before the step you can't undo\n\nYou put out a video every week. Once you press publish, it goes out to subscribers and can't be pulled back. Cover image, subtitles, links, music licenses: you know how to do all of them. But one time, in a rush, you missed the license, and the platform took the video down. So the checklist has to come before the button. Miss something before you press it and you can still fix it; once you've pressed it, it's too late.\n\n### When the list is too long, ticking becomes just a movement of the hand\n\nWhen that list had only 6 items, you paused at each one. Once it grew to 30, you started skimming halfway through: your eyes passed over it and your hand ticked, but you didn't actually look at anything. So you cut it back to 6, keeping items like whether the license file is there and whether the links open and play.\n\n### The list grows with the dangers, and shrinks with them too\n\nA viewer comments that the opening title has a typo. You add an item before publishing, \"read the opening title out word by word\", and at the same time cross off two items that haven't caught a single mistake in six months.",
+  "origin": "No single person invented the checklist. Its modern use matured step by step in aviation, and the 1935 crash of the Boeing Model 299 is the starting point most often cited. In 2008 the World Health Organization introduced its Surgical Safety Checklist, and the surgeon Atul Gawande helped lead the work. In 2009 Haynes and colleagues published a study in *The New England Journal of Medicine* comparing eight hospitals before and after they used the checklist; the results also included changes in how the teams communicated.",
+  "limits": "Checklists suit work whose steps are known, that comes up again and again, and where missing a step is costly, such as preparing a flight or handing over equipment. Faced with a fault no one has seen before, a checklist can only hold the known baseline; it can't discover new problems. If an organization responds to every incident by tracking down who didn't tick a box, staff gradually tick only to protect themselves, and nobody really looks at anything."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "Packing camping gear on a Sunday evening, write a list of the things you found you'd forgotten only after reaching the campsite last time, and check each one against the actual item before loading the car."
+   },
+   {
+    "use": "design",
+    "text": "Plan a new hire's first day: put on the checklist only the account access and door-pass registration that have been missed before, and write next to each item who will confirm it."
+   },
+   {
+    "use": "communicate",
+    "text": "Explain to staff who have been doing the job for ten years why the list has only six items: each one matches something that really happened. Show them the incident records from the time instead of reading out the rules."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Medicine",
+    "title": "A pause before the first cut",
+    "text": "In 2009 Haynes and colleagues reported results from eight hospitals before and after they adopted the WHO Surgical Safety Checklist: the rate of complications in hospital fell from 11.0% to 7.0%. The checklist requires the surgical team to stop just before the first incision and confirm together the patient, the site and the antibiotics. The nurse, the anesthetist and the surgeon all speak up at the same moment and share what each of them knows."
+   },
+   {
+    "field": "Outdoors",
+    "title": "The buddy check before a dive",
+    "text": "You take beginners diving, and before going in, you and your buddy face each other and check each other's gear. One says \"tank valve\", and the other reaches out, touches the valve and answers \"fully open\". Next comes \"air pressure\", and the other holds up the gauge and reads out the number. After all eleven items, you give each other the signal and go into the water together."
+   },
+   {
+    "field": "Finance",
+    "title": "The rent on the month-end list",
+    "text": "You're the accountant at a small company. One month, rent that was already owed didn't get entered, profit on the statements came out too high, and the boss took them to the bank to negotiate a loan. You cut the month-end closing checklist down to eight items, each stating which document it rests on and who checks it alongside you, with the rent item placed before the statements are produced. The first time you use it at month's end, the colleague checking with you asks you to bring out the lease to compare, and you dig it out of a drawer."
+   }
+  ],
+  "ask": [
+   "In the last three mistakes, which steps could everyone actually do, but got skipped in a rush or after an interruption? Pull up the error records and list those steps one by one.",
+   "For each item on this list, who ticked it last time, when, and checking against what? Pull up the last record."
+  ],
+  "with": [
+   {
+    "id": "premortem",
+    "sees": "A week before Saturday's charity sale, you hold a premortem, and everyone writes down forty or so reasons it could go wrong, from the weather to change for the cash box. The premortem asks you to think wide, the more the better; the checklist asks you to narrow down, since a list can hold only a few items. Go wide first, then narrow: from the forty, pick only the few that really went wrong last time and can't be put right once missed, put those on the list, and leave the rest in the meeting."
+   },
+   {
+    "id": "swiss-cheese",
+    "sees": "On an incident review sheet, one of the four lines of defense is a checklist. The Swiss cheese model asks you: when does this checklist have holes? In a rush, at a shift change, when a new person starts? Do the slices next to it have holes at the same moment? Only adding items to the checklist is like making one slice of cheese denser while the other holes stay open. A checklist covers the steps in people's hands; decisions further up, like cutting a reviewer's post, have to be fixed further up."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're the foreman on renovation jobs. Last month, at one home, the water pipes weren't pressure-tested before the mason sealed up the wall; three weeks later water seeped through, and the wall had to be smashed open and redone. You plan to use a checklist to stop it happening again, and the plumber-electrician, the mason and you will all use it.",
+    "question": "At what point should the pressure-test check go?",
+    "explain": "The cost of missing it shows up after the wall is sealed, so the check has to sit right before the wall is sealed, made against the gauge reading by someone who can stop the next stage. Too early or too late, and it won't catch this one.",
+    "options": [
+     {
+      "text": "Before the wall is sealed, the foreman checks against the pressure gauge reading, and work goes ahead only if it passes.",
+      "correct": true,
+      "feedback": "Sealing the wall is the step you can't undo. The reading is right in front of you, and the person checking holds the power to let work go on, so a missed test is caught before the wall is closed."
+     },
+     {
+      "text": "At the end of each day, the worker who did that day's job ticks off the list item by item himself.",
+      "correct": false,
+      "feedback": "A self-check goes on impressions, and the pressure test isn't done every day, so on most days there is nothing to check for this item."
+     },
+     {
+      "text": "Before work starts, put the list up at the site entrance and have every trade read it when they arrive.",
+      "correct": false,
+      "feedback": "Reading it on arrival comes weeks before the wall is sealed. By that day nobody remembers this item, and having read it isn't the same as having done it."
+     },
+     {
+      "text": "At the final inspection, the foreman and the homeowner check the plumbing and wiring item by item together.",
+      "correct": false,
+      "feedback": "By the end of the job the wall was sealed long ago. Finding out then that there was no pressure test means smashing the wall open again."
+     }
+    ]
+   },
+   {
+    "stem": "Your aerial photography team has taken a job, and the client's representative is already on site waiting for takeoff. On the team's preflight checklist, item 7 is whether the battery latches are pushed all the way in. The operator gets to this item and finds the left battery isn't latched tight. He glances at the waiting client, says nothing, and reads out item 8.",
+    "question": "How should the checklist be written so that this step can actually stop things?",
+    "explain": "The step was missed not because he didn't know how, but because nobody on the spot dared to call a stop. Write the power to call a stop into the checklist, and whoever finds a problem doesn't have to carry it alone with the client looking on.",
+    "options": [
+     {
+      "text": "After the check, require the team leader to sign off the whole list.",
+      "correct": false,
+      "feedback": "The team leader signs a list that's already ticked. He isn't standing by the battery, and can't see the latch that isn't tight."
+     },
+     {
+      "text": "State that if any item fails, the person reading the list calls a stop on the spot, without asking permission.",
+      "correct": true,
+      "feedback": "The power sits with the person who finds the problem. Calling a stop no longer takes courage; it's just carrying out a step written on the list."
+     },
+     {
+      "text": "Add a line after item 7: \"Check carefully; no carelessness allowed.\"",
+      "correct": false,
+      "feedback": "The operator had already seen the problem. What he lacked wasn't care but the nerve to stop, and this line doesn't change his position."
+     },
+     {
+      "text": "When the client is there, check only the three most critical items, and do the rest after landing.",
+      "correct": false,
+      "feedback": "The loose latch falls right in the part that was cut, and checking after takeoff is too late."
+     }
+    ]
+   },
+   {
+    "stem": "You're the producer on a film shoot, and you need to set a checklist of six items or fewer for before shooting starts. Last week's problem: someone formatted a memory card before the footage on it had been backed up.",
+    "question": "Of the four items below, which belongs on this list?",
+    "explain": "An item on the list has to meet two conditions: missing it is costly, and it can be confirmed with a look on the spot. Whether there's a backup can be checked by counting files and comparing numbers, while composition, morale and style can only be judged.",
+    "options": [
+     {
+      "text": "The director confirms that today's shooting matches the overall style of the storyboard.",
+      "correct": false,
+      "feedback": "Whether the style matches is up to the director's judgment. It isn't a fact you can check at a glance, nor a step that causes trouble if skipped."
+     },
+     {
+      "text": "The director of photography confirms that every shot today has expressive enough composition.",
+      "correct": false,
+      "feedback": "Whether a composition is expressive can only be felt. There's nothing to check against when ticking, and ten people would tick it ten different ways."
+     },
+     {
+      "text": "Once all the cast and crew have arrived, the producer confirms that morale is good and everyone is full of energy.",
+      "correct": false,
+      "feedback": "Morale has nothing to check against, so whoever ticks it decides; writing it in just takes up a line."
+     },
+     {
+      "text": "Before formatting, compare the number of files on the drive and on the card, and go ahead only if they match.",
+      "correct": true,
+      "feedback": "The file count is a number you can see; count both sides and you know whether it's been backed up. The cost of skipping it is losing all the footage."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "20 jobs at 1% each: one trip in 5 or 6 misses one",
+  "caption": "Drag the chance of missing each job: even at just 1%, with enough jobs it multiplies out to leaving something behind every five or six trips.",
+  "x": {
+   "label": "Jobs before leaving",
+   "min": 1,
+   "max": 40
+  },
+  "y": {
+   "label": "Forgot at least one",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "Miss each",
+    "min": 0.5,
+    "max": 5,
+    "step": 0.5,
+    "value": 1,
+    "unit": "%"
+   }
+  ],
+  "series": [
+   {
+    "name": "Miss at least one",
+    "expr": "(1-(1-p/100)^x)*100",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "x": 20,
+    "y": "(1-(1-p/100)^20)*100",
+    "text": "Twenty jobs"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Miss 1 of 20",
+    "expr": "(1-(1-p/100)^20)*100",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "One trip in every",
+    "expr": "1/(1-(1-p/100)^20)",
+    "digits": 1
+   }
+  ]
+ }
+}

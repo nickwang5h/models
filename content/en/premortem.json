@@ -1,0 +1,211 @@
+{
+ "id": "premortem",
+ "name": "Premortem",
+ "en": "事前验尸",
+ "discipline": "thinking",
+ "one_line": "Before you start, pretend it already failed and have everyone say how.",
+ "story": "Quibi launches in April after raising 1.75 billion dollars, with episodes of 5–10 minutes that at first play only on phones; on October 21 Katzenberg and Whitman announce in a letter that it is shutting down, naming two possible reasons",
+ "shallow": {
+  "scene": "In April 2020, the short-video platform Quibi launched. It had raised 1.75 billion dollars from investors, its episodes ran five to ten minutes each, and at first they could only be watched on a phone.\n\nHalf a year later, on October 21, the founders Jeffrey Katzenberg and Meg Whitman put out an open letter announcing that it was shutting down. The letter gave two possible reasons: either the idea itself wasn't strong enough to stand as a streaming service of its own, or the timing was wrong. Most likely, they wrote, it was both.\n\nBoth causes of death could be seen before launch. Watching only on phones was their own decision. And when it launched, the US was under pandemic stay-at-home orders. People were no longer commuting or waiting in lines, so short shows made to fill those gaps had no gaps left to fill. If, before launch, the team had first announced \"Six months from now, it has shut down\" and asked everyone to write down how it happened, both causes had a chance of being on paper ahead of time.",
+  "plain": "You want to take the whole family on a road trip to the seaside in October. You ask, \"Does anyone have any concerns?\" Everyone nods; nobody speaks up. Ask it another way: suppose the trip is over and it went badly. What went wrong? The premortem Gary Klein uses in meetings takes this route: before the thing starts, write down its cause of death. Your older sister writes that the highway was jammed solid on the way home. Your dad writes that the guesthouse you booked was too far from the sea, so every trip back and forth meant a taxi. Your younger cousin writes that he'll get carsick. Three sheets of paper fill up fast, and you move the trip home a day earlier and rebook a guesthouse closer to the sea."
+ },
+ "deep": {
+  "mechanism": "### Say the failure has already happened, and the reasons can be written down\n\nAsk \"What could go wrong?\" before opening a store, and the answers are mostly \"poor execution\" or \"a tight budget.\" Fix the ending as a fact, say \"Six months after opening, the cash in the account has run out,\" and everyone has to work backward through how it happened: which month didn't bring in enough customers, while the rent still had to be paid and the renovation bill had eaten into the working capital. Switch from \"could\" to \"has,\" and the answers change from adjectives to dates and actions.\n\n### Write alone first, then read in turn, so different stories reach the table together\n\nIn a meeting of eight, if the person in charge speaks first, the other seven mostly add on in the same direction. Instead, have each person write quietly for five minutes, before anyone has heard anyone else's take. Then start the reading with the most junior person, so they don't have to follow the lead of those senior to them. With eight different stories on the table together, there are always one or two the person in charge hadn't thought of. Normally, saying \"the boss overestimated demand\" sounds like being contrary; once the person in charge has set \"find the reasons it failed\" as a task, the same sentence is just handing in your homework.\n\n### Pick a few and turn them into actions\n\nOnce all the stories are in, pick three to five: those with big losses, those there's already evidence for, those that are cheap to fix. For each, write down who will check it, what sign means stop, and what changes in the plan. That is how \"don't touch the working capital before opening\" and \"check customer numbers in the second month\" get into the plan.",
+  "origin": "Gary Klein introduced the premortem in the *Harvard Business Review* in 2007. He based it on a 1989 experiment by Deborah Mitchell, J. Edward Russo and Nancy Pennington: people who treated an outcome as having already happened came up with more reasons, and more specific ones.",
+  "limits": "A premortem suits projects like opening a business, launching a product or running a big event best: the plan is final but there's still time to change it, and the people involved each know one part of it. When nobody knows the ins and outs of the trade, the causes of death can only be imagined. A room full of people will jointly make up a nice-sounding story, and you'd do better to go and fill in the missing information first. If the person in charge turns the meeting into a hunt for blame, so that whoever wrote a reason has to answer for it, next time nobody will be willing to write."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When laying out the steps of a system migration, have the person responsible for each stage write their own account of \"we had to roll back on the night of the migration.\" Any stage nobody has taken charge of will show up in the stories."
+   },
+   {
+    "use": "act",
+    "text": "When the whole team is racing to meet a deadline and nobody wants to be the one who objects, it gives the person in charge a legitimate reason to get team members to hand in the worries they've been keeping to themselves."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "The leader will leave",
+    "text": "Klein reported in 2007 that when a large company was weighing an environmental project on the scale of a billion dollars, one executive put the imagined failure down to the CEO retiring and everyone losing interest. Tracing back from this reason, the first things to pin down are who takes over the budget after the handover and who stays accountable."
+   },
+   {
+    "field": "Investing",
+    "title": "Three partners, three causes of death",
+    "text": "You and two friends are partners, about to put a big share of your money into a company whose profits have grown year after year. Before placing the order, each of you writes an account of \"we sold at a loss five years later,\" and then you read them in turn. Two say a competitor started a price war. The third says profits grew as planned and the share price fell anyway, because the purchase price had already built in many years of high growth. You had long since thought of a price war, but nobody had thought of the third. You checked how much return would be left at this price if growth went as planned, and cut the position in half."
+   },
+   {
+    "field": "Personal life",
+    "title": "An outdoor wedding",
+    "text": "You're holding a wedding for forty people on a lawn. A month before, the couple and each set of parents write a page on \"the day turned into chaos.\" One writes that it rained and there was no backup venue, one writes that the wedding car got stuck in traffic, and one writes that an uncle kicked out the speaker cable. Across the three pages, rain came up three times. You book an indoor hall as a backup and have the best man drive the route a day early."
+   }
+  ],
+  "ask": [
+   "By what date, and with what situation, would we call this a failure?",
+   "What worries have I kept to myself because I was afraid of spoiling the mood, offending someone or seeming unsupportive?",
+   "Which of these failure stories can we find evidence to check right now?"
+  ],
+  "with": [
+   {
+    "id": "one-way-two-way-doors",
+    "sees": "For the same new idea, the advice can be opposite depending on whether it's a one-way or a two-way door. Switching to a different supplier is a two-way door: if you're not happy, you switch back next month. The time it takes to hold a premortem is enough to just make the switch once and see what happens, so try it first. Putting all your savings into a shop with a five-year lease is a one-way door you can't back out of, so write out every way it could fail before you sign. If you can back out, try it fast; if you can't, hold the premortem first."
+   },
+   {
+    "id": "confirmation-bias",
+    "sees": "The more popular a plan is, the stronger confirmation bias gets: everyone looks only for material that supports it, and nobody digs out the evidence against it. Set aside part of the meeting where the only thing allowed is writing down reasons it failed, and then someone will go looking for the material against it."
+   },
+   {
+    "id": "checklists",
+    "sees": "When the same kind of hazard turns up again in the second and third premortems, it's a repeat offender. You no longer need a meeting to find it. Write it into a checklist and check it item by item every time."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Next month a community hospital will switch all appointment booking to online. At the meeting, the director first lays out the two things that worry him most: older patients won't know how to use it, and the network might crash. The nine colleagues who speak after him all add details on these two things. After the meeting, the head nurse says privately that she's more worried that the extra patients squeezed in on the night emergency shift can't be entered into the system.",
+    "question": "To get worries like the head nurse's said at the meeting, which of these works?",
+    "explain": "Once the director speaks first, the meeting's direction is set, and nobody wants to start a new topic. Set the failure as a fact first, have everyone write on their own, and have the director read last; only then do different observations reach the table together.",
+    "options": [
+     {
+      "text": "Announce that a month after launch the system has caused a big mess, ask everyone to write down on their own how it happened, then read in turn, with the director reading last.",
+      "correct": true,
+      "feedback": "With the failure a settled fact, raising a worry becomes handing in homework, and writing alone keeps the head nurse's story from being buried under the director's two."
+     },
+     {
+      "text": "The director opens by saying \"Raise any concerns you have, I won't hold it against you,\" then everyone speaks in turn by where they're sitting.",
+      "correct": false,
+      "feedback": "Speaking in turn still follows the direction the director set, and the head nurse would have to start a new thread in front of everyone."
+     },
+     {
+      "text": "Have everyone vote anonymously, either for or against going live, then count the votes after the meeting and announce the result.",
+      "correct": false,
+      "feedback": "A vote only answers for or against. There's no box for a specific account like extra night-shift patients who can't be entered into the system."
+     },
+     {
+      "text": "Invite an IT expert from another hospital to talk about the problems other hospitals ran into when they launched online booking.",
+      "correct": false,
+      "feedback": "Extra night-shift patients who can't be entered into the system is a situation only this hospital has. An expert from elsewhere won't cover it."
+     }
+    ]
+   },
+   {
+    "stem": "A school is preparing an autumn sports day for three hundred people. The premortem turned up more than thirty reasons for failure: rain on opening day, no shifts set for volunteers, not enough timers, no sound system to borrow, someone wrote \"the principal might be called away on a trip at short notice\"... The teacher in charge has two weeks to make these stories useful to the plan.",
+    "question": "What should be done with these thirty-plus reasons next?",
+    "explain": "The thirty-plus reasons don't carry the same weight. Pick a few by loss, evidence and cost of fixing, then write down for each who checks it, the deadline and the warning sign. Only then do the stories turn into changes to the plan.",
+    "options": [
+     {
+      "text": "Give all thirty-plus the same effort, with a matching backup plan for each reason.",
+      "correct": false,
+      "feedback": "Thirty-plus backup plans can't all get done, and the few that really matter end up without enough time."
+     },
+     {
+      "text": "Rank the reasons by how many times each was written, deal only with the top five, and set the rest aside for now.",
+      "correct": false,
+      "feedback": "How often a reason was mentioned reflects what people share a concern about. A reason only one person wrote could carry a much bigger loss."
+     },
+     {
+      "text": "Pick \"rain,\" the biggest loss, and \"no volunteer shifts,\" which is already showing signs, assign one teacher to each to sort it out by next Wednesday, and cut the item if it can't be done.",
+      "correct": true,
+      "feedback": "Picking only the two weighty ones and tying each to a person, a deadline and a sign that the plan changes if it isn't done by then is what lets the premortem change the plan."
+     },
+     {
+      "text": "Put them all into a summary report for the principal and let the principal decide which reasons need handling.",
+      "correct": false,
+      "feedback": "Once the report is handed in, nobody is in charge of checking anything. The reasons stay on paper, and the plan doesn't change at all."
+     }
+    ]
+   },
+   {
+    "stem": "A project team is going to hold a premortem for next quarter's product launch, and there are four ways to word the question on the meeting notice.",
+    "question": "Which wording makes it easiest for people to write a specific account of failure?",
+    "explain": "Set the failure as something that has already happened and then ask how it happened, and everyone has to come up with times, people and actions. Ask about what \"could\" happen, \"risks\" or \"reasons,\" and you mostly get vague adjectives.",
+    "options": [
+     {
+      "text": "Please list every risk the launch could face, and score and rank each one by likelihood and impact.",
+      "correct": false,
+      "feedback": "This is the usual risk list. What gets listed is mostly vague words like \"poor execution\" or \"tight budget,\" and the scoring starts arguments."
+     },
+     {
+      "text": "Please write the three reasons you think this launch is least likely to succeed, with a sentence or two explaining each.",
+      "correct": false,
+      "feedback": "This is looking for reasons to object. What gets written is a position, not an account of what happened."
+     },
+     {
+      "text": "If the launch might fail, what do you think is the cause most likely to make it fail? Please write one sentence.",
+      "correct": false,
+      "feedback": "\"If it might\" still treats failure as undecided, and the answer stays at a one-cause summary."
+     },
+     {
+      "text": "It is now the third month after launch, and the launch has failed. Please write down, step by step, how things got here.",
+      "correct": true,
+      "feedback": "With the ending taken as fact, people only need to fill in how it happened, and nobody has to argue about whether it will fail."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Say the trip failed, and three sheets fill up",
+  "caption": "Ask \"Any concerns?\" and nobody speaks. Fix the ending as \"it already went badly,\" each writes a cause, and two of them change the plan.",
+  "nodes": [
+   {
+    "id": "r",
+    "label": "Trip went badly",
+    "sub": "What went wrong?",
+    "tone": "accent"
+   },
+   {
+    "id": "a",
+    "label": "Jam on way home",
+    "sub": "Sister writes"
+   },
+   {
+    "id": "b",
+    "label": "Stay far from sea",
+    "sub": "Dad writes"
+   },
+   {
+    "id": "c",
+    "label": "Carsick",
+    "sub": "Cousin writes"
+   },
+   {
+    "id": "a2",
+    "label": "Return a day early",
+    "tone": "accent"
+   },
+   {
+    "id": "b2",
+    "label": "Rebook near sea",
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "r",
+    "to": "a"
+   },
+   {
+    "from": "r",
+    "to": "b"
+   },
+   {
+    "from": "r",
+    "to": "c"
+   },
+   {
+    "from": "a",
+    "to": "a2",
+    "label": "Fix"
+   },
+   {
+    "from": "b",
+    "to": "b2",
+    "label": "Fix"
+   }
+  ]
+ }
+}

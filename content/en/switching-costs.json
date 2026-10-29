@@ -1,0 +1,227 @@
+{
+ "id": "switching-costs",
+ "name": "Switching Costs and Lock-in",
+ "en": "转换成本与锁定",
+ "discipline": "business",
+ "one_line": "People often don't switch to something better because switching is too much hassle.",
+ "story": "On April 2, Apple and EMI announce in London that iTunes will sell songs without DRM copy protection",
+ "shallow": {
+  "scene": "Many people who think about switching from an iPhone to Android give up after a moment's thought: apps they've bought have to be bought again on the new phone, photos have to be moved, chat histories exported, and just working it all out is tiring enough.\n\niPod users more than a decade ago knew the same feeling of being unable to leave. Back then, songs bought from Apple's iTunes Store came with a lock on them, and could basically only be played on Apple's iPods and in iTunes on a computer. To switch to another brand of player, you either had to take a roundabout route and convert the songs to another format, or buy them all again. If you had already bought a few hundred songs on iTunes, switching players came close to paying for those few hundred songs a second time, and the more songs you bought, the harder it was to leave.\n\nOn April 2, 2007, Steve Jobs announced in London, together with the record company EMI, that iTunes would start selling EMI's songs without that lock, so other brands' players that could play the format could play them too. From that day on, EMI songs that iPod users bought didn't have to be bought again when they switched players. The lock that tightened with every song bought had loosened a notch.",
+  "plain": "Say you spend 3,000 yuan a year at one gym, and a new one opens next door with the same classes for 1,000 yuan less a year. You hesitate at the new gym's door. At the old gym you still have a stack of unused personal training sessions, and the trainer remembers your old knee injury. If you leave, those sessions have to be bought again at the new gym, and you'd have to redo the fitness assessment and get used to a new trainer; all told, that costs you 3,000 yuan.\n\nWhat's being counted here isn't the money you paid for the sessions back then; that money won't come back whether you switch or not. What's counted is what you'd have to buy again or redo after leaving. You plan to train for only two more years, saving 2,000 yuan in total, which is less than 3,000, so you stay.\n\nThis cost that only shows up when you leave is called a switching cost. When the switching cost is bigger than what switching would save, you're locked in. The day your sessions are used up, this cost goes away by itself, and comparing prices becomes easy again."
+ },
+ "deep": {
+  "mechanism": "### Switch only if the yearly saving times the years left beats the switching cost\n\nWhether to switch comes down to two amounts: the money saved each year times the number of years you'll still use it, and the switching cost you pay when you leave.\n\n$$S = s \\times t - C$$\n\n$s$ is the money saved each year, $t$ is the years you'll still use it, $C$ is the switching cost, and $S$ is how much you save in all by the end; switching is worth it only if $S$ is positive. For the gym it's $1000\\times 2-3000=-1000$: switching loses you 1,000 yuan.\n\nA company replacing its accounting system faces the same sum. It would save 60,000 yuan a year, and moving the data, retraining the accountants and running old and new side by side to check the books costs 200,000 in all. Counting in tens of thousands of yuan: if it will use the system for only two more years, $6\\times 2-20=-8$, and switching loses 80,000; if it will use it for eight more years, $6\\times 8-20=28$, a net saving of 280,000, so it should switch. If the new system's vendor cuts the migration cost to 80,000, $6\\times 2-8=4$, and even two years of use saves 40,000 net, so a company that was hesitating starts to take interest.\n\n### Only costs that appear when you leave count\n\nCancellation fees, relearning how things work, moving data, accessories that don't fit, losses from downtime and mistakes, and points that expire all count. Money already spent doesn't count; it won't come back whether you switch or not. What counts is what you'll have to buy again or redo after switching.\n\n### Existing customers are harder to win over than new ones\n\nNew customers don't yet have data, accessories or habits tied to the product; existing customers have already built it into their daily routine. So a new customer's switching cost is close to zero, and a rival who can attract newcomers can't pry away the old hands. A rival who gives away migration tools and pays for training is in effect paying part of the customer's switching cost. If the current supplier raises prices and gets worse year after year, the yearly saving from switching keeps growing, and sooner or later someone works out that it's time to go.",
+  "origin": "Switching costs are an old question in industrial organization, the part of economics that studies how markets and firms compete. In 1987 Paul Klemperer published a paper that set up the classic model of consumer switching costs. The model showed that even when products work the same, customers who bought from one firm first don't easily switch away, so earlier purchases change later competition. Computer compatibility, bank accounts and keeping your phone number when changing carriers are settings often used to study it.",
+  "limits": "Things that have to be redone every time you move, like software, data and dedicated accessories, hold on to people best. With things paid for and used on the spot that need no migration, customers who stay mostly just like them more. When a contract expires, equipment wears out or a business is rebuilt, you'd have to buy again and redo things even without switching, so the switching cost falls by itself. Also, some companies deliberately block the exits; customers push back sooner or later, and regulators step in to tear the barriers down. In 2003 the US required that phone numbers be portable, and carriers lost one of their locks."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "When estimating how many customers a price rise will lose, set the size of the rise against the full cost of leaving: if the rise is no bigger than the cost of moving, most people will stay. This comes closer to where people actually go than asking about satisfaction."
+   },
+   {
+    "use": "act",
+    "text": "Before signing a long-term contract or buying dedicated accessories, first ask what you'd have to pay to leave later, then decide where to keep your data and which kind of connector to buy."
+   },
+   {
+    "use": "design",
+    "text": "When designing the rules for loyalty points and prepaid cards, changing just the rule on whether they can be transferred or taken with you changes how much customers lose when they leave."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business and regulation",
+    "title": "Numbers you can take with you",
+    "text": "From November 24, 2003, in the 100 largest US metropolitan areas, people switching wireless carriers could take their old number with them. Before that, switching carriers meant telling friends, family and clients, and reprinting business cards. Once numbers could go with the customer, carriers could keep people only with coverage and prices."
+   },
+   {
+    "field": "Personal life",
+    "title": "Lenses tie you to the body",
+    "text": "You have three lenses that fit your old camera body, and you've got your eye on a new body from another brand. Switching lenses means the price of new lenses plus the costs of buying and selling, minus what you net from selling the old ones; buying an adapter means the adapter's price, plus putting up with limits on focusing and aperture. You look up the used prices for all three lenses, and ask whether the adapter keeps autofocus."
+   },
+   {
+    "field": "Investing",
+    "title": "Behind the renewal rate",
+    "text": "You're researching a company that sells scheduling and billing systems to hospitals, and its renewal rate is high year after year. Hospitals connect scheduling, billing and medical records to the same system, and switching vendors means moving records, retraining staff and guarding against disruption to their work. You look up when the contracts expire, then phone the IT departments at a few hospitals to ask whether they renew because they're satisfied or because they can't move."
+   }
+  ],
+  "ask": [
+   "If I were starting from scratch today, would I still pick it? If not, exactly which things are keeping me?",
+   "If I left, how much would it cost in money and time, what would I lose, and what would mistakes cost? How long would the new option's benefits last?",
+   "Before signing or buying, can I try leaving once first, to see whether my data and accessories come with me?"
+  ],
+  "with": [
+   {
+    "id": "default-effect",
+    "sees": "Your company hasn't changed its email system in five years, and the contract renews automatically every year. Some say it's just inertia, the move could be done in a week, and you should compare prices right away; others say moving is costly and a hassle, and you shouldn't touch it. The first reading follows the default effect, the second follows switching costs, and they advise exactly opposite things. Move one department's mailboxes first and measure what it really costs: if little, it's inertia; if a lot, the sums are on the side of switching costs."
+   },
+   {
+    "id": "sunk-cost",
+    "sees": "The company has spent three years of customization fees on its old CRM. Some say \"we can't let that go to waste,\" others say \"moving is too expensive.\" The first is the sunk cost pulling at people; customization fees already paid don't go into the sums. The second does go in, but only for the customizations that would have to be redone after the move."
+   },
+   {
+    "id": "optionality",
+    "sees": "A data platform quotes half price for a three-year contract and full price for a one-year contract. Optionality says don't sign the long contract, keep your way out; switching costs may show you won't leave anyway, so half price is the real bargain. First estimate how likely you are to actually leave within three years: if you really might, the short contract plus a way to export your data is worth the small extra cost; if you won't, sign for three years."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You run a 30-person design studio. Its current project management software will be used for another 18 months, after which the studio will move onto its parent company's system. A new piece of software would save 2,000 yuan a month in staff time spent organizing; moving the current project files over, training everyone and running old and new side by side to check costs 40,000 yuan once, with no other new costs after that.",
+    "question": "Looking only at the money, what should the studio do?",
+    "explain": "Eighteen months saves only 36,000 yuan in all, not enough to make up the one-time cost of 40,000; staying is the right call.",
+    "options": [
+     {
+      "text": "Switch to the new software. It saves 2,000 a month, and given time that will more than cover the cost of the move.",
+      "correct": false,
+      "feedback": "It will only cover it if you use it long enough; here you can use it for only 18 months before moving to another system."
+     },
+     {
+      "text": "Keep the old software. Eighteen months saves only 36,000 yuan, short of 40,000.",
+      "correct": true,
+      "feedback": "The gain counts only the 18 months you'll still use it, 36,000 in all, less than the one-time 40,000."
+     },
+     {
+      "text": "Switch. Training and migration are paid only once, with no new costs after that, so it's as good as free.",
+      "correct": false,
+      "feedback": "Paying once is still paying; that one-time 40,000 has to be made up over the time you'll still use it."
+     },
+     {
+      "text": "Keep the old software. Data migration always goes wrong, and switches like this never pay.",
+      "correct": false,
+      "feedback": "Nothing in the question suggests anything going wrong. The reason to stay is that the sums don't add up, not that switching never pays."
+     }
+    ]
+   },
+   {
+    "stem": "You're winning customers for a new bank and want to bring over another bank's existing customers. Research finds they won't move, and the reasons, heaviest first, are: their salary deposits and a dozen or so automatic payments are all tied to the old account and have to be changed one by one; transfer limits have to be applied for again; and the new card's fees are no lower than the old card's. The new bank has four plans, and the budget covers only one.",
+    "question": "Which plan most directly lowers existing customers' burden of leaving?",
+    "explain": "Existing customers' biggest burden is changing their salary deposits and automatic payments one by one. Doing that step for them is what bears down on the biggest cost of leaving.",
+    "options": [
+     {
+      "text": "Give every customer who opens an account a cash bonus they can withdraw the day it arrives.",
+      "correct": false,
+      "feedback": "A bonus is only a one-time compensation; the customer still has to do the work of changing dozens of linked payments."
+     },
+     {
+      "text": "Stress in ads that the new bank's savings rate is a good bit higher than the old bank's.",
+      "correct": false,
+      "feedback": "A higher rate doesn't lighten the hassle of moving: the customer still has to change the salary deposits and automatic payments one by one."
+     },
+     {
+      "text": "Switch the salary deposits and automatic payments over for the customer.",
+      "correct": true,
+      "feedback": "Doing it for them directly removes the most troublesome task."
+     },
+     {
+      "text": "Push the new card's fees below the old card's, so every transaction is cheaper.",
+      "correct": false,
+      "feedback": "Fees are only the lightest of the three burdens; the salary and payment links are still there."
+     }
+    ]
+   },
+   {
+    "stem": "A video editing app announces a 30% price cut. After the launch, new sign-ups soar, but studios that have used a similar older app for more than three years hardly move at all, and many of them admit the new app has better features.",
+    "question": "What's the most likely reason the established studios stay put?",
+    "explain": "Established studios have built up templates, plugins and project files, and their teams have formed habits; moving over means redoing things and risking mistakes on projects. New users carry none of these burdens.",
+    "options": [
+     {
+      "text": "The established studios aren't sensitive to price, so a 30% cut doesn't appeal to them, and they didn't move.",
+      "correct": false,
+      "feedback": "Price insensitivity can't explain why new users flooded in; the difference lies in what each group pays to leave."
+     },
+     {
+      "text": "The established studios don't trust the new app and think its features are less reliable than the old one's.",
+      "correct": false,
+      "feedback": "The question says many studios admit the new app's features are better."
+     },
+     {
+      "text": "The price cut is too small, and the established studios can't see what a 30% cut would do for them.",
+      "correct": false,
+      "feedback": "New users saw the same price cut; for the established studios, the gain was eaten up by the cost of moving."
+     },
+     {
+      "text": "Their templates, plugins and project files all live in the old app, and moving means redoing them.",
+      "correct": true,
+      "feedback": "These are costs of leaving that only long-time users have and new users don't, so the same price cut attracts only newcomers."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "A 3,000-yuan switch doesn't pay back in two years",
+  "caption": "Total saved since moving gyms, net; it pays back where it crosses zero. Drag the cost and the years left to see if you end up ahead.",
+  "x": {
+   "label": "Years since switching",
+   "min": 0,
+   "max": 6
+  },
+  "y": {
+   "label": "Net saved so far",
+   "unit": " yuan",
+   "min": -6000,
+   "max": 9000
+  },
+  "params": [
+   {
+    "id": "c",
+    "label": "Switching cost",
+    "min": 0,
+    "max": 6000,
+    "step": 500,
+    "value": 3000,
+    "unit": " yuan"
+   },
+   {
+    "id": "s",
+    "label": "Saved a year",
+    "min": 500,
+    "max": 1500,
+    "step": 250,
+    "value": 1000,
+    "unit": " yuan"
+   },
+   {
+    "id": "t",
+    "label": "Years left",
+    "min": 1,
+    "max": 6,
+    "step": 1,
+    "value": 2,
+    "unit": " yrs"
+   }
+  ],
+  "series": [
+   {
+    "name": "Net saved",
+    "expr": "s*x-c",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "y": 0,
+    "text": "Break-even"
+   },
+   {
+    "x": "t"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Net saved at the end",
+    "expr": "s*t-c",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "Pays back after",
+    "expr": "c/s",
+    "unit": " yrs",
+    "digits": 1
+   }
+  ]
+ }
+}

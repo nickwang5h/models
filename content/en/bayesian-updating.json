@@ -1,0 +1,224 @@
+{
+ "id": "bayesian-updating",
+ "name": "Bayesian Updating",
+ "en": "贝叶斯更新",
+ "discipline": "math",
+ "one_line": "Start from a best guess, weigh new evidence, and shift your view bit by bit.",
+ "story": "In September the OPERA team reports neutrinos arriving about 60 nanoseconds faster than light; the next February a loose fiber-optic connector turns up, and new measurements match the speed of light",
+ "shallow": {
+  "scene": "In September 2011, the OPERA team, working under the Gran Sasso mountain in Italy, announced an astonishing reading. The neutrinos they picked up, a kind of particle that can pass through almost anything, were fired from CERN, the European nuclear research center about 730 kilometers away, and flew all the way through the rock underground. The arrival time they measured was about 60 nanoseconds earlier than light would take to cover the same distance (a nanosecond is a billionth of a second). According to Einstein's theory of relativity, nothing can travel faster than light.\n\nThe team didn't announce that relativity had been overturned. Instead, they made their data public and asked other scientists to help find the mistake. In February 2012, they found that a fiber-optic cable connector hadn't been plugged in tightly, which could throw off the timing. After fixing it and measuring again, the neutrinos' speed matched the speed of light.\n\nA piece of data that seemed about to rewrite physics in the end could not beat a far more common explanation: something was wrong with the equipment.",
+  "plain": "You come home from work and find your front door slightly open. You already have a starting point in mind: out of 100 times like this, 95 times a family member didn't close it properly, and 5 times a burglar got in. The ratio of how often each happens is called the odds: 5 to 95, which is 1 to 19.\n\nThen you notice a fresh scratch beside the keyhole. When family members open the door with a key, they leave a scratch 4 times in 100; someone picking the lock leaves one 80 times in 100. 80 divided by 4: a scratch is 20 times as common when the lock is picked. Bayesian updating works by multiplying the burglar side of the odds by this 20: 1 to 19 becomes 20 to 19. That means that out of 39 parts, a burglar accounts for 20, about half. You don't push the door open; first you call your family."
+ },
+ "deep": {
+  "mechanism": "### Multiplying the odds is really counting the nights with a scratch\n\nCollect a thousand nights when the door was left open, and count. On 950 nights, family members didn't close it properly, and on 4% of them, that is 38 nights, there was a scratch by the keyhole. On 50 nights a burglar got in, and on 80% of them, that is 40 nights, there was a scratch. The scratch in front of you can only be from one of these 38 plus 40, 78 nights in all, and 40 of them were burglaries, about half.\n\nThis 40 to 38 is where the multiplication comes from. The burglar side is 50 times 80%, and the family side is 950 times 4%. Comparing the two sides is the same as taking the starting ratio, 50 to 950, and multiplying it by the ratio of how common the scratch is on each side, 80% to 4% (that is, 20). That second ratio is called the likelihood ratio, written $L$. Write the starting odds as $O$, and the odds after seeing the evidence are\n\n$$O'=O\\times L$$\n\nIn plain words: the starting odds, times how many times more common the evidence is on one side than the other, give the new odds. Put in the numbers from the front door: $\\frac{1}{19}\\times20=\\frac{20}{19}$, the same ratio as 40 to 38.\n\n### When the starting point is very low, even an astonishing piece of data can't push it far\n\nSuppose a burglary starts at only 1%. In a thousand nights, a burglar comes only 10 times and leaves 8 scratches; family come 990 times and leave about 40. Most nights with a scratch still belong to the family, and a burglar accounts for only about 17%.\n\nThe OPERA reading works the same way, only from an even lower starting point. All of the following numbers are assumptions. The starting point for faster-than-light being true is one in ten thousand; the starting point for a mistake hiding in a complex experiment is one in twenty, and one in ten such mistakes happens to produce an early arrival this large. If faster-than-light is true, the \"early arrival\" is bound to appear; if there's a mistake, only one time in ten, so the likelihood ratio is 10. The starting odds are $\\frac{1}{10000}$ to $\\frac{1}{20}$, that is, $\\frac{1}{500}$. Multiply by 10 to get $\\frac{1}{50}$: the chance that faster-than-light is true is about 2%.\n\nLeave the other numbers as they are and change only the starting point for faster-than-light to one in a hundred. The starting odds become $\\frac{1}{5}$, and times 10 that is two to one: faster-than-light now accounts for about two thirds. The same reading, from different starting points, lands in completely different places.\n\n### Only data that tells two explanations apart counts as new evidence\n\nIn 2011, OPERA measured again with shorter neutrino pulses, and the reading was the same as before. But if the same timing equipment had a mistake hidden in it, the new measurement would arrive early too. The two explanations predict the same result, so the likelihood ratio is close to one, and the odds barely move. Finding the loose fiber-optic connector was what told the two sides apart: a finding like that only turns up if there's a mistake, and there'd be no reason for it if faster-than-light were true. Once the connector was fixed, the data matched the speed of light, and the odds for faster-than-light fell to nearly zero.",
+  "origin": "Bayesian updating comes from probability theory. In 1763, Richard Price edited and published a paper Thomas Bayes left when he died, on how to infer an unknown probability from observed results; Pierre-Simon Laplace then developed the same method independently and extended it.",
+  "limits": "The method is most reliable when two numbers can both be trusted: how common this evidence is under each explanation, and the starting point. Quality control, screening tests and fault-finding are all like this. If the list of candidates leaves out the real cause, the method can only share out confidence among those on the list, and so it pushes you toward the wrong side: you compare only a loose part and old wiring, and miss a software bug. If the starting point is an offhand guess of 30%, reporting 64.7% after multiplying by the likelihood ratio just dresses a guess up in precise-looking clothes."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When tracking down a fault in a new machine, for each candidate cause, look at how common the symptom that just appeared is under that cause, and take apart first the one whose odds rise the most."
+   },
+   {
+    "use": "communicate",
+    "text": "To explain to a colleague why one rumor didn't make you change plans, say how sure you were to begin with and how common this rumor would be if it were true and if it were false; then they can follow your working and push back on it."
+   },
+   {
+    "use": "predict",
+    "text": "To estimate the defect rate of the next batch of goods, start from the last batch's rate and revise it each time a new batch's data comes in from inspection; the more batches, the closer the estimate gets to the truth."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "Words change the verdict on an email",
+    "text": "In 2002, the programmer Paul Graham published \"A Plan for Spam,\" which used Bayes's method to filter junk email. He counted separately how often each word appeared in spam and in normal email. Words like \"the\" that are everywhere hardly move the verdict at all; each time a word that almost only shows up in spam appears, the odds that the email is spam get multiplied by a large factor. The weights of all the words in the email are combined, and emails over a certain line go to the spam folder."
+   },
+   {
+    "field": "History",
+    "title": "Clues adding up in bans",
+    "text": "During World War II at Bletchley Park, Alan Turing and his colleagues, breaking the German navy's Enigma code, recorded each clue's weight as a factor multiplying the odds, then converted it into a unit called the \"ban\": one ban is a factor of ten, and a tenth of a ban is about 1.26 times. The clues were added up one by one and used to rule out large numbers of rotor settings, leaving only the rest for the codebreaking machines to test."
+   },
+   {
+    "field": "Personal life",
+    "title": "The stain after the main valve is off",
+    "text": "A water stain appears in the corner of your bedroom wall. At first you think it's 70% likely a leak from upstairs and 30% likely a pipe inside your own wall (these numbers are assumptions). You turn off your home's main water valve, and the stain stops spreading that same day. If your own pipe is leaking, the stain is sure to stop once the valve is off; if it's a leak from upstairs, the chance the stain stops is only 20%. Three to seven times five makes fifteen to seven, and the chance it's your own pipe rises from 30% to about 70%. You take your hand back from the upstairs doorbell you were about to press, and log a repair request for your own pipes with the building management."
+   }
+  ],
+  "ask": [
+   "Where did my starting confidence come from: a counted share of similar cases, or an offhand guess?",
+   "If my judgment is wrong, would this evidence still show up? How many times less often than if my judgment were right?",
+   "Of the pieces of evidence I have, how many actually come from the same source?"
+  ],
+  "with": [
+   {
+    "id": "falsifiability",
+    "sees": "A startup team agrees in advance to shut the project down if daily active users are under 5,000 after three months. This is what falsifiability asks for: the line for the verdict is written down beforehand, and nobody changes their story when the time comes. Bayesian updating revises confidence every week rather than waiting for the deadline. On the day, daily active users are 4,800, just short. Falsifiability says stop, as agreed; Bayesian updating says first look at how that 4,800 came about, and if growth over the last three weeks is still picking up, a small shortfall can't overturn the whole judgment. The agreement guards against a team that can't let go moving the line again and again; updating every week guards against the agreement killing a project that is getting better. If growth is flat, stop at the line; if growth is picking up and the reason can be found, you can extend it once, and write down the new line first."
+   },
+   {
+    "id": "confirmation-bias",
+    "sees": "A new business partner sends you three letters of recommendation, each praising how reliable he is. Confirmation bias looks at you: you're only asking \"how is he reliable,\" and you read only the parts of the letters that praise him. Bayesian updating questions the letters themselves. He picked the people who wrote them, and even if he weren't reliable he could find three people to say good things, so the likelihood ratio is close to one and the starting point barely moves. To get anywhere, you need people he didn't suggest, such as former colleagues, or suppliers he has paid late."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You find a patch of wilting tomatoes in your vegetable garden. In past years, about 10% of plots that wilted like this had root rot and 90% were short of water. You pull up a plant to look at the roots: 60% of plants with root rot have blackened roots, and 20% of plants short of water do. This plant's roots are black. You pull another plant at the other end of the plot, and its roots are black too; the two plants are independent of each other.",
+    "question": "After both have black roots, how likely is it that this plot has root rot?",
+    "explain": "The starting point is root rot to lack of water, 1 to 9. Each black root is three times as likely under root rot as under lack of water. Multiply the odds by three once to get 1 to 3, and once more to get 1 to 1: each cause accounts for half.",
+    "options": [
+     {
+      "text": "About 25%; only the first plant changed the judgment.",
+      "correct": false,
+      "feedback": "The second plant is a different plant, found independently, so it also multiplies by three; multiply only once and the odds stop at 1 to 3."
+     },
+     {
+      "text": "About 60%; 60% of plants with root rot have black roots.",
+      "correct": false,
+      "feedback": "60% is the chance of black roots given root rot, not the chance of root rot given black roots; the second also depends on how common each cause is."
+     },
+     {
+      "text": "About 50%; each black root multiplies the odds by three.",
+      "correct": true,
+      "feedback": "1 to 9 times three is 1 to 3, and times three again is 1 to 1: each cause accounts for half."
+     },
+     {
+      "text": "About 10%; the share from past years hasn't changed.",
+      "correct": false,
+      "feedback": "The share from past years is only the starting point. Black roots are more common with root rot, so both black roots should push it up; leaving it as it was is the same as never looking at the roots."
+     }
+    ]
+   },
+   {
+    "stem": "You send an old classmate who lives far away an invitation to an event. You figured there was a 20% chance the email would be swallowed by his spam folder. If he sees the email, there's a 90% chance he'll reply within two days; if it went to spam, he won't reply. Two days pass with no answer.",
+    "question": "After hearing nothing, what's the chance the email went to spam?",
+    "explain": "No reply is certain if it went to spam, and happens only one time in ten if he saw it. This news multiplies the spam odds of 1 to 4 by ten, making them 10 to 4.",
+    "options": [
+     {
+      "text": "About 71%; no reply is certain if it went to spam, and only one in ten if he saw it.",
+      "correct": true,
+      "feedback": "The odds of 1 to 4 times ten become 10 to 4, so spam accounts for about 70%."
+     },
+     {
+      "text": "About 90%; he replies 90% of the time when he sees an email.",
+      "correct": false,
+      "feedback": "90% is the chance he replies after seeing the email; the question asks how likely it is the email went to spam, given no reply."
+     },
+     {
+      "text": "About 50%; either the email went to spam or he saw it.",
+      "correct": false,
+      "feedback": "How much each case accounts for depends on the starting point and on the chance of no reply, and neither of those is fifty-fifty."
+     },
+     {
+      "text": "About 20%; no news is no new information.",
+      "correct": false,
+      "feedback": "No reply is information in itself: it's certain if the email went to spam and happens only one time in ten if he saw it, so the starting point can't stay as it was."
+     }
+    ]
+   },
+   {
+    "stem": "An old friend of yours insists that a folk remedy for insomnia is absolutely useless; in his mind, the chance it works is 0. Later he reads about ten rigorous controlled trials, all showing the remedy works, and there's nothing to fault in the trials themselves. He works it out again using \"the odds from the old confidence times the factor from the new evidence.\"",
+    "question": "After the calculation, how sure will he be that the remedy works?",
+    "explain": "The starting odds are 0, and 0 multiplied by any finite factor is still 0. However big the factor from ten trials, it can't move this starting point.",
+    "options": [
+     {
+      "text": "Close to 100%; all ten trials support the remedy.",
+      "correct": false,
+      "feedback": "One-sided evidence can only move things when the starting point isn't 0; with a starting point of 0, the ten trials' factor multiplied in still gives 0."
+     },
+     {
+      "text": "A little above 0, say 1%; the evidence had some effect.",
+      "correct": false,
+      "feedback": "The starting point is 0, and odds of 0 times any factor are still 0; there's not even a small rise."
+     },
+     {
+      "text": "About half; ten trials are enough to cancel out his original view.",
+      "correct": false,
+      "feedback": "Canceling it out would take multiplying odds that start above 0; when the starting point is 0, whatever you multiply by gives 0."
+     },
+     {
+      "text": "Still 0; it's the same no matter how big the factor.",
+      "correct": true,
+      "feedback": "0 times any finite factor is 0. If the starting point is left at zero, the evidence has nowhere to land."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "From 5%, one scratch pushes it to about half",
+  "caption": "Count 1,000 nights with the door ajar. At a 5% start, burglars leave 40 scratches and family 38, so a burglar is about half. Drag the start to 1%: only about 17%.",
+  "x": {
+   "label": "Burglary, before the scratch",
+   "min": 0,
+   "max": 100,
+   "unit": "%"
+  },
+  "y": {
+   "label": "After the scratch",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "Starting point",
+    "min": 1,
+    "max": 50,
+    "step": 1,
+    "value": 5,
+    "unit": "%"
+   },
+   {
+    "id": "r",
+    "label": "Times as common",
+    "min": 1,
+    "max": 50,
+    "step": 1,
+    "value": 20
+   }
+  ],
+  "series": [
+   {
+    "name": "After scratch",
+    "expr": "100*x*r/(x*r+100-x)",
+    "tone": "accent"
+   },
+   {
+    "name": "No new evidence",
+    "expr": "x",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "x": "p",
+    "y": "100*p*r/(p*r+100-p)",
+    "text": "Your door"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Burglar's scratches",
+    "expr": "8*p",
+    "unit": " per 1,000",
+    "digits": 0
+   },
+   {
+    "label": "Family's scratches",
+    "expr": "8*(100-p)/r",
+    "unit": " per 1,000",
+    "digits": 0
+   },
+   {
+    "label": "Chance of burglar",
+    "expr": "100*p*r/(p*r+100-p)",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

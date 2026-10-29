@@ -1,0 +1,193 @@
+{
+ "id": "feedback-loops",
+ "name": "Feedback Loops",
+ "en": "反馈回路",
+ "discipline": "systems",
+ "one_line": "Results circle back into the next round, and either snowball or get pulled back.",
+ "story": "Word spreads that Northern Rock has asked the Bank of England for help, savers' queues grow longer, and on September 17 Darling announces a government guarantee on its deposits",
+ "shallow": {
+  "scene": "In September 2007, word spread that the British bank Northern Rock had asked the Bank of England for help, and savers lined up outside its branches across the country. People who saw the queues hurried to take out their money too. Withdrawals left the bank with less cash on hand, and less cash made more people decide to withdraw. On September 17, the Chancellor of the Exchequer, Alistair Darling, announced that the government would guarantee Northern Rock's deposits.",
+  "plain": "You walk toward a speaker holding a microphone. Sound goes into the microphone, out of the speaker and back into the microphone, making a feedback loop: the result comes back to the starting point and changes it. Suppose each trip around the loop makes the sound twice as loud. Three trips make it eight times as loud, and a piercing howl appears in an instant. You move the microphone half a meter away, less sound gets back into it, each trip no longer makes it louder, and the howl stops at once.\n\nThe loop in a toilet tank runs the other way: the higher the water, the higher the float rises, and the further it closes the inlet valve, so the water stops when it reaches the line. The first kind pushes a change further and is called a reinforcing loop; the second pulls a departure back and is called a balancing loop."
+ },
+ "deep": {
+  "mechanism": "### When each trip multiplies by more than 1, the change keeps climbing\n\nOn the hill behind the house there is a slope with only 10 centimeters of topsoil. The first rain cuts a gully 4 centimeters deep. The deeper the gully, the more water from the next rain runs into it, and the deeper it gets cut. Say the first rain washes away $a$ centimeters, and each rain after that washes away $g$ times as much as the one before. When $g$ is less than 1, the total washed away is\n\n$$a+ag+ag^2+\\cdots=\\frac{a}{1-g}$$\n\nAll the rains from the second one on, added together, are exactly the whole series multiplied once by $g$. Call the total $S$, and you get $S=a+gS$; move the terms around and $S=\\frac{a}{1-g}$.\n\nIf $g$ is more than 1, each rain washes away more than the last, and the sum has no ceiling. With a factor of 1.5, the second rain cuts 6 centimeters; the two together make 10, and the topsoil is already cut through. The third rain would cut another 9. Change the factor to 0.5, and the second rain cuts 2 centimeters, the third 1, and the total can never go past $4\\div(1-0.5)=8$ centimeters. The gully settles down by itself.\n\n### With an odd number of reversing arrows in the loop, a departure gets pushed back\n\nYour body temperature rises, so you sweat more; sweating more gives off more heat; giving off more heat brings your temperature back down. Each step counts as one arrow. The first two go the same way (the first thing goes up, and so does the next); the last one reverses (the first thing goes up, the next goes down). Each reversing arrow flips the direction once. With an odd number of reversing arrows, the direction after one trip around is the opposite of the original change: that is a balancing loop. With two reversing arrows, or none, two flips are the same as no flip, the direction coming back is unchanged, and that is a reinforcing loop.\n\nThe arrows' directions decide only whether the change comes back strengthened or canceled; how big the change ends up depends on the factor each trip. In the gully loop every arrow goes the same way, so it is a reinforcing loop, but with a factor of 0.5 the gully stops at 8 centimeters in total. Move the microphone half a meter away, and not one arrow changes, but the factor each trip falls below 1, so the howl stops.\n\n### When people's expectations are in the loop, just believing can make it happen\n\nWater level and body temperature have to actually change before they move the next thing; people only need to believe something will change, and they act first. On the day Northern Rock asked for help, Britain's Financial Services Authority said in a joint statement that the bank was still solvent, meaning it could still pay what it owed. Savers queued anyway, afraid others would take all the money out first; the more people withdrew, the more real that fear looked. House prices work the same way: people believe prices will rise, rush to buy, and prices rise, which confirms what everyone believed. Once the belief turns around, the same loop runs in reverse.",
+  "origin": "In 1868, James Clerk Maxwell, in \"On Governors,\" analyzed when a steam engine's governor would be stable. In 1932, Walter Cannon, in *The Wisdom of the Body*, described how the body holds steady states such as its temperature. In 1948, Norbert Wiener, in *Cybernetics*, treated feedback as a framework shared by machines and animals. In 1987, George Soros, in *The Alchemy of Finance*, described reflexivity: beliefs drive prices, and prices in turn change beliefs. In 2001, Jim Collins used the image of a \"flywheel\" for momentum that builds up.",
+  "limits": "The model only helps when the result really does come back to the starting point. When it gets colder outside, people use more electricity for heating, but the electricity doesn't change the outdoor temperature; that is influence in one direction only. Drawing two curves that rise together as a circle does not prove that they push each other.\n\nA reinforcing loop always runs into a limit: cash, customers and staff are all finite. When a balancing loop's results come back slowly, it overshoots. In the shower you turn up the hot water, but it takes a few seconds to reach the showerhead; you can't wait and turn it up again, get scalded, then turn it back, and the water swings between hot and cold. And the target a balancing loop holds may not be worth holding: an organization that keeps pushing complaints down gets only calm on the surface."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Why a neighborhood bookshop finds it harder to recover the quieter it gets: new books arrive slowly, regulars drop off, and the budget for buying books shrinks."
+   },
+   {
+    "use": "design",
+    "text": "Set up autoscaling for a group of servers: add machines when response time goes above a set value and remove them when it goes below. First write down who measures and who acts."
+   },
+   {
+    "use": "predict",
+    "text": "Predict, once a hospital stops keeping daily ward-round records, at which link the balancing loop that relied on them to correct mistakes will break, and where errors will show up first."
+   },
+   {
+    "use": "act",
+    "text": "Before putting more money into a growth flywheel you drew yourself, find the slowest link in it and work out whether your cash will last until it starts to pay off."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "Lower prices buy lower costs",
+    "text": "In 2001, Amazon started selling its more expensive books at a discount. Orders rose, the fixed costs of warehouses and delivery were spread over more items, the cost of each item fell, and the money saved went into the next price cut. Each round's results became what made the next round's price cut possible."
+   },
+   {
+    "field": "Investing",
+    "title": "A short squeeze where buying drives the price up",
+    "text": "On October 26, 2008, Porsche disclosed that through shares and options it controlled about 74% of Volkswagen's ordinary shares. A state government held about 20%, which left only about 6% available on the market. Funds that had borrowed shares to sell short had to buy shares back to return them. The more urgently they bought, the higher the price went; the higher the price, the more the short sellers lost, and the more of them were forced to buy back. In two trading days Volkswagen's share price shot from 211 euros to over 1,000 euros, and for a moment it was the most valuable listed company in the world."
+   },
+   {
+    "field": "Medicine",
+    "title": "A loop run by hand",
+    "text": "In people with type 1 diabetes, the pancreas no longer makes enough insulin, so the loop the body normally runs automatically has to be taken over by the person: prick a finger to test blood sugar, inject a measured dose of insulin if the reading is high, eat something sugary if it's low. A continuous glucose monitor turns the measuring step into a reading every few minutes."
+   }
+  ],
+  "ask": [
+   "Along each arrow, write down \"when this goes up, does the next thing go up or down?\" Count the arrows that go down: is the number odd or even?",
+   "In the reinforcing loop, which part has a floor or a ceiling? At what number will it stop?",
+   "Who set this target, and who reads each reading?"
+  ],
+  "with": [
+   {
+    "id": "limits-to-growth",
+    "sees": "In the local skill-sharing group you run, every extra keen member means people asking for help get answers faster, which draws in more members, and in three months membership doubled. The reinforcing loop says: keep recruiting. Limits to growth points out that there are only a few volunteers answering questions, and answers are starting to slow down. When new members drop week by week while the effort put in hasn't, listen to the limits: add helpers first, then talk about recruiting."
+   },
+   {
+    "id": "goodharts-law",
+    "sees": "A factory makes its defect rate a number to hold, and docks the team's bonus whenever it goes over (an imagined policy). The balancing loop says: correct a departure as soon as it appears, and do it hard enough. Goodhart's law sees that the heavier the penalty, the more the team will quietly fix defective items as rework and leave them off the books; the number looks good, but the quality leaving the factory doesn't. If the defect rate and customer returns improve together, push harder; if the defect rate improves while returns go up, change the measure."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "At an online shop's customer service center, customers who wait a long time call again and again to ask about progress, call volume rises, and the waits get longer. The manager wants to stop this loop from turning.",
+    "question": "Which of these acts directly on the link \"waited long, so called again\"?",
+    "explain": "An automatic receipt and progress you can look up mean people who are waiting don't have to call again, which cuts the repeat-call link.",
+    "options": [
+     {
+      "text": "Set a maximum length for each call for every agent.",
+      "correct": false,
+      "feedback": "A time limit acts only on each call; customers who are waiting will still call again."
+     },
+     {
+      "text": "Require agents to spend two minutes calming the customer at the start of every call.",
+      "correct": false,
+      "feedback": "Calming customers makes each call longer. There is no less reason to call again, and the people further back wait even longer."
+     },
+     {
+      "text": "Double the number of agents on weekend shifts.",
+      "correct": false,
+      "feedback": "Adding staff acts on the \"slow\" link. People still call again while they wait, just a few fewer."
+     },
+     {
+      "text": "Send an automatic receipt after the first call, with progress that can be checked any time.",
+      "correct": true,
+      "feedback": "If customers can check progress any time, there's no need to call again, and call volume won't rise by itself as waits grow."
+     }
+    ]
+   },
+   {
+    "stem": "A rating agency downgrades a company's credit rating, the interest on its borrowing goes up as a result, and the next year its profit really does fall. Someone says the rating was spot on.",
+    "question": "To tell whether the rating saw it coming or pushed the profit down, what should you check most?",
+    "explain": "If the rating saw it coming, profit and cash flow were already falling before the downgrade. If it pushed the fall, the rise in interest will account for a big part of the drop in profit.",
+    "options": [
+     {
+      "text": "How many reasons for the downgrade the rating report lists.",
+      "correct": false,
+      "feedback": "The number of reasons is about the report's length. It has nothing to do with whether the fall in profit was pushed by the downgrade."
+     },
+     {
+      "text": "The agency's overall hit rate over the past few years.",
+      "correct": false,
+      "feedback": "An overall hit rate can't tell you where this one company's fall in profit came from."
+     },
+     {
+      "text": "Profit and cash flow before the downgrade, and how much of the profit drop the interest rise accounts for.",
+      "correct": true,
+      "feedback": "The first shows how things stood before the downgrade; the second shows how big a part of the fall the higher interest makes up."
+     },
+     {
+      "text": "Whether the wording of the company's annual report after the downgrade is on the gloomy side.",
+      "correct": false,
+      "feedback": "The wording of the annual report reflects management's attitude; it can't show whether interest dragged profit down."
+     }
+    ]
+   },
+   {
+    "stem": "A chicken shed has automatic temperature control set to 25°C, and for three weeks the shed has stayed at 25°C. Over the same period the weather has been getting hotter, and the fans have run for 6, 10 and 15 hours in those three weeks (made-up numbers).",
+    "question": "What does it mean that the shed's temperature stayed the same for three weeks?",
+    "explain": "The temperature was held, but the effort needed to hold it grew every week. If it keeps getting hotter, once the fans at full power can't keep up, the reading will suddenly go over the line.",
+    "options": [
+     {
+      "text": "The system has plenty of spare capacity; nothing needs special attention.",
+      "correct": false,
+      "feedback": "The fans run longer each week, which means the spare capacity is being used up, not that there is plenty."
+     },
+     {
+      "text": "The temperature is held by the balancing loop, and the effort it takes is growing.",
+      "correct": true,
+      "feedback": "The reading is steady because the fans work a little harder each week. If the disturbance keeps growing and the effort runs out, the reading can't be held."
+     },
+     {
+      "text": "The sensor may be broken, and the readings are fake.",
+      "correct": false,
+      "feedback": "The reading stays the same while the fans' running time changes, and the two fit together. There's no sign the reading is wrong."
+     },
+     {
+      "text": "The set point is too low; raise it a little and the fans won't need to run as much.",
+      "correct": false,
+      "feedback": "The target is set by what the chickens need. Raising it changes the chickens' conditions, and the problem of shrinking spare capacity is still there."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "loop",
+  "title": "One down arrow, and the water stops at the line",
+  "caption": "Count the \"down\" arrows: only float to inflow, an odd number, so the change comes back reversed. The howl loop is all \"up\", so it keeps getting louder.",
+  "center": "Balancing",
+  "centerSub": "1 arrow down",
+  "nodes": [
+   {
+    "id": "lvl",
+    "label": "Water level",
+    "tone": "accent"
+   },
+   {
+    "id": "ball",
+    "label": "Float height"
+   },
+   {
+    "id": "flow",
+    "label": "Inflow"
+   }
+  ],
+  "edges": [
+   {
+    "from": "lvl",
+    "to": "ball",
+    "label": "Up"
+   },
+   {
+    "from": "ball",
+    "to": "flow",
+    "label": "Down",
+    "tone": "warn"
+   },
+   {
+    "from": "flow",
+    "to": "lvl",
+    "label": "Up"
+   }
+  ]
+ }
+}

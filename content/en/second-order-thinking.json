@@ -1,0 +1,213 @@
+{
+ "id": "second-order-thinking",
+ "name": "Second-Order Thinking",
+ "en": "二阶思维",
+ "discipline": "thinking",
+ "one_line": "Before you decide, ask \"and then what?\" and see how others will react.",
+ "story": "Thomas Austin releases European rabbits on his Barwon Park estate in Victoria, setting off Australia's rabbit plague",
+ "shallow": {
+  "scene": "In 1859, Thomas Austin released European rabbits on his Barwon Park estate in Victoria, Australia, so he would have something to hunt on his own land. The rabbits got past the estate's boundaries and, in surroundings that suited them, bred in huge numbers, eating pasture, crops and native plants as they spread outward. Austin did get his game. The farmers got a new rival for their grazing land, and the government began spending on getting rid of rabbits, year after year.",
+  "plain": "Every day you pick up groceries on your way home from work. It's a hassle, so you switch to buying a whole week's worth in one trip on Sunday. That's six fewer trips a week at about 15 minutes each, 90 minutes saved. If you stop counting there, that's the first-order sum. Second-order thinking asks one more question, \"and then what?\" On Thursday, the greens in the fridge have already wilted; on Friday you go downstairs for another trip. So you make only five fewer trips a week, save 75 minutes, and throw out about 30 yuan of vegetables as well."
+ },
+ "deep": {
+  "mechanism": "### What you do makes other people change what they do\n\nYou run a shopping mall with 200 parking spaces. To draw more shoppers on weekends, you announce free parking. Since parking costs nothing, residents of the nearby housing complexes drive in too and leave their cars there all weekend; by 9:30 on Saturday, the lot is full. People who actually came to shop circle twice, can't find a space, and turn around and leave. By afternoon the line of cars at the mall entrance reaches the intersection, and the stores have even fewer customers than usual.\n\n### Each step further out, your confidence drops a notch\n\nWhen you ask a few steps ahead, each step needs a reason why someone would really act that way. For the whole chain to hold, every link has to be guessed right, so the confidence multiplies. Suppose you're 80% sure of each link: one link is 80%, two links are 80%×80%=64%, three links about 51%. \"Free parking draws in residents\" and \"the lot fills and shoppers leave\" both have reasons behind them. Add a guess that \"shoppers switch to the mall across the street for good,\" and the whole chain is only about half certain.\n\n### Consequences you didn't foresee can also be good\n\nSildenafil was first tested as a drug to treat angina. A different effect observed during the trials later became its best-known use. The \"unanticipated consequences\" Robert Merton wrote about include both good and bad ones.",
+  "origin": "In 1850, Frédéric Bastiat discussed the later effects of a policy in \"That Which Is Seen, and That Which Is Not Seen.\" In 1936, the sociologist Robert Merton published \"The Unanticipated Consequences of Purposive Social Action,\" making consequences of this kind a subject of study in their own right. In 2011, Howard Marks's *The Most Important Thing* explained to investors how to think through to the second level.",
+  "limits": "When several parties will adjust in response, or one action shifts several conditions at once, it's worth thinking one step further; for an action whose conditions are fixed, the first-order sum is enough. If someone next to you collapses and stops breathing, it's no time to work out chains of consequences: start chest compressions. The other misuse is taking it too far. Any decision can be spun into a string of bad consequences, and as the chain gets longer and longer, people end up afraid to do anything."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "A neighborhood wants to get rid of rats and plans to pay a bounty for each rat tail handed in. First ask whether it costs less to breed rats and hand in their tails than the bounty pays. If it does, the bounty is urging people to breed rats."
+   },
+   {
+    "use": "predict",
+    "text": "A tourist site announces free admission. First-order thinking can only predict more visitors. Ask one step further: nearby guesthouses will raise their prices, locals won't want to go on weekends anymore, and next season's visitors will look different."
+   },
+   {
+    "use": "explain",
+    "text": "A highway is widened and a few years later it's jammed again. Once the road is easier to drive, people who used to take other routes or switch to the subway drive on it too, and the new lanes soon fill up."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Society",
+    "title": "The fine became a price",
+    "text": "In 1998 the economists Uri Gneezy and Aldo Rustichini ran an experiment at ten day-care centers in Haifa, Israel. Six of them began charging parents a small fine for picking up their children late. Late parents didn't become fewer; they became more numerous. The paper published in 2000 explained it this way: the fine turned being late from a matter of bad manners into a sum you could pay. Later the fine was dropped, and lateness did not go back to its old level."
+   },
+   {
+    "field": "Technology",
+    "title": "Approvals cut to one level",
+    "text": "You cut the approval of internal expense claims at your company from three levels to one, and each claim goes through two days faster. A quarter later, finance finds that small receipts are up 40%: people who used to skip claiming them because the process was a hassle now claim everything as a matter of course. Finance adds a monthly cap on small claims for each person."
+   },
+   {
+    "field": "Investing",
+    "title": "A dividend from selling a production line",
+    "text": "You own shares in a manufacturing company. The company sells a production line that is still running at full capacity and pays out all the proceeds as a dividend, so you receive cash this quarter. You dig out the orders. The work this line used to do can't be absorbed, because capacity is already full; it will have to be outsourced or given up. You weigh this dividend together with the profit that will be missing next year before deciding whether to hold or sell."
+   }
+  ],
+  "ask": [
+   "Once this is done, whose costs or gains have changed? What's the easiest way for them to respond?",
+   "What will things look like a week from now, and six months from now?",
+   "Beyond the number I'm watching, who has the money, time or hassle shifted onto?"
+  ],
+  "with": [
+   {
+    "id": "one-way-two-way-doors",
+    "sees": "Starting next week, a shop will cut its closing time from 10 p.m. to 9 p.m. Second-order thinking says to think it through first: where will the late-evening customers go, and how will the part-timers' shifts change? One-way and two-way doors says that changing back only takes putting up a notice, so trying it for a month is faster than working it through for a week. If it can be undone in one sentence, try it first. Only when it can't be undone, such as a three-year lease already signed or staff already laid off, is it worth thinking through to the third link first."
+   },
+   {
+    "id": "chestertons-fence",
+    "sees": "A company wants to drop the rule that \"every outside quote must be seen by legal,\" because it slows down closing deals. Second-order thinking works forward: once it's dropped, how will sales quote prices, and will there be more contract disputes three months later? Chesterton's fence works backward: which money-losing deal forced this rule in the first place? The deal you find by working backward supplies data for exactly the chain you're working forward."
+   },
+   {
+    "id": "time-delays",
+    "sees": "You raise your monthly fee to customers by 10%, and in the first month not a single extra customer cancels. Second-order thinking's chain says \"customers will look for alternatives.\" Time delays adds the missing piece: most customers' contracts renew at the end of the quarter, so cancellations won't show up until next quarter, and a quiet first month doesn't count yet."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You run a bubble-tea shop. Three months ago you started a buy-one-get-one-free deal from Friday to Sunday on the first weekend of each month, and on those weekends you sell three times as many cups as on an ordinary weekend. Your business partner says, \"All the extra cups came from the deal.\" You want to check that claim.",
+    "question": "What should you compare against?",
+    "explain": "Buy one, get one free can lead customers to buy earlier what they would have bought anyway, or buy more at once. How many of the extra cups are new depends on whether the weeks before and after the deal were lower.",
+    "options": [
+     {
+      "text": "The cups sold in the two weeks before and the two weeks after the deal, to see whether they were lower than usual.",
+      "correct": true,
+      "feedback": "If sales drop in the days after the deal, some customers moved their buying up to the deal weekend, and that part isn't new."
+     },
+     {
+      "text": "The number of new members who signed up during the deal.",
+      "correct": false,
+      "feedback": "More new members doesn't mean more cups sold, and this number can't show whether the deal merely shifted when people bought."
+     },
+     {
+      "text": "Cups sold on deal weekends versus ordinary weekends.",
+      "correct": false,
+      "feedback": "This only looks at the deal days. It can't show whether customers moved purchases from other days onto the deal weekend."
+     },
+     {
+      "text": "Cups sold on deal weekends versus cups sold over the same period by the shop across the street, which ran no deal.",
+      "correct": false,
+      "feedback": "The two shops have different customers and locations, so the gap mixes in many factors unrelated to the deal, and it can't show what your own shop lost on other days either."
+     }
+    ]
+   },
+   {
+    "stem": "The team wants shorter weekly meetings and plans to cut the longest a meeting room can be booked from 90 minutes to 30. Two coworkers each lay out a chain. A says that meetings that don't finish will move to the group chat and the arguing will go on there, wasting even more time. B says that with shorter meetings, people will think more clearly before speaking. Neither offers any evidence.",
+    "question": "Before deciding, what should you do first?",
+    "explain": "Both chains make sense, but both are only guesses about what follows. Which one will happen depends on how the team's unfinished meetings have wrapped up in the past, and records of that are right there in the group chat and the meeting notes.",
+    "options": [
+     {
+      "text": "Go with B and cut straight to 30 minutes; shorter meetings naturally make people think more clearly.",
+      "correct": false,
+      "feedback": "B's chain has no evidence either. Going with it just treats one unchecked side as fact."
+     },
+     {
+      "text": "Go with A and keep 90 minutes, so meetings don't spill into the group chat.",
+      "correct": false,
+      "feedback": "A's chain has no evidence. Keeping things as they are because of it means rejecting the change on the strength of an unchecked guess."
+     },
+     {
+      "text": "Look through the last few meetings that ran over and see how they wrapped up later, in the group chat or at the next meeting.",
+      "correct": true,
+      "feedback": "The link A described can be checked in past records: did meetings that ran over really move into the group chat and keep arguing?"
+     },
+     {
+      "text": "Split the difference and set the limit at 60 minutes, so both worries shrink a little.",
+      "correct": false,
+      "feedback": "60 minutes just discounts two unchecked chains. You still don't know what actually happens after a meeting runs over."
+     }
+    ]
+   },
+   {
+    "stem": "You run a nursing home. Last year residents fell 18 times, and 5 of those falls ended in fractures. You want residents to fall less and get hurt less next year, and you can choose only one of the four plans below.",
+    "question": "Which do you choose?",
+    "explain": "Fewer falls doesn't mean safer. Plans that limit walking cut falls in the short run, but no one keeps the residents' legs in practice, so they're more likely to fall some time later. Changing the surroundings makes walking itself safer.",
+    "options": [
+     {
+      "text": "All residents use wheelchairs whenever they go anywhere.",
+      "correct": false,
+      "feedback": "If the residents walk less, their leg strength fades, and within a year one small stumble could bring them down."
+     },
+     {
+      "text": "Each resident may walk around for no more than 10 minutes a day.",
+      "correct": false,
+      "feedback": "With walking time cut short, leg strength fades just the same, and the risk of falling is only put off."
+     },
+     {
+      "text": "Raise the bed rails at night and don't let residents get out of bed on their own.",
+      "correct": false,
+      "feedback": "Residents who need the toilet at night will climb over the rails and fall from higher up."
+     },
+     {
+      "text": "Put non-slip floors in the bathrooms and hallways, and install handrails.",
+      "correct": true,
+      "feedback": "The residents keep walking as usual and their legs stay strong, and there's less along the way to make them slip."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Free parking: residents fill it first",
+  "caption": "First order sees only more cars in the morning. Ask \"and then?\" a few times: the lot fills, shoppers turn back, and stores get fewer customers than usual.",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "Free parking"
+   },
+   {
+    "id": "b",
+    "label": "More cars",
+    "sub": "1st order: aim",
+    "tone": "muted"
+   },
+   {
+    "id": "c",
+    "label": "Locals park",
+    "sub": "All weekend"
+   },
+   {
+    "id": "d",
+    "label": "Full by 9:30"
+   },
+   {
+    "id": "e",
+    "label": "Buyers go",
+    "sub": "Can't park"
+   },
+   {
+    "id": "f",
+    "label": "Fewer buyers",
+    "tone": "warn"
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b",
+    "tone": "muted"
+   },
+   {
+    "from": "a",
+    "to": "c",
+    "label": "Then?"
+   },
+   {
+    "from": "c",
+    "to": "d"
+   },
+   {
+    "from": "d",
+    "to": "e"
+   },
+   {
+    "from": "e",
+    "to": "f"
+   }
+  ]
+ }
+}

@@ -1,0 +1,210 @@
+{
+ "id": "power-law",
+ "name": "Power Laws",
+ "en": "幂律",
+ "discipline": "math",
+ "one_line": "A few take the lion's share, most are tiny, and there's no typical size.",
+ "story": "In February Facebook announces it is buying WhatsApp, and the roughly 60 million dollars Sequoia has invested since 2011 is valued at about 3 billion dollars, about 50 times over",
+ "shallow": {
+  "scene": "Most of the posts or short videos you share get a few dozen likes. If one day one of them goes viral, the likes on that one post alone add up to as many as all the rest together. People in venture capital do the same kind of sums.\n\nIn February 2014, Facebook announced it was buying the messaging app WhatsApp. Sequoia Capital had put about 60 million dollars into the company in stages since 2011. At the purchase price, Sequoia's stake was worth about 3 billion dollars, 50 times what it had put in.\n\nMost venture returns come this way. A firm that had invested in several hundred venture funds counted up their deals since 1985: about 6% of the investments brought in about 60% of the returns. So whether a venture fund makes money depends mainly on whether it backed a WhatsApp. One hit can make up for the dull results and losses of the few dozen other deals.",
+  "plain": "A street has several noodle shops. You don't know which one is good, so you join the longest line, and the next person thinks the same way. So the long lines get longer and the short ones never get anyone. Every so often a new shop opens on the street, too. At first nobody stands outside a new shop, and it takes a good while before a line forms. After a year, the few shops that opened early and got a line going first have lines out to the corner every day, while most shops have only a scattered table or two.\n\nHow many new customers a shop gets is proportional to how long its line already is, and meanwhile new shops keep opening. Put these two together, and the shape you get when you line up how many customers each shop has is called a power law.\n\nLine up a country's towns by population and you often see this shape too. Say 1,000 towns have more than 10,000 people. Raise the bar to 20,000 and about 450 are left; raise it again to 40,000 and about 200 are left. Each time the bar doubles, only about 45% are left. Because this proportion stays the same all the way up, the number of towns doesn't suddenly cut off at any size. So no town counts as \"typical\": there are thousands upon thousands of small towns, yet the largest has millions of people."
+ },
+ "deep": {
+  "mechanism": "### The share left at each doubling decides how much the few take\n\nCall the bar $x$ and the number above it $N(x)$. $C$ only sets how many there are overall; $k$ sets how fast the number falls as the bar rises, and statistics calls it the exponent:\n\n$$N(x)=Cx^{-k},\\qquad N(2x)=2^{-k}N(x)$$\n\nIn other words, when the bar becomes $2x$, the number is multiplied by $2^{-k}$. There is no $x$ in this factor, so whatever bar you start doubling from, the same share is left.\n\nBack to the towns: about 45% are left at each doubling, so $2^{-k}\\approx0.45$, which works out to an exponent of about 1.16. In the ideal case with no upper limit, an exponent of 1.16 makes the largest 20% of towns hold 80% of the total population; this is the 80/20 rule. When only 35% are left at each doubling (exponent 1.5), the largest 20% hold only about 59%; when only 25% are left (exponent 2), they hold only about 45%. The more are left at each doubling, the more very large items there are, and the more of the total the few largest take.\n\n### Size draws more size and newcomers keep arriving, and that grows a power law\n\nThe lines outside the noodle shops show why the gaps open up. To stretch them into \"the same share left at each doubling,\" you also need a steady stream of newcomers. Let's work it through with followers on a social platform.\n\nNew accounts prefer to follow accounts that already have lots of followers, so each account gains followers at a speed proportional to the followers it already has. Twice the followers means growing twice as fast, so an account with 1,000 followers and one with 100,000 take the same time to double; call that time one period. That makes the number of followers depend mainly on how early an account joined: an account that joined one period earlier has twice as many followers. The platform is also growing, and each period the new accounts that join outnumber the last period's by the same proportion. Counting backwards, each period earlier, that period's batch of accounts is smaller by the same proportion.\n\nPut the two together: twice the followers means joining one period earlier, which means fewer accounts by the same proportion. That is exactly the same share left at each doubling. It is one common route to a power law, but not the only one.\n\nAnother kind of quantity only rises and falls by proportions, with no newcomers joining and no floor. The shape it grows into is called lognormal, and it can also produce a few that take the lion's share. To tell the two apart, use a log-log plot: both axes are marked in doublings, so 1, 2, 4 and 8 are evenly spaced. Plot how many items are above each bar. A power law is a straight line, because the same share is left at each doubling; a lognormal bends further down the further right you go, because the share left after each doubling keeps getting smaller.\n\n### With the same share left at every scale, averages and old records can't be trusted\n\nHeight has a scale that holds most people in. Most adults are between 1.5 and 1.9 meters, and you almost never meet anyone over 2 meters, so average height tells you how tall an ordinary person is. A power law has no such scale. Going from 10,000 people to 20,000 leaves 45% of the towns, and going from 1 million to 2 million still leaves 45%; whatever scale you look at, it's the same share. So the average is dragged along by the few largest items and describes nobody. The largest item has no ceiling either: the more you count, the more likely you are to meet one bigger than the old record.\n\nWhen you use it, don't estimate the maximum by multiplying the average by some factor; push outward by doubling the bar. First count how many items are above 1,000, 2,000 and 4,000, work out the share left at each doubling, and keep applying it until only one is left. That is roughly where the next record will land.",
+  "origin": "Vilfredo Pareto analyzed income data in his *Cours d'économie politique* (1896–1897) and found that as the income bar rises, the number of people above it falls off as a power. In 1951 Joseph Juran brought this kind of concentration into quality management, and the name \"Pareto principle\" comes from him. In 1949 George Kingsley Zipf discussed the ranking patterns of word frequencies and city sizes. In 2004 Chris Anderson used \"the long tail\" to describe the combined value of niche products.",
+  "limits": "Power laws fit best for quantities that span several orders of magnitude, like city sizes, links between web pages and word frequencies. Height clusters around a typical value, and scores on a test out of 100 have a ceiling, so power laws don't apply to them. A few taking the lion's share doesn't mean a power law either: a lognormal can produce concentration too, and you have to check whether the log-log plot is a straight line. Staring at the big items makes it tempting to cut the small ones, but when the items depend on each other, even small contributors can't be cut. A suburban shuttle bus barely collects any fares, but scrap it and the main line loses the riders who reach its stations on it."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "To estimate how many replies the hottest post on a new forum will have after a year, count how many existing posts have more than each of several reply counts, and keep doubling the bar until only one post is left. That estimates better than multiplying the average number of replies."
+   },
+   {
+    "use": "act",
+    "text": "When you take over a log of returned goods, first sort the reasons by number of items from largest to smallest and add them up. See how much the top few account for, and then decide which reasons to chase today."
+   },
+   {
+    "use": "communicate",
+    "text": "When reporting your customer mix to your partners, write down \"what share of total revenue the top five customers bring in.\" One sentence makes it clear whose shoulders the risk rests on."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Insurance",
+    "title": "Hurricanes break the claims record",
+    "text": "In 1989 Hurricane Hugo cost US insurers about 4.2 billion dollars, the most expensive disaster up to then. Many insurers used past claims records to estimate the most they could ever have to pay. In 1992 Hurricane Andrew swept across southern Florida, with insured losses of about 15.5 billion dollars, more than three times the old record, and at least 11 insurers went bankrupt. After that the insurance industry switched to catastrophe models to set its reserves, and the storms in those models can be bigger than any in history. In 2014 two hurricane researchers lined up the losses from every US hurricane, and the tail of losses per storm was a power law: each time the bar doubles, about 45% of the storms are left."
+   },
+   {
+    "field": "Publishing",
+    "title": "Niche books find readers",
+    "text": "In 2004 Chris Anderson wrote in *Wired* that Amazon recommended *Touching the Void* to readers of *Into Thin Air*. *Touching the Void* was an earlier mountaineering memoir by Joe Simpson, and it started selling well all over again. Through recommendations, niche books found readers scattered far and wide, and the store didn't need to keep shelf space for every one of them."
+   },
+   {
+    "field": "Personal life",
+    "title": "The hit post is hiding in the tail",
+    "text": "You've written a newsletter for two years, 400 posts in all. Count them by views: 200 have more than 1,000 views, 90 more than 2,000, 40 more than 4,000, 18 more than 8,000, and 8 more than 16,000. Each time the bar doubles, about 45% of the posts are left. Following that proportion on up, a post with more than 100,000 views comes along about once every 400 posts. You stop setting your goals by average views, and you don't stop writing just because several posts in a row were flat. The hit posts are in the tail, and you only reach them by keeping on writing."
+   }
+  ],
+  "ask": [
+   "Line the items up from largest to smallest. How much of the total do the top few take? Take them away, and how much is left?",
+   "When I double the size bar, does the number left drop by about the same proportion each time?",
+   "Does the quantity I'm dealing with have a hard upper limit? Once it hits that ceiling, will the straight line keep going?"
+  ],
+  "with": [
+   {
+    "id": "marginal-thinking",
+    "sees": "You run a customer-support team, and the top three kinds of problem make up most of the tickets. Power laws say to focus on the head. Marginal thinking asks: these three already have dedicated staff and set scripts, so how many fewer tickets would one more person bring? There's one kind of problem in the tail that nobody handles yet, and one more person there would cut more. When the head has been pushed as low as it will go, turn to the tail; when it hasn't, keep putting effort into the head."
+   },
+   {
+    "id": "lognormal",
+    "sees": "You need to set a guaranteed minimum ad price for each episode of a podcast based on downloads, and you have data on the last 300 episodes. If downloads follow a lognormal distribution, the tail drops faster and faster to the right, the chance that the next episode beats the all-time high is small, and the minimum can be based on the top few episodes so far. If they follow a power law, the tail trails on in a straight line, and sooner or later one episode will far outdo every old record; set the minimum low, and you give away that episode's income for nothing. Plot how many episodes are above each download bar on a log-log plot. If it's a straight line all the way, negotiate a revenue share as for a power law; if it bends further down the further right you go, like a lognormal, set the minimum from the top few episodes so far."
+   },
+   {
+    "id": "fat-tails",
+    "sees": "Your investment account mostly has small ups and downs, with the odd extreme day. A power law tells you that extreme days get rarer by a fixed proportion. Fat tails ask something else: when the worst day comes, will the account still be there? Use the first to work out the proportions in the tail, and the second to decide how much room to leave in your positions."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You work on a product at a software company and have counted customers' storage use. 3,200 customers use at least 10 GB, and 800 use at least 20 GB. 200 use at least 40 GB, and 50 use at least 80 GB. Suppose this pattern keeps holding at higher usage. The product manager wants to know roughly how many customers use at least 160 GB.",
+    "question": "Which number is closest?",
+    "explain": "Each time usage doubles, the number of customers drops to a quarter: 3,200, 800, 200, 50. The next step is a quarter of 50, about 12 customers.",
+    "options": [
+     {
+      "text": "None at all",
+      "correct": false,
+      "feedback": "The proportion hasn't slipped at any of the four steps, so there's no reason for it to suddenly drop to zero here."
+     },
+     {
+      "text": "About 12",
+      "correct": true,
+      "feedback": "Each doubling drops the number to a quarter, and a quarter of 50 is about 12."
+     },
+     {
+      "text": "About 3",
+      "correct": false,
+      "feedback": "That treats 80 to 160 as two doublings and divides by 16. It is really one doubling, so the number drops to a quarter."
+     },
+     {
+      "text": "About 25",
+      "correct": false,
+      "feedback": "Each of the first four steps drops to a quarter. Counting half left at each doubling makes the answer twice too big."
+     }
+    ]
+   },
+   {
+    "stem": "You manage escrow funds at a crowdfunding platform. Over the past five years, 400 projects raised more than 100,000 yuan, 160 raised more than 200,000 and 64 more than 400,000. Each time the bar doubles, 40% are left, and it holds all the way up to several million. The largest project in five years raised 8 million yuan. A colleague proposes capping the escrow account at 10 million yuan per project.",
+    "question": "What do you make of this cap?",
+    "explain": "The number of projects keeps 40% at each doubling: 400, 160, 64, 26, 10, 4. At 6.4 million there are still one or two left; at 12.8 million there are about 0.7 every five years. 8 million is only as far as this tail has reached so far, and the more projects there are, the more likely the old record will be broken.",
+    "options": [
+     {
+      "text": "It's enough: the largest in five years was only 8 million, and 10 million already leaves some room.",
+      "correct": false,
+      "feedback": "8 million is only the largest seen in these five years. The tail trails on at the same proportion, and in a few more years a bigger one could turn up."
+     },
+     {
+      "text": "Set it by multiplying the average amount raised per project by a safety factor; that's sounder than looking at the largest.",
+      "correct": false,
+      "feedback": "The average describes an ordinary project. The cap has to guard against the single largest one in the tail, and no multiple of the average matches that."
+     },
+     {
+      "text": "First drop the 8 million as an outlier, then set the cap from the largest of the remaining projects.",
+      "correct": false,
+      "feedback": "The 8 million isn't a typo. It's the kind of project this tail naturally produces, and dropping it only sets the cap lower."
+     },
+     {
+      "text": "It isn't safe enough: going by this proportion, a project may top 10 million in a few years, so decide first what to do when the cap is exceeded.",
+      "correct": true,
+      "feedback": "Carrying on with 40% left at each doubling, projects above 12.8 million come to about 0.7 every five years, and there are more above 10 million. Set the cap by this tail, or have a plan ready for when it's exceeded."
+     }
+    ]
+   },
+   {
+    "stem": "The app store you open has 10,000 apps, and the average number of downloads across all of them is 50,000. You close your eyes and tap one at random.",
+    "question": "What is this app's download count most likely to be?",
+    "explain": "Downloads have no typical size. A few hit apps are downloaded enormously, pulling the average up to 50,000. The vast majority of apps have far fewer downloads than that, and one picked at random is most likely one of them.",
+    "options": [
+     {
+      "text": "There's no way to tell; it could be any app at all.",
+      "correct": false,
+      "feedback": "The average and the shape of the data already give a clue: most apps are below the average."
+     },
+     {
+      "text": "About 50,000; the average is the most likely value.",
+      "correct": false,
+      "feedback": "The average is pulled up by a few apps with huge download counts. Most apps don't reach it."
+     },
+     {
+      "text": "Far below 50,000; the average is pulled up by the huge numbers at the top.",
+      "correct": true,
+      "feedback": "A few top apps have enormous downloads and raise the average, and an ordinary app sits far below it."
+     },
+     {
+      "text": "Around 50,000, with half the apps above it and half below.",
+      "correct": false,
+      "feedback": "Only a few apps are above the average, not half. Most are below it."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Nobody follows: 20% each. All follow: one nears half",
+  "caption": "Five shops. Slider: share who follow the crowd; the rest pick at random. Each line is a rerun. At 0 lines hug 20%; at 100 they spread, one shop sometimes over half.",
+  "x": {
+   "label": "Customers so far"
+  },
+  "y": {
+   "label": "Busiest shop's share",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "f",
+    "label": "Follow crowd",
+    "min": 0,
+    "max": 100,
+    "step": 10,
+    "value": 100,
+    "unit": "%"
+   }
+  ],
+  "model": {
+   "steps": 300,
+   "init": {
+    "a": 1,
+    "b": 1,
+    "c": 1,
+    "d": 1,
+    "w": 1,
+    "u": 0.5
+   },
+   "next": {
+    "a": "a + (u < (f/100*a/(a+b+c+d+w) + (1-f/100)*0.2))",
+    "b": "b + (u >= (f/100*a/(a+b+c+d+w) + (1-f/100)*0.2)) * (u < (f/100*(a+b)/(a+b+c+d+w) + (1-f/100)*0.4))",
+    "c": "c + (u >= (f/100*(a+b)/(a+b+c+d+w) + (1-f/100)*0.4)) * (u < (f/100*(a+b+c)/(a+b+c+d+w) + (1-f/100)*0.6))",
+    "d": "d + (u >= (f/100*(a+b+c)/(a+b+c+d+w) + (1-f/100)*0.6)) * (u < (f/100*(a+b+c+d)/(a+b+c+d+w) + (1-f/100)*0.8))",
+    "w": "w + (u >= (f/100*(a+b+c+d)/(a+b+c+d+w) + (1-f/100)*0.8))",
+    "u": "rand()"
+   }
+  },
+  "runs": 12,
+  "series": [
+   {
+    "name": "Busiest shop",
+    "expr": "100*max(max(a,b),max(max(c,d),w))/(a+b+c+d+w)",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "y": 20,
+    "text": "Even split"
+   }
+  ]
+ }
+}

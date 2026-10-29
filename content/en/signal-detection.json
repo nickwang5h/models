@@ -1,0 +1,235 @@
+{
+ "id": "signal-detection",
+ "name": "Signal Detection Theory",
+ "en": "信号检测论",
+ "discipline": "psychology",
+ "one_line": "Every judgment makes two kinds of mistake, so missing fewer real cases means more false alarms.",
+ "story": "On December 7, radar operators Lockard and Elliott at Opana Point report a huge echo, the duty officer tells them not to worry, and within the hour Pearl Harbor is attacked",
+ "shallow": {
+  "scene": "Early on the morning of December 7, 1941, at Opana Point on the northern tip of Oahu in Hawaii, two Army radar operators, Lockard and Elliott, should have been finishing their shift. Just after seven, an unusually large echo jumped onto the screen, more than a hundred miles due north. They checked that the equipment was working and phoned it in to the information center. The officer on duty told them not to worry: it was most likely American bombers flying in from the mainland. Less than an hour later, the first wave of Japanese planes was over Pearl Harbor.",
+  "plain": "Signal detection theory was first worked out for radar operators, but the same sums apply in your kitchen. The smoke alarm outside your kitchen has a sensitivity dial. Turn it up, and it shrieks even when you burn a slice of toast in the morning. Turn it down, and the toast no longer sets it off, but a faint wisp of smoke from smoldering wiring won't set it off either until the smoke gets thick. The dial can only choose between two mistakes: going off for toast is a false alarm, and staying quiet for smoldering wiring is a miss. To have fewer of both, you need a different alarm that can tell toast smoke from wiring smoke."
+ },
+ "deep": {
+  "mechanism": "### Wherever you draw the line, one mistake shrinks as the other grows\n\nSuppose the screen reading averages 0 when there is no target and 2 when there is one, with a spread of 1 either way, so the two piles of readings overlap for a stretch. A reading above the cutoff line gets reported as an enemy plane, so wherever the line is drawn, some readings in the overlap land on the wrong side. Draw the line at 1: when a target comes, 84% are caught; when there is none, there are still 16% false alarms. Lower the line to 0.5, and the catch rate rises to 93% while false alarms grow to 31%. Raise it to 1.5, and false alarms drop to only 7%, but the catch rate falls to 69%.\n\n### How well you can tell them apart depends only on how far apart the two piles are\n\nHow many spreads apart the two averages are is written d′; here d′ = 2. With the line in the middle, at 1, each mistake is 16%. Lower the average with a target to 1, keep the line in the middle, and both mistakes rise together to around 30%; raise it to 3, and both fall together to under 10%. Put the false-alarm rate on the horizontal axis and the catch rate on the vertical axis, draw each line position as a point, and join them up: that is the ROC curve. Changing the line only slides you along the curve; the bigger d′ is, the more the curve bulges toward the top-left corner, where false alarms are few and catches are many.\n\n### Where to draw the line depends on two accounts\n\nHow much one miss costs and how much one false alarm costs, together with how common targets are in the first place, decide where the line goes. The worse the consequences of a miss and the more common the target, the lower the line goes.",
+  "origin": "In World War II, radar operators had to pick out enemy planes in screens full of clutter. After the war, in the 1950s, Tanner, Swets and others at the University of Michigan applied the same mathematics to human perception. Green and Swets's 1966 book *Signal Detection Theory and Psychophysics* brought it all together.",
+  "limits": "It works best where readings fall on one scale and the right answer can be checked afterward: radar echoes, X-rays, lab values. Hiring can't do this. The people you turned down never came to work, so you never know whether they would have been good, and the two mistakes can only be estimated. How well someone can tell things apart isn't a fixed skill of a person or a machine either. Put the same radiologist on an older machine with blurrier images, and the two piles of readings move closer together; holding the doctor to the scores measured on a new machine is unfair."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "communicate",
+    "text": "Explain to a hospital department why you can't have zero missed diagnoses and zero false diagnoses at once: draw two overlapping piles of readings and show them that wherever the line moves, one side always gets cut."
+   },
+   {
+    "use": "design",
+    "text": "Before setting a referral line, an alarm line or a hiring line, write down what missing one costs and what checking one extra costs; then you can work out where the line should go."
+   },
+   {
+    "use": "predict",
+    "text": "To predict how many of the extra alarms will be false after a security gate is made one notch more sensitive, you first need to know how much the two piles of readings, with and without banned items, already overlap."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Health care",
+    "title": "Lowering the referral line to 2.5",
+    "text": "Doctors at a health checkup center review prostate-specific antigen (PSA) reports, and the traditional referral line is 4 ng/mL. Some departments lowered the line to 2.5. Many more people were sent for biopsies, and more cancers were found, but many of those tumors grew very slowly and would never have caused trouble in the person's lifetime."
+   },
+   {
+    "field": "Security",
+    "title": "The stadium entrance",
+    "text": "You run security at a stadium entrance, and the line stretches out into the street. You turn the metal detector gates down two notches. Key rings no longer set them off and the line moves faster, but in the second week you also find fewer small knives than in the first. Later the stadium switches to new scanning gates that can tell the shapes of metal objects apart: the lines are shorter, and the knives still get found."
+   },
+   {
+    "field": "Work",
+    "title": "The same scoring sheet",
+    "text": "A hiring manager notices that among the people who pass their interviews, a few always leave within six months. She has every interviewer ask the same set of questions and score with the same scoring sheet, instead of each chatting by feel. The scores of people who pass and people who are turned down spread further apart. The passing line doesn't move, but fewer wrong people are hired and fewer good people are missed."
+   }
+  ],
+  "ask": [
+   "In this judgment, what does missing one cost, and what does one extra alarm cost?",
+   "Were the two sets of numbers I'm holding compared at the same line?",
+   "Rather than moving the line again, is there a new clue that separates the two kinds better?"
+  ],
+  "with": [
+   {
+    "id": "base-rate",
+    "sees": "For screening for a rare disease, where a missed diagnosis is costly, signal detection theory says to set the line low. The base rate says only one person in a thousand has the disease: the lower the line, the scarcer the real patients among the positives, and follow-up checks will overwhelm the hospital. If the follow-up is cheap and doesn't involve cutting into the body, go with the first and check more people. If the follow-up means a biopsy or surgery, tighten the line first, or add a second test before deciding."
+   },
+   {
+    "id": "signal-noise",
+    "sees": "A night-shift radar keeps getting set off by flocks of birds. Signal-to-noise says first improve the antenna and add filtering, to raise the signal relative to the clutter. Signal detection theory says that after raising it, you still have to choose a line, because the two mistakes still trade off against each other. While the equipment can still be improved, raise the signal-to-noise ratio first; only when that's at its limit is it time to move the line based on the costs of the two mistakes."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You work on the anti-fraud team at an insurance company and need to set a line: any claim scoring above it goes to a human for investigation. Each investigation costs about 400 yuan; each fraud you miss pays out 80,000 yuan on average. Fraudulent claims make up only about one in twenty of all claims.",
+    "question": "Where should the line for sending claims to a human go?",
+    "explain": "Missing one costs two hundred times as much as checking one extra. Even though fraud is a small minority, the line should go down so that more claims get checked, until checking one more costs more than the loss it might prevent.",
+    "options": [
+     {
+      "text": "Where the two kinds of mistake are exactly equal in number, because that is fairest to both sides and easiest to explain.",
+      "correct": false,
+      "feedback": "Making the same number of each mistake doesn't mean losing the same amount. Here every miss costs far more than a false alarm."
+     },
+     {
+      "text": "Where the total number of mistaken claims is smallest: the fewer misses plus wasted checks, the better.",
+      "correct": false,
+      "feedback": "Counting only the number of mistakes treats one miss and one wasted check as equally big. Their costs differ by a factor of two hundred."
+     },
+     {
+      "text": "Fairly low, sending more claims for checks: better to waste some checks than to miss fraud.",
+      "correct": true,
+      "feedback": "A wasted check loses only 400 yuan, while a miss pays out 80,000, so lowering the line is what pays."
+     },
+     {
+      "text": "Very high, checking only the few claims with the most suspicious scores, because fraud is a tiny minority anyway.",
+      "correct": false,
+      "feedback": "A miss costs two hundred times as much as a wasted check. However rare fraud is, the numbers still say to check more."
+     }
+    ]
+   },
+   {
+    "stem": "Two labs test athletes' samples with the same method, and the answers can all be checked afterward. Lab A flags 90% of samples from athletes who really took drugs, and also wrongly flags 20% of clean samples. Lab B flags 80% of real users and wrongly flags 10% of clean samples. Someone says: Lab A catches more, so Lab A tests better.",
+    "question": "Is this conclusion right?",
+    "explain": "Assuming both labs' readings spread out in the same shape, the two labs work out to the same ability to tell the samples apart. Lab A just draws its line lower, so it catches more and also flags more clean samples wrongly.",
+    "options": [
+     {
+      "text": "No. The two labs may just draw the line in different places, with the same ability to tell samples apart.",
+      "correct": true,
+      "feedback": "Catching more comes with more false flags, and the two labs' pairs of rates fall right on the same curve."
+     },
+     {
+      "text": "No. Lab B has fewer false flags, so Lab B tests better.",
+      "correct": false,
+      "feedback": "Fewer false flags is the result of Lab B drawing its line higher, and it catches fewer as well. Both are the same kind of trade-off."
+     },
+     {
+      "text": "They can't be compared: the two labs' data aren't comparable to begin with, so neither is better.",
+      "correct": false,
+      "feedback": "They can be compared: look at the catch rate and the false-flag rate together, and the two labs fall on the same curve."
+     },
+     {
+      "text": "Yes. A higher share caught means better testing.",
+      "correct": false,
+      "feedback": "While catching more, Lab A also flags twice as many clean samples wrongly; the two have to be counted together."
+     }
+    ]
+   },
+   {
+    "stem": "You are in charge of spam filtering for an email service. After you made the blocking line stricter, less spam slipped into inboxes, but more normal email was wrongly blocked. The product manager wants both kinds of mistake to be lower than now.",
+    "question": "What should you do next?",
+    "explain": "Moving the line again only swaps between the two mistakes. To lower both, the scores of spam and normal email have to be pulled further apart, for example by adding new clues that tell them apart.",
+    "options": [
+     {
+      "text": "Move the line back where it was: since the wrong blocks came from making it stricter, moving it back will make them go away.",
+      "correct": false,
+      "feedback": "Move the line back and there are fewer wrong blocks, but spam slips in again; the two mistakes don't drop together."
+     },
+     {
+      "text": "Make the line stricter still, until almost no spam can get into inboxes.",
+      "correct": false,
+      "feedback": "Move the line further toward strict and more normal email is wrongly blocked; all you get is the other mistake."
+     },
+     {
+      "text": "Give each user their own blocking line, based on their clicking habits.",
+      "correct": false,
+      "feedback": "Setting a line per person just lets each person find their own trade-off point; the scores of the two kinds of email are no further apart."
+     },
+     {
+      "text": "Add new clues, such as the reputation of the sender's domain and past correspondence, so the two kinds of email score further apart.",
+      "correct": true,
+      "feedback": "New clues pull the two kinds of email's scores apart, so at the same line both mistakes can drop together."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Moving the line swaps errors; a wide gap cuts both",
+  "caption": "A reading past the cutoff sets off the alarm. Red: false alarms; gray: misses. Drag the cutoff and one grows as the other shrinks; drag the gap and both shrink.",
+  "x": {
+   "label": "Screen reading",
+   "min": -3,
+   "max": 6,
+   "step": 0.05
+  },
+  "y": {
+   "min": 0,
+   "max": 0.45
+  },
+  "params": [
+   {
+    "id": "c",
+    "label": "Cutoff",
+    "min": -1,
+    "max": 3,
+    "step": 0.5,
+    "value": 1
+   },
+   {
+    "id": "d",
+    "label": "Gap between piles",
+    "min": 0.5,
+    "max": 4,
+    "step": 0.5,
+    "value": 2
+   }
+  ],
+  "series": [
+   {
+    "name": "",
+    "expr": "x>c ? exp(-x^2/2)/sqrt(2*pi) : 0",
+    "tone": "warn",
+    "fill": true,
+    "line": false,
+    "label": false
+   },
+   {
+    "name": "",
+    "expr": "x<c ? exp(-(x-d)^2/2)/sqrt(2*pi) : 0",
+    "tone": "muted",
+    "fill": true,
+    "line": false,
+    "label": false
+   },
+   {
+    "name": "No target",
+    "expr": "exp(-x^2/2)/sqrt(2*pi)",
+    "tone": "ink"
+   },
+   {
+    "name": "Target present",
+    "expr": "exp(-(x-d)^2/2)/sqrt(2*pi)",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "x": "c",
+    "text": "Cutoff"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Catch rate",
+    "expr": "100/(1+exp(-(1.5976*(d-c)+0.07056*(d-c)^3)))",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "False alarm rate",
+    "expr": "100/(1+exp(-(1.5976*(-c)+0.07056*(-c)^3)))",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "Miss rate",
+    "expr": "100-100/(1+exp(-(1.5976*(d-c)+0.07056*(d-c)^3)))",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

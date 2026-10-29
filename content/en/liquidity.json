@@ -1,0 +1,222 @@
+{
+ "id": "liquidity",
+ "name": "Liquidity",
+ "en": "流动性",
+ "discipline": "investing",
+ "one_line": "How fast, and how cheaply, you can turn what you own into cash on the day you need it.",
+ "story": "On June 3, Woodford's Equity Income Fund stops daily withdrawals, after money kept flowing out and most of what it held was hard to sell",
+ "shallow": {
+  "scene": "On June 3, 2019, the Equity Income Fund run by the British fund manager Neil Woodford announced that it was suspending withdrawals. The fund promised its investors they could take money out any day, but more and more of them wanted to. To pay out cash, the fund could only sell the shares it held. The easy ones to sell went first, and what was left got harder and harder to sell. Investors could still see their holdings and their value in their accounts, but they couldn't take that amount out: the fund first had to find buyers willing to take the shares without pushing the price too far down.",
+  "plain": "You have to pay 30,000 yuan in tuition on Friday. Your cousin has 30,000 yuan in savings; you have only a used car, also worth 30,000 yuan. In finance, the savings are said to be liquid and the car illiquid. The savings can be taken out today, every cent of them. Put the car up for sale and this week someone will offer only 24,000; to sell it for 30,000 you'd have to wait months. Before Friday, you have to choose between waiting months and taking 6,000 yuan less."
+ },
+ "deep": {
+  "mechanism": "### The more you sell, the less you get per share\n\nSuppose you have 200 shares to sell, and the buy orders are lined up from the highest bid down: 50 shares at 99 yuan, another 50 at 95, then 100 at 90. Sell only 50 shares and you get 99 yuan each. Sell 100, and the second 50 go for only 95, an average of 97. Sell all 200 at once and you get 18,700 yuan in total, an average of 93.5. At the top price on the screen, 99, you should have got 19,800; in fact you get 1,100 less, 5.5 yuan less per share.\n\n### Wait a few more days and some of the price comes back\n\nOnce the buy orders are used up, new ones gradually come in. Suppose 50 shares' worth of buy orders at 99 yuan come back every day. Sell the 200 shares over four days and all of them go at 99. If you have only one day left before you must pay, you have no choice: you sell everything at an average of 93.5. Whether a market is easy to sell in shows in three readings: how far apart the buy and sell prices are, how much is on offer near those prices, and how fast the buy orders fill back in.\n\n### When everyone sells at once, the buy orders themselves thin out\n\nIf other holders of the same stock are selling on the same day, they use up the 99 and 95 yuan orders first, and by your turn only 90 is left. Many of the buy orders that normally fill back in come from dealers, who buy first and sell on later. But dealers have only so much cash and room for stock, and when money is tight they take fewer orders. You either cut the price another notch or keep waiting.",
+  "origin": "The idea has no single inventor; it comes from the study of money and of securities trading. In 1892, in \"On the Origin of Money,\" Carl Menger used how easily goods sell to explain why people pick certain things to serve as money: the easier something is to sell, the more people are willing to accept it. In 1985, in \"Continuous Auctions and Insider Trading,\" Albert Kyle broke a market's liquidity into three parts: the price gap, depth, and how fast prices recover.",
+  "limits": "For someone who must come up with money by a certain day, such as wages due next week or tuition due next month, what a thing is worth is the cash it can bring in by that day. For someone who won't need the money for a long time and can wait for the right buyer, being hard to sell costs nothing, as with a home you live in and never meant to sell. Another mistake is to look only at whether something can be sold and not at how long the money takes to arrive. With products that take days to settle after you sell, or that lock your money up for a set period, you still can't get the cash on payday."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "You hold two things of equal value and may need cash for either next month. First ask who will take each off your hands, how much they'll take at each price, and how many days until the money arrives. Then compare how much you'd have to give up on price to turn each into cash, and you'll know which to sell first."
+   },
+   {
+    "use": "design",
+    "text": "When a company sets aside cash for next quarter's wages, how much of it can sit in hard-to-sell investment products depends on how much those products can bring in during payday week."
+   },
+   {
+    "use": "predict",
+    "text": "When the gap between buy and sell prices widens and the orders near those prices thin out, you can expect the next large sell order to push the price lower than usual."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Investing",
+    "title": "Even government bonds can be hard to sell",
+    "text": "In March 2020, investors rushed to sell US Treasury bonds all at once. A New York Fed study found that the amount that could be traded near the best prices for five-year and ten-year Treasuries fell at one point to a tenth of its average since the financial crisis. Sellers could still trade, but a big order pushed the price down as soon as it went in."
+   },
+   {
+    "field": "Business",
+    "title": "Valuable machinery that's hard to sell",
+    "text": "Your factory has a stamping press built to order for an old customer, still worth 800,000 yuan on the books. The old customer has moved its orders elsewhere, so you want to sell the press, and wages are due next week. Only two or three firms in the same trade are willing to take it, and they have to inspect it on site first, then take it apart and ship it. After three weeks of talks nothing is settled. On payday, a scrap dealer takes one look and offers you 60,000 yuan for it as scrap steel."
+   },
+   {
+    "field": "Personal life",
+    "title": "You can't spend the asking price",
+    "text": "You're moving to another city for a new job, so you list your old home with an agent at 3 million yuan. In the first two months only two groups come to see it, and both think it's too expensive. In the third month you drop the price to 2.8 million, and still no one makes an offer, so you have to borrow from friends for the rent and deposit in the new city. Six months on, a buyer takes it for 2.65 million, and from signing to the money arriving takes another six weeks."
+   }
+  ],
+  "ask": [
+   "On the day I need the money, who will buy, how much will they take at each price, and how many days until the money arrives?",
+   "If other holders are selling on the same day, how much cash and room for stock will the buyers have left?",
+   "When I estimate what I'm worth, am I using prices I could actually sell at, or asking prices and book values?"
+  ],
+  "with": [
+   {
+    "id": "price-and-value",
+    "sees": "You think a small company's stock is worth 30 yuan, and it has now fallen to 22. Price and value would tell you to hold on as it falls, or even buy more. But if you have to pay a home down payment next month and only a few hundred lots of the stock trade each day, the advice turns around: don't tie up money you'll need on a set date in a stock like this. Only spare money can afford to wait with it for the value to come back."
+   },
+   {
+    "id": "financial-leverage",
+    "sees": "You borrowed money to buy a batch of hard-to-sell goods. On the day the lender asks for more collateral, goods that could have waited six months must now be sold within three days. Financial leverage tells you who shortened your deadline; liquidity tells you what price you can get within that shorter deadline. Before you borrow, work out the earliest day the debt can demand cash from you, then work out what the goods can bring in on that day."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You hold 400,000 yuan of a small-company stock. In three weeks (15 trading days) you have to pay a home down payment, and money from a sale arrives the next day. The stock normally trades about 300,000 yuan a day. Assume that once you sell more than a tenth of a day's trading in one day, the price drops noticeably.",
+    "question": "You want to get close to the market price before the down payment is due. Which plan works?",
+    "explain": "You can sell only about 30,000 yuan a day without pushing the price down, so 400,000 takes about fourteen trading days to sell. With the money arriving the next day, that just makes it by day fifteen. Either you sell a lot at once and the price drops, or you wait long and miss the date.",
+    "options": [
+     {
+      "text": "Sell about 30,000 yuan each trading day and finish in about fourteen days.",
+      "correct": true,
+      "feedback": "Each day stays within a tenth of a day's trading, so the price is hardly pushed down, and the next-day payment still arrives in time for the down payment."
+     },
+     {
+      "text": "Sell 80,000 yuan a day in the first week and finish in five days.",
+      "correct": false,
+      "feedback": "80,000 a day is already more than a tenth of a day's trading, so the price will be pushed down all the way."
+     },
+     {
+      "text": "Do nothing for two weeks, wait for the price to rise, then sell 130,000 yuan a day for the last three days.",
+      "correct": false,
+      "feedback": "In each of the last three days you'd sell far more than a tenth of a day's trading. The price gets pushed down, and the next-day payment might not arrive in time either."
+     },
+     {
+      "text": "Put all 400,000 yuan up for sale on the first day and wait for a big buyer.",
+      "correct": false,
+      "feedback": "A big buyer may never show up, and putting out far more than a day's trading in one day will drop the price noticeably."
+     }
+    ]
+   },
+   {
+    "stem": "You need to sell 5 million yuan (face value) of one bond in a single go, and there are two platforms to choose from. On platform A the gap between buy and sell prices is 0.02 yuan, and the best buy price is 99.99 yuan, but only 10,000 yuan is on offer there; all the other buy orders are below 98. On platform B the gap is 0.10 yuan, the best buy price is 99.95 yuan, and 6 million yuan is on offer at that price.",
+    "question": "For this one-time sale, which judgment holds?",
+    "explain": "To sell 5 million at once, you need to look at how much can be taken near the quoted price. A's price is higher but takes only 10,000 yuan, and the other 4.99 million sells below 98. B's gap is wider, but the whole sale goes through at 99.95.",
+    "options": [
+     {
+      "text": "A is better: the gap is narrower and the best buy price is higher.",
+      "correct": false,
+      "feedback": "A narrow gap only means it costs little to trade right away. It says nothing about how much that price will take."
+     },
+     {
+      "text": "B is better: the whole sale goes through at 99.95, while A's higher price only covers 10,000 yuan.",
+      "correct": true,
+      "feedback": "B's best buy price can take the whole sale. A's covers only 10,000 yuan, and most of the rest sells at a lower price."
+     },
+     {
+      "text": "Both are the same: it's the same bond, so the price can't differ by platform.",
+      "correct": false,
+      "feedback": "The same bond has different amounts on offer near the quoted price on different platforms, so the average sale price differs."
+     },
+     {
+      "text": "A is better: split the sale into many small orders and sell slowly, and the price can stay at 99.99.",
+      "correct": false,
+      "feedback": "The question says to sell in a single go. Besides, A's buy orders are sparse, and nothing tells you how fast they fill back in."
+     }
+    ]
+   },
+   {
+    "stem": "A small town's main factory announces it is closing. Over three months, more than a thousand workers, one after another, want to sell their used cars to cover living costs. Only three dealers in town buy used cars, and each has limited lot space and limited cash to work with. The cars' condition and prices across the country haven't changed.",
+    "question": "Why are local used-car buying prices clearly low these few months?",
+    "explain": "The cars are worth just as much; what changed is that too many people came to sell at once. The dealers' lots and cash can't take that many cars, so to buy more they have to lower the buying price and wait for buyers from out of town to take the cars away.",
+    "options": [
+     {
+      "text": "Used-car prices are weak across the country, and local prices are falling with them.",
+      "correct": false,
+      "feedback": "The question says prices across the country haven't changed."
+     },
+     {
+      "text": "The three dealers are working together to push prices down, so buying prices are low.",
+      "correct": false,
+      "feedback": "Nothing in the question points to the dealers working together. Even without that, they would still have to put up cash and lot space for the extra cars."
+     },
+     {
+      "text": "Sellers arrive all at once, the three dealers' lots and cash can't take them all, and buying more means lowering the price.",
+      "correct": true,
+      "feedback": "The dealers taking the cars have limited stock room and cash. When sellers show up all together, the buying price has to drop to draw in buyers from out of town."
+     },
+     {
+      "text": "The workers' cars are in worse shape than usual, so dealers have to offer less.",
+      "correct": false,
+      "feedback": "The question says the cars' condition hasn't changed."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "title": "Sell 200 shares at once, get 5.5 less each",
+  "caption": "Buy orders: 50 shares at 99 yuan, 50 at 95, 100 at 90. Sell in one day and each share fetches less; sell 50 a day over four days and all go at 99.",
+  "x": {
+   "label": "Shares sold",
+   "min": 0,
+   "max": 200,
+   "ticks": [
+    {
+     "at": 50,
+     "label": "50"
+    },
+    {
+     "at": 100,
+     "label": "100"
+    },
+    {
+     "at": 150,
+     "label": "150"
+    },
+    {
+     "at": 200,
+     "label": "200"
+    }
+   ]
+  },
+  "y": {
+   "label": "Average per share",
+   "unit": " yuan",
+   "min": 90,
+   "max": 100
+  },
+  "series": [
+   {
+    "name": "All in one day",
+    "points": [
+     [
+      50,
+      99
+     ],
+     [
+      100,
+      97
+     ],
+     [
+      150,
+      94.67
+     ],
+     [
+      200,
+      93.5
+     ]
+    ],
+    "tone": "warn",
+    "dots": true
+   },
+   {
+    "name": "Over four days",
+    "points": [
+     [
+      50,
+      99
+     ],
+     [
+      200,
+      99
+     ]
+    ],
+    "tone": "accent",
+    "dashed": true
+   }
+  ]
+ }
+}

@@ -1,0 +1,221 @@
+{
+ "id": "supply-demand",
+ "name": "Supply, Demand and Price Signals",
+ "en": "供需与价格信号",
+ "discipline": "economics",
+ "one_line": "When a price moves, total strangers buy less, make more, or switch to something else.",
+ "story": "The May contract for WTI crude oil settles at minus 37.63 dollars a barrel on April 20",
+ "shallow": {
+  "scene": "Most people who have moved house have run into this: nobody wants the old mattress, and you have to pay someone to haul it away. In April 2020, crude oil in the United States came to the same point. The pandemic grounded planes and kept cars off the road, so a big slice of the demand for oil disappeared, but the wells kept pumping and the storage tanks filled up one after another.\n\nOn April 20, the May crude oil contract on the New York Mercantile Exchange was due to expire the next day. Anyone still holding the contract when it expired had to collect real oil in Cushing, Oklahoma, and the tanks there were nearly full. Everyone rushed to get rid of their contracts, and that day the closing price fell to minus 37.63 dollars a barrel: sellers had to pay before anyone would take the oil.\n\nThat negative number was telling everyone: there's so much oil there's nowhere to put it, so stop pumping, stop shipping, and if you have an empty tank, come and take some.",
+  "plain": "Say you sell kaolengmian, a grilled noodle snack, at a night market. Each night you prepare 100 servings at 8 yuan each. You sell out before nine, and about forty people at the back of the line leave empty-handed. The next day you raise the price to 10 yuan. About twenty people find it too expensive and go buy something else; you see you're making 2 yuan more a serving, so you prepare 20 more, and when you pack up all 120 servings have just sold out.\n\nNobody told you how much your customers earn, and nobody told your customers what you pay for each noodle sheet, yet one price sign made both buyers and seller change their minds at the same time. Economists call this supply, demand and price signals: each time a price goes up or down, it passes a message to everyone, \"this is scarcer now\" or \"there's more of this now.\""
+ },
+ "deep": {
+  "mechanism": "### The price settles where what people want to buy equals what sellers will make\n\nKeep going with the noodles. The higher the price, the fewer servings customers want, and the more you're willing to make:\n\n| Per serving | Customers want | You'll make | Result |\n|---|---|---|---|\n| 8 yuan | 140 servings | 100 servings | 40 short |\n| 10 yuan | 120 servings | 120 servings | Just right |\n| 12 yuan | 100 servings | 140 servings | 40 left over |\n\nAt 8 yuan some people can't get any, so some are willing to pay more, and the price gets pushed up. At 12 yuan there's food left over, and you have to cut the price. Only at 10 yuan do both sides match, and only there does the price hold steady.\n\n### Nobody keeps the books for everyone, so the price does the sums\n\nCustomers only know how much they're willing to pay, and you only know how much work one more serving takes, yet when the price moves, both sides change their minds at once. The economist Friedrich Hayek gave the example of tin. Imagine a large tin mine shuts down and the price of tin rises. A canning factory hasn't heard about the mine; it only sees that tin got more expensive, so it switches to aluminum cans. With more buyers for aluminum, its price rises a little too, and an aluminum plant opens one more production line. Nobody in the chain knows where it started, yet every link adjusts the right way: less tin, more aluminum.\n\n### The price tells you the result, not the reason\n\nSay a new school opens nearby and 40 more customers come each night. The price sign will go up to 12 yuan: at 12 yuan the number people want becomes 140 servings, exactly what you're willing to make. Or say noodle sheets get dearer and each serving costs 4 yuan more. The price sign will also go up to 12 yuan: you need 12 yuan to be willing to make the original 100 servings, and customers buy exactly 100. Both changes get squeezed into \"it's more expensive now,\" and the difference hides in the number of servings: in the first case you sell 140 a night, in the second only 100.\n\nTo know how long a price rise will last, go through the orders and the stock, and look for new stalls opening. Customers don't ask the reason either; they just compare prices. How much more your noodles cost than the flatbread from the next stall decides whether they switch.",
+  "origin": "In his 1890 *Principles of Economics*, Alfred Marshall turned the link between supply, demand and price into a systematic theory. In his 1945 essay \"The Use of Knowledge in Society,\" Hayek pointed out that knowledge is scattered among countless people, and prices let them coordinate without having to share what they know. His thought example was tin: when its supply gets tight, everyone who uses tin only sees the price go up, so they all use less of it, and nobody needs to know why.",
+  "limits": "Prices are easiest to read in a market where the goods, the place and the delivery time are all clearly defined. Cushing's May contract fell below zero, but the June contract still had a positive price: the same oil, the same place, only a month apart in delivery. When there are only one or two sellers, a price also reflects how high they dare to go, not only how scarce the thing is. The bigger mistake is taking whoever bids highest to be whoever needs it most: a bid also reflects who can afford to pay."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "On a stormy day the ride-hailing price doubles, and within ten minutes or so more drivers nearby start taking rides: the higher price called out people who had been resting at home."
+   },
+   {
+    "use": "act",
+    "text": "The platform adds 3 yuan per order to the delivery fee for weekend night shifts. As a courier, you don't need to know which shopping district is short of riders; just put weekend night shifts on your schedule first."
+   },
+   {
+    "use": "design",
+    "text": "Set booking rules for a popular exhibition. When it's all free, the slots are gone in minutes while weekdays sit empty; charge more for weekend tickets and less for weekday ones, and some people will move to weekdays on their own."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "A flood that reached hard drives",
+    "text": "In 2011, floods in Thailand swamped Western Digital's factories there and damaged the hard-drive supply chain. People in other countries who were planning to build computers had no idea which factory had flooded; they only saw hard-drive prices go up. Some put off adding storage, some chose a smaller size, and some kept using their old drives."
+   },
+   {
+    "field": "Personal life",
+    "title": "Dodging the busy weekend",
+    "text": "You and your partner want to use your annual leave for a trip to the beach. You find that the same room at the same inn costs 800 yuan on a Saturday and 400 yuan on a Tuesday. You switch to checking in on Tuesday, save 400 yuan, and also free up the room for someone who wants to come on Saturday."
+   },
+   {
+    "field": "Investing",
+    "title": "Tracing where the copper price comes from",
+    "text": "You're looking at a copper mining company, and the copper price has risen fast lately. You check the orders and stock. If a major mine has shut down and orders from buyers haven't grown, the gap will be filled once the mine reopens; if orders for power grids are growing and new mines won't start producing for years, the gap can't be filled any time soon."
+   }
+  ],
+  "ask": [
+   "Which goods, which place and which delivery time is this price about?",
+   "Did the price rise because there are more buyers or fewer sellers? Go through the orders and the stock.",
+   "How long will it take to fill the gap: how many months for new capacity, and how many weeks will the current stock last?"
+  ],
+  "with": [
+   {
+    "id": "price-and-value",
+    "sees": "A stock has doubled in three months. If you own it, read the price signal: right now someone is willing to pay this much, so it's a good time to sell some. If you want to buy, use price and value to work out what it's worth first; if it comes out at only half the price, wait."
+   },
+   {
+    "id": "time-delays",
+    "sees": "Rents in a city have gone up. The price signal says landlords and developers will build more, supply will rise, and rents will come back down. Time delays remind you that a building takes years to put up, and rents stay high all those years; whether to sign a three-year lease or rent short-term for now should be worked out with that gap in time in mind."
+   },
+   {
+    "id": "externalities",
+    "sees": "A factory's waste water flows downstream, and that cost isn't in its factory price, so the price looks perfectly normal. Externalities go looking for this bill that nobody pays, so the price can be made to include it."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You run a small café, and the menu lists A beans and B beans separately. This month the roaster raised its price for A beans by 30%, and B beans stayed the same. Your customers don't clearly prefer either bean.",
+    "question": "For your buying and your menu, what's the best-grounded thing to do?",
+    "explain": "The price rise itself already tells you A beans have become more expensive relative to B, and moving your main drinks to B beans saves money right away. Why A beans went up is a question about whether they'll keep rising, and you don't need to wait for the answer before acting.",
+    "options": [
+     {
+      "text": "Raise the price of A-bean drinks by 30% too, to keep your profit share the same.",
+      "correct": false,
+      "feedback": "B beans are a ready substitute. Customers will switch to B, and a 30% rise will most likely just drive away your A-bean customers."
+     },
+     {
+      "text": "First call and find out what happened where A beans are grown, then decide on the menu once you know.",
+      "correct": false,
+      "feedback": "A beans already cost 30% more than B beans, and that's enough to change your main drinks. The reason only decides how long the rise lasts; you don't need to wait for an investigation."
+     },
+     {
+      "text": "Stock up on both beans, in case prices keep rising next month.",
+      "correct": false,
+      "feedback": "B beans haven't gone up, and there's no sign they will. Stocking up just ties up money."
+     },
+     {
+      "text": "Switch your main drinks to B beans and keep a small amount of A beans for customers who ask for them.",
+      "correct": true,
+      "feedback": "A beans cost 30% more than B, and customers don't mind which, so switching cuts costs right away. You can look into the reason later."
+     }
+    ]
+   },
+   {
+    "stem": "In a seaside city, summer prices for guesthouse rooms have risen by half in three months, while the number of tourists is the same as last year. Over the same period, the city stopped approving new guesthouses, and a batch of old guesthouses were turned into long-term rental flats.",
+    "question": "To judge how long the price rise will last, what should you check first?",
+    "explain": "Tourists haven't increased; the rise comes from fewer rooms to rent. How long it lasts depends on when those rooms come back: when approvals open up again, and whether the places turned into long-term rentals go back on the market as guesthouses.",
+    "options": [
+     {
+      "text": "How hotel prices are changing in nearby cities.",
+      "correct": false,
+      "feedback": "Nearby hotels are only a point of comparison. The cause of the rise is fewer rooms in this city."
+     },
+     {
+      "text": "When approvals open up again, and whether the places turned into long-term rentals are listed as guesthouses again.",
+      "correct": true,
+      "feedback": "The rise comes from fewer rooms to rent. These two things decide when the rooms come back and when the gap gets filled."
+     },
+     {
+      "text": "Tourist bookings and how much is spent promoting tourism.",
+      "correct": false,
+      "feedback": "Tourist numbers are the same as last year, so nothing new is coming from demand. Checking this won't find where the rise comes from."
+     },
+     {
+      "text": "Each guesthouse's rating and number of reviews.",
+      "correct": false,
+      "feedback": "Ratings can explain why one guesthouse costs more than another, but not why a whole city's prices rose by half together in three months."
+     }
+    ]
+   },
+   {
+    "stem": "In winter, a small town rules that heating coal can sell for at most 800 yuan a ton. On the wholesale market, the cost of buying coal has already risen to just over 1,000 yuan a ton.",
+    "question": "A few weeks after the price cap takes effect, what are you most likely to see?",
+    "explain": "The cap holds down the price on the label, but it doesn't make any more coal appear. With the buying cost above the cap, coal dealers either stop buying or sell their coal somewhere without a cap, and shortages and pulling strings take over the job that price did.",
+    "options": [
+     {
+      "text": "Every household in town can buy enough coal at 800 yuan, and supply is about the same as before the cap.",
+      "correct": false,
+      "feedback": "Each ton loses the dealer over 200 yuan. No dealer will keep supplying like that for long, so supply won't stay as it was."
+     },
+     {
+      "text": "Demand falls, because the low price makes people think coal isn't important.",
+      "correct": false,
+      "feedback": "A low price makes people use more coal, not less. What's short is supply."
+     },
+     {
+      "text": "Coal shops often run out, people have to queue and pull strings to get any, and some coal goes to the neighboring town, which has no cap.",
+      "correct": true,
+      "feedback": "Each ton bought loses 200 yuan, so dealers buy less or find other outlets, and people who need coal can only queue or pull strings."
+     },
+     {
+      "text": "Coal dealers use their other businesses to cover the loss and willingly supply the whole town with coal at a loss.",
+      "correct": false,
+      "feedback": "Small coal dealers have no such source to cover the loss, and no reason to do it."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "More buyers raise the price; the stall makes more",
+  "caption": "The price settles where the lines cross. Drag \"Extra customers\": price and servings rise together. Drag \"Extra cost each\": the price rises too, but servings fall.",
+  "x": {
+   "label": "Price per serving",
+   "unit": " yuan",
+   "min": 6,
+   "max": 14
+  },
+  "y": {
+   "label": "Servings a night",
+   "min": 0,
+   "max": 220
+  },
+  "params": [
+   {
+    "id": "a",
+    "label": "Extra customers",
+    "min": 0,
+    "max": 60,
+    "step": 10,
+    "value": 0,
+    "unit": " people"
+   },
+   {
+    "id": "c",
+    "label": "Extra cost each",
+    "min": 0,
+    "max": 4,
+    "step": 1,
+    "value": 0,
+    "unit": " yuan"
+   }
+  ],
+  "series": [
+   {
+    "name": "Customers want",
+    "expr": "220-10*x+a",
+    "tone": "accent"
+   },
+   {
+    "name": "Stall will make",
+    "expr": "10*x-10*c+20",
+    "tone": "ink"
+   }
+  ],
+  "marks": [
+   {
+    "x": "10+a/20+c/2",
+    "y": "120+a/2-5*c",
+    "text": "The price stops here"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Price settles at",
+    "expr": "10+a/20+c/2",
+    "unit": " yuan",
+    "digits": 1
+   },
+   {
+    "label": "Sold per night",
+    "expr": "120+a/2-5*c",
+    "unit": " servings",
+    "digits": 0
+   }
+  ]
+ }
+}

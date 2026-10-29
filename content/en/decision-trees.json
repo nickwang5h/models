@@ -1,0 +1,223 @@
+{
+ "id": "decision-trees",
+ "name": "Decision Trees",
+ "en": "决策树",
+ "discipline": "thinking",
+ "one_line": "Map choices and outcomes as a tree, then work back from the ends to choose now.",
+ "story": "In April, Texaco offers 2 billion dollars to settle a 10.53 billion dollar judgment; Pennzoil's chairman Hugh Liedtke refuses, and at year's end they settle for 3 billion (a worked example in chapter 4 of Clemen's textbook)",
+ "shallow": {
+  "scene": "You've had a car accident, and the other driver says on the spot: let's settle this ourselves, and I'll pay you a sum. You could also go to court, where the judgment might give you much more, or might give you nothing at all.\n\nIn 1987, Hugh Liedtke, chairman of the American oil company Pennzoil, stood at the same fork in the road, only with much bigger numbers. Two years earlier, a jury had ordered its rival Texaco to pay Pennzoil more than 10 billion dollars, because Texaco had snatched away an acquisition Pennzoil had already agreed. Texaco appealed, and before the case was over, it offered: take 2 billion and we'll call it done. Liedtke didn't accept. At the end of the year, the two sides settled for 3 billion dollars.\n\nDecision analysis textbooks later drew his choice as a tree. Accept, and he gets 2 billion for sure. Refuse and leave it to the courts, and by the textbook's rough estimate there's a 20% chance of getting about 10.3 billion, a 50% chance of 5 billion, and a 30% chance of nothing. Averaging the three outcomes by their chances gives about 4.6 billion, more than twice 2 billion. So refusing wasn't a gamble that happened to pay off; it made sense by the numbers before the result was known.",
+  "plain": "You're having a barbecue in the yard on Saturday, and the forecast says there's a 30% chance of rain. On Thursday you have three paths. Book a tent now, for 400 yuan. Don't book, and if it rains, 1,500 yuan of food goes to waste, an average loss of 0.3×1500 = 450 yuan. Or wait until Friday when you can be sure, and book then, which at short notice costs 700 yuan; suppose Friday's forecast is accurate.\n\nYou draw the three paths as a decision tree and work out the last fork first. If Friday's forecast says rain, you book and lose 700; if it says no rain, you don't book and lose 0. Then work back: the chance that Friday's forecast says rain is also 30%, so waiting a day loses 0.3×700 = 210 yuan on average. That's less than both the 400 yuan for booking on Thursday and the 450 yuan for not booking, so you decide to wait. That one day is worth money because Friday's news lets you spend only when it's really going to rain; if the forecast weren't accurate, this branch would have to be worked out again.\n\nThat's how a decision tree is worked out: at forks that depend on luck, average by the chances; at forks where you choose, take the best branch; and work all the way back from the tips of the tree to now."
+ },
+ "deep": {
+  "mechanism": "### With only one fork, the tree is just one average\nShould you drill a well on a piece of land? Suppose drilling costs 1 million, the chance of striking oil is 30%, and if you strike oil you can sell it for 5 million. Not drilling is 0; the expected value of drilling straight away is 0.3×5,000,000 − 1,000,000 = 500,000.\n\n### Settle the later choices first, and the earlier forks have numbers\nBefore drilling, you can pay for a survey, and the tree gains a layer: first see the survey report, then decide whether to drill. Suppose that when there is oil underground, the survey reports good 80% of the time; when there's no oil, it still wrongly reports good 20% of the time. First work out how likely a good report is:\n\n- Of the 30% with oil, 80% report good, which is 24% of all cases;\n- Of the 70% without oil, 20% wrongly report good, which is 14%;\n- Add the two, and the chance of a good report is 38%.\n\nThen settle the later choice. Of the land with a bad report, only 6% actually has oil, so drilling would lose money on average; you don't drill, and it counts as 0. With a good report you drill: all of that 38% has to pay the 1 million to drill, and the 24% that really has oil sells for 5 million. Together that's 0.24×5,000,000 − 0.38×1,000,000 = 1,200,000 − 380,000 = 820,000 (before the survey fee). The survey keeps most of the land without oil out, so drilling money is spent only on land with a good report, and the expected value rises from 500,000 to 820,000.\n\n### Change the survey fee, and the answer flips\n820,000 is 320,000 more than 500,000, and that's the most the survey is worth. If the survey costs 200,000, you net 620,000, more than drilling straight away, so it's worth doing; if it costs 400,000, you net only 420,000, worse than drilling straight away. Even if the survey were always right, you'd drill only on the 30% of land with oil, netting 4 million each time, for an expected 0.3×4,000,000 = 1,200,000, which is 700,000 more than drilling straight away. So however high a survey's price, it should never be more than that 700,000.",
+  "origin": "In 1961 Howard Raiffa and Robert Schlaifer wrote statistical decision theory up as a textbook; in 1968 Raiffa's *Decision Analysis* turned decision trees, working back from the tips, and the value of information into one method, and it became an introductory course in business schools. In a 1994 talk at the business school of the University of Southern California, Charlie Munger said that the shared quantitative homework of first-year students at Harvard Business School was the decision tree. The Pennzoil and Texaco case became a worked example in decision analysis textbooks.",
+  "limits": "Decision trees work best when a matter can be split into a few steps and the outcomes and chances at each step can be estimated: drilling a well, a trial for a new drug, whether to go to court. Each extra layer multiplies the number of branches, and chances further out can only be guessed, so the decimals you get look precise but are still guesses. A tree can only pick the best among the branches you've drawn. If you draw only two branches for a home renovation, \"full-service\" and \"part-service,\" then however carefully you work it out, you can't pick the branch you didn't draw: \"do the kitchen and bathroom first, and the rest next year.\""
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "Before paying for a trial round, work out the most that round could be worth: if the trial costs more than the loss it can be expected to save you, just make the decision."
+   },
+   {
+    "use": "communicate",
+    "text": "When you explain to your partners why you're taking this path, lay the tree out. They can point at a particular chance or payoff and say \"I don't agree with this number,\" and the argument lands on specific numbers."
+   },
+   {
+    "use": "explain",
+    "text": "When reviewing a decision that failed, redraw the tree as it was at the time, and tell apart whether you picked the wrong branch or picked the right branch and ran into bad luck."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "Roll out to a few first, then to everyone",
+    "text": "You're about to push a new checkout page to all users. Launch it straight away, and if the page has a bug, the whole site has to be rolled back. Give it to 5% of users for a day first, and you wait an extra day, but you get to see whether the conversion rate drops. You work out the expected loss of each path, and the day of the staged rollout costs much less. On the second day the numbers look normal, and only then do you roll it out to everyone."
+   },
+   {
+    "field": "Medicine",
+    "title": "The most expensive trial goes last",
+    "text": "A project lead at a drug company has a candidate drug that has to pass phase I, phase II and phase III trials. At the end of each phase she can decide to continue or stop, and each phase costs more than the one before. She draws the chance of passing and the cost of each phase as a tree and works back from the income after the drug reaches the market. On the branch where phase II fails, the money for phase III never has to be spent. She splits the budget into three parts, and the phase III part isn't approved until the phase II results are in."
+   },
+   {
+    "field": "Personal life",
+    "title": "The startup's job offer",
+    "text": "You have two job offers. What the startup's stock options are worth depends on whether it can raise money a year from now. You draw the tree and find that the branch where fundraising fails doesn't go to zero: a year later you go back on the job market, and the income from a new job can still be filled in. Fill in that number, and the floor under the startup's offer rises. You choose it."
+   }
+  ],
+  "ask": [
+   "Can the outcomes at the tips of the tree be turned into numbers on the same scale, such as money or time? If not, settle on one unit before you draw.",
+   "For the chance on each luck branch, which historical records can I go through, and which people who've done it can I ask? Where I can't get it, work it out once with a high estimate and once with a low one, and see whether the choice changes.",
+   "Before which step could I spend a little money or time to get news first? Draw that as a new branch and work out what it's worth."
+  ],
+  "with": [
+   {
+    "id": "avoid-ruin",
+    "sees": "A company wants to stake all its savings on a new line of business. The tree shows this branch has the highest expected value, a long way above the safe plan, but one of its branches is running out of cash and closing the company. A decision tree's sums pick the highest expected value; avoiding ruin says that if one branch, once lost, leaves no next time, cross it out first and then compare. Where you can start over after a loss, choose by the tree; where a loss knocks you out, cross out that branch first."
+   },
+   {
+    "id": "backward-induction",
+    "sees": "Both work back from the tips of the tree; they part ways at the opponent's layer. You're about to negotiate a price with an opponent. When you fill the opponent's responses into the tree, you'd write them as a 60/40 chance branch based on past experience. But the opponent is working you out too, and at each fork picks the step that's best for them; it isn't a roll of the dice. Chance branches suit things with no interests of their own, like the weather or the market; when an opponent will adjust to you, use backward induction and plug in their best choice step by step."
+   },
+   {
+    "id": "bayesian-updating",
+    "sees": "Your main supplier delivered late this month for the first time. Should you switch to another? How far to raise the chance that \"it has become unreliable\" is the job of Bayesian updating: it was late only twice in its last fifty batches, so this one time has to be weighed, and often counts for less than gut feeling says. Only after that update is it the decision tree's turn to say whether to switch: put that chance into the luck branch and work back together with the cost of switching suppliers."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're an editor at a small publisher with a manuscript in hand. Publishing it costs 300,000; there's a 40% chance it's a bestseller, bringing in 1 million, and if not, it brings in 100,000. Someone suggests first having a group of readers try it, and suppose the readers' verdict can always tell correctly whether the book will be a bestseller.",
+    "question": "At most, how much can the reader trial add to your expected profit?",
+    "explain": "Publishing straight away has an expected profit of 160,000. With an accurate verdict from the readers, you publish only if it will be a bestseller, making 700,000, which happens 40% of the time; if not, you don't publish, which is 0. Together that's 280,000, which is 120,000 more than 160,000.",
+    "options": [
+     {
+      "text": "120,000",
+      "correct": true,
+      "feedback": "With the trial the total expected value is 280,000, and without it 160,000. The extra 120,000 is its upper limit."
+     },
+     {
+      "text": "700,000",
+      "correct": false,
+      "feedback": "700,000 is the profit on the bestseller branch, which happens only 40% of the time. It hasn't been combined by the chances yet."
+     },
+     {
+      "text": "280,000",
+      "correct": false,
+      "feedback": "280,000 is the total expected value with the trial. You haven't subtracted the 160,000 you'd get without it."
+     },
+     {
+      "text": "160,000",
+      "correct": false,
+      "feedback": "160,000 is the expected profit of publishing straight away without the trial, not what the trial adds."
+     }
+    ]
+   },
+   {
+    "stem": "You enter a two-round startup competition. You have a 50% chance of winning the first round; lose and you're out with nothing. Win and you're in the final, where you choose your own approach: the safe approach has a 60% chance of winning 500,000, the risky approach a 30% chance of winning 1.2 million, and losing with either means no prize.",
+    "question": "Standing before the first round, what is your expected prize?",
+    "explain": "In the final, the safe approach is worth 300,000 and the risky one 360,000, so you'd choose the risky one, and the final is worth 360,000 before it starts. Multiply by the 50% for the first round, and you get 180,000.",
+    "options": [
+     {
+      "text": "150,000",
+      "correct": false,
+      "feedback": "150,000 is worked out with the safe approach; once you're in the final, you can choose the higher one."
+     },
+     {
+      "text": "165,000",
+      "correct": false,
+      "feedback": "165,000 averages the two approaches, but you choose the approach yourself; it isn't drawn by lot."
+     },
+     {
+      "text": "360,000",
+      "correct": false,
+      "feedback": "360,000 is the value once you're in the final. It hasn't been multiplied by the first round's even chance of winning."
+     },
+     {
+      "text": "180,000",
+      "correct": true,
+      "feedback": "Before the final, take the risky approach you'd choose, 360,000, then multiply by the first round's 50%."
+     }
+    ]
+   },
+   {
+    "stem": "A colleague has drawn a branching chart for whether to open a branch store: first lease a site and run a three-month trial. If foot traffic is poor, the chart still records \"keep trading until the lease runs out, losing 720,000,\" and this branch has a 30% chance. All the other branches make a profit, the whole chart works out to a negative expected return, and so the colleague advises against opening.",
+    "question": "What's wrong with this chart?",
+    "explain": "After a trial with poor foot traffic, whether to keep trading is your own choice. You can stop and lose only the money spent on the trial, so that branch's value should be the better of the two. The chart pushes it down, and that drags the overall expected value down too.",
+    "options": [
+     {
+      "text": "Losses should be given more weight, because losing money feels worse than making it feels good.",
+      "correct": false,
+      "feedback": "Working it out that way would push the chart down even further, and it has nothing to do with the later choice."
+     },
+     {
+      "text": "After poor foot traffic you can stop trading, so that branch should hold the better outcome you'd choose, not be fixed at a loss of 720,000.",
+      "correct": true,
+      "feedback": "The later fork is yours to choose, so take the better outcome; fixing it drags the whole chart's expected value down."
+     },
+     {
+      "text": "It should be worked out forward from the trial, not back from each branch's outcome.",
+      "correct": false,
+      "feedback": "Working back is right; the mistake is that the last step doesn't take the better outcome you'd choose."
+     },
+     {
+      "text": "The 30% chance is overestimated and should be smaller.",
+      "correct": false,
+      "feedback": "Nothing in the question says the chance is wrong; the problem is that the choice after this branch was fixed in advance."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Below 57% rain, waiting till Friday is cheapest",
+  "caption": "Drag the rain chance: at 30%, waiting loses 210 yuan on average, the least of the three. Above 57%, it loses more than booking on Thursday for 400; book early.",
+  "x": {
+   "label": "Chance of rain",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "y": {
+   "label": "Average loss",
+   "unit": " yuan",
+   "min": 0,
+   "max": 1500
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "Chance of rain",
+    "min": 0,
+    "max": 100,
+    "step": 5,
+    "value": 30,
+    "unit": "%"
+   }
+  ],
+  "series": [
+   {
+    "name": "Book Thursday",
+    "expr": "400",
+    "tone": "muted"
+   },
+   {
+    "name": "Don't book",
+    "expr": "x/100*1500",
+    "tone": "ink",
+    "dashed": true
+   },
+   {
+    "name": "Wait for Friday",
+    "expr": "x/100*700",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "x": "p"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Wait: avg. loss",
+    "expr": "p/100*700",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "Thursday: loss",
+    "expr": "400",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "No tent: avg. loss",
+    "expr": "p/100*1500",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

@@ -1,0 +1,219 @@
+{
+ "id": "contrast-effect",
+ "name": "Contrast Effect",
+ "en": "对比效应",
+ "discipline": "psychology",
+ "one_line": "The same thing looks completely different depending on what sits next to it.",
+ "story": "A dorm experiment at Montana State University: men who have just watched Charlie's Angels rate a photo of an average-looking woman lower (published 1980)",
+ "shallow": {
+  "scene": "After an evening of scrolling through short videos with beauty filters turned all the way up, open your front camera and your own face looks extra plain. On the evening of February 1, 1977, in the men's dorms at Montana State University in the US, some students were watching the TV show *Charlie's Angels*, whose three leads were actresses famous for their looks. The researchers had an assistant bring a photo of an average-looking woman into the room and ask the students to rate how attractive she was. Students who had just watched the show rated her lower than those who hadn't. The photo hadn't changed. What had changed was the faces they had just been comparing her to.",
+  "plain": "Put your left hand in cold water and your right hand in hot water, and after a minute put both into the same bowl of warm water. Your left hand feels it as hot, and your right hand feels it as cool. The same bowl of water, and the two hands report opposite results, because what a hand reports is not the water's temperature but how different it is from a moment ago.\n\nThat is the contrast effect: whether the same thing seems good or bad, expensive or cheap, depends on what you've just compared it to. A salesperson first shows you a 2,980-yuan down jacket, then brings out one at 1,280, and the second one seems cheap. If the first one you'd seen was 480 yuan, the same jacket would seem expensive. Neither the jacket nor the price has changed; what changed is the one before it."
+ },
+ "deep": {
+  "mechanism": "### Feelings report the difference, not the value\n\nWhen you ask yourself \"is this expensive?\", what you're measuring is how far this one is from the one you just saw. Call the price of the one in front of you $x$ and the one you just saw $a$. $a$ is the ruler in your head:\n\n$$d = x - a$$\n\nIf $d$ is negative, it seems cheap; if positive, it seems expensive. See the 2,980 one first, and $d = 1280 - 2980 = -1700$; see the 480 one first, and $d = 1280 - 480 = 800$. $x$ stays at 1,280 the whole time, but switch the ruler, and $d$ flips from negative to positive, and the feeling flips from cheap to expensive.\n\n### The further off the foil, the more what it sets off stands out\n\nThis ruler doesn't only measure prices. You scored 78 on a test. If the rest of the class scored around 60, you feel you did well; if everyone else scored around 90, you feel you flunked. The score is the same.\n\n### When the ruler moves along with things, slow change goes unseen\n\nThe ruler is always the most recent thing, so a big jump makes a big difference, and the feeling is magnified. But if change comes a little at a time, the ruler moves to the last step at every step, so each difference is small, and the total change stays hidden. Weekly overtime goes from ten hours to twenty, each week only a little more than the week before, yet the total has doubled. The fix is to switch to a ruler that doesn't move: dig out the numbers from six months ago to compare, and write down in advance how many hours of overtime it takes before you turn work down.",
+  "origin": "The contrast effect comes from psychophysics and experimental psychology, and no one is credited with first proposing it. In 1839 Michel Eugène Chevreul gave a systematic account of how neighboring colors change how each other looks. In 1964 Harry Helson's adaptation-level theory explained how past experience becomes the reference for judgment. The study of judging looks that Douglas Kenrick and Sara Gutierres published in 1980 is a classic piece of evidence in social judgment. Whether or not to watch the show in the dorm was the students' own choice, so later experiments with random assignment were run as well, and they got similar results.",
+  "limits": "When you're comparing relative standing, the competitors are the right ruler: to pick the fastest runner in a race, you should compare against the others in it. To pick someone who can deliver on schedule, the ruler is what the delivery requires: beating the other candidates is no use; they have to meet the requirement. When the foil is seen as \"something else,\" the gap gets pulled wider; when it is seen as \"one of the same group,\" judgments get pulled closer instead, which is called assimilation. For example, when a school produces a famous graduate whom everyone knows, people think more highly of the whole school."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When you price a page of plans, put an obviously poor-value expensive tier next to the tier you're pushing, and the one you're pushing looks solid."
+   },
+   {
+    "use": "act",
+    "text": "Before you go into the store, write down your budget and your minimum requirements, and check them item by item before you leave, instead of looking at which one is a better deal than the last."
+   },
+   {
+    "use": "explain",
+    "text": "Coming in from over 30°C outside, a room air-conditioned to 26°C feels cold; sit in there for an hour, and the same temperature no longer feels that way."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "The order of the viewings",
+    "text": "A real estate agent first shows you two used apartments in the same price range: one right on a main road, noisy at night; one with mold in the corners. The third is just quiet and clean, and right there you feel you've found a bargain and nearly put down a deposit that day. Back home you list the three in a table by light, noise, size and total price, and ask the agent to find you one more, and the third apartment lands in the middle."
+   },
+   {
+    "field": "Design",
+    "title": "The same patch of gray",
+    "text": "A designer puts the same mid-gray patch on a white background and on a black one: on white it looks darker, on black it looks lighter. The color card a client holds looks one way, and spread over a whole wall it looks another. After that, the designer always has clients look at the color patch next to the wall where it will be used, together with the furniture and floor beside it."
+   },
+   {
+    "field": "Investing",
+    "title": "Cheaper than its peers",
+    "text": "You're watching a stock. Its peers trade at 50 times their yearly earnings, and it trades at only 25 times, which looks like a bargain. It earns 1 yuan a share a year and costs 25 yuan, so a year's earnings are only 4% of the price, while your own minimum is 6%, and the company shows no sign of growing its profits. You don't buy. You take the peers' prices out of the comparison and work it out again against your own minimum."
+   }
+  ],
+  "ask": [
+   "When I say it's good, expensive or serious, what am I comparing it to in my head?",
+   "If I looked at a different example first, or reversed the order, would I judge it the same?",
+   "Who picked these things to compare against? If I swapped in similar examples I found myself, would the conclusion change?"
+  ],
+  "with": [
+   {
+    "id": "anchoring",
+    "sees": "A friend has just said his home is worth 12 million yuan, then asks you two things: what your home is worth, and whether your home counts as big. On the first question, his number pulls your estimate up; that's anchoring. On the second, you use his home as the ruler and feel yours is small; that's contrast. The same number pushes you in opposite directions under the two questions."
+   },
+   {
+    "id": "base-rate",
+    "sees": "You have to judge a salesperson's results this year. The contrast effect warns you not to compare him with the worst colleague, who just left. The base rate, though, wants you to compare him with the spread of results for everyone in the same role across the company. If the thing to compare against was picked by someone else and set in front of you, put it aside; if it's the spread across the whole group, compare against that."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Interviewers score the same résumé. Group A first reads two résumés full of holes, then this one; group B reads this one straight away. The groups were assigned at random, and the interviewers in both have the same experience and standards.",
+    "question": "How are the two groups' scores most likely to compare?",
+    "explain": "The résumés full of holes became a foil, so the same résumé looks more respectable to group A. The part of the score that's higher comes from the foil, not from the résumé.",
+    "options": [
+     {
+      "text": "About the same: with the same experience and standards, the criteria are fixed.",
+      "correct": false,
+      "feedback": "The same standards still need a comparison to turn into an actual score, and the résumés just read change how many points count as good."
+     },
+     {
+      "text": "Group A scores it higher: the two bad résumés before it make this one look better.",
+      "correct": true,
+      "feedback": "The résumé didn't change; the ruler did. Compared with very bad ones, it looks better than it does to group B."
+     },
+     {
+      "text": "Group A is more accurate, because reading two more résumés gives a better basis for judging.",
+      "correct": false,
+      "feedback": "The two extra résumés were both bad, which only makes this one look better; it doesn't bring the score closer to how good this résumé really is."
+     },
+     {
+      "text": "Group B scores it higher: after the bad résumés, group A is on guard and picks this one apart more closely.",
+      "correct": false,
+      "feedback": "Being on guard isn't what's mainly at work here: group A is using the bad résumés they just read as the ruler, so this one looks good."
+     }
+    ]
+   },
+   {
+    "stem": "While studying for an exam you often go to a study room, and you usually find its ventilation a bit noisy. Today you first stood by a construction site for twenty minutes, and when you got to the study room it felt especially quiet. The attendant says the equipment settings haven't been touched, and the noise log at the door looks about the same as usual.",
+    "question": "What does this feeling of quiet tell you, and what should you do next?",
+    "explain": "Having just heard the roar of construction, the same ventilation sounds quieter; that's the foil at work. This feeling of quiet doesn't mean today is a good day for studying; that depends on how you actually do on practice questions.",
+    "options": [
+     {
+      "text": "The noise log at the door hasn't changed, so your feeling of quiet is a mistake and you can ignore it.",
+      "correct": false,
+      "feedback": "The log describes the room; the feeling describes your experience. Both can be true at once, and the feeling isn't a mistake."
+     },
+     {
+      "text": "Standing by the construction site made you more focused, so you'll study more efficiently than usual today.",
+      "correct": false,
+      "feedback": "Feeling that it's quiet and being focused are two different things, and nothing in the question shows your focus went up."
+     },
+     {
+      "text": "The quiet feeling comes from the construction noise you just heard; do a set of questions for your usual length of time and check how often you get distracted and how many you get right.",
+      "correct": true,
+      "feedback": "The foil changed the feeling; how well you study has to be checked by how you do on the questions."
+     },
+     {
+      "text": "The study room is better than usual today, so it's a good day to study for longer than usual.",
+      "correct": false,
+      "feedback": "The feeling improved because you'd just been somewhere noisier. The room hasn't improved, so there's no reason to study more."
+     }
+    ]
+   },
+   {
+    "stem": "A couple buy a car for 200,000 yuan. As they pay, the salesperson suggests adding 5,000 yuan of accessories. The couple feel that's nothing much and add them on the spot. Later they find the same accessories online for half the price, and they didn't really need them anyway.",
+    "question": "Why did 5,000 yuan feel like nothing much at the time?",
+    "explain": "The car's price of 200,000 yuan became the ruler, and next to it 5,000 yuan looked tiny. The comparison they should have made was to ask whether the accessories were worth it as a sum of money on their own.",
+    "options": [
+     {
+      "text": "The car's price of 200,000 yuan became the ruler, and 5,000 yuan looked tiny next to it.",
+      "correct": true,
+      "feedback": "The same 5,000 yuan is a fair amount of money on its own; placed next to a large sum, it looks small."
+     },
+     {
+      "text": "When buying something big, people have limited energy and can't be bothered to compare the small costs that follow.",
+      "correct": false,
+      "feedback": "The key in the question is that the 5,000 yuan was compared with the price of the car, not that they ran out of energy."
+     },
+     {
+      "text": "They were afraid that if they missed this chance they couldn't get them later, so they rushed to decide on the spot while paying.",
+      "correct": false,
+      "feedback": "There's no hint of a time limit or a shortage, and the accessories can be bought online anyway."
+     },
+     {
+      "text": "The salesperson's pitch convinced them the accessories were very important for this car.",
+      "correct": false,
+      "feedback": "The question doesn't say the salesperson described any benefits, only that it was a suggestion."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Last one over 1,280, and this one flips to cheap",
+  "caption": "The pricier the jacket you just saw, the more negative this 1,280 jacket's gap, and the cheaper it seems. The dashed line is its price tag, which never moves.",
+  "x": {
+   "label": "Price of the last one",
+   "unit": " yuan",
+   "min": 200,
+   "max": 3000
+  },
+  "y": {
+   "label": "How much more this costs",
+   "unit": " yuan",
+   "min": -1800,
+   "max": 1400
+  },
+  "params": [
+   {
+    "id": "a",
+    "label": "Last one",
+    "min": 200,
+    "max": 3000,
+    "step": 20,
+    "value": 2980,
+    "unit": " yuan"
+   }
+  ],
+  "series": [
+   {
+    "name": "Price tag",
+    "expr": "1280",
+    "tone": "muted",
+    "dashed": true
+   },
+   {
+    "name": "Costs more by",
+    "expr": "1280-x",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "y": 0,
+    "text": "Same as the last one"
+   },
+   {
+    "x": "a",
+    "y": "1280-a"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Price tag",
+    "expr": "1280",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "More than last",
+    "expr": "max(1280-a,0)",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "Less than last",
+    "expr": "max(a-1280,0)",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

@@ -1,0 +1,182 @@
+{
+ "id": "narrative-fallacy",
+ "name": "Narrative Fallacy",
+ "en": "叙事谬误",
+ "discipline": "psychology",
+ "one_line": "We like to string scattered facts into a smooth story, and then we believe it.",
+ "story": "Omidyar starts an online auction site (eBay); the origin story of trading PEZ dispensers for his girlfriend was made up by PR in 1997 and exposed in 2002 by Cohen's The Perfect Store",
+ "shallow": {
+  "scene": "In 1995, at his home in California, Pierre Omidyar started an online auction site that later became eBay. A few years on, a story spread widely: his girlfriend collected PEZ candy dispensers, so he built a trading platform for her. The story tied love, collecting and starting a business together without a gap.\n\nIn 2002, Adam Cohen wrote in *The Perfect Store* that this origin story had been made up by the company's PR staff in 1997 to attract reporters. The girlfriend really did collect PEZ dispensers, and the website was real too; the motive, \"he built the site for her,\" was added afterward.",
+  "plain": "You see delivery boxes piled outside the door of a neighbor who just moved in, and in the evening you see him heading out pulling a suitcase. You tell your family he must be in business, busy taking in stock and rushing off to a deal. This is the step where the narrative fallacy happens. All you actually saw were boxes and a suitcase; \"in business\" and \"off to a deal\" are the thread you added. But once you've added it, you feel as if you saw the thread with your own eyes too. Later you hear that the boxes held furniture he'd just bought, and he was hurrying back to his hometown for a funeral."
+ },
+ "deep": {
+  "mechanism": "### The fewer the facts, the more stories make sense\n\nFor three days running, your phone's battery drops to 20% at about three in the afternoon. Three explanations all make sense: a new app you installed last week is draining power in the background, the weather has turned cold, or the battery is getting old. Add one more fact: a colleague with the same phone who never installed that app also drops to 20% at about the same time. The new-app explanation no longer holds: without it, the battery drops just the same. The weather and battery explanations still make sense. Each fact you add leaves fewer stories that make sense.\n\n### In a story someone tells, nobody sees the details that were cut\n\nWhat others tell you is a tidied-up version: a hero, a goal, obstacles, an ending. From a whole year of experience, the teller keeps five events and cuts the attempts that failed and the chances that came by luck. Listeners can't see the parts that were cut, so they have no way to test the story against them. After a few retellings, even the teller remembers only those five.\n\n### To tell which story is right, look at what each says about tomorrow\n\nA story that explains what has already happened doesn't necessarily call the next time correctly. After you uninstall the new app, the new-app explanation says the battery won't drop to 20% tomorrow afternoon; the weather and battery explanations both say it will. Once tomorrow afternoon's number comes in, one side has to bow out.",
+  "origin": "Taleb discussed the term at length and made it popular in *The Black Swan* in 2007. Psychology has a classic related experiment: in 1944 Heider and Simmel had people watch triangles and a circle moving around, and the viewers told stories of chasing, bullying and running away. The shapes were only moving; the characters and motives were all added by the people watching.",
+  "limits": "The narrative fallacy is most useful as a warning when you hear someone explain why a company or an industry rose or fell. If a chain of cause and effect is backed by records, comparisons or repeated observation, it isn't the narrative fallacy however smoothly it's told. On the other hand, deciding that a moving story must be made up just because it's moving is as wrong as believing it too easily."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "The more complete and detailed a piece of testimony is, the more readily listeners believe it; yet every extra detail makes it a little less likely that the whole account is right."
+   },
+   {
+    "use": "act",
+    "text": "Before you adopt someone's lessons from experience, ask them what they expected would happen on the path they didn't take back then. If they can state a specific expectation, it shows they thought about it at the time."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Sales management",
+    "title": "The quarter sales doubled",
+    "text": "You are the sales director. The East China region doubled its sales last quarter, and at the review meeting the regional manager gives a convincing account: the new incentive plan fired up the team, and the reworked visit routes freed up time. You pull up the customer details. Suppose most of the increase came from one old customer whose annual contract happened to renew that quarter, with much bigger orders than in past years. You ask the regional manager to report again with the increase split into three columns, renewals, new customers and old customers buying more, and you put off judging the incentive plan by a quarter."
+   },
+   {
+    "field": "Sports",
+    "title": "The goal after the substitution",
+    "text": "You are a sports editor at a TV station. In the 70th minute of a cup final, the head coach sends on a striker, and in the 78th minute the team scores. The post-match commentary script says: \"That substitution was a stroke of genius; he read the game.\" You ask yourself: if that shot had not gone in, how would the script describe the same substitution? You strike out the whole passage of praise, keep only the time of the substitution, who came on, and the number of shots in the eight minutes after, and hand it back to the lead writer to rewrite."
+   },
+   {
+    "field": "Reading",
+    "title": "The kite in the biography",
+    "text": "You are reading a biography of an inventor (an imaginary one). The author writes that as a child he lost a kite, and spent his whole life chasing the dream of flight. You turn to the notes at the back: this event has only one source, a short memoir the inventor wrote at seventy, and nobody mentions a kite in the letters and diaries from the same period. You write \"only one source\" in the margin, and from then on, every time the author uses the kite to explain one of his inventions, you pause."
+   }
+  ],
+  "ask": [
+   "Who first said this \"because,\" and when?",
+   "How many events did the teller start with, which few did this account keep, and where can I find the ones it left out?",
+   "Was this cause put forward before or after the result was known? Go back to the earliest emails, meeting notes or publication dates."
+  ],
+  "with": [
+   {
+    "id": "occams-razor",
+    "sees": "Two explanations both fit the same facts: one makes few assumptions and reads smoothly, the other makes many and reads awkwardly. Occam's razor has you use the one with fewer assumptions first, because with fewer premises that must all hold at once, it's more likely they all do. The narrative fallacy blocks one thing: don't treat it as settled just because it reads smoothly. When you need to act fast, go with the one with fewer assumptions for now, note that the two haven't yet been told apart, and look for an observation that can separate them. When there's no hurry, look for that observation first, then decide which to use."
+   },
+   {
+    "id": "hindsight-bias",
+    "sees": "At a class reunion, everyone talks about why someone failed the big exam back then and how someone else made a comeback. Hindsight bias checks your own memory: how confident you were at the time, and whether the result has changed the number you remember. The narrative fallacy checks other people's \"why\": was this explanation said by someone at the time, or pieced together only now? When recalling your own judgments, ask the first question; when hearing someone else's account of how things came about, ask the second."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A profile of a writer says: in 2006 she was a reporter at a newspaper; in 2011 she published her first book; by 2016 the book had been translated into four languages. It also contains this line: \"It was precisely because that interview was pulled from the paper that she resolved to write a book.\"",
+    "question": "Which part of this profile most needs other evidence before you can take it as true?",
+    "explain": "Her job, the book and the translations all leave records and can be checked. \"Precisely because\" links the pulled story and the book as cause and effect. That thread was added by whoever wrote the profile, and no record in it shows what she was thinking at the time.",
+    "options": [
+     {
+      "text": "The cause and effect between the pulled story and the book.",
+      "correct": true,
+      "feedback": "Both events are real; the resolve that connects them rests only on the writer's one sentence."
+     },
+     {
+      "text": "Four translations by 2016.",
+      "correct": false,
+      "feedback": "Translations have copyright pages you can look up; this is a checkable fact."
+     },
+     {
+      "text": "She was a reporter in 2006.",
+      "correct": false,
+      "feedback": "Her job is in the newspaper's records and can be confirmed from its files; no other evidence is needed."
+     },
+     {
+      "text": "She published her first book in 2011.",
+      "correct": false,
+      "feedback": "A published book has an ISBN and the publisher's records; this is a checkable fact."
+     }
+    ]
+   },
+   {
+    "stem": "After every outage, the operations team writes a review report: cause, course of events, result, each link leading neatly to the next, so it's all clear on one reading. Yet the same kind of outage has happened several more times in six months. The team lead wants to change how reviews are done.",
+    "question": "Which of these changes goes straight at what's wrong with the reports?",
+    "explain": "The reports read smoothly because every link has been filled in to flow, and readers can't tell how much is proven by logs and how much is the writer's guess. Marking the two separately, and writing the guesses as expectations that can be checked next time, is the fix that fits the problem.",
+    "options": [
+     {
+      "text": "Push the timeline back to a month before the outage and include more events.",
+      "correct": false,
+      "feedback": "More events means more places to fill in the thread, and the basis for each link is still unclear."
+     },
+     {
+      "text": "Have a colleague who writes well draft it, so the course of events is clearer and easier to follow.",
+      "correct": false,
+      "feedback": "Easier to follow makes the story smoother, and the basis still can't be seen."
+     },
+     {
+      "text": "Mark whether each link rests on logs or on a guess, and write guesses as expectations that can be checked.",
+      "correct": true,
+      "feedback": "This way readers can see which links hold up, and the guessed parts get a chance to be proven wrong."
+     },
+     {
+      "text": "Have people from another team review it, to see whether the conclusion makes sense and reads smoothly.",
+      "correct": false,
+      "feedback": "Reviewers can only judge whether it makes sense, and a smooth story makes sense to begin with."
+     }
+    ]
+   },
+   {
+    "stem": "There are two investigation reports on the same warehouse fire. Report A links every step, with no gap from the start of the fire to its being put out; report B's timeline has two places marked \"no record for this period.\" The editor-in-chief only has time to press on one point.",
+    "question": "Which should the editor-in-chief press on first?",
+    "explain": "Report B marks its gaps, so readers know where there's no basis. Report A has no gaps: the places where the thread was filled in have been smoothed over, and you can't see which links have records and which were inferred. So first ask what each link of report A rests on.",
+    "options": [
+     {
+      "text": "A: why it reads more smoothly than B",
+      "correct": false,
+      "feedback": "Asking about the writing won't reveal which link has no basis; reading smoothly is just a matter of style."
+     },
+     {
+      "text": "B: who will fill in those two gaps",
+      "correct": false,
+      "feedback": "B's gaps are already marked, so readers know those two places have no basis without having to press to find out."
+     },
+     {
+      "text": "B: why it isn't as complete as A",
+      "correct": false,
+      "feedback": "Completeness isn't a basis. Pressing on whether it reads completely won't trace where any link came from."
+     },
+     {
+      "text": "A: what each link rests on",
+      "correct": true,
+      "feedback": "In a report so smooth it has no gaps, you can't see where the thread was filled in; only asking for the basis of each link tells them apart."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Both ends are true; the link was added later",
+  "caption": "The PEZ collection was real, and so was the site. \"Built it for her\" was made up by PR for reporters in 1997; the smoother it is, the more it seems witnessed.",
+  "nodes": [
+   {
+    "id": "pez",
+    "label": "Girlfriend's PEZ",
+    "sub": "True"
+   },
+   {
+    "id": "site",
+    "label": "1995 auction site",
+    "sub": "True"
+   },
+   {
+    "id": "story",
+    "label": "Built for her",
+    "sub": "Made up by PR, 1997",
+    "tone": "warn"
+   }
+  ],
+  "edges": [
+   {
+    "from": "pez",
+    "to": "story",
+    "dashed": true,
+    "tone": "warn"
+   },
+   {
+    "from": "site",
+    "to": "story",
+    "dashed": true,
+    "tone": "warn"
+   }
+  ]
+ }
+}

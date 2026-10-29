@@ -1,0 +1,216 @@
+{
+ "id": "signal-noise",
+ "name": "Signal-to-Noise Ratio",
+ "en": "信噪比",
+ "discipline": "computing",
+ "one_line": "To tell if a change is real, see how far it beats the usual ups and downs.",
+ "story": "After clearing out pigeon droppings and every other source of interference, Penzias and Wilson find the cosmic microwave background in 1964–65",
+ "shallow": {
+  "scene": "When an old TV has no signal, the screen fills with snow and a hissing sound, and a small part of that comes from the leftover warmth of the universe's birth. The first to recognize it were Arno Penzias and Robert Wilson of Bell Labs.\n\nIn 1964 the two of them wanted to use a large antenna to listen to faint radio waves from the sky, but they found their readings always had an extra bit of noise they couldn't get rid of. They took the wiring apart and checked the connections, drove out the pigeons nesting in the antenna and scraped off the droppings that covered its walls, and the noise didn't drop at all.\n\nOnly after talking with physicists at Princeton did they understand: this was the leftover warmth of the Big Bang, spread evenly across the whole sky. The discovery became the strongest evidence for the Big Bang theory, and it won the two of them the 1978 Nobel Prize in Physics. They could dare to draw that conclusion because they had first cleared away, one by one, every source of interference they could check. The noise that was left was the same no matter where the antenna pointed and from summer through to spring, so it was not a fault in the instrument but something really there in the sky.",
+  "plain": "You want to know whether a different route to work is faster. The time the new route really saves is the signal; the daily ups and downs in how long the trip takes are the noise; and the ratio of the two is the signal-to-noise ratio. The old route usually takes 40 minutes, but red lights and accidents can add or take off ten minutes or so on any given day. You try the new route for one day and it takes 36 minutes. Is the route better, or were you lucky that day? The 4 minutes saved are smaller than the ups and downs, so the signal-to-noise ratio is low, and one day of trying shows nothing. If the new route saved twenty minutes, the ratio would be high enough to see it in a single day."
+ },
+ "deep": {
+  "mechanism": "### The more you save, the fewer days it takes to see it\n\nSay the new route's time swings by about $s$ minutes a day, here 10 minutes. Run it for $n$ days and take the average, and the swing left in the average is:\n\n$$\\frac{s}{\\sqrt{n}}$$\n\nThe more days, the steadier the average, but it steadies more and more slowly: four times the days only halves the swing. One day swings 10 minutes; the average of 4 days swings 5 minutes; 16 days, 2.5 minutes.\n\nThe average steadies because fast days and slow days cancel each other in part. Take two days. If both are fast or both slow, the deviations stack up to twice as much, and the square is 4 times one day's; if one is fast and one slow they cancel, and the square is 0. The two cases are equally common, so on average the square is 2 times one day's. In the same way, the square of the sum of $n$ days' deviations is $n$ times one day's, so the total swings only $\\sqrt{n}$ times as much. Divide by $n$ to get the average, and that is $s/\\sqrt{n}$.\n\nYou can only see the saving clearly once the swing in the average falls below half of it. If the route really saves 20 minutes, two or three days are enough. If it really saves 8 minutes, the swing has to be pushed below 4 minutes, so $\\sqrt{n}$ has to be over 2.5, which takes six or seven days. If it saves only 2 minutes, the swing has to come down to 1 minute, and that takes a hundred days.\n\n### A bias that is the same every day doesn't average out\n\nSuppose all the new route's records were from the summer holidays, when there is less traffic anyway, while the old route's records include rush hours during the school term. The new route gets this advantage every single day, and no day ever gives it back. So run it for 1,000 days, and the average will just settle firmly on a number that is too fast.\n\n### First shut out the interference you can control\n\nSuppose you only compare trips that leave at 8 a.m. on Tuesdays. That shuts out differences between days of the week and between departure times, and the daily swing falls from 10 minutes to 6. Average 4 days and the swing is only 3 minutes; without those limits, getting it down to 3 minutes would take about 11 days.",
+  "origin": "Signal-to-noise ratio started as a quantity used by communications engineers: signal power divided by noise power, a measure of how clear the sound on a telephone or radio is. In 1948, in \"A Mathematical Theory of Communication,\" Claude Shannon proved that for a given bandwidth, the higher the signal-to-noise ratio, the faster a channel can reliably send data. But the rate grows more and more slowly: raise the signal-to-noise ratio tenfold and the rate grows by less than tenfold.",
+  "limits": "Instrument readings, controlled tests of a website redesign and your daily weight can all be measured again and again, and their noise stays roughly the same size. That is where signal-to-noise ratio works best. An election happens only once, so you can't average out the noise by measuring a few more times. And there is no ready-made ruler for what counts as noise: if in a meeting every number you don't like gets filed as noise, signal-to-noise ratio becomes a respectable way of brushing off disagreement."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When running a redesign test, first write the conditions you can hold fixed into the plan: launched in the same time slot, traffic from the same set of channels, the same way of counting. Then work out how many days to run it."
+   },
+   {
+    "use": "explain",
+    "text": "When the same class sits another exam, the top few often change. That's because the score gaps between ranks were never bigger than the luck of how each student does on a single exam."
+   },
+   {
+    "use": "act",
+    "text": "When you see an odd reading, first measure how much bigger it is than that reading's usual ups and downs, then decide whether to note it, raise an alarm or look into it at once."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Science",
+    "title": "The same shape in two places",
+    "text": "On September 14, 2015, two laser interferometers in Hanford and Livingston in the United States, about 3,000 kilometers apart, each recorded a brief wave shape. The interference in each instrument was its own and had nothing to do with the other's, but a real gravitational wave would sweep over both places one after the other. The researchers laid the two records on top of each other, and the same shape appeared at both sites about 7 milliseconds apart."
+   },
+   {
+    "field": "Business",
+    "title": "The green button led for a day",
+    "text": "You work at a fitness app company and change the \"Get membership\" button from blue to green. On the first day, green converts 0.8 percentage points better, and colleagues press you to roll it out to everyone. You dig up the past thirty days of daily conversion rates and find that any two days can differ by 1 percentage point. You split users randomly in half and run both colors at the same time for two weeks. Over the two weeks the colors take turns leading, the average gap is under 0.1 percentage points, and the color change is not launched."
+   },
+   {
+    "field": "Health",
+    "title": "One blood-pressure reading doesn't count",
+    "text": "You take your blood pressure at home three times in a row one afternoon, and the systolic number jumps from 128 to 141, then back to 133. Your doctor asks you to measure twice each morning and twice each evening for seven days running, after sitting and resting for five minutes, using the same device. After seven days, what the doctor looks at is the sheet you've filled in, not any single reading."
+   }
+  ],
+  "ask": [
+   "How much bigger is this change than this thing's own usual ups and downs? Go back through past records and look at the usual swings first.",
+   "Under what conditions is this reading usually taken? Are today's conditions the same as usual?",
+   "With this change, which side of the ratio is moving: has the thing you want to see grown, or have the swings around it shrunk?"
+  ],
+  "with": [
+   {
+    "id": "signal-detection",
+    "sees": "The vibration reading on a stamping press in a workshop usually wobbles between 1.8 and 2.2. This morning it jumped to 2.4 and then came back down. Someone who only looks at signal-to-noise ratio would say this is about the size of the usual wobble, so read it for a few more days. Signal detection theory looks at where to draw the line for deciding. If missing one fault would hurt someone, the line should be drawn lower: better a few false alarms, so stop the machine and check it now. For a machine where a mistake only means one more scrapped part, watch it slowly by signal-to-noise ratio; where a mistake can hurt someone, draw the line lower according to the cost."
+   },
+   {
+    "id": "regression-to-mean",
+    "sees": "The five students at the bottom of a monthly exam get three weeks of extra lessons, and next time they go up 15 points on average. Signal-to-noise ratio first asks: how much does one exam's luck move a score, and are 15 points enough to beat it? Regression to the mean points to another layer: mixed in among the bottom students are some who just had a bad day, and they would go up next time even without the lessons, so however big the rise, it can't all be credited to the lessons. To judge whether the lessons worked, compare with another group who were also at the bottom and got no extra lessons."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're a coach, and one of your runners' 5 km times naturally vary by about 30 seconds from race to race. You have two training methods: method A is expected to make his average time 60 seconds faster, method B only 10 seconds faster. You plan to have him run the same number of times on each and compare with his old average.",
+    "question": "Which statement is right?",
+    "explain": "The variation is 30 seconds either way. A's gap is twice the variation and will show up in the average after a few runs; B's gap is only a third of the variation, and it takes far more runs to push the variation in the average below 10 seconds.",
+    "options": [
+     {
+      "text": "B needs far more runs, because the gap it is trying to show is much smaller than the variation in a single time.",
+      "correct": true,
+      "feedback": "The smaller the gap you want to see, the more times you have to measure, to push the variation in the average below it."
+     },
+     {
+      "text": "A needs more runs, because a method with a big gap is more likely to be a fluke.",
+      "correct": false,
+      "feedback": "The bigger the gap, the less it looks like variation, so it actually needs fewer runs."
+     },
+     {
+      "text": "Both methods need the same number of runs, because each time varies by 30 seconds.",
+      "correct": false,
+      "feedback": "The variation is the same, but the gaps to be seen are not: the method with the smaller gap needs the variation pushed lower."
+     },
+     {
+      "text": "Each needs only one run, because the expected gaps are clear numbers.",
+      "correct": false,
+      "feedback": "An expected number is not a measured gap. A single time varies by 30 seconds on its own, and B's 10 seconds is completely buried in it."
+     }
+    ]
+   },
+   {
+    "stem": "You're trying a new fertilizer in your vegetable garden. The new fertilizer goes on the sunny south slope and the old one on the shady north slope. Over three seasons in a row, the new-fertilizer side yields 20% more each season. You want to confirm that the new fertilizer is better.",
+    "question": "What should you do next to best answer this question?",
+    "explain": "The extra yield from the south slope's sun is there every season, and it goes into the average along with the new fertilizer; no number of seasons can separate them. Only by comparing the two fertilizers on the same kind of ground is that bias kept out.",
+    "options": [
+     {
+      "text": "Grow three more seasons exactly as before; six seasons' average is steadier than three.",
+      "correct": false,
+      "feedback": "More seasons can only smooth out good and bad years. The south slope's sunny advantage is there every season and doesn't average out."
+     },
+     {
+      "text": "No need to test further: three seasons of 20% more is already clear.",
+      "correct": false,
+      "feedback": "Three matching seasons only show that the south slope yields more than the north slope every year. They can't tell whether the credit goes to the fertilizer or to the sun."
+     },
+     {
+      "text": "Divide one slope into small plots, pick half at random for the new fertilizer, and compare again.",
+      "correct": true,
+      "feedback": "Both fertilizers get the same sun, so both sides share the sunny advantage, and the gap that's left belongs to the fertilizer."
+     },
+     {
+      "text": "Work out the three seasons' harvests per unit of area and compare again.",
+      "correct": false,
+      "feedback": "Change how you count, and the south slope's sunny advantage is still in the numbers. The conclusion won't change."
+     }
+    ]
+   },
+   {
+    "stem": "You're recording an interview. The air conditioner in the meeting room hums the whole time, the microphone sits in the middle of the table, and the person being interviewed sits two meters away. On playback, the voice is faint and the hum is obvious.",
+    "question": "When you record a second time, which of these does the most to make the voice stand out against the hum?",
+    "explain": "The hum comes from the room; the voice comes from the speaker. Move the microphone to twenty centimeters from their mouth and the voice gets much louder while the air-conditioner sound hardly changes, so the ratio goes up. Turning up the volume after recording makes both louder together, and the ratio stays the same.",
+    "options": [
+     {
+      "text": "After recording, use software to double the volume of the whole recording.",
+      "correct": false,
+      "feedback": "The voice and the hum get louder together, and the ratio between them doesn't change."
+     },
+     {
+      "text": "Move the microphone to twenty centimeters from the interviewee's mouth.",
+      "correct": true,
+      "feedback": "The voice reaches the microphone much more strongly while the hum hardly changes, so the ratio goes up."
+     },
+     {
+      "text": "Change the recording settings to a higher quality and sample rate.",
+      "correct": false,
+      "feedback": "Higher quality only records both sounds in finer detail; the ratio between them doesn't change."
+     },
+     {
+      "text": "Ask the interviewee to say each sentence twice and splice them together afterwards.",
+      "correct": false,
+      "feedback": "Every repeat carries the same hum, and the ratio doesn't change."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "A real 8-minute saving takes about a week to see",
+  "caption": "Daily times swing about 10 min; six lines, six separate trials. Set the real saving to 2 and lines leave zero only after 100 days; at 20, they split in two or three.",
+  "x": {
+   "label": "Days run"
+  },
+  "y": {
+   "label": "Avg. minutes saved a day",
+   "min": -15,
+   "max": 35
+  },
+  "params": [
+   {
+    "id": "s",
+    "label": "Real saving",
+    "min": 0,
+    "max": 20,
+    "step": 2,
+    "value": 8,
+    "unit": " min"
+   },
+   {
+    "id": "d",
+    "label": "Days run",
+    "min": 5,
+    "max": 120,
+    "step": 5,
+    "value": 30
+   }
+  ],
+  "runs": 6,
+  "model": {
+   "steps": "d",
+   "init": {
+    "t": 0
+   },
+   "next": {
+    "t": "t + s + 10*randn()"
+   }
+  },
+  "series": [
+   {
+    "name": "",
+    "expr": "t/k",
+    "tone": "accent",
+    "from": 1
+   }
+  ],
+  "marks": [
+   {
+    "y": "s",
+    "text": "Real saving"
+   },
+   {
+    "y": 0,
+    "text": "Same as old route"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Swing in the average",
+    "expr": "10/sqrt(d)",
+    "unit": " min",
+    "digits": 1
+   }
+  ]
+ }
+}

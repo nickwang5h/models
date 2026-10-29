@@ -1,0 +1,201 @@
+{
+ "id": "hormesis",
+ "name": "Hormesis",
+ "en": "毒物兴奋效应",
+ "discipline": "biology",
+ "one_line": "A little stress makes the body stronger, too much harms it, and the dose decides.",
+ "story": "Southam and Ehrlich find that western red cedar heartwood extract helps wood-rot fungi grow at low strength and holds them back at high strength, and coin the word hormesis",
+ "shallow": {
+  "scene": "In 1943 Southam and Ehrlich added an extract of western red cedar heartwood to petri dishes, to see whether it could stop fungi that rot wood. In the high-concentration dishes, the fungi barely grew, as expected. In the very low-concentration dishes, the fungi grew even better than in the control dishes, which got no extract at all. With the same extract, whether it held growth back or helped it along depended on how much was added. In their paper the two coined a word for this, taken from a Greek word meaning \"to stir up.\"",
+  "plain": "Suppose you haven't run in a long time and start running 10 kilometers a week. After each run there's some tiny damage in your muscles, and when your body repairs it, it makes them sturdier than before, so two months later you're not out of breath on the usual hill. The helpful half of hormesis looks like this: a small dose of stress buys more repair than damage. But you find it too slow and go up to 80 kilometers a week with no rest days. Repair can't keep up with damage, and three months later what's waiting for you is Achilles tendinitis."
+ },
+ "deep": {
+  "mechanism": "### A small dose is a signal, and the body responds with more than the stimulus\n\nWhen cells get a mild heat stimulus, they make more heat shock proteins, which help protect other proteins. A few hours later, when stronger heat comes, more of the cells that had the mild stimulus survive. That's because the cell treats the mild blow as a warning: the same thing will happen again, and it may be worse. So it stocks up for the worse one, and the extra proteins come in handy just when the stronger heat arrives. That extra stock is the benefit.\n\n### As the dose rises from zero, the curve goes up and then down\n\nAt a very low dose, the stimulus is too weak, and the body has no reason to change. Raise the dose and the response grows. At the point where repair can't keep up with damage, the benefit disappears, and beyond that there's only harm. The bulge in the middle of the curve is called the \"hump.\" In experiments it's usually not high, only 30% to 60% above the control group.\n\nBack to running: suppose 10 kilometers a week falls in the middle of the hump, and 40 kilometers is near the top. 80 kilometers with no rest days has already passed the point that repair can keep up with. For the same person, multiplying the amount by eight turns the result from getting stronger into getting injured.\n\n### Where the hump sits depends on the person\n\nThe same training plan puts a twenty-year-old in the middle of the hump. An older person just out of hospital repairs slowly, so the point where repair can't keep up comes early, and the same amount already falls on the downhill side.",
+  "origin": "In the sixteenth century, Paracelsus wrote that all things are poison, and the only difference is the dose. Later this was shortened to \"the dose makes the poison.\" In 1943 Southam and Ehrlich coined the word hormesis while studying fungi. From the 1990s, Edward Calabrese gathered a large body of published studies and argued that curves like this, rising then falling, are found all over biology; toxicologists don't agree on this claim.",
+  "limits": "It's on firmest ground with the body adapting to stress it can repair, such as training and mild heat. For radiation and cancer-causing substances, whether low doses help is hotly disputed; the usual practice in regulation is to assume risk rises in proportion to the dose, with no safe level. \"A drink a day protects the heart\" is often quoted, but it's a conclusion from observational studies. Critics point out that the non-drinking group includes people who quit drinking because they were ill; they pull down that group's health, which makes light drinking look good."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "The same rooting hormone for plants helps roots grow when diluted as the label says and sprayed, but burns the seedlings when sprayed full strength. Both results come from the same bottle; the difference is which part of the curve you land on."
+   },
+   {
+    "use": "design",
+    "text": "When setting doses for a drug experiment, include zero, very low, medium and very high, so the small stretch at the low end isn't missed."
+   },
+   {
+    "use": "act",
+    "text": "When you want to step up a stimulus, add just one small step first, see after a week whether you're doing better or worse, then decide on the next step."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Gardening",
+    "title": "Hardening off seedlings",
+    "text": "You moved tomato seedlings raised in a greenhouse straight out onto the patio, the temperature dropped the first night, and half the leaves turned black from the cold. The second batch you put out for only two hours a day, and left out all night only after a week. Their leaves stayed green, and their stems were thicker than those of the seedlings in the greenhouse."
+   },
+   {
+    "field": "Medicine",
+    "title": "Recovering after a heart attack",
+    "text": "Your father comes home from hospital after a heart attack. The rehab team first has him walk on flat ground for a few minutes a day while being monitored, and adds time and slope only if he feels no discomfort. A few weeks later he can climb stairs on his own. Once he stepped up the load early without asking the doctor and felt tightness in his chest that night, and the doctor moved his training back a step."
+   },
+   {
+    "field": "Workplace safety",
+    "title": "A new worker's first days",
+    "text": "In 2014 the US Occupational Safety and Health Administration reviewed 20 enforcement cases involving work in heat. 13 workers had died, 9 of them in their first three days on the job. The report's advice: on the first day, new workers spend only 20% of their usual time in the heat, then add at most 20% a day. Over a few days the body learns to sweat earlier and more, and can handle a full day. Work a full day on the first day, and the same heat can kill."
+   }
+  ],
+  "ask": [
+   "Does this stimulus come in levels? How many levels do I have data for? With only \"none\" and \"a lot,\" you can't see the curve.",
+   "How well can this person or system repair right now? For someone older or just over an illness, where on the curve does the same amount fall?",
+   "Can the consequences be undone if something goes wrong? If not, don't use it to test the waters."
+  ],
+  "with": [
+   {
+    "id": "antifragility",
+    "sees": "A team wants to change its monthly failure drill to a daily one. Antifragility looks at whether the system can gain from volatility, so it leans toward more drills; hormesis wants you to find where the hump is first. Once drills are so frequent that people wear out first, the same drills become pure cost. First see which side of the hump you're on now, then decide how often to drill."
+   },
+   {
+    "id": "avoid-ruin",
+    "sees": "In a trial of a supplement, the lowest-dose group did slightly better than the control group on the measures. Through the lens of hormesis, the low end might really help and is worth looking into further. Avoiding ruin looks at the downside: if something going wrong couldn't be undone, such as harm during pregnancy, and nobody has tested the whole curve, one nice low-dose result isn't enough to try it on yourself."
+   },
+   {
+    "id": "diminishing-returns",
+    "sees": "You want to go from training four days a week to seven. Diminishing returns predicts that the extra three days will bring smaller and smaller gains, but still positive ones; hormesis says that past a certain point, the extra turns negative. The first only wastes your training; the second gets you injured. So when you add more, watch for signs that your body is going downhill, not just whether your progress has slowed."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Two coworkers of the same age sign up for the same training camp, with the same plan. A sleeps normally and is fitter after three weeks. B has been working late day after day and sleeps only four or five hours a night; after three weeks he keeps catching colds, and his results are worse than before the camp.",
+    "question": "Why didn't B improve?",
+    "explain": "Repair takes resources, and lack of sleep cut B's ability to repair. The same plan falls in the helpful stretch for A, but for B it has already passed the point that repair can keep up with.",
+    "options": [
+     {
+      "text": "B is just naturally in poor shape and won't respond to any amount of training; he shouldn't have signed up.",
+      "correct": false,
+      "feedback": "Nothing in the question says B is in poor shape. His sleep was squeezed, so his conditions changed; that doesn't mean he won't respond to any amount."
+     },
+     {
+      "text": "Lack of sleep cut B's ability to repair, so the same amount is already too much for him.",
+      "correct": true,
+      "feedback": "The same plan does the same damage to both, but how much each can repair differs. B can't keep up, so the training turns from a stimulus into a burden."
+     },
+     {
+      "text": "B hasn't trained enough; if he trains more, his results will catch up with A's.",
+      "correct": false,
+      "feedback": "B is already catching colds and getting worse, which shows he can't handle even the current amount; more would only take him further from the helpful stretch."
+     },
+     {
+      "text": "The plan has no effect at all; A's improvement is just a placebo effect.",
+      "correct": false,
+      "feedback": "A did get fitter after three weeks. Saying the plan has no effect explains neither that nor why the same plan had opposite results for the two."
+     }
+    ]
+   },
+   {
+    "stem": "A lab adds a disinfectant to yeast cultures at four concentrations and counts the yeast a day later. With the control group, which got no disinfectant, set at 100: the very dilute group is at 122, the medium group at 97, and the concentrated group at 9.",
+    "question": "What do these four sets of numbers most directly show?",
+    "explain": "The very dilute group is above the control and the concentrated group far below it: for the same substance, as the concentration rises, its effect on yeast turns from helping growth to holding it back.",
+    "options": [
+     {
+      "text": "The same substance helps yeast grow at low concentration and holds growth back at high concentration.",
+      "correct": true,
+      "feedback": "The very dilute group is above the control and the concentrated group far below; the direction of the effect changes with concentration."
+     },
+     {
+      "text": "The disinfectant only kills yeast; the very dilute group's number is a counting error.",
+      "correct": false,
+      "feedback": "There's no evidence that the number is an error. This conclusion first decides that it only kills, then bends the data to fit."
+     },
+     {
+      "text": "The lower the concentration the better, so keep diluting.",
+      "correct": false,
+      "feedback": "Dilute all the way and you're back to the control group with no disinfectant, at only 100, lower than the very dilute group."
+     },
+     {
+      "text": "The higher the concentration, the more the yeast grows.",
+      "correct": false,
+      "feedback": "The concentrated group is at only 9, far below the control."
+     }
+    ]
+   },
+   {
+    "stem": "You're evaluating a plant extract. The study you have tested only two groups: a control group with no extract, and one very high dose. In the high-dose group, half the cells died. From this a colleague concludes that the extract harms cells at any dose.",
+    "question": "What's wrong with this conclusion?",
+    "explain": "For a curve that rises and then falls, testing only zero and a very high dose leaves the middle completely unseen. To judge whether low doses help or harm, you first have to add very low and medium doses.",
+    "options": [
+     {
+      "text": "Nothing's wrong: a high dose harms cells, a low dose just harms them less, and the direction won't change.",
+      "correct": false,
+      "feedback": "Whether the direction changes is exactly what hasn't been tested. The red cedar extract at the start held fungi back at high concentration and helped them at low concentration."
+     },
+     {
+      "text": "Add an even higher dose and see whether all the cells die, to confirm that it's harmful.",
+      "correct": false,
+      "feedback": "Testing higher only repeats the end you already know; the low-dose stretch is still empty."
+     },
+     {
+      "text": "With only zero and a very high dose, you can't tell whether the low-dose stretch rises or falls; add a few low doses before concluding.",
+      "correct": true,
+      "feedback": "Two points can only be joined by a straight line. To see whether the curve bulges in the middle, you need points in the middle."
+     },
+     {
+      "text": "The control group itself is unreliable; drop it and compare only the different doses.",
+      "correct": false,
+      "feedback": "Without a control group, you can't tell whether a dose is better or worse than none."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Run more: stronger, then past a point, injured",
+  "caption": "For the same person, multiplying the distance turns stronger into injured. On the same plan, an older person just out of hospital is already at the injured end.",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "No running",
+    "sub": "No need to adapt",
+    "tone": "muted"
+   },
+   {
+    "id": "b",
+    "label": "10 km a week",
+    "sub": "Repair > damage"
+   },
+   {
+    "id": "c",
+    "label": "40 km a week",
+    "sub": "Near the peak",
+    "tone": "accent"
+   },
+   {
+    "id": "d",
+    "label": "80 km, no rest",
+    "sub": "Tendinitis",
+    "tone": "warn"
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b",
+    "label": "More"
+   },
+   {
+    "from": "b",
+    "to": "c",
+    "label": "More"
+   },
+   {
+    "from": "c",
+    "to": "d",
+    "label": "More",
+    "tone": "warn"
+   }
+  ]
+ }
+}

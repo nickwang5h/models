@@ -1,0 +1,205 @@
+{
+ "id": "bounded-rationality",
+ "name": "Bounded Rationality / Satisficing",
+ "en": "有限理性",
+ "discipline": "economics",
+ "one_line": "Nobody can weigh every option, so we stop at the first one that's good enough.",
+ "story": "At the Dartmouth workshop that summer, Newell, Shaw and Simon's Logic Theorist uses rules of thumb to prove 38 of the first 52 theorems in chapter 2 of Principia Mathematica",
+ "shallow": {
+  "scene": "Anyone who has played chess knows that nobody can work every line of play out to the end. Good players look only at a few moves that seem promising, think those through, and play the first one that holds up.\n\nAround 1955, Herbert Simon (who later won the Nobel Prize in economics) and his colleagues Allen Newell and J. C. Shaw set out to make a computer think about problems the same way. They wrote a program called the Logic Theorist and had it prove mathematical theorems. Trying every possible chain of steps would never finish, however fast the machine. So they gave the program a few rules of thumb that sent it only in directions that looked promising. Nor did the program look for the shortest or neatest proof: as soon as one chain of steps worked, the theorem counted as proved, and it moved straight on to the next. This way it proved most of the first few dozen theorems in a classic book of mathematical logic.\n\nThe chess player and the program choose in the same way, and Simon gave it a name, \"satisficing\": first set a bar for good enough, stop at the first option that clears it, and don't go looking for the best.",
+  "plain": "Bounded rationality means people can't compare every option, so they set a bar for good enough and pick the first one that clears it. Say you're looking for a restaurant in a city you don't know, and the street has forty-odd of them. To be sure of picking the best, you'd have to read every menu and every review, walking around hungry for two hours. What you actually do is set a standard in your head first: clean, a free table, under 40 yuan a head. You walk into the first place that passes, and twenty minutes later you've ordered."
+ },
+ "deep": {
+  "mechanism": "### Working out the best option has a cost of its own\n\nTo pick the best, you first need to know every option, what each one will bring, and how likely each outcome is, and then compare them one by one. Asking around costs money, and comparing costs time and brainpower, and all three are limited. So people can't compare every option; they can only stop at the first one that clears the bar.\n\n### How high to set the bar depends on what one more look costs and what the decision is worth\n\nThe higher the bar, the fewer options clear it. If one in so many clears it, then on average you'll look at that many. Suppose each look takes 5 minutes. If half clear the bar, you stop after 2 on average, 10 minutes. If a tenth clear it, you look at 10 on average, 50 minutes. If one in fifty clears it, you look at 50 on average, more than four hours. Four-plus hours isn't worth it to pick one dinner; to pick a home you'll live in for ten years, looking at dozens more is worth it.\n\n### When nothing turns up, the bar comes down\n\nThe \"good enough\" bar isn't fixed. It rises and falls with what you run into. If fifteen places in a row don't clear it, you cross off one requirement, say a window seat, and you walk into the sixteenth. If the first three clear it easily, next time you raise the bar a little.",
+  "origin": "In 1955, Simon published \"A Behavioral Model of Rational Choice\" in the Quarterly Journal of Economics. In 1956, in \"Rational Choice and the Structure of the Environment\" in Psychological Review, he used \"satisficing\" to sum up this way of choosing. The term \"bounded rationality\" only came into use with his book Models of Man in 1957. He won the Nobel Prize in economics in 1978.",
+  "limits": "Satisficing suits decisions like these best: there are many options, each extra look costs money and time, and choosing a bit worse costs little. Picking a restaurant, finding a place to rent and hiring for an ordinary job are all like this. It doesn't work for something you're facing for the first time. Having seen few examples, you can't say what good enough means, and wherever you set the bar is a guess. Some people also set the bar very low and use \"good enough\" as an excuse not to think: when hiring, they sign the first person who can do the work and even skip checking on them during the probation period."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Write a supplier guide for the purchasing department: once three suppliers have quoted and one meets all four required conditions, sign; there's no need to canvass the whole market. With the conditions written up front, whoever handles it can decide at the first supplier that qualifies."
+   },
+   {
+    "use": "explain",
+    "text": "A company keeps doing things the usual way until results fall below management's line of expectation, and only then suddenly starts looking for new approaches and holding meetings about reform: above the line, nobody feels a need to search."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "Send the van once the route beats yesterday's",
+    "text": "A delivery depot has to set the order of 20 stops for one van. There are more than 2 quintillion possible orders, and comparing them all wouldn't be done by nightfall. The dispatch software instead heads each time for the stop nearest to where the van is now, lays out a route in a few milliseconds, and sends it to the driver if it's shorter than yesterday's. The route usually isn't the shortest, and the van leaves on time at nine in the morning."
+   },
+   {
+    "field": "Personal life",
+    "title": "Three rules for running shoes",
+    "text": "You want to buy running shoes and first set three rules: under 400 yuan, soft enough under the front of the foot, and you can try them on in the store. The first store has nothing that fits. In the second you try a pair that meets all three, and you pay. The stores you skipped might have had better ones; on the weekend you go running as usual."
+   },
+   {
+    "field": "Firefighting",
+    "title": "The first plan that works",
+    "text": "Starting in 1985, the psychologist Gary Klein's team interviewed 26 fireground commanders with an average of 23 years on the job, asking them to recount their hardest fires. The team had expected the commanders to lay out two or three options and then compare them. Instead, about 80% of the decisions were made in under a minute. A commander would run the first option that came to mind through in his head, and if it worked he went with it; only if it didn't would he change it or move on to the next."
+   }
+  ],
+  "ask": [
+   "How much time and money does each extra option I look at cost me? And how much better do I expect to do by looking further?",
+   "Is my \"good enough\" written down: which conditions must all be met, and which are only nice to have?",
+   "If I've searched a long time and nothing qualifies, is the bar too high, or does this kind of option simply not include one?"
+  ],
+  "with": [
+   {
+    "id": "optimal-stopping",
+    "sees": "You're driving a long way, and there are 12 gas stations along the road. You decide at each one as you pass whether to fill up, and once you've passed it you can't go back. The written-standard way is to stop at the first one priced under 8 yuan that has a restroom. The optimal-stopping way is to pass the first 4, even if one of them meets the standard, and then stop at the first one cheaper than all of them. If one of the first 4 meets the standard, the two give exactly opposite advice. If you must fill up at the cheapest station on the road and can rank the stations' prices, follow optimal stopping and pass it; if any acceptable price will do, or you can't rank them at all, fill up."
+   },
+   {
+    "id": "explore-exploit",
+    "sees": "You've taken the same route to work for three years, and it's fast enough. Someone acting on bounded rationality never changes it again; explore versus exploit sees that if you never try another road, you'll never know whether a faster one exists. You commute ten times a week, and trying a new road costs ten extra minutes at most, so switching now and then pays off. The company's annual party books a venue only once a year, and if the booking goes wrong the whole company suffers, so sticking with last year's good-enough venue is fine."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're hiring a customer service supervisor and have set five requirements: at least three years of leading a team, able to use the ticketing system, able to work night shifts, holds a management training certificate, and asks for a salary within budget. You've interviewed 30 people and none meets all five. The post has been empty for more than a month, and the backlog of complaints grows every week.",
+    "question": "What is the most sensible next step?",
+    "explain": "The bar can come down when the search goes badly, but it should come down where it doesn't affect doing the job. First go back over the people already interviewed, since after the bar is lowered someone may already qualify. If not, keep interviewing, and still hire the first person who qualifies.",
+    "options": [
+     {
+      "text": "Add three more requirements, such as five years of leading a team, an industry certification and living close to the office, and interview only people who meet them all.",
+      "correct": false,
+      "feedback": "The higher the bar, the more people you must see to find each one who qualifies. You've already searched for a month without success, and raising the bar will only drag it out longer."
+     },
+     {
+      "text": "Cross off one requirement that doesn't affect doing the job, such as the management training certificate. Go back over the 30 already interviewed first; if none qualifies, keep interviewing, and send an offer to the first person who qualifies.",
+      "correct": true,
+      "feedback": "The bar comes down with experience, and only where it doesn't affect doing the job. After lowering it, going back over the people you already have saves the time of starting the search again."
+     },
+     {
+      "text": "Pick whoever interviewed best among the current candidates, even if they lack one or two hard requirements, and send the offer today.",
+      "correct": false,
+      "feedback": "The strongest candidate isn't the same as one who clears the bar. Sign someone with a hard gap, and the job's real requirements still go unmet."
+     },
+     {
+      "text": "Score all 30 again, start talks with the highest total, and if that fails move on to the next, until someone accepts.",
+      "correct": false,
+      "feedback": "This swaps \"good enough\" for \"best.\" Scoring and ranking means comparing everyone all over again while complaints keep piling up, and it doesn't fix the bar being set too high."
+     }
+    ]
+   },
+   {
+    "stem": "You're selling a used car listed at 32,000 yuan, with 70,000 kilometers on it. The buyer says he looks at only three things: a price of no more than 30,000 (exactly 30,000 is fine), no more than 80,000 kilometers, and the ownership transferred the same day. He hasn't looked at other cars yet, and he has already seen yours.",
+    "question": "You want to give up as little as possible on price and still close the deal on the spot. What should you do?",
+    "explain": "The buyer has a bar. Once it's cleared he stops, and he won't compare any other strengths. Coming down to exactly the bar closes the deal on the spot and gives up less money than cutting further.",
+    "options": [
+     {
+      "text": "Drop to 28,000 so he decides faster.",
+      "correct": false,
+      "feedback": "Once the price clears the bar, he already stops. Giving up another 2,000 just means selling for less, for nothing."
+     },
+     {
+      "text": "Keep it at 32,000 and go over the service records and the car's condition again in more detail.",
+      "correct": false,
+      "feedback": "He isn't comparing whose car is in better shape; he only looks at three bars. The price hasn't cleared its bar, and no amount of detail will make him stop."
+     },
+     {
+      "text": "Drop to 31,000 and throw in a year of free servicing.",
+      "correct": false,
+      "feedback": "Free servicing isn't one of his three bars. 31,000 is still above 30,000, so that bar isn't cleared, and he won't buy because of it."
+     },
+     {
+      "text": "Drop to exactly 30,000 and do the transfer paperwork that day.",
+      "correct": true,
+      "feedback": "All three bars are just cleared: a price of exactly 30,000, 70,000 kilometers, transfer the same day. You give up the least, and he has no reason to look at other cars."
+     }
+    ]
+   },
+   {
+    "stem": "You have a habit: write down your standards first, settle on the first option that meets all of them, and stop comparing. This weekend you have two things to do: buy yourself a pen, and choose a nursing home for your eighty-year-old father to live in long-term. Once the contract is signed, refunds are hard to get, and moving to another home is hard on an old man.",
+    "question": "If you still want to keep this habit, how should you handle the two?",
+    "explain": "The cost of each extra look has to be weighed against how much the decision matters. A wrong pen costs a few yuan; a wrong nursing home costs far more, so it's worth setting the bar high and looking at more places. The way you stop doesn't change: you still settle on the first one that clears every bar.",
+    "options": [
+     {
+      "text": "Buy the first pen that qualifies; for the nursing home, write strict standards, look at more places, and settle on the first one that clears them all.",
+      "correct": true,
+      "feedback": "The weightier the decision, the higher the bar, and the more the search time is worth spending. The rule for stopping stays the same."
+     },
+     {
+      "text": "For the pen, look at every model and compare prices; for the nursing home, see the first one and, if it qualifies, sign on the spot.",
+      "correct": false,
+      "feedback": "This is backward: something that costs a few yuan isn't worth an afternoon of comparing, while years of living somewhere get only one look."
+     },
+     {
+      "text": "Use the same simple standard for both: settle on the first pen and the first nursing home that look good.",
+      "correct": false,
+      "feedback": "That standard is too simple for the nursing home. The first one looking good doesn't mean it clears the bar it should, and a wrong choice there costs far more."
+     },
+     {
+      "text": "For both, look at every option and pick the one with the highest total score, treating the pen and the nursing home alike.",
+      "correct": false,
+      "feedback": "Looking at every option costs too much for a pen, and may not even be possible for nursing homes. The highest total score also doesn't mean every standard is met."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "First one past the bar, not the best",
+  "caption": "No comparing all forty-odd places. Set a bar, look one by one, go in at the first that clears it; if a dozen or more fail, drop a rule to lower the bar.",
+  "nodes": [
+   {
+    "id": "s",
+    "label": "Set a bar",
+    "sub": "Clean, a table, under 40"
+   },
+   {
+    "id": "l",
+    "label": "Look at the next"
+   },
+   {
+    "id": "c",
+    "label": "Clears the bar?"
+   },
+   {
+    "id": "go",
+    "label": "Go in and order",
+    "sub": "Ordered in 20 minutes",
+    "tone": "accent"
+   },
+   {
+    "id": "dn",
+    "label": "Cross one off",
+    "sub": "15 in a row fail",
+    "tone": "muted"
+   }
+  ],
+  "edges": [
+   {
+    "from": "s",
+    "to": "l"
+   },
+   {
+    "from": "l",
+    "to": "c"
+   },
+   {
+    "from": "c",
+    "to": "go",
+    "label": "Yes",
+    "tone": "accent"
+   },
+   {
+    "from": "c",
+    "to": "dn",
+    "label": "Never",
+    "tone": "muted"
+   },
+   {
+    "from": "c",
+    "to": "l",
+    "label": "No",
+    "dashed": true
+   }
+  ]
+ }
+}

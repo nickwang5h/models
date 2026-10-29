@@ -1,0 +1,233 @@
+{
+ "id": "preference-falsification",
+ "name": "Preference Falsification",
+ "en": "偏好伪装",
+ "discipline": "society",
+ "one_line": "When nobody dares say what they think, a show of agreement can collapse overnight.",
+ "story": "On December 21, a crowd suddenly boos Ceaușescu during his speech from a Bucharest balcony, and his regime falls within days",
+ "shallow": {
+  "scene": "On December 21, 1989, Romania's leader Nicolae Ceaușescu gave a speech from the balcony of the Communist Party headquarters in Bucharest. The authorities had brought in workers to fill the square, the crowd held up banners praising him, and the speech went out live on national television. Halfway through, the crowd suddenly stirred and boos broke out. He raised his hand to quiet them, and the broadcast was cut for a while. The next day even more people poured into the city center, and he fled by helicopter.",
+  "plain": "At a team dinner, the team lead is in high spirits and asks, \"Let's come here again next time, shall we?\" Three of the five people think the food is too salty and the wait too long, but they see the lead is happy, so they all say yes. These three are falsifying their preferences: to avoid a little displeasure, what they say is not what they think. The lead counts five votes in favor and books the same place again next month."
+ },
+ "deep": {
+  "mechanism": "### The price of speaking honestly differs from person to person\n\nYou are against your manager's plan, but you're afraid of being marked down as uncooperative, so in the meeting you say you agree. People weigh three things: what outcome they want, how others will reward or punish them, and how uncomfortable it is to say what they don't mean. How much each of these weighs differs from person to person. A punishment only has to be believed in. It doesn't have to actually happen to make people change what they say. Five people in the meeting raise their hands, and three of them are only afraid of getting a black mark.\n\n### Each person who goes along adds to everyone else's worry\n\nThe others can only see a room full of agreement and can't tell which of it is real. So they conclude that speaking up would only leave them isolated, and they raise their hands too. Each extra raised hand is one more vote of agreement for the next person to see. Public support keeps climbing, and the reasons against never even enter the discussion.\n\n### Thresholds one step apart, results worlds apart\n\nSuppose ten people are all privately against something, and each has a threshold: the number of people they must first see openly object before they dare to speak. The thresholds run 0, 1, 2 and so on up to 9. The person with threshold 0 speaks first, the person with threshold 1 follows, and the chain runs all the way down until all ten have spoken. Now change the person whose threshold is 1 to 2. After the threshold-0 person speaks, everyone else needs to see at least two people object. Nobody follows, the chain breaks at the very first step, and the meeting is all agreement as before. In the two meetings, what the ten people privately think is exactly the same.",
+  "origin": "The economist Timur Kuran introduced the idea in 1987 in \"Chameleon Voters and Public Choice,\" and set it out in full in his 1995 book *Private Truths, Public Lies*. Mark Granovetter's 1978 threshold model supplied the arithmetic of the chain. In 1991 Kuran used that model to explain why the 1989 collapse of communism in Eastern Europe took everyone by surprise.",
+  "limits": "Preference falsification explains the most where pressure is high, where people state their views in public, and where there is no private channel for speaking: totalitarian regimes, companies with rigid hierarchies, meetings where people are called on by name. If someone has honestly changed their mind after seeing new evidence, or never had an opinion in the first place, there is no gap between what they say and what they think, and it isn't preference falsification. Reading every silence as \"they're secretly against it,\" or treating long stability as a countdown to collapse, is mind reading. As long as nobody crosses their threshold first, people can keep going along for decades."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Explain why a city's polls kept showing the incumbent far ahead, yet the incumbent lost on election day: a phone poll makes people state a view to someone directly, and they gave the answer that costs nothing to say out loud."
+   },
+   {
+    "use": "design",
+    "text": "Set the speaking order for a review meeting: the most junior person speaks first and the director last, so the director's position can't weigh on anyone else's."
+   },
+   {
+    "use": "act",
+    "text": "In a new colleague's first week, before they learn that \"this is how it's always done here,\" ask them once in private: where does the process feel awkward to you? A week later they will most likely keep quiet too."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Education",
+    "title": "Thirty nodding heads",
+    "text": "You finish explaining a hard problem to a class of thirty and ask, \"Does everyone get it?\" The whole class nods. In those few seconds of nodding, each student is glancing at the people next to them to see whether they're nodding; nobody wants to be the first to look stupid. You switch to having everyone write their answer for that step on a small whiteboard and hold it up together on the count of three. Twelve whiteboards have the same mistake. The next day you explain that step again a different way."
+   },
+   {
+    "field": "Product",
+    "title": "Six \"OKs\" at the review",
+    "text": "You lead a product, and at the review meeting before launch, six people say \"it's ready to ship.\" After the meeting you talk to them one by one and ask a single question: \"If you got woken up in the middle of the night after launch, what would you be most afraid had broken?\" Three people name the same thing: the payment callback was never tested. You push the launch back two days."
+   },
+   {
+    "field": "Society",
+    "title": "Two answers, public and anonymous",
+    "text": "An experiment was run in the Pittsburgh area of the United States. Participants decided whether to authorize a donation to an anti-immigration organization and take a bonus. In the group told that Hillary Clinton had won their county, fewer people agreed to authorize it when they thought their decision would be made public than when it was anonymous. In the group told that Trump had won the wider metropolitan area, more people agreed when it was public, while the anonymous rate didn't change, so the gap between the two disappeared."
+   }
+  ],
+  "ask": [
+   "What would someone lose by openly objecting here, and who can make that loss happen?",
+   "Does the same person say the same thing in a public meeting, in a private conversation they trust, and in a choice they write down on their own?",
+   "The last time someone said no in front of everyone, what happened to them afterward? Did everyone see it?"
+  ],
+  "with": [
+   {
+    "id": "social-proof",
+    "sees": "At the review of a new project, eight of ten people say they're in favor. Social proof says that with so many people backing it, it's worth following; preference falsification asks how many of those eight are afraid of what saying no would cost them. The two give opposite advice: one tells you to follow first, the other to lower the cost of speaking honestly first and then count the votes. In a meeting where the manager calls on people by name, trust preference falsification first; with scores that people write down on their own, trust social proof first."
+   },
+   {
+    "id": "critical-mass",
+    "sees": "Should a joint letter wait until it has enough signatures before it goes out? Critical mass looks at whether the numbers are big enough, with new signers drawing in the ones after them. Preference falsification sees that plenty of people have long wanted to sign, and what holds them back is whether the first to sign will get a black mark. Something that keeps the first signers from paying a price comes before recruiting more people."
+   },
+   {
+    "id": "mechanism-design",
+    "sees": "A company wants to hear the truth. Mechanism design works backward: first decide the outcome you want, then change the rules so that telling the truth becomes the choice that pays, for example by rewarding the first person to point out a problem, or naming one person in each review whose job is to argue the other side. Preference falsification tells you which thing to change first: the cost that keeps people's mouths shut."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "At the weekly meeting, the team lead shows a new shift schedule and asks the team for their views on the spot. All six say it's fine. Last month a team member told the lead to their face that one of the shifts made no sense, and was then put on night shifts for a week straight. You ask four of them in private, and three say that shift simply can't work.",
+    "question": "How should the team lead read the six \"fine\"s given on the spot?",
+    "explain": "With the week of night shifts right there as a precedent, the agreement given face to face is partly about avoiding punishment. And the private answers come from only four people: they show a gap exists, but they can't stand for everyone.",
+    "options": [
+     {
+      "text": "The people who said fine had the week of night shifts in front of them, so the six \"fine\"s can't be taken straight as what they really think.",
+      "correct": true,
+      "feedback": "When stating a view face to face has a cost, the count of agreement no longer equals what people really think."
+     },
+     {
+      "text": "All six said fine, so most of the team approves, and the three who spoke in private are just exceptions.",
+      "correct": false,
+      "feedback": "The face-to-face count includes people avoiding punishment, so the six \"fine\"s can't be taken straight as six people's real views."
+     },
+     {
+      "text": "Three of the four asked in private say it can't work, so most of the team is clearly against it, and the plan should be changed at once.",
+      "correct": false,
+      "feedback": "Four people are only a small part of the team. They are enough to show a gap exists, not to speak for everyone."
+     },
+     {
+      "text": "People who privately say it can't work said fine to the lead's face, which shows they are dishonest and should be replaced.",
+      "correct": false,
+      "feedback": "They said fine to the lead's face because of the precedent in front of them. The problem is the cost of speaking honestly, not their character."
+     }
+    ]
+   },
+   {
+    "stem": "A company runs its annual employee satisfaction survey. It says the survey is anonymous, but everyone has to log in with their employee ID. Satisfaction comes out at 97%, yet that month's resignation rate is the highest of the year.",
+    "question": "Why can't this 97% be taken as what employees really think?",
+    "explain": "It says anonymous but requires logging in with an employee ID, so employees worry their answers can be traced back to them. A punishment only has to be believed in, not actually carried out, to make people change what they say.",
+    "options": [
+     {
+      "text": "Most people didn't fill it in carefully and just clicked the highest score.",
+      "correct": false,
+      "feedback": "Random clicking wouldn't lean so neatly toward the top score, and it can't explain why resignations hit a high at the very same time."
+     },
+     {
+      "text": "Employees are generally satisfied and only a few left, so the two numbers don't contradict each other.",
+      "correct": false,
+      "feedback": "97% satisfaction and the year's highest resignation rate at the same time: the numbers and the behavior don't match, and \"only a few\" can't smooth that over."
+     },
+     {
+      "text": "The survey had too few questions and too small a sample, so the result isn't stable.",
+      "correct": false,
+      "feedback": "Nothing in the question says the sample is small, and satisfaction and resignations moving in opposite directions isn't caused by sample size."
+     },
+     {
+      "text": "Employees don't believe answers given after logging in with an ID can't be traced to them, so they wrote answers meant for the company to see.",
+      "correct": true,
+      "feedback": "The cost of speaking honestly depends on whether an answer can be traced back to you, and logging in with an employee ID put that cost right in front of them."
+     }
+    ]
+   },
+   {
+    "stem": "At a department review, three senior colleagues say one after another that the plan is fine. A colleague who joined a year ago speaks up: \"I disagree. I don't have any new data.\" The director nods and says, \"Go on.\" Then three more people voice their own doubts, and the meeting changes direction. Nobody at the meeting brought up any new information.",
+    "question": "Why did his speaking up get others to speak?",
+    "explain": "He spoke up and wasn't punished, so the others saw that objecting didn't leave them alone, and the cost of speaking honestly dropped. There was no new information, which shows that what changed was the cost, not what people thought of the plan.",
+    "options": [
+     {
+      "text": "His argument was more convincing, and the other three were persuaded and changed their minds.",
+      "correct": false,
+      "feedback": "He said himself he had no new data, and nobody at the meeting brought new information, so there was nothing to persuade anyone with."
+     },
+     {
+      "text": "He spoke up and wasn't punished, so the others saw that objecting no longer left them alone, and speaking up cost less.",
+      "correct": true,
+      "feedback": "One person objecting in public and coming through fine makes the people who already had doubts more willing to say them."
+     },
+     {
+      "text": "People always follow the last speaker, and the three just switched to agreeing with someone else.",
+      "correct": false,
+      "feedback": "The three voiced their own doubts; they didn't repeat what he said."
+     },
+     {
+      "text": "The newcomer is junior, so the others wanted to use him to test the director's reaction first.",
+      "correct": false,
+      "feedback": "The colleagues in the question are voicing their own doubts, not testing anyone, and there's no sign of anyone they would need to test."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "One threshold from 1 to 2: only 1 of 10 speaks",
+  "caption": "Ten people are privately against it, with thresholds 0 to 9: how many must speak before each dares. Drag person 2's threshold to see how far the chain gets.",
+  "x": {
+   "label": "Round",
+   "ticks": [
+    {
+     "at": 0,
+     "label": "0"
+    },
+    {
+     "at": 2,
+     "label": "2"
+    },
+    {
+     "at": 4,
+     "label": "4"
+    },
+    {
+     "at": 6,
+     "label": "6"
+    },
+    {
+     "at": 8,
+     "label": "8"
+    },
+    {
+     "at": 10,
+     "label": "10"
+    }
+   ]
+  },
+  "y": {
+   "label": "People objecting openly",
+   "unit": " people",
+   "min": 0,
+   "max": 10
+  },
+  "params": [
+   {
+    "id": "t",
+    "label": "#2's threshold",
+    "min": 0,
+    "max": 4,
+    "step": 1,
+    "value": 1
+   }
+  ],
+  "model": {
+   "steps": 10,
+   "init": {
+    "s": 0
+   },
+   "next": {
+    "s": "1 + (t<=s) + clamp(s-1, 0, 8)"
+   }
+  },
+  "series": [
+   {
+    "name": "Objecting openly",
+    "expr": "s",
+    "tone": "accent",
+    "dots": true
+   }
+  ],
+  "marks": [
+   {
+    "y": 10,
+    "text": "Privately against"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Speak up in the end",
+    "expr": "s",
+    "unit": " people",
+    "digits": 0
+   }
+  ]
+ }
+}

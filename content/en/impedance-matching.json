@@ -1,0 +1,217 @@
+{
+ "id": "impedance-matching",
+ "name": "Impedance Matching",
+ "en": "阻抗匹配",
+ "discipline": "physics",
+ "one_line": "When two sides don't match, even a hard push bounces back, so smooth the join instead.",
+ "story": "Ian Donald and colleagues in Glasgow publish their abdominal ultrasound research, using a coupling agent to push out the air",
+ "shallow": {
+  "scene": "Anyone who has had an ultrasound scan remembers it: after you lie down, the doctor first squeezes a big dollop of cold gel onto your belly, then presses the probe on top. The gel isn't there to make things slippery. The probe sends sound waves into your body, and if even a thin layer of air is caught between the probe and your skin, that air bounces almost all of the sound back into the probe. The sound can't get into the body, and the screen shows nothing.\n\nIn 1958, in Glasgow, Scotland, Ian Donald, John MacVicar and Tom Brown published the first research on abdominal ultrasound. There was no special gel yet, so they smeared olive oil on the skin to push out the air. Only then could the sound waves get in, and come back carrying echoes from the organs inside.",
+  "plain": "Anyone who has played pool has seen it: the cue ball hits a still ball head-on and stops dead, while the other ball rolls off with almost all of its speed. The cue ball can hand over all its energy only because the two balls weigh the same. Use a ping-pong ball to hit a bowling ball of about 6 kilograms, and the result is reversed. The bowling ball is more than 2,000 times heavier than the ping-pong ball. When the ping-pong ball pushes it, it barely moves, so the ping-pong ball has no choice but to bounce back, handing over less than 0.2% of its energy. However fast you throw the ping-pong ball, that share stays the same, because what gets passed on and what bounces back both grow together.\n\nSound waves going into the body and electrical signals going into a cable run into the same kind of mismatch. The only difference is that what measures how \"easy to push\" something is isn't called mass but impedance. The closer the impedances on the two sides, the less bounces back; the further apart they are, the harder it is for energy to get through."
+ },
+ "deep": {
+  "mechanism": "### When two balls collide, how much passes on depends only on the mass ratio\n\nA ball hits another ball at rest, and the second ball has $r$ times the mass of the first. The total momentum of the two balls is the same before and after the collision, and in an elastic collision the total kinetic energy is the same too. From these two facts you can solve for $T$, the share of the energy the second ball carries away:\n\n$$T=\\frac{4r}{(1+r)^2}$$\n\nThis means that when the two balls weigh the same ($r=1$), $T=1$, and all the energy passes on. If the second ball is twice as heavy, 89% passes on and 11% bounces back; if it is 9 times as heavy, only 36% passes on and 64% bounces back. One way to see it: the heavier the second ball, the slower it gets pushed, and the less energy it takes away. The energy left over can only stay with the first ball, which sends it bouncing back.\n\n### When a wave crosses a boundary, impedance plays the part of mass\n\nImpedance describes how hard something is to set moving: how much force it takes to make it move how fast. Acoustic impedance is a material's density times its speed of sound. Air is light and gives way at a push; water and body tissue are heavy, and the same force moves them only a tiny bit. Where the two sides meet, they must at every moment push with the same force and move together at the same speed, just like two balls at the instant they touch. So the calculation is the same too, with the impedance ratio in place of the mass ratio. If $Z_1$ is the impedance of the side the wave comes from and $Z_2$ that of the side it is going into, the share that bounces back is:\n\n$$R=\\left(\\frac{Z_2-Z_1}{Z_2+Z_1}\\right)^2$$\n\nThe further apart the two sides are, the closer the top of the fraction gets to the bottom, and the more bounces back. Air and soft tissue differ in impedance by a factor of several thousand, so about 99.9% bounces back, and only around one part in a thousand gets through.\n\n### A layer in between works better than more force\n\nMore force doesn't solve the problem. Double the power of the sound source, and what gets through and what bounces back both double, so the share doesn't move at all. What really works is breaking one big mismatch into several small ones. Back to the balls: a ball of 1 unit hitting a ball of 9 units directly passes on only 36%. Put a ball of 3 units between them and collide in two steps, and each step is only a threefold difference, passing on 75% each time. Over the two steps that's 75% of 75%, about 56%. With two balls in between it's about 67%; the more and finer the steps, the closer it gets to everything passing through.\n\nIn engineering, the middle layer's impedance is usually set to the square root of the two sides' impedances multiplied together, just as 3 sits between 1 and 9. The layer of material in front of the crystal in an ultrasound probe, and the anti-reflection coating on a lens that is a quarter of a light wave thick, are each a layer of this kind; a horn that gradually widens is like many layers, passing the mismatch across one step at a time. Levers and gears take a different route. They directly trade \"small force, fast motion\" for \"large force, slow motion,\" so that the other side can take it.",
+  "origin": "Impedance matching came out of circuits, transmission lines and acoustic engineering, and has no single inventor. Oliver Heaviside introduced the word \"impedance\" in 1886. Transmission-line theory in the late nineteenth century explained why a signal is reflected back when the impedance at the end of a line doesn't match.",
+  "limits": "The model holds when you need to get a wave or signal across a boundary: sound into the body, a signal into a cable, light into a lens. If the goal is to pass on a voltage instead, you shouldn't match. The receiving end's impedance needs to be much higher than the source's, so that most of the voltage falls across the receiving end; if the two are equal, the voltage gets split in half. The layer in between is designed for one particular frequency, and when the frequency changes, so does how well it works. Carried over to a handoff between two teams, the model only covers whether format and pace fit together. If the other side doesn't want to take the work, no amount of smoothing the interface will help."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Put an antenna tuner between a ham radio's antenna and its transmitter to cut down the part that bounces back into the transmitter, instead of raising the transmit power."
+   },
+   {
+    "use": "explain",
+    "text": "A diver underwater can barely hear someone shouting from the shore: air and water differ in impedance by more than a thousand times, so almost all of the sound bounces back at the water's surface."
+   },
+   {
+    "use": "act",
+    "text": "When handoffs between two teams keep getting sent back, first find which side's format or pace doesn't fit the other's, and change only that side, instead of pushing the other side to send things more times."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Biology",
+    "title": "The middle ear turns a light push into a heavy one",
+    "text": "Sound waves going straight from air into the fluid-filled cochlea of the inner ear would almost all bounce back off the fluid's surface. The eardrum collects sound pressure over a large area and focuses it onto the much smaller footplate of the stirrup bone, and the lever action of the tiny ear bones adds a little more, so a light push becomes a force that can move fluid. When fluid builds up in the middle ear, this conversion is thrown off and hearing gets worse."
+   },
+   {
+    "field": "Optics",
+    "title": "The thin film on a lens",
+    "text": "Each surface of bare glass reflects about 4% of the light. A camera lens has many glass elements, and the losses add up surface after surface, making the picture look hazy and gray. Coat each surface with a film whose refractive index lies between those of air and glass, and whose thickness is a quarter of the light's wavelength, and the reflection at each surface drops to about 1%."
+   },
+   {
+    "field": "Mechanics",
+    "title": "Shift down for the hill",
+    "text": "You're riding a mountain bike and come to a steep hill. In a high gear you push with all the strength in your legs and the wheels barely turn: your legs deliver \"small force, fast turning,\" and the steep hill needs \"large force, slow turning.\" Shift to the lowest gear, and your legs spin fast while the wheels turn slowly. Each turn of the pedals becomes a bigger force, and the bike climbs the hill turn by turn. Back on the flat, you shift up again: your legs turn slowly and the wheels turn fast."
+   }
+  ],
+  "ask": [
+   "Where is the boundary that the energy or information has to cross? How \"easy to push\" is each side, and can you measure the ratio?",
+   "Where does what gets sent back or reflected show up? Look at the record of returns, the echoes, or the reflection reading on the meter.",
+   "Without raising the input, could changing just one end, or adding a conversion layer in between, let more get through?"
+  ],
+  "with": [
+   {
+    "id": "end-to-end-principle",
+    "sees": "After two companies merge, the formats of their two order systems don't match. Impedance matching would put a conversion layer at the boundary, so each side keeps running its own way and neither has to change. The end-to-end principle does the opposite: the middle only carries things, and format conversion and checking happen at the sending and receiving ends, because a conversion layer doesn't understand what an order means and can't tell when something has gone wrong. If the formats differ in only one or two places and neither side can be changed, add a conversion layer; if the formats will keep changing and errors would cause real trouble, have the two ends line up with each other themselves."
+   },
+   {
+    "id": "bottlenecks",
+    "sees": "A shop's online orders have grown, but shipping hasn't kept up. First tell apart whether a boundary is sending things back or some later step is too slow. Bottlenecks has you follow the process to find the step that handles the least; impedance matching only helps when that step happens to be a boundary. First count how much each step handles, then decide whether to fix the interface or add capacity."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You send a short pulse into one end of a very long coaxial cable, with nothing connected at the other end. On the oscilloscope, besides the pulse you sent, a smaller pulse in the same direction appears a short while later.",
+    "question": "How do you make this extra pulse go away?",
+    "explain": "When the pulse reaches the open end, it has nowhere to go and bounces back whole. Connect a resistor equal to the cable's characteristic impedance at the end, and the pulse is absorbed by it, so nothing travels back.",
+    "options": [
+     {
+      "text": "Make the pulse you send smaller.",
+      "correct": false,
+      "feedback": "The echo shrinks in the same proportion as the pulse you send. The end still bounces everything back, and the echo still appears."
+     },
+     {
+      "text": "Connect a resistor equal to the cable's characteristic impedance across the end of the cable.",
+      "correct": true,
+      "feedback": "The load at the end equals the cable's impedance, so when the pulse gets there it is absorbed by the resistor, with no reflection."
+     },
+     {
+      "text": "Switch to a thicker cable of the same kind, still with nothing connected at the end.",
+      "correct": false,
+      "feedback": "The end is still open, so the pulse still bounces back whole when it gets there, and the echo still appears."
+     },
+     {
+      "text": "Connect the two wires at the end directly to each other.",
+      "correct": false,
+      "feedback": "A short circuit doesn't match the cable either. The pulse still reflects; the echo just comes back flipped the other way."
+     }
+    ]
+   },
+   {
+    "stem": "You have a small diaphragm pushing straight on the air, and the sound is quiet. You fit a gradually widening horn in front of it and keep the electrical power going in the same, and the sound gets clearly louder.",
+    "question": "What mainly makes the sound louder with the horn?",
+    "explain": "When a small diaphragm pushes the air directly, the air is too \"loose,\" and very little sound energy gets out. The gradually widening horn lets the load the diaphragm faces change step by step into open air, so the same power sends out more sound energy.",
+    "options": [
+     {
+      "text": "The horn makes the air the diaphragm pushes on \"tighter\" and eases it gradually into open air, so more sound energy gets out.",
+      "correct": true,
+      "feedback": "There's now a gradual transition between the diaphragm and the air, so less is reflected and the same power sends out more sound energy."
+     },
+     {
+      "text": "The horn adds extra energy to the sound wave, so the sound coming out is stronger than what went in.",
+      "correct": false,
+      "feedback": "Energy doesn't appear from nowhere. The electrical power hasn't changed; what changed is the share of it sent into the air."
+     },
+     {
+      "text": "The horn absorbs noise near the diaphragm, so what's left is clearer and seems louder.",
+      "correct": false,
+      "feedback": "Absorbing noise would only make the sound cleaner or quieter. In the question, the diaphragm is sending out more sound energy."
+     },
+     {
+      "text": "The horn speeds up the sound wave, so the sound travels farther.",
+      "correct": false,
+      "feedback": "The speed of sound is set by the air, and fitting a horn can't change it. What the question describes is louder sound at the same distance, not sound traveling farther."
+     }
+    ]
+   },
+   {
+    "stem": "You want the fish in a pond to hear music.",
+    "question": "Which of these gets the most sound energy into the water?",
+    "explain": "Air and water are too far apart in impedance, so sound sent from the air side is almost all turned back at the boundary. To get more into the water, it's the boundary that has to change: let a diaphragm push the water directly, so the sound no longer has to cross from air into water.",
+    "options": [
+     {
+      "text": "Use a speaker with stronger bass.",
+      "correct": false,
+      "feedback": "The extra bass energy is kept out at the water's surface just the same. The boundary hasn't changed."
+     },
+     {
+      "text": "Put the speaker right up against the water's surface.",
+      "correct": false,
+      "feedback": "There's still a layer of air between the speaker and the water, so the boundary hasn't changed, and the sound energy is still turned back at the surface."
+     },
+     {
+      "text": "Turn the speaker on the bank up to full volume.",
+      "correct": false,
+      "feedback": "Turning up the volume doesn't change the share bounced back at the surface. The sound energy that enters the water is still a tiny fraction."
+     },
+     {
+      "text": "Put a waterproof speaker in the water.",
+      "correct": true,
+      "feedback": "The diaphragm pushes the water directly, so the sound energy doesn't have to cross the boundary between air and water, and more of it gets into the water."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "At 9×, a third gets through; add a ball, over half",
+  "caption": "A light ball hits one x times heavier. Hit directly, the share passed on drops fast; via a middle-sized ball in two steps, far more gets through. Drag to try any x.",
+  "x": {
+   "label": "How many times heavier",
+   "min": 1,
+   "max": 30
+  },
+  "y": {
+   "label": "Energy passed on",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "r",
+    "label": "× heavier",
+    "min": 1,
+    "max": 30,
+    "step": 1,
+    "value": 9
+   }
+  ],
+  "series": [
+   {
+    "name": "Direct hit",
+    "expr": "400*x/(1+x)^2",
+    "tone": "ink"
+   },
+   {
+    "name": "One ball between",
+    "expr": "100*(4*sqrt(x)/(1+sqrt(x))^2)^2",
+    "tone": "accent"
+   },
+   {
+    "name": "Two balls between",
+    "expr": "100*(4*x^(1/3)/(1+x^(1/3))^2)^3",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "x": "r"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Direct hit passes",
+    "expr": "400*r/(1+r)^2",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "Bounces back",
+    "expr": "100-400*r/(1+r)^2",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "With one between",
+    "expr": "100*(4*sqrt(r)/(1+sqrt(r))^2)^2",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

@@ -1,0 +1,243 @@
+{
+ "id": "peak-end-rule",
+ "name": "Peak-End Rule",
+ "en": "峰终定律",
+ "discipline": "psychology",
+ "one_line": "Looking back on an experience, we remember only its strongest moment and its end.",
+ "story": "Redelmeier's randomized colonoscopy trial (run 1994–95, published 2003): adding a stretch of milder discomfort made patients rate the whole exam better",
+ "shallow": {
+  "scene": "In the mid-1990s, the Toronto doctor Donald Redelmeier and his colleagues recruited 682 patients who were due for a colonoscopy. The exam itself is unpleasant. Half the patients had it done as usual. For the other half, just before the end of the exam, the doctor left the scope resting quietly inside for a short while before taking it out; this stretch felt somewhat bloated but didn't hurt much. The extra stretch made the second group's total time of discomfort longer. Yet when they were asked afterward how unpleasant the whole exam had been, the group that had the pause gave lower scores. The study was published in 2003.",
+  "plain": "By the peak-end rule, when people look back on an experience, they seize on its most intense moment plus how it felt at the end; they don't add up the discomfort minute by minute. Picture two visits to the dentist. The first hurts from start to finish, and the last bit of drilling hurts most. The second hurts just as much in the middle, but at the end the dentist spends a few extra minutes rinsing and wiping your mouth, and those minutes hurt only a little. A few months later, you will most likely feel the second visit wasn't so bad, even though it was actually longer."
+ },
+ "deep": {
+  "mechanism": "### A milder ending makes the whole thing seem milder\n\nIn both exams the pain peaks at 8. One ends while the pain is still at 6; the other goes on a few more minutes and drops to 2 before it ends. Average \"the worst\" and \"the last,\" and the first exam comes to $(8+6)/2=7$, the second to $(8+2)/2=5$. The second is remembered as much milder, even though it was longer. Make the ending a little milder or a little worse, and the overall rating in memory moves almost in step; how long it lasted changes it very little. This is called duration neglect.\n\n### The peak and the end are what memory pulls out first\n\nMemory doesn't keep an account of every minute; it keeps only a few snapshots. The most intense moment stands out most. The last moment is closest to when you look back, and it also marks how the whole thing ended, so it is easy to keep too. Duration itself isn't a snapshot, so it hardly enters the memory at all. In Daniel Kahneman's 1993 cold-water experiment, subjects once put a hand in cold water for 60 seconds. Another time they kept it in for 60 seconds, then for 30 more seconds in slightly warmer water. Asked afterward which one to repeat, most chose the longer one whose end wasn't as cold.\n\n### A better memory doesn't mean less suffering\n\nIn the longer trial, subjects actually put up with 30 more seconds of cold. **The rating in memory and the feeling while it happens are two separate accounts**, and the peak-end rule describes the one in memory.",
+  "origin": "In 1993, Kahneman and his colleagues used the cold-water experiment to propose that people's later ratings of pain follow the most painful moment and the final feeling more closely. In 1996, Redelmeier and Kahneman saw the same pattern in real colonoscopy patients. In 2003, they and Joel Katz used the randomized trial from the opening to confirm that changing the ending changes the memory.",
+  "limits": "The peak-end rule fits best a single experience with a clear beginning and end and feelings that rise and fall within it: an exam, a show, a trip. For a marriage of many years or the same commute every day, no single peak or end can stand for the whole, so the average feeling comes back into play. Some businesses first put customers through misery, then try to make up for it with a gift and an apology at the end. But when the peak itself is awful, an ending like that can't rescue it; and even if the memory gets better, the time and health already spent don't come back."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When designing a three-hour training session, put the most useful exercise in the last forty minutes, then give everyone one minute to write down one thing to take away. That does more to make people speak well of it afterward than spreading the effort evenly."
+   },
+   {
+    "use": "explain",
+    "text": "A phone repair took a week and two trips, yet the user gave a good review: on pickup day, the technician swapped the battery while they watched and put on a new screen protector too, so the repair's last impression was a good one."
+   },
+   {
+    "use": "act",
+    "text": "When a colleague asks you to recommend a renovation company, look back through the old chat messages and bills before you answer, instead of going only on the good mood of the day you got the keys back."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Medicine",
+    "title": "A short gentle stretch at the end of the exam",
+    "text": "People who have had a gastroscopy dread coming back for the next one, and the head nurse at a health check center noticed. She had the doctors slow down before withdrawing the scope, and right after it was out, hand the patient warm water, say the results looked roughly normal, and add, \"The hardest part is over.\" The exam itself didn't get any shorter; only the last few minutes changed."
+   },
+   {
+    "field": "Work",
+    "title": "The last ten minutes of an interview",
+    "text": "You're in charge of hiring. In an hour-long interview, the hardest part is the twenty minutes of solving a problem on the spot. It used to come last, and candidates were often shown out the door while still stuck on it. You move the problem to the middle, leave the last ten minutes for the candidate's questions, and then show them the team's desks. The problem didn't change by a word, but what candidates remember as they walk out is now that last conversation."
+   },
+   {
+    "field": "Family",
+    "title": "The last day of a trip matters more than the first six",
+    "text": "The whole family spends a week at the beach. The first six days have great weather; on the last day, rushing for the flight, you hit traffic, the luggage is overweight, and the kids cry and fuss. Back home, when the family talks about the trip, the first thing they bring up is that afternoon at the airport. Next time you travel, you plan the last day more loosely and leave room for a proper lunch."
+   }
+  ],
+  "ask": [
+   "Looking back on this experience, which moment comes to mind first? The strongest one, or the most recent?",
+   "In the other person's mind, at what moment did this end? Was there still an unsolved problem at that point?",
+   "After I changed the ending, did the suffering along the way really go down, or does the memory just look better?"
+  ],
+  "with": [
+   {
+    "id": "goodharts-law",
+    "sees": "A customer service team wants higher customer satisfaction, so it makes the last line of every call as warm as possible; that is the peak-end rule's advice. But by Goodhart's law, once satisfaction becomes the score people are judged on, agents learn to push the hard problems later and say a warm goodbye just before hanging up. The score goes up, and not one problem goes away. If you want to use the ending, don't let the rating of the ending become the target. Here the two models give opposite advice; first ask whether the score measures whether the customer's real problem got solved."
+   },
+   {
+    "id": "availability",
+    "sees": "Availability reminds us that a moment in memory often seems important only because it is easy to recall: the most painful moment and the most recent one both are. They make people overrate how well they represent the whole experience. To see the whole thing, take out the records from the time. Don't ask yourself \"What do I remember?\" but \"What did I write down then?\""
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Two passengers each take a two-and-a-half-hour long-distance bus ride. The first ride is bumpy, and the worst part is a stretch of mountain road in the middle; the last ten minutes are on smooth road, and the passenger falls asleep. The second ride is just as bumpy, and the worst part is the same mountain road, but for the last ten minutes the bus is stuck in traffic on the highway and doesn't move. A week after getting off, both passengers are asked how unpleasant the trip was overall.",
+    "question": "Which passenger's memory is more likely to be worse?",
+    "explain": "The worst moments of the two rides are about the same; the difference is the ending: one ends smoothly, the other stuck in traffic. Memory gives these two things the most weight, so the second ride will be rated worse, even though the two lasted the same time.",
+    "options": [
+     {
+      "text": "The second, because the worst parts of the two rides are about the same, but the second ends stuck in traffic.",
+      "correct": true,
+      "feedback": "The peaks are about the same and the endings are one good, one bad, so the overall memories pull apart along with the endings."
+     },
+     {
+      "text": "The first, because the mountain road comes earlier in his trip and is diluted by the smooth road after it, which makes it worse.",
+      "correct": false,
+      "feedback": "Mountain road first and smooth road after is a good ending. His memory will be better, not worse."
+     },
+     {
+      "text": "The first, because he fell asleep and didn't get to see all the scenery, so less is left in his memory.",
+      "correct": false,
+      "feedback": "Falling asleep only means he remembers fewer details of the road; it doesn't make the memory worse. The worst moments of the two rides are about the same, and the smooth ending makes his memory better."
+     },
+     {
+      "text": "About the same, because the total time is the same and so is the bumpiness.",
+      "correct": false,
+      "feedback": "With the same time and bumpiness, the total discomfort is about the same. But memory is set by the worst moment and the ending, and with one ending smooth and one stuck in traffic, the impressions pull apart."
+     }
+    ]
+   },
+   {
+    "stem": "Suppose a flight is delayed five hours. Passengers wait at the gate until midnight, with no announcements and no apology, and some get into arguments with the ground staff. After takeoff everything goes smoothly; on landing, the flight attendants hand each passenger a small gift, and the captain apologizes over the speaker.",
+    "question": "A month later, when passengers look back on this flight, what is the gift most likely to do?",
+    "explain": "Looking back, people go on two things: the most intense moment and the ending. The gift improved the ending, but those hours at the gate were the worst moment, and they still make up half the memory. So the rating gets only a little better; it won't turn into a good review.",
+    "options": [
+     {
+      "text": "Passengers mainly remember the gift, and the whole flight gets a decent rating",
+      "correct": false,
+      "feedback": "The ending is only half the memory; the other half is the worst moment at the gate, and the gift can't cover it up."
+     },
+     {
+      "text": "A little better than with no gift, but still very bad overall",
+      "correct": true,
+      "feedback": "A better ending pulls the rating back up a bit; the moment at the gate is still there, so the memory can't get much better."
+     },
+     {
+      "text": "No effect at all, because the total length of the delay hasn't changed",
+      "correct": false,
+      "feedback": "Length hardly enters memory to begin with; a better ending really does make the memory a bit milder."
+     },
+     {
+      "text": "It makes the memory worse, because the gift reminds passengers of the delay",
+      "correct": false,
+      "feedback": "Nothing in the question suggests the gift stirred up resentment. A better ending only makes the memory a bit milder, not worse."
+     }
+    ]
+   },
+   {
+    "stem": "A first-time marathon runner finishes his first full race. The last ten kilometers are agony; as he crosses the line the crowd cheers, and he grins with joy. Three months later a friend asks if he wants to sign up for another one, and he says, \"It wasn't that bad, I'd do it again.\" He looks up the records on his training app: his pace dropped badly in the second half, and for three days after the finish he couldn't walk down stairs.",
+    "question": "What does \"it wasn't that bad\" in his memory mainly show?",
+    "explain": "The cheering and the grin at the finish line became the ending in his memory, pushing down the agony of the second half. The pace in the records and the three days he could barely walk are what he actually went through. Memory and records are two separate accounts.",
+    "options": [
+     {
+      "text": "He's actually fitter than he thinks, and the pain in the second half was just an illusion.",
+      "correct": false,
+      "feedback": "The records show his pace dropped badly and he couldn't walk downstairs for three days, so the pain was real, not an illusion."
+     },
+     {
+      "text": "His friend asked \"Do you want to go again?\", and the question itself made him think of the good side.",
+      "correct": false,
+      "feedback": "The friend's wording isn't the cause. The more direct clue in the question is his good mood at the finish line, which changed how he rated the whole race."
+     },
+     {
+      "text": "Enough time has passed that the pain has naturally faded, which has nothing to do with whether the ending was happy.",
+      "correct": false,
+      "feedback": "The clue in the question is the cheering at the finish. His good rating comes from the good mood at the end, not from time making him forget."
+     },
+     {
+      "text": "The joy at the end raised his rating of the whole race in memory; the real toll in the records didn't change.",
+      "correct": true,
+      "feedback": "Memory gets pulled up by the ending and the intense moments, while the slower pace and three days of struggling with stairs are a real cost."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "title": "More minutes of pain, milder end, milder memory",
+  "caption": "Both exams peak at 8. Taken out as usual, pain is still 6, remembered as about 7. With the extra pause it falls to 2, remembered as about 5.",
+  "x": {
+   "label": "Exam time",
+   "min": 0,
+   "max": 16,
+   "ticks": [
+    {
+     "at": 0,
+     "label": "Start"
+    },
+    {
+     "at": 8,
+     "label": "Usual end"
+    },
+    {
+     "at": 12,
+     "label": "End after pause"
+    }
+   ]
+  },
+  "y": {
+   "label": "Pain right now",
+   "min": 0,
+   "max": 10
+  },
+  "series": [
+   {
+    "name": "The exam",
+    "points": [
+     [
+      0,
+      1
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      4,
+      5
+     ],
+     [
+      6,
+      8
+     ],
+     [
+      8,
+      6
+     ]
+    ],
+    "tone": "ink",
+    "label": false
+   },
+   {
+    "name": "The extra pause",
+    "points": [
+     [
+      8,
+      6
+     ],
+     [
+      10,
+      4
+     ],
+     [
+      12,
+      2
+     ]
+    ],
+    "tone": "accent",
+    "dashed": true,
+    "label": false
+   }
+  ],
+  "marks": [
+   {
+    "x": 6,
+    "y": 8,
+    "text": "Peak 8"
+   },
+   {
+    "x": 8,
+    "y": 6,
+    "text": "Recalled ~7"
+   },
+   {
+    "x": 12,
+    "y": 2,
+    "text": "Recalled ~5"
+   }
+  ]
+ }
+}

@@ -1,0 +1,230 @@
+{
+ "id": "commitment-consistency",
+ "name": "Commitment and Consistency",
+ "en": "承诺与一致",
+ "discipline": "psychology",
+ "one_line": "What you've said and done pulls your later choices the same way.",
+ "story": "Freedman and Fraser publish their foot-in-the-door study: residents who first put up a small sign are more willing to put up a big billboard",
+ "shallow": {
+  "scene": "Researchers went door to door asking homeowners to put up a big, ugly billboard in their front yard urging people to drive carefully. Asked straight out, only 4 out of 24 agreed.\n\nAnother group of homeowners had been asked a small favor two weeks earlier: to display a tiny sign about safe driving. Two weeks later the researchers came back with the same request for the big billboard, and 19 of the 25 people they saw in this group agreed.\n\nThis was an experiment published in 1966 by the psychologists Freedman and Fraser, carried out in Palo Alto, California. Both groups heard the same big request. The only difference was whether they had agreed to a small favor before.",
+  "plain": "Someone on the street asks you to watch their luggage for two minutes, and you do. This small favor gets you nothing, but it gives you one more thing to say about yourself: I'm someone who helps. When they come back and ask whether you could just lift their suitcase into a taxi, you pick it up, because saying no wouldn't fit the person you were a moment ago. Psychology calls this commitment and consistency: what you've done and said becomes the story you tell about yourself, and later choices move in the direction that fits it."
+ },
+ "deep": {
+  "mechanism": "### The small thing done first becomes evidence about yourself\n\nPeople often haven't worked out what they care about, so they judge by looking at what they've done. A homeowner who has displayed the small safe-driving sign has one more piece of evidence that \"I care about this.\" Once that evidence is in place, a second pull comes into play: acting against what you've decided about yourself feels wrong. When the request for the big billboard arrives two weeks later, saying no would mean overturning evidence you just set up yourself, and saying yes is easier. So with the same big request, about one in six people agreed when asked straight out, and three in four of those who had first displayed the small sign.\n\n### The first step has to be voluntary, and small enough to agree to\n\nOnly a small thing you agree to of your own free will makes you feel \"I'm that kind of person.\" If the first step is so big that it's turned down on the spot, there is no action to carry forward, and no pull later. If the first step was forced on you, or earned you a real reward, you put the cause outside yourself: \"he made me do it,\" \"I did it for the money.\" The action says nothing about you, and the pull is broken.\n\n### Going public adds another layer\n\nTaking back something you said in front of others means getting past one more hurdle. To back out of a promise made in private, you only have to answer to yourself; to back out of something you said in front of coworkers or family, you also have to explain yourself to the people who heard it. When the time comes to change their minds, people who have taken a public stand often think first about how to explain it to others.",
+  "origin": "Festinger proposed the theory of cognitive dissonance in 1957, and Bem proposed self-perception theory in 1967. They explain the effect from two sides: \"it is uncomfortable when words and actions don't match\" and \"we come to know ourselves by watching what we do.\" Freedman and Fraser's experiment only recorded whether residents agreed or not; it did not measure how they saw themselves, so the path through the mind is something later researchers inferred. Cialdini's 1984 book *Influence* listed commitment and consistency as one of the principles of influencing others.",
+  "limits": "The pull is strongest for small things agreed to offhand, a first task taken on voluntarily, and things said in public. Carrying out a contract because you fear the penalty for breaking it is doing the math. Carrying on because circumstances changed and continuing really is better is reasons at work, and that isn't consistency either. Keeping your word also doesn't mean never changing your mind: when the only reason left is \"I said so,\" consistency has become saving face."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Understand why someone in a meeting defends an old conclusion: he stopped believing in it long ago, but his reason for defending it has changed from the thing itself to \"I said so before.\""
+   },
+   {
+    "use": "design",
+    "text": "When you write a team charter, put a date for reconsidering it next to each commitment. Changing your mind when the date comes is then just a step in the process, and nobody has to admit being wrong in public."
+   },
+   {
+    "use": "act",
+    "text": "When you're halfway through something you promised in public and want to quit, first find the exact words you said and read them again. Work out whether what you're keeping is the substance of the promise, or just the sentence you said."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Work",
+    "title": "Write the way back into the project plan",
+    "text": "At the weekly meeting you told the whole team the new database would be fully migrated within six months. In the fourth month the migration wasn't even half done, yet your weekly report still said \"on track,\" and you ignored any talk of \"should we go back to the old database.\" For the next project you wrote it differently: the project plan set out checkpoints and conditions for going back from the start. When a checkpoint came and the target wasn't met, you read that line out at the weekly meeting and went back to the old database."
+   },
+   {
+    "field": "Personal life",
+    "title": "It started with one swim",
+    "text": "You wanted to start exercising but kept not doing it. A friend asked you to go to the pool on Saturday morning, just once, and you went. The next week he asked if you were going again, and you said yes; in the third week you booked the session yourself. Two months later you bought a monthly pass and wrote in a chat: \"I'm someone who swims every week.\""
+   },
+   {
+    "field": "Investing",
+    "title": "Three years, out loud",
+    "text": "At the start of the year you strongly recommended an industry fund in your family group chat and said you'd hold it at least three years. In the eighth month it had fallen 30%. You went through your holdings and couldn't see any new reason to keep it, but you didn't sell, and you added a line in the chat: \"Still bullish for the long term.\""
+   }
+  ],
+  "ask": [
+   "Where did I write down my reasons for agreeing in the first place? How many of them still hold?",
+   "How much more time, money or responsibility does this request ask for than the first one? If I lined up all the requests side by side, would I still say yes?",
+   "Who would think less of me for changing my mind? Does that person really exist, or have I imagined them?"
+  ],
+  "with": [
+   {
+    "id": "credible-commitment",
+    "sees": "You want to promise a big client no price rises for three years. Credible commitment says to lock the promise in with no way out, or the client won't believe it; commitment and consistency warns that once it's locked in, you'll find it hard to speak up and change it if the market changes. Lock in the one term the client cares about most and leave room to raise the rest, and that covers both."
+   },
+   {
+    "id": "sunk-cost",
+    "sees": "On a project that's halfway done, you've both spent money and taken a public stand. The money spent won't come back, and sunk cost only tells you to stop counting it. But words can be taken back. Before quitting, writing a short public update loosens your grip better than running the numbers again."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're recruiting people to take turns staffing the book corner in your neighborhood, and you'd like a neighbor you don't know well to become a regular. This week the book corner needs a batch of spine labels put on, which takes about half an hour.",
+    "question": "Which of these is more likely to get him to agree to take shifts later?",
+    "explain": "If he voluntarily spends half an hour on a small task in the same direction, he gains one piece of evidence that \"I'm someone who helps the book corner.\" When the request to take shifts comes, saying no means overturning one more piece of evidence.",
+    "options": [
+     {
+      "text": "Print the shift schedule and put it up in the stairwell he passes every day.",
+      "correct": false,
+      "feedback": "He only sees the schedule. He hasn't done anything himself, so there's no evidence about himself left behind."
+     },
+     {
+      "text": "Add him to the book corner's group chat, which posts the shift list and the number of open slots every day.",
+      "correct": false,
+      "feedback": "In the chat he only watches. He hasn't done anything, so there's no action to carry forward."
+     },
+     {
+      "text": "Ask him to come and put on labels once on Saturday, for half an hour, and give him the shift schedule afterward.",
+      "correct": true,
+      "feedback": "A small voluntary task in the same direction becomes, once done, a piece of evidence about himself, and the later request builds on it."
+     },
+     {
+      "text": "Ask him from the start to take a whole month of shifts, and explain thoroughly why the book corner matters.",
+      "correct": false,
+      "feedback": "A first step this big is easy to turn down on the spot. He hasn't done anything, so there's no action to carry forward."
+     }
+    ]
+   },
+   {
+    "stem": "At a subway entrance, volunteers ask passersby to sign a petition to protect a riverbank. To group A, the volunteers say \"sign and get a free tote bag\"; to group B, they mention nothing. The bags are cheap, and both groups sign voluntarily. Two weeks later everyone who signed is invited to a riverbank cleanup.",
+    "question": "Which group is more likely to show up, and why?",
+    "explain": "Group B can only put their signature down to wanting to protect the riverbank themselves. Group A can put it down to the tote bag, so the signature has little pull on their later choices.",
+    "options": [
+     {
+      "text": "Group B: there was no gift, so signing can only count as their own wish.",
+      "correct": true,
+      "feedback": "With no other reason to put the signature down to, it becomes evidence about themselves, and showing up fits it."
+     },
+     {
+      "text": "About the same: they did the same thing by signing, and the reason doesn't affect later choices.",
+      "correct": false,
+      "feedback": "The action is the same but the cause they give it is not. What they tell themselves differs, and so do their later choices."
+     },
+     {
+      "text": "Group A: they took a gift and want to repay the organizers.",
+      "correct": false,
+      "feedback": "The tote bag gave them another reason for signing, so the pull from their own action got weaker. Repaying a favor can't explain this difference."
+     },
+     {
+      "text": "Group A: the gift made them like the organizers first.",
+      "correct": false,
+      "feedback": "Liking isn't the cause here: the gift gave the signature an outside reason, so the pull got weaker."
+     }
+    ]
+   },
+   {
+    "stem": "Three months ago you announced in a group chat, in front of everyone, that you would lead a community charity sale. Now only half the expected number of people have signed up, and you notice that what you think about most is \"if I stop now, everyone will look down on me.\"",
+    "question": "You want to first take this pull out of the decision and then judge whether to go ahead. Which of these does that most directly?",
+    "explain": "The pull comes from \"I said so,\" so take that out first: imagine someone is asking you today, for the first time, whether to hold it, and decide only on the current sign-ups, venue and budget.",
+    "options": [
+     {
+      "text": "Post the announcement in the group chat again and say it will definitely happen.",
+      "correct": false,
+      "feedback": "Announcing it again just adds another layer of pull against backing out."
+     },
+     {
+      "text": "Get a few friends to talk it over and tell you your decision makes sense.",
+      "correct": false,
+      "feedback": "Other people's approval props up the old decision; it doesn't weigh the current conditions again."
+     },
+     {
+      "text": "Bring in a few more friends to make up the numbers, so the event seems to go ahead as planned.",
+      "correct": false,
+      "feedback": "This protects what you said. The basis for the decision is still \"I said so.\""
+     },
+     {
+      "text": "Imagine someone is asking you today, for the first time, whether to hold it, and decide only on the current sign-ups, venue and budget.",
+      "correct": true,
+      "feedback": "Take \"I said so\" out of the picture and only the current conditions are left. Only then can you see whether this step is worth it."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "down",
+  "title": "A small free act makes a later no harder",
+  "caption": "Solid: residents with small signs; the act became evidence, so refusing meant overturning it. Dashed: if step one was forced or paid, the cause is outside; no pull.",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "Puts up small sign",
+    "sub": "Two weeks ago, unpaid",
+    "layer": 0
+   },
+   {
+    "id": "b",
+    "label": "One more clue",
+    "sub": "I care about safe driving",
+    "layer": 1
+   },
+   {
+    "id": "d",
+    "label": "Hard to say no",
+    "sub": "Would overturn own clue",
+    "tone": "warn",
+    "layer": 2
+   },
+   {
+    "id": "e",
+    "label": "Agrees to billboard",
+    "sub": "19 of 25 people",
+    "tone": "accent",
+    "layer": 3
+   },
+   {
+    "id": "f",
+    "label": "Forced or paid",
+    "tone": "muted",
+    "layer": 0
+   },
+   {
+    "id": "g",
+    "label": "Cause put outside",
+    "sub": "I did it for the money",
+    "tone": "muted",
+    "layer": 1
+   },
+   {
+    "id": "h",
+    "label": "Pull is broken",
+    "tone": "muted",
+    "layer": 2
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b",
+    "label": "Sees what I did"
+   },
+   {
+    "from": "b",
+    "to": "d",
+    "label": "Billboard asked"
+   },
+   {
+    "from": "d",
+    "to": "e",
+    "label": "Yes comes easier"
+   },
+   {
+    "from": "f",
+    "to": "g",
+    "tone": "muted",
+    "dashed": true
+   },
+   {
+    "from": "g",
+    "to": "h",
+    "tone": "muted",
+    "dashed": true
+   }
+  ]
+ }
+}

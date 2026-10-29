@@ -1,0 +1,227 @@
+{
+ "id": "economies-of-scale",
+ "name": "Economies of Scale",
+ "en": "规模经济",
+ "discipline": "economics",
+ "one_line": "The more you make, the less fixed cost each one carries, but grow too big and costs climb again.",
+ "story": "Ford's Highland Park plant starts a moving assembly line, and the Model T is built in huge numbers at far lower prices",
+ "shallow": {
+  "scene": "A car is put together from hundreds of parts. Assembling one car and assembling ten thousand use the same factory building and the same set of tools. Henry Ford took this as far as it would go. In 1913, at his Highland Park plant in Michigan, he installed a moving assembly line: the car frames moved along the line, the workers stayed in place, and each one fitted only a few parts. The line was very expensive to build. The investment only paid off if the same car, the Model T, was built by the tens of thousands every year.\n\nThe more cars were built, the less of the cost of the plant, the machines and the design fell on each car, and so Ford could cut the price again and again. The cheapest Model T went from 825 dollars to 260 dollars, less than a third of the original price.\n\nThe price cuts didn't come from any part getting cheaper. They came from the same investment being shared among more and more cars.",
+  "plain": "You're printing programs for a neighborhood concert. The print shop's quote has two parts. Before the press runs, making the plates and setting up the machine costs 1,000 yuan, however many copies you print. After that, each copy costs 2 yuan in paper and ink. Print 100 copies and the 1,000 yuan is split 100 ways, 10 yuan a copy, 12 yuan in all with paper and ink. Print 1,000 copies and each one carries only 1 yuan, 3 yuan in all. The setup cost is paid once, so the more you print, the less each copy carries. That is economies of scale.\n\nBut this small shop has only one press. To print tens of thousands of copies, it would have to add night shifts, send part of the job to other shops, and hire more people to check and pack, so each copy would get a bit more expensive again."
+ },
+ "deep": {
+  "mechanism": "### The thinner the setup cost is spread, the cheaper each copy, but the savings shrink\n\nCall the setup cost $F$ and the extra cost of each copy $c$. Print $n$ copies, and the average cost per copy is:\n\n$$\\frac{F}{n}+c$$\n\nThe first term is each copy's share of the setup cost, which gets smaller the more you print. The second is each copy's own paper and ink, which never gets any smaller. Put in the print shop's numbers, $F=1000$ and $c=2$:\n\n- 100 copies cost 12 yuan each;\n- 1,000 copies cost 3 yuan each, a saving of 9 yuan;\n- 10,000 copies cost 2.1 yuan each, only 0.9 yuan more saved.\n\nEach time the run grows tenfold, the saving is only a tenth of the last one. The average cost keeps closing in on the 2 yuan for paper and ink, but never drops below 2.\n\n### Only a big enough output can pay for cheaper methods\n\nSuppose an automatic folding and binding machine costs 200,000 yuan and saves 0.5 yuan of labor on each program. It takes 400,000 copies to pay for itself. A small shop that takes only a few tens of thousands of copies a year would lose money buying it. Once it wins long-term orders from dozens of schools and a few theaters, it prints enough for the machine to pay. A bigger output also pays for dividing the work: one person on layout, one on the press, one on binding. And the paper mill is willing to deliver by the truckload at a lower price.\n\n### Past a certain size, coordination eats the savings\n\nSuppose this shop's press can print 5,000 copies in one day shift. Beyond that it has to add night shifts and send work out to other shops, and hire more people to check, pack and hand jobs over. Above 5,000 copies, every extra 1,000 copies adds 0.2 yuan to the average cost of each copy. At 5,000 copies each costs 2.2 yuan, the cheapest it gets. At 10,000 copies, spreading the setup cost thinner saves only 0.1 yuan more than at 5,000, but the extra 5,000 copies add 5 × 0.2 yuan to each copy, which is 1 yuan, and the average cost is back up to 3.1 yuan.\n\nThe same happens when factories and companies grow. With more layers of management and a messier range of products, switching lines, handing work over and redoing work all add to the cost of each item.",
+  "origin": "Economies of scale come from economics; no single scholar put the idea forward at one stroke. In *The Wealth of Nations* in 1776, Adam Smith used a pin factory to show how dividing up work raises output, and also how the size of the market limits that division: if the market is small, output can't go up, and the work can't be divided finely. In 1890, in *Principles of Economics*, Alfred Marshall went further and separated two kinds of economies of scale: one that comes from a firm itself growing larger, and one that comes from many firms in the same trade gathering in one place.",
+  "limits": "Economies of scale work best when the extra output can share equipment, processes and setup work: printing in bulk, distributing software and shipping by the boatload all belong here. Work where each item needs expert time from scratch, such as one-on-one tutoring, doesn't spread thinner: each extra student takes another share of time. Reading \"the company got bigger\" as \"each item got cheaper\" is a misreading: a messier product range, idle factory space and more layers of management all push costs back up."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "See why the big supermarket in your neighborhood is cheaper than the corner shop: the rent, the refrigerators and the checkout system are shared by far more customers, so each item carries less of them."
+   },
+   {
+    "use": "design",
+    "text": "Set a minimum order for custom printing or contract manufacturing: below the batch size that can absorb the setup cost, every order you take loses money, so the minimum has to sit above that line."
+   },
+   {
+    "use": "predict",
+    "text": "Estimate how many orders a new factory with only two or three customers needs before its unit price can match an old factory's: divide its yearly fixed costs by the fixed cost that falls on each item at the old factory."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "One login module for ten projects",
+    "text": "You work at a company that builds internal systems. Ten projects used to write user login separately, and each time it took several days. Then one engineer spent ten days writing a shared module, and all ten projects now just use it. Each project only has to plug it in and keep it updated, without writing it from scratch or each fixing the same security holes. On the company's books, total hours spent on login dropped a long way."
+   },
+   {
+    "field": "Health care",
+    "title": "More bookings for the MRI machine",
+    "text": "You run the imaging department at a county hospital. The MRI machine's yearly depreciation and maintenance are fixed, whether it runs or not. It used to be booked for only 4 scans a day, so the equipment cost was spread over 4 patients. You add weekend bookings and take referrals from the clinic in the next town, and reach 12 scans a day; the equipment cost carried by each scan falls to a third of what it was. The extra bookings mean hiring one more technician to cover the shifts, and you count that cost too."
+   },
+   {
+    "field": "Personal life",
+    "title": "Twenty bags of rice, bought together",
+    "text": "You start a group buy in your apartment complex's group chat: twenty households buying the same brand of rice. You ask the owner of the grain shop what he'd charge for one bulk order, and he agrees to knock a fair bit off each bag. Same rice, same brand: if the twenty households each bought on their own, every one would pay the retail price; put together in one order, every household gets the wholesale price."
+   }
+  ],
+  "ask": [
+   "Going through the past year's accounts, which costs had to be paid however much was produced (depreciation, rent, software fees), and which ones add up item by item?",
+   "How far are current orders from the amount that would keep the equipment fully busy? For that gap, the fixed costs are running for nothing.",
+   "If we grow one more step, what will the new managers, handovers and rework cost? Is that more or less than the setup cost we save?"
+  ],
+  "with": [
+   {
+    "id": "diminishing-returns",
+    "sees": "One production line has a full order book, and you want the workers to do overtime and to add two more people. Economies of scale say that running a bit more spreads the fixed costs thinner; diminishing returns see that in the same factory each extra person adds less and less output, as people start getting in each other's way. If you are only adding people and overtime in the factory you already have, think in terms of diminishing returns; only when you replace the whole factory or the whole line with a bigger one is it economies of scale that do the sums."
+   },
+   {
+    "id": "unit-economics",
+    "sees": "A same-city delivery startup loses 3 yuan on every order. The founder says it'll be fine once they're bigger: with more orders, the cost of the software and dispatching gets spread thinner. Economies of scale back him up; unit economics asks whether each order makes money in itself. Of the 3 yuan lost per order, only the fixed-cost part shrinks with scale. The cost of the courier for each order does not, so the more orders, the bigger the loss. Break down that 3 yuan first and see how much of it can be spread thinner, then talk about growing."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "The bottling line at the brewery you run has fixed costs of 1.2 million yuan a year, and each bottle's malt, glass and labor come to 1.5 yuan. It now produces 1 million bottles a year. A customer has placed extra orders, so next year it will make 3 million bottles. The line can fill at most 4 million bottles a year, and the fixed costs stay the same.",
+    "question": "What will the average cost per bottle be next year?",
+    "explain": "The fixed 1.2 million yuan is shared by 3 million bottles, 0.4 yuan a bottle. Add 1.5 yuan of materials and labor per bottle, and the average cost is 1.9 yuan.",
+    "options": [
+     {
+      "text": "0.4 yuan, just each bottle's share of the fixed costs.",
+      "correct": false,
+      "feedback": "The malt, glass and labor in each bottle don't disappear because output is large; they still have to be added."
+     },
+     {
+      "text": "2.7 yuan: output has changed, but each bottle costs the same as this year.",
+      "correct": false,
+      "feedback": "2.7 yuan is this year's figure: 1.2 yuan of fixed costs plus 1.5 yuan. At 3 million bottles, the fixed costs are spread thinner."
+     },
+     {
+      "text": "1.5 yuan: earlier orders have already paid off the fixed costs.",
+      "correct": false,
+      "feedback": "The fixed costs have to be paid every year. Next year's 1.2 million yuan is still on the books; each bottle just carries less of it."
+     },
+     {
+      "text": "1.9 yuan: the fixed costs come to 0.4 yuan a bottle, plus materials and labor.",
+      "correct": true,
+      "feedback": "1.2 million yuan divided by 3 million bottles is 0.4 yuan; add 1.5 yuan per bottle and the total is 1.9 yuan."
+     }
+    ]
+   },
+   {
+    "stem": "The tea factory you run plans to buy a fully automatic packing machine. Its depreciation and maintenance come to 300,000 yuan a year, and it saves 0.2 yuan of labor on each pack of tea. Orders now are about 1.2 million packs a year, and are expected to grow to 2 million packs next year.",
+    "question": "How many packs a year must this machine pack for the labor it saves to exactly equal its depreciation and maintenance?",
+    "explain": "Saving 0.2 yuan a pack, it takes 1.5 million packs to exactly cover the 300,000 yuan a year of depreciation and maintenance. Only above that number does the machine start costing less than labor. This year's orders fall short; next year's go past that line.",
+    "options": [
+     {
+      "text": "2 million packs.",
+      "correct": false,
+      "feedback": "2 million packs is next year's expected orders. The break-even line is lower: the machine pays for itself at 1.5 million packs."
+     },
+     {
+      "text": "600,000 packs.",
+      "correct": false,
+      "feedback": "This number counts the saving as 0.5 yuan a pack; in the question each pack saves 0.2 yuan."
+     },
+     {
+      "text": "1.5 million packs.",
+      "correct": true,
+      "feedback": "300,000 yuan divided by the 0.2 yuan saved per pack is 1.5 million packs. That is the output where you neither gain nor lose; every pack beyond it starts saving money."
+     },
+     {
+      "text": "1.2 million packs.",
+      "correct": false,
+      "feedback": "1.2 million packs is this year's orders. At 0.2 yuan a pack, that saves only 240,000 yuan, short of 300,000."
+     }
+    ]
+   },
+   {
+    "stem": "The bottled-water company you work for has three factories, each supplying one city. The company plans to move all production into one big factory. After the merger, the production cost of each bottle falls from 1.2 yuan to 1.0 yuan, but water is heavy, and it has to be shipped from one factory to three cities, so shipping per bottle rises from 0.3 yuan to 0.8 yuan. All other costs stay the same.",
+    "question": "After the merger, how much more does each bottle of water cost in total than before?",
+    "explain": "Before, each bottle was 1.2 plus 0.3, 1.5 yuan in all; after the merger it is 1.0 plus 0.8, 1.8 yuan in all, so each bottle costs 0.3 yuan more.",
+    "options": [
+     {
+      "text": "0.3 yuan more: the production savings are eaten up by the extra shipping.",
+      "correct": true,
+      "feedback": "Production falls 0.2 yuan and shipping rises 0.5 yuan, a net rise of 0.3 yuan, so each bottle's total cost goes from 1.5 yuan to 1.8 yuan."
+     },
+     {
+      "text": "0.5 yuan more, looking only at how much shipping went up.",
+      "correct": false,
+      "feedback": "Shipping went up 0.5 yuan, but production cost fell 0.2 yuan at the same time, which offsets part of it."
+     },
+     {
+      "text": "0.3 yuan less: producing in one place always saves money.",
+      "correct": false,
+      "feedback": "The total cost counts production and shipping together. After the merger it goes from 1.5 yuan to 1.8 yuan, a rise."
+     },
+     {
+      "text": "0.2 yuan less, counting only how much production cost fell.",
+      "correct": false,
+      "feedback": "Production cost fell 0.2 yuan, but shipping rose 0.5 yuan. You can't look at just one of them."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "More copies cost less each, until too many",
+  "caption": "Setup 1,000 yuan, paper and ink 2 yuan a copy. The line drops, hugs 2 yuan, and turns up once the press is full. Drag setup cost (left end) or overtime (bend).",
+  "x": {
+   "label": "Copies printed",
+   "min": 100,
+   "max": 20000
+  },
+  "y": {
+   "label": "Average cost per copy",
+   "unit": " yuan",
+   "min": 0,
+   "max": 18
+  },
+  "params": [
+   {
+    "id": "f",
+    "label": "Setup cost",
+    "min": 500,
+    "max": 1500,
+    "step": 250,
+    "value": 1000,
+    "unit": " yuan"
+   },
+   {
+    "id": "m",
+    "label": "Overtime above",
+    "min": 2000,
+    "max": 15000,
+    "step": 1000,
+    "value": 5000,
+    "unit": " copies"
+   }
+  ],
+  "series": [
+   {
+    "name": "Average per copy",
+    "expr": "f/x+2+0.0002*max(0,x-m)",
+    "tone": "accent"
+   },
+   {
+    "name": "No overtime cost",
+    "expr": "f/x+2",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "y": 2,
+    "text": "Paper and ink, 2 yuan"
+   },
+   {
+    "x": "max(m,sqrt(5000*f))",
+    "text": "Cheapest run"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Each, at 1,000 copies",
+    "expr": "f/1000+2",
+    "unit": " yuan",
+    "digits": 1
+   },
+   {
+    "label": "Cheapest run",
+    "expr": "max(m,sqrt(5000*f))",
+    "unit": " copies",
+    "digits": 0
+   },
+   {
+    "label": "Lowest cost per copy",
+    "expr": "f/max(m,sqrt(5000*f))+2+0.0002*max(0,max(m,sqrt(5000*f))-m)",
+    "unit": " yuan",
+    "digits": 2
+   }
+  ]
+ }
+}

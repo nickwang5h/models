@@ -1,0 +1,206 @@
+{
+ "id": "envy",
+ "name": "Envy",
+ "en": "嫉妒",
+ "discipline": "psychology",
+ "one_line": "Someone else does well, you've lost nothing, and it still hurts.",
+ "story": "In a Harvard School of Public Health survey, about half the people would rather earn 50,000 while others earn 25,000 than earn 100,000 while others earn 200,000",
+ "shallow": {
+  "scene": "In February 1995, Sara Solnick and David Hemenway handed out a survey to students, faculty and staff at the Harvard School of Public Health. It asked them to pick one of two worlds, with prices the same in both. In one world you earn 50,000 dollars a year and other people earn 25,000. In the other you earn 100,000 dollars a year and other people earn 200,000. About half picked the world where they earned 50,000. They were willing to take half the income in exchange for a place ahead of other people.",
+  "plain": "Your house went up 200,000 in value this year, and you're pleased. Over dinner, a childhood friend says his went up 600,000. Your house hasn't changed, your mortgage hasn't changed, and not a cent of the 200,000 on paper is gone, yet the wine tastes sour all evening. Envy keeps its books like this: the 400,000 more that the other person got is counted as your own shortfall. One sentence from your friend turns a good year of yours into a bad one."
+ },
+ "deep": {
+  "mechanism": "### The more someone is like you, the more it stings\n\nPeople have no ready-made ruler for measuring how well they're doing, and the handiest ruler is the people around them who are like them. That's why a colleague's promotion hurts more than a stranger buying a yacht. You and your colleague have similar experience and want to prove the same abilities, so when he gets promoted, you start weighing whether you're not as good as him. The further someone is from you, the less you use them as a ruler, and the less it stings.\n\n### The gap cancels out part of your own gain at a set rate\n\nSuppose every 1 yuan the gap widens feels as bad as earning 0.5 yuan less. You and a colleague get raises at the same time: yours is 2,000 and his is 5,000. The gap widens by 3,000, the bad feeling cancels out 1,500, and you net only 500. If his raise is 6,000, the gap widens by 4,000, the bad feeling cancels out 2,000, and your raise is exactly wiped out. If his raise is 8,000, the gap widens by 6,000, the bad feeling cancels out 3,000, and your raise turns into a net loss of 1,000.\n\nThis rate differs from person to person; for some it's 0.1, for others it's higher. The higher the rate, the more a gap hurts, and the more likely a person is to choose \"everyone gets less,\" like the half in the survey.\n\n### There are two ways to close a gap: one takes effort, the other drags you down too\n\nWhen people feel they can catch up and the other person deserves the position, they learn how that person does things and go after the same chances. When they feel they can't catch up and are sure the other person doesn't deserve it, they undermine them. Say you hold back material the other person urgently needs. His project does slow down, but your working relationship with him is ruined too. The gap is smaller, but you're worse off.",
+  "origin": "Envy has no single originator; it belongs to psychology's research on emotions and social comparison. In 1954 Leon Festinger proposed social comparison theory: people judge themselves by comparing themselves with others, especially with people like them. In 2009 Niels van de Ven and colleagues distinguished two kinds of envy, one that pushes people to catch up and one that pushes them to pull the other person down. Charlie Munger listed envy among the tendencies behind human misjudgment and said that of the seven deadly sins, it is the one with no fun in it at all.",
+  "limits": "It's most useful when someone who joined at the same time as you and was going for the same position gets promoted first. When you admire someone far away at the top of your field and only want to learn their skills, there may be no sting, and it doesn't apply. If someone really has taken what you were owed, that's not envy but a question of interests. If someone took credit for your work, ask for it to be corrected; if the promotion criteria favor people with connections, ask for them to be made public. Write off someone who's been wronged as \"just jealous,\" and their fair claim gets talked away."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "When more people are showing off their year-end bonuses on social media, you can predict that more colleagues will come to you this week complaining about their pay, even though their pay hasn't changed by a cent."
+   },
+   {
+    "use": "design",
+    "text": "When setting the rules for bonuses, publish only how scores are worked out, not individual amounts. Then peers at the same level have one less number to compare."
+   },
+   {
+    "use": "act",
+    "text": "When you notice you want to do something to get ahead of a colleague, first write down what you're after: money, freedom, skill or recognition. Then decide whether to do it."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Work",
+    "title": "A colleague moves to client work",
+    "text": "You do layout at a design studio, and a colleague who started the same day as you is moved to running client projects. From that week on, the files you owe him always come in late in the afternoon. His projects slip later week after week, and the supervisor calls you both in for a talk."
+   },
+   {
+    "field": "Economics experiment",
+    "title": "Paying to burn other people's money",
+    "text": "The economists Daniel Zizzo and Andrew Oswald at the University of Warwick in Britain ran an experiment. Groups of four placed bets on computers, each starting with about the same money, and then the researchers gave two of the four an extra sum for nothing, which all four knew about. Each person could then anonymously \"burn\" other people's money: every 1 they burned of someone else's money cost them between 0.02 and 0.25 of their own. Nearly two thirds of the people paid, and those with less money mostly burned the money of the two who had been handed the extra. They gained nothing themselves; the money they spent bought only a smaller gap."
+   },
+   {
+    "field": "Spending",
+    "title": "The neighbor's new car",
+    "text": "Your neighbor swaps his car for a new electric model. The next day you start going through quotes from four dealers, even though your old car is only three years old and you drive just ten kilometers to work each day. Three months later you drive off in a new car, with part of the down payment taken from the money you'd saved for your child's education."
+   }
+  ],
+  "ask": [
+   "Is what stings me the thing he has, or the fact that he has it and I don't? What do I really want: income, freedom, skill or recognition?",
+   "Will what I'm about to do add to what I get, or only take away from what he gets?",
+   "If I couldn't see his results, would I still change my current decision? I could ask a friend who doesn't know how he's been doing."
+  ],
+  "with": [
+   {
+    "id": "arms-race",
+    "sees": "Every other kid in your neighborhood is signing up for tutoring classes, and you tense up. The arms-race view is that places are handed out by relative position, so if others step it up and you don't follow, you fall behind, and you should follow. The envy view is the opposite: first check where this tension comes from. If school places really are handed out by rank, treat it as an arms race and work out how much you can afford to keep up. If it's only that seeing another child's class schedule makes you feel sour, don't follow, and save the money for the subject your own child really needs."
+   },
+   {
+    "id": "zero-sum",
+    "sees": "A colleague on your team is given a big client, and you feel uneasy. If the commission pool is fixed, so whatever extra he gets comes out of yours, it's zero-sum, and you should push on the rules for dividing it. If the client is new business the company has just won, his gain doesn't squeeze you, and the uneasiness that's left is envy. Ask yourself what you want, and go after your own next client."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Year-end bonuses come out, and you get 40,000 yuan. You hear that a colleague at the same level on your team got 60,000, and you feel bad for a whole week. The same day you hear that a director in another department got 300,000, and you barely feel a thing.",
+    "question": "What is the most direct reason the colleague's extra 20,000 stings more than the director's extra few hundred thousand?",
+    "explain": "Your colleague has similar experience to yours and does the same work, so his getting more touches how you rate yourself. The director is far from you, and his number has nothing to do with you.",
+    "options": [
+     {
+      "text": "You don't know what the director's job involves, so it's hard to judge what he should get.",
+      "correct": false,
+      "feedback": "That's about judging whether the director deserves his pay, while your week of feeling bad came from comparing yourself with your colleague."
+     },
+     {
+      "text": "You're only sensitive to gaps the size of 20,000 and feel nothing about bigger numbers.",
+      "correct": false,
+      "feedback": "The director got several hundred thousand more, a bigger amount, and it got no reaction, so the amount isn't the key."
+     },
+     {
+      "text": "Your colleague is like you, so what he gets touches how you rate yourself.",
+      "correct": true,
+      "feedback": "The closer someone is to you, the more easily you use them to measure yourself. When someone is far away, a gap just as big doesn't sting."
+     },
+     {
+      "text": "The director's bonus comes from a different budget and has nothing to do with yours.",
+      "correct": false,
+      "feedback": "Your colleague's bonus doesn't come out of your share either. Separate budgets don't explain why you react more to him."
+     }
+    ]
+   },
+   {
+    "stem": "You and a colleague who joined at the same time both want to be promoted to senior engineer. He led a system migration and got promoted first. When you think of him being praised by name at the weekly meeting, you can't sit still. What you want most is for people to see you get something done.",
+    "question": "To put this sting to good use, what is the best next step?",
+    "explain": "What you want is to be seen getting something done. Break down what he got done, pick a piece you could do too, and step up to own it; that directly adds to what you want. Running him down, avoiding him or just waiting won't give you any result people can see.",
+    "options": [
+     {
+      "text": "Ask to move to another team, to avoid the meeting where you hear his name every week.",
+      "correct": false,
+      "feedback": "On another team, you still have no result anyone can see."
+     },
+     {
+      "text": "Note down the specific steps he took to get this done, pick one you could do too, and ask to take charge of it.",
+      "correct": true,
+      "feedback": "This step directly produces what you want, a result people can see, and you learn how he did it along the way."
+     },
+     {
+      "text": "Wait for the bad feeling to pass on its own, then carry on at your old pace.",
+      "correct": false,
+      "feedback": "Your wish to be seen is left exactly as it was, and there's no new action at all."
+     },
+     {
+      "text": "At the design review, point out the flaws in his migration plan one by one.",
+      "correct": false,
+      "feedback": "This only takes a little of the shine off him. You don't end up with any more results of your own."
+     }
+    ]
+   },
+   {
+    "stem": "You and your neighbor bought your homes in the same year. He built a beautiful terrace, and every time you walk past it you feel uneasy. Later a leak made him tear the terrace down, and that evening you felt at ease. But within a few days you were eyeing someone else's garage.",
+    "question": "Why didn't the ease last?",
+    "explain": "His terrace is gone, but your home is no better. The gap that bothered you got smaller, but what you want didn't grow, so as soon as the next thing to compare with turns up, the sting comes back.",
+    "options": [
+     {
+      "text": "His terrace is gone, but your home isn't any more comfortable for it.",
+      "correct": true,
+      "feedback": "The other person lost something, but what you have is exactly as it was, and that kind of ease doesn't hold up for long."
+     },
+     {
+      "text": "You feel guilty about your neighbor's bad luck, and the guilt outweighs the ease.",
+      "correct": false,
+      "feedback": "The question says you \"felt at ease that evening\" and then turned to someone else's garage. Nothing suggests guilt."
+     },
+     {
+      "text": "A garage is worth more than a terrace, so the new target makes you feel worse.",
+      "correct": false,
+      "feedback": "The question gives nothing comparing what the two are worth. The bad feeling comes from finding a new thing to compare with."
+     },
+     {
+      "text": "Ease takes longer to build up; a few days isn't enough.",
+      "correct": false,
+      "feedback": "Your home hasn't changed, and however long you wait, it won't get any better because of that."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Same 2,000 raise: higher rate, eaten sooner",
+  "caption": "Your raise: 2,000 yuan. Bottom: your colleague's. Drag the rate: higher means a steeper line crossing zero further left, so a modest raise for him nets you a loss.",
+  "x": {
+   "label": "Colleague's raise",
+   "unit": " yuan",
+   "min": 2000,
+   "max": 10000
+  },
+  "y": {
+   "label": "What you feel you net",
+   "unit": " yuan",
+   "min": -6000,
+   "max": 2000
+  },
+  "params": [
+   {
+    "id": "a",
+    "label": "Gap rate",
+    "min": 0.1,
+    "max": 1,
+    "step": 0.1,
+    "value": 0.5
+   }
+  ],
+  "series": [
+   {
+    "name": "Felt net gain",
+    "expr": "2000 - a*(x-2000)",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "y": 0,
+    "text": "Break even"
+   },
+   {
+    "x": 5000,
+    "text": "Colleague +5,000"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Loss if he gets over",
+    "expr": "2000+2000/a",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "Net at his +5,000",
+    "expr": "2000-a*3000",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

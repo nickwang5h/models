@@ -1,0 +1,203 @@
+{
+ "id": "abstraction",
+ "name": "Abstraction and Modularity",
+ "en": "抽象与模块化",
+ "discipline": "computing",
+ "one_line": "Wrap up the complicated part behind a simple handle, so users needn't know what's inside.",
+ "story": "On April 26, McLean's Ideal X carries 58 containers from Newark to Houston, and container shipping begins",
+ "shallow": {
+  "scene": "On April 26, 1956, the dockworkers at Port Newark in New Jersey no longer carried the cargo aboard piece by piece. A crane lifted 58 metal boxes, already packed with goods, onto the Ideal X, an oil tanker that Malcom McLean had converted. The ship sailed for Houston, and when it arrived the boxes were set straight onto truck trailers. Nobody touched the goods inside the boxes from start to finish; the workers only dealt with the boxes' size, weight and how they were fastened down.",
+  "plain": "You use abstraction and modularity every day. You've driven for ten years, you get a new car, and you can take it on the road on day one: a car has thousands upon thousands of parts, but the only ones you deal with directly are the steering wheel, the accelerator and the brake. If the maker switches the engine to a different model, you drive the same way, because those three things are still used the same way. Software engineers and freight companies divide up work like this too: users only touch a few agreed operations, and the details inside are changed by whoever is in charge of each part."
+ },
+ "deep": {
+  "mechanism": "### Which details to keep depends on what you're using it for\n\nThe lab report a hospital gives a patient lists only each measure, its normal range and an up or down arrow, and hides everything about how the machines measured it. For a patient who wants to know which result is high, that's enough; for the lab that needs to check whether a machine has drifted, it has to dig out the raw curves and quality-control records, and this sheet is no help.\n\n### Only when the interface is fully written can you safely swap what's inside\n\nThe socket in the wall promises a plug shape and a voltage, and that promise is the interface. A rice cooker only cares about those two things; whatever is done to the circuit board inside makes no difference. If the promise left out the maximum power, and someone plugged in a high-power appliance, it would be the wiring inside the wall that burned. An interface has to spell out what goes in, what comes out, and what happens when something goes wrong.\n\n### Details that change for the same reason go in the same module\n\nWhen the code that talks to the bank is scattered across five places, orders, refunds, reconciliation, reports and customer service, then every time the bank changes its protocol, five places have to change. Gather the bank details into one payment module, and have everywhere else ask it only for \"succeeded,\" \"failed\" and the amount, and the same change touches just one place. Change the person in charge or the supplier, and the other parts carry on working to the original agreement.",
+  "origin": "No single person invented this approach; it matured step by step in software design. In 1972, David Parnas published \"On the Criteria To Be Used in Decomposing Systems into Modules,\" comparing two ways of splitting up a program that builds a keyword index. Split by processing steps, every step uses the same data format directly, and changing one place means touching the whole thing. Split by design decisions, each module hides one decision that might change, such as how the data is stored; a change then lands in only one place, and the work is also easy to divide up.",
+  "limits": "This approach works most smoothly when each part changes on its own and the parts rarely pull on each other, such as replaceable suppliers and software services. When the product's direction changes every week, fixing interfaces early turns untested guesses into rules both sides have to keep. Interfaces can also hide what matters most: if a buyer only looks at the certificate of conformity the supplier sends with the goods and never tests samples, then the day the certificate says the goods pass while the goods are faulty, this interface misses the case that matters most."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When writing a contract for an outside supplier, spell out the format, meaning and deadline of what they deliver and how they pay if it goes wrong; how they do it internally is then not your concern."
+   },
+   {
+    "use": "communicate",
+    "text": "To explain a complex system to a colleague with no technical background, talk only about the three buttons they will touch and what each one does."
+   },
+   {
+    "use": "predict",
+    "text": "To estimate how far a change will reach, count how many parts directly use the detail you are changing: the bigger the number, the wider the change will reach."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Manufacturing",
+    "title": "Old bricks take new pieces",
+    "text": "In 1958, LEGO applied for a patent on the modern brick: hollow tubes were added to the underside, and the size and spacing of the studs were fixed from then on. After that, as long as new molds kept to these few dimensions, the new pieces they made would fit into old bricks bought years before. A child tips out Grandpa's box of old bricks and builds them together with newly bought ones."
+   },
+   {
+    "field": "Business",
+    "title": "Three reports a month",
+    "text": "You run a three-person design studio and hand the bookkeeping to an outside accountant, agreeing only that you'll receive a profit and loss statement, a list of money owed to you and a tax list by the 5th of each month, with how they're worked out written into the contract. The accounting firm switches its bookkeeping software and changes the person handling your account, and you still get the three reports every month as usual."
+   },
+   {
+    "field": "Technology",
+    "title": "Different browsers, different websites",
+    "text": "Whatever website you open, your browser can display the page. Browsers each have a different engine inside, and websites' servers each run their own software; what the two sides agree on is the same set of rules for sending and laying out web pages. When a website replaces its whole back end and your browser hasn't been updated at all, the page still opens."
+   }
+  ],
+  "ask": [
+   "What am I trying to get done right now? Which details would change my decision, and which can I leave to someone else?",
+   "Which details always change together for the same reason, and should they go in the same module?",
+   "At the handover, have I spelled out the inputs, what is delivered, the timing, and what happens when something goes wrong?"
+  ],
+  "with": [
+   {
+    "id": "tight-coupling",
+    "sees": "You split a website into three modules, orders, inventory and payments, each deployed on its own with clearly written interfaces. Abstraction and modularity say to rely on the interfaces with confidence and not worry about how the insides change; tight coupling says to first check whether the three modules share the same database or the same network link. If they do, when one breaks they all break, and splitting them up only makes them look independent. Before you start, map out the shared resources behind each module, then decide how detailed the interfaces should be."
+   },
+   {
+    "id": "conways-law",
+    "sees": "Technically, the most sensible boundary is to pull \"risk control\" out of two lines of business into a module of its own, but right now the people on the two business lines each run their own work and rarely talk to each other. Abstraction and modularity have you draw boundaries by the reasons things change; Conway's law reminds you that boundaries end up growing along the lines of how people communicate. Either first put the people involved in one team, or accept the existing lines between people and draw the boundary there."
+   },
+   {
+    "id": "map-territory",
+    "sees": "An interface is a map with details left out. Abstraction and modularity tell you which details to leave out; the map is not the territory has you check whether any of the details left out would change a decision outside. Things that aren't written in the interface documents but would affect you, go and ask about."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A gym chain switched to a new member-data provider. The new provider still delivers the same spreadsheet on time, with the same field names, but has changed \"active members\" from \"came to the gym in the last 30 days\" to \"opened the app in the last 30 days.\" The operations manager sees the number of active members going up and is about to add evening trainer shifts.",
+    "question": "What should the operations manager do now?",
+    "explain": "The spreadsheet looks the same, but what the number means has changed. Others can keep using it only if the meaning in the agreement stays the same; keeping the field names alone isn't enough.",
+    "options": [
+     {
+      "text": "Require the new provider to use the old provider's calculation program, then feed the results into the scheduling system.",
+      "correct": false,
+      "feedback": "What has to stay steady is what \"active\" means, and a different program can also work out the same meaning."
+     },
+     {
+      "text": "First check whether the old and new measures are defined the same way, then decide whether the new numbers can be used for scheduling.",
+      "correct": true,
+      "feedback": "What's delivered isn't only the field names but also what the fields mean. When the meaning changes, the old decision rules have to be checked again."
+     },
+     {
+      "text": "Let each gym judge the new measure from its own experience, then decide whether to add trainers.",
+      "correct": false,
+      "feedback": "With each gym making its own fix for a change of definition, the problem is scattered across many places and can't be checked."
+     },
+     {
+      "text": "Add evening trainer shifts based on the new numbers first, then adjust according to how many people actually come in.",
+      "correct": false,
+      "feedback": "The new number counts people who opened the app; you can't get from it how many will come to the gym in the evening."
+     }
+    ]
+   },
+   {
+    "stem": "You make a weekly report each for the warehouse manager and for finance, both drawn from the same inventory system. The warehouse manager decides every day which goods to get ready for tomorrow and how many people to send picking orders; finance decides every month which suppliers to pay. At the moment the warehouse manager's weekly report has four items: the current count in each storage spot, the number of each product shipped out during the week, which products are below safety stock, and each supplier's payment terms.",
+    "question": "Which item should come out of the warehouse manager's weekly report first?",
+    "explain": "Which details to keep depends on what decision the reader makes with them. Payment terms serve only finance's decisions about payments; the warehouse manager doesn't use them for arranging goods and sending staff.",
+    "options": [
+     {
+      "text": "Each supplier's payment terms",
+      "correct": true,
+      "feedback": "This item only affects which bills finance pays. The warehouse manager doesn't look at it when getting goods ready or sending staff, so taking it out doesn't affect his decisions."
+     },
+     {
+      "text": "The number of each product shipped out during the week",
+      "correct": false,
+      "feedback": "The manager relies on it to estimate how much of each kind of goods will ship tomorrow; without it he can't decide how many people to send."
+     },
+     {
+      "text": "The current count in each storage spot",
+      "correct": false,
+      "feedback": "The manager relies on it to judge where to pick goods from tomorrow; without it he can't plan the picking routes."
+     },
+     {
+      "text": "Which products are below safety stock",
+      "correct": false,
+      "feedback": "The manager relies on it to decide which goods to restock first; without it he'll miss products that are about to run out."
+     }
+    ]
+   },
+   {
+    "stem": "Your team of five has split its website into nine independent services, each with its own interface documents and release process. Now every new feature means changing four or five of them at once, the four or five sets of interface documents have to be matched up one by one before release, and each release drags on for two or three days.",
+    "question": "How should this team adjust next?",
+    "explain": "Services that always change together show that their boundaries were drawn in places that change at the same time. Only merging them back into one lets a single change happen in a single place.",
+    "options": [
+     {
+      "text": "Merge all nine services back into one big program and stop splitting things up altogether.",
+      "correct": false,
+      "feedback": "Merge everything into one big program, and the parts that really do change on their own get tied together again; changing one place means testing everything."
+     },
+     {
+      "text": "Give each service an owner and let them coordinate the changes among themselves.",
+      "correct": false,
+      "feedback": "Five people looking after nine services only means more coordination; the fact that the services always change together stays the same."
+     },
+     {
+      "text": "Write each set of interface documents in more detail, so they're easier to match up item by item when changes are made.",
+      "correct": false,
+      "feedback": "More detailed documents don't help much with matching up four or five sets each time; where the boundaries are is the problem."
+     },
+     {
+      "text": "Merge the services that always change together back into one, and keep the rest independent.",
+      "correct": true,
+      "feedback": "Boundaries should keep together the details that change for the same reason. After merging, a single change no longer crosses several interfaces."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Touch three things, and any engine still drives",
+  "caption": "The steering wheel, accelerator and brake are used the same way, so with a different engine model you still take to the road on day one.",
+  "nodes": [
+   {
+    "id": "you",
+    "label": "You, driving"
+   },
+   {
+    "id": "i",
+    "label": "Steering, gas, brake",
+    "sub": "Used the same way",
+    "tone": "accent"
+   },
+   {
+    "id": "e",
+    "label": "Engine",
+    "sub": "Any model will do"
+   },
+   {
+    "id": "g",
+    "label": "Transmission"
+   },
+   {
+    "id": "p",
+    "label": "10,000+ parts",
+    "tone": "muted"
+   }
+  ],
+  "edges": [
+   {
+    "from": "you",
+    "to": "i",
+    "label": "Only these three"
+   },
+   {
+    "from": "i",
+    "to": "e"
+   },
+   {
+    "from": "i",
+    "to": "g"
+   },
+   {
+    "from": "i",
+    "to": "p"
+   }
+  ]
+ }
+}

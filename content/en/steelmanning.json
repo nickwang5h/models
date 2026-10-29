@@ -1,0 +1,210 @@
+{
+ "id": "steelmanning",
+ "name": "Steelmanning",
+ "en": "钢人论证",
+ "discipline": "thinking",
+ "one_line": "Before you argue back, put the other person's view the way they'd most like it said.",
+ "story": "Kahneman and Klein write \"Conditions for Intuitive Expertise: A Failure to Disagree\" together, published in American Psychologist",
+ "shallow": {
+  "scene": "Daniel Kahneman studied how people's judgment goes wrong; Gary Klein studied how fire commanders and nurses get things right by intuition. For years their conclusions were at odds. Then, instead of each writing criticisms of the other, they wrote a paper together and went through it point by point: where exactly did they disagree, and where did they in fact agree? In 2009 *American Psychologist* published the paper. Its conclusion: whether intuition can be trusted depends on whether the setting has enough regularity, and whether the person judging has had the chance to learn those regularities from feedback.",
+  "plain": "A friend says he doesn't want to go to the beach you picked for the weekend. The easiest way to argue back is to grab his weakest line, \"it's too far,\" and show that it isn't. But what he's really worried about may be getting stuck in traffic on Sunday night; even if you knock that line down, the worry is untouched. Steelmanning goes the other way. First put what he means in the strongest form he'd agree with, such as \"You're worried about traffic on the way back and not being able to get up the next day, right?\" Once he says yes, then you talk about whether to go, or pick a different place where the drive back isn't jammed."
+ },
+ "deep": {
+  "mechanism": "### Which layer you hit decides how much your rebuttal weighs\n\nA claim can be split into four layers: wording, examples, reasons and conclusion. Knocking down a slip of the tongue or an exaggerated example hits only the outer two layers, and he comes back with different words. Only when you knock down the best reason holding up the conclusion does he really have to give ground.\n\n### The reasons you fill in must be ones he nods at\n\nPeople often leave out background and conditions when they talk, and when you rebuild their argument you have to fill those in for them. But the more you fill in, the easier it is to fill it with your own words. Count the reasons you've added: add 0 and you're just restating; add 1 and you need to tell him to his face, \"this one is mine\"; get up to three or four and what you're rebutting has become an argument you made up. So when you've finished, ask him: is this what you mean? Only if he nods have you filled it in right.\n\n### Once it's clear, you still judge for yourself\n\nAfter you've put what he means clearly, check it item by item: are the reasons true, do they lead to the conclusion, does the conclusion fit the case in front of you? Once you've checked, you can accept his worry and still reject his plan: agreeing that the drive back will be jammed is not agreeing to skip the beach.",
+  "origin": "In 1859 John Stuart Mill wrote in *On Liberty*: \"He who knows only his own side of the case, knows little of that.\" Anatol Rapoport proposed a rule: first restate your opponent accurately, then rebut; in 2013 Daniel Dennett made the rule widely known in *Intuition Pumps*. Steelmanning itself still lacks direct experimental tests. Related evidence comes from a 1984 experiment by Lord and colleagues: when people imagined the opposite result before weighing the evidence, their bias shrank.",
+  "limits": "Steelmanning works best in discussions where the disagreement is real and the facts can be checked. If the other person's claim rests on wrong facts, strengthening it for them only polishes a wrong statement; what you should do is check the facts. Understanding is not giving ground: when the evidence on the two sides is very uneven, you can understand fully and still oppose completely. When you face a threat or someone trying to block you, protect yourself first; you don't need to work out their reasons for them first."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "communicate",
+    "text": "Before replying to a strongly worded email objecting to your plan, first write its strongest version in three sentences and put it at the top of your reply for the sender to confirm. Then what you answer is the point they actually meant to raise."
+   },
+   {
+    "use": "design",
+    "text": "Set a rule for review meetings: anyone raising an objection first asks the proposer, \"You mean…, right?\" and goes on only after the proposer nods, so both sides are arguing about the same thing."
+   },
+   {
+    "use": "explore",
+    "text": "When you read a view you find absurd, first write down its three best reasons. The one you can't rebut is what you should look up next."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Academia",
+    "title": "Rewrite the review comment first",
+    "text": "A reviewer wrote just one line: the sample is too small, so the conclusions can't be trusted. You rewrite it in its strongest form: the sample has no one over sixty, yet the conclusions cover all ages. The first paragraph of your reply sets down this restatement. Then you add an analysis broken down by age, and narrow the conclusions to the age groups your data can support."
+   },
+   {
+    "field": "Personal life",
+    "title": "Dad says no to the coffee shop",
+    "text": "You want to put your savings into opening a coffee shop, and your father says no. Instead of arguing over \"can a shop make money,\" you first ask what he's afraid of and say the answer back to him: you're afraid I'll put years of savings in all at once and have nothing to fall back on if it fails. He nods. You change the plan to a six-month short lease as a trial run first, and decide afterward whether to sign a long lease."
+   },
+   {
+    "field": "Technology",
+    "title": "Leave the database alone",
+    "text": "You want to move the team's database to a new system, and a senior colleague says, \"Don't go messing with it.\" You press him, and he brings up the last migration, after which there were more late-night alerts for a whole month. You write it down as: he's afraid nobody will be watching full time during the migration, and if something breaks nobody will be there to catch it. Once he agrees, you add two weeks of running old and new side by side to the migration plan, and put one person on call just for it."
+   }
+  ],
+  "ask": [
+   "If he heard my restatement himself, would he nod?",
+   "What is the strongest evidence for his side, and have I been steering around it?",
+   "Of the reasons I've filled in, which did he say and which did I add?"
+  ],
+  "with": [
+   {
+    "id": "incentives",
+    "sees": "A colleague opposes your proposal. Should you first fill in his best reasons for him, or first look at which of his interests the proposal touches? Steelmanning says listen to the reasons first, and don't stop listening just because he has a stake; incentives say his position may be exactly what his interests produce. A workable order: restate his reasons and get them confirmed, then check which of those reasons happen to favor him, and push hardest on those when you check the evidence."
+   },
+   {
+    "id": "falsifiability",
+    "sees": "When the other person's claim is vague, the harder you strengthen it, the less evidence there is that could overturn it. Here steelmanning and falsifiability have to be used together: after rebuilding it, ask him, what evidence would make you change your mind? If he can't answer, the claim has been filled in until nothing could refute it."
+   },
+   {
+    "id": "confirmation-bias",
+    "sees": "When you remember only the evidence for your own side, confirmation bias makes the other side's best reason the easiest one for you to skip. Make yourself write that reason down first, then go through the material that cuts against you."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Your manager proposes scrapping the weekly meeting, saying, \"Meetings are a waste of life.\" When pressed, he adds one point: most items on the agenda are just announcements, which could be read just as well in a document. You don't agree with canceling the meeting.",
+    "question": "Which response is most likely to reach the real disagreement?",
+    "explain": "\"A waste of life\" is an exaggeration; knocking it down doesn't touch the manager's reason. Put his point as: announcements don't need everyone's time. Ask him to confirm it, then look at whether decisions could also be handled by document alone. Only then does the disagreement land on something concrete.",
+    "options": [
+     {
+      "text": "Point out that canceling the meeting would cut departments off from each other's information, and list several consequences that could follow.",
+      "correct": false,
+      "feedback": "This predicts trouble from his conclusion; the reason he gave, that most items are just announcements, still hasn't been discussed."
+     },
+     {
+      "text": "List several decisions made at last week's meeting, to show everyone that meetings aren't a waste of life and don't take up much time either.",
+      "correct": false,
+      "feedback": "This knocks down the exaggerated wording; nobody has yet answered his reason that announcements can be written up as documents."
+     },
+     {
+      "text": "Put it as: move announcements to documents and meet only on decisions. Ask him to confirm, then test whether decisions could also go by document.",
+      "correct": true,
+      "feedback": "It keeps his conclusion and his reason, and pushes the disagreement onto decisions, so the next step has something concrete to check."
+     },
+     {
+      "text": "Propose cutting the meeting in half, which answers his complaint and keeps the meeting, with each side giving a little.",
+      "correct": false,
+      "feedback": "Shortening it is your compromise. Nobody has answered his point about announcements, and his claim hasn't been tested."
+     }
+    ]
+   },
+   {
+    "stem": "A colleague objects to switching customer service to automated replies, saying, \"Bots only make customers angry.\" When pressed, he mentions that last month three longtime customers canceled orders because the bot's answers missed the point. You want to rebuild his claim and then respond.",
+    "question": "Which rebuilding is best?",
+    "explain": "Rebuilding should keep his conclusion, make the vague words clear, add the grounds he gave himself, and then ask him to confirm. Adding new evidence he didn't mention, weakening his conclusion, or making it more absolute means it is no longer his claim.",
+    "options": [
+     {
+      "text": "Add data you found showing that several competitors' reputations got worse after they used bots, to give his claim more weight.",
+      "correct": false,
+      "feedback": "This is evidence you added, which he never mentioned; if you use it, you must say it's your own addition."
+     },
+     {
+      "text": "Switching entirely to automated replies will lose longtime customers' orders through off-point answers; three already did last month. Ask him to confirm this is what he means.",
+      "correct": true,
+      "feedback": "The conclusion is unchanged. The vague \"make angry\" becomes off-point answers leading to canceled orders, and the example used is his own."
+     },
+     {
+      "text": "Bots can never do customer service well and shouldn't be used anywhere; using them only makes customers angrier.",
+      "correct": false,
+      "feedback": "This is far more absolute than what he said; he wouldn't accept this version himself."
+     },
+     {
+      "text": "Bots can go live, but with one-tap transfer to a human, which is friendlier to customers and means not replacing everything.",
+      "correct": false,
+      "feedback": "This is your compromise; it changes his conclusion for him and doesn't test the claim he made."
+     }
+    ]
+   },
+   {
+    "stem": "You lead a team. A team member asks for a review step before delivery, because last quarter all three rounds of rework came from nobody double-checking. You restate this and he confirms it. You check the records: of the three, one really was a missed review, and the other two were clients changing requirements midway.",
+    "question": "What is the most sensible way to handle it next?",
+    "explain": "The reason partly holds, so it can support only part of the conclusion. Accept the one missed review and find other remedies for the other two, then see whether a review that would have helped with only one round of rework is worth an extra step for everyone.",
+    "options": [
+     {
+      "text": "Compromise: do the review only as spot checks, on no more than half the deliverables. Each side gives a little, and nobody loses out.",
+      "correct": false,
+      "feedback": "There's no basis for the spot-check rate; understanding both sides' concerns doesn't mean splitting it down the middle."
+     },
+     {
+      "text": "Only one of the three holds up, so his reason fails. Keep the old process and change nothing.",
+      "correct": false,
+      "feedback": "One missed review is a real gap. Throwing it all out means you've answered only the part of his reason that doesn't hold."
+     },
+     {
+      "text": "His restatement has been confirmed and one case holds up, so follow his plan and add a review to every deliverable.",
+      "correct": false,
+      "feedback": "A confirmed restatement only shows you understood him; how many rounds of rework this plan would prevent hasn't been tested yet."
+     },
+     {
+      "text": "Accept the gap from the one missed review; handle the two requirement changes another way, then weigh the review's costs and benefits.",
+      "correct": true,
+      "feedback": "It takes up the part that holds, handles the part that doesn't separately, and then tests his plan against costs and benefits."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Beating \"too far\" is no use; he fears traffic home",
+  "caption": "Rebut his worst line and the worry stays. First say the strongest version he'd nod at, then talk about going.",
+  "nodes": [
+   {
+    "id": "r",
+    "label": "Won't go to beach"
+   },
+   {
+    "id": "a",
+    "label": "Rebut \"too far\"",
+    "sub": "Grab his worst line",
+    "tone": "muted"
+   },
+   {
+    "id": "b",
+    "label": "\"Fear traffic?\"",
+    "sub": "Put so he'll nod",
+    "tone": "accent"
+   },
+   {
+    "id": "a2",
+    "label": "Worry untouched",
+    "tone": "muted"
+   },
+   {
+    "id": "b2",
+    "label": "He nods, then talk",
+    "sub": "Or a quieter spot",
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "r",
+    "to": "a",
+    "tone": "muted"
+   },
+   {
+    "from": "r",
+    "to": "b",
+    "label": "Steelman",
+    "tone": "accent"
+   },
+   {
+    "from": "a",
+    "to": "a2",
+    "tone": "muted"
+   },
+   {
+    "from": "b",
+    "to": "b2",
+    "tone": "accent"
+   }
+  ]
+ }
+}

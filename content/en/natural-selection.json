@@ -1,0 +1,219 @@
+{
+ "id": "natural-selection",
+ "name": "Natural Selection",
+ "en": "自然选择",
+ "discipline": "biology",
+ "one_line": "With no designer at all, traits that leave more offspring still spread, generation after generation.",
+ "story": "A drought on Daphne Major in the Galápagos, and the medium ground finches' average beak depth goes up",
+ "shallow": {
+  "scene": "In 1977 the rain was slow to come to Daphne Major, an island in the Galápagos. Every year, the team led by Peter and Rosemary Grant put leg bands on the island's birds and measured their beaks. That year, the island's medium ground finches starved in large numbers. The small seeds that were easy to crack were eaten first, and the big seeds left over were hard and thick-shelled; only birds with deeper beaks could bite through them. Among the birds that survived, the share with deep beaks was clearly higher, and the generation hatched after the drought had a larger average beak depth than the one before.",
+  "plain": "Once the grass turns brown and dry, green grasshoppers stand out more than brown ones, and birds eat the ones they can see first. Suppose that in each generation, half the green grasshoppers are eaten and a quarter of the brown ones; each surviving grasshopper leaves one offspring, the same color as its parent. At the start there are 100 of each. After one generation there are 50 green and 75 brown, so brown makes up 60%. After another, about 25 green and about 56 brown, so brown makes up nearly 70%. The birds are only looking for food; nobody is choosing a color. Natural selection rests on just two things: color can be inherited, and different colors leave different numbers of offspring."
+ },
+ "deep": {
+  "mechanism": "### Leave a little more each generation, and it adds up to a takeover\n\nSuppose a new, heritable version leaves 10% more offspring each generation than the old version, and at first it makes up only 1% of the population. Call the ratio of new to old $q$, and the extra share left each generation $s$. After $n$ generations:\n\n$$q_n=q_0(1+s)^n$$\n\nEach new-version individual leaves $1+s$ times as many offspring as an old-version one, so the ratio between them is multiplied by $1+s$ every generation. It's the same kind of sum as compound interest. At first the ratio of new to old is 1 to 99. After 50 generations it becomes $\\frac{1}{99}\\times1.1^{50}\\approx1.19$, so the new version makes up $1.19\\div2.19\\approx54\\%$ and has overtaken the old one. If it leaves only 2% more, the new version is still only 2.6% after the same 50 generations, and it takes more than two hundred generations to pass half.\n\n### Selection only picks among versions that already exist\n\nMutation and the reshuffling of genes bring in new versions, and new versions appear without regard to what the creature needs right now. In the drought year, no finch grew a deeper beak because it was hungry. Deep beaks were already in the flock; that year those birds survived in larger numbers and passed deep beaks on to the next generation.\n\n### Living long doesn't count; leaving offspring does\n\nIf a finch lives to old age but never breeds, its beak has no effect at all on the next generation. Natural selection counts offspring. Even if a version lets a bird live a year longer, its share won't rise unless it leaves more offspring than other versions.",
+  "origin": "Charles Darwin and Alfred Russel Wallace each came up with this mechanism on their own, and in 1858 their papers were read together at the Linnean Society in London; in 1859 Darwin set it out fully in *On the Origin of Species*. Starting in 1973, the Grants followed the finches on Daphne Major year after year and measured selection directly as it happened in a wild flock.",
+  "limits": "Natural selection happens whenever differences can be inherited and the versions leave different numbers of offspring: bacteria becoming resistant to drugs, pests becoming resistant to pesticides, finches changing beaks. A person improving with practice doesn't count. That comes from learning, and the skill can't be passed on to the next generation. What remains is only the kind that bred more in the environment of the time; that doesn't make it better, and \"the fittest\" doesn't mean \"the strongest.\" Herbert Spencer coined \"survival of the fittest,\" and his social claim that the strong deserve to win was later filed under \"Social Darwinism.\""
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Running an internal ideas contest for software teams where the rules look at only one number, and every team copies the winning approach: a few months later, features across the whole company will be growing toward that number. Think first about whether that number deserves to be amplified."
+   },
+   {
+    "use": "explain",
+    "text": "Why a common antibiotic, used in a hospital for many years, fails to kill more and more of the bacteria: each round of treatment clears away the rivals of bacteria that were already resistant."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "An antenna grown by selection",
+    "text": "In 2006, NASA's ST5 microsatellites carried an antenna designed by an evolutionary algorithm. The program first generated a large batch of random shapes and scored each one on simulated communication performance. The high scorers produced new versions with small changes, which were scored again and bred again, over and over. The engineers only supplied the scoring rule; they didn't draw the final shape. The result was a thin wire, bent and bent again, which looked like nothing anyone would have drawn first."
+   },
+   {
+    "field": "Business",
+    "title": "The handbook covered only three branches",
+    "text": "You oversee housekeeping services at thirty branch offices. Every quarter, headquarters writes up the schedules and pricing of the three branches with the highest share of repeat customers into a handbook and sends it to newly opened branches. The new branches follow it, each changing a little. Three years later, nearly all new branches use the same scheduling. Two older branches also have a high share of repeat customers, but nobody wrote a handbook about them, and not one new branch uses their schedules."
+   },
+   {
+    "field": "Everyday life",
+    "title": "A short message in the family chat",
+    "text": "You once forwarded a health tip in your family group chat. Three months later you see it again in your social media feed: \"SHOCKING\" has been added at the start, the source is gone and half the text has been cut. Each person who passed it on changed only a little, and nobody meant to turn it into this. The version forwarded most was seen by more people and forwarded by more again. After a few rounds, almost every copy going around the chats was this short, scary version."
+   }
+  ],
+  "ask": [
+   "Which versions are in front of me, and how do they differ? Will those differences carry into the next round?",
+   "Which version leaves more offspring? Where do I count that: number of stores, copies, forwards?",
+   "Is what's really doing the selecting the standard I want, or an easy-to-count measure sitting next to it?"
+  ],
+  "with": [
+   {
+    "id": "first-principles",
+    "sees": "You're building a new app that nobody has made before, and you don't know which approach will win. First principles has you break things down to the most basic facts and then build the best design; natural selection has you release several versions at once and keep the one the most people use. When a failed try costs so much that there's no going back, as with building a bridge, break it down and build. When a version can go live in a few days and you see users' reactions the same day, let the market do the selecting for you."
+   },
+   {
+    "id": "survivorship-bias",
+    "sees": "When you see the few approaches that have lasted on the market, you want to copy what they have in common. These approaches have been filtered. Natural selection tells you that what remains is what bred more in the environment of the time; survivorship bias reminds you that you never saw the ones filtered out, and they may have used the same approaches."
+   },
+   {
+    "id": "local-optimum",
+    "sees": "As selection keeps picking generation after generation, the versions fit their current surroundings better and better. A local optimum paints a different picture: the versions stop on top of a small hill, with a higher hill nearby that can only be reached by first passing through worse versions. To climb the higher hill, someone has to keep the versions that look worse."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "The perch in a lake come in large and small sizes, and part of that difference can be inherited. For decades, fishermen have used the same mesh size, which only catches fish over a certain length. The fishing pressure is the same every year; small fish slip through the net and go on breeding.",
+    "question": "With mesh size and fishing pressure unchanged, how is the average size of the lake's perch most likely to change over a few decades?",
+    "explain": "The big fish are taken, so small fish leave more offspring and pass their small size on to them, and the population's average size goes down generation by generation.",
+    "options": [
+     {
+      "text": "Smaller: the fish spend their whole lives dodging nets, put their energy into dodging, and each fish grows more slowly.",
+      "correct": false,
+      "feedback": "A change like that happens within a single fish and isn't passed on to its offspring. What changes in the question is how many offspring fish of each size leave."
+     },
+     {
+      "text": "Larger: once the big fish are taken, the remaining fish have more food, and each grows bigger.",
+      "correct": false,
+      "feedback": "The amount of food changes how big a single fish can grow, not what the next generation inherits; the fish leaving offspring are mostly the small ones."
+     },
+     {
+      "text": "Smaller: small fish escape the nets and leave more offspring, so the share of small fish rises generation by generation.",
+      "correct": true,
+      "feedback": "Small fish leave more offspring and pass their small size on, so over a few decades the lake's average size goes down."
+     },
+     {
+      "text": "No change: fishing only affects the number of fish, not the share of each size in the population.",
+      "correct": false,
+      "feedback": "The fishing takes only big fish, so the fish taken and the fish left differ in size, and the shares are bound to change."
+     }
+    ]
+   },
+   {
+    "stem": "A small island has twelve lizards of a certain species, and three of them carry a heritable white spot. A storm blows down a tree that kills four lizards, and these happen to include all three with the white spot. Where the tree fell had nothing to do with the lizards' coloring.",
+    "question": "How should you judge why the white spot disappeared from the island?",
+    "explain": "Who was killed had nothing to do with the white spot, and the white spot did not affect how many offspring any lizard left. The population changed because of where chance happened to land, not because coloring was selected.",
+    "options": [
+     {
+      "text": "Chance: who died had nothing to do with the white spot; the change just happened to land on these few.",
+      "correct": true,
+      "feedback": "Which lizards were hit had nothing to do with the white spot, and the white spot didn't change how many offspring anyone left. This is chance."
+     },
+     {
+      "text": "It was selected out: lizards with the white spot stand out more and are easier for predators to find.",
+      "correct": false,
+      "feedback": "The question makes it clear that which lizards the tree hit had nothing to do with coloring. The white spot didn't make any lizard more or less likely to die."
+     },
+     {
+      "text": "The white-spot gene was suppressed by other genes and would have disappeared in the next generation anyway.",
+      "correct": false,
+      "feedback": "There's no hint in the question of any gene being suppressed. The white spot disappeared because every lizard carrying it died."
+     },
+     {
+      "text": "The white spot itself is bad for survival; the three dying together shows that lizards with the white spot are weaker.",
+      "correct": false,
+      "feedback": "The three died together because they all happened to be under the tree. There's no evidence linking the white spot to being weaker."
+     }
+    ]
+   },
+   {
+    "stem": "Male guppies in a stream come in a dull type and a bright type, and the color can be inherited. The numbers here are made up: dull males live two years on average and leave about 20 offspring in a lifetime. Bright males get eaten more often and live only one year on average, but females prefer to mate with them, so they leave about 30 offspring in a lifetime.",
+    "question": "After a few dozen generations, what will the males in the stream most likely be like?",
+    "explain": "What counts is the number of offspring left, not the lifespan. Bright males live shorter lives but leave more offspring, so their share rises generation by generation.",
+    "options": [
+     {
+      "text": "The bright fish learn to hide, and their color gradually gets duller.",
+      "correct": false,
+      "feedback": "Ways of hiding that a fish learns in its life can't be passed on to its offspring. What changes is how many offspring each type leaves."
+     },
+     {
+      "text": "The share of bright males rises: they leave more offspring in a lifetime, and their color is passed on.",
+      "correct": true,
+      "feedback": "Bright males live shorter lives but leave about 30 offspring each, more than the dull males' 20, so the bright share climbs generation by generation."
+     },
+     {
+      "text": "Half and half: one lives long, the other short, and it evens out.",
+      "correct": false,
+      "feedback": "Lifespan and number of offspring are two different things. The type that lives shorter actually leaves more offspring, so the shares won't stay at half."
+     },
+     {
+      "text": "More dull males: they live longer and spend more time in the stream.",
+      "correct": false,
+      "feedback": "A long life doesn't go on the books; what goes on the books is how many offspring are left in a lifetime. Dull males leave only about 20, fewer than the bright ones."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "10% more each generation: 1% to over half in 50",
+  "caption": "Starts at 1%. At 10% more it passes half in 50 generations; at 2% more it's under 3% after 50 and needs 200+ to pass half. Drag \"Extra\" to compare.",
+  "x": {
+   "label": "Generations"
+  },
+  "y": {
+   "label": "Share of new version",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "s",
+    "label": "Extra",
+    "min": 1,
+    "max": 20,
+    "step": 1,
+    "value": 10,
+    "unit": "%"
+   },
+   {
+    "id": "g",
+    "label": "Generations",
+    "min": 10,
+    "max": 300,
+    "step": 10,
+    "value": 50
+   }
+  ],
+  "model": {
+   "steps": "g",
+   "init": {
+    "p": 0.01,
+    "q": 0.01
+   },
+   "next": {
+    "p": "p*(1+s/100)/(p*(1+s/100)+1-p)",
+    "q": "q*1.02/(q*1.02+1-q)"
+   }
+  },
+  "series": [
+   {
+    "name": "New version",
+    "expr": "p*100",
+    "tone": "accent"
+   },
+   {
+    "name": "Only 2% more",
+    "expr": "q*100",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "readouts": [
+   {
+    "label": "New version",
+    "expr": "p*100",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "At only 2% more",
+    "expr": "q*100",
+    "unit": "%",
+    "digits": 1
+   }
+  ]
+ }
+}

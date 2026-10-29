@@ -1,0 +1,203 @@
+{
+ "id": "chestertons-fence",
+ "name": "Chesterton's Fence",
+ "en": "切斯特顿栅栏",
+ "discipline": "thinking",
+ "one_line": "Before you scrap a rule that looks useless, find out why it was put there.",
+ "story": "J.C. Penney's Ron Johnson scraps coupons for everyday low prices, and sales fall about a quarter",
+ "shallow": {
+  "scene": "In 2012 Ron Johnson had just moved from running Apple's retail business to become chief executive of J.C. Penney, an American department store chain. He looked at the stores full of discount signs and the stacks of coupons and found it all messy and a lot of trouble, so he scrapped the coupons and most promotions and switched to low prices marked every day.\n\nLongtime customers had come into the stores for the coupons and discounts, and once those were gone, they had fewer reasons to come in. In fiscal year 2012 (which ended in early February 2013), the company's sales fell by about a quarter from the year before. In April 2013, Johnson left the company.",
+  "plain": "Every day you squeeze sideways past a low iron railing at the gate of your apartment complex. You find it in the way and want to ask the building management to take it down. In 1929 the English writer Chesterton wrote about a fence set across a road: if you can't see what it's for, don't take it down yet. Following the idea of Chesterton's fence, you first ask a neighbor. The neighbor says that before the railing went up, some child would dash straight out from here onto the driveway every week; nothing has happened at the gate these past few years because the railing has been blocking the way all along. You didn't bring up removing the railing again."
+ },
+ "deep": {
+  "mechanism": "### Nothing going wrong may be the rule doing its job\n\nYou take over the front desk at a small clinic and find that at check-in, besides their name, every patient has to say their date of birth. It seems like one step too many. An older nurse digs out an old case: there were once two patients with exactly the same name, and one of them took the other's lab results. People with the same name almost always have different birthdays, so one question tells them apart. There have been no mix-ups in all these years because this question has been doing the checking all along.\n\n### Whether a wrong removal can be undone decides how deep to dig\n\nThe question takes five seconds per patient; at two hundred patients a day, that adds up to under seventeen minutes, not a high cost. But lab results handed to the wrong person can't be taken back, so find out first, then act. For a rule like \"which way the waiting-room chairs face,\" a wrong change can be put back the next day. Then just turn the chairs another way for a week, with no need to dig through old files first.\n\n### The old reason may be gone, but someone still has to do the old job\n\nSuppose the clinic installs a machine for checking in by scanning ID cards. It tells people apart by their ID, so patients with the same name won't be mixed up any more, and only then can the birth-date question go. But if the machine often breaks, the desk still has to rely on the question to check while it's down; drop the question, and nobody checks. Before dropping it, write down who will ask it when the machine is down.",
+  "origin": "In his 1929 collection *The Thing*, the English writer G. K. Chesterton used the image of a fence set across a road. A reformer who can't see what it's for should first find out why it's there, and only then talk about taking it down. This is not a conclusion drawn from experiments; later people took it up as a way of thinking, used to examine old rules.",
+  "limits": "It suits old arrangements whose origin is unknown and whose removal would affect other people: check first, then remove. When a rule is hurting people right now, stop it first and check afterward. Taking \"it's been here so many years\" as evidence that it makes sense is a misuse. Old rules can also come from prejudice or from the private interests of a few, and if checking shows that, you can take them down with an easy mind."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When you take over a new role and want to cut some procedures, add a column to each one: \"what it was put there to stop.\" Look into the ones left blank first, and delete them only once you know."
+   },
+   {
+    "use": "design",
+    "text": "When you set a new rule for your team, write the reason for it and the person responsible next to it, so whoever takes over years later and wants to remove it doesn't have to guess all over again."
+   },
+   {
+    "use": "communicate",
+    "text": "With a boss eager to cut the budget, don't say \"this item can't be cut.\" Just ask him to first say what this item was there to stop; if he can, then talk about cutting it."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "The line that sleeps for two seconds",
+    "text": "You take over a scheduled sync script and find a line, sleep 2, before it reads the database. It slows down every run for nothing, and you want to delete it. In the commit history, the line has just one note: wait for the primary to sync. You track down the person who wrote it. He says the script used to read from a replica, and after the primary database finished a write, the replica took a second or two to catch up; without waiting, the script would read stale data. You check the current configuration: reads and writes now go to the same database. You delete the line and write down why in the commit message."
+   },
+   {
+    "field": "Daily life",
+    "title": "The extra boil",
+    "text": "You stew red kidney beans by your grandmother's method: soak them overnight, pour off the soaking water, boil them hard for ten minutes, pour off the water, and only then start the slow stew. You think the boil in the middle is unnecessary and want to put the beans straight into the slow cooker. Looking it up, you learn that raw red kidney beans contain a plant lectin that causes vomiting and diarrhea, and boiling destroys it; a slow stew that only heats them to around 80°C actually leaves some of the toxin behind. You keep the step in the method and write it on the first line of the recipe."
+   },
+   {
+    "field": "Community",
+    "title": "The call the night before",
+    "text": "You take over a neighborhood volunteer team. The team rules say to phone everyone who signed up the night before an event to confirm; with a dozen or so people, that takes an hour. You want to switch to posting a message in the group chat. An older member says that a few years ago, at a fundraising event, most of the people who signed up in the group chat didn't show, and the stall stood empty for half the day. For your next event, you first call only the people who didn't reply in the group chat, and send everyone else a message."
+   }
+  ],
+  "ask": [
+   "What was this rule put there to stop when it was set up? If you can't say, leave it alone for now.",
+   "Is that problem not happening now because conditions changed, or because the rule has been stopping it all along?",
+   "If you pause it for a while as a trial and something goes wrong, how long before you'd find out, and who would notice first?"
+  ],
+  "with": [
+   {
+    "id": "one-way-two-way-doors",
+    "sees": "The team wants to stop its monthly backup-restore drill. Seen as a one-way or two-way door, it can be added back any time next month, so just stop it. Chesterton's fence sees that the drill guards against a major failure that comes about once a year. You'll only learn that stopping it was a mistake on the day the failure comes, and by then adding it back is too late. For things whose removal takes months to show its harm, first find out what they guard against; for things where a wrong removal has someone shouting the next day, just try."
+   },
+   {
+    "id": "first-principles",
+    "sees": "In designing how goods come into and go out of a new warehouse, first principles has you treat every existing convention as an assumption and work things out again from how goods flow. Yet rules borrowed from other warehouses may hold lessons someone else paid for, such as requiring two people to count goods going out. Physical limits can simply be reasoned through to the end; for rules people made, ask where they came from first, then decide which to keep."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You take over the editorial department of a small publisher. One step in the process: before each book goes to print, the proofs are printed out and a proofreader reads them through on paper. The electronic version has already passed spelling and formatting checks, and the new editor-in-chief thinks this step is unnecessary and wants to drop it, which would save two days per book. Nobody remembers who added the step or why, but the paper proofs from past years have all been kept, with the proofreaders' notes on them.",
+    "question": "Before dropping it, which material best shows what this step was meant to stop?",
+    "explain": "What an old step is for has to be shown by records and by what it actually did. The notes on the paper proofs show directly which errors were caught only by reading on paper.",
+    "options": [
+     {
+      "text": "The notes on past years' proofs, recording errors caught only on paper",
+      "correct": true,
+      "feedback": "The notes record the errors the paper proofreading actually caught, which answers directly what this step guards against."
+     },
+     {
+      "text": "The proofreading process and practices common at other publishers today",
+      "correct": false,
+      "feedback": "What other publishers do shows only their habits; it can't say why your step was added."
+     },
+     {
+      "text": "The error-catching rate stated in the manual for the electronic checking tool",
+      "correct": false,
+      "feedback": "The tool's manual only tells you what the electronic checks can find; it can't show what the paper proofreading has caught."
+     },
+     {
+      "text": "Each colleague's guess at its purpose, going with the majority",
+      "correct": false,
+      "feedback": "Most people's guesses are only leads. Without records behind them, however many there are, they aren't evidence."
+     }
+    ]
+   },
+   {
+    "stem": "Every Monday at 8 a.m., the whole factory stops its machines for ten minutes. It began ten years ago, when the old equipment often leaked oil and had to be checked during the stop. The old equipment has all been replaced, the new equipment has automatic leak alarms, and the original problem really is gone. The workshop director wants to drop the ten minutes.",
+    "question": "Before dropping it, what else should be checked first?",
+    "explain": "The original problem being solved doesn't mean nobody relies on these ten minutes any more. Whatever other steps happen during this stop will need time found for them elsewhere once it's dropped.",
+    "options": [
+     {
+      "text": "How satisfied workers are with the Monday-morning stop",
+      "correct": false,
+      "feedback": "Satisfaction is only a feeling; it can't show what work this stop is carrying."
+     },
+     {
+      "text": "Whether the new equipment really leaks less oil than the old",
+      "correct": false,
+      "feedback": "The new equipment has automatic alarms, and the question has already settled the leaks; what needs checking is something else."
+     },
+     {
+      "text": "Whether other factories have dropped stops like this one",
+      "correct": false,
+      "feedback": "Whether other factories dropped theirs can't tell you who in your factory still uses these ten minutes."
+     },
+     {
+      "text": "Which other steps still use these ten minutes of downtime",
+      "correct": true,
+      "feedback": "Cleaning, changing materials and shift handovers may all be scheduled in these ten minutes. Before dropping it, find out who relies on it."
+     }
+    ]
+   },
+   {
+    "stem": "Your company requires the legal team to look over every price quote before it goes out to a customer. You found where the rule came from: a few years ago a quote left out how long it was valid, the customer placed an order at the old price half a year later, and the company lost money. The legal check looks only at the validity period. Quotes are now generated from a system template, and the account managers fill in the validity field freely, with no requirement to fill it and no format check. In the past year a few quotes still said \"ASAP\" or \"long-term\" and were sent back by legal. Your manager says the template already has this field and wants to drop the legal review.",
+    "question": "Having found all this out, what should be done with the rule?",
+    "explain": "What it was set up to stop was unclear validity periods. The template now has the field, but the people who fill it in unclearly are still there, and the legal review is still catching the problem. Only once the template can stop it by itself can this step go.",
+    "options": [
+     {
+      "text": "Drop the legal review, since the template already has a validity field",
+      "correct": false,
+      "feedback": "Having the field doesn't mean it's filled in clearly. In the past year some quotes still said \"ASAP,\" so the gap hasn't been closed."
+     },
+     {
+      "text": "Keep the legal review for now, and drop it once the template can block unclear validity periods",
+      "correct": true,
+      "feedback": "The quotes sent back show the problem is still happening; dropping the review now would reopen the old gap."
+     },
+     {
+      "text": "Change the legal review to a monthly spot check",
+      "correct": false,
+      "feedback": "Quotes outside the spot check could still go out with unclear validity periods, so there's less protection than now."
+     },
+     {
+      "text": "Drop the legal review and have account managers reread each quote themselves before sending it",
+      "correct": false,
+      "feedback": "The account managers are the very ones writing them unclearly. When the same person rereads, they rarely catch their own slips."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Find what the question guards before dropping it",
+  "caption": "Asking birth dates looks pointless but stops same-name patients swapping results. Keep it while needed; once a scanner takes over, drop it, naming a backup asker.",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "Birth date asked",
+    "sub": "Looks pointless"
+   },
+   {
+    "id": "b",
+    "label": "What's it for?",
+    "sub": "Old files, old nurse"
+   },
+   {
+    "id": "c",
+    "label": "Same-name mix-up",
+    "sub": "Can't be undone",
+    "tone": "warn"
+   },
+   {
+    "id": "d",
+    "label": "Keep asking",
+    "sub": "No other check"
+   },
+   {
+    "id": "e",
+    "label": "Stop asking",
+    "sub": "Backup asker named",
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b"
+   },
+   {
+    "from": "b",
+    "to": "c"
+   },
+   {
+    "from": "c",
+    "to": "d",
+    "label": "Still so"
+   },
+   {
+    "from": "c",
+    "to": "e",
+    "label": "Scanner"
+   }
+  ]
+ }
+}

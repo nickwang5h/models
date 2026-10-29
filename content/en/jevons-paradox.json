@@ -1,0 +1,242 @@
+{
+ "id": "jevons-paradox",
+ "name": "Jevons Paradox",
+ "en": "杰文斯悖论",
+ "discipline": "economics",
+ "one_line": "When something gets cheaper to use, people use more of it, and the total goes up.",
+ "story": "James Watt patents the separate condenser, steam engines burn less coal, and yet Britain's total coal use keeps growing",
+ "shallow": {
+  "scene": "In the years when mobile data was still expensive, many people switched off their phone's mobile data before going out and waited for Wi-Fi to watch videos. Then data prices fell again and again, and people stopped counting when they scrolled through short videos or made video calls. The data they used each month became several times what it used to be.\n\nMore than two hundred years ago, coal went down the same road. In 1769 James Watt took out a patent in Britain for an improved steam engine: it did the same work while burning a good deal less coal. He and his partner Matthew Boulton sold the new engines to mines and factories.\n\nWith less coal burned, power got cheaper, and many jobs that couldn't afford a steam engine before began burning coal too. Throughout the nineteenth century, steam engines spread further and further. The engines kept using less coal, yet Britain burned more and more of it.",
+  "plain": "Suppose you run a laundry and put in new machines that cut the water for each load from 10 liters to 5. If you still wash 100 loads a day, your water use falls from 1,000 liters to 500. But each load now costs less, so you can lower your prices. People who used to find you too expensive and washed at home start coming in, and you also take on the bed sheets and duvet covers from a hotel. You end up washing 300 loads a day, and water use rises to 1,500 liters. Each load uses less, yet total water use is higher: the cost saved became lower prices, and the lower prices brought in more work.\n\nThe English economist Jevons saw the same thing with coal in the nineteenth century, and the effect was later named after him: the Jevons paradox."
+ },
+ "deep": {
+  "mechanism": "### Total use is how much each use takes, times how many uses\n\nIf each load uses $u$ liters and you wash $n$ loads a day, the day's total water is the two multiplied:\n\n$$u\\times n$$\n\nEfficiency only pushes down $u$; the total also depends on how much $n$ grows. If $u$ is halved and $n$ more than doubles, total water use ends up higher than before. Back to the same laundry: at 5 liters a load and 200 loads a day, total water is $5\\times200=1000$ liters, exactly back where it started, with all the savings used up by the extra washing. At 300 loads it rises to $5\\times300=1500$ liters; at only 150 loads, it still saves 250 liters.\n\nWhen extra washing eats up part of the water saved, economists call it a rebound. Only when it eats up more than was saved, so total water use ends up above where it started, is it the Jevons paradox.\n\n### The bigger the resource's share of the cost, the easier it is to overshoot\n\nSuppose water is only 2% of the cost of washing a load. Even if the water bill is halved, a load costs only 1% less. The owner can't cut prices by much, and won't bring in much new work. Coal, though, was the biggest part of a steam engine's running costs. Burn less coal and the price of power fell sharply, and that is what brought in a wave of new users who couldn't afford steam engines before.\n\n### The money saved goes somewhere else\n\nA family switches to an energy-saving air conditioner and pays 100 yuan less for electricity each month. They save it up for weekend trips, and burn fuel on the road. When you look at the total use of a whole industry or country, the resources this money uses up elsewhere have to be counted too.",
+  "origin": "In 1865 the English economist William Stanley Jevons argued in *The Coal Question* that as steam engines burned less coal, power became cheaper and found more uses, so the total demand for coal went up instead. His evidence was the history of steam engines after Watt and of Britain's coal consumption.",
+  "limits": "Overshooting is most likely in fields like power and computing, where demand is far from satisfied and the resource is the biggest part of the cost. If use is capped by a fixed total allowance, or demand is already saturated, no drop in price can make people use more, and the resource saved really is saved. A common misreading is to put all of a country's growth in electricity use down to energy-saving appliances without first taking out the growth in population and income over the same period."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "A ride-hailing platform in one district improves how it assigns rides, so cars drive empty less and fares go down. To predict whether the kilometers driven on the roads will fall, first check whether riders often used to take the subway or walk because fares were too high. If there are many of them, lower fares will pull them back into cars."
+   },
+   {
+    "use": "design",
+    "text": "When designing the measures that go with an energy-saving policy, set efficiency standards and a cap on the total together. With efficiency alone, the room that's freed up will be filled by new uses; a cap is what makes the savings actually stay saved."
+   },
+   {
+    "use": "act",
+    "text": "Before your team buys a new model that uses less computing power, estimate how many more tasks users will run, and only then set the budget. If the cost per run falls to 40% and the number of tasks rises fourfold, the bill ends up 60% higher."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Agriculture",
+    "title": "Saving water, pumping more",
+    "text": "A study by Pfeiffer and Lin published in 2014 looked at western Kansas in the US. After farmers switched to irrigation systems with sprinkler heads closer to the ground, the average amount of groundwater they pumped went up instead, partly because the mix of crops they grew changed."
+   },
+   {
+    "field": "Technology",
+    "title": "Cheaper, so generated again and again",
+    "text": "Suppose you lead a design team, and a new model halves the computing needed for each image. Your designers used to generate a hundred images a day. Now they hand sketches, color schemes and small edits to the model as well, and generate three hundred a day. Each image costs less, but the team's total computing goes up by half."
+   },
+   {
+    "field": "Personal life",
+    "title": "Less fuel, so you live farther away",
+    "text": "You switch to a car that uses half as much fuel per kilometer, so you move farther out to a place with cheaper rent, and drive out more on weekends too. Your yearly mileage goes from 10,000 kilometers to 25,000, and your total fuel use goes up by a quarter."
+   }
+  ],
+  "ask": [
+   "How much has the full cost of each use fallen, not just the cost of the resource?",
+   "Who will use more because of this, and which uses that didn't pay before will start to appear?",
+   "If the resource per unit falls to some fraction of what it was, how many times bigger does use have to get for the total to come back to where it started?"
+  ],
+  "with": [
+   {
+    "id": "price-elasticity",
+    "sees": "A district government wants to bring down the district's electricity use by subsidizing energy-saving air conditioners. Going by efficiency, each unit saves 30%, so the district's use should fall 30%. Going by the Jevons paradox, cheaper power means people run them longer and install more, and the total might rise instead of fall. Which to believe depends on price elasticity. If households used to hold back on the air conditioning and electricity is a big part of their spending, elasticity is high, so believe the second. If electricity is a small corner of their spending and they already run the air conditioning as much as they need, elasticity is low, so believe the first."
+   },
+   {
+    "id": "bottlenecks",
+    "sees": "A data center switches to chips that use less power, and everyone predicts its electricity use will rise. But the site's grid connection has long been at full capacity, the wait for an upgrade is three years, and new workloads simply can't be plugged in. The Jevons paradox only says that cheaper means people want to use more. Bottlenecks says that when the choke point is somewhere else, wanting to use more can't turn into using more. First find the tightest link, then ask whether it has any slack."
+   },
+   {
+    "id": "correlation-causation",
+    "sees": "A country's energy use per unit of output has fallen for thirty years, while its total energy use has risen for thirty years, and some people take this to mean that energy saving drove the rise. Efficiency and total changing together is only a correlation, and correlation isn't causation, so you can't simply say one caused the other. You'd have to compare two groups over the same period, one with efficiency improvements and one without, to separate the effect of energy saving from the effects of population and income."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You manage quality checks at a customer service company. The company upgrades its call-recording compression, so each minute of recording takes up 40% less space. Because of this, your supervisor switches from recording half the calls to recording all of them, to make complaints easier to handle. The number of calls each month, their average length and how long recordings are kept all stay the same.",
+    "question": "How will the storage space taken up by each month's new recordings change?",
+    "explain": "Compression lowered the cost of storing recordings, and it also changed how many calls the company is willing to record. Space per minute falls to 60% of what it was, and minutes recorded double; multiplied together, that's 1.2 times the original. Using less per unit and using more in total can both be true.",
+    "options": [
+     {
+      "text": "It will rise by 20%, because doubling the recording outweighs the savings from compression.",
+      "correct": true,
+      "feedback": "Space per minute is 0.6 of what it was and minutes recorded are 2 times; multiplied, that's 1.2. Compression made recording everything worth it, and the expansion outgrew the savings per unit."
+     },
+     {
+      "text": "It will stay the same, because the expansion uses up exactly the space compression saved.",
+      "correct": false,
+      "feedback": "New uses eat up part of the savings, but they don't cancel out exactly on their own. With space per unit down to 60%, it would only break even if recording grew to about 1.67 times."
+     },
+     {
+      "text": "It will rise by 100%, because minutes recorded doubled and the savings from compression can be ignored.",
+      "correct": false,
+      "feedback": "Space per minute fell to 60%, and that saving is real, so the total is 1.2 times, not 2 times."
+     },
+     {
+      "text": "It will fall by 40%, because each minute of recording now takes up less space.",
+      "correct": false,
+      "feedback": "The minutes of calls being recorded have doubled, so you can't look only at how much each minute is compressed."
+     }
+    ]
+   },
+   {
+    "stem": "You're studying a glass manufacturer. It picks half its factories at random to upgrade their furnaces, cutting electricity per unit of product by 20%. A year later, output at both groups of factories has grown 40%, with the same mix of products. Total electricity use at the upgraded group has grown 12%, and at the group that wasn't upgraded, 40%. An analyst says, \"The upgraded group still used more electricity, which shows the energy-saving technology actually pushed power use up.\"",
+    "question": "Does this analysis hold?",
+    "explain": "Total electricity use being higher than last year doesn't mean it's higher than it would have been without the upgrade. Output grew by the same amount in both groups, and electricity use grew less in the upgraded group. So total use rising and the upgrade saving electricity can both be true.",
+    "options": [
+     {
+      "text": "No: electricity per unit fell 20%, so the upgraded group's total electricity use should also have fallen 20%.",
+      "correct": false,
+      "feedback": "Output went up 40%, so total electricity use has to count both changes, in electricity per unit and in output."
+     },
+     {
+      "text": "Yes: electricity per unit fell while total use rose, which proves energy saving backfired.",
+      "correct": false,
+      "feedback": "That is only a before-and-after change, and it doesn't prove the upgrade caused the growth; the comparison group grew more over the same period."
+     },
+     {
+      "text": "No: output at both groups grew by the same amount, and the upgraded group used less electricity.",
+      "correct": true,
+      "feedback": "The group that wasn't upgraded gives a comparison over the same period: output grew the same, and electricity use grew less in the upgraded group, so the results support the upgrade having saved electricity."
+     },
+     {
+      "text": "Yes: the extra 12% electricity at the upgraded group is exactly the new demand that energy saving created.",
+      "correct": false,
+      "feedback": "Output at the group that wasn't upgraded also rose 40%, so growth that both groups share can't all be put down to energy saving."
+     }
+    ]
+   },
+   {
+    "stem": "A city swimming pool installs efficient heating equipment, and at the same water temperature and opening hours it uses 30% less gas. Residents ask for longer winter opening hours. But the pool's yearly gas allowance equals what it actually used last year; once it's used up, the supply stops. The pool can't get more allowance, and can't switch to another kind of energy.",
+    "question": "What is the most gas this pool can use in a year?",
+    "explain": "Using more because it got cheaper is only one way the total can rise; it also depends on whether the expansion can break through the limit. Here gas is effectively capped. Better efficiency can buy longer opening hours, but the year's gas use won't go above last year's.",
+    "options": [
+     {
+      "text": "At most 30% less, because the allowance will be reset for the new equipment.",
+      "correct": false,
+      "feedback": "The question says the allowance equals last year's use, and it isn't lowered because of new equipment."
+     },
+     {
+      "text": "At most the same as last year; the longer hours use up what was saved.",
+      "correct": true,
+      "feedback": "The allowance equals last year's use. Using up some of the savings is possible, but the total can't go past that line."
+     },
+     {
+      "text": "More than last year, because demand for longer hours will outweigh the savings.",
+      "correct": false,
+      "feedback": "Once the allowance is used up the supply stops, so however great the demand, it can't turn into using more than the allowance."
+     },
+     {
+      "text": "Definitely less than last year, because the equipment uses 30% less gas each time, so even longer hours can't use up the allowance.",
+      "correct": false,
+      "feedback": "That's only true if the opening hours stay the same; the pool may well open longer and use the savings to serve more residents."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Half the water, over twice the loads: total rises",
+  "caption": "Further right means less water per load. Under 2x more work, the curve falls; over 2x, saving water raises the total. The other slider sets liters per load.",
+  "x": {
+   "label": "Water per load (less →)",
+   "min": 1,
+   "max": 4,
+   "ticks": [
+    {
+     "at": 1,
+     "label": "10 L"
+    },
+    {
+     "at": 2,
+     "label": "5 L"
+    },
+    {
+     "at": 3,
+     "label": "3.3 L"
+    },
+    {
+     "at": 4,
+     "label": "2.5 L"
+    }
+   ]
+  },
+  "y": {
+   "label": "Total water per day",
+   "unit": " liters",
+   "min": 0,
+   "max": 4000
+  },
+  "params": [
+   {
+    "id": "m",
+    "label": "Work at ½ water",
+    "min": 1,
+    "max": 4,
+    "step": 0.5,
+    "value": 3,
+    "unit": "x"
+   },
+   {
+    "id": "u",
+    "label": "Water per load",
+    "min": 2.5,
+    "max": 10,
+    "step": 0.5,
+    "value": 5,
+    "unit": " liters"
+   }
+  ],
+  "series": [
+   {
+    "name": "Total water per day",
+    "expr": "1000*x^(log2(m)-1)",
+    "tone": "accent"
+   },
+   {
+    "name": "If business stayed",
+    "expr": "1000/x",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "y": 1000,
+    "text": "Before: 1,000 liters"
+   },
+   {
+    "x": "10/u"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Loads per day",
+    "expr": "100*(10/u)^log2(m)",
+    "unit": " loads",
+    "digits": 0
+   },
+   {
+    "label": "Total water per day",
+    "expr": "u*100*(10/u)^log2(m)",
+    "unit": " liters",
+    "digits": 0
+   }
+  ]
+ }
+}

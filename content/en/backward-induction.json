@@ -1,0 +1,214 @@
+{
+ "id": "backward-induction",
+ "name": "Backward Induction",
+ "en": "逆向归纳",
+ "discipline": "games",
+ "one_line": "Work back from the last move and you know what to do at each step now.",
+ "story": "In an opera box in Paris, Morphy plays the Duke of Brunswick and Count Isouard, gives up his queen on move 16 and mates on the next (the Opera Game)",
+ "shallow": {
+  "scene": "Anyone who has done a maze on paper knows this: try each path from the entrance and you often end up in a dead end; trace back from the exit and the way is clear at once. In 1858 the American chess player Paul Morphy played a game in a Paris opera house. Across the board were two noblemen who talked over their moves together while watching the show. Morphy used the trace-back-from-the-exit method. The game later became known as \"the Opera Game.\"\n\nMorphy first worked out the last move: if his rook could reach the back row where the other side's king stood, the king would have nowhere to go and the game would be over. Only one piece stood in the rook's way, one of the other side's knights. Then he stepped back one move: to get that knight out of the way, he had to give it a piece it could not refuse to take. So he pushed his most valuable piece, his queen, up next to the enemy king and put it in check, that is, threatened to take the king outright. The other side had only one way out: take the queen with that knight. The moment the knight moved, the rook came in. Checkmate.\n\nSeen from front to back, throwing away the queen looks like a blunder; seen backward from the checkmate, it was the only way in to the win.",
+  "plain": "Play a round of \"Race to 30\" with someone. Two people take turns counting up from 1; on each turn you carry on the count by one or two numbers, and whoever says 30 wins. Thinking forward from the start, there are too many branches; thinking backward, it is simple.\n\nSuppose you reach 27. Your opponent can only stop at 28 or 29, and either way you can go straight to 30 on your next turn, so 27 is a sure win. By the same reasoning, reaching 24 guarantees you get to 27 next turn, and before that come 21 and 18, all the way back to 3. Finally you are back at the start: whoever speaks first can only reach 1 or 2, short of 3, and whoever goes second can always make it up to 3. So in this game you should let the other person count first, and after that, if they count some numbers, you count 3 minus that many.\n\nReasoning backward like this is backward induction. First stand at the last step and see what the person deciding there will choose. Take that result as settled, then step back to the step before, and keep going until you reach the present."
+ },
+ "deep": {
+  "mechanism": "### With each step back, everything after it is already settled\nIf you try Race to 30 forward, every turn offers two ways to count, and there are more than 1.3 million different ways to count from 0 to 30. Backward, you only need to work out ten stops. Standing at 27, whether your opponent counts one number or two, you are the one who reaches 30 next, so the outcome at this stop is already settled: a win. 27 then becomes the new finish line, and you ask whether 24 can guarantee reaching 27. At each stop you only look one step ahead, not at the whole game.\n\n### When someone else makes the last move, use their own sums\nYou ask a carpenter you know well to build you a bookcase. He quotes 1,000 yuan; you pay a deposit first and the rest once the bookcase is made. Once the deposit is paid, the last decision is the carpenter's: build it or not. If he builds it, he spends 700 yuan on materials and gets 1,000 in total once it's done, a net 300; if he doesn't, he simply keeps the deposit for nothing. So he compares just one thing: whether the deposit is more or less than 300 yuan. If the deposit is the full 1,000 yuan, he doesn't build it; lower the deposit to 200 yuan and he will; at 400 yuan he won't again.\n\n### In your place, you'll only put down a deposit under 300 yuan\nThe bookcase is worth 1,200 yuan to you. When it is your turn to set the deposit, first take the carpenter's choice at his step as settled. With a 400-yuan deposit, you foresee that he won't build it, and the deposit is gone: you lose 400 yuan. With a 200-yuan deposit, he will build it, and you pay 1,000 yuan for a bookcase worth 1,200 to you, a gain of 200 yuan. So you will only pay a deposit under 300 yuan.",
+  "origin": "Ernst Zermelo's 1913 paper on chess is often cited as the earliest mathematical argument of this kind, reasoning back from the end of the game. In 1953 Harold Kuhn proved that every finite game in which each move can see all the moves made before it can be solved this way. In 1965 Reinhard Selten introduced subgame perfect equilibrium: a threat that is only meant to scare, and that would not be carried out when the time came, does not count in the answer.",
+  "limits": "Backward induction works best when the end is clear and all earlier moves can be seen: board games, installment payments, taking turns making offers. When there are many moves, as in chess, there are too many lines to work back through, so you can only work back a few moves ahead and estimate a score there. Scheduling a project backward from its delivery date looks like backward induction but is not: there is no second person making a choice at the last step."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When ordering the rounds of a multi-round purchasing review, first think about who makes the final call in the last round and what they care about, and prepare the materials for the earlier rounds around their questions."
+   },
+   {
+    "use": "predict",
+    "text": "Estimate how a deadline negotiation with turn-by-turn counteroffers will end: first work out how much the person making the offer in the last round can take, and every earlier offer will move toward that number."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Computing",
+    "title": "Solving checkers all the way",
+    "text": "In 2007, Jonathan Schaeffer's team at the University of Alberta in Canada announced in *Science* that checkers had been solved: if neither side makes a mistake, the game is always a draw. First they built an endgame database that settled, one position at a time, the win, loss or draw of every position with ten pieces or fewer left on the board. From the other end, they searched forward from the opening, and as soon as a line of play reached the database, its result was settled. Once every opening line was connected to the database, the result of the whole game was a draw."
+   },
+   {
+    "field": "E-commerce",
+    "title": "Auctions that stop on the dot",
+    "text": "In their early years eBay and Amazon both ran online auctions, with almost the same rules except for the ending: eBay stops on the dot, while Amazon automatically extends the auction if anyone bids in the last ten minutes. On eBay, whoever bids in the last second leaves opponents no time to answer; bidding early only shows others your limit. A comparison the economists Alvin Roth and Axel Ockenfels published in 2002 showed that more than half of eBay auctions still had bids in the last ten minutes, while only about one in ten Amazon auctions was extended for that reason. The more experienced the buyers, the later they bid on eBay, and the earlier on Amazon."
+   },
+   {
+    "field": "Sports",
+    "title": "The last round at Gijón",
+    "text": "In the last round of group matches at the 1982 World Cup, West Germany played Austria in Gijón, Spain. Algeria, in the same group, had finished its match the day before, so the two teams could work backward from the standings: if West Germany won by one or two goals, both teams went through; if West Germany drew or lost, it was out; if it won by three or more, Austria was out. West Germany scored in the first ten minutes, and the score sat right in the range that suited both sides. Both teams more or less stopped contesting the ball and played out the game. FIFA saw that the flaw was that the team playing last could see the others' results, and from then on the last round of group matches kicked off at the same time."
+   }
+  ],
+  "ask": [
+   "Who is the last person with a choice? When it's their turn, what does each option get them? Go through the contract, and ask the person themselves.",
+   "For every path I leave open to them, judged by their own sums, would they really be willing to take it when they get there?",
+   "Which item in the contract, the penalty for breaking it, the payment dates or the deadline, would flip their last choice if it changed? Change it one step and work it out again."
+  ],
+  "with": [
+   {
+    "id": "credible-commitment",
+    "sees": "A landlord writes in the lease: one day late with the rent and the lease is ended. Backward induction works it through: when that day comes, finding a new tenant means two months with the place empty, so the landlord doesn't want to end the lease, and the tenant can safely pay late. As a threat, the line is useless. Credible commitment goes and changes the landlord's sums at the last step: he signs an advance agreement with the next tenant first, so someone takes over the moment the lease ends, and when the day comes he really will end it. If you want a line to carry weight, change what is gained and lost at the last step instead of just saying it more firmly."
+   },
+   {
+    "id": "nash-equilibrium",
+    "sees": "Two shops set next month's prices on the same day, and neither can see the other's hand. With no order of moves there is no last step to start from, and backward induction has nowhere to begin; what you look for is the situation in which neither wants to change its price on its own. As soon as one shop posts its price first and the other sets its own after seeing it, there is an order, and then you reason backward. When moves are made at the same time, use Nash equilibrium; only when there is an order and earlier moves can be seen, use backward induction."
+   },
+   {
+    "id": "repeated-games",
+    "sees": "Two small firms send each other customers, and agree to part ways after ten referrals. Backward induction reasons back from the tenth referral, all the way to the first, and finds that no referral is worth making first. Repeated games see that as long as there is a next time, not referring today means the other side won't refer tomorrow, and that is what holds the cooperation up. When the number of rounds is fixed and both sides will reason all the way to the end, guard yourself as backward induction says and keep your leverage for the last round; when the number of rounds is open and you'll meet again, keep your word first and expect the other side to keep theirs."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You've outsourced a small app to a development team. The contract has one month left, and it's already agreed it won't be renewed. The acceptance check only tests whether the features work; whether the code is well written will only show in six months, when the requirements change.",
+    "question": "This month, where is the team most likely to slack off?",
+    "explain": "Looking back from the day the contract ends, in the last month there is no next contract to hold them in check. On the parts the acceptance check tests, slacking means not getting paid; on the parts it can't test, slacking makes no difference to the money they get, and nobody will come after them later.",
+    "options": [
+     {
+      "text": "Nowhere; it will be no different from earlier months",
+      "correct": false,
+      "feedback": "In earlier months, the hope of renewal held them in check. In the last month that hope is gone, so it can't be the same as before."
+     },
+     {
+      "text": "In the places the acceptance check can't catch, which only show up in six months",
+      "correct": true,
+      "feedback": "Slacking on the parts the acceptance check can't see costs them no money, and after the contract ends there is no next contract to hold them to account."
+     },
+     {
+      "text": "On the features that will be tested item by item on the acceptance checklist",
+      "correct": false,
+      "feedback": "These features are tested one by one at acceptance. Slack on them and they fail and don't get paid, so this is where they least dare to slack."
+     },
+     {
+      "text": "On the modules delivered in the first month of the contract",
+      "correct": false,
+      "feedback": "The modules delivered in the first month passed acceptance long ago; this month nobody touches them."
+     }
+    ]
+   },
+   {
+    "stem": "There are 22 matches on the table. You and your opponent take turns removing 1 to 3 matches each time, and whoever takes the last match loses. You go first, and your opponent also makes the best choice at every step.",
+    "question": "How many matches should you take first to be sure of winning?",
+    "explain": "Whoever is left facing 1 match loses. Take 1 and 21 are left; after that, whatever number your opponent takes, you take 4 minus that number. The number left goes 17, 13 and so on down to 1, and the last match falls to your opponent.",
+    "options": [
+     {
+      "text": "Take 3",
+      "correct": false,
+      "feedback": "That leaves 19. Your opponent takes 2, you face 17, and you're held down by them in the same way."
+     },
+     {
+      "text": "Take 2",
+      "correct": false,
+      "feedback": "That leaves 20. Your opponent takes 3, you face 17, and now they hold you down by making each round add up to 4."
+     },
+     {
+      "text": "No first move guarantees a win",
+      "correct": false,
+      "feedback": "Taking 1 guarantees it, so it's not true that every first move is the same."
+     },
+     {
+      "text": "Take 1",
+      "correct": true,
+      "feedback": "You hand 21 to your opponent. From then on, however many they take, you make the round add up to 4, and the last match is left for them."
+     }
+    ]
+   },
+   {
+    "stem": "Two people take turns deciding, with a pot of money on the table at the start. Whoever's turn it is can take the larger share, which ends the game at once and leaves the other person the smaller share; or not take it and pass the money to the other person, and every pass doubles the total. On the last round, the person whose turn it is can only take. Working back from the last round, the first person should take the money right away. When researchers had volunteers actually play, most pairs passed for several rounds before anyone took.",
+    "question": "For the first person, what do these results show?",
+    "explain": "The conclusion of taking on the first move, reached by working backward, assumes everyone after you reasons the same way. When the people after you are willing to pass, passing doubles the total and your share ends up bigger than what you'd have taken at the start, so taking right away actually earns you less.",
+    "options": [
+     {
+      "text": "Taking on the first move only pays if the other person reasons the same way; if they're willing to pass, taking earns you less",
+      "correct": true,
+      "feedback": "The backward conclusion rests on the person at every step reasoning that way. If the other person is willing to pass, that assumption fails."
+     },
+     {
+      "text": "The volunteers didn't understand the rules, which is why they kept passing the money on to later rounds",
+      "correct": false,
+      "feedback": "Nothing in the question suggests the volunteers didn't understand the rules; passing is also a choice with good grounds."
+     },
+     {
+      "text": "The order of reasoning is wrong; you should reason forward from the first person, not back from the last round",
+      "correct": false,
+      "feedback": "The backward order isn't the mistake; the mistake is assuming everyone reasons that way."
+     },
+     {
+      "text": "Each pass doubles the total, so passing all the way to the last round is always the best deal",
+      "correct": false,
+      "feedback": "On the last round the other person takes the larger share, and whoever passed it there gets only the smaller share, so it isn't always the best deal."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "down",
+  "title": "Back from 30 to the start: let them go first",
+  "caption": "Top to bottom is the order you reason back in: each stop makes sure you reach the one above next turn. At the start, whoever counts first can't reach 3.",
+  "nodes": [
+   {
+    "id": "w",
+    "label": "Reach 30",
+    "sub": "Whoever says it wins"
+   },
+   {
+    "id": "a",
+    "label": "Reach 27",
+    "sub": "Any reply, you get to 30"
+   },
+   {
+    "id": "b",
+    "label": "Reach 24",
+    "sub": "Sure to get 27 next"
+   },
+   {
+    "id": "c",
+    "label": "21, 18 … 6",
+    "sub": "Each stop a multiple of 3"
+   },
+   {
+    "id": "d",
+    "label": "Reach 3",
+    "sub": "First number to win"
+   },
+   {
+    "id": "s",
+    "label": "Let them count first",
+    "sub": "They say 1 or 2, you get 3",
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "w",
+    "to": "a",
+    "label": "Back 3"
+   },
+   {
+    "from": "a",
+    "to": "b",
+    "label": "Back 3"
+   },
+   {
+    "from": "b",
+    "to": "c",
+    "label": "Back 3"
+   },
+   {
+    "from": "c",
+    "to": "d",
+    "label": "Back 3"
+   },
+   {
+    "from": "d",
+    "to": "s",
+    "label": "Back to start"
+   }
+  ]
+ }
+}

@@ -1,0 +1,184 @@
+{
+ "id": "first-mover",
+ "name": "First-Mover vs Second-Mover Advantage",
+ "en": "先发与后发",
+ "discipline": "business",
+ "one_line": "A head start only wins if it builds up something rivals can't catch up with.",
+ "story": "Page and Brin start Google after Yahoo and AltaVista, and come from behind to overtake them",
+ "shallow": {
+  "scene": "In 1998, Larry Page and Sergey Brin started Google in a garage in Menlo Park, California. Finding things online was nothing new by then. People used Yahoo's directory of categories and AltaVista's search box every day, and someone else had long since paid the cost of teaching users how.\n\nWhat the two of them went after was the ranking. Google ranked results by which pages, and how many pages, linked to a page, and kept nothing on its page but a single search box. A few years later, Google was the leader in search, and Yahoo and AltaVista had fallen behind.",
+  "plain": "A new night market opens, and your roast sweet potato stall is the first one set up. In the first three weeks you figure out who gets off work when and how sweet people like them, and you also throw away a dozen or so sweet potatoes that didn't sell. The second stall owner arrives a month later, sits in front of your stall for a week counting customers, and ends up with the same answers you did, without throwing away a single sweet potato. That's the whole sum of first movers and second movers: the one who came early paid for the lessons, and the one who came later got the answers for free. Unless you got the only stall with electricity, or your regulars will now buy only from you, by the second month the two stalls are doing about the same business."
+ },
+ "deep": {
+  "mechanism": "### Months of lead have to be turned into something rivals can't catch\n\nBack to that night-market stall. If you arrive only one month early, what you get for it is data on tastes and foot traffic, and a rival can copy all of it by watching for a week. What about six months early? Suppose you've signed an exclusive buying price with a sweet potato wholesaler, and your regulars' stamp cards are filling up. However long the rival watches, he can't copy these two things: his buying price is higher than yours, and the customers won't switch stalls.\n\n### The lessons latecomers skip can be cheap or expensive\n\nThe goods thrown away while trying things out, and the effort of teaching customers to recognize something new, are paid for by whoever arrives first. At a night market these lessons cost no more than a dozen or so sweet potatoes. In a business where demand is still unclear and equipment gets cheaper every year, the lessons are expensive, and what you save by arriving a year late can be more than the extra the early arrival earns.\n\n### What you can learn at a glance can't keep latecomers out\n\nA latecomer can pick up a public menu, the prices and the signature recipes at a glance. A wholesaler's willingness to sell on credit, and the regulars' trust, have to be built up day by day. The late stall owner copied the menu and prices in the first week, and in the third month was still looking for a wholesaler who would give him credit.",
+  "origin": "In 1988 Marvin Lieberman and David Montgomery published \"First-Mover Advantages\" in the *Strategic Management Journal*, listing the benefits and burdens of arriving first one by one. The benefits include building up experience, taking hold of scarce resources, and making it a hassle for customers to switch. The burdens include the cost of trial and error, and shifts in demand and technology. Earlier studies counted only the pioneers that survived. In 1993 Peter Golder and Gerard Tellis added the ones that failed and dropped out to the sample, and found that lasting leadership was not as common as earlier work had claimed.",
+  "limits": "The order of entry matters most in businesses where experience can only be built by doing, and where customers who are used to something can't be bothered to switch, such as accounting software for companies. On the other hand, where things are decided by admission scores or by lottery, the rules don't care who came first, and applying early or late makes no difference. Using \"first-mover advantage\" as a reason to spend heavily and roll out wide while demand is still unclear is a different mistake: the earlier and bigger you roll out, the more of the lessons you pay for on the latecomers' behalf."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "With a new market in front of you, should you go in now or wait a year? Put what entering early lets you build up and the money that waiting a year saves side by side on one sheet of paper, and compare."
+   },
+   {
+    "use": "explain",
+    "text": "When a product is overtaken by a similar one that came out later, look at whether the later one filled a gap the first left open, or only copied what was on the surface."
+   },
+   {
+    "use": "design",
+    "text": "When setting subsidy rules, check whether the companies that apply first could use the subsidy to build up something others can't make up for, then decide whether to keep a separate tier for latecomers."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "The video recorder that came from behind",
+    "text": "Sony launched Betamax in 1975, and JVC launched VHS in 1976. Early Betamax tapes could record only about an hour, while early VHS tapes could record two hours, just enough to hold a movie. VHS went on to win the home video market."
+   },
+   {
+    "field": "Technology",
+    "title": "What can be copied and what can't",
+    "text": "Your team spent six months building an internal expense-claim tool. Later another team used off-the-shelf components and built a prototype in two weeks. Only when they hooked it up to the finance process did they run into rejected claims, claims spanning two months, and permission exceptions. They had copied your interface, but these exceptions were ones your team had dealt with one by one, and it took them half a month to catch up on them all."
+   },
+   {
+    "field": "Personal life",
+    "title": "The neighbors renovated first",
+    "text": "In the same newly finished apartment complex, your neighbors renovated first and put in a whole wall of cabinets. Only after moving in did they find that the power sockets were blocked and the robot vacuum couldn't get under the cabinets. You started work two months later, went over to look at their place, and left room for the sockets and space under the cabinets."
+   }
+  ],
+  "ask": [
+   "If I enter half a year early, what will I have built up that rivals can't copy: exclusive contracts, regulars' habits, or only a way of doing things that anyone can see?",
+   "Which of the pits that earlier players fell into are already out in the open, so I can step around them now?",
+   "Will the trial-and-error money saved by waiting a year make up for the income I'd miss that year?"
+  ],
+  "with": [
+   {
+    "id": "network-effects",
+    "sees": "You're building a local secondhand marketplace app. The case for coming in late is to let others burn money teaching users, so you pay less for the lessons. But buyers only go to the app with the most people, and sellers only post there, so every extra user the early arrival gets puts latecomers a step further behind. Here you need to get in front and push for numbers. Switch to a budgeting tool that a user can install alongside several others, and that works fine for one person alone, and network effects do nothing for whoever arrives first; the lessons saved by waiting are the real gain."
+   },
+   {
+    "id": "survivorship-bias",
+    "sees": "You have a collection of \"came from behind and won\" case studies, and want to use it to decide to wait before going in. Survivorship bias reminds you that the collection holds only the companies that won in the end; the ones that arrived just as late and went under are nowhere to be seen. First find the full list of early and late arrivals in the same industry, then count how many of each survived."
+   },
+   {
+    "id": "switching-costs",
+    "sees": "Your budgeting app launched a year before a rival's, but users can export all their records in one click. First and second movers looks at the extra year you built up; switching costs and lock-in asks whether that year turned into a reason users can't leave. The easier it is to export, the thinner your lead. You start building budgets that families share, and custom categories people have used for years; those two things can't be exported."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You were the first to set up rental power banks for phones in a county town, and all three hundred of your kiosks support only the old connector. Two years later, every phone has switched to the new connector, and the people who came in later go straight to new kiosks.",
+    "question": "This time, where did being first cost you?",
+    "explain": "Your three hundred kiosks were built for the old connector, so when the connector changed they all had to be replaced. Latecomers built for the new connector and never had that cost.",
+    "options": [
+     {
+      "text": "Latecomers pay lower rent for their kiosks, so each one earns more than yours.",
+      "correct": false,
+      "feedback": "There's nothing in the question about rent. The difference comes from old versus new connectors."
+     },
+     {
+      "text": "Latecomers pushed you out of your locations, and your kiosks have nowhere to go.",
+      "correct": false,
+      "feedback": "Nothing in the question says your locations were taken. The cost came from the change of connector."
+     },
+     {
+      "text": "You bet on a connector that quickly went out of date, and all the kiosks have to be replaced.",
+      "correct": true,
+      "feedback": "Three hundred kiosks only take the old connector, so once phones moved on they were no use and all had to be replaced. Latecomers went straight to new ones and saved that money."
+     },
+     {
+      "text": "People in the town didn't know what a power bank was, and the money spent teaching the market was wasted.",
+      "correct": false,
+      "feedback": "Nothing in the question says users didn't take to it. The cost came from the change of connector two years later."
+     }
+    ]
+   },
+   {
+    "stem": "On an island, the authorities approve only one new ferry route a year, and this year there is one license. A shipping company from a nearby city wants to wait two years: electric ferries will be cheaper by then, and it can watch how others run the route first.",
+    "question": "What should this plan to wait worry about first?",
+    "explain": "Cheaper boats and other people's operating data save on investment, but there is only one license, and in two years it may be gone.",
+    "options": [
+     {
+      "text": "Other people's operating data won't be useful, so waiting won't teach them anything.",
+      "correct": false,
+      "feedback": "Operating data shows passenger numbers, breakdowns and costs, so there is something to learn by waiting. That isn't the worry."
+     },
+     {
+      "text": "In two years the license may have gone to someone else, and the money saved will have nothing to be spent on.",
+      "correct": true,
+      "feedback": "Route licenses come in a fixed number, and during the two years of waiting this one may be given out. The money saved from cheaper equipment and from watching others is only any use with a license."
+     },
+     {
+      "text": "Electric ferry technology isn't mature, and it won't be cheaper in two years either.",
+      "correct": false,
+      "feedback": "The question says the ferries will be cheaper. That's a given, not a risk."
+     },
+     {
+      "text": "The company that arrives first is certain to hold the route for the long term.",
+      "correct": false,
+      "feedback": "Getting the license first only takes the spot. Whether it can hold it for long depends on how it runs the route, so \"certain\" goes too far."
+     }
+    ]
+   },
+   {
+    "stem": "Your driving school launched online booking a year before its rival in the same city. The system is general-purpose software rented from a third party, students can book lessons without registering, and all the data sits with the software company. Six months later, the rival rents the same software.",
+    "question": "What did this year's lead leave you that your rival can't catch up with?",
+    "explain": "The software, the data and the students' habits never became anything that belonged only to you, so the year's lead didn't build up into anything.",
+    "options": [
+     {
+      "text": "Almost nothing: by renting the same software, the rival catches up straight away.",
+      "correct": true,
+      "feedback": "The software is general-purpose, students aren't tied to you, and the data isn't in your hands, so the year didn't turn into anything the rival can't make up."
+     },
+     {
+      "text": "Students are used to your booking process, and the rival will have to teach them all over again.",
+      "correct": false,
+      "feedback": "Students don't register, and it's the same software, so there are no habits to teach again."
+     },
+     {
+      "text": "The booking data: you have a year more of lesson records than your rival.",
+      "correct": false,
+      "feedback": "All the data sits with the software company. Neither you nor your rival can get at it, so there's no extra year to speak of."
+     },
+     {
+      "text": "An exclusive system: your rival can't get the software you use.",
+      "correct": false,
+      "feedback": "The question says the rival rented the same software six months later."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "grid",
+  "title": "If a head start can be copied, it lasts a week",
+  "caption": "A month early buys tastes and crowds, which a rival copies in a week of watching. Six months early buys an exclusive price and stamp cards, which he never can.",
+  "rowLabel": "Early by",
+  "rows": [
+   "1 month",
+   "6 months"
+  ],
+  "cols": [
+   "What you got",
+   "Can rivals copy?"
+  ],
+  "cells": [
+   [
+    "Tastes and crowds",
+    {
+     "text": "Copied in a week",
+     "sub": "Without wasting one potato",
+     "tone": "warn"
+    }
+   ],
+   [
+    "Own price, stamp cards",
+    {
+     "text": "Can't be copied",
+     "sub": "Pays more; regulars stay",
+     "tone": "accent"
+    }
+   ]
+  ]
+ }
+}

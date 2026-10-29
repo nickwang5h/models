@@ -1,0 +1,240 @@
+{
+ "id": "price-and-value",
+ "name": "Price vs Value",
+ "en": "价格与价值",
+ "discipline": "investing",
+ "one_line": "Price is what you pay, value is what you'll get back, and they often don't match.",
+ "story": "Microsoft offers 31 dollars a share, about 44.6 billion dollars, for Yahoo, over 60% above the last close; Yahoo's board turns it down as too low, and in May Microsoft walks away",
+ "shallow": {
+  "scene": "Most people who have sold old things on a secondhand-goods app have run into this: a buyer names a price, you think it's too low, and you don't sell. What they offered is the price; the number in your head is the value, and each is worked out on its own. It's the same between big companies.\n\nIn February 2008, Microsoft publicly offered to buy Yahoo for 31 dollars a share, about 44.6 billion dollars in all, more than 60% above Yahoo's share price the day before. Ten days later, Yahoo's board turned it down, on the grounds that the price greatly undervalued the company. In early May, Microsoft withdrew its offer.\n\nWhat the board compared the offer with was not the share price, but its own estimate of how much money Yahoo could still make in the years ahead. By its sums, that money came to more than 31 dollars a share, so it would not sell even at a price that high.",
+  "plain": "Suppose someone sells you a gift card worth 100 yuan that can only be used a year from now. How much would you pay for it today? Nobody would pay the full 100. Say the money you have can safely earn 8% in a year. Put 92.6 yuan to work today and in a year it becomes 100 yuan, so the card is worth at most 92.6 yuan. If you had to wait five years to use it, about 68 yuan today would grow to 100 yuan in five years, so the card is worth only about 68 yuan. The later the money arrives, the less it is worth today.\n\nPrice and value are two numbers like this. The number the seller names is the price. Take the money you'll get in the future and bring it back to today at the return your money could have earned anyway, and what you get is the value. Now a bigger deal: someone asks 420,000 for the right to collect 100,000 at the end of each year for the next five years, and nothing after that. Five years comes to 500,000 in all, which looks like a profit.\n\nBut the 100,000 coming in a year is worth only 92,600 today, and the one coming in five years only 68,000. Bring all five back to today and they add up to about 399,000; the extra 20,000-plus you'd pay is the part you'd be overpaying."
+ },
+ "deep": {
+  "mechanism": "### Money that arrives a year later gets marked down once more\n\nWhat 100,000 a year from now is worth today depends on how much the money you have can earn in a year. If your money can earn 8% a year, you ask the right to collect to give you 8% too: put 92,600 to work today and in a year it is exactly 100,000, so that payment is worth 92,600 today. For 100,000 two years from now, 85,700 today grows to that in two years, so it is worth only 85,700. If you collect $C$ at the end of each year, ask for a return of $r$ a year, and collect for $n$ years in all, the value is:\n\n$$\\frac{C}{1+r}+\\frac{C}{(1+r)^2}+\\cdots+\\frac{C}{(1+r)^n}$$\n\nWhat this says is: money that arrives in the first year is divided by $1+r$ once, money that arrives in the second year twice, money in year so-and-so that many times, and then all the payments are added up. That right to collect 100,000 a year for five years adds up to about 399,000 at 8%.\n\n### Ask for a different return and the same income has a different value\n\nLower the return you ask for to 4%, and each division takes off less: the right to collect is worth about 445,000, and the asking price of 420,000 turns out to be cheap. Raise it to 12%, and it is worth only about 360,000; the asking price is nearly 60,000 too high. The asking price hasn't changed by a word; whether it's worth it depends on how much this money of yours could have earned elsewhere.\n\n### Each year cut from the term takes one payment off the value\n\nBack to 8%. If the contract has only four years left, still 100,000 a year, it is worth about 331,000. The 68,000 that's gone is exactly what the farthest payment is worth brought back to today. The asking price of 420,000 hasn't moved a cent, but the right you're buying is a year shorter.\n\n### Behind an asking price is a demand on future income\n\nWork backward from the asking price: for 420,000 not to lose money at 8%, you would need to collect about 105,000 a year. The contract says 100,000, about 5,000 yuan short each year, and those 5,000 yuan would have to come from facts outside the contract, such as the rent going up when it comes due.",
+  "origin": "No single person invented this distinction. In their 1934 book *Security Analysis*, Benjamin Graham and David Dodd set out the difference between market price and intrinsic value; in his 1938 book *The Theory of Investment Value*, John Burr Williams brought future dividends back to their value today. Warren Buffett later made the idea widely known through his investing in companies.",
+  "limits": "For a right to collect payments, a lease or a mature business, the income can be listed and the value can be worked out. For an idea that has no income yet, every step of the forecast rests on hope, and working out a precise number is actually misleading. The value of a painting or an old keepsake lies in your own experience of it, and only your own budget can set it. Nor can the return you ask for be picked at will: the same right to collect, brought back at 4% and at 12%, differs by more than 80,000, so you could get any value you wanted."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When someone comes offering to buy your shop or equipment, or you want to buy someone else's, first write down how much you'll receive each year once it's bought and for how many years, then take that number into the talks against theirs."
+   },
+   {
+    "use": "design",
+    "text": "When a company draws up the approval form for large purchases, add two columns next to the quote: the expected income, and the years it will arrive in. Then the people approving it have something to compare."
+   },
+   {
+    "use": "predict",
+    "text": "As soon as news comes of a rise in interest rates, you can tell straight away that assets whose income comes mostly many years from now will lose more value than assets that pay out soon."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "The price to take it off their hands three years later",
+    "text": "At the end of 1994, Quaker Oats paid about 1.7 billion dollars for the drinks brand Snapple, a price that bet on Snapple making big profits every year from then on. In fact, Snapple's sales fell from 674 million dollars in 1994 to 550 million in 1996, and in 1996 alone it lost more than 100 million dollars. A business losing money year after year can't support 1.7 billion, and three years later Quaker sold it to the Triarc company for about 300 million dollars."
+   },
+   {
+    "field": "Technology",
+    "title": "An app that's losing users",
+    "text": "Someone wants to sell you a budgeting app that made a net 36,000 last year, and asks 100,000, three years' income. You open the admin dashboard: new users have stopped growing, and half the existing users leave each year. You estimate the income halving every year: 36,000, 18,000, 9,000 and so on. Even collected forever it comes to no more than 72,000, and brought back to today at 8% it is about 62,000. You offer 50,000, the seller refuses, and you don't buy."
+   },
+   {
+    "field": "Personal life",
+    "title": "The pricier washing machine pays back the difference",
+    "text": "Two washing machines do the same job; one costs 2,000 yuan and the other 3,000. You work out that the pricier one saves 300 yuan a year in water and electricity, and you plan to use it for five years. You bring each year's 300 yuan in savings over the five years back to today at 5% a year, and the total is about 1,300 yuan, more than the 1,000-yuan difference in price, so you choose the pricier one."
+   }
+  ],
+  "ask": [
+   "After I buy it, how many payments will reach me each year, and until which year?",
+   "If I cover up the other side's price, which facts let me write this number down myself?",
+   "Where does the return I ask for come from: put this money somewhere else, and how many percent a year can it safely earn?"
+  ],
+  "with": [
+   {
+    "id": "supply-demand",
+    "sees": "You want to sell an old apartment that has a tenant in it. Three buyers' offers are all around 3 million, below the 3.4 million you worked out from the rent. Supply and demand reads these offers as a signal: the buyers know the outlook for this area better than you, and waiting may not bring a higher price. Value, on the other side, says the rent comes in every year, so there's no need to sell for less than 3.4 million. If you don't need the money soon, wait as value says; if a debt falls due next month, you can only accept what the market will pay right now."
+   },
+   {
+    "id": "opportunity-cost",
+    "sees": "A friend values that right to collect at a bank deposit rate of 4%, and says 420,000 is a bargain. Your mortgage rate is 6%, so putting the same 420,000 toward paying off the mortgage early saves a sure 6% a year. Opportunity cost has you bring it back at 6%: worked out that way it is worth about 421,000, and the asking price is hardly a bargain at all."
+   },
+   {
+    "id": "margin-of-safety",
+    "sees": "You estimate the value at 400,000 and the asking price is 390,000. Is that cheap? Value stops there. Margin of safety goes on to ask: if your estimate is 15% off, only about 340,000 is left. Can this price still hold up?"
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're thinking of buying a small hardware factory for an asking price of 8 million. On the books, the buildings and equipment originally cost 20 million; for a competitor to build the same factory new today would cost 15 million. For the past three years, after collecting payments and paying wages and materials, the factory has been left with about 1.2 million in cash each year. But the equipment is old, and from next year it will need another 1.1 million a year for replacement parts just to keep output up. Assume these numbers stay the same from now on, the return you ask for is at least 4% a year, and no other buyer is competing.",
+    "question": "How do you judge the 8 million asking price?",
+    "explain": "The factory's value comes from the money it actually leaves you each year after you buy it. If it leaves 100,000, then even collected forever, 4% can only support 2.5 million; the cost to build, the original cost and a haggled-down price have nothing to do with this income.",
+    "options": [
+     {
+      "text": "It actually leaves only about 100,000 a year, worth less than 2.5 million at 4%, so the asking price is too high.",
+      "correct": true,
+      "feedback": "If it leaves 100,000 a year, even collected forever, 4% supports only 2.5 million; the asking price is more than three times that."
+     },
+     {
+      "text": "No other buyer is competing, so if you push the price down to 4 million before closing, you've got a bargain.",
+      "correct": false,
+      "feedback": "4 million is still more than what the money the factory leaves each year can support. You've pushed down the price, but the value hasn't changed."
+     },
+     {
+      "text": "It brings in 1.2 million in cash a year and pays for itself in under seven years; that's fast enough to buy.",
+      "correct": false,
+      "feedback": "Of the 1.2 million, 1.1 million a year has to go on replacement parts. It actually leaves only 100,000, so paying for itself would take eighty years."
+     },
+     {
+      "text": "Building the same factory new costs 15 million, and 8 million is only a little over half that, so it's cheap.",
+      "correct": false,
+      "feedback": "15 million is what it costs someone else to build a new one, not the money this factory can give you from now on. If it leaves only 100,000 a year, no building cost, however high, can support the asking price."
+     }
+    ]
+   },
+   {
+    "stem": "You hold shares in a dry-cleaning chain, and today you get a takeover offer: 18 yuan a share, 44% above yesterday's closing price of 12.5 yuan. You estimate the company can pay out 1.6 yuan a share to its shareholders every year from now on, never growing and never stopping; the return you ask for is 8% a year.",
+    "question": "How do you respond to this offer?",
+    "explain": "1.6 yuan a year, brought back at 8%, makes each share worth about 20 yuan. The offer of 18 yuan is above yesterday's price but below the value you worked out yourself.",
+    "options": [
+     {
+      "text": "A 44% premium is already high, far above a typical rise, so accept the price.",
+      "correct": false,
+      "feedback": "The 44% compares the offer price with yesterday's price, a price with a price. The 20 yuan you worked out yourself never entered the comparison."
+     },
+     {
+      "text": "Yesterday's closing price was 12.5 yuan, which shows the company is only worth that much; 18 yuan is already more than enough.",
+      "correct": false,
+      "feedback": "The closing price is the number buyers and sellers traded at yesterday, not the money you'd receive from holding the shares from now on."
+     },
+     {
+      "text": "The last time a competitor was bought, the price was 15 yuan; 18 yuan beats it, so accept.",
+      "correct": false,
+      "feedback": "Another company's takeover price tells you about that company's market; how much this one can pay out each year isn't in it."
+     },
+     {
+      "text": "1.6 yuan a year at 8% makes each share worth about 20 yuan. 18 yuan is below that, so don't accept.",
+      "correct": true,
+      "feedback": "1.6 yuan divided by 8% gives 20 yuan. The offer is 2 yuan lower, so selling at this price means getting less."
+     }
+    ]
+   },
+   {
+    "stem": "You're thinking of buying a year pass to a botanical garden for 600 yuan. A single ticket to the same garden costs 30 yuan a visit, and single tickets and the year pass give access to exactly the same areas and facilities. Last year you went 12 times in all, and you plan about the same this year. The poster at the entrance says the year pass costs \"as little as 15 yuan a visit,\" which is worked out on 40 visits a year.",
+    "question": "Are these 600 yuan worth it to you?",
+    "explain": "What the year pass works out to per visit depends on how many times you go. At 12 visits, single tickets cost 360 yuan in total; at 20 visits, the two ways of paying come out even.",
+    "options": [
+     {
+      "text": "Once the money's spent, it pushes you to go more, so you'll always make it back; get the pass first and see.",
+      "correct": false,
+      "feedback": "Paying doesn't make you go more. To make the money back you'd need to go 20 times, and that depends on your having reasons to go in the first place."
+     },
+     {
+      "text": "The year pass lets you use the lockers and lounge, and using those makes it worth it, so get it.",
+      "correct": false,
+      "feedback": "Single tickets give the same facilities, so using them gets you nothing more than a single ticket would."
+     },
+     {
+      "text": "At 12 visits, single tickets cost 360 yuan in total; the year pass only avoids a loss at 20 visits, so you'd first need reasons to go eight more times.",
+      "correct": true,
+      "feedback": "600 divided by 30 gives 20 visits, the point where the two ways of paying come out even; your 12 visits fall below it."
+     },
+     {
+      "text": "15 yuan a visit is 15 yuan cheaper than a single ticket, so the year pass is a good deal; get it.",
+      "correct": false,
+      "feedback": "The 15 yuan is worked out on 40 visits. At your 12 visits it comes to 50 yuan a visit, more than a single ticket."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "500,000 over five years is worth 399,000 today",
+  "caption": "Dashed adds each 100,000 as is; solid brings each to today first, so later years add less. Drag the return to move it, the years to see if it beats the price.",
+  "x": {
+   "label": "Years collected"
+  },
+  "y": {
+   "label": "Received (× 10k yuan)",
+   "unit": "",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "r",
+    "label": "Return you ask",
+    "min": 2,
+    "max": 14,
+    "step": 1,
+    "value": 8,
+    "unit": "%"
+   },
+   {
+    "id": "m",
+    "label": "Contract years",
+    "min": 1,
+    "max": 10,
+    "step": 1,
+    "value": 5,
+    "unit": " yrs"
+   }
+  ],
+  "model": {
+   "steps": 10,
+   "init": {
+    "i": 0,
+    "v": 0
+   },
+   "next": {
+    "i": "i+1",
+    "v": "v+10/(1+r/100)^(i+1)"
+   }
+  },
+  "series": [
+   {
+    "name": "Added straight up",
+    "expr": "10*k",
+    "tone": "muted",
+    "dashed": true
+   },
+   {
+    "name": "Brought to today",
+    "expr": "v",
+    "tone": "accent",
+    "dots": "small"
+   }
+  ],
+  "marks": [
+   {
+    "y": 42,
+    "text": "Asking 420,000"
+   },
+   {
+    "x": "m"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Value today",
+    "expr": "10*(1-(1+r/100)^(-m))/(r/100)",
+    "unit": " × 10k yuan",
+    "digits": 1
+   },
+   {
+    "label": "Added straight up",
+    "expr": "10*m",
+    "unit": " × 10k yuan",
+    "digits": 0
+   },
+   {
+    "label": "Last payment today",
+    "expr": "10/(1+r/100)^m",
+    "unit": " × 10k yuan",
+    "digits": 1
+   }
+  ]
+ }
+}

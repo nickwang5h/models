@@ -1,0 +1,240 @@
+{
+ "id": "inversion",
+ "name": "Inversion",
+ "en": "逆向思维",
+ "discipline": "thinking",
+ "one_line": "If you can't see how to succeed, work out how you'd fail and avoid that.",
+ "story": "Munger's commencement speech at the Harvard School: how to make sure you live a miserable life",
+ "shallow": {
+  "scene": "In 1986, Charlie Munger gave the commencement speech at the Harvard School, a high school in Los Angeles. In front of him sat a crowd of students about to graduate, and instead of telling them how to succeed, he told them how to make sure they would be miserable for the rest of their lives. He wrote out the prescriptions one by one: make sure people can never trust you; learn only from your own experience, never from other people's; when setbacks come, go down at the first, second or third one and never get up again.",
+  "plain": "If you're running an event and want every guest to be happy, nobody can list a way of doing it that can't go wrong. But ask how to ruin it, and you can list several at a glance: the wrong address sent out, the venue never booked, the host not knowing what time it starts. That's where inversion starts: turn \"how do I do this well\" around into \"how would this go wrong,\" then block the ways you listed one by one, and the event has several fewer ways to fail."
+ },
+ "deep": {
+  "mechanism": "### Asked forward, the question never ends; asked backward, you can count the answers\n\n\"How do I run a good event\" has no edge: the program, the mood, the sound system, each one can always be made better, and no line tells you \"that's done.\" \"How would it go wrong\" is much narrower. For the event to happen, a chain of pieces has to be in place at the same time: guests know the address, the venue is booked, the host knows when to start. If even one of those pieces breaks, the event fails, so from each piece you can work back to one concrete way it could fail. Once you've counted the pieces, you've counted the ways to fail too, and you can tick them off one by one before the doors open.\n\nOn the other hand, for things like starting a business or writing a novel, where nobody can say which pieces are essential, the ways to fail can't be counted either.\n\n### Asking backward turns up the pieces you'd never list going forward\n\nWhen you list \"how to run a good event\" going forward, you write the program, the mood, the sound system: all things you want to do better. The venue address doesn't make that list. It looks too obvious, and nobody thinks it takes any effort. Turn it around and ask \"how can I make sure nobody shows up,\" and the very first answer is sending the wrong address. What ruins things is often exactly this kind of obvious piece; going forward, you don't see it, and only asking backward brings it out. Which of the ways to fail you block first depends on two things: how likely it is to happen, and how big the loss is if it does.\n\n### A concrete way to fail turns straight into an action\n\n\"Improve the experience\" is a goal, and reading it doesn't tell you what to do tomorrow. \"Guests can't find the venue\" is a concrete way to fail, and working back from it gives you two actions: send a map pin, and check the entrance.",
+  "origin": "Inversion comes from solving math problems and from everyday reasoning, and nobody is credited with inventing it. Carl Gustav Jacobi, a 19th-century German mathematician, is said to have often told his students, \"Invert, always invert.\" When he worked on elliptic functions, he did exactly that: he looked at a kind of integral that was hard to calculate the other way around, and the function he got by turning it around was much easier to use. Munger borrowed Jacobi's line and applied it to investing and life decisions, and that 1986 commencement speech is the best-known example. This card is about Munger's kind of inversion: first list the ways to ruin something, then block them one by one.",
+  "limits": "For things where one wrong step can't be taken back, like buying a home, a long trip or major surgery, asking backward works best: you can say where it would fail, and you can do something about it. Writing a novel or making a new product is different. Avoid everything readers or users might dislike, and all you get is something with nothing wrong with it, which isn't necessarily something people love to read or use. Asking backward can also trap you. Someone about to start a business lists their worries, and as long as one of twenty items is unsolved, they won't begin. But the ways a new business can fail can't all be counted, so the list just keeps getting longer and the shop never opens."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Before writing the parking rules for your housing complex, play the resident most eager to take advantage, and block in the rules, one by one, every loophole you can think of."
+   },
+   {
+    "use": "explain",
+    "text": "A new restaurant gets hardly any repeat customers. Ask \"if I wanted to drive customers away on purpose, what would I do,\" list slow service, salty food and prices nobody can make sense of, then check which of these is already happening there."
+   },
+   {
+    "use": "act",
+    "text": "The night before a road trip with your parents, check only for things that could end the trip halfway: the car not inspected, the motion-sickness pills left behind, no plan for lunch. Once those are confirmed, the rest of the route can go any way."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Medicine",
+    "title": "Check what could go wrong before surgery",
+    "text": "The World Health Organization had a group of experts draw up a one-page surgical safety checklist, which is the answer to asking backward, \"how could this operation go wrong?\" Before anesthesia, before the first cut and before the patient leaves the operating room, the team stops once each time and confirms each item: what the patient is allergic to, whether the breathing tube will be hard to put in, whether they might lose more than 500 milliliters of blood, and whether the antibiotic to prevent infection was given within 60 minutes before the first cut. In a study published in 2009, eight hospitals in eight cities started using this list, and serious complications fell from 11% to 7%, while deaths in hospital after surgery fell from 1.5% to 0.8%."
+   },
+   {
+    "field": "Investing",
+    "title": "First see what would force a sale",
+    "text": "He has to pay for a home in six months and wants to put that money into the stock market in the meantime, and even borrow to buy more. Turn it around and ask \"what would force me to sell early,\" and the answer is right there: if the payment day happens to come as stock prices fall, he'll have to sell his shares cheap, and the borrowed money will bring demands for repayment. He set the home money aside and dropped the loan."
+   },
+   {
+    "field": "Personal life",
+    "title": "First stop wearing down trust",
+    "text": "He often comes home late. He wants to plan a trip to mend things with his partner, yet he still doesn't say where he's going and forgets to call back when he says he will. Turn it around and ask \"how would I make my partner trust me even less,\" and the answer is concrete: going out of contact, breaking promises, making up excuses afterward. He first makes sure to say where he'll be and to do what he promised, and only then plans the trip."
+   }
+  ],
+  "ask": [
+   "If I set out to ruin this myself, how would I do it? Is any step in my current plan already doing that?",
+   "Of these ways to fail, which have facts behind them, and which are just pictures of what I'm afraid of?",
+   "Once the gaps that have evidence behind them are blocked, what do I still have to actually get done for this to succeed?"
+  ],
+  "with": [
+   {
+    "id": "premortem",
+    "sees": "The team starts work next week. Everyone has doubts, but nobody in the meeting wants to say something gloomy. Having each person first assume \"the project failed six months from now\" and then write down why speaks up for them: that's a premortem. Inversion suits one person sitting down to list every way one thing could fail."
+   },
+   {
+    "id": "one-way-two-way-doors",
+    "sees": "You need someone to make a promotional video for your shop. If they shoot a sample first and you can switch to someone else if you're not happy, one try tells you whether it works, and spending a week listing every way to fail only gets in the way. If you have to sign up for a whole year at once, with no refunds, you can't back out, so the week is worth spending, and you should also negotiate a way to end the contract. Inversion imagines the worst about everything and can't tell which doors you can walk back through; one-way and two-way doors tells you to just do the things you can undo, and think hard only about the ones you can't."
+   },
+   {
+    "id": "probabilistic-thinking",
+    "sees": "Your event is in three days. You've listed twenty ways it could fail, and three days is only enough to block four. Forgetting to book the venue is unlikely, but if it happens the whole event is off; the sound system crackling now and then will happen every day, and at worst the audience frowns. Estimate how likely each one is and how big the loss would be, multiply the two, rank them, and the top four pick themselves. That step is probabilistic thinking; inversion only makes the list."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A company is getting ready to move its customer data into a new system. In a trial move, two customer records with the same name were merged, and their transaction histories got mixed together. The script for the real move has permission to overwrite the original database. The team has kept a backup but has never tried restoring from it. The person in charge wants to go live on Friday.",
+    "question": "Before going live, which step should come first?",
+    "explain": "First ask which actions would make the move fail in a way that can't be undone. Wrong merges, overwriting the original database, and being unable to restore link up into one concrete way to fail. Block that, then check whether the new system works well.",
+    "options": [
+     {
+      "text": "Save another full backup, go live on schedule, and check the records after launch.",
+      "correct": false,
+      "feedback": "The backup has never been tested by restoring it, so saving one more just means one more untested copy. If you only find out it can't be restored after the original database is overwritten, there's no fixing it."
+     },
+     {
+      "text": "First list every possible data problem, and go live only when each has a plan for handling it.",
+      "correct": false,
+      "feedback": "Trying to cover every possible problem spreads your effort thin and keeps launch from ever happening; the serious way to fail that already has evidence in front of you should be blocked first."
+     },
+     {
+      "text": "First tune the common searches and page speed, so most customers find it smooth after launch.",
+      "correct": false,
+      "feedback": "Customers' transaction histories are already mixed up; however fast the pages are, what people see is wrong data."
+     },
+     {
+      "text": "First test the merging rules on an isolated copy, and try one complete restore.",
+      "correct": true,
+      "feedback": "Wrong merges already showed up in the trial move, and overwriting the original database would make the mistake impossible to undo. Testing the rules and the restore first blocks a way to fail that has evidence behind it and can be dealt with."
+     }
+    ]
+   },
+   {
+    "stem": "You're thinking of investing in a neighborhood bakery. Your partner has locked in a fixed rent for three years and has a repair contract for the ovens. He says, \"The two ways it could go under, the rent suddenly going up and the ovens being out of action for a long time, are both ruled out, so this shop is worth investing in.\" So far there are only sign-ups from local residents for free tastings, and no paid orders yet.",
+    "question": "How should you answer your partner?",
+    "explain": "Your partner found two ways to fail and blocked them; the mistake is in the next step of reasoning. Avoiding failure only keeps the chance of success open. Whether anyone will pay, and whether that money covers the costs, still has to be checked directly.",
+    "options": [
+     {
+      "text": "Don't invest yet: first get ingredient costs low enough, and decide once spending is down.",
+      "correct": false,
+      "feedback": "However low you push the costs, that doesn't answer how many people are willing to pay."
+     },
+     {
+      "text": "Go ahead: the two main costs are secured, and the free sign-ups show there's enough demand.",
+      "correct": false,
+      "feedback": "Free tastings don't show anyone is willing to pay; ruling out two ways to go under doesn't mean the business is sure to work."
+     },
+     {
+      "text": "Too early to say: first test how many people will pay, then work out whether the income covers the costs.",
+      "correct": true,
+      "feedback": "The fixed rent and the repair contract clear away two obstacles; whether the business works still depends on whether people pay and whether that money covers the costs."
+     },
+     {
+      "text": "Go ahead: several similar shops nearby are getting by, so this one can make money too.",
+      "correct": false,
+      "feedback": "The other shops may have different rents, members and service; their getting by doesn't prove this new shop can make money."
+     }
+    ]
+   },
+   {
+    "stem": "In your spare time, you want to shoot a short film about the old shops in your neighborhood. Two shop owners have already agreed to appear, but you've listed a string of things that could go badly: people finding the footage ordinary, interviewees changing their minds at the last minute, people online complaining that your choice of shops was biased. So you decide to put it off indefinitely, until you find a plan that won't cause any negative reaction at all.",
+    "question": "Where did your approach go wrong?",
+    "explain": "In creative work, you can remove definite obstacles ahead of time, but you can't guarantee nobody will criticize it. Here, every bad outcome you imagined was turned into a bar to clear before filming, which even took away the chance to try something and learn. Shooting a short test clip would get you real feedback.",
+    "options": [
+     {
+      "text": "You haven't thought through the negative reactions fully enough; list the possible criticisms more completely before deciding.",
+      "correct": false,
+      "feedback": "The longer the list, the more worries with nothing behind them, which only makes it harder to start; it doesn't help you judge which risks are worth dealing with."
+     },
+     {
+      "text": "You treated every negative reaction that hasn't happened and has no evidence behind it as a reason to say no, and demanded that all worries be cleared first.",
+      "correct": true,
+      "feedback": "None of these worries had become a clear way to fail, yet each was given a veto. You could first confirm permission, shoot a short test clip, then adjust based on real feedback."
+     },
+     {
+      "text": "You thought about bad outcomes before filming; you should film first and see afterward which problems need dealing with.",
+      "correct": false,
+      "feedback": "Thinking ahead isn't wrong; problems like permission should be handled before filming. The mistake was treating every worry as a bar to clear."
+     },
+     {
+      "text": "You cared too much about what people online would say; as long as the shop owners agree, ignore everything else and just film.",
+      "correct": false,
+      "feedback": "The shop owners' permission is one of the conditions for filming, not all of them; the risks worth dealing with still have to be picked out by their real consequences and evidence."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Asked backward, every item can be ticked off",
+  "caption": "Asked forward, you get endless directions. Asked backward, you find pieces you'd never list, like address, venue and host, each a step to tick off in advance.",
+  "nodes": [
+   {
+    "id": "q1",
+    "label": "How to do well?",
+    "sub": "Asked forward",
+    "tone": "muted"
+   },
+   {
+    "id": "q2",
+    "label": "How would it fail?",
+    "sub": "Asked backward",
+    "tone": "accent"
+   },
+   {
+    "id": "n1",
+    "label": "Program, mood, sound",
+    "sub": "How good is enough?",
+    "tone": "muted"
+   },
+   {
+    "id": "f1",
+    "label": "Wrong address sent",
+    "sub": "Looks too obvious",
+    "tone": "warn"
+   },
+   {
+    "id": "f2",
+    "label": "Venue not booked",
+    "tone": "warn"
+   },
+   {
+    "id": "f3",
+    "label": "Host unsure of time",
+    "tone": "warn"
+   },
+   {
+    "id": "a1",
+    "label": "Send pin, check door"
+   },
+   {
+    "id": "a2",
+    "label": "Book, call to confirm"
+   },
+   {
+    "id": "a3",
+    "label": "Run sheet day before"
+   }
+  ],
+  "edges": [
+   {
+    "from": "q1",
+    "to": "n1",
+    "tone": "muted"
+   },
+   {
+    "from": "q2",
+    "to": "f1"
+   },
+   {
+    "from": "q2",
+    "to": "f2"
+   },
+   {
+    "from": "q2",
+    "to": "f3"
+   },
+   {
+    "from": "f1",
+    "to": "a1",
+    "label": "Block"
+   },
+   {
+    "from": "f2",
+    "to": "a2",
+    "label": "Block"
+   },
+   {
+    "from": "f3",
+    "to": "a3",
+    "label": "Block"
+   }
+  ]
+ }
+}

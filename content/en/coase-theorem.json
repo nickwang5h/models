@@ -1,0 +1,187 @@
+{
+ "id": "coase-theorem",
+ "name": "Coase Theorem",
+ "en": "科斯定理",
+ "discipline": "economics",
+ "one_line": "If bargaining is cheap, things end up with whoever uses them best, whoever held the right first.",
+ "story": "In Sturges v. Bridgman, a confectioner's grinding noise disturbs a doctor's new consulting room and the Court of Appeal upholds the ban; Coase revisits the case in 1960",
+ "shallow": {
+  "scene": "London, 1879. For years the confectioner Bridgman had pounded sugar and other ingredients in two large mortars at the back of his shop. His neighbor, the doctor Sturges, later built a new consulting room in his own garden, and whenever the mortars were going, he couldn't examine his patients properly. The case went to the English Court of Appeal, and the judges upheld the injunction: the confectioner could no longer make this noise. Eighty-one years later, in a 1960 paper, Ronald Coase brought the case up again. Even if the doctor won, he said, if the confectioner set more store by those two mortars than the doctor did by quiet, the confectioner could perfectly well pay the doctor and buy his right to quiet.",
+  "plain": "The small shop downstairs wants to mount its air conditioner's outdoor unit on the outside wall under your window, which saves 360 yuan compared with running a separate line of pipes. The unit hums, and to you a good night's sleep is worth 150 yuan. The Coase theorem's prediction is blunt: as long as the two sides are willing to talk and can afford to, whether the unit goes up has nothing to do with who owns that piece of wall. If the wall is yours, the 360 yuan the shop owner saves is more than your 150, so he pays you somewhere between 150 and 360 yuan for your yes, and the unit goes up. If the wall is the shop owner's, the most you'd pay him to run the pipes another way is 150 yuan, which falls short of the 360 he saves. He says no, and the unit goes up anyway."
+ },
+ "deep": {
+  "mechanism": "### Who holds the right only decides which way the money flows\n\nSuppose the mortars earn the confectioner an extra 900 yuan a month, and the noise costs the doctor 500 yuan a month. If the right goes to the doctor, the most the confectioner will pay is 900 yuan, and the least the doctor will accept is 500. They settle at 700: the confectioner is still 200 ahead, and the doctor, after his loss, also comes out 200 ahead. If the right goes to the confectioner, the most the doctor will pay him to stop is 500 yuan, and the least the confectioner will take is 900. There's no deal, and the mortars keep pounding. Under either ruling the mortars keep pounding; all that changes is whether the doctor gets 700 yuan or nothing at all.\n\n### The side that values it more gets its way\n\nRaise the doctor's loss from 500 yuan to 1,200. If the right goes to the doctor, the most the confectioner can pay is 900 and the doctor wants 1,200, so there's no deal and the mortars stop. If the right goes to the confectioner, the most the doctor will pay is 1,200 and the confectioner wants more than 900; at 1,000 he agrees to stop, so the mortars stop this way too.\n\n### Once bargaining costs money, the outcome starts to follow the right\n\nSay finding lawyers, writing an agreement and making sure it's carried out cost 300 yuan in all. Still with the doctor's loss at 500 and the right going to the doctor, a deal creates $900 - 500 = 400$ yuan extra. Take away the 300 and 100 is left, so a deal still happens. If bargaining costs rise to 500 yuan, the extra 400 is eaten up entirely: when the right goes to the doctor, the mortars stop; when it goes to the confectioner, they keep pounding.",
+  "origin": "In 1960, in \"The Problem of Social Cost,\" Coase used cattle trampling a neighbor's crops, and the case of the confectioner and the doctor, to analyze how rights are assigned and how the parties bargain. In 1966 George Stigler, in a textbook, summed up as a theorem the idea that when bargaining costs nothing, who holds a right doesn't change how things end up being used, and put Coase's name on it. Coase himself did not believe that bargaining is free in the real world. He used this imaginary world as a point of comparison.",
+  "limits": "The reasoning fits best in disputes where there are few parties, they can find each other, and the losses can be put at a price: noise between neighbors, say, or two companies fighting over one plot of land. With many people, just getting everyone together costs money, and if they can't all be brought together, the bargaining stops. Concluding from this that it doesn't matter how property rights are assigned is reading it backward: who holds the right still decides who gets paid and who pays."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When drafting an agreement between neighbors, first write down clearly who has the right to say no, then agree whether that right can be traded for money. With that written down, if they disagree later, both sides only need to bargain over the price, not argue over who's right."
+   },
+   {
+    "use": "act",
+    "text": "When a neighbor's building work keeps you awake, first estimate two numbers: what quiet is worth to you, and what the work is worth to them. If the first is bigger, offer them a price to stop; if the second is bigger, don't waste your effort on this one."
+   },
+   {
+    "use": "predict",
+    "text": "Estimate what happens after a new rule moves a right from one party to another: in an industry with few parties and cheap bargaining, the way things are used will probably stay the same, and what changes is whose pocket the money comes out of."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Environment",
+    "title": "Emission permits that can be traded",
+    "text": "In 1990 the United States amended the Clean Air Act and set a total cap on power plants' sulfur dioxide emissions. Emission allowances were handed out free to the power plants, and the plants were allowed to buy and sell them among themselves. The first trade between plants came as early as 1992. After the cap took effect in 1995, plants that could cut emissions cheaply cut more, and sold the allowances they didn't need to plants for which cutting was expensive."
+   },
+   {
+    "field": "Transportation",
+    "title": "Landing slots change hands",
+    "text": "At several of the busiest US airports, takeoff and landing slots were first handed out to airlines according to how they had used them in the past. From 1986, the Federal Aviation Administration let airlines buy and sell slots. An airline that wanted to run a few more flights in the morning rush didn't have to wait for the regulator to hand slots out again; it could buy them from a rival with slots sitting unused."
+   },
+   {
+    "field": "Personal life",
+    "title": "Drawing New Year's Day",
+    "text": "Your department draws lots for duty over the Spring Festival, the Chinese New Year holiday, and you draw the first day of the new year. Your family lives in another city, so going home that day is worth a lot to you. Your colleague Wu's family is local, and he'll swap as long as you cover two Saturday night shifts for him. After the swap, Wu is the one on duty on New Year's Day."
+   }
+  ],
+  "ask": [
+   "Who has the right to say no? Is that right written down, and can it be transferred?",
+   "What was paid in the most recent similar transfer, compensation or rent? Compare that price with each side's own value to see roughly where a deal would land.",
+   "How much would it cost in all to gather everyone involved, check the losses, sign an agreement and enforce it? Compare that with the gap between the two values."
+  ],
+  "with": [
+   {
+    "id": "transaction-costs",
+    "sees": "A wind farm's low-frequency noise bothers four thousand households around it. Each household's loss is small, but together they add up to more than the wind farm earns. When bargaining costs nothing, the Coase theorem says it doesn't matter whether the right goes to the residents or the wind farm: either the residents pool money to pay it to stop, or the wind farm compensates the residents, and whichever side values it more decides whether the turbines turn. Transaction costs sees something else. With four thousand households, there's who takes the lead, how the money is split, and who benefits without paying; just reaching agreement can eat up all the gain. So if the right goes straight to the residents, the turbines stop as the rules require, with no bargaining needed; if it goes to the wind farm, the residents first have to get everyone around one table before they can get it to stop."
+   },
+   {
+    "id": "batna",
+    "sees": "A dyeing workshop's wastewater flows into a fish farmer's pond downstream. Both sides know exactly what they stand to gain and lose, and bargaining is cheap. The Coase theorem only says the price will land somewhere between the two values, not where. If the pond is the farmer's to decide and talks break down, he still has clean water; if it's the workshop's to decide and talks break down, the wastewater keeps flowing and his fish keep suffering. That is exactly what BATNA, your best fallback if talks fail, looks at: the two sides hold different cards if talks break down, so the price leans toward the side with the better cards, and the same gain gets split very differently."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "By the rules, the right to use a hillside plot at the edge of the village belongs to Zhou, who grazes sheep on it and earns 4,000 yuan a year net. A fruit farmer wants to rent it to plant fruit trees, which would earn 6,000 yuan a year net, but the rent has to be paid in cash that year, and he has only 2,500 yuan and can't borrow any. Zhou won't let him pay later. Both of them know all these numbers, and getting a contract signed costs nothing.",
+    "question": "What will happen to the hillside this year?",
+    "explain": "The most the fruit farmer can put up is 2,500 yuan, less than the 4,000 Zhou earns from his sheep, so he can't pay a price that would get Zhou to let go. The gain is there, but if it can't be paid for, there's no deal.",
+    "options": [
+     {
+      "text": "The fruit farmer rents it and plants trees, and Zhou lets it go for 2,500 yuan.",
+      "correct": false,
+      "feedback": "Zhou earns 4,000 yuan a year from his sheep. Taking 2,500 would leave him 1,500 worse off than grazing, so he won't agree."
+     },
+     {
+      "text": "The fruit farmer rents it and plants trees, at a rent between 4,000 and 6,000 yuan.",
+      "correct": false,
+      "feedback": "The fruit farmer has only 2,500 yuan and can't pay a rent of 4,000 or more."
+     },
+     {
+      "text": "The hillside lies empty, with neither of them giving way.",
+      "correct": false,
+      "feedback": "Zhou keeps grazing his sheep as usual, so the hillside isn't empty."
+     },
+     {
+      "text": "Zhou keeps grazing sheep, and the fruit farmer's 6,000-yuan gain is lost because he can't pay.",
+      "correct": true,
+      "feedback": "The price that would get Zhou to let go is at least 4,000 yuan, which the fruit farmer can't come up with, so there's no price at which the two of them can deal."
+     }
+    ]
+   },
+   {
+    "stem": "A parcel sorting point on the ground floor loads and unloads in the early hours of the morning, earning an extra 5,000 yuan a month. Upstairs, households A, B and C each lose 2,000 yuan a month to the noise. By the rules, early-morning work needs the consent of all three households. The three households know each other, bargaining between the sorting point and the households costs nothing, and everyone's gains and losses are clear.",
+    "question": "Will the early-morning loading go on?",
+    "explain": "Together the three households want at least 6,000 yuan before they'll agree, and the most the sorting point will pay is 5,000. There's no deal, so the loading has to stop.",
+    "options": [
+     {
+      "text": "Yes: the sorting point earns 5,000 yuan, more than any one household loses.",
+      "correct": false,
+      "feedback": "What to compare is the three households' total loss of 6,000 yuan, not one household's 2,000."
+     },
+     {
+      "text": "No: together the three households want at least 6,000 yuan, more than the sorting point's 5,000.",
+      "correct": true,
+      "feedback": "Each household wants at least 2,000 yuan, 6,000 for all three, and the sorting point's 5,000 can't cover it."
+     },
+     {
+      "text": "It depends on which household signs first: that one sets the price, and the other two follow.",
+      "correct": false,
+      "feedback": "Each of the three households has its own right to say no. The first to sign only gives its own consent and can't decide for the other two."
+     },
+     {
+      "text": "Yes: give each household 1,500 yuan, 4,500 in all, and the three will agree.",
+      "correct": false,
+      "feedback": "Each household loses 2,000 yuan, so 1,500 isn't enough, and any one of the three can refuse."
+     }
+    ]
+   },
+   {
+    "stem": "A shared storage room in a housing complex was assigned to B by drawing lots, and using it for a year is worth 800 yuan to him. Using it for a year would be worth 3,000 yuan to A. The rules say the room may only be used by the one it's assigned to and can't be sublet, lent or sold, or it will be taken back, and neither household dares break the rules. Both know these numbers, and both can afford to pay.",
+    "question": "What will happen with the storage room this year?",
+    "explain": "The rules block any exchange, so the room stays with B, and its total value is 800 yuan. If it could change hands, A would use it, for a total of 3,000 yuan; 2,200 yuan is lost.",
+    "options": [
+     {
+      "text": "B uses it, creating 2,200 yuan less value in total than if it could change hands.",
+      "correct": true,
+      "feedback": "A using it is worth 3,000 yuan and B using it 800. The rules block the transfer, so the 2,200-yuan difference is lost."
+     },
+     {
+      "text": "A uses it, paying B a price between 800 and 3,000 yuan.",
+      "correct": false,
+      "feedback": "The rules forbid subletting and selling, so this deal can't happen."
+     },
+     {
+      "text": "B uses it, creating 3,000 yuan less value in total.",
+      "correct": false,
+      "feedback": "3,000 yuan is A's value. With B using it, the total value is 800 yuan, 2,200 less than with A using it."
+     },
+     {
+      "text": "B uses it, which still gives the highest total value, because the lottery was fair.",
+      "correct": false,
+      "feedback": "Whether the lottery was fair or not doesn't change the fact that A using it creates 2,200 yuan more value than B using it."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "grid",
+  "title": "Noise follows who cares more; the ruling, who pays",
+  "caption": "The mortars earn the confectioner 900 yuan a month extra. In each column, both rulings give the same noise; only the direction of the money changes.",
+  "rowLabel": "Ruling for",
+  "colLabel": "Doctor's monthly loss",
+  "rows": [
+   "Doctor",
+   "Confectioner"
+  ],
+  "cols": [
+   "500 yuan",
+   "1,200 yuan"
+  ],
+  "cells": [
+   [
+    {
+     "text": "Mortars pound",
+     "sub": "Confectioner pays doctor 700"
+    },
+    {
+     "text": "Mortars stop",
+     "sub": "Confectioner can't pay, stops",
+     "tone": "accent"
+    }
+   ],
+   [
+    {
+     "text": "Mortars pound",
+     "sub": "Doctor gets nothing"
+    },
+    {
+     "text": "Mortars stop",
+     "sub": "Doctor pays confectioner 1,000",
+     "tone": "accent"
+    }
+   ]
+  ]
+ }
+}

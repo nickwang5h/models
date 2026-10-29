@@ -1,0 +1,180 @@
+{
+ "id": "selection-bias-berkson",
+ "name": "Selection Bias and Berkson's Paradox",
+ "en": "选择偏差与伯克森悖论",
+ "discipline": "math",
+ "one_line": "Look only at who got through the filter, and two unrelated things seem to trade off.",
+ "story": "Berkson of the Mayo Clinic shows in the Biometrics Bulletin that the filter of being admitted to hospital makes two unrelated diseases look linked in a hospital's two-by-two table",
+ "shallow": {
+  "scene": "Think of the restaurants you keep going back to: they're either tasty or cheap. The pricey ones with bad food, you went to once and never again. Over time you come to feel that the expensive places are all good and the cheap ones are often bad. But you would feel this even if price and taste had nothing to do with each other, because the pricey, bad places were crossed off your list long ago.\n\nIn 1946 Joseph Berkson, a statistician at the Mayo Clinic in the United States, pointed out the same trap in hospitals. The people in a hospital were picked out by their illness: diabetes can put you in hospital, and so can an inflamed gallbladder. He worked through an example: compare only hospital patients, and a link appears between the two diseases, even if in the population as a whole they have nothing to do with each other. The patients on a ward are not a small copy of the whole population but a list that has been filtered, and a link inside the list may have been made by the bar for getting in.",
+  "plain": "Say you only date people who are good-looking or easy to get along with; one of the two is enough. That filter runs straight into Berkson's paradox. Suppose that out of a hundred people, half are good-looking and half are easy to get along with, and the two have nothing to do with each other. Then there are 25 of each of four kinds: both, only good-looking, only easy to get along with, and neither. You never meet the ones with neither. Of the 75 you do meet, among the 50 good-looking ones, only half are easy to get along with; the 25 who aren't good-looking all got in by being easy to get along with, so every one of them is. So you come away thinking good-looking people are harder to get along with."
+ },
+ "deep": {
+  "mechanism": "### If the bar asks for only one of two things, the two seem to trade off\n\nSuppose that out of 10,000 people, disease A and disease B each affect one in ten, the two have nothing to do with each other, and the hospital admits anyone with either disease. Of the 1,000 with disease B, one in ten also has disease A, which is 100 people. People without disease B can only be in hospital because of disease A: take those 100 away from the 1,000 with disease A, and the remaining 900 all have disease A. On the ward, the rate of disease A is 10% among patients with disease B and 100% among those without it, as if the two diseases kept each other out.\n\n### A looser bar makes a weaker false link\n\nIn real life, people with neither disease are admitted too. Suppose that of the 8,100 people with neither disease, two in ten, or 1,620, are admitted. The patients without disease B now number 900 plus 1,620, 2,520 in all, and their rate of disease A falls to about 36%, still higher than the 10% among patients with disease B. If everyone with neither disease were admitted too, both sides would be back at 10%.\n\n### Measure outside the circle, and the link goes back to zero\n\nAmong these hospital patients, the link is real: pick any patient on the ward who has disease B, and he really is less likely to have disease A. The link does not leave the ward. Measured across the 10,000 people who were never filtered, the link between the two diseases is zero.",
+  "origin": "In 1946 Berkson used a made-up hospital example to show that admitting people according to their illness can create links between diseases in the medical records; this kind of false link is called Berkson's bias. In 1979 Sackett put it in his review that sorted biases into types, and also tested it with a household survey. In the general population, respiratory diseases and diseases of the bones and muscles were almost unrelated, but among people who had been in hospital the odds ratio between them was 4 (1 means no link). More generally, when two things both lead to a third, looking only at people for whom the third thing happened ties the two together; this is called collider bias.",
+  "limits": "Berkson's paradox best explains samples picked out by a bar, such as lists, rankings and medical records: if getting in only takes one of several things, those things will seem to trade off within the sample. A survey drawn at random has no bar for getting in, so it doesn't apply. Selection bias is the general term for a sample that has been filtered by some condition; Berkson's paradox is one kind of it, and appears only when the filter depends on two things at once. Asking only the people willing to answer a questionnaire also skews the sample, but when answering or not depends on just one thing, what gets skewed is the average level of that one thing; it doesn't tie two things together.\n\nA financial adviser studies only funds that have made a \"star fund\" list, and the list takes funds that are big or have high returns. Small funds can only get on the list through high returns, so he concludes that big funds all have poor returns and advises clients to buy only small funds. He has mistaken a relationship made by the bar for a rule."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Show where claims like \"the capable people on the awards list don't like working with others\" come from: the list only requires standing out in one of the two."
+   },
+   {
+    "use": "act",
+    "text": "When you're handed a list, a ranking or medical records someone else put together, check the conditions for getting in before you look for links, and then decide whether this data can answer your question."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Work",
+    "title": "An impression made by screening résumés",
+    "text": "You screen résumés for your company and only invite people to interview if they went to a top university or have at least three years in the same role. After interviewing a batch, you notice that the people from top universities generally have fewer years of work behind them, and in your hiring review you write down \"top-university graduates lack experience.\" Later you pull out every résumé that was sent in and compare them: there is almost no link between school and years of experience, and you cross that line out of your review."
+   },
+   {
+    "field": "Academia",
+    "title": "A trade-off in published papers",
+    "text": "While gathering a field's published papers for a review article, you find that the papers scored high on originality tend to have rougher methods sections. You then get hold of the papers those same journals rejected and look at both scores together, and the link fades until you can hardly see it. When the journals accepted papers, being original enough or having solid enough methods, either one, was enough to get through review."
+   },
+   {
+    "field": "Sports",
+    "title": "The tall players at training camp",
+    "text": "You go through the player data for a professional basketball team and find that the taller the player, the worse his dribbling. You look up the team's selection records: among the people who tried out, being tall or being skilled with the ball, either one, got you into training camp. You redraw the chart with the data for everyone who tried out, and the sloping line between height and dribbling disappears."
+   }
+  ],
+  "ask": [
+   "How did the people in this data get in, and what were the conditions for getting in?",
+   "What is the relationship between these two things across the whole population, and do I have any numbers that were never filtered?"
+  ],
+  "with": [
+   {
+    "id": "simpsons-paradox",
+    "sees": "You have a set of hospital records and want to know whether two diseases are linked. Should you compare them separately by whether people were admitted? Simpson's paradox warns that a trend in the totals can be skewed by how many people are in each group, and only splitting them up shows it clearly. Berkson's paradox says that if the thing you split by is itself a result that both diseases lead to (being admitted), splitting is what creates the link. If the variable you split by comes before the two things, split by it; if it is a result the two things both lead to, don't split by it, and go back to measuring in the whole, unfiltered population."
+   },
+   {
+    "id": "survivorship-bias",
+    "sees": "Looking at the same \"Top Ten Entrepreneurs of the Year\" list, the two models ask different questions. Survivorship bias asks how many of the people who didn't make the list did the same things as those who did; it keeps its eye on the half that was filtered out. Berkson's paradox asks whether getting on the list only takes one of several things: if so, the two strengths of the people on the list will stand in for each other, and claims like \"the more talented, the less hard-working\" should be discounted first."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "An online radio station you often listen to only plays submitted songs that pass on at least one of two counts: a catchy tune or polished production. Across all the submissions, the two go together clearly: songs with catchy tunes also tend to be better produced.",
+    "question": "Looking only at the songs the station plays, what happens to the link between the two?",
+    "explain": "The bar keeps out songs that are poor on both counts. Among the songs left, quite a few are good on only one, and the original positive link is weakened.",
+    "options": [
+     {
+      "text": "It is weaker than across all the submissions.",
+      "correct": true,
+      "feedback": "Songs poor on both counts can't get in, and songs good on only one stay, so the positive link is weakened."
+     },
+     {
+      "text": "It is sure to turn negative.",
+      "correct": false,
+      "feedback": "How much weaker it gets depends on how high the bar is and how strong the original link was; all the question lets you be sure of is that it gets weaker."
+     },
+     {
+      "text": "It is stronger than across all the submissions.",
+      "correct": false,
+      "feedback": "The bar keeps out songs poor on both counts, and those songs are exactly the end that holds up the positive link; keeping them out can only weaken it."
+     },
+     {
+      "text": "It is the same as across all the submissions.",
+      "correct": false,
+      "feedback": "The bar only lets in songs good on at least one count, so the make-up of the sample has changed, and the link changes with it."
+     }
+    ]
+   },
+   {
+    "stem": "A foundation's review panel funds only projects with an excellent proposal or a senior applicant. Across all applicants, how senior someone is has nothing to do with how good their proposal is. The panel sees that among funded projects, the more senior the applicant, the worse the proposal, and plans to relax the proposal requirements for senior applicants next round.",
+    "question": "Is there data behind this plan?",
+    "explain": "This negative link was created by the bar for funding; across all applicants the two have nothing to do with each other, so relaxing the requirements has no real problem to solve.",
+    "options": [
+     {
+      "text": "No: the funded projects are the only sample, and there are too few of them.",
+      "correct": false,
+      "feedback": "The problem lies in how the sample came about. However many funded projects you add, they've all been filtered by the same bar."
+     },
+     {
+      "text": "Yes: senior applicants really do tend to write worse proposals, so relaxing the requirements for them is only fair.",
+      "correct": false,
+      "feedback": "The question says plainly that across all applicants, seniority has nothing to do with the proposal; senior people don't write worse ones."
+     },
+     {
+      "text": "Yes: relaxing the requirements would save review time, and this negative link backs that up.",
+      "correct": false,
+      "feedback": "The negative link is no backing: it only exists among funded projects, and it has nothing to do with how much review time is spent."
+     },
+     {
+      "text": "No: this negative link was created by the bar for funding, and it isn't there across all applicants.",
+      "correct": true,
+      "feedback": "One of the two is enough to get in, so among funded projects the two stand in for each other, and there's no data behind relaxing the proposal requirements."
+     }
+    ]
+   },
+   {
+    "stem": "You are choosing photos for a photography exhibition and only show photos that pass the bar on both composition and color. Across all the submissions, the two scores have nothing to do with each other.",
+    "question": "If you plot the two scores of the photos on show as a scatter plot, what does it look like?",
+    "explain": "When both scores have to pass the bar, what's left is the points in a square area. Take scores from 1 to 5 with a bar of 4: the pairs left are 4-4, 4-5, 5-4 and 5-5, a quarter each. Of the two photos with a composition score of 4, one has a color score of 4 and one has 5, and the same is true for a composition score of 5. Knowing the composition score tells you nothing about the color score, so no sloping trend appears.",
+    "options": [
+     {
+      "text": "The points lie along a band sloping upward.",
+      "correct": false,
+      "feedback": "Neither score is helping the other, so there is nowhere for an upward band to come from."
+     },
+     {
+      "text": "The points lie along a band sloping downward.",
+      "correct": false,
+      "feedback": "A downward band only appears when one of the two is enough to get in; here both scores have to pass the bar."
+     },
+     {
+      "text": "The points are scattered in a block, with no sloping trend.",
+      "correct": true,
+      "feedback": "Both scores have to pass the bar, so what's left is a square, and inside the square the two scores still have nothing to do with each other."
+     },
+     {
+      "text": "The points rise and then fall, forming a curved band.",
+      "correct": false,
+      "feedback": "A curved band would need a more complicated filter; requiring both to pass only cuts out a square."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "grid",
+  "title": "Cut \"neither\": the good-looking seem less easygoing",
+  "caption": "100 people, the two traits unrelated: 25 per box. Of the 75 you meet, half of the 50 good-looking ones are easygoing; all 25 of the others are.",
+  "rows": [
+   "Good-looking",
+   "Not good-looking"
+  ],
+  "cols": [
+   "Easygoing",
+   "Not easygoing"
+  ],
+  "cells": [
+   [
+    {
+     "text": "25 people",
+     "sub": "Both"
+    },
+    {
+     "text": "25 people",
+     "sub": "Only good-looking"
+    }
+   ],
+   [
+    {
+     "text": "25 people",
+     "sub": "Only easygoing",
+     "tone": "accent"
+    },
+    {
+     "text": "25 people",
+     "sub": "Below the bar, unseen",
+     "tone": "muted"
+    }
+   ]
+  ]
+ }
+}

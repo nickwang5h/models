@@ -1,0 +1,229 @@
+{
+ "id": "zero-sum",
+ "name": "Zero-Sum vs Positive-Sum",
+ "en": "零和与正和",
+ "discipline": "games",
+ "one_line": "Your gain isn't always my loss, and some things make the whole pie bigger.",
+ "story": "At Macworld in Boston, Jobs announces Microsoft will invest $150 million in Apple and keep making Office for the Mac, and the crowd boos",
+ "shallow": {
+  "scene": "In August 1997, at the Macworld conference in Boston, Steve Jobs announced that Microsoft would invest 150 million dollars in Apple and keep developing Office for the Mac. Bill Gates appeared on the big screen, and the audience booed: to many Apple fans, anything Microsoft gained was Apple's loss. Yet both companies came out ahead on the deal. Apple was short of cash at the time, and the Mac couldn't do without Office; Microsoft got to keep making money from Mac users, and the two companies settled their patent disputes in the same deal.",
+  "plain": "You can fix computers but can't cut hair; your downstairs neighbor can cut hair, and his computer is always acting up. You spend an afternoon fixing his computer, he gives you a haircut, and both of you save the money you would have paid someone else. Nobody loses out: the swap is positive-sum. Now play a game of chess instead. Every point you win is exactly a point your opponent loses, so the two of you always add up to zero: that is zero-sum. Which kind a thing is depends on whether it can create new value. Even a positive-sum deal turns zero-sum when it comes to splitting the money: if you take 20 yuan more, he gets 20 yuan less."
+ },
+ "deep": {
+  "mechanism": "### A deal first creates a piece of new value, then you fight over how to cut it\n\nA seller spends 60 yuan making a table, and a buyer will pay at most 100 yuan for it. Once the table is in the buyer's hands, it is worth 40 yuan more; if there is no deal, that 40 yuan never exists. At a price of 80 yuan, the seller gets 20 more than his cost and the buyer pays 20 less than his limit, so each gains 20. At 90 yuan, the seller gains 30 and the buyer 10. Haggling over the price only changes how it's cut; the 40-yuan piece stays the same.\n\n### How big the piece is depends on how far the buyer's value sits above the cost\n\nIf the most the buyer will pay drops to 70 yuan, the deal can create only 10 yuan of value, and the price has to land between 60 and 70. If it drops to 60, the value is zero, and the deal just moves the table from one owner to another. Any lower, and the seller would have to sell at a loss, so nobody would make that deal. Zero-sum means this piece is always zero: in chess, or fighting over a single championship, the total is fixed, so whatever one side gains the other must lose.\n\n### The new value has to reach everyone before a deal gets signed\n\nSay working together earns 40 yuan more in total, but one side ends up with 10 yuan less than if they hadn't worked together. That side will say no, however good the total looks. Someone has to make up that 10 yuan for them. People who only try to squeeze what the other side gets often lose their own share too. If the seller insists on 101 yuan and won't budge, above the 100 yuan that's the most the buyer will pay, the buyer walks away, and the 40 yuan the seller could have taken at most is gone as well.",
+  "origin": "In 1928 John von Neumann proved the minimax theorem for two-person zero-sum games. In 1944 he and Oskar Morgenstern published *Theory of Games and Economic Behavior*, which turned this kind of analysis into a system. Poker is the textbook example of a zero-sum game. The term \"positive-sum\" turned the question toward whether trade and cooperation can make the total gain bigger.",
+  "limits": "When the prize is fixed, such as a single championship or a set amount of prize money, the total can't grow, and all you can fight over is how to split it. When you add up the total, you also have to count people outside the deal. The buyer and seller may both profit while the neighbor next door can't sleep because of trucks at night, so the total isn't necessarily positive. Telling the side that loses out to go along first because \"we all come out ahead overall,\" without saying how they'll be made whole, is not an argument that holds up."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Setting commissions for two sales teams: if each is paid on the customers it grabs from the same pool, the two teams hide leads from each other. Pay them on the total of new customers they win together, and someone will be willing to pass a lead across."
+   },
+   {
+    "use": "act",
+    "text": "When you're invited to work together, first work out how much more each side gets compared with not working together, then decide what to negotiate. Don't use the other side earning more than you as a reason."
+   },
+   {
+    "use": "explore",
+    "text": "When a pie looks fixed, look for terms that cost one side little but are worth a lot to the other. For example, one side is in a hurry to get paid early, while the other doesn't care much about payment terms."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "Software put in the public domain",
+    "text": "In 1993 CERN, the European nuclear research center, announced that its World Wide Web software was in the public domain, so anyone could use it without paying a license fee. Universities, companies and individual developers went on to set up websites and write browsers."
+   },
+   {
+    "field": "Sports",
+    "title": "A league that splits TV money evenly",
+    "text": "On the field, the teams of the National Football League are opponents, and each game has only one winner. But the league splits the money from national TV broadcasts evenly among the teams. As teams compete to make games more watchable, the total value of the broadcast contracts goes up, and so does each team's share."
+   },
+   {
+    "field": "Personal life",
+    "title": "Carpooling with a coworker",
+    "text": "You and a coworker live in the same housing complex and used to drive separately every day, each driving five days a week. You switch to taking turns in one car, so each of you drives only two and a half days a week, and each of you saves half on gas and parking."
+   }
+  ],
+  "ask": [
+   "Compared with not working together, how much more or less does each side get, and is the total positive?",
+   "Are we fighting over a total that's already fixed, or could changes to the product, the process or the division of work make the total bigger?",
+   "Are there losses to people outside the deal that haven't been counted in the total?"
+  ],
+  "with": [
+   {
+    "id": "batna",
+    "sees": "You hire a crew to redo your kitchen. They quote 80,000 yuan, and you want to push the price down. If you only look at the total price, every yuan one of you gains the other loses, so you should hold firm. But the crew is short of work in the off-season and you aren't in a hurry to move in, so trading an off-season start for a lower price leaves both of you better off than now; then you should negotiate the schedule first. Which path is right depends on your best alternative. If another crew has given you a similar quote, be tougher on price; if you can't find anyone else, trade on the schedule first."
+   },
+   {
+    "id": "externalities",
+    "sees": "Two bars on the same street plan to run a joint midnight session. Both would earn more, so looking only at the people taking part, it's positive-sum. The residents upstairs can't sleep and have to put in soundproof windows. That cost is an externality; it isn't on the bars' books. Count the residents' spending, and the total may turn negative. Whether to go ahead depends first on whether anyone will make up the residents' losses."
+   },
+   {
+    "id": "prisoners-dilemma",
+    "sees": "Two bubble-tea shops on the same street agree that neither will offer discounts, and each makes extra money; cooperating is positive-sum. But this is a prisoner's dilemma. Either shop can steal the other's customers by quietly cutting prices, so each shop's own sums point toward cutting. To hold on to this positive sum, just urging the other side \"don't start a price war\" won't work. You need something that makes breaking the deal not worth it, such as seeing each other every day, and one shop matching right away when the other cuts."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Your company and the company next door each have their own dedicated internet line, costing each company 100,000 yuan a year. The two discuss sharing one big line, which would cost 140,000 yuan a year in total, but they would have to hire a network administrator at 30,000 yuan a year. All other costs stay the same.",
+    "question": "Compared with each having its own line, how much does sharing add to the two companies' combined net gain per year?",
+    "explain": "Before, they spent 200,000 yuan between them; after sharing, the line plus the salary comes to 170,000, so together they save 30,000. The 140,000-yuan line costs 60,000 less than 200,000, and the new salary has to be taken out of that 60,000.",
+    "options": [
+     {
+      "text": "15,000 yuan.",
+      "correct": false,
+      "feedback": "That's the half each company gets. The question asks how much the two gain together."
+     },
+     {
+      "text": "30,000 yuan.",
+      "correct": true,
+      "feedback": "Before, they spent 200,000 yuan in total; now the line and the salary come to 170,000, so together they save 30,000."
+     },
+     {
+      "text": "0 yuan: whatever one company saves, the other spends.",
+      "correct": false,
+      "feedback": "After sharing, total spending drops from 200,000 to 170,000 yuan. The money isn't changing hands between the two companies; they really are spending less."
+     },
+     {
+      "text": "60,000 yuan.",
+      "correct": false,
+      "feedback": "This only counts the line, which saves 60,000, and forgets the new 30,000 salary."
+     }
+    ]
+   },
+   {
+    "stem": "A small town has only two driving schools, and the total number of students who sign up each year is fixed. Each student pays 2,000 yuan a year in fees. This year one school spends 100,000 yuan on advertising and takes 50 students from the other school. The other school does nothing in response.",
+    "question": "After taking out the advertising cost, how does the two schools' combined yearly income change from last year?",
+    "explain": "For the 50 students who switched, one school takes in 100,000 yuan more and the other 100,000 less; the money just changed hands. But the 100,000 yuan in advertising was really spent, so together they're down 100,000.",
+    "options": [
+     {
+      "text": "Down 100,000 yuan: the advertising money was wasted.",
+      "correct": true,
+      "feedback": "Students changing schools adds up to zero; the 100,000 yuan in advertising is pure cost, so together they're down 100,000."
+     },
+     {
+      "text": "Down 200,000 yuan: each school is down 100,000.",
+      "correct": false,
+      "feedback": "The school that won the students took in 100,000 yuan more and spent 100,000 on ads, which nets to zero. The other took in 100,000 less. Together that's down 100,000, not 200,000."
+     },
+     {
+      "text": "Up 100,000 yuan: the school that advertised took in 100,000 more.",
+      "correct": false,
+      "feedback": "The extra 100,000 it took in is exactly what the other school lost, so together they cancel out."
+     },
+     {
+      "text": "No change: the students just moved from one school to the other.",
+      "correct": false,
+      "feedback": "Students switching schools does add up to zero, but the 100,000 yuan in advertising hasn't been counted yet."
+     }
+    ]
+   },
+   {
+    "stem": "A department has only one manager position open this year, and two coworkers both want it. At the same time, the company has given them both the same new project; if it succeeds, both get a bonus.",
+    "question": "In which of these do the two people's gains and losses add up to a fixed total?",
+    "explain": "There's only one manager position: if one gets it, the other can't. The total is fixed. The project, reviewing each other's work and the night shifts can all leave both better off at once, or both worse off.",
+    "options": [
+     {
+      "text": "Making the new project succeed together, so both get bonuses.",
+      "correct": false,
+      "feedback": "If the project succeeds, both get bonuses at the same time; one's gain doesn't cancel the other's."
+     },
+     {
+      "text": "Agreeing to take turns on night shifts so each gets a full night's sleep.",
+      "correct": false,
+      "feedback": "Taking turns gives both of them better rest; it's not one gaining at the other's expense."
+     },
+     {
+      "text": "Competing for the one manager position.",
+      "correct": true,
+      "feedback": "There's only one position. If one gets it, the other can't."
+     },
+     {
+      "text": "Reviewing each other's drafts, saving each of them time on rework.",
+      "correct": false,
+      "feedback": "Reviewing each other's work means less rework for both; both are better off at once, not one at the other's expense."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "The price only moves the cut; the 40 stays",
+  "caption": "Cost 60 yuan, buyer's max 100. In between, a yuan the seller gains the buyer loses; the total holds. Past 100 the buyer walks: both get 0. Drag to move the total.",
+  "x": {
+   "label": "Price (yuan)",
+   "min": 60,
+   "max": 130,
+   "step": 1
+  },
+  "y": {
+   "label": "Each gets (yuan)",
+   "min": 0,
+   "max": 60
+  },
+  "params": [
+   {
+    "id": "b",
+    "label": "Buyer's max",
+    "min": 70,
+    "max": 120,
+    "step": 10,
+    "value": 100,
+    "unit": " yuan"
+   }
+  ],
+  "series": [
+   {
+    "name": "Both together",
+    "expr": "x<=b ? b-60 : 0",
+    "tone": "accent",
+    "label": false
+   },
+   {
+    "name": "Seller gets",
+    "expr": "x<=b ? x-60 : 0",
+    "tone": "ink",
+    "label": false
+   },
+   {
+    "name": "Buyer gets",
+    "expr": "x<=b ? b-x : 0",
+    "tone": "muted",
+    "dashed": true,
+    "label": false
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Value created",
+    "expr": "b-60",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ],
+  "marks": [
+   {
+    "x": "b",
+    "text": "Buyer's limit"
+   },
+   {
+    "x": "60+(b-60)*0.5",
+    "y": "b-60",
+    "text": "Both together"
+   },
+   {
+    "x": "60+(b-60)*0.75",
+    "y": "(b-60)*0.75",
+    "text": "Seller gets"
+   },
+   {
+    "x": "60+(b-60)*0.25",
+    "y": "(b-60)*0.75",
+    "text": "Buyer gets"
+   }
+  ]
+ }
+}

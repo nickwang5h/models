@@ -1,0 +1,227 @@
+{
+ "id": "risk-uncertainty",
+ "name": "Risk vs Uncertainty",
+ "en": "风险与不确定性",
+ "discipline": "investing",
+ "one_line": "Risk is an unknown where you know the odds, uncertainty is one where you can't even say the odds.",
+ "story": "Ellsberg's jar holds 90 balls, 30 red and 60 black or yellow in an unknown mix, and most people bet on red rather than black",
+ "shallow": {
+  "scene": "Say two shops sell the same set of blind boxes, sealed boxes where you don't know which figure of the set you'll get, at the same price. One has a sign on the counter: \"Hidden figure 1/12.\" The other says nothing. Most people walk into the shop that shows the odds, even though the chance of getting it at the other shop might be higher.\n\nIn 1961 the American economist Daniel Ellsberg put this preference on the table in a paper. He imagined a jar holding 90 balls: 30 are red, and the other 60 are black and yellow, but nobody tells you how many of each. You draw one. Do you bet on red or on black? The prize is the same either way. Most of the people he asked bet on red.\n\nYet you have no reason to think there are more black balls than yellow, or fewer. On average, black balls also make up 30 of the 60, as many as the red ones. What people are avoiding is not a lower chance. It is not being able to say how big the chance is.",
+  "plain": "Toss a coin and guess heads or tails. You don't know the result, but you know it's half and half, so you know where you stand betting five yuan on it. Now think of the open-air music festival you signed up for. Will the organizers cancel it at the last minute? You could say \"fifty-fifty,\" but that number comes from nowhere. There aren't a thousand identical festivals in the world for you to count how many were canceled.\n\nBoth are fifty-fifty, yet you'd bet on the coin and would probably hesitate to bet on the festival being canceled, because the first fifty-fifty has something behind it and the second is a number you filled in yourself. In 1921 the economist Frank Knight called the first kind of unknown risk: the chances can be counted. He called the second kind uncertainty: even the chances themselves have no solid basis."
+ },
+ "deep": {
+  "mechanism": "### The chance on red is a point; the chance on black is a range\n\nOf the 90 balls in the jar, 30 are red, so a bet on red wins with a chance of exactly one third, about 33%. There might be no black balls at all, or all 60 might be black, so a bet on black could win with any chance from 0 to two thirds (about 67%), and you can't say where. Most people would rather bet on the number they can name.\n\n### Narrow the range until one bet is clearly higher, and the choice is clear\n\nThe range doesn't have to shrink to a point. As long as the whole range for black sits above red's 33%, the two bets can be compared. Suppose whoever set the puzzle adds that there are at most $h$ yellow balls. Then there are at least $60-h$ black balls. Write the chance of winning on black as $p_B$. It falls within:\n\n$$\\frac{60-h}{90}\\le p_B\\le\\frac{60}{90}$$\n\nIn other words, the low end is set by the most yellow balls there could be. The high end is always two thirds, because there might still be no yellow balls at all. For example, if there are no more than 10 yellow balls, there are at least 50 black ones, and the chance on black is at least 50/90, or five ninths, about 56%. That whole range sits above red's 33%. More generally, as long as $h$ is less than 30, there are more than 30 black balls, the low end passes one third, and black reliably beats red.\n\n### Records only help with new cases under the same conditions\n\nYou run a delivery fleet. The same trucks run the same routes, and three years of records of flat tires give you a rate. Switch to electric vans, and the loads and the tires both change, so the old rate doesn't apply to the new vans. The chance that a new van gets a flat is like the number of black and yellow balls in the jar: you can't say.",
+  "origin": "Frank Knight published *Risk, Uncertainty and Profit* in 1921 and used this distinction to explain where a company's profit comes from. Losses that can be grouped with similar cases and counted can be built into costs in advance. The outcome of a one-of-a-kind decision can't be priced in advance, and that is where profit comes from. His argument was reasoning on paper, with no experiment behind it. Keynes wrote something similar in 1937. In 1961 Ellsberg used his jar to put on the table the fact that people shy away from probabilities they can't state.",
+  "limits": "Telling risk from uncertainty helps most with things that have no records of similar cases, whose rules have just changed, or whose outcome is settled in one go. It only judges whether a probability has enough behind it; it doesn't judge for you whether something is worth doing. How big the loss is and how big the gain is still decide the choice. Even when you can't estimate the probability, you can compare what you'd gain and lose in a few scenarios and pick the one you can still survive at its worst. Without records of similar cases, the decimals a piece of software works out are still only guesses; treating them as known probabilities is passing off a guess as a record."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Why a forecast missed: first check whether its numbers were counted or filled in. A filled-in number can't hold up a conclusion precise to the decimal place."
+   },
+   {
+    "use": "communicate",
+    "text": "When reporting to your partners, split the numbers into two columns, \"backed by our records\" and \"filled in by us,\" and give the source of each, so they can see at a glance which column to trust."
+   },
+   {
+    "use": "predict",
+    "text": "When estimating a new product's first-month sales, don't give just one number. Write down a low end and a high end, and mark which end has something behind it and which is a guess."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "Records price car insurance; a first launch gets a higher rate and a cap",
+    "text": "You are an underwriter at an insurance company. Car insurance is priced by going through the claims records: for the same kind of car and the same kind of driver, the share of policies with a claim can be counted across hundreds of thousands of policies. Today a sales agent hands you an application to insure the first flight of a new type of rocket, and there is no comparable line in the records. You look through the engineering reviews and how other companies' rockets fared on their first flights, and you dare give only a very wide range. You quote a rate well above what a proven rocket would pay, and you put a cap on the payout. When the number has nothing behind it, you protect yourself by charging more and capping what you pay."
+   },
+   {
+    "field": "Technology",
+    "title": "No exact number, but a known ceiling",
+    "text": "You maintain your company's sign-up website. Next Monday an email goes out opening presales, and nobody can say for sure how many people will crowd in at once. You don't need an exact number. The presale link goes only to the 1,200 people on the mailing list, so no more than 1,200 can be online at the same time. Load tests show one server can handle only 800 at once, so before Monday you add a second one."
+   },
+   {
+    "field": "Personal life",
+    "title": "For a part-time degree, check the shrinking case first",
+    "text": "You're thinking of doing a part-time master's degree while you work. Salary figures for the program's past graduates are easy to find. Whether your industry will still be around in five years, nobody can put a number on. You put only the first into your sums and lay out the second as two cases: the industry carries on as before, or the industry shrinks. You first check that you could still keep up your monthly payments in the shrinking case, and only then sign up."
+   }
+  ],
+  "ask": [
+   "Was this number counted, worked out from rules, or filled in by me? Go and find where it came from: which records, which entries, who estimated it.",
+   "What one or two key conditions differ between the cases in the records and the thing in front of me?",
+   "Which part of this has records under it, and which part is only my feeling? Write the two parts down separately."
+  ],
+  "with": [
+   {
+    "id": "expected-value",
+    "sees": "A new project's spreadsheet has three scenarios, with probabilities you filled in yourself, and the expected value comes out positive. Expected value says the numbers are here, so pick the biggest. This model asks where those probabilities came from. If all three are numbers you filled in, the positive expected value is just your confidence written out as a formula. When years of records of similar cases stand behind the probabilities, go straight to the expected value; when you filled them in yourself, first check whether you could survive the worst case, and only then talk about the average."
+   },
+   {
+    "id": "bayesian-updating",
+    "sees": "A newly founded company invites you to invest, and there are no records of similar cases. Bayesian updating has you write down a starting point, say 20%, and revise it with each new piece of evidence. This model agrees with revising, but asks you to label the starting point \"subjective\" and to check whether the conclusion changes if you start at 10% or 40% instead. If it does, don't rush to trust a single starting point; first go and find the evidence that could move it."
+   },
+   {
+    "id": "base-rate",
+    "sees": "When you assess a new plan, base rates have you start from how similar cases turned out. This model first asks whether this case and those similar ones share the key conditions. If the conditions match, go by the rate; if they don't, this model wants you to say first which condition is different."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Before Friday's meeting, you need to put a probability on each of four things.",
+    "question": "Which of these probabilities has the most behind it?",
+    "explain": "What stands behind a probability is records of similar cases that can be counted, with the conditions basically the same and many cases. The new feature, the new store and the one-off political event all lack records like that.",
+    "options": [
+     {
+      "text": "Whether a country's new president will change the constitution in the first term.",
+      "correct": false,
+      "feedback": "This is a one-off political event. There is no batch of cases under the same conditions to count."
+     },
+     {
+      "text": "What share of users will be using the company's just-launched feature every week, three months from now.",
+      "correct": false,
+      "feedback": "A new feature has no records from after launch, so this share can only be filled in. There isn't enough behind it."
+     },
+     {
+      "text": "Whether a brand store the mall has just signed will stay open a full year.",
+      "correct": false,
+      "feedback": "This store is opening for the first time and has no records of its own. If you borrow other brands' numbers, the conditions may well not match."
+     },
+     {
+      "text": "Whether bus route 12 will be more than ten minutes late in next Monday's morning rush hour, with three years of arrival records.",
+      "correct": true,
+      "feedback": "The same route, the same time of day, hundreds of days of records, and the conditions have barely changed, so a rate can be counted."
+     }
+    ]
+   },
+   {
+    "stem": "A colleague put down \"62%\" as the chance that opening in a new market will succeed. You ask where that number came from.",
+    "question": "Which answer shows that the 62% was just filled in?",
+    "explain": "Several people each guessed a number and took the average; not a single record stands behind it. The other three answers are all things that can be counted or worked out.",
+    "options": [
+     {
+      "text": "Several colleagues each guessed a number, and we took the average.",
+      "correct": true,
+      "feedback": "Each number is an impression. Averaging only mixes the impressions together, and there are no records to check."
+     },
+     {
+      "text": "The opening records of 40 stores through the same channel over the past three years.",
+      "correct": false,
+      "feedback": "These are the channel's own records. A rate can be counted from them, so it isn't filled in."
+     },
+     {
+      "text": "A survival table for over a hundred stores of the same kind in the same city.",
+      "correct": false,
+      "feedback": "Statistics on over a hundred similar stores give a rate that can be counted, so it isn't filled in."
+     },
+     {
+      "text": "The chance of winning a draw, worked out from its rules.",
+      "correct": false,
+      "feedback": "The rules fix the proportion, so it can be worked out. It isn't filled in."
+     }
+    ]
+   },
+   {
+    "stem": "Your recycling center plans its staff and space from five years of monthly intake figures. From next month, the city requires residents to sort recyclables to a new standard before dropping them off. The old intake figures were counted before this rule existed. The expansion contract is to be signed next week.",
+    "question": "Before signing, what should you find out first?",
+    "explain": "The old intake figures come from the old rules, and intake under the new rules has no records of its own yet. Places that already have a similar rule are the closest reference for now.",
+    "options": [
+     {
+      "text": "How the penalty for breaking the expansion contract is calculated.",
+      "correct": false,
+      "feedback": "The penalty decides how expensive it is to back out. It doesn't tell you how much will come in under the new rules."
+     },
+     {
+      "text": "How much the intake changed in a neighboring city in the first month after its new rule took effect.",
+      "correct": true,
+      "feedback": "This is the most recent data under the new conditions, and it can narrow the range."
+     },
+     {
+      "text": "How much a competitor spent on an expansion last year.",
+      "correct": false,
+      "feedback": "The cost is a known number. It doesn't fill the gap, which is how much will come in under the new rules."
+     },
+     {
+      "text": "The average monthly intake over the past five years.",
+      "correct": false,
+      "feedback": "All five years were counted without the new rule. However accurate the average, it can't tell you how much will come in under the new rules."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Fewer than 30 yellow, and black beats red",
+  "caption": "Along the bottom: the most yellow balls you're told of. Black's chance lies between the top two lines, narrower as that falls; below 30, even its lowest beats red.",
+  "x": {
+   "label": "Most yellow balls",
+   "min": 0,
+   "max": 60
+  },
+  "y": {
+   "label": "Chance to win",
+   "unit": "%",
+   "min": 0,
+   "max": 70
+  },
+  "params": [
+   {
+    "id": "h",
+    "label": "Most yellow",
+    "min": 0,
+    "max": 60,
+    "step": 1,
+    "value": 10,
+    "unit": " balls"
+   }
+  ],
+  "series": [
+   {
+    "name": "Red",
+    "expr": "100/3",
+    "tone": "ink"
+   },
+   {
+    "name": "Black, lowest",
+    "expr": "(60-x)/90*100",
+    "tone": "accent"
+   },
+   {
+    "name": "Black, highest",
+    "expr": "200/3",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "x": "h"
+   },
+   {
+    "x": 30,
+    "y": 33.3,
+    "text": "Low end meets red"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Black balls, min",
+    "expr": "60-h",
+    "unit": " balls",
+    "digits": 0
+   },
+   {
+    "label": "Black wins, min",
+    "expr": "(60-h)/90*100",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "Red wins",
+    "expr": "100/3",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

@@ -1,0 +1,203 @@
+{
+ "id": "value-chain",
+ "name": "Value Chain",
+ "en": "价值链",
+ "discipline": "business",
+ "one_line": "Break a business into steps and see what each one costs and gives the customer.",
+ "story": "IKEA designer Gillis Lundgren takes the legs off a table to fit it in a car, and IKEA goes on to flat-pack boxes that move assembly into the customer's home",
+ "shallow": {
+  "scene": "In the 1950s, Gillis Lundgren, a designer at IKEA, took the legs off a table so he could fit it into a car. IKEA later started selling furniture flat-packed in boxes. The same cargo space could hold more pieces, the warehouse could stack them higher, and fewer got knocked and damaged on the way. Putting the table together moved from the factory to the customer's own home.",
+  "plain": "You make handmade soap at home and sell it online. Spread out the cost of one bar: materials 6 yuan, labor 4 yuan, packaging 2 yuan, shipping 8 yuan. Some bars break on the way and have to be sent again, which adds another 5 yuan per bar on average, for a total of 25 yuan.\n\nThe value chain view follows a bar of soap through every activity it passes through and keeps two accounts for each: how much this step cost, and what it added for the person buying the soap. The 8 yuan of shipping only gets the soap there; customers won't pay a cent more for it. The handwritten card in the package explaining how to use the soap costs only a few cents, yet more people come back to buy again. You switch from cutting the soap round to cutting it square, and one shipping bag now holds two bars. Someone who buys two bars gets one shipment, so shipping drops from 8 yuan to 4 yuan per bar, and the cost of a bar drops to 21 yuan."
+ },
+ "deep": {
+  "mechanism": "### Change one activity, and the costs of other activities change too\n\nPicture a table that leaves the factory fully assembled. Shipping costs 30 yuan. One in ten gets damaged on the way, at a loss of 100 yuan each, which spreads to 10 yuan per table, for 40 yuan in all. Switch to flat-pack boxes and the cost of transport changes with it: shipping is 8 yuan, damage falls to 2%, which spreads to 2 yuan, for 10 yuan in all. If you keep the packaging as it is and only bring the damage rate for assembled tables down to 5%, the total is still 35 yuan, 25 yuan more than flat-pack.\n\nComparing yourself with a rival works the same way, step by step. The steps you do differently are where you are cheaper or worth more, and also where your weak spots hide. IKEA and a furniture store that ships assembled pieces differ in exactly two steps: transport and assembly.\n\n### The savings need the customer to keep cooperating\n\nFlat-pack gives the customer an extra job: putting it together themselves. Each table saves 30 yuan. Pass some of it on to the customer, and someone facing an hour of assembly may be happy to do it. If it takes three hours, even passing on the whole 30 yuan may not keep them, and the savings come to nothing.\n\n### Split activities by the work done, not by department\n\nBuying in and storing materials, production, delivery, sales and after-sales service are the activities a product passes through on its way from raw materials to the customer's hands. Purchasing, technology, HR and management hold them up. One department can run several activities, and one activity can cross several departments: handling a single complaint takes people from customer service, logistics and production.",
+  "origin": "Michael Porter set out this framework in 1985 in *Competitive Advantage*, to find where a company's competitive advantage comes from. He split a company's activities into primary activities and support activities, and stressed the links between them. The value chain came from case studies and competitive analysis; there is no landmark experiment behind it.",
+  "limits": "The value chain is easiest to use in businesses where what gets delivered is clear and each step's cost can be counted, such as factories, warehousing and logistics, or subscription services. In drug discovery, or a product whose makers haven't worked out what to sell yet, even what is to be delivered keeps changing. Force a process chart onto it, and the trial-and-error steps show no clear gain for the customer, so they get recorded as waste. Cutting the chart up by the org chart and asking each piece to cut its own costs also goes wrong: purchasing beats down the price and buys poor materials, and the money saved soon turns into the cost of rework on the production line."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When changing an existing business process, first mark each activity's cost and what it does for the customer, then decide which step gets more people and which two steps merge."
+   },
+   {
+    "use": "explain",
+    "text": "When two shops selling the same product have costs that differ a lot, go through both shops' activities step by step, and you can point to whether the gap is in picking, shipping or returns."
+   },
+   {
+    "use": "communicate",
+    "text": "Explain to your boss why adding a quality check needs a bigger budget: set out, item by item, the rework and complaints the check saves, next to the later activities where they would have landed."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Health",
+    "title": "Two more minutes at the pharmacy counter",
+    "text": "You manage a neighborhood pharmacy. After older customers pick up their medicine, they often phone back the next day to ask how many times a day to take it, and whether before or after meals. That ties up staff at both the counter and the phone. You have the person handing out medicine spend two more minutes writing the dosage on the box by morning, noon and evening, then reading it out to the customer. The line at the counter gets a bit longer, but fewer people call back with questions, and fewer medicines come back to be made up again."
+   },
+   {
+    "field": "Technology",
+    "title": "A sample sheet on the import page",
+    "text": "You build software that prices home renovation jobs. The question customer support hears most every day is how to import a materials list. You lay out every step from a user signing up to producing their first quote, and the import step is where people get stuck longest. You put a sample sheet on the import page and highlight any column in the wrong format in red right away. Support repeats the same explanation less often, and new users get their first quote out faster."
+   },
+   {
+    "field": "Personal life",
+    "title": "Wash and pack the vegetables on Sunday",
+    "text": "You cook when you get home from work. Washing and chopping takes half an hour, and the extra vegetables you buy often rot in the fridge. You switch to shopping on Sunday, washing and chopping everything at once, and packing it into boxes, one portion per night. Sunday takes an extra hour, but cooking on weeknights takes only fifteen minutes, you just take a box, and the vegetables no longer go bad."
+   }
+  ],
+  "ask": [
+   "Which activity is this cost recorded under? Which account would I look at to see it?",
+   "If I add this step, drop it or hand it to someone else, which other steps along the line change in cost too?",
+   "Which activity do customers' follow-up calls, complaints and refunds keep pointing to?"
+  ],
+  "with": [
+   {
+    "id": "transaction-costs",
+    "sees": "Should customer service be outsourced to a call center? The outsourcing quote is only half the cost of doing it yourself. The value chain looks step by step: how much the customer service step costs and what it adds for the customer, and with a lower quote it should be outsourced. Transaction costs do a different sum. If the product's rules change every day, customer service has to keep in daily contact with the product team, and the cost of writing contracts, watching quality and fixing mistakes often eats up that half. Hand off activities that are stable and whose results are easy to check; keep the ones that have to be worked out with other activities every day."
+   },
+   {
+    "id": "bottlenecks",
+    "sees": "A warehouse's packing line costs 3 yuan more per order and stands out the most, yet the shipping line can only move 800 orders a day. The value chain lists the costs of the two steps side by side, and the packing line is the one to work on. Bottlenecks ask how many orders can go out each day. If the shipping line doesn't change, however cheap and fast the packing line gets, not a single extra order goes out. To cut the cost per order, look at the value chain first; to ship more, first find the slowest step."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You sell potted houseplants online. Refund requests have gone up lately, and 90% give the reason \"roots black on arrival.\" You look through the shipping records: nearly all of these orders were delivered on a Saturday, Sunday or Monday, and orders delivered Tuesday to Friday have almost no refunds like this. The boxes, the courier and the plant varieties haven't changed in months.",
+    "question": "To bring refunds down, what should you change first?",
+    "explain": "The refunds are recorded under after-sales, but the root cause is the shipping day: packages sent on Thursday or Friday spend the weekend in transit. Where a cost shows up and where it comes from are not in the same step; you find the source by following the activities back.",
+    "options": [
+     {
+      "text": "Use a foam box one size thicker, and switch every order to the new thicker box.",
+      "correct": false,
+      "feedback": "Orders delivered on weekdays use the same box and almost none turn black, so the problem isn't how thick the box is."
+     },
+     {
+      "text": "Change the shipping step so packages don't spend the weekend in transit, for example by holding orders after Thursday until the next week.",
+      "correct": true,
+      "feedback": "Refunds cluster on orders delivered around the weekend. Change the shipping step, and packages no longer spend the weekend on the road."
+     },
+     {
+      "text": "Send coupons in advance to orders arriving on the weekend, so blackened plants can be swapped straight away.",
+      "correct": false,
+      "feedback": "Coupons and swaps only turn the refund into another form. Packages still spend the weekend on the road, and the roots still turn black."
+     },
+     {
+      "text": "Add customer service staff to handle refund requests faster and cut the wait.",
+      "correct": false,
+      "feedback": "Customer service handles refunds that have already happened. The blackening starts with the shipping day, and more staff won't prevent a single refund."
+     }
+    ]
+   },
+   {
+    "stem": "You make custom handmade leather goods. The process is: discuss what the customer wants, make a sample to confirm, make the item, engrave it, then package and ship it. Of the cost of each order, the gift box is the biggest part. You asked repeat customers: what they liked most was seeing a sample and being able to change it once; they barely remember the gift box and throw it away the day it arrives. You want to save money without short-changing customers.",
+    "question": "Which step should you change first?",
+    "explain": "What customers are willing to pay for is the sample. The gift box costs the most, but customers don't care about it. Match the cost against what the customer gets, step by step, and the place to save is the gift box; the sample should not be touched.",
+    "options": [
+     {
+      "text": "Drop the sample, go straight to making the item, and use the time saved to take more orders.",
+      "correct": false,
+      "feedback": "The sample is the step customers like most. Dropping it saves on exactly what customers care about."
+     },
+     {
+      "text": "Outsource the engraving to a cheaper workshop and leave everything else the same.",
+      "correct": false,
+      "feedback": "Engraving isn't the biggest part of the cost, and customers never said they didn't care about it. Changing it won't save as much as the gift box."
+     },
+     {
+      "text": "Keep the process as it is, raise the price of the finished item, and use the extra to pay for the gift box.",
+      "correct": false,
+      "feedback": "Raising the price makes customers pay more for a gift box they don't care about, and the costs don't go down at all."
+     },
+     {
+      "text": "Replace the gift box with simple protective packaging, and keep the sample as it is.",
+      "correct": true,
+      "feedback": "The gift box is the biggest part of the cost and customers barely care about it, so replacing it saves the most, and the sample customers value most is untouched."
+     }
+    ]
+   },
+   {
+    "stem": "Your pet-treat studio has six people. You alone take orders and also pack and ship them; another partner both develops recipes and handles buying ingredients. You want to see clearly where the money for each pack of treats goes, and you plan to draw an activity chart.",
+    "question": "How should this chart be split into boxes?",
+    "explain": "What you want to see is which piece of work the money goes on, so split the boxes by the work done. If one person does several things, they take up several boxes, and each box keeps its own record of time and money.",
+    "options": [
+     {
+      "text": "Split by the work actually done: purchasing, recipes, production, packing and shipping, after-sales. One person can take up several boxes.",
+      "correct": true,
+      "feedback": "Each box stands for one piece of work. Taking orders and packing and shipping are recorded separately, so it's clear which step the money goes on."
+     },
+     {
+      "text": "Split into six boxes by person, one each, with each recording all the spending and time under their name.",
+      "correct": false,
+      "feedback": "You take orders and pack and ship too, so the spending is mixed in one box and you can't tell which piece of work it went on."
+     },
+     {
+      "text": "Split by accounting category: wages, rent, utilities, materials, shipping, miscellaneous.",
+      "correct": false,
+      "feedback": "Categories only say what the money was spent on, not which piece of work it went to, and they don't show which step added something for the customer."
+     },
+     {
+      "text": "Give only packing and shipping a box of its own, and merge everything else into \"Other.\"",
+      "correct": false,
+      "feedback": "With purchasing, production and after-sales mixed in one box, you can't see which step costs a lot or which one drags down the others."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Square bars cut shipping; a cheap card wins buyers",
+  "caption": "A bar costs 25 yuan. Cut square, two fit a bag: 4 yuan less shipping each. A handwritten card costs little, brings buyers back. A 5-yuan resend gives only a wait.",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "Material 6 yuan",
+    "sub": "Gentle to use"
+   },
+   {
+    "id": "b",
+    "label": "Cutting 4 yuan",
+    "sub": "Cut square",
+    "tone": "accent"
+   },
+   {
+    "id": "c",
+    "label": "Packing 2 yuan",
+    "sub": "How-to card",
+    "tone": "accent"
+   },
+   {
+    "id": "d",
+    "label": "Ship 8→4 yuan",
+    "sub": "Two per bag",
+    "tone": "accent"
+   },
+   {
+    "id": "e",
+    "label": "Resend 5 yuan",
+    "sub": "Buyer only waits",
+    "tone": "warn"
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b"
+   },
+   {
+    "from": "b",
+    "to": "c"
+   },
+   {
+    "from": "c",
+    "to": "d"
+   },
+   {
+    "from": "d",
+    "to": "e"
+   }
+  ]
+ }
+}

@@ -1,0 +1,222 @@
+{
+ "id": "historical-contingency",
+ "name": "Historical Contingency",
+ "en": "历史的偶然性",
+ "discipline": "society",
+ "one_line": "History could have gone another way, and changing one small link changes everything after it.",
+ "story": "On November 9, Schabowski mistakenly says the new travel rules take effect \"immediately,\" and the Berlin Wall opens that night",
+ "shallow": {
+  "scene": "Early in the evening of November 9, 1989, Günter Schabowski, spokesman for East Germany's ruling party, held a press conference in East Berlin and read out a new rule easing travel abroad. A reporter asked when it would take effect. He had not read the full arrangements made before the conference. He leafed through the papers in his hand and answered that as far as he knew, it took effect immediately. Television carried his words all over East and West Berlin, and people streamed to the border. The guards at the Bornholmer Strasse checkpoint had received no order to let anyone through. Facing a crowd that kept growing, they raised the barrier that night.",
+  "plain": "Two equally qualified people apply for the same job. On the day of the interview, one of them is caught by a subway shutdown, arrives ten minutes late, and is moved to the afternoon. In the morning the interviewer has already talked with the other candidate and been very pleased, so the afternoon is just a formality. Historical contingency cares about exactly this kind of fork: neither person's résumé nor ability changed, but one job can go to only one person, and it went by the order they were seen in. Without that shutdown, he would have arrived on time, and the result might have been the other way round."
+ },
+ "deep": {
+  "mechanism": "### Conditions mark out the possible paths, and chance picks one of them\n\nEast Germany's protests and money troubles can explain why the travel restrictions were going to ease; they can't explain why the border opened on that particular night. These conditions narrowed the possible paths to a few: approve people one at a time through the proper procedure, or let them through that night. A slip of the tongue, a live broadcast and the on-the-spot decisions of guards at the border picked the second.\n\n### A small thing only carries weight when it connects to other links\n\nImagine Schabowski had answered that people could apply through the proper procedure from the next morning. Then most likely no one would have rushed to the checkpoints that night, and the guards would have had a night to wait for orders from above. And the same slip, if television hadn't broadcast it, would never have reached people's ears. How much weight a small thing carries depends on which links it connects to; the earlier it connects, the more people and events later on change course with it.\n\n### Different starting points, different paths\n\nThis is easier to see in experiments that can be rerun. Richard Lenski's lab at Michigan State University let 12 populations of E. coli breed separately for more than 30,000 generations, and only one population learned to eat the citrate in its growth medium. Later, Blount and colleagues took frozen old samples of this population and grew them again. Starting from samples from before generation 20,000, it never happened again; only samples from after generation 20,000 sometimes managed it again. So the mutations that turned up around generation 20,000 didn't decide the outcome, but they rewrote which later mutations would be useful.",
+  "origin": "No single person came up with this idea; history and historical sociology had long been using it. In 1989 the paleontologist Stephen Jay Gould, in *Wonderful Life*, proposed \"replaying the tape of life\": rewind the history of life and play it again, and would it end the same way? The idea of contingency spread from there. In 2008 Blount, Borland and Lenski really did replay it once, in E. coli, using frozen strains.",
+  "limits": "Contingency best explains why things turned out as they did when records show another path was open at the time: alternative plans, meeting minutes and delayed approvals all count as evidence. When a path has already been blocked by law, resources or technology, a different person or a different day wouldn't change the result. Reviewing a lost match and blaming only the rain that day, without any record that the opponent might otherwise have slipped up, is using chance as an excuse."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "To find out why a city's subway exit ended up on this street, dig out the site-selection documents from back then and see at which step the other candidate site was rejected."
+   },
+   {
+    "use": "explore",
+    "text": "When you review a success, ask one by one, \"What if a different decision had been made then?\" Find which links change the result when they change, and which could be swapped without making any difference."
+   },
+   {
+    "use": "act",
+    "text": "When a plan depends on one approval or one meeting, prepare another path ahead of time, because points like these are exactly where the result isn't settled yet."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "After the game shut down",
+    "text": "In 2012 Stewart Butterfield's team shut down the online game Glitch. The team didn't break up; it turned the communication tool it used internally into a product, which became Slack. The team, code and tools left over from the failed game decided which few steps the change of direction could take."
+   },
+   {
+    "field": "Science",
+    "title": "A dish that was kept",
+    "text": "In 1928 in London, Alexander Fleming found that in a culture dish contaminated by mold, the staphylococcus bacteria around the mold had disappeared. Many people would simply have thrown out a contaminated dish; he kept it to study, and found that a substance the mold gave off could hold back bacteria."
+   },
+   {
+    "field": "Investing",
+    "title": "A Saturday visit",
+    "text": "One Saturday in 1951, Warren Buffett went to Washington to visit GEICO, and the office was already closed. An employee let him in, he met the vice president Lorimer Davidson and listened to several hours about the insurance business, and afterward he bought the company's stock."
+   }
+  ],
+  "ask": [
+   "Before this happened, which paths that were never taken did people actually consider? Are there records to prove it?",
+   "Change just one decision, meeting or date that's on record: which chain of cause and effect breaks?",
+   "The success I want to learn from depended on an opportunity. Is that opportunity still there today?"
+  ],
+  "with": [
+   {
+    "id": "path-dependence",
+    "sees": "A company once chose B out of two equally good payment services, and now wants to switch back to A. Contingency says choosing B was never the only option, and A would have worked just as well; path dependence says billing, reconciliation and reports are all built around B now, and the money and time a change would take are the real facts. Whether to switch depends on the cost of moving and the gain afterward, not on whether the original choice was chance."
+   },
+   {
+    "id": "hindsight-bias",
+    "sees": "Afterward, everyone says this step should have been seen coming. Lay out the meeting minutes and alternative plans from back then, and you can see that no one at the time knew things would end up here. Contingency helps you restore that uncertainty, while hindsight bias erases it."
+   },
+   {
+    "id": "optionality",
+    "sees": "When a plan depends on one approval or one meeting, contingency reminds you that the outcome of that step isn't settled, and optionality says what to do about it: don't put all your chips on this one point, and prepare a second path ahead of time."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're listening to a bookstore owner remember how he opened his shop. A broker showed him two shopfronts, A and B, both with rent within his budget. He had planned to see A first, but that day nobody could be reached about the keys to A, so he saw B first and paid a deposit on the spot. Years later he says, \"Opening at B was fate.\" You want to work out how much that failure to reach anyone really changed.",
+    "question": "To judge whether that failure to reach anyone changed the outcome, what should you check first?",
+    "explain": "The key point is whether A was still an open path at the time. If A could still be rented that day and he had meant to see A before paying the deposit, then the missing keys really did change the order; if A had long since been rented out, he'd have ended up with B whichever he saw first.",
+    "options": [
+     {
+      "text": "Ask him whether he now thinks he chose right, since he knows the matter best.",
+      "correct": false,
+      "feedback": "Feelings after the fact are colored by how things turned out; they can't tell you which options were still left at the time."
+     },
+     {
+      "text": "Check whether his shop at B makes good money now; if it does, choosing B was right.",
+      "correct": false,
+      "feedback": "Making good money only shows B wasn't bad; it can't tell you whether A was an open path at the time."
+     },
+     {
+      "text": "Check how much the rents of A and B differed then; a big gap would decide which one got chosen.",
+      "correct": false,
+      "feedback": "The question says both were within budget, so the price gap can't tell you how much the keys mattered."
+     },
+     {
+      "text": "Whether, when he paid the deposit, A could still be rented and he still meant to go and see it.",
+      "correct": true,
+      "feedback": "If A could still be rented and he still wanted to see it, then the small matter of the keys really did push him toward B."
+     }
+    ]
+   },
+   {
+    "stem": "A coworker ran into the director by chance in an elevator, was pulled into a key project, and later got promoted. Having heard the story, you want to learn something you can use from it.",
+    "question": "Which way of learning from it can you best apply to yourself?",
+    "explain": "The chance meeting was the trigger; what actually did the work was that the director was short of people at the time and the coworker had a ready-made plan in hand. Working out these connecting links is how you get the conditions ready; just learning \"spend more time in elevators\" mistakes a fork in the road for a formula.",
+    "options": [
+     {
+      "text": "Work out what connected the chance meeting to the result, such as the director needing people and the coworker having a ready plan, then get your own version ready.",
+      "correct": true,
+      "feedback": "The conditions behind the chance meeting are the part you can prepare, so you can catch the chance when it comes."
+     },
+     {
+      "text": "Go to more company events: the more people you know, the more often you'll run into a chance.",
+      "correct": false,
+      "feedback": "Knowing more people doesn't mean you can connect, and this doesn't answer why that chance meeting could turn into a project."
+     },
+     {
+      "text": "Treat it as pure luck and don't learn from it, since you can't copy it anyway.",
+      "correct": false,
+      "feedback": "You can still see which conditions connected to the result; the only part you can't copy is the luck."
+     },
+     {
+      "text": "Time your elevator rides to the director's arrival at work every day, to have as many chance meetings as possible.",
+      "correct": false,
+      "feedback": "A chance meeting is just a trigger. Without a need it fits and work that's ready, no number of them will connect."
+     }
+    ]
+   },
+   {
+    "stem": "Your cousin fell 20 points short of the admission cutoff, and each multiple-choice question was worth 2 points. Afterward he says, \"If I'd gotten just one more question right, I'd have gotten in.\"",
+    "question": "If he had gotten one more question right, would he have gotten in?",
+    "explain": "One more right answer only adds 2 points, a long way from 20. For this what-if to hold up, there would have to be records showing he was affected in more than one place, such as being moved to a different exam room that day or being interrupted for a dozen minutes or more; with just one question, that path was never open.",
+    "options": [
+     {
+      "text": "Yes: he came so close, which shows the cutoff itself is partly random, and near misses are common.",
+      "correct": false,
+      "feedback": "The cutoff is announced before the exam; falling 20 points short is not a random near miss."
+     },
+     {
+      "text": "No: scores are decided by ability, so getting one question right or wrong isn't chance, let alone something that changes the result.",
+      "correct": false,
+      "feedback": "One question adds at most 2 points, which can't make up 20; that doesn't mean chance doesn't exist."
+     },
+     {
+      "text": "No: it's only 2 more points, far from the cutoff, unless there's evidence that something else affected him that day.",
+      "correct": true,
+      "feedback": "For this what-if to work, there must really have been another path at the time; with a difference of only one question, the path is cut off."
+     },
+     {
+      "text": "Yes: if he had checked his answers once more, the result of every question might have been different, so he could always make it up.",
+      "correct": false,
+      "feedback": "\"Might have been different\" has no evidence behind it, and the gap is too big for one question to make up."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Conditions left two paths; a slip picked that night",
+  "caption": "Protests and money troubles explain why the limits eased, not why the border opened that night. Without the slip or the broadcast, the lower path was likelier.",
+  "nodes": [
+   {
+    "id": "b",
+    "label": "Limits to ease",
+    "sub": "Protests, deficits"
+   },
+   {
+    "id": "c",
+    "label": "\"Immediately\"",
+    "sub": "Schabowski's slip",
+    "tone": "accent"
+   },
+   {
+    "id": "d",
+    "label": "TV spreads it"
+   },
+   {
+    "id": "e",
+    "label": "Barrier lifted",
+    "sub": "Night of Nov. 9",
+    "tone": "accent"
+   },
+   {
+    "id": "f",
+    "label": "Apply tomorrow",
+    "tone": "muted"
+   },
+   {
+    "id": "g",
+    "label": "Guards wait",
+    "sub": "No rush to border",
+    "tone": "muted"
+   }
+  ],
+  "edges": [
+   {
+    "from": "b",
+    "to": "c",
+    "tone": "accent"
+   },
+   {
+    "from": "c",
+    "to": "d",
+    "tone": "accent"
+   },
+   {
+    "from": "d",
+    "to": "e",
+    "label": "Crowds go",
+    "tone": "accent"
+   },
+   {
+    "from": "b",
+    "to": "f",
+    "dashed": true,
+    "tone": "muted"
+   },
+   {
+    "from": "f",
+    "to": "g",
+    "dashed": true,
+    "tone": "muted"
+   }
+  ]
+ }
+}

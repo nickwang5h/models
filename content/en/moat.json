@@ -1,0 +1,200 @@
+{
+ "id": "moat",
+ "name": "Economic Moat",
+ "en": "护城河",
+ "discipline": "business",
+ "one_line": "A business lasts when others can watch it make money and still can't take it.",
+ "story": "Buffett and Munger buy See's Candies for 25 million dollars, and loyalty to the brand brings decades of high profits",
+ "shallow": {
+  "scene": "In 1972, Warren Buffett and Charlie Munger, through a company called Blue Chip Stamps, paid 25 million dollars for See's Candies of California. Eleven years later, in his 1983 letter to shareholders, Buffett laid out the books. Sales were about 87 million dollars in 1979 and more than 130 million in 1983. Yet in each of those years the company sold about the same amount of candy, around 24 million pounds. He wrote plainly that the extra revenue came from large price increases: at the holidays, customers still bought the box of candy they knew.",
+  "plain": "The breakfast stall downstairs sells youtiao, a fried dough stick, at 3 yuan each. Each one costs 1.5 yuan to make, and it sells 400 a day. Someone wants to open a stall across the street, and the fit-out and the stove would cost 60,000 yuan. How deep the stall's moat is depends on the catch-up sums the newcomer across the street works out.\n\nRegular customers have liked the taste for years, so even if the new stall cuts the price to 2.5 yuan, it wins only 30 sticks a day. At 1 yuan profit each, that is 30 yuan a day, and it takes more than five years to earn back the 60,000. If it could win 80 a day, it would pay back in two years, and the newcomer would have opened long ago. The newcomer can see that the business makes money, but the sums don't work, so the old stall keeps its profit."
+ },
+ "deep": {
+  "mechanism": "### The rival does the sums for getting in, not your profit sums\n\nWhether a rival comes depends on how long the profit it takes from you needs to pay back what it spends catching up. If getting in costs $C$ yuan and, once in, it makes $g$ yuan more a year, the number of years the rival needs to pay back is\n\n$$t=\\frac{C}{g}$$\n\nThe depth of the moat is the length of that payback: the more it costs to get in and the less a rival can take, the deeper the moat. Imagine an industry where you must spend 600 million yuan to build sales channels, and once in you make 30 million more a year. It takes twenty years to pay back, and most boards would not approve it. Bring the investment down to 60 million and it pays back in two years, so high profits soon draw people in. Four kinds of things commonly make a rival's sums fail. One is the habits customers have settled into, like the See's candy box. Another is the trouble of switching, like a customer having to explain their haircut all over again to a new barber. A third is lower costs, like a parts factory that turns out less scrap than others. The last is resources rivals can't get, like licenses and pipe networks already in the ground.\n\n### The moat is deep enough only if customers stay after a price rise\n\nImagine a product that sells for 100 yuan and costs 60, a gross profit of 40 yuan on each. Raise the price 10% and each one makes 10 yuan more, a gross profit of 50. Eighty percent of 50 is exactly 40, so sales have to fall by a fifth before total gross profit is back where it was. See's is the most extreme case: in four years its revenue rose by more than half, while the weight of candy it sold barely changed. Orders still coming in the month of a price rise don't count. The moat is deep only if customers still pay that price once contracts come up for renewal, shortages are over, and they can compare prices again.\n\n### What the moat guards is the money left after the cost of capital\n\nMoney put into a business has a cost: the people who supplied it could have put it somewhere else and earned a return. A rival doing its sums for getting in has to subtract that cost, and so do you when you size up your own moat. Put in 100 yuan with investors asking for 8% a year, and the business must first earn 8 yuan. After the costs of running the business and keeping up its advantage, its after-tax operating profit is 15 yuan. Pay the investors their 8 first, and the 7 left over is the money rivals envy and the moat has to guard. A business that earns only its 8 yuan leaves a rival nothing to share if it comes in, and it needs no moat.",
+  "origin": "Buffett made the word popular. In his 1995 letter to shareholders he used a castle and its moat to describe GEICO's cost advantage, and in his 2007 letter he used See's as an example; by then it made 82 million dollars a year before tax. In May 2010 he told the US Financial Crisis Inquiry Commission that pricing power is the most important thing in judging a business.",
+  "limits": "The model works best for businesses whose customers buy again and again and that rivals need years to catch up with. High profits don't always mean a moat. Imagine that for six months after a bridge collapses, ferry fares double. That profit comes from a gap: once new boats arrive and the bridge is repaired, it goes away. Mistaking size or fame for a moat is another misreading; the question is whether a rival trying to catch up can make the sums work. The price-rise test can fool you too. When a whole industry raises prices along with the cost of raw materials and customers keep buying, the costs have only been passed on, and the moat is no deeper."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Two barbershops on the same street, and only one dares to raise its price by ten yuan every year: its customers would have to explain their haircut all over again to a new barber if they switched, while the other shop's customers go wherever is cheapest."
+   },
+   {
+    "use": "reason",
+    "text": "Work out whether a company's high gross margin this year can be counted on for the next ten years: divide what a rival must spend to get in by the yearly profit it could take. The longer the payback, the further ahead you can count on it."
+   },
+   {
+    "use": "predict",
+    "text": "Foresee what happens to a business protected by a license: once the rules are loosened, rivals can walk in around it without having to catch up, and profits fall in the year the new rules take effect."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Investing",
+    "title": "Revenue hides price and volume",
+    "text": "An analyst opens a food company's annual report. Revenue is up 10%, the volume sold hasn't changed, and the price of the same product is also up 10%, so customers accepted the price rise. Digging into the promotion costs, he finds that every pack now needs a more expensive free gift to sell, so little of the extra revenue stays as profit."
+   },
+   {
+    "field": "Manufacturing",
+    "title": "Blueprints don't copy yield",
+    "text": "The parts factory you run has recorded for years how temperature and tool wear relate to scrap, and its experienced workers adjust the process by those records: out of every hundred parts, two are scrapped. A rival's new plant works from the same drawings and scraps ten. The new plant has to go through round after round of trial and error to close the gap, while the old factory keeps its profit through the eight parts it doesn't waste."
+   },
+   {
+    "field": "Career",
+    "title": "A medical translator raises her rate",
+    "text": "You are a translator who specializes in medical texts, and you raise your rate from 300 yuan to 330 yuan per thousand characters. The medical device maker you work with keeps sending orders: you know the terminology, and your work rarely needs redoing. The review time the client saves and the mistakes it avoids hold up that 10% rise. When other translators cut their prices, your orders stay."
+   }
+  ],
+  "ask": [
+   "If a well-funded, competent rival came in tomorrow, would the business it took from me earn back what it spent?",
+   "Look at the renewal records after the last three price rises: are the same customers still there, and were any kept only with discounts or extra service?",
+   "What change in technology, rules or customer habits would let rivals go around me without having to catch up?"
+  ],
+  "with": [
+   {
+    "id": "price-elasticity",
+    "sees": "A rival cuts the price of the same goods by 20%. Should you cut prices for your regular customers too? When switching means a customer has to get used to a new supplier all over again, the moat holds your price for you, and following the cut just gives away profit. If what you sell is a standard product that everyone compares prices on, price elasticity is the better guide: if you don't cut, customers leave, and only a cut brings the volume back. First check whether leaving you costs customers a lot. If it does, hold the price; if it doesn't, cut it."
+   },
+   {
+    "id": "price-and-value",
+    "sees": "A company has pricing power, but its share price has already risen far enough to pay for the next ten years of good times. However deep the moat, it doesn't help now: the moat says \"keep holding,\" and price and value says \"don't buy today.\" First ask how many years of extra profit today's price already pays for, then decide."
+   },
+   {
+    "id": "switching-costs",
+    "sees": "You supply washed and cut ingredients to a restaurant chain, and the customer's chefs have already changed their recipes and prep routines to fit your specs. A rival bids 30% lower. Switching suppliers would cost the customer a lot, so it is locked in with you, and you should hold your price. But when the customer happens to overhaul its whole menu and the prep routines have to be redone anyway, the switching cost drops to zero and the moat is gone that same day. That is the time to go and negotiate a renewal first."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You are an account manager at a software company. A supermarket brand with forty stores has used your inventory software for six years, and every store's product codes, restocking rules and supplier payments are connected to it. A new vendor has similar features and a 30% lower annual fee, but switching would take four months of cleaning up data and retraining staff, and might interrupt restocking. After customer service, system maintenance and the cost of capital, your company still makes a steady surplus on the account.",
+    "question": "Why can your company keep this surplus?",
+    "explain": "The customer weighs the whole cost of moving, not just the annual fee. Copying the features is not enough: to win the customer, the new vendor also has to make the savings outweigh the cost of moving.",
+    "options": [
+     {
+      "text": "Six years of history already prove the customer will keep renewing, so a switch won't happen.",
+      "correct": false,
+      "feedback": "The renewal record only shows the customer hasn't left so far. It doesn't show what leaving would cost them."
+     },
+     {
+      "text": "The lower annual fee may not cover the customer's total cost of moving, and the new vendor has to make up for that first.",
+      "correct": true,
+      "feedback": "Moving takes four months and could interrupt restocking. The rival has to convince the customer that switching won't leave it worse off."
+     },
+     {
+      "text": "As long as the new vendor is willing to pay for the move, every customer will switch, and the barrier to competition is gone.",
+      "correct": false,
+      "feedback": "Paying for the move is an extra cost to the new vendor, which it has to earn back from later revenue. Having money to spend doesn't make spending it worthwhile."
+     },
+     {
+      "text": "The features are similar, so customers will gradually move to the cheaper vendor; the lower price wins.",
+      "correct": false,
+      "feedback": "The customer compares the fee plus the cost of moving. Four months of data cleanup and training and the interrupted restocking count too."
+     }
+    ]
+   },
+   {
+    "stem": "Before Chinese New Year, a pet boarding shop raised its daily rate by 30% and was still fully booked. The three other boarding shops nearby were full too, and many new customers said they couldn't find a free spot. The owner plans to keep the new price after the holiday and to expand on the assumption that the shop will be full all year.",
+    "question": "To judge whether this price can last, what should you look at first?",
+    "explain": "Being full over the holiday shows, before anything else, that supply was tight during the holiday and customers had nowhere else to go. The price has only proved itself if customers still pay it once rivals have free spots again and customers can compare freely.",
+    "options": [
+     {
+      "text": "Whether customers still book at the new price after the holiday, when the other shops have free spots again.",
+      "correct": true,
+      "feedback": "Once there are free spots to choose from, customers' bookings and repeat visits show how much pull this shop itself has."
+     },
+     {
+      "text": "The shops nearby are full too, which shows local demand is strong, so the shop can keep the high price after it expands.",
+      "correct": false,
+      "feedback": "Several full shops only show that holiday demand was strong. Demand dropping after the holiday and the new rooms coming in would both change the picture."
+     },
+     {
+      "text": "It is still full after the price rise, which shows customers value the service and the price is well justified.",
+      "correct": false,
+      "feedback": "No shop nearby had space, so customers had no choice at the time. Being full doesn't show that they value it."
+     },
+     {
+      "text": "The ratings from this holiday's customers: if they hold steady, the new price can stay all year.",
+      "correct": false,
+      "feedback": "Being satisfied is not the same as being willing to pay a high price for a long time. You still need to see how customers book when they have free spots to choose from."
+     }
+    ]
+   },
+   {
+    "stem": "In an industrial park, Company A supplies gas to the nearby factories through underground pipes that are already laid, and after maintenance and the cost of capital it still makes a steady surplus. Company B delivers the same kind of gas by tanker truck. To lay its own pipe network, B would first have to put up a large sum for construction, and the park's current demand is only enough for one network to earn back its investment.",
+    "question": "Why is it hard for B to take a share of A's surplus?",
+    "explain": "B is able to build a network, but the business it could take wouldn't earn back the cost of building it. Profit only has a chance to last when a rival's sums don't work.",
+    "options": [
+     {
+      "text": "A's pipe network cost a lot, and the bigger the investment, the longer the advantage lasts.",
+      "correct": false,
+      "feedback": "How much was spent has to be weighed against demand and returns. An expensive facility can also be just a heavy cost."
+     },
+     {
+      "text": "Both sell the same kind of gas, so customers mainly compare prices, and A can only hold on by cutting prices.",
+      "correct": false,
+      "feedback": "They deliver in different ways, so their costs differ too. To undercut A, B still has to count the cost of trucking and of building a network."
+     },
+     {
+      "text": "B can take losses at first and earn back its investment once the customers come over.",
+      "correct": false,
+      "feedback": "The park's demand is limited, and customers switching doesn't add to total demand. The construction cost would still have to be earned back from that limited business."
+     },
+     {
+      "text": "What B would spend copying the network is hard to earn back from the park's current demand.",
+      "correct": true,
+      "feedback": "When B does its sums for getting in, it finds that a second network's returns can't cover the construction cost, so A's cost advantage holds."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Win less, wait longer, fewer rivals come",
+  "caption": "At 2.5 yuan, the new stall makes 1 yuan a stick. Drag: at 30 a day it takes over five years to earn back 60,000; at 80, two.",
+  "x": {
+   "label": "Years since opening",
+   "min": 0,
+   "max": 6
+  },
+  "y": {
+   "label": "Earned (10,000 yuan)",
+   "unit": "",
+   "min": 0,
+   "max": 18
+  },
+  "params": [
+   {
+    "id": "r",
+    "label": "Sticks won a day",
+    "min": 10,
+    "max": 80,
+    "step": 10,
+    "value": 30,
+    "unit": ""
+   }
+  ],
+  "series": [
+   {
+    "name": "Total earned",
+    "expr": "x*365*r/10000",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "y": 6,
+    "text": "Fit-out and stove: 60,000"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Years to pay back",
+    "expr": "60000/(365*r)",
+    "unit": " yrs",
+    "digits": 1
+   }
+  ]
+ }
+}

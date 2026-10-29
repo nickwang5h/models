@@ -1,0 +1,217 @@
+{
+ "id": "capital-allocation",
+ "name": "Capital Allocation",
+ "en": "资本配置",
+ "discipline": "investing",
+ "one_line": "Choosing year after year where money does the most decides what a company becomes.",
+ "story": "Buffett uses cash from Berkshire's textile business to buy National Indemnity, an insurer, and in 1985 closes the textile mills",
+ "shallow": {
+  "scene": "Your year-end bonus has arrived. Do you get a new phone, sign up for a course, or pay off a bit of the mortgage early? Each choice brings back something different later on. Warren Buffett faced the same kind of choice, only with much bigger sums.\n\nIn 1967 Berkshire Hathaway, the company he ran, was still a textile company, and the textile business still brought in some cash. Instead of spending that money on new looms, he bought National Indemnity, an insurance company. After that, insurance grew more and more important within the company, while the textile business used up cash for years. In July 1985 he decided to shut the textile business down.\n\nToday Berkshire is known for insurance and investing, and still uses the name of that textile company. There was never a day when it announced a change of business; where one sum of money after another went is what turned a weaving mill into a different company.",
+  "plain": "At the end of the year you do the accounts: your car repair shop has 100,000 yuan left over, and you have three places to put it, each of which would take the whole 100,000. Replacing the old car lift saves 20,000 a year in repairs; adding a tire machine earns 30,000 more a year; paying off a loan at 8% saves 8,000 a year in interest. Looking at one year only, the tire machine earns the most. But the machine wears out after five years, so you have to add up the five years and subtract the 100,000 you spent:\n\n- Car lift: saves 100,000 over five years, just enough to get the money back.\n- Tire machine: earns 150,000 over five years, 50,000 more than you put in.\n- Paying off the loan: the 100,000 goes out, but the 100,000 you owed is gone too, so none of the money is lost, and you pay 40,000 less interest over five years.\n\n50,000 is more than 40,000, but that 30,000 a year is your own estimate, while the interest saved by paying off the loan is exact to the cent. If the tire machine earns 2,000 less a year, that's 10,000 less over five years, leaving only 40,000 extra, a tie with paying off the loan; any less and it falls behind. You're not sure of your estimate, so you pay off the loan. Putting a sum of money in front of several places it could go, comparing how much more each brings back once the money put in is taken out and how sure you can be of it, then giving it to the best one: that is capital allocation."
+ },
+ "deep": {
+  "mechanism": "### The best other use decides whether this project gets done\nYou run a furniture factory and have 1 million yuan. A new production line would bring back 150,000 a year. If the other option is just putting the money in the bank, at 30,000 a year, the line brings back 120,000 more, so build it. If a small rival is up for sale, and buying it for 1 million would bring back 220,000 a year, the line brings back 70,000 less, and the money should go to buying the rival.\n\n### Even if the old business earns a lot, the next sum must be compared afresh\nA soy sauce factory's bottling lines are very profitable, but the market is already full. A new line would only sell the same goods to the same old customers, so spending 1 million yuan on it adds just 30,000 a year to the whole factory's profit. What has to be compared is this extra 30,000, not the whole factory's average record in the past. Take the next sum outside the factory to compare first: paying down debt, buying another business, giving it back to shareholders.\n\n### Choose like this year after year, and the company changes shape\nWhich businesses money goes into, and which businesses are closed or sold: over ten years, the business a company is in is the sum of these choices. So whatever standard you compare by is what the company gets shaped into: if a CEO makes revenue the goal, the choices will lean toward projects that make the company look big.",
+  "origin": "Capital allocation comes from corporate finance and business management, and no single person is credited with coming up with it. Buffett discussed it at length in his 1987 letter to Berkshire shareholders: people who are good at running a business and become CEOs also have to learn to decide where the money goes.",
+  "limits": "It's most useful when you have a sum of money you're free to use and can estimate how much each use would bring back, as at a company's year-end investment meeting or with a household's savings at the end of the year. Schools and hospitals don't aim at cash, so comparing only cash returns misses what they really want; first write down clearly what you want to improve. Money booked as sales that customers haven't paid yet isn't in your hands now; investing it is the same as borrowing."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "To see why a company turned into a different kind of business over ten years, open the cash flow statements in its annual reports and count, item by item, where the cash it earned each year went."
+   },
+   {
+    "use": "act",
+    "text": "When you have money left over at the end of the year, first take out what you've already promised to others, then line up the things you could do with the rest, see how much more each brings back, and give the next sum to the one that brings back the most."
+   },
+   {
+    "use": "explore",
+    "text": "Make the team write down options it wouldn't normally consider, such as giving money back to shareholders, buying a small rival, or paying off the most expensive debt early, and put them on the same sheet as the old projects already in hand."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Investing",
+    "title": "Giving profit back to shareholders",
+    "text": "In March 2012 Apple announced that it would start paying dividends and launch a program to buy back its shares. At the time it had about 98 billion dollars in cash and securities; with research, the supply chain and its stores all still funded, there was a great deal of money left over. Tim Cook said that after these investments the company still kept a reserve for strategic opportunities and had more than enough to run the business. Giving back money it couldn't use was better than leaving it sitting on the books."
+   },
+   {
+    "field": "Farming",
+    "title": "An orchard becomes a farm stay",
+    "text": "Your family's orchard brings in 100,000 yuan a year. Every 10,000 put into a farm stay, where visitors come to eat and stay on the farm, brings in 2,000 more a year, which beats replanting fruit trees. For ten years you save half your income each year and put all of it into expanding the farm stay, and you don't replant the old trees. By the tenth year the farm stay brings in about 160,000 a year, and 60% of the family's income comes from it. There was never a day you decided to change business; ten year-end choices turned the orchard into a farm stay."
+   },
+   {
+    "field": "Personal life",
+    "title": "The 3,000 yuan you save each month",
+    "text": "You can save 3,000 yuan a month, and there are two places for it: save up for a used car and cut out two hours of commuting a day, or sign up for a 20,000-yuan data analysis course. You ask coworkers who took it and learn that after moving to new roles they made 500 yuan more a month. You sign up for the course first and keep commuting as before."
+   }
+  ],
+  "ask": [
+   "Open the latest cash flow statement: where did the cash that came in go, to expansion, acquisitions, paying down debt, buybacks or dividends?",
+   "For the most recent big investment, is the cash actually coming in now as much as the yearly amount that was estimated back then?",
+   "What other uses do I have that I haven't put on the table to compare?"
+  ],
+  "with": [
+   {
+    "id": "compounding",
+    "sees": "A company keeps all its profit every year and reinvests it. Compounding makes the profit bigger year after year, and it looks like a snowball rolling. Capital allocation looks at how much each yuan kept earns inside the company: if it earns only 5% there, while shareholders taking it out could get 4% on government bonds, this snowball rolls barely faster than the shareholders could roll it themselves. The two models disagree on only one point: how much the money kept in the company actually earns each year."
+   },
+   {
+    "id": "principal-agent",
+    "sees": "A branch's general manager gets a bonus based on revenue, and he proposes opening three more stores; shareholders could also use the same money to pay down debt or pay dividends. Principal-agent thinking warns that the upside of opening stores goes to him and the losses to the shareholders, so his proposal should be discounted. Capital allocation asks: is the new cash from these three stores more than the interest saved by paying down debt? First change his bonus to be based on the cash brought back, then hear his plan."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're the finance chief at a factory that makes ship parts. After setting aside enough money for operations, the factory has 5 million yuan it can invest freely; money left unused stays on the books and earns nothing. The projects are independent and can't be split. A costs 5 million, and the extra cash it brings in over the years is worth 6.4 million in today's money; B costs 3 million and is worth 4.1 million today; C costs 2 million and is worth 2.7 million today; D costs 2 million and is worth 1.9 million today. All these figures are after tax and upkeep, and are brought back to today at the same rate of return.",
+    "question": "To add the most value to the company, how should the 5 million be used?",
+    "explain": "What's compared is how much value each project adds once its cost is taken out: A adds 1.4 million, B adds 1.1 million, C adds 700,000, and D actually loses 100,000. B plus C uses up the budget exactly and adds 1.8 million, the most of any combination.",
+    "options": [
+     {
+      "text": "Only A, using all 5 million, because it brings back the most cash.",
+      "correct": false,
+      "feedback": "Once its cost is taken out, A adds only 1.4 million, less than the 1.8 million from B plus C."
+     },
+     {
+      "text": "B and C, using all 5 million.",
+      "correct": true,
+      "feedback": "B adds 1.1 million and C 700,000, 1.8 million in total, the highest of all the combinations that fit."
+     },
+     {
+      "text": "B and D, using all 5 million, because together they bring back 6 million in cash.",
+      "correct": false,
+      "feedback": "D brings back 1.9 million but costs 2 million; B plus D adds only 1 million in total."
+     },
+     {
+      "text": "Only B, keeping 2 million, because it brings back the most cash for each yuan put in.",
+      "correct": false,
+      "feedback": "B alone adds 1.1 million, and the 2 million left earns nothing, so you pass up the 700,000 that C would add."
+     }
+    ]
+   },
+   {
+    "stem": "You're a small shareholder in a listed food company. For ten years it has made a profit every year and never paid a dividend, keeping 5 billion yuan of profit in total, with the number of shares unchanged; over those ten years the company's market value rose by only 3 billion. At the annual meeting the chairman says, \"Revenue has tripled in ten years. Every bit of the money has gone where it counts.\"",
+    "question": "How should you judge the way the kept profit was used over these ten years?",
+    "explain": "Each yuan kept should turn into at least a yuan of value. They kept 5 billion and the market value rose by only 3 billion, 2 billion short; if shareholders had taken the money out back then and invested it themselves, they might have done better. Revenue and profit only show that the business is running, not how much the kept money earned.",
+    "options": [
+     {
+      "text": "Used well: revenue tripled in ten years, which shows that every investment of kept profit produced something.",
+      "correct": false,
+      "feedback": "Revenue measures size, not how much the kept money earned; size can triple on investments that don't make money."
+     },
+     {
+      "text": "No problem: the market value rose by 3 billion, so shareholders didn't lose out over the ten years.",
+      "correct": false,
+      "feedback": "Shareholders did lose out: the rise in market value is 2 billion less than the profit kept, and that 2 billion is value lost when the profit was kept."
+     },
+     {
+      "text": "It didn't turn into equal value; shareholders might have done better taking the money and investing it themselves.",
+      "correct": true,
+      "feedback": "The 5 billion kept brought 3 billion of market value, so each yuan became only 0.6 yuan, less than if it had stayed in shareholders' hands."
+     },
+     {
+      "text": "Used well: the company made a profit every year, which shows the kept money wasn't sitting idle.",
+      "correct": false,
+      "feedback": "A profit every year only shows the company didn't lose money, not that the newly kept money earned more than shareholders could have earned on their own."
+     }
+    ]
+   },
+   {
+    "stem": "You're a director of a testing company. After keeping enough cash for operations, the company still has 200 million yuan of spare cash and no projects worth putting more money into. Your cautious valuation is 70 to 80 yuan a share, already counting this cash; the share price is now 100 yuan, and six months ago it was 150. The finance chief suggests using the money to buy back shares at the current price, saying that after the buyback, earnings per share would rise 8%.",
+    "question": "On this valuation, what does a buyback mean for shareholders who keep their shares?",
+    "explain": "A buyback spends money on shares. If the price is higher than the value, the difference is borne by the shareholders who didn't sell. Earnings per share go up only because there are fewer shares.",
+    "options": [
+     {
+      "text": "It's no different from a dividend: the money ends up with all the shareholders either way, just in a different form.",
+      "correct": false,
+      "feedback": "Buyback money goes only to those who sell their shares. The shareholders who stay don't get it, and when the price is too high they make up the difference for the sellers."
+     },
+     {
+      "text": "Earnings per share rise 8%, and the value behind each share rises with them.",
+      "correct": false,
+      "feedback": "Fewer shares push up earnings per share, but value per share depends on how much was paid to buy them back, and here too much was paid."
+     },
+     {
+      "text": "The share price is well below the 150 of six months ago, so now is the best time to buy back.",
+      "correct": false,
+      "feedback": "Whether it's a good deal depends on the gap between price and valuation, not on how far the price has fallen; 100 yuan is above the valuation of 70 to 80."
+     },
+     {
+      "text": "Each share costs 20 to 30 yuan too much, and the remaining shareholders bear it.",
+      "correct": true,
+      "feedback": "When shares worth 70 to 80 yuan are bought back for 100, the difference comes out of the company's money, and the shareholders who remain share the loss."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Under 28,000 a year, the machine loses to the loan",
+  "caption": "Across: the machine's extra a year. Up: five-year net after the 100,000 put in. Drag: at 30,000 it leads by only 10,000; 2,000 less a year and it ties the loan.",
+  "x": {
+   "label": "Extra a year (10k yuan)",
+   "min": 1,
+   "max": 5
+  },
+  "y": {
+   "label": "5-year net (10k yuan)",
+   "unit": "",
+   "min": -5,
+   "max": 15
+  },
+  "params": [
+   {
+    "id": "a",
+    "label": "Extra a year",
+    "min": 1,
+    "max": 5,
+    "step": 0.1,
+    "value": 3,
+    "unit": " × 10k yuan"
+   }
+  ],
+  "series": [
+   {
+    "name": "Tire machine",
+    "expr": "5*x-10",
+    "tone": "accent"
+   },
+   {
+    "name": "Repay loan",
+    "expr": "4",
+    "tone": "ink"
+   },
+   {
+    "name": "Car lift",
+    "expr": "0",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "x": "a"
+   },
+   {
+    "x": 2.8,
+    "y": 4,
+    "text": "Tie"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Machine (10k yuan)",
+    "expr": "5*a-10",
+    "unit": "",
+    "digits": 1
+   },
+   {
+    "label": "Loan (10k yuan)",
+    "expr": "4",
+    "unit": "",
+    "digits": 0
+   }
+  ]
+ }
+}

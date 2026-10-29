@@ -1,0 +1,212 @@
+{
+ "id": "iron-law-of-oligarchy",
+ "name": "Iron Law of Oligarchy",
+ "en": "寡头铁律",
+ "discipline": "society",
+ "one_line": "However democratic a group is, power slowly drifts to the few who run things.",
+ "story": "Inside Germany's egalitarian Social Democratic Party, Michels sees paid officials take hold of the agenda and the candidate lists, and writes Political Parties",
+ "shallow": {
+  "scene": "In a group chat for the homeowners of an apartment complex, often only the admin can add people, remove people and change the pinned notice, and over time the admin also decides what gets talked about in the group and what doesn't. More than a hundred years ago, a young sociologist named Robert Michels saw the same thing in a much bigger place. The party he had joined, the Social Democratic Party of Germany, was the largest workers' party in Europe at the time, with hundreds of thousands of members, and equality for all was exactly what it preached: the leaders were elected by the members, and big decisions were made by the party congress.\n\nBut the party was so big that the daily work had to be handed to paid, full-time officials: collecting dues, running the party newspaper, preparing meetings, drawing up lists of candidates. Ordinary members worked during the day and seldom had time for meetings, and by the time a vote came, the issues and candidates in front of them had long since been prepared by these officials. Nobody was plotting anything, yet the leadership hardly changed for years.\n\nMichels later left the party, and in 1911 he wrote *Political Parties*. His conclusion: even in an organization that preaches equality, once the work is handed to a few people, what gets discussed and who gets elected slides, bit by bit, into the hands of the people doing the work.",
+  "plain": "Suppose you're in a book club of forty people. In the first year everyone puts you forward to handle things: booking venues, collecting dues, setting up the group chat. In the second year nobody wants to take over, so you carry on, and along the way you collect everyone's phone number and every venue's prices. In the third year someone wants to hold a talk of their own, and just to let the forty members know, they first have to ask you for the list. On the day the roles change hands, nobody signs up, so you stay on again. You never thought about taking power, but what gets discussed and who can get things done now have to go through you first.\n\nMichels called this drift the iron law of oligarchy: when an organization hands its work to a few people, control over what happens flows, bit by bit, into the hands of the people doing the work."
+ },
+ "deep": {
+  "mechanism": "### The people doing the work handle the details every day; voters read a summary once a month\n\nSuppose an association of four hundred members has three board members, each spending six hours a week on venues, accounts and dealing with outsiders. Members read one newsletter a month on average, taking about fifteen minutes each time. Over a month, the board members spend more than twenty hours with the details, while the members spend a quarter of an hour.\n\nSo when a board member says \"this plan won't work, because…,\" members have no equally detailed material to argue back with, and they go along. Change that gap and the picture changes with it. If board members spend only one hour a week, members can ask follow-up questions on the spot after reading the newsletter, and more of them push back. If board members spend ten hours a week, members don't even know what to ask, and are happier to leave everything to the board.\n\n### The fewer people show up, the more a few votes count\n\nSame association. Its rules say a general meeting can be held with twenty members present, and a simple majority passes a motion. In most years thirty or so turn up, and sixteen of them are board members and their friends. That's already more than half, so any motion gets through. When membership grows to four thousand, often still only thirty or so turn up, and those sixteen votes are still more than half. Turn it around: someone who wants to put forward an alternative has to notify several thousand other members, ten times as many notices as with four hundred.\n\n### The team that knows the procedures becomes the next slate\n\nAfter board members have been re-elected for a long time, they come to feel that the team they've trained is part of the association, and that changing people would cause chaos. A newcomer who wants to take over needs access to the documents, a chance to practice and a nomination, and every one of these steps goes through the old team. After three to five terms, members still have their vote, but everyone on the list was recommended by the old team.",
+  "origin": "Robert Michels was a German-born sociologist. In 1911 he published *Political Parties*. The book studied European socialist parties and trade unions, such as the Social Democratic Party of Germany, and asked why an organization that preaches equality still grows a stable leadership. His material was observation of organizations and historical records, not controlled experiments. Later studies of unions showed that the rule doesn't hold everywhere.",
+  "limits": "This drift is most likely in parties and unions with many thousands of members, whose day-to-day business rests entirely on full-time staff. In 1956 Seymour Martin Lipset, Martin Trow and James Coleman studied the International Typographical Union in the United States. For a long time this union had two parties competing within it, and its leaders really were voted out, which shows that with arrangements like these the \"iron law\" can fail too. Taking it as proof that reform is useless reads too much into it. What it points out is where an organization has to put in extra effort if it doesn't want to end up in the grip of a few."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Work out why an association that holds elections every year has had only two presidents in twenty years, yet nobody thinks its elections are fake."
+   },
+   {
+    "use": "predict",
+    "text": "For a club that has just handed all its work to three volunteers, estimate whose hands will hold the things that are hardest to hand over two years from now."
+   },
+   {
+    "use": "design",
+    "text": "When writing an association's rules, find which powers, once held only by a few people, would turn changing leaders into a mere formality."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "Anyone can edit, a few are in charge",
+    "text": "In 2014 Aaron Shaw and Benjamin Mako Hill went through the complete edit histories of 683 wikis. Anyone could edit pages, but only administrators could delete pages and ban accounts. The bigger a wiki grew, the fewer new administrators it added. The work of running it fell more and more to the small group who had been there since the wiki started, and they also reverted more of the edits made by long-time editors."
+   },
+   {
+    "field": "Academia",
+    "title": "Special issues need the editors' approval",
+    "text": "You belong to an academic society of two thousand members. Its journal has only three editors, and they control what topics are covered and the list of reviewers. Over a few years, the journal's themes look more and more like the three editors' own research areas. You want to organize a special issue, and you have to apply to the editors even for the list of reviewers. The reply: \"This issue is full.\""
+   },
+   {
+    "field": "Personal life",
+    "title": "The runner who wanted a new route",
+    "text": "You join a city running club of two hundred people. The founder has always been the admin of the group chat, and keeps the sign-up links, the race subsidies and the accounts for group gear orders. One runner wants to start a separate route on Saturdays and posts it in the chat; within minutes it's buried under red packets (small cash gifts sent in the chat) and workout check-ins. He asks the founder to make him an admin too, and the founder says, \"Let's see.\" The runner later set up a new group of his own and got only a dozen or so people to join."
+   }
+  ],
+  "ask": [
+   "Who nominated each of the new leaders in the last few terms? How many got onto the list without going through the people already in charge?",
+   "Which decisions have members never seen an alternative for? Who screened those alternatives?",
+   "If someone else took over tomorrow, what would take more than a month to hand over properly?"
+  ],
+  "with": [
+   {
+    "id": "principal-agent",
+    "sees": "An association worries that its board will drift away from what members want. The principal–agent fix is more oversight: bring in outside auditors, have the board report regularly, and tie the board's rewards to how the association does. But if the auditors, the reporting format and the documents all pass through the board's hands, oversight sees only what the board wants it to see. Adding an audit first just goes in circles. Who hires the auditors and who sees the report first must be taken out of the board's hands and decided directly by the general meeting. When members can already check things and nobody bothers to, the principal–agent fix is the better match."
+   },
+   {
+    "id": "checks-and-balances",
+    "sees": "An association sets up a board of directors and a supervisory board so that each keeps the other in check. Checks and balances need whoever does the blocking to be able to see, able to stop things, and willing to say no. But if the supervisors are nominated by the board, the two bodies are the same people wearing two hats, and the checking comes down to signing off. To see whether a set of checks works, first find out who put the supervisors there and whether the board can remove them."
+   },
+   {
+    "id": "collective-action",
+    "sees": "A group of members is unhappy with the board, but nobody wants to take the lead: organizing even once takes several evenings, and if the leaders are replaced, everyone shares the benefit. The collective action problem has you look for someone who stands to gain enough to pay the cost of organizing. The iron law of oligarchy adds one thing: even if that person succeeds, whoever takes over still has to handle the details every day, and a few terms later there's a new inner circle."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "When your local trade union was founded, its officials all came from the front line as workers, and the rules said officials would get no more allowance than ordinary members. Ten years later, the secretariat is still the same few people, every newly added official was trained and recommended by them, and few ordinary members put themselves forward. The people in the secretariat have taken no extra benefits over the years, and see themselves as working for the members.",
+    "question": "What best explains why the secretariat hasn't changed for so long?",
+    "explain": "The division of work let the secretariat build up experience, documents and contacts that no one else had, and when successors were recommended, these became the conditions for being chosen. Even people with no selfish motives can, along this path, turn their posts into lasting control.",
+    "options": [
+     {
+      "text": "The union is big and members have no interest in the secretariat's work, so nobody puts themselves forward and the posts are left to them.",
+      "correct": false,
+      "feedback": "This covers only the members' side. Lack of interest can't explain why every new official came from the secretariat's recommendations."
+     },
+     {
+      "text": "They wanted to hold power for a long time from the start, and only pretended to be selfless until their positions were secure.",
+      "correct": false,
+      "feedback": "This treats the result as a plot. The question says they took no extra benefits and genuinely did the work, so there's no need to explain it with pretending."
+     },
+     {
+      "text": "Years of doing the work built up experience and contacts nobody else had, and these became the conditions for choosing successors.",
+      "correct": true,
+      "feedback": "The advantages from the division of work come first, and the power to recommend then passes them on from one generation to the next. Nobody needs to have selfish motives."
+     },
+     {
+      "text": "The allowance is low, so the reason to stay must be some other benefit; scrap the allowance and they'll leave.",
+      "correct": false,
+      "feedback": "This puts staying on down to money. The officials in the question get no extra benefits; what keeps them there is experience, contacts and knowing the organization."
+     }
+    ]
+   },
+   {
+    "stem": "In your five-person design team, the team lead assigns tasks every week. The task board is visible to all five: everyone can see who is working on what and what feedback clients gave. Everyone has everyone else's contact details. The rules say that whenever two people propose it, a vote to replace the lead can be held at any time. The lead has held the role for three years and has never once been proposed for replacement. A colleague says the team has come under the lead's control.",
+    "question": "Based on this, how should you judge that claim?",
+    "explain": "To say members can no longer easily replace a leader, you need to check whether they can get information, reach each other and put forward another candidate without going through the person in charge. All three are possible here, so three years with no change looks more like what everyone wants.",
+    "options": [
+     {
+      "text": "It doesn't hold: a five-person team is too small, everyone sees each other every day, and this can't happen.",
+      "correct": false,
+      "feedback": "This judges by headcount. What matters is whether information and channels of contact are held by one person alone, which can happen in a small team too."
+     },
+     {
+      "text": "It doesn't hold: everyone has the information and the contact details and can propose a change at any time, so staying on looks more like what everyone wants.",
+      "correct": true,
+      "feedback": "Members can get information, reach each other and start a replacement on their own. The lead has nothing the others can't get, so there's no basis for saying he controls the team."
+     },
+     {
+      "text": "It's right: every task is assigned by the lead, so real power is in his hands alone and the others can only do as they're told.",
+      "correct": false,
+      "feedback": "Assigning tasks isn't the same as holding information alone. All five can see the task board, and the others have no less than he does."
+     },
+     {
+      "text": "It's right: nobody has replaced him in three years, which shows the team is under his control and members just don't dare speak up.",
+      "correct": false,
+      "feedback": "This takes a long time in the role as evidence of control. The channel for replacing him is open to everyone, and nobody is shut out."
+     }
+    ]
+   },
+   {
+    "stem": "Farming households from three mountain villages put their land in as shares and set up a livestock cooperative. From the start, the rules said the chair would rotate among the three households that put in the most, and major matters would pass with more than half of the capital in favor. For ten years, those three households have had the final say in the cooperative. Someone says this is the people doing the work turning the power entrusted to them into control, a textbook case of oligarchy.",
+    "question": "Is this claim right?",
+    "explain": "The chain of oligarchy goes like this: authority is first handed over so the work gets done, then the people doing it build up advantages nobody else has, and use them to lock in control. Here the final say was written into the rules for the three biggest investors from the very start, so that process never happened.",
+    "options": [
+     {
+      "text": "It holds: households that put in less find it hard to organize, and that weakness is what oligarchy looks like.",
+      "correct": false,
+      "feedback": "Being hard to organize is only background. The key is where the power came from: here the rules gave it directly; it wasn't built up by the people doing the work."
+     },
+     {
+      "text": "It holds: the big investors ought to have more say anyway, and that's the benefit oligarchy brings.",
+      "correct": false,
+      "feedback": "This mixes up whether it should be so with whether it is so. The question asks whether this control was built up step by step through doing the work."
+     },
+     {
+      "text": "It holds: no change in ten years is evidence that the people doing the work used their entrusted role to lock in power.",
+      "correct": false,
+      "feedback": "This takes ten years without change as evidence. The rules already said who decides, so the lack of change is just the result of the rules."
+     },
+     {
+      "text": "It doesn't hold: the rules gave power to the three biggest investors from the start; it wasn't built up through doing the work.",
+      "correct": true,
+      "feedback": "Control comes from how the capital was put in, and was in those three households' hands from the start. There's no sign of people entrusted with the work gaining advantages step by step."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "The work builds the list; the list keeps you on",
+  "caption": "A book club of forty. In year one they just put you forward; the longer you run it, the more anything others want to do has to go through you first.",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "You're picked",
+    "sub": "Venues, dues"
+   },
+   {
+    "id": "b",
+    "label": "No taker",
+    "sub": "You carry on"
+   },
+   {
+    "id": "c",
+    "label": "All with you",
+    "sub": "Phones, prices"
+   },
+   {
+    "id": "d",
+    "label": "Others' talks",
+    "sub": "Need your list",
+    "tone": "accent"
+   },
+   {
+    "id": "e",
+    "label": "No one runs",
+    "sub": "You stay on",
+    "tone": "warn"
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b"
+   },
+   {
+    "from": "b",
+    "to": "c"
+   },
+   {
+    "from": "c",
+    "to": "d"
+   },
+   {
+    "from": "d",
+    "to": "e"
+   },
+   {
+    "from": "e",
+    "to": "b",
+    "label": "Again",
+    "dashed": true,
+    "tone": "warn"
+   }
+  ]
+ }
+}

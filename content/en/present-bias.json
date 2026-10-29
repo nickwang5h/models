@@ -1,0 +1,199 @@
+{
+ "id": "present-bias",
+ "name": "Present Bias",
+ "en": "现时偏差",
+ "discipline": "psychology",
+ "one_line": "What you get right now looks extra big, so plans for later fall apart once later arrives.",
+ "story": "A study finds that rented documentaries sit in customers' homes longer than action films",
+ "shallow": {
+  "scene": "The \"Watch Later\" list on your phone is probably piled with things. When you saved that documentary or that long article, you felt you really had to see it. But when the evening comes, what you open is always the fun short video right in front of you. In 2009 a few American researchers saw the same thing in the customer records of an online DVD rental company. Back then, people picked films online, the company mailed the discs to their homes, and they mailed them back after watching.\n\nDiscs people \"should\" watch, like documentaries, sat in customers' homes for a long time, mostly never taken out of the sleeve. Discs people \"wanted\" to watch, like action films, were often watched and mailed back within a few days of arriving. Someone might rent a documentary first and an action film after it, and the action film, which arrived later, got watched and sent off first, while the documentary was still sitting on the TV stand.\n\nOn the day they picked the films, watching the documentary was something for later, and people chose by what they \"should\" watch. Once the discs were in hand, which one to watch tonight was a question about right now, and \"want\" won.",
+  "plain": "On Sunday night you decide: tomorrow at six you'll go for a run. At six on Monday the alarm goes off, the bed is warm, you switch the alarm off and tell yourself you'll start on Tuesday. That scene is present bias: the same effort and the same reward weigh extra once they land in \"now.\" That extra weight can be measured in money. 100 yuan in 30 days, or 120 yuan in 31 days? You're happy to wait one more day. On day 30, the same question becomes 100 yuan today or 120 yuan tomorrow, and you change your mind and take the 100."
+ },
+ "deep": {
+  "mechanism": "### As soon as one sum lands on today, the choice flips\n\nSuppose both sums are guaranteed to arrive, and in your eyes any money that isn't today counts at 80% of its value. A month ahead, both sums get the 80% cut: 100 yuan in 30 days is worth 80, and 120 yuan in 31 days is worth 96. 96 is more than 80, so you're willing to wait. On day 30, the 100 yuan lands on today and goes back to its full 100; tomorrow's 120 yuan is still worth only 96, so you take the 100. Your view of money hasn't changed. All that changed is that one of the sums walked into today.\n\n### What's in front of you can be felt, and its weight rises steeply as it nears today\n\nThe warmth of the bed and the 100 yuan in your hand are things you can feel in your body right now. Next week's effort and reward are just ideas in your head, like something happening to someone else. So weight doesn't change evenly with the number of days. Moving something from today to tomorrow turns it from something you can feel into an idea, and its weight drops a lot. Moving it from day 30 to day 31 hardly matters, since it was an idea all along.\n\nA month ahead, both sums are just ideas, so you compare the amounts and the bigger one wins. When the 100 yuan reaches today, it suddenly becomes something you can feel, and the smaller sum pulls ahead. The stronger the bias toward now, the easier it flips; someone with only a slight bias still thinks tomorrow's 120 yuan is worth more on day 30, and waits anyway.\n\n### People who know they'll flip block the road while they still can\n\nThe you of now wants the bigger sum; the you of then will take the smaller one. So the you of now can act first and make sure the you of then can't get the smaller one: for example, by first putting the money in a fixed-term deposit that can only be taken out when it matures. People who won't admit they'll flip don't block the road, and every time they say they'll start next week.",
+  "origin": "In 1955 Robert Strotz analyzed why people overturn their own earlier plans. In 1968 Edmund Phelps and Robert Pollak wrote down the form \"anything not today gets one more discount.\" In 1975 George Ainslie pointed out that value falls with waiting along a hyperbola: fast at first, then slowly. In Richard Thaler's 1981 questionnaire, counted per stretch of waiting, the longer people had to wait, the less compensation they asked for. In 1997 David Laibson used this form to explain saving.",
+  "limits": "Present bias explains best the small things that only pay off after a while and that you can back out of at any time: saving, exercise, filing taxes. When all the options are in the future and none falls on today, it doesn't predict a flip. Not every change of mind is present bias, either. If prices change or an emergency comes up at home, changing the plan is a response to a new situation; it's present bias only when nothing at all has changed and you back out just as the moment arrives."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "New Year's resolutions have fallen apart by February: the effort is right in front of you from day one, the reward doesn't come until the end of the year, and every day's sums tip toward now."
+   },
+   {
+    "use": "predict",
+    "text": "Estimate how many coupons that say \"redeem online when you get home\" will actually be used: redeeming takes only a few minutes, but it always gets pushed to tomorrow, and a whole batch of coupons expires that way."
+   },
+   {
+    "use": "design",
+    "text": "Design a quit-smoking program: people open a savings account and can only take the money out if they pass a test after six months; if they fail, the money goes to charity. That brings the cost of \"just one more cigarette\" into the present."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Personal finance",
+    "title": "Promising to save from the next raise",
+    "text": "In 2004 Richard Thaler and Shlomo Benartzi reported on a plan called Save More Tomorrow. Employees of a midsize manufacturing company agreed in advance that every time they got a raise, part of it would go into their retirement account, so their take-home pay would never be lower than it was now. For those who joined, the average savings rate rose from 3.5% to 13.6% over four raises."
+   },
+   {
+    "field": "Spending",
+    "title": "The monthly pass costs more than single visits",
+    "text": "In 2006 the economists Stefano DellaVigna and Ulrike Malmendier analyzed member records from several American gyms. Members who chose a monthly membership paid on average about 17 dollars per visit, while a ten-visit pass at the same gym came to about 10 dollars a visit. On the day they signed up, most of them expected to go often."
+   },
+   {
+    "field": "Learning",
+    "title": "Setting your own deadlines",
+    "text": "In 2002 Dan Ariely and Klaus Wertenbroch had students proofread three texts. They earned money for each error found and lost money for each day late. In the group that chose its own deadlines for the three texts, most spread the dates out, and they did better than the group with only one final deadline, but worse than the group whose evenly spaced dates were set for them by the researchers."
+   }
+  ],
+  "ask": [
+   "If I push both options a month later, do I still choose the same?",
+   "Look through the to-dos on my phone: which ones have I already said \"tomorrow\" about three times?",
+   "Before the temptation arrives, what can I lock in today so I have one less decision to make when it comes?"
+  ],
+  "with": [
+   {
+    "id": "discounting",
+    "sees": "You make a deal with yourself: starting next week, learn twenty words a day. Someone who weighs waiting at a fixed rate per day will stick to the plan when next Monday comes, because the comparison between the two dates hasn't changed. Present bias predicts that on Monday morning you'll back out again. Look at how often your past \"next weeks\" actually happened. If most did, do the sums with discounting; if they keep slipping, don't count on your next week, and lock in an earlier start date."
+   },
+   {
+    "id": "marginal-thinking",
+    "sees": "Every day after work you pass a bakery, and one more cake costs only ten-odd yuan. Marginal thinking says the benefit of this one is more than its price, so buy it. Present bias sees that every evening's \"just this one\" passes that test, and after a month both the bill and your weight are off. For a one-off, like a friend's wedding cake, judge at the margin; for something that repeats every day, where you always say \"just this once,\" set a rule for the whole year instead of judging each time."
+   },
+   {
+    "id": "default-effect",
+    "sees": "A company wants its staff to save for retirement. If it only sends a notice saying \"please fill in the form when you have time,\" present bias means a group of people never have time. The default effect's answer is to make automatic enrollment the default, so only people who want to leave have to act, and those who do nothing are saving too."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Four of your friends each made a plan at the start of the year, and by midyear all four had changed their minds.",
+    "question": "Which one changed their mind because a reward right in front of them outweighed the original plan, with nothing else changed at all?",
+    "explain": "It's the flip from a reward landing on today only when nothing has changed, the person was willing to wait before, and they back out just as the moment arrives. For the other three, the situation or the price changed.",
+    "options": [
+     {
+      "text": "At the start of the year he planned to save for a used car; in June he saw the same model new with 30,000 yuan off, and bought the new one instead.",
+      "correct": false,
+      "feedback": "The price changed, and so did the sums the plan was based on. This is a response to a new price."
+     },
+     {
+      "text": "At the start of the year he planned to pay off his credit card by year's end; in June his child was in the hospital and needed money urgently, and he gave all his savings to the hospital.",
+      "correct": false,
+      "feedback": "A child in the hospital is an urgent need. The reason for spending came from something new that happened, not from a temptation right in front of him."
+     },
+     {
+      "text": "At the start of the year he decided to run three mornings a week; in March he hurt his leg in a fall, and the doctor told him to stay in bed at home for a full three months before moving about.",
+      "correct": false,
+      "feedback": "The doctor's orders changed what he could do. This is a new situation, not being led astray by a reward in front of him."
+     },
+     {
+      "text": "At the start of the year he set Saturday mornings for writing his thesis at the library, but every Saturday morning he stayed in bed and said he'd go next week.",
+      "correct": true,
+      "feedback": "Nothing changed. All that changed on Saturday morning is that the effort had to be borne today, while the payoff from the thesis was still later."
+     }
+    ]
+   },
+   {
+    "stem": "You want to study Japanese for half an hour every evening, but each evening you open a video first, and night after night it slips. You don't want to hold yourself to it with fines or penalty points; you only want to change what you gain and lose at that moment each evening.",
+    "question": "Which change directly alters what you gain and lose at that moment each evening?",
+    "explain": "The nightly delay comes from this: the effort of studying has to be borne tonight, the payoff is far away, and the fun of the video comes at once. What needs changing is tonight's order: make the fun come after the studying, so you still get it that same evening.",
+    "options": [
+     {
+      "text": "Score yourself at the end of every month, and treat yourself to a nice meal if you hit the target.",
+      "correct": false,
+      "feedback": "The reward comes at the end of the month, so at the moment each evening when you open a video, it is still far away."
+     },
+     {
+      "text": "Study for half an hour first every evening, and only watch videos after that; the video is waiting right after, that same evening.",
+      "correct": true,
+      "feedback": "The fun becomes that evening's payoff for studying. Tonight's gains and losses have changed, without waiting for later."
+     },
+     {
+      "text": "Before you start each evening, read through the benefits of knowing Japanese.",
+      "correct": false,
+      "feedback": "The benefits are still far away. Reading them doesn't change the order of tonight's effort and fun."
+     },
+     {
+      "text": "Save up the half hour from each evening for Sunday and study three and a half hours in one go, so you don't agonize every day.",
+      "correct": false,
+      "feedback": "The effort just moves to Sunday. The videos are still there on Sunday evening, and the same trade-off comes up again, only longer."
+     }
+    ]
+   },
+   {
+    "stem": "Suppose your company cafeteria lets staff order lunch for Monday to Friday of next week by Friday, or order on the day; the menu and prices are the same either way. The numbers show that salads make up 40% of the lunches ordered in advance, but only 15% of those ordered on the day. Both sets of orders come from the same staff, and everyone has used both ways.",
+    "question": "Why do the same people order more salad when they order in advance?",
+    "explain": "When ordering in advance, the health of the salad and the taste of the fried chicken are both days away, and people give more weight to the long run. When ordering on the day, the taste is about to go into your mouth, so it weighs more, and the choice flips.",
+    "options": [
+     {
+      "text": "Salads are better prepared ahead; salads made on the day aren't fresh, so fewer people order them.",
+      "correct": false,
+      "feedback": "The question says the menu is the same and nothing about salads being worse on the day. This reason is made up."
+     },
+     {
+      "text": "The staff who order in advance care more about health to begin with; the ones who order on the day are a different group.",
+      "correct": false,
+      "feedback": "The question says it's the same staff and everyone has used both ways, not two different groups."
+     },
+     {
+      "text": "When ordering in advance, health and taste are both days away; when ordering on the day, the taste is about to go into your mouth and weighs more.",
+      "correct": true,
+      "feedback": "It's the same person, and the difference between the two choices comes from how close the taste is to their mouth."
+     },
+     {
+      "text": "People who order in advance have time to study the nutrition chart; ordering on the day, they don't have that information.",
+      "correct": false,
+      "feedback": "The nutrition information is just as visible both ways, and nothing in the question suggests ordering in advance gives more information."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Far off, 120 yuan wins; at the end it falls below 0",
+  "caption": "Above zero you wait a day for 120 yuan; below it you take 100. Nearly flat for twenty-odd days, it plunges at the end. At a bias of 0.2 it stays above zero.",
+  "x": {
+   "label": "Day",
+   "min": 0,
+   "max": 30
+  },
+  "y": {
+   "label": "120 worth more than 100 by",
+   "unit": "%",
+   "min": -40,
+   "max": 20
+  },
+  "params": [
+   {
+    "id": "b",
+    "label": "Bias to now",
+    "min": 0.1,
+    "max": 1,
+    "step": 0.1,
+    "value": 0.5
+   }
+  ],
+  "series": [
+   {
+    "name": "Worth more by",
+    "expr": "(1.2*(1+b*(30-x))/(1+b*(31-x))-1)*100",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "y": 0,
+    "text": "Equal value"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Extra on day 30",
+    "expr": "(1.2/(1+b)-1)*100",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

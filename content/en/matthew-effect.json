@@ -1,0 +1,213 @@
+{
+ "id": "matthew-effect",
+ "name": "Matthew Effect",
+ "en": "马太效应",
+ "discipline": "systems",
+ "one_line": "Whoever is already ahead gets the next chance more easily, so the gap keeps growing.",
+ "story": "The first US printing of Harry Potter grows from 50,000 copies for the first book to 3.8 million for the fourth in 2000",
+ "shallow": {
+  "scene": "When you order takeout on an app, the restaurants on the first screen get the most orders, more orders push them even higher up the list, and fewer and fewer people scroll down to the ones further back. Books get rolling the same way.\n\nIn 1998, J.K. Rowling's first Harry Potter book came out in the US from Scholastic, with a first printing of 50,000 copies. On July 8, 2000, the fourth book, *Harry Potter and the Goblet of Fire*, went on sale with a US first printing of 3.8 million, and many bookstores held midnight launches for it. Before readers had even opened the book, the publisher and the bookstores had already staked their printing, their stock and their opening hours on it.\n\nThe books were piled high at shop entrances, the long lines at midnight made the news, and people who had never read the first three came to buy it too. A store only has so much space by the door. *Goblet of Fire* took it, and the other books of that season were pushed to the back. **The space and the buzz won by the earlier books' good sales brought in new readers for the next one.**",
+  "plain": "Two kids with similar voices sing in a high school choir. At the start-of-term concert, A is picked to sing a solo once. After that, whenever the teacher plans a program, A is the first one who comes to mind. A builds up stage presence, and classmates and parents know who he is. B always stands in the back row, and nobody has ever heard him sing on his own. By the end of the school year, A has sung six solos and B none. The first pick may have been pure chance, but it won the second, and the second won the third. Those already ahead find it easier to get further ahead; sociology calls this the Matthew effect."
+ },
+ "deep": {
+  "mechanism": "### Advantages you already have get traded for the next chance\n\nOnce A has sung a solo, the teacher has reasons to pick him next time: she's seen him on stage, he doesn't freeze, and the parents know him. The teacher can't find out everything about every child, so she picks from last time's list. That way an advantage already held turns into a chance, and the chance grows into a new advantage.\n\n### The more the split follows past results, the faster the gap grows\n\nSwitch to orders you can count, and it's clearer. Two delivery workers have done 8 orders and 2, and the next batch of 10 orders is to be shared out. Split it evenly, 5 each, and the totals are 13 and 7, still a gap of 6. Split it in the ratio of orders done, 8 to 2, and they get 8 and 2, for totals of 16 and 4, a gap that doubles to 12. Give them all to the one ahead, and the totals are 18 and 2, a gap of 16.\n\n### Round after round, the gap rolls itself up\n\nA split in proportion doesn't happen just once. The second batch of 10 is split 16 to 4, still a ratio of 4 to 1, so the one ahead gets 8 more, for totals of 24 and 6, a gap of 18. Each round the gap grows by 6. After ten rounds the two have 88 orders and 22, a gap of 66, 11 times the gap they started with. Split evenly for ten rounds, and the gap stays at 6 the whole time. With the same ten batches, how wide the gap grows depends on whether the split looks at past results.\n\n### Advantages can also grow on their own, with nobody handing them out\n\nThe chances above were handed out by someone; some advantages don't need that. A child who reads easily reads more, picks up more words, and so reads even more easily. As long as an advantage leads a person to do more useful practice on their own, it can grow by itself.",
+  "origin": "In 1968 Robert Merton published \"The Matthew Effect in Science\" in *Science*. The name comes from the Gospel of Matthew: \"For unto every one that hath shall be given.\" The evidence came from Harriet Zuckerman's interviews with Nobel Prize winners: for similar contributions, people who were already famous got more credit. In 1986 Keith Stanovich used the name for reading: children who read easily early on read more and more.",
+  "limits": "When chances are few and the people handing them out can't find out who is better, they have to go by track records, so it shows most clearly in reviews, hiring and rankings. When the game changes and past results no longer say anything, the leaders' advantages are wiped out along with them. That is how the old phone makers fell behind when phones switched from buttons to touchscreens. Taking whatever is at the top of a ranking to be the best is a misreading: it may just have been the first to be noticed."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When setting the rules for renewing scholarships, first check whether last year's award has become the main reason someone makes this year's shortlist."
+   },
+   {
+    "use": "explain",
+    "text": "Two hospitals of similar quality: one is first to get the top grade in China's hospital ratings, and ten years later patients and doctors are all heading there. Go through its patient intake and hiring records before and after the rating, and see in which year the gap opened."
+   },
+   {
+    "use": "act",
+    "text": "When choosing your first assignment in a new field, pick the one that leaves results other people can see. It will be the reason someone picks you next time."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Research",
+    "title": "One narrow win, eight years of funding",
+    "text": "The Netherlands has a research grant for early-career scientists: applicants whose scores just clear the line get the money, and those just below it don't. In 2018, Thijs Bol and colleagues compared applicants just above and just below the funding line: over the next eight years, those who got the grant won more than twice as much later funding as those who didn't. The study also found that people who missed out the first time were less likely to apply again, which explains part of the gap."
+   },
+   {
+    "field": "Cities",
+    "title": "The county whose train came first",
+    "text": "You are in charge of attracting investment for your county. The neighboring county's high-speed rail station opens first. The next year, an appliance factory puts its new production line in the neighboring county; the year after that, a vocational school and a logistics park land there too. Your county's station is still being built, and fewer companies come to look at land each year. When you do the year-end sums, the neighboring county has four times as many new projects as yours."
+   },
+   {
+    "field": "Media",
+    "title": "Worlds where you can see the downloads",
+    "text": "In 2006, Matthew Salganik, Peter Dodds and Duncan Watts published an online experiment in *Science*: more than 10,000 people listened to and downloaded songs by unknown bands. They were randomly sorted into several worlds cut off from one another, and in some of these worlds they could see how many times others had downloaded each song. In the worlds where downloads were visible, songs with many early downloads became even more popular later, and the songs at the top were different in each world."
+   }
+  ],
+  "ask": [
+   "Who hands out the next chance? How much of the evidence they have is just the result of the last round?",
+   "If I trace the top few people's records back to the very first round, what got them started?",
+   "What record that others can see could this chance in front of me leave behind?"
+  ],
+  "with": [
+   {
+    "id": "regression-to-mean",
+    "sees": "The sales department wants to predict next quarter's top seller. The Matthew effect says last quarter's champion gets more leads, and old customers will refer new ones, so he will most likely stay ahead. Regression to the mean says luck was part of last quarter's result, such as a big deal that happened to come his way, so next quarter he will most likely slip back. First check how much of his last quarter came from things he can take with him, then see whether next quarter's leads really are handed out by results. If both are true, bet on him staying ahead."
+   },
+   {
+    "id": "explore-exploit",
+    "sees": "A magazine picks its pieces every month. Pieces from established writers are safe; new writers have no record at all. Choosing only established writers gives the safest expected result, but then new writers never get a record and still can't be chosen next issue. That is what the Matthew effect looks like on the page. Explore vs exploit advises keeping a page or two to try new writers; that is buying information, not charity. If the magazine is closing next year, choose only established writers; if it will run for ten years, keep the pages."
+   },
+   {
+    "id": "compounding",
+    "sees": "Compounding is interest added back to the principal to earn new interest. It runs on your own money, and nobody hands anything out. The Matthew effect often runs through other people: judges, managers, platforms. When the gap between two people is widening, first tell whether it comes from what they rolled up themselves or from what others gave them. If it's the second, it can be moved by changing the rules for handing things out."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You run job assignment for a home-cleaning platform, which currently gives new orders first to the housekeepers with the most good reviews. Two housekeepers with similar skills join in the same month. In her first week one happens to get three jobs and three good reviews, and after that she keeps getting more jobs than the other. Three months later, their good reviews stand at 40 to 6.",
+    "question": "The platform wants job assignment to match the two women's real skills more closely. Which change acts directly on this chain of cause and effect?",
+    "explain": "The most good reviews get the first jobs, and more jobs bring more good reviews, so a chance lead in the first week keeps getting bigger. If newcomers each first get the same number of jobs, and after that jobs go by the rate of good reviews rather than the total, the gap at the start no longer turns into later orders.",
+    "options": [
+     {
+      "text": "Give each new housekeeper a full 20 jobs first, then assign jobs by their rate of good reviews.",
+      "correct": true,
+      "feedback": "They start with the same number of orders, and after that what counts is the share of jobs with good reviews, so first-week luck no longer decides how many jobs come later."
+     },
+     {
+      "text": "Stop showing customers the number of good reviews, but keep assigning jobs by the total.",
+      "correct": false,
+      "feedback": "The assignment rule hasn't changed, so whoever has more good reviews still gets jobs first; customers just can't see the number."
+     },
+     {
+      "text": "Reset everyone's good reviews to zero at the end of each month, so all housekeepers start counting again.",
+      "correct": false,
+      "feedback": "After the reset, whoever gets the first job pulls ahead again, and the same chain starts turning again that month."
+     },
+     {
+      "text": "Send both housekeepers to a skills training session, and keep the assignment rule the same.",
+      "correct": false,
+      "feedback": "Training can't change the assignment rule. The chain of good reviews winning orders and orders winning good reviews is still there."
+     }
+    ]
+   },
+   {
+    "stem": "There are two breakfast stalls on the same street. A has been open for two years; B has just opened. Prices, ingredients and rent are the same for both. Customers choose only by their own taste; there are no rankings, and nobody pays attention to how long the lines are. A has consistently had about 30% more customers a day than B.",
+    "question": "To judge whether an advantage already held is creating more advantage, what should you check first?",
+    "explain": "A gap that lasts only tells you A started earlier. To say an advantage is growing by itself, you need to see whether the extra customers and income have been turned into more chances, such as a bigger shop or longer opening hours.",
+    "options": [
+     {
+      "text": "Whether B's owner gets up earlier and works harder than A's owner.",
+      "correct": false,
+      "feedback": "How hard the owners work can't tell you whether A's lead has brought it further advantages."
+     },
+     {
+      "text": "Which stall's breakfast tastes better, according to local diners.",
+      "correct": false,
+      "feedback": "How the food tastes only tells you whether the two differ in quality; it can't show whether A's lead has changed its later chances."
+     },
+     {
+      "text": "Whether A's extra customers and income have been turned into a bigger shop or longer opening hours.",
+      "correct": true,
+      "feedback": "Only at this step can you see how the lead changed later chances, giving the gap a route to keep widening."
+     },
+     {
+      "text": "Whether A's daily customer numbers have kept slowly rising over its two years.",
+      "correct": false,
+      "feedback": "Rising customer numbers by themselves don't show that the lead brought more chances; it could just be word of mouth slowly spreading."
+     }
+    ]
+   },
+   {
+    "stem": "An academic journal switches to double-blind review, so reviewers can't see the authors' names or institutions. A few years later, the acceptance rate for well-known scholars' papers is somewhat lower than before, yet they still publish clearly more papers each year than newcomers.",
+    "question": "Well-known scholars still publish more. What other route is most likely at work?",
+    "explain": "Double-blind review only cuts off one route, reviewers letting papers through on reputation. The funding and assistants their past work has brought give them more time to write more papers, and this route doesn't pass through review.",
+    "options": [
+     {
+      "text": "Reviewers can still guess who the authors are, so double-blind review never really worked.",
+      "correct": false,
+      "feedback": "The question says the acceptance rate has fallen, so double-blind review did have an effect; \"it never worked\" can't explain why they still publish more."
+     },
+     {
+      "text": "The funding and assistants their past work has won give them more time to write.",
+      "correct": true,
+      "feedback": "Earlier advantages have turned into help and time for writing. This route goes around review, and double-blind review can't touch it."
+     },
+     {
+      "text": "Newcomers' papers are generally worse than well-known scholars' papers.",
+      "correct": false,
+      "feedback": "Nothing in the question points to a difference in quality; this just puts the gap down to a difference in ability."
+     },
+     {
+      "text": "Well-known scholars simply prefer to send their papers to this journal.",
+      "correct": false,
+      "feedback": "The question says nothing about where they prefer to submit, and that can't explain why they keep writing more papers."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Split by record, a 6-order gap grows to 66",
+  "caption": "Start: 8 and 2 done; 10 more each round. Drag the slider: at 0 the split is even and the lines stay parallel; at 100% it follows orders done and they pull apart.",
+  "x": {
+   "label": "Round"
+  },
+  "y": {
+   "label": "Total orders done",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "w",
+    "label": "Weight on record",
+    "min": 0,
+    "max": 100,
+    "step": 10,
+    "value": 100,
+    "unit": "%"
+   }
+  ],
+  "model": {
+   "steps": 10,
+   "init": {
+    "a": 8,
+    "b": 2
+   },
+   "next": {
+    "a": "a + 10*(w/100*a/(a+b) + (1-w/100)*0.5)",
+    "b": "b + 10*(w/100*b/(a+b) + (1-w/100)*0.5)"
+   }
+  },
+  "series": [
+   {
+    "name": "The one ahead",
+    "expr": "a",
+    "tone": "accent"
+   },
+   {
+    "name": "The one behind",
+    "expr": "b",
+    "tone": "muted"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Gap after 10 rounds",
+    "expr": "a-b",
+    "unit": " orders",
+    "digits": 0
+   },
+   {
+    "label": "Leader's share",
+    "expr": "a/(a+b)*100",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

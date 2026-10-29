@@ -1,0 +1,190 @@
+{
+ "id": "liking",
+ "name": "Liking and the Halo Effect",
+ "en": "喜好与光环",
+ "discipline": "psychology",
+ "one_line": "Once you like someone, you start to think the rest of them is good too.",
+ "story": "Nisbett and Wilson's halo-effect experiment: when the teacher acts warm, students also rate his accent and looks higher",
+ "shallow": {
+  "scene": "In 1977, Richard Nisbett and Timothy Wilson of the University of Michigan had 118 students watch a videotaped interview with the same teacher. There were two versions of the tape. In one, the teacher was warm and friendly; in the other, he was cold and distant. His looks, his manner and his accent were exactly the same in both, and the students had to rate each of these. Students who saw the warm version liked all three more; students who saw the cold version found them all unpleasant. Asked afterward whether their liking for him had affected their ratings, the students said no: they had rated each thing on its own.",
+  "plain": "Two colleagues at your office hand in the same report, each with three small mistakes. One of them often brings you breakfast on the way in. On that report you write \"Just careless, easy to fix\" and give it 85. The other rarely talks to you. On that one you write \"Weak on the basics\" and give it 70. The reports are the same; the 15-point gap comes from how you feel about the two people. That is the halo effect."
+ },
+ "deep": {
+  "mechanism": "### The less evidence you have, the more of the gap liking fills\n\nImagine scoring a job candidate's analytical skill out of 10. If you've only talked for an hour and never seen them analyze anything, you have nothing else to go on, and the score is decided almost entirely by how well the conversation went. After three months of working together and ten of their reports read, the score follows the reports, and liking accounts for only a sliver of it.\n\n### Liking also changes what the same behavior means\n\nWhen someone you like pauses for a moment, you think they are weighing their words; when someone you dislike pauses the same way, you think they are slow. A short answer is efficient from the first person and a brush-off from the second. Then you treat \"weighing their words\" and \"efficient\" as evidence and give them extra points for ability.\n\n### Decide what each item is judged on before you meet the person\n\nBefore you meet anyone, write down what evidence each part of the judgment needs. For hiring, look at the same assignment given to every candidate; for investing, the full track record and the record of drawdowns; for a partnership, whether they delivered what was agreed. With the standards set first, liking can't change them on the spot. Keep \"pleasant to work with\" as an item of its own, and let every other score find its own evidence.",
+  "origin": "In 1920 Edward Thorndike published \"A Constant Error in Psychological Ratings.\" He found that when army officers rated their subordinates on different qualities, the scores tended to be all high or all low together, carried along by the officer's overall impression of the person. He called this the halo. In 1977, Nisbett and Wilson's experiment with the teacher videotapes showed that liking can change specific judgments without the people making them noticing.",
+  "limits": "When you're making friends, choosing a partner, or finding someone to keep your parents company and chat with them, liking is itself the thing you want, so liking someone counts as evidence. If a supplier has delivered on time for three straight years, calling them reliable isn't a halo either; that is the evidence talking. The trouble comes when liking vouches for someone where there is no evidence. Overcorrecting is just as wrong: marking people down for being likable still lets liking stand in for evidence."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "The same \"Let me think about it\" sounds careful from an employee you like and like dodging from one you don't. The halo effect explains where these two hearings come from."
+   },
+   {
+    "use": "design",
+    "text": "Design a year-end award form: fill in each item of performance first, and \"good to work with\" last, scored on its own."
+   },
+   {
+    "use": "act",
+    "text": "Before hiring a renovation crew, first go and see two homes they finished a year ago, then look at the quote, and only then listen to what the foreman has to say."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Hiring",
+    "title": "Points for being easy to talk to",
+    "text": "A hiring manager chatted with a candidate for half an hour about cycling and at once decided he thought clearly and could lead a team. On the case question he missed two key constraints, but the manager put it down to the short time. Later the company moved the small talk to after the assignment was scored, so that work performance decided the ability score first."
+   },
+   {
+    "field": "Relationships",
+    "title": "A photo writes the personality",
+    "text": "In 1972, Karen Dion, Ellen Berscheid and Elaine Walster showed college students photos of strangers and asked them to judge the people. Those with more attractive faces were judged to have more appealing personalities and to be headed for better lives. All the students saw was a face, yet they filled in scores for character and life prospects."
+   },
+   {
+    "field": "Investing",
+    "title": "Charm standing in for results",
+    "text": "At a roadshow, a fund manager patiently answers every question and even remembers what each investor does for a living. One listener finds him steady and reliable and is ready to hand him a large part of their savings. At home, this person pulls up the manager's full track record, drawdowns and holdings, and finds that in two of the years the losses were far bigger than he had said at the roadshow."
+   }
+  ],
+  "ask": [
+   "Does the high score I gave them come from something specific they did, or from how comfortable I feel around them?",
+   "If someone I dislike did exactly the same thing, what score would I give?",
+   "Before I meet them, can I first write down what evidence each part of my judgment needs?"
+  ],
+  "with": [
+   {
+    "id": "checklists",
+    "sees": "When you assess a supplier, the halo effect says their smile is the easiest thing to add points to quality and delivery times. The checklist approach is to list the evidence to check for each item before you meet and go through it line by line; however nice the smile, it counts only toward the service-attitude item."
+   },
+   {
+    "id": "social-capital",
+    "sees": "You need to pick a long-term partner. The halo effect warns you that getting along well can't stand in for their skill at the work; social capital says an old relationship built on mutual trust saves a great deal of checking and contract costs. Someone you've worked with again and again for years, with a delivery record you can see, can be trusted; someone you've just met and talked to only a few times, check the evidence first and talk friendship later."
+   },
+   {
+    "id": "confirmation-bias",
+    "sees": "You like a colleague, and every time you see their work after that, you more easily pick out the parts that support \"they're very capable.\" Liking forms the judgment first, then confirmation bias keeps collecting material for it, which makes it harder to correct."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A hospital is buying staff-scheduling software. The first vendor's salesperson answers questions patiently and even helps the head nurse fix the projector connection. When the demo switches a shift at short notice, the system stalls for over ten seconds, and the head nurse says it is carefully checking the rules. The second vendor's salesperson speaks bluntly, and that system also stalls for over ten seconds, but the head nurse says the technology isn't mature. Neither system has had a stress test yet.",
+    "question": "What should the purchasing team do next so that the scores rest on evidence?",
+    "explain": "The head nurse likes the first salesperson, so she reads the system's stall as care; with the second salesperson, the same stall becomes a flaw. Testing both under the same conditions gives the performance score evidence about performance.",
+    "options": [
+     {
+      "text": "Test both systems the same way, and score the sales service and the system's performance separately.",
+      "correct": true,
+      "feedback": "The same wait was read as two different technical results. A test under the same conditions gives evidence about performance, and the service attitude is scored as a separate item."
+     },
+     {
+      "text": "Prefer the first system, and count the on-the-spot problem solving toward its reliability score.",
+      "correct": false,
+      "feedback": "Fixing the projector shows the salesperson gives good service on site. Whether the scheduling system is reliable depends on how the software itself runs."
+     },
+     {
+      "text": "Prefer the second system, and take the salesperson's poor social skills as a sign of focus on the technology.",
+      "correct": false,
+      "feedback": "This just gives the points to someone else: social style is still scoring the software's performance."
+     },
+     {
+      "text": "Give both the same performance score for now, taking the equal wait as evidence that their technology is about as good.",
+      "correct": false,
+      "feedback": "A stall of over ten seconds is just one number from one demo. Only a stress test shows the difference under heavy load."
+     }
+    ]
+   },
+   {
+    "stem": "A daughter is booking a tour of an old town for her retired parents. Both guides' knowledge of the route and their first-aid certificates have been checked, and they charge the same. On a trial walk, one listens patiently as her parents talk about the old days, and the conversation flows naturally; the other explains things accurately, but her parents feel stiff the whole time. The parents have said plainly that what they want most from this trip is to chat in a relaxed way, not rush from sight to sight.",
+    "question": "Which guide should she pick, and why?",
+    "explain": "A relaxed conversation is exactly what this trip is for, and the parents feeling at ease on the trial walk is direct evidence of it. Both guides' professional qualifications have already been checked, so there is no gap left for a halo to fill.",
+    "options": [
+     {
+      "text": "Draw lots between the two; when everything else is equal, a random pick removes personal preference.",
+      "correct": false,
+      "feedback": "Drawing lots throws away a useful piece of evidence, that the parents chatted easily, and that is the whole aim of the trip."
+     },
+     {
+      "text": "The guide the conversation flowed with: the parents felt at ease on the trial walk, which is what they want from this trip.",
+      "correct": true,
+      "feedback": "The parents want a relaxed chat, so how they got on during the trial walk is a direct judgment of this service."
+     },
+     {
+      "text": "The guide the conversation flowed with: since the parents were so relaxed, he will most likely stay calm in an emergency too.",
+      "correct": false,
+      "feedback": "An easy chat only shows how he gets along with people. His ability in an emergency shows in drills or in real incidents."
+     },
+     {
+      "text": "The guide who explains accurately, so that friendliness doesn't cloud the judgment of professional skill.",
+      "correct": false,
+      "feedback": "The professional qualifications have already been checked. Passing over the guide the parents prefer leaves the aim of the trip behind."
+     }
+    ]
+   },
+   {
+    "stem": "A blogger who often livestreams rescuing stray animals is very popular for being gentle and patient. A journalist finds that a fundraiser he started never published a full list of how the money was spent. A fan says, \"He's so good to animals, he'd never misuse the money.\" Someone in the comments replies, \"Everyone's been fooled by how nice he seems. He's most likely already taken the money.\" So far the only thing confirmed is that the spending wasn't fully disclosed.",
+    "question": "How can you respond without repeating the mistake in either of these remarks?",
+    "explain": "The fan used his friendliness to vouch for how he handles money, and the commenter used the flaw in the fan's reasoning as evidence that the money was taken. To correct both steps, let the accounts speak: what's missing from the disclosure, and where the money actually went.",
+    "options": [
+     {
+      "text": "His years of rescue work show he is responsible, so carry that good opinion over to how he handles money.",
+      "correct": false,
+      "feedback": "The rescue record shows how he treats animals; only the spending record shows how he handles donations. Each needs its own evidence."
+     },
+     {
+      "text": "The spending disclosure has problems, so judge his past rescues as publicity stunts too.",
+      "correct": false,
+      "feedback": "Rejudging his past rescues as publicity stunts lets one bad impression decide a different matter. What the incomplete disclosure calls for is a look at the accounts."
+     },
+     {
+      "text": "The fan's vouching is flawed, so the charge that he took the money is more believable.",
+      "correct": false,
+      "feedback": "A flaw in the fan's reasoning only shows the vouching was misplaced. Whether the money was taken depends on where it went."
+     },
+     {
+      "text": "Take away the points his friendliness earned, and check whether the spending records match what the money was raised for.",
+      "correct": true,
+      "feedback": "Checking the accounts, the receipts and who was paid is the only way to base the judgment on what the money was actually used for."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "grid",
+  "title": "Same act reads as a plus if you like them",
+  "caption": "One colleague often brings breakfast, one rarely talks. Same report, three small mistakes, 15 points apart. The rewritten reading then counts as proof of ability.",
+  "rowLabel": "They do",
+  "colLabel": "You read it as",
+  "rows": [
+   "Pause briefly",
+   "Answer briefly",
+   "3 small errors"
+  ],
+  "cols": [
+   "Someone you like",
+   "One you dislike"
+  ],
+  "cells": [
+   [
+    "Weighing it up",
+    "Slow to react"
+   ],
+   [
+    "Efficient",
+    "Brushing you off"
+   ],
+   [
+    {
+     "text": "Just careless",
+     "sub": "Scores 85",
+     "tone": "accent"
+    },
+    {
+     "text": "Weak basics",
+     "sub": "Scores 70",
+     "tone": "warn"
+    }
+   ]
+  ]
+ }
+}

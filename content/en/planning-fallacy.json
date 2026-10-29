@@ -1,0 +1,225 @@
+{
+ "id": "planning-fallacy",
+ "name": "Planning Fallacy",
+ "en": "计划谬误",
+ "discipline": "psychology",
+ "one_line": "We estimate time as if everything will go smoothly, so we're almost always late.",
+ "story": "Kahneman's textbook team guesses two years to finish; similar teams needed at least seven, and they took eight",
+ "shallow": {
+  "scene": "In 1976, Daniel Kahneman and a few colleagues in Israel were writing a high-school textbook on judgment and decision making. After about a year they had an outline, drafts of two chapters, and a few trial lessons behind them. Kahneman asked each person to write down, privately, how much longer it would take to finish the whole book. Every answer fell between a year and a half and two and a half years.\n\nThen he asked Seymour Fox, the curriculum expert in the group, how long other teams writing textbooks had taken once they reached this point. Fox thought for a moment and said that about 40% had given up in the end, and of those that finished, none had taken less than seven years. What Fox himself had just written down was also about two years.\n\nThe textbook took another eight years to finish. Everyone had estimated forward from their own group's progress, and no one had first asked how long other groups had actually taken.",
+  "plain": "You text a friend: there in twenty minutes. That number assumes everything goes well: no traffic when you leave, green lights all the way, and a parking spot free the moment you arrive. Last month you were fifteen minutes late on the same route. You remember, and you have an explanation: it rained that day. This is the step where the planning fallacy happens. You cross off each delay as a one-off bit of bad luck, but between rain, traffic and hunting for parking, one of them always comes your way. So this time, once again, you send: there in twenty minutes."
+ },
+ "deep": {
+  "mechanism": "### The chance that every step goes well is far lower than your confidence in any one step\n\nSuppose a job is a chain of eight steps, and each step has a 90% chance of being done on time. Ask the planner how sure they are of delivering on time, and going by how each step feels, they will say about 90%. But the chance that the first two steps are both on time is only $0.9\\times0.9=0.81$: of the 90% of cases where the first step is on time, the second step is on time in only 90%. Each extra step multiplies by 0.9 once more. Write the chance that each step is on time as $p$ and the number of steps as $n$, and the chance that all of them are on time is\n\n$$p^n$$\n\nEight steps at 90% each gives $0.9^8\\approx0.43$. The planner thinks there is a 90% chance of delivering on time, and the real chance is under half. The more steps, the bigger the gap.\n\n### The more detailed the plan, the less you see the gaps between steps\n\nWhen people estimate how long a job will take, they focus on how they intend to do it: sort things out today, analyze tomorrow, every step with a name. Someone handing over material late, a revision that knocks everything down and starts it again: these aren't steps you intend to take, so the plan has no slot for them and they never get written in. A schedule split into half-day slots looks steadier, but not one of the missing gaps has been filled.\n\n### Each delay is treated as an exception, so experience never changes the next plan\n\nThe last time you delivered late, you can find the reasons: a colleague was on leave, the requirements changed. Those particular things won't happen again, but waiting and rework, as kinds of things, come back every time. Each time you cross off only that one event as an exception, and the next plan still leaves not a single day for waiting and rework. The fix is to start from a different place. Instead of adding up from your own steps, first look up how long similar jobs actually took. In a 1994 experiment by Buehler and colleagues, when students were asked to estimate this time from how long past work had actually taken them, the underestimate disappeared.",
+  "origin": "In 1979, Kahneman and Tversky described this bias in estimates. In 1994, Buehler, Griffin and Ross published experiments in the Journal of Personality and Social Psychology: students underestimated how long their theses would take, and in one of the experiments, when students were asked to estimate this time from how long past work had actually taken them, the underestimate disappeared.",
+  "limits": "The planning fallacy shows up most in one-off tasks you do yourself, with a checklist and a due date: a thesis, a renovation, a product launch. For work you repeat every day and keep your own timing records for, just schedule by the records. For things where only research will tell whether they can be done at all, there are no similar jobs whose times you can look up, so there is nothing to have left out. And not every delay is the planning fallacy's fault. When a client throws out the whole set of requirements halfway through, the job itself has changed; the estimate didn't miss anything."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "communicate",
+    "text": "When you give a client a delivery date, give both the earliest date and a date you are 80% sure of, so they have two numbers to plan their next work around."
+   },
+   {
+    "use": "predict",
+    "text": "When a new subway line is announced to \"open by the end of the year,\" first count how many inspections it still hasn't passed: each one may slip, so the opening will most likely move back."
+   },
+   {
+    "use": "design",
+    "text": "Add an \"actual finish date\" column to the team's schedule and fill it in as each job is done, so the next round of scheduling has a record to check."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Education",
+    "title": "Theses take longer than expected",
+    "text": "In 1994, Buehler and colleagues followed students writing their senior theses in psychology at the University of Waterloo in Canada, and asked them how many more days the thesis would take. The average answer was 33.9 days. On average it actually took 55.5."
+   },
+   {
+    "field": "Engineering",
+    "title": "An airport cancels its opening a month out",
+    "text": "Building work on Berlin Brandenburg Airport began in 2006, with opening planned for 2011. In May 2012, less than a month before opening day, the fire safety and smoke extraction system failed inspection and the opening was called off. The date was changed several more times after that, and flights only began on October 31, 2020."
+   },
+   {
+    "field": "Personal life",
+    "title": "A kitchen remodel drags on for six weeks",
+    "text": "You set aside three weeks to redo the kitchen in an old apartment, picturing demolition, plumbing and wiring, tiling and cabinets following one after another. On the second day, opening up the wall shows that a whole run of water pipe has to be replaced. The tiles arrive nine days later than agreed, and the cabinets can't be measured until the tiles are on. The kitchen isn't usable until the sixth week."
+   }
+  ],
+  "ask": [
+   "Take two jobs I delivered last month: how many days apart were the planned and actual dates, and what kinds of things did the extra days go to?",
+   "Of the days I quoted, how many are for work I do myself, and how many have I left for waiting on others, waiting for approval, and rework?",
+   "At which milestone will I re-estimate the remaining time from actual progress?"
+  ],
+  "with": [
+   {
+    "id": "base-rate",
+    "sees": "You need to estimate a new project building a system for a government agency. Suppose that of the projects your company has done, seven in ten ran late, and all three government projects ran late. The base rate asks you to find similar cases first. Use all projects as the comparison, and your starting point is on the hopeful side; use only government projects, and you have just three cases, which is too few. Which level to use depends on which group this job's difficulties most resemble, and on that level having enough cases."
+   },
+   {
+    "id": "first-mover",
+    "sees": "A competitor holds a launch event next month, and your team has to pick a release date. The planning fallacy says similar projects all run late, so the date on paper can't be trusted and you should quote a later one. First-mover versus second-mover advantage says that if you miss this window, the competitor takes the users, so the date must hold. Both have a point. If the date stays, cut features and launch with only the core few; if the features can't be cut, honestly quote a later date."
+   },
+   {
+    "id": "premortem",
+    "sees": "At the project kickoff, you have everyone write down \"Six months from now the project has failed. Why?\" That is a premortem, and people come up with a dozen or more specific obstacles. Those are very useful, but no list can be complete, and of the obstacles it misses, one or two will really happen. So also leave a margin on the date that has nothing to do with the list, sized by how many days similar projects actually overran."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "An editor breaks the path of a translated book, from final manuscript to bookstore shelves, into twelve steps: typesetting, three rounds of proofreading, the cover, printing, shipping. Each step is estimated at three days to a week, eight weeks in all. For the publisher's last four translated books of the same kind, the same steps actually took twelve to sixteen weeks. The editor says that this time the typesetting firm is a long-standing partner and the file formats are standardized.",
+    "question": "What release date should you give the sales department?",
+    "explain": "The actual times for similar translated books already include time spent waiting for a slot, waiting for proofs and redoing work. A long-standing partner and standard formats can only save the few items that depend on them; the rest should still be counted from past records.",
+    "options": [
+     {
+      "text": "Eight weeks: each of the twelve steps was estimated at three days to a week, and splitting it this finely is more reliable than a rough guess.",
+      "correct": false,
+      "feedback": "Splitting it finely only says how long each step itself takes. Not one day of waiting for a slot, waiting for proofs or redoing work has been counted."
+     },
+     {
+      "text": "Ask the editor to split the twelve steps even finer, estimate each to the day, and add up the days before giving sales a date.",
+      "correct": false,
+      "feedback": "Splitting it finer only makes the smooth path look more convincing on paper. The gaps that weren't written in still aren't."
+     },
+     {
+      "text": "Start from the twelve to sixteen weeks the last four books took, then take off the few items the long-standing partner can save.",
+      "correct": true,
+      "feedback": "The past records already include the waiting and rework. This time's new conditions only take off the items they actually affect."
+     },
+     {
+      "text": "Add two weeks of buffer to the eight and give ten weeks, leaving a little room for proofs and printing.",
+      "correct": false,
+      "feedback": "The two weeks have nothing behind them, and ten weeks is still shorter than the fastest of the last four books, twelve weeks."
+     }
+    ]
+   },
+   {
+    "stem": "You ask a colleague how many days a research report will take. He thinks it over and says four. You press him: if everything goes wrong, what's the latest? He adds two days and says six. The report ends up taking nine days.",
+    "question": "Why are his six days still too short?",
+    "explain": "The worst case was also imagined starting from how he planned to do the work. He thought about which steps might be slow. Things that weren't among his steps, like waiting for someone else's material or a draft being thrown out and redone, never entered his mind.",
+    "options": [
+     {
+      "text": "He lacks experience; someone more seasoned has written more reports and wouldn't leave these things out.",
+      "correct": false,
+      "feedback": "Nothing in the question says he lacks experience. What he missed were things not written into the steps, and a seasoned person's plan doesn't have them either."
+     },
+     {
+      "text": "When he imagined the worst case, he still followed his own steps, so waiting on people and rework never came to mind.",
+      "correct": true,
+      "feedback": "The worst case also comes from his own plan. Obstacles that have no place in it don't get thought of, so even with two days added it was short."
+     },
+     {
+      "text": "He deliberately made the worst case sound mild to reassure you, so you wouldn't think the job was hard.",
+      "correct": false,
+      "feedback": "Nothing in the question suggests he pushed the number down. He honestly added two days."
+     },
+     {
+      "text": "He added too few days. The worst case should be four days times three, that is, twelve.",
+      "correct": false,
+      "feedback": "The multiplier comes out of nowhere and wouldn't fit a different job. He fell short because of what his imagination left out, not because of how many days he added."
+     }
+    ]
+   },
+   {
+    "stem": "A sales director enters March as the launch date for a new product in the company system. His email to his business partner says: \"It will really be June, but if I put June the budget won't be approved, so I'll put March for now and ask for an extension later.\" Sure enough, the product launches in June. One commentator says this kind of delay could have been avoided if the director had just looked through past launch records more.",
+    "question": "What should you make of this comment?",
+    "explain": "The director already knew the later date. What was missing wasn't the history: the date he reported was being used as a ticket to budget approval. What needs to change is the approval rules, so he has no reason to put down a date he doesn't believe himself.",
+    "options": [
+     {
+      "text": "The comment is wrong: he already knew it would be June, and the problem is that the reported date is traded for a budget.",
+      "correct": true,
+      "feedback": "He had the answer in hand, and the approval rules forced the number short. More records can't fill that gap."
+     },
+     {
+      "text": "The comment is wrong: launching in June shows his estimate was accurate, so there is no delay problem.",
+      "correct": false,
+      "feedback": "What was accurate was the private estimate in the email. The launch still came three months after the date entered in the system, so the delay is real."
+     },
+     {
+      "text": "The comment is right: most delays come from not looking at past records.",
+      "correct": false,
+      "feedback": "This delay didn't come from not looking at records. He entered a date he knew was too early."
+     },
+     {
+      "text": "The comment is right: once he looked through past records, he would honestly enter June.",
+      "correct": false,
+      "feedback": "The email already shows he knew it would be June. Looking at records wouldn't change the fact that June wouldn't get the budget approved."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Eight steps at 90% each: 43% all on time",
+  "caption": "Each extra step multiplies the chance of finishing on time by 90% again. Drag: at fifteen steps it's 21%; at 95% a step, eight steps get back to 66%.",
+  "x": {
+   "label": "Number of steps"
+  },
+  "y": {
+   "label": "Chance on time",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "Chance per step",
+    "min": 50,
+    "max": 99,
+    "step": 1,
+    "value": 90,
+    "unit": "%"
+   },
+   {
+    "id": "m",
+    "label": "Number of steps",
+    "min": 1,
+    "max": 20,
+    "step": 1,
+    "value": 8
+   }
+  ],
+  "model": {
+   "steps": 20,
+   "init": {
+    "q": 1
+   },
+   "next": {
+    "q": "q*p/100"
+   }
+  },
+  "series": [
+   {
+    "name": "Whole job on time",
+    "expr": "q*100",
+    "tone": "accent",
+    "dots": "small",
+    "from": 1
+   },
+   {
+    "name": "One step",
+    "expr": "p",
+    "tone": "muted",
+    "dashed": true,
+    "from": 1
+   }
+  ],
+  "marks": [
+   {
+    "x": "m",
+    "y": "(p/100)^m*100",
+    "text": "Your plan"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Whole job on time",
+    "expr": "(p/100)^m*100",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

@@ -1,0 +1,222 @@
+{
+ "id": "moral-hazard",
+ "name": "Moral Hazard",
+ "en": "道德风险",
+ "discipline": "economics",
+ "one_line": "When someone else will pay if things go wrong, people get less careful.",
+ "story": "Keating buys Lincoln Savings and Loan and bets on risky real estate backed by deposit insurance, until it is taken over in 1989",
+ "shallow": {
+  "scene": "When people put money in a bank, few of them ask who the bank lends it to: deposits are insured, and if the bank fails, someone will pay them back. The people who own the bank know this too.\n\nIn 1984 a company belonging to the businessman Charles Keating bought Lincoln Savings and Loan in California, an American bank that took deposits and made loans. At the time, federal deposit insurance covered each depositor's savings up to 100,000 dollars, so depositors had no need to keep an eye on how Lincoln used their money. Lincoln then put large sums of deposits into high-risk businesses such as real estate. The two sides of this bet were lopsided. If it won, the profits went to the shareholders. If it lost, once the shareholders' own small stake was gone, the further losses came out of depositors' money, and in the end the government's insurance paid for them.\n\nIn 1989 Lincoln could no longer keep going and was taken over by the federal government. When you bet with other people's money, and someone will cover you if you lose, you naturally bet extra boldly.",
+  "plain": "Driving your own car, you slow down when you see a pothole, and get out to take a look before going down a narrow lane. In a rental car, many people don't care so much. When renting, most people buy full insurance, so scrapes and dents are paid for, and the rental company can't see how you drive. This is moral hazard: when someone else shares the consequences, and others can't see what you do, being careful doesn't seem worth it.\n\nDoing the sums makes it clearer. Suppose a warehouse owner spends 1,000 yuan a year on maintaining his equipment, and this cuts his average losses from breakdowns by 3,000 yuan. When he bears all the losses himself, maintenance saves him 2,000 yuan net, so of course he does it.\n\nLater he buys insurance, and the insurer pays 90% of any loss. Of the 3,000 yuan of losses that maintenance prevents, only 300 would have been his to bear. Take away the 1,000 yuan for maintenance, and maintenance actually leaves him 700 yuan worse off. He hasn't lied, and he isn't a bad person; the numbers have just changed. And the insurer, on the other side of a wall, can't see whether he does the maintenance or not."
+ },
+ "deep": {
+  "mechanism": "### The bigger the share the insurer pays, the less maintenance is worth it\n\nMaintenance still costs 1,000 yuan and cuts losses by 3,000. Write the share of losses the insurer pays as $s$ (90% is 0.9). What maintenance saves the owner, net, is:\n\n$$(1-s)\\times3000-1000$$\n\nOf the losses that maintenance prevents, the $s$ share saves the insurer's money. The owner saves only the $1-s$ share, and then pays for the maintenance. Drop the insurer's share to half, and maintenance spares him 1,500 yuan of losses, a net gain of 500, so it's worth doing again. At two-thirds, what he is spared is exactly 1,000 yuan, and he breaks even. Once the share goes past that line, maintenance no longer pays.\n\n### Moral hazard appears only when three things come together\n\nMoral hazard needs three things to be true at once: people can change what they do; someone else shares the consequences; and what they do is hard to see, or can't be written into an agreement that can be enforced. The insurer can see that the equipment broke, but finds it hard to confirm whether the owner did careful maintenance each time. After the contract is signed, one side's hidden choices change the risk the other side bears. This is called hidden action after the deal.\n\n### As long as people believe someone will cover them, the risk-taking starts before anything goes wrong\n\nA rescue doesn't have to have happened yet. As long as people believe someone will cover them if things go wrong, they take a little more risk. When Lincoln bet on real estate, deposit insurance had not yet paid a cent on its behalf. What made the people running it bold was their belief that someone would pay if they lost.\n\n### Leave a piece of the loss for him to bear, but not all of it\n\nThe remedy is to have the owner bear a piece of the loss that he can control, such as a deductible he pays himself, or a renewal premium set by practices that can be checked. Then why not pay out nothing at all? The owner would certainly look after his equipment well. But if a lightning strike he couldn't control burned the equipment, the whole loss would fall on him as well, and escaping exactly that is why he bought insurance in the first place.\n\n**How big a loss is depends both on whether he does the maintenance and on luck; the more of it you make him bear, the more he also pays for bad luck.** So the contract has to find a point between encouraging care and shielding him from risk. As long as the insurer pays less than two-thirds, maintenance still pays off, and the rest of the risk can still be handed to insurance.",
+  "origin": "\"Moral hazard\" is an old term in the insurance business, already in use in the nineteenth century, and not coined in one go by any economist. In 1963 Kenneth Arrow discussed how health insurance changes the way people behave; in 1968 the economist Mark Pauly explained this change with economic analysis. In 1979 Bengt Holmström studied how contracts should be designed when actions are hidden. The RAND Health Insurance Experiment provided the classic evidence from randomly assigned groups.",
+  "limits": "Deals where the protection is already in hand and what the other side does is hard to check, such as insurance, commissions and guarantees, all fall within what it explains. Flight-delay insurance doesn't: whether the plane is late is out of the passenger's hands, and buying the insurance won't make the flight any later. Where what people do can be checked item by item, it has little to say either. Counting everything extra people do once they're protected as waste is a misreading: patients go for the treatment they need only once they have health insurance, and founders dare to try only once they have a safety net."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When setting deposit rules for tenants: if the deposit comes back in full whether or not the furniture is damaged, tenants have no reason to look after the furniture; keep back part of it, and they do."
+   },
+   {
+    "use": "predict",
+    "text": "Imagine a city announcing full compensation for flood damage to homes along the river. You can predict that more houses will go up on the riverbank, without waiting for the flood to find out."
+   },
+   {
+    "use": "explain",
+    "text": "With full insurance on their car, some people don't bother circling once more for a roomier space when parking: if it gets scraped, the repair money is the insurer's."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Medicine",
+    "title": "Coverage changes how people use care",
+    "text": "From 1974 to 1982, the RAND Health Insurance Experiment in the US randomly assigned participating families to different plans for sharing medical costs. The group whose care was free used more medical services, and the groups that paid part of the cost themselves went to the doctor less. The services they cut included both low-value ones and effective ones."
+   },
+   {
+    "field": "Technology",
+    "title": "Someone on call to pick up the pieces",
+    "text": "A team lets developers release at any time, and all overnight alerts are handled by the operations staff. To keep up the pace, developers skip rehearsing rollbacks. Something breaks in the early hours, and it's the operations staff who stay up all night putting it right. Later the team has whoever releases take turns joining incident response, and someone checks the rehearsal records before each release."
+   },
+   {
+    "field": "Personal life",
+    "title": "The family will always top up",
+    "text": "A young man in his first job gets paid every month and has spent it all by the end of the month, and his parents always transfer money to him. After a while he doesn't even bother checking his balance before signing up for gym classes, since someone will cover the gap in his rent anyway. His parents switch to giving him a fixed sum each month, with any extra spending paid by him, and he starts drawing up a budget at the start of each month."
+   }
+  ],
+  "ask": [
+   "Once the protection is in place, who can change the risk? And who pays if something goes wrong?",
+   "What care can the other side skip that I have no way to check? If nobody were covering them, would they still act this way?",
+   "Can I leave part of the loss that he can control for him to bear, while the protection still covers the part he couldn't bear?"
+  ],
+  "with": [
+   {
+    "id": "adverse-selection",
+    "sees": "A car insurer finds its claims running high and has to decide whether to change the policy terms or the pricing. First see whether owners drive differently before and after buying cover. If they've got sloppier, that's moral hazard: add a deductible and check driving records. If their driving hasn't changed, and it's just that people prone to accidents are keener to buy cover, that's adverse selection: ask about their claims history when they sign up, and price by risk."
+   },
+   {
+    "id": "principal-agent",
+    "sees": "You hire a renovation crew, and you can't see everything about their timing and materials. Even with nothing covering them, the crew might cut corners; that's the principal-agent problem, and the remedies are hiring an inspector and paying in installments. If you've also promised \"any overspending will be fully reimbursed\", a safety net has been added as well, and moral hazard is stacked on top. The first thing to change is the full reimbursement."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A custom furniture company changes its sales rules: commission is paid as soon as an order is signed, and isn't clawed back even if the order is refunded later. Salespeople often promise delivery dates in private chats, which the company can hardly check. Under the new rules, salespeople have dropped the step of confirming schedules with the factory, and refunds caused by delivery promises have gone up.",
+    "question": "The company wants salespeople to go back to confirming schedules with the factory. What should it change?",
+    "explain": "The new rules let salespeople keep the benefit of signing orders while dumping the cost of wrong promises on the company, and the private chats keep the company from seeing what they promised. Keeping records and clawing back commission bring part of the consequences back to the person making the decision.",
+    "options": [
+     {
+      "text": "Give salespeople more training on delivery times so they understand scheduling better, and leave the commission rules alone.",
+      "correct": false,
+      "feedback": "Salespeople used to confirm, which shows they understand scheduling. They don't confirm now because not confirming pays better, and training doesn't change that sum."
+     },
+     {
+      "text": "Keep records of delivery promises, and claw back part of the commission on refunds caused by unauthorized promises.",
+      "correct": true,
+      "feedback": "Records make promises and confirmations visible, and clawing back commission makes salespeople pay part of the cost of wrong promises, so confirming schedules pays again."
+     },
+     {
+      "text": "Tighten the conditions for customer refunds so there are fewer of them, and keep the commission rules as they are.",
+      "correct": false,
+      "feedback": "Tighter conditions only mean paying out fewer refunds. Salespeople still get commission on unconfirmed promises, so their reason to skip confirming hasn't shrunk at all."
+     },
+     {
+      "text": "Raise the commission on orders delivered on time, but still don't claw back commission on refunded orders.",
+      "correct": false,
+      "feedback": "Earning more for on-time delivery will make salespeople care more about delivery dates. But they keep the commission on refunded orders, so the cost of promising without confirming still falls on the company."
+     }
+    ]
+   },
+   {
+    "stem": "An angel investor joins a pilot program for investing in startups. The platform promises to cover 80% of the loss on each investment, all profits go to the investor, and the service fee is fixed. Investors pick their own projects, and the platform sees only the final returns, so it can hardly check whether he checks out each company carefully. Once the protection takes effect, he starts skipping customer interviews and bets more on the founders' pitches.",
+    "question": "Why does he start skipping customer interviews?",
+    "explain": "The protection changed his sums: the benefit of skipping the checks is all his, while most of the extra losses go to the platform. And the platform can't see how the checking is done, so this labor-saving habit can carry on.",
+    "options": [
+     {
+      "text": "The pilot attracted investors who were fonder of risk to begin with.",
+      "correct": false,
+      "feedback": "That is about who joins the pilot; but here the same person changed what he does after the protection took effect."
+     },
+     {
+      "text": "He still bears 20% of the losses, which is enough of a check; he does fewer checks because he has more experience.",
+      "correct": false,
+      "feedback": "The loss he bears himself dropped from all of it to 20%, so skipping the checks pays better; and nothing in the question suggests he has gained experience."
+     },
+     {
+      "text": "The platform bears 80% of the losses, so skimping on checks costs him less, and the platform can't see whether he does them.",
+      "correct": true,
+      "feedback": "The time saved is his, he bears only 20% of the extra losses, and the platform can't check how he does his checking."
+     },
+     {
+      "text": "It has nothing to do with the protection: all the profit is his, and the reward for picking good projects hasn't changed.",
+      "correct": false,
+      "feedback": "Care pays off in two ways: picking good projects, and avoiding losses. With the platform bearing 80% of the losses, the second reward has shrunk."
+     }
+    ]
+   },
+   {
+    "stem": "A pet insurer launches a new product with one flat premium, and doesn't ask about earlier symptoms when people sign up. Some owners know their pets have been vomiting again and again lately, but the insurer doesn't. After the launch, these owners are keener to buy cover, and the insured pets' claim rate comes out higher than expected. A survey shows that the owners fed and cared for their pets the same way before and after buying cover.",
+    "question": "What is the most likely reason the claim rate is high?",
+    "explain": "The change happened before the cover was bought: owners knew about illnesses the insurer didn't, and what changed was who signed up, not how pets were cared for afterward. This is adverse selection, not moral hazard.",
+    "options": [
+     {
+      "text": "Owners who know their pets have symptoms are keener to buy cover, so high-risk pets pile in.",
+      "correct": true,
+      "feedback": "A flat premium is the best deal for owners who know their pet is ill, so the insured pets include more that were likely to need claims to begin with."
+     },
+     {
+      "text": "With protection in place, owners look after their pets less attentively, so the pets fall ill more easily.",
+      "correct": false,
+      "feedback": "The survey shows care didn't change after buying cover, and the repeated vomiting started before the cover did."
+     },
+     {
+      "text": "The share owners pay themselves is too low, so they're keener to take their pets in for every little ailment.",
+      "correct": false,
+      "feedback": "Nothing in the question suggests vet visits changed. The difference given is that owners of pets with earlier symptoms were keener to sign up."
+     },
+     {
+      "text": "Owners willing to buy insurance are fonder of risk by nature, and that personality makes their pets more prone to illness later.",
+      "correct": false,
+      "feedback": "These owners bought insurance because they already knew their pets had symptoms; there's no need to bring personality into it."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Once cover passes two-thirds, upkeep loses money",
+  "caption": "Across: share insurance pays. Up: owner's net saving from upkeep. Drag the share to see when upkeep turns to a loss; lower its cost and break-even moves right.",
+  "x": {
+   "label": "Share insurance pays",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "y": {
+   "label": "Owner's net saving a year",
+   "unit": " yuan",
+   "min": -2500,
+   "max": 2500
+  },
+  "params": [
+   {
+    "id": "s",
+    "label": "Share paid",
+    "min": 0,
+    "max": 100,
+    "step": 10,
+    "value": 90,
+    "unit": "%"
+   },
+   {
+    "id": "c",
+    "label": "Upkeep a year",
+    "min": 500,
+    "max": 2500,
+    "step": 500,
+    "value": 1000,
+    "unit": " yuan"
+   }
+  ],
+  "series": [
+   {
+    "name": "Upkeep saves",
+    "expr": "(1-x/100)*3000-c",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "x": "s"
+   },
+   {
+    "x": "(1-c/3000)*100",
+    "y": 0,
+    "text": "Break-even"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "His share of saving",
+    "expr": "(1-s/100)*3000",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "Net saving a year",
+    "expr": "(1-s/100)*3000-c",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "Break-even share",
+    "expr": "(1-c/3000)*100",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

@@ -1,0 +1,211 @@
+{
+ "id": "confirmation-bias",
+ "name": "Confirmation Bias",
+ "en": "确认偏误",
+ "discipline": "psychology",
+ "one_line": "Once you've settled on an answer, you only notice the evidence that backs it up.",
+ "story": "Darwin, writing his autobiography, records his golden rule: write down at once any fact, observation or thought that goes against his conclusions",
+ "shallow": {
+  "scene": "Scrolling on your phone, you look twice at posts that match your views and tap like without thinking, while the ones that argue the other way get swiped past. A couple of days later you can't even remember what you swiped past. Darwin noticed long ago that his own memory played favorites in the same way.\n\nIn 1876, at 67, he was writing his autobiography, and he set down a rule he had kept for many years: whenever he came across a published fact, a new observation or a new idea that went against his conclusions, he made a note of it, without fail and at once. His reason came from experience: facts and ideas that went against him slipped out of memory more easily than ones in his favor.\n\nIn *On the Origin of Species*, published in 1859, he gave a whole chapter to the difficulties facing his own theory. In his autobiography he said that thanks to this habit, hardly any objection that others raised later was one he hadn't already noticed and tried to answer. He didn't expect his memory to be fair, so he never gave it the chance to pick and choose.",
+  "plain": "You have a poor opinion of the new parcel pickup point that opened in your neighborhood. This month you collected 20 parcels there: 5 times you searched for ten minutes without finding yours, and 15 times you were out in a minute. You remember each of the 5 failures clearly; the 15 smooth trips you forget as soon as you're out the door, and by the end of the month you can recall only 3. So in your memory, failures outnumber smooth trips. When a neighbor asks, it comes out at once: \"That pickup point can never find your parcel.\"\n\nThis is confirmation bias: you start with \"this place is no good,\" the evidence that fits it stays, the evidence that doesn't quietly slips away, and what stays makes you even more sure."
+ },
+ "deep": {
+  "mechanism": "### Trying a case you expect to pass feels like checking\n\nOnce you have a judgment, you tend to test it on cases you expect to pass. Every pass feels like one more check; testing cases that might fail risks showing you that you were wrong. But this kind of checking can't tell right from wrong.\n\nSomeone says \"2, 4, 6\" fits a rule they have in mind. You name three numbers, and they answer yes or no. Your guess is \"each number is 2 more than the one before.\" You try 4, 6, 8: yes. You try 10, 12, 14: yes. You try 100, 102, 104: yes again. But the real rule is \"any three numbers going up,\" and it says yes to all three of those too, so they can't tell which rule is right. Only numbers your guess would say no to can tell the two apart. Try 1, 2, 9: your guess says no, the real rule says yes. The moment they answer yes, your guess falls.\n\n### Three filters, searching, reading and remembering, strain out the evidence against you\n\nThe first filter is searching. The way you ask the question tilts the answers: search \"why this plan is good,\" and the top results are almost all reasons it is good.\n\nThe second is reading. Suppose you have 10 studies in hand: 6 support your plan and 4 go against it. Reading the 4 against it, you pick at them point by point and throw out 3. Reading the 6 in favor, you don't pick at a single one. On paper, the score goes from 6 for and 4 against to 6 for and 1 against. But the standard you used to pick holes threw out three quarters of the studies against you. Apply the same standard to the 6 in favor, and at the same rate only one or two would be left (a quarter of 6 is 1.5), so the real score is one or two for and 1 against.\n\nThe third is remembering, and it is the hardest to notice. Searching and reading at least took some effort; forgetting takes none. Go back to the pickup point: of 20 trips this month, 5 failed, which is 25%. By the end of the month you can recall 5 failures and 3 smooth trips, so in your memory failures make up 5/8, about 63%.\n\n### If evidence against you doesn't go on paper, the remembering filter loses it\n\nDarwin's rule was aimed right at the third filter. Facts against him slipped away more easily, so he didn't wait to think about them later; he wrote them down on the spot. When he sat down to write his conclusions, the evidence against them was still there on paper, and memory had no chance to sort it out first.",
+  "origin": "Peter Wason published his number-rule experiment in 1960. He gave participants \"2, 4, 6,\" asked them to guess the rule, and let them choose their own numbers for the experimenter to say whether they fit. Many people tried only numbers that fit their own guess and found out very late that the real rule was any three numbers going up.",
+  "limits": "Confirmation bias shows up most easily when your judgment has already taken shape and you choose the evidence yourself, as when you research something, interview someone or track down a fault. When your judgment only leans a little, or someone else gathers the full set of evidence, it does less. Looking for evidence in favor is not wrong in itself; the mistake is looking only on that side. The other way around, using \"let's look for more evidence against it\" as a reason never to reach a conclusion is also a misuse."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "Facing a decision you already lean toward, first write down three results that would make you drop it, and only then gather material."
+   },
+   {
+    "use": "explain",
+    "text": "Explain why a report that was checked over and over still hides a mistake: the person checking always ran checks that would pass and never tried to make the figures fail to match."
+   },
+   {
+    "use": "design",
+    "text": "Set a rule for review meetings: before discussion starts, each person hands in one line on \"If things aren't the way we think they are, what would the reason be?\""
+   }
+  ],
+  "examples": [
+   {
+    "field": "Society",
+    "title": "Same two studies, wider split",
+    "text": "In 1979, Lord, Ross and Lepper at Stanford University asked a few dozen undergraduates to read summaries of two studies on the death penalty. One said the death penalty deters crime and the other said it doesn't, and the students included both supporters and opponents of the death penalty. Supporters judged the deterrence study more solid; opponents judged the other one more solid. After reading the details, the two sides were further apart on the death penalty than before."
+   },
+   {
+    "field": "Work",
+    "title": "The intern you supervise",
+    "text": "In his first week, the intern you supervise gets a spreadsheet wrong. After that you spot-check only the work he hands in, not anyone else's. At a review three weeks later, five small mistakes have turned up in his spreadsheets, and you tell your manager, \"I knew he wasn't up to it.\" You never opened a single spreadsheet from the other three people on the team."
+   },
+   {
+    "field": "Shopping",
+    "title": "Stopping at the third post",
+    "text": "You have your eye on a used car and scroll through owner reviews on a forum. The first three all praise its fuel economy. You stop, close the page and call the seller: I'll take it. From the fourth post on there is a string of complaints about a jerky transmission, which you never scrolled down to."
+   }
+  ],
+  "ask": [
+   "What specific result would make me change my mind? Write it down before looking.",
+   "When was the last time a piece of evidence changed my mind?",
+   "If someone who didn't know my position sorted through this material, which pieces would they throw out first?"
+  ],
+  "with": [
+   {
+    "id": "bayesian-updating",
+    "sees": "A researcher reads a new paper that contradicts the conclusion she has held for twenty years, and lowers her confidence only a tiny bit, on the grounds that the old evidence is thick. Bayesian updating backs her: when the old evidence is thick, one new study should move you only a tiny bit. Confirmation bias asks how that thick pile came about: over those twenty years, how many papers that didn't support her did she read and put on her shelf? If the thickness was built up by collecting only the papers in favor, the base is thinner than it looks, and that tiny bit should be bigger."
+   },
+   {
+    "id": "signal-noise",
+    "sees": "In a product's monthly data, retention suddenly drops a notch one week. Signal and noise says that a single week's swing is mostly noise, so widen the window and look at the average. Confirmation bias watches how the window is chosen: someone who wants to prove a new feature works will start counting from the week before the drop, and someone who wants to prove it doesn't will start after the rise. Agree before you start: which week to begin from and how many weeks to a window, written down before the data is opened."
+   },
+   {
+    "id": "premortem",
+    "sees": "At the meeting to approve a project, everyone already leans toward going ahead. A premortem has everyone imagine the project has failed a year from now and write a page on why, which forces onto the table the objections people normally find hard to voice. Confirmation bias explains why, without this setup, only the voices in favor would be heard in the meeting."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A property manager suspects that night-time power cuts in her housing complex are caused by the newly installed car chargers. She goes through 30 days of records: 5 power cuts, and on 4 of those nights some resident was charging. She says, \"See, I knew it.\"",
+    "question": "To test this suspicion, what is the most useful thing to check next?",
+    "explain": "Someone was charging on most nights with a power cut, but that could happen whether or not the chargers are the cause. Only by splitting all the nights into two groups, by whether anyone was charging, can you see whether the two groups had different numbers of power cuts.",
+    "options": [
+     {
+      "text": "Keep records for another 30 days and see whether most nights with a power cut still had someone charging.",
+      "correct": false,
+      "feedback": "Another 30 days still only tells you about nights with power cuts. You still won't know how many cuts there were on nights when nobody was charging."
+     },
+     {
+      "text": "Ask residents whether they think the chargers affect the power supply, and hear what people think.",
+      "correct": false,
+      "feedback": "What residents feel gives no comparison of power-cut counts at all, and each of them has their own position too."
+     },
+     {
+      "text": "Have an electrician check whether the chargers' wiring meets the code and look for wiring problems.",
+      "correct": false,
+      "feedback": "Checking the wiring is not a step that tests the suspicion with data. It looks only at the chargers, and whether power cuts and charging happen together is still not compared."
+     },
+     {
+      "text": "Split the 30 nights into two groups by whether anyone was charging, and count the power cuts in each.",
+      "correct": true,
+      "feedback": "If the two groups' power-cut counts differ a lot, the chargers are strong suspects; if they are about the same, power cuts have little to do with whether anyone is charging."
+     }
+    ]
+   },
+   {
+    "stem": "You already lean toward installing a fresh-air ventilation system at home. You plan to order it this weekend and want to look things up online before deciding.",
+    "question": "Which way of looking it up is least likely to show you only material in favor of installing?",
+    "explain": "When you already lean one way, the words you search for decide what you read. Searching once in each direction and reading the top results on both sides is what gives material against it a chance to enter your judgment.",
+    "options": [
+     {
+      "text": "Search once for \"reasons it's worth installing\" and once for \"reasons people regret it,\" and read the top few results of each.",
+      "correct": true,
+      "feedback": "Material from both directions ends up in your hands, and you read the same number of pieces for and against."
+     },
+     {
+      "text": "Search only for \"fresh-air system drawbacks,\" read all the drawbacks, then order.",
+      "correct": false,
+      "feedback": "Switching to the other side alone is still a one-direction search; all that changes is that what you see becomes the downsides."
+     },
+     {
+      "text": "Search for \"why a fresh-air system is worth installing\" and read the top few posts.",
+      "correct": false,
+      "feedback": "The question already assumes it's worth installing, so nearly everything you find is reasons."
+     },
+     {
+      "text": "Ask a friend who has already installed one whether he's happy with it.",
+      "correct": false,
+      "feedback": "A friend is only one experience, a sample of one person, and the friends who come to mind to ask may be the happy ones."
+     }
+    ]
+   },
+   {
+    "stem": "Based on three large randomized controlled trials (an imagined scenario), the admin of a patient group chat considers a certain blood-pressure drug safe. A group member forwards a personal blog post: the writer says they felt dizzy after taking the drug, with no comparison group and no data. The admin says the post doesn't change his view. The group member says, \"You only believe what supports you.\"",
+    "question": "What is the most reasonable judgment of how the admin handled the blog post?",
+    "explain": "Material against a view doesn't carry weight just because it is against; the weight comes from how the study was done. What to look at is whether he treats supporting material of equally low quality the same way.",
+    "options": [
+     {
+      "text": "The blog and the trials should get half the weight each. Only treating both sides equally is fair, and then nobody can say he's biased.",
+      "correct": false,
+      "feedback": "Weight should be set by how the research was done. Three large trials and one uncontrolled personal account are not on the same scale, so splitting it evenly has no basis."
+     },
+     {
+      "text": "No comparison group and no data means little weight. If he treats supporting material of the same quality the same way, he isn't biased.",
+      "correct": true,
+      "feedback": "The standard is set by quality, and material of the same quality is treated the same way. That is how evidence against a view gets a fair weight."
+     },
+     {
+      "text": "First collect more personal accounts, and once there are a few dozen, decide what to think about the drug.",
+      "correct": false,
+      "feedback": "Three large trials are already in hand. Piling up more uncontrolled accounts still adds very little weight, and it isn't worth putting the judgment on hold for."
+     },
+     {
+      "text": "By rejecting the blog he is blocking evidence against him, so he should admit he's biased and change his view.",
+      "correct": false,
+      "feedback": "There's no basis for changing his view: the blog has no comparison and no data, so there are methodological reasons to reject it. Whether he's biased depends on whether he treats supporting material of the same quality the same way."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Forget smooth trips and \"sometimes\" is \"always\"",
+  "caption": "20 pickups this month, and only 5 failed: a quarter. Drag the slider: the fewer of the 15 smooth trips you remember, the bigger the share of failures in memory.",
+  "x": {
+   "label": "Smooth trips remembered",
+   "min": 0,
+   "max": 15
+  },
+  "y": {
+   "label": "Share of failures",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "s",
+    "label": "Smooth recalled",
+    "min": 0,
+    "max": 15,
+    "step": 1,
+    "value": 3,
+    "unit": " trips"
+   }
+  ],
+  "series": [
+   {
+    "name": "In memory",
+    "expr": "100*5/(5+x)",
+    "tone": "accent"
+   },
+   {
+    "name": "Actual",
+    "expr": "25+0*x",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "x": "s"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Failures in memory",
+    "expr": "100*5/(5+s)",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "Actual failures",
+    "expr": "25",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

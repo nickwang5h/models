@@ -1,0 +1,242 @@
+{
+ "id": "brooks-law",
+ "name": "Brooks's Law",
+ "en": "布鲁克斯定律",
+ "discipline": "computing",
+ "one_line": "Adding people to a project that's already late only makes it later.",
+ "story": "IBM keeps adding people to OS/360 and it still runs late, which leads Brooks to write The Mythical Man-Month",
+ "shallow": {
+  "scene": "In 1964 IBM announced its System/360 line of computers. The operating system that went with them, OS/360, was run by Frederick Brooks. When the work fell behind schedule, the company added people to the project; at its peak more than a thousand people were working on it. There were more and more programmers, yet part after part was still delivered months late, again and again. Years later, Brooks put this experience into a book.",
+  "plain": "Brooks's law says that adding people to a project that is already late only makes it later. An hour before the Lunar New Year's Eve family dinner, you still have twenty plates of cold dishes to slice by yourself. Your cousin comes over to help, and first spends ten minutes listening to your instructions: which plates are cut into strips, which into slices, which get dressed only at the very end. After that, he asks you a question for every plate he cuts, and you have to put down your knife to answer. The ones he cuts wrong, you have to redo. The time all goes on these things, and when dinner starts, you may have fewer dishes ready than if you'd done it alone."
+ },
+ "deep": {
+  "mechanism": "### The newcomer first eats up the experienced person's time\n\nSuppose an experienced worker can do 10 units of work a day. Training a newcomer takes up one whole day of their time, and from the second day the newcomer can do 5 units a day. With only 2 days left, the experienced worker does 10 fewer units and the newcomer makes up only 5, a net loss of 5. With 3 days left, the newcomer makes up 10, exactly breaking even. With 10 days left, the newcomer makes up 45, a net gain of 35. The closer the deadline, the more adding people costs you.\n\n### More people, more pairs to keep in sync\n\nEvery two people on a team have to keep each other informed, and that counts as one pair. The number of pairs among $n$ people is:\n\n$$\\frac{n(n-1)}{2}$$\n\nEach person has to keep in sync with the other $n-1$ people, and each pair gets counted once from each end, so you divide by 2. Among 3 people there are 3 pairs; among 6 there are 15. Double the people, and the pairs more than double. The more the work a newcomer takes on touches other people's changes, the more interfaces the experienced people have to explain, the more conflicts they have to sort out, and the more things they have to test again.\n\n### The delivery date is set by the line that finishes last\n\nSome work has to happen in order. Until the design is settled, the people writing code have to wait; until the whole thing passes testing, it can't be delivered. The chain of linked work like this that finishes last is that line. When a newcomer arrives, first ask which piece of work on this line they can take over. If they can't take any, no number of new people will change the date.",
+  "origin": "Frederick Brooks led the development of OS/360 at IBM. In 1975 he published *The Mythical Man-Month*, using that experience to show that in software work, people and months can't be traded for each other: double the people and the schedule doesn't halve. The limits set by training, coordination and the order things must happen in don't go away when you add people.",
+  "limits": "Adding people helps when the work holding up delivery can be split into pieces that don't affect each other, the newcomers know this kind of work, and there's enough time left to earn back the cost: tickets with clear rules, for instance, or drafts proofread separately. An expert who needs no training and can fix a critical fault directly can also bring delivery forward. So it isn't a rule against ever adding people. What to guard against is putting people who need a lot of training into tightly linked work close to a deadline."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "Predict that when a project already running late hires a batch of new people close to launch, the delivery date will most likely slip further. Compare the days left with the days that training will take up."
+   },
+   {
+    "use": "explain",
+    "text": "After a renovation crew ran past its deadline, the homeowner brought in two more crews, and the job finished even later, because the original foreman first had to mark out areas for them and explain how things should be done."
+   },
+   {
+    "use": "act",
+    "text": "First find the one piece of work that's holding up delivery, and see whether it can be split off for newcomers to do on their own. If it can't, hold off on adding people."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Public services",
+    "title": "The rescue started with coordination",
+    "text": "In 2013 the US health insurance website HealthCare.gov failed at launch. Mikey Dickerson, who later joined the rescue effort, found that the project involved hundreds of people and dozens of companies, yet had no overall coordination and no monitoring of how the site was running. The team added monitoring and brought the people involved together to meet in one place, and only then did the site slowly recover."
+   },
+   {
+    "field": "Investing",
+    "title": "Rushing due diligence slows it down",
+    "text": "A deal for a company you're investing in is already behind schedule, and you bring in three teams of advisers to speed up due diligence. All three teams need the head of finance to explain the same unusual item of income, so he holds the same meeting three times, and the account checking he had planned stops. Later you combine the questions into one list and have a single contact person collect the answers, and only then does he have time to get back to checking the accounts."
+   },
+   {
+    "field": "Personal life",
+    "title": "Chaos the night before the wedding",
+    "text": "The night before your wedding, the venue still isn't set up, and seven or eight relatives come to help. What to hang, where things go, which table is for whom: every one of them asks you, you get pulled back and forth, and the seating cards you meant to write are still unfinished. You hand the whole job of setting out the chairs to one relative, let him lead the others himself, and go back to the table to write the seating cards."
+   }
+  ],
+  "ask": [
+   "What is the piece of work holding up delivery? Who is the only person who can do it?",
+   "What can a newcomer finish on their own in the first week, and how much of which experienced person's time will that take up?",
+   "How many days are left before delivery, and in those days, will the output newcomers add cover what training and coordination cost?"
+  ],
+  "with": [
+   {
+    "id": "divide-and-conquer",
+    "sees": "An annual report has five chapters that don't depend on each other, each checking its own data. Give them to five people and it can be written in an afternoon. There's no need for Brooks's law here; just divide and conquer. But if each chapter's figures cite other chapters, every chapter has to wait for the others to be finalized, and dividing the work creates a pile of interfaces to keep in sync. That's when to think of Brooks's law first."
+   },
+   {
+    "id": "bottlenecks",
+    "sees": "A factory is delivering late, and the bottleneck is the final inspection. Add people to the assembly line, and however fast assembly gets, the goods still pile up waiting for inspection; only adding inspectors or running inspections in parallel will bring delivery forward. Before adding people, first check whether they're going to that slowest step."
+   },
+   {
+    "id": "planning-fallacy",
+    "sees": "A project manager first estimated four months. The project has now slipped into its sixth month, and he wants to catch up by adding people. The first estimate was already too low once, and now he overestimates how much newcomers can produce right away: the planning fallacy, committed a second time. Only by redoing the sums with the original estimate and the newcomers' training time together will he know how much work is really left."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're a producer at a studio. The documentary is already late, and only two days remain before the screening. Three editors are still adjusting the order of the story, relying mainly on the lead editor to judge which shots stay. The boss brings in three people at short notice who know the editing software well but have never seen the footage. They first have to hear the lead editor explain the story and the footage, then edit their sections, and finally the lead editor merges and checks everything.",
+    "question": "What effect will adding these people have on delivering the film on time?",
+    "explain": "Delivery hinges on the lead editor's judgment and on putting everything together, and the extra people have given him more training and checking to do. With only two days left, the newcomers' sections won't have made up that time, so the finished film will be later.",
+    "options": [
+     {
+      "text": "Very likely later: the lead editor has to spend time training them and also merge more changes.",
+      "correct": true,
+      "feedback": "The extra people first take up the time of the most important person, and add to the merging. With only two days left, the newcomers' output can't make up for it in time."
+     },
+     {
+      "text": "It will probably catch up: the newcomers have editing experience and won't take long to learn the footage.",
+      "correct": false,
+      "feedback": "They can use the software. What they lack is an understanding of the footage and the story choices, and that still has to be explained and checked by the lead editor."
+     },
+     {
+      "text": "It will probably catch up: each person has less footage to handle.",
+      "correct": false,
+      "feedback": "The footage can be split evenly, but judging the story and the final merge are still in the lead editor's hands alone. Doubling the people does nothing for those two."
+     },
+     {
+      "text": "About the same: the newcomers don't know the footage and can't help much for now.",
+      "correct": false,
+      "feedback": "It's worse than not helping: the newcomers also take up the lead editor's time, so the original team's output drops too."
+     }
+    ]
+   },
+   {
+    "stem": "You own shares in an equipment company. A batch of orders is already late. Assembly is all done, and only unit-by-unit acceptance testing remains. Each unit can be tested on its own, there are plenty of test stations, and shipping has spare capacity. The company brings in certified inspectors from another factory who know this model of equipment and can finish training on this plant's procedures in half a day. There are two weeks left before the new delivery date. An analyst declares, \"Adding people after a delay will only make delivery later.\"",
+    "question": "How should you judge this claim?",
+    "explain": "Whether adding people after a delay helps depends on whether the extra output can outweigh the cost of training and coordination, and move forward the work that sets the delivery date. Here the testing can run in parallel, the reinforcements know the equipment, and there's plenty of time left, so the claim doesn't hold in this case.",
+    "options": [
+     {
+      "text": "It doesn't hold: the inspectors are certified, so testing speed will be in direct proportion to the number of people.",
+      "correct": false,
+      "feedback": "Testing speed is also limited by the stations and by the equipment being ready, so it won't be in exact proportion to the number of people."
+     },
+     {
+      "text": "It holds: a bigger team means more pairs who need to communicate, which will cancel out the inspectors' output.",
+      "correct": false,
+      "feedback": "Here every unit is tested on its own, nobody needs to align with everyone else, and the number of possible pairs isn't the actual cost."
+     },
+     {
+      "text": "It holds: the delay shows the original plan was wrong, and adding people usually makes the work messier.",
+      "correct": false,
+      "feedback": "A past plan being wrong doesn't prove that adding people this time won't help. What matters is whether the remaining work can be done independently."
+     },
+     {
+      "text": "It doesn't hold: the testing can be split up and done independently, so people who know the equipment can shorten the remaining schedule.",
+      "correct": true,
+      "feedback": "The new inspectors directly share the testing that is holding up shipment. Short training, plenty of time, enough stations: all the conditions for adding people are in place."
+     }
+    ]
+   },
+   {
+    "stem": "You're making a birthday album for your grandfather, and it must go to the printer tomorrow night. A hundred old photos still need the people and years identified, and only your mother can recognize them. Another two hundred photos already have captions written on paper that haven't been typed in yet. Your mother keeps switching back and forth between identifying photos and typing captions. Two friends are willing to help; they type fast, but they don't know anyone in the photos.",
+    "question": "How should you use the two friends to give the album the best chance of going to print on time?",
+    "explain": "Extra help doesn't have to take on the hardest work; it can also take the other work off the key person's hands. With the friends typing the existing captions on their own, your mother can spend all her time identifying photos, which only she can do and which is what's holding up the printing.",
+    "options": [
+     {
+      "text": "Split the photos into three equal piles, and have each person identify and caption their own pile.",
+      "correct": false,
+      "feedback": "The number of photos is equal, but the ability to recognize people isn't. When the friends come across someone they don't know, they still have to interrupt your mother."
+     },
+     {
+      "text": "First have your mother spend half a day telling the family's history, then have the friends help identify the remaining photos.",
+      "correct": false,
+      "feedback": "The printing is tomorrow night. Half a day of explaining eats up your mother's time first, and the friends may still not identify people correctly afterward."
+     },
+     {
+      "text": "Have the friends type in the confirmed captions while your mother focuses on identifying the remaining old photos.",
+      "correct": true,
+      "feedback": "The friends take on work they can do on their own, your mother stops switching back and forth, and her time goes to the thing that's really holding up the printing."
+     },
+     {
+      "text": "Give the unidentified photos to the friends to judge first, then have your mother check them all.",
+      "correct": false,
+      "feedback": "The friends don't know who the people are, so your mother still has to check every photo, and spend time correcting the wrong ones as well."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "title": "With 2 days left, one more person costs 5 units",
+  "caption": "A veteran does 10 units a day; training a newcomer costs one whole day of that, then the newcomer does 5 a day. 3 days left: even. 10 days left: 35 ahead.",
+  "x": {
+   "label": "Days left before delivery",
+   "min": 1,
+   "max": 10,
+   "ticks": [
+    {
+     "at": 2,
+     "label": "2"
+    },
+    {
+     "at": 4,
+     "label": "4"
+    },
+    {
+     "at": 6,
+     "label": "6"
+    },
+    {
+     "at": 8,
+     "label": "8"
+    },
+    {
+     "at": 10,
+     "label": "10"
+    }
+   ]
+  },
+  "y": {
+   "label": "Net extra units from adding one"
+  },
+  "series": [
+   {
+    "name": "Net extra units",
+    "points": [
+     [
+      1,
+      -10
+     ],
+     [
+      2,
+      -5
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      4,
+      5
+     ],
+     [
+      5,
+      10
+     ],
+     [
+      6,
+      15
+     ],
+     [
+      7,
+      20
+     ],
+     [
+      8,
+      25
+     ],
+     [
+      9,
+      30
+     ],
+     [
+      10,
+      35
+     ]
+    ],
+    "tone": "accent",
+    "dots": true
+   }
+  ],
+  "marks": [
+   {
+    "y": 0,
+    "text": "Break even"
+   }
+  ]
+ }
+}

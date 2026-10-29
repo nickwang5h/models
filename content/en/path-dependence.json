@@ -1,0 +1,200 @@
+{
+ "id": "path-dependence",
+ "name": "Path Dependence",
+ "en": "路径依赖",
+ "discipline": "systems",
+ "one_line": "Whichever road you happen to start on gets harder and harder to leave.",
+ "story": "Remington starts making the Sholes typewriter, and its QWERTY keyboard layout is still in use today",
+ "shallow": {
+  "scene": "In 1873 the Remington company in Ilion, New York, took on a typewriter designed by Sholes and others and began selling it the next year, with the keys laid out as QWERTY. Typists trained their fingers on this machine, so schools taught classes on the same layout, and employers were happy to buy machines that a trained typist could use from day one. Later the metal typebars inside the typewriter disappeared and computers arrived, but the layout stayed. Anyone who wants to sell a new keyboard today is up against fingers that generations of people have trained.",
+  "plain": "In the middle of the lawn in a new housing complex, there are two diagonal routes from the building door to the subway entrance, about equally short. In the first week, a few people rushing for a train happen to take the left one, and the grass there gets trampled a little lower. The people who come later see that the left side is easier to walk and take it too. A month later the left side is a bare dirt path, the grass on the right is knee-high, and nobody crosses on the right anymore. That is path dependence: the starting point was pure chance, but the more people walk a path, the easier it is to walk, and an easier path draws more people."
+ },
+ "deep": {
+  "mechanism": "### The more people take a road, the easier it is to take\n\nYour department uses two document formats, A and B. Half the people prefer A and half prefer B. When you send files to each other and the formats differ, you have to save them again and convert them, so every extra coworker who uses A saves you one conversion if you use A. As long as the hassle saved is smaller than each person's preference, everyone keeps using their own format, and the two exist side by side.\n\nOnce the hassle outweighs the preference, things change. If the small group who start first happen to include a few more A users, the people after them switch to A too; every extra person who switches makes A a bit less trouble again. B users get fewer and fewer, until the whole department uses only A. The two formats were equally good at the start. Which one survives depends on who those first few people happened to choose.\n\n### The old road is held up by the things that still go with it every day\n\nIf performance reviews still count the old road, people keep taking the old road. A manager tells the buyers to switch to electronic approval, but at the end of the month still scores their performance by paper sign-off sheets. So the buyers print the form, get it signed, and then enter it into the system as well, and the new process only adds a step. Only when the manager feeds the approval records into the performance scoring does anyone stop asking for paper.",
+  "origin": "In 1985 Paul David used QWERTY to discuss how choices made in history carry on. In 1989 Brian Arthur showed with a mathematical model that when the payoff grows as more people adopt something, an early lucky lead can lock a technology in. Whether QWERTY is really worse than other layouts is still argued about.",
+  "limits": "Things like standards, interfaces and skills only change when many people change together, so early choices are the most likely to lock in those who come later. But \"it has been used for decades, so it will be used for decades more\" does not follow. As soon as a new way doesn't depend on the old things that go with it, the lock comes undone, and the old road can be overgrown within a few years. That is how mobile phones skipped over landline networks in places where they had never been fully built."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When you set the interface for a new tool, decide whether to support the old format. Support it, and old users will come, but your new format is tied back to the old road; don't, and however good the tool is, nobody will want to move."
+   },
+   {
+    "use": "act",
+    "text": "When a company is rolling out a new tool, set the rules while only two departments are using it. Once ten departments have each grown their own templates and scripts, making them uniform means negotiating with each one in turn."
+   },
+   {
+    "use": "predict",
+    "text": "To guess whether a technical standard will be replaced, first count how much training material, equipment and compliance rules hang off it. That shows how deep its roots go better than comparing technical specs does."
+   }
+  ],
+  "examples": [
+   {
+    "field": "History",
+    "title": "Track width follows the older network",
+    "text": "Isambard Kingdom Brunel chose a track gauge wider than standard for the Great Western Railway, whose first section opened in 1838. Most other railways laid standard track, 1,435 mm wide. At stations where the two networks met, passengers and freight had to change trains. As the standard-gauge network spread, connecting to it mattered more and more for the broad-gauge lines, and in 1892 the Great Western converted its last broad-gauge line to standard gauge."
+   },
+   {
+    "field": "Technology",
+    "title": "A mistake that was kept",
+    "text": "Lotus 1-2-3 treated 1900 as a leap year, adding a February 29 that never existed. Excel later kept the same mistake so that imported old spreadsheets would not have their dates shifted, and it is still there in Excel's 1900 date system today. Changing the rule itself is not hard, but the date numbers stored in old spreadsheets were all counted using it. Fix it directly, and spreadsheets saved decades ago would all be off by a day."
+   },
+   {
+    "field": "Personal life",
+    "title": "Your first job shapes your résumé",
+    "text": "The year you graduated, your roommate mentioned that his company's purchasing department needed people, so you joined. Three years later you know twenty suppliers and can read contract terms, and headhunters and recruiters only ever send you purchasing jobs. You applied for a product role, and they offered a pay grade one step below what you earn now. You tried another way: first sign up for a product project inside your own company, do it for a full six months, and then send out your résumé."
+   }
+  ],
+  "ask": [
+   "What problem was the current way of doing things first meant to solve? Does that problem still exist today?",
+   "To replace it, how much work would have to stop, how many interfaces would have to change, how many people would have to relearn, and who pays for each?",
+   "Now, before anyone is in too deep, can I leave a way out: an export format, a conversion interface, or a trial with a few people first?"
+  ],
+  "with": [
+   {
+    "id": "lindy-effect",
+    "sees": "You're choosing a data format for a new project, and one of the options has been in use for forty years. The Lindy effect says something that has lasted forty years can be expected to last a long time yet, so choosing it is the safe bet. Path dependence says it may have lasted this long only because nobody can move off it. The two give opposite advice: one tells you to bet on it, the other tells you to first check why it is still around."
+   },
+   {
+    "id": "sunk-cost",
+    "sees": "You've spent three years on a part-time master's degree and now want to switch to a different field. The three years of tuition and weekends don't count; that is sunk cost. The prerequisite courses you'd have to make up after switching, and the extra year, do count; those are costs still to be paid. Writing off the past completely, or counting everything you've studied, are both wrong. First list what you would have to make up after switching, and compare only that list with the benefits of the new field."
+   },
+   {
+    "id": "switching-costs",
+    "sees": "You take over a customer management system that has been in use for ten years, and want to know whether it can be replaced within two years. Switching costs has you list the price of changing: data, training, interfaces. Path dependence asks one more question: who added these things, in what year, and are they still being added? If new custom modules still go live every quarter, the list gets longer every month, so first freeze anything new, and only then talk about migrating."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're in charge of a parts code table shared by twenty manufacturers. The new codes are shorter and clearer, and every manufacturer agrees they're better. But the two manufacturers that switched first have to translate by hand every time they check orders with the other eighteen, and they get complaints for it. The rest are all waiting for someone else to switch first.",
+    "question": "What should you do next to get the new codes adopted?",
+    "explain": "Every manufacturer agrees the new codes are better; what holds things up is that whoever switches first loses out. If everyone switches on the same day, nobody has to translate on their own, and the conversion table gives each manufacturer time to change its own systems.",
+    "options": [
+     {
+      "text": "Send every manufacturer a notice explaining that the new codes are shorter and clearer, and ask them to switch soon.",
+      "correct": false,
+      "feedback": "The manufacturers already agree the new codes are better. What holds them up is that whoever switches first loses out, and a notice doesn't touch that."
+     },
+     {
+      "text": "Set one day for everyone to switch together, and send out a table matching old and new codes several months ahead.",
+      "correct": true,
+      "feedback": "If everyone switches on the same day, nobody has to translate on their own; sending the table early gives each manufacturer time to change its own systems."
+     },
+     {
+      "text": "Pay the staff costs of translation for the two that switched first, and leave the other eighteen as they are.",
+      "correct": false,
+      "feedback": "The money only covers the two manufacturers' translation bill. The translating still has to be done, and the eighteen stay on the old codes."
+     },
+     {
+      "text": "Have the two that switched first keep going; the rest will see the benefits and follow one by one.",
+      "correct": false,
+      "feedback": "What the rest see is the two early switchers translating every day, which gives them even more reason to wait."
+     }
+    ]
+   },
+   {
+    "stem": "There are two phone charging ports. A is slightly easier to use; B was put into phones by the two biggest phone makers half a year earlier. The makers of cables, chargers and car chargers all build for B first, and people buying phones also look at how easy the accessories are to find.",
+    "question": "What is the most likely situation five years from now?",
+    "explain": "B came half a year earlier and is in more phones, so accessory makers make accessories for B first. Because the accessories are easy to find, buyers prefer phone models with B, so even more phones have B. A's small edge in ease of use can't match the support for B that thickens with each round.",
+    "options": [
+     {
+      "text": "A is easier to use, so most phones will switch to A.",
+      "correct": false,
+      "feedback": "Accessories and users are both gathering around B. A's small edge in ease of use can't stand up to a whole range of accessories, and nothing would make most phones switch to A."
+     },
+     {
+      "text": "Half a year is a small thing; in five years the split between them will be about what it was at the start.",
+      "correct": false,
+      "feedback": "In that half year's head start, phone sales and accessories already tilted toward B, and every later step makes the tilt bigger. It won't go back to the original split."
+     },
+     {
+      "text": "The two ports will each hold half the market for a long time, without affecting each other.",
+      "correct": false,
+      "feedback": "The more people use a port, the more complete its accessories become, and that draws even more users. The two can hardly stay at half each."
+     },
+     {
+      "text": "B becomes the port on most phones and chargers, and A is left with a small share.",
+      "correct": true,
+      "feedback": "B got into phones first, the accessories followed, choosing B got easier and easier, and the gap snowballed. A is left with a small share."
+     }
+    ]
+   },
+   {
+    "stem": "You read an industry report: almost every publisher in the country uses the same typesetting format for manuscripts. Some say an early choice locked it in; others say the format has simply always been the best to use. You want to find one observation that tells the two explanations apart.",
+    "question": "Which observation tells the two explanations apart?",
+    "explain": "The difference is the cost of leaving. An old publisher that moves away has to remake its templates and scripts; a newly founded publisher carries none of that. If new publishers that are free to choose don't pick it, while the old ones stay, then what keeps them is the cost, not that the format is better.",
+    "options": [
+     {
+      "text": "The manual for this format is very thick, and beginners take a long time to learn it.",
+      "correct": false,
+      "feedback": "A thick manual only shows it is hard to learn. A tool that is hard to learn can be good to use, or it can be locked in, so this doesn't tell them apart."
+     },
+     {
+      "text": "Almost every publisher in the country uses the same format, and none uses another.",
+      "correct": false,
+      "feedback": "Everyone using it would happen both if it has always been best and if it is locked in, so this doesn't tell them apart."
+     },
+     {
+      "text": "Newly founded publishers have no old manuscripts or old templates, and when they choose a format freely, they don't choose this one.",
+      "correct": true,
+      "feedback": "New publishers aren't trapped by old supporting systems and still don't choose it, so the old publishers stay because of the cost of moving away."
+     },
+     {
+      "text": "Two old publishers have each used this format for more than twenty years and never switched to another.",
+      "correct": false,
+      "feedback": "Long use would happen both if it has always been best and if it is locked in, so this doesn't tell them apart."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "loop",
+  "title": "A few went left by chance; then it got easier",
+  "caption": "Both routes are equally short; the start was chance. Each lap, the left grass gets lower. A month later the right is knee-high and nobody walks it.",
+  "center": "Snowballs",
+  "centerSub": "Start was pure chance",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "Someone goes left",
+    "sub": "A few rushing, week one"
+   },
+   {
+    "id": "b",
+    "label": "Grass trampled"
+   },
+   {
+    "id": "c",
+    "label": "Left looks easier",
+    "tone": "accent"
+   },
+   {
+    "id": "d",
+    "label": "Next one goes left"
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b"
+   },
+   {
+    "from": "b",
+    "to": "c"
+   },
+   {
+    "from": "c",
+    "to": "d"
+   },
+   {
+    "from": "d",
+    "to": "a",
+    "label": "More walkers",
+    "tone": "accent"
+   }
+  ]
+ }
+}

@@ -1,0 +1,221 @@
+{
+ "id": "markov-models",
+ "name": "Markov Models",
+ "en": "马尔可夫模型",
+ "discipline": "math",
+ "one_line": "Where you go next depends only on where you are now, and in the long run the starting point stops mattering.",
+ "story": "Markov counts the vowels and consonants in the first 20,000 letters of Pushkin's Eugene Onegin and how often each follows the other (vowels about 43%, a vowel after a vowel 13%, a vowel after a consonant 66%)",
+ "shallow": {
+  "scene": "Your phone keyboard guesses as you type: write one word, and the suggestion bar already shows the words most likely to come next. It doesn't need to understand what you are writing. It only needs to remember which word most often follows which.\n\nIn 1913 the Russian mathematician Andrei Markov counted out the same kind of pattern with pen and paper. He took the first 20,000 letters of Pushkin's long poem Eugene Onegin and first counted the vowels: about 43%. Then he counted again, split by the letter before. When the letter before was a vowel, the next one was also a vowel only 13% of the time; when the letter before was a consonant, the next one was a vowel 66% of the time. If letters had nothing to do with each other, both numbers should be close to 43%. That they were so far apart showed that one letter really does sway the next.\n\nAt the time, some people believed that only events with nothing to do with each other settle into a steady proportion when you count enough of them. Markov used the poem to show otherwise: each letter pulls on the next, and still the vowels across the whole text settle steadily at a little over 40%. The next step depends only on where you are now, and the long-run proportions are still fixed. That is a Markov model.",
+  "plain": "Use a Markov model on the two supermarkets in a small town. Each month, a tenth of Store A's customers switch to Store B, and a fifth of Store B's customers switch to Store A. Where each person shops next month depends only on where they shop now. Suppose the whole town shops at A when the stores open: the next month A keeps 90%, the month after 83%, and after a year it settles around 67%. Suppose instead the whole town starts at B: A gets 20% first, then 34%, and after a year about 66%. Two different starts, and a year later both end up in the same place."
+ },
+ "deep": {
+  "mechanism": "### The share stops where the flows in and out cancel\n\nStore A's share stops moving at 2/3. Of the 2/3 of the town at A, a tenth leave, about 6.7% of the town; of the 1/3 at B, a fifth come over, also about 6.7%. What goes out and what comes in cancel. The starting point only decides how long it takes to get there: each month the gap from 2/3 shrinks by 30%, a tenth plus a fifth.\n\n### Change one switching rate and the end point moves\n\nCall the share of A's customers who switch to B each month $p$, the share of B's who switch to A $q$, and A's share of the town $s$. Each month A loses $ps$ and gains $q(1-s)$. When the two are equal, $ps=q(1-s)$, which solves to\n\n$$s=\\frac{q}{p+q}$$\n\nA's long-run share is the B-to-A rate divided by the sum of the two switching rates. Right now that is $\\frac{0.2}{0.1+0.2}=\\frac{2}{3}$. Raise B-to-A from 20% to 30% and keep A-to-B at 10%: 0.3÷(0.1+0.3), and A rises to 75%. Put B-to-A back at 20% and raise A-to-B from 10% to 30%: 0.2÷(0.2+0.3), and A falls to 40%.\n\n### A one-off shock is worn away within months\n\nStore A runs a big sale and pushes its share up to 90%. The sale didn't change the switching rates: every month after it, a tenth still leave and a fifth still come back. Six months later A is back to about 69%, and after a year it is at 67% again.",
+  "origin": "From 1906, Markov argued with Pavel Nekrasov and others over whether the law of large numbers (count enough cases and the proportion settles down) holds only for independent events. Markov proved that it also holds when each event is tied to the one before. In 1913 he demonstrated it with the letters of Onegin. Theorems by Perron (1907) and Frobenius (1912) on positive and non-negative matrices later became the mathematical grounds for why a long-run distribution exists and why there is only one.",
+  "limits": "It fits best a system with only a few places to go and switching rates that stay the same for years, like customers moving among a few brands. When the rates themselves change, say a platform holds on to people better the more people it has, the model can't keep up. Catching an illness once can leave you immune, so the next step depends on earlier history, and that doesn't fit either. If customers switch stores every single month without fail, the whole town moves back and forth between the two stores and the shares never settle. Using the long-run share as next month's forecast is also far off, because the distance to the end point shrinks by only 30% a month."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "A membership gym that knows the share of members who quit each month and the share who come back can work out where its membership will finally settle, without stepping through it month by month."
+   },
+   {
+    "use": "explain",
+    "text": "Two rivals' market shares have barely moved in decades, because the customers flowing out and the customers flowing back cancelled each other out long ago."
+   },
+   {
+    "use": "reason",
+    "text": "Support tickets move among \"waiting,\" \"in progress,\" \"resolved\" and \"reopened.\" Know the share that moves between them each day, and you can work out how many days a new ticket takes to close on average."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Games",
+    "title": "The jail in Monopoly",
+    "text": "In Monopoly, the square you land on next depends only on the square you are on now and what you roll this turn. Landing on the Go to Jail square and drawing a Go to Jail card both send you to jail, and after a few hundred turns jail is the square landed on most. Whether you start from Go or from any other square, the share of landings on each square comes out the same."
+   },
+   {
+    "field": "Language",
+    "title": "Writing a sentence one word at a time",
+    "text": "In 1948, in A Mathematical Theory of Communication, Claude Shannon opened an English book at random and picked a word. He read on to the next place that word appeared and copied down the word right after it, then looked for that new word the same way. Sentences built like this have phrases that read smoothly, but the sentence as a whole means nothing."
+   },
+   {
+    "field": "Finance",
+    "title": "The rating transition table",
+    "text": "Every year, rating agencies publish a table: of the bonds with a given rating, what share are upgraded, unchanged, downgraded or in default a year later. A bank multiplies the table through five years and gets the chance that a BBB-rated loan defaults within five years, without having to wait five years."
+   }
+  ],
+  "ask": [
+   "What states does this system have? In which ledger or which dataset can I count the share that moves from one state to another each month?",
+   "Does where each kind of person goes next month really depend only on where they are now? Is there a kind of customer who gets harder to lose the longer they stay?",
+   "Have these rates been changing over the past year? In which report can I see the month-by-month numbers?"
+  ],
+  "with": [
+   {
+    "id": "path-dependence",
+    "sees": "Two companies fight over a new market, and a one-off subsidy early on puts A ahead. The Markov model says that if the switching rates stay the same, the lead is worn away within months. Path dependence says the side in front has more users and is harder for a rival to win customers from, so the switching rates themselves shift with the share, and one small lead can lock in the outcome. Check whether the monthly stay-or-leave rates change once the shares pull apart: if they don't, work it out the Markov way; if they do, it is path dependence."
+   },
+   {
+    "id": "random-walk",
+    "sees": "An app's daily active users go up and down. A random walk also depends only on where things are now, but nothing pulls them back: each day's change is independent of the others, so the number drifts further and further and no level is especially stable. In a Markov model the stay-or-leave rates are fixed, and the number gets pulled back to a steady share. Check whether, after the number runs high, it is more likely to fall the next day: if it is, something is pulling it back."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "In a city, every resident either rents a home or owns one. Suppose that each year 4% of renters buy a home and 1% of owners sell and go back to renting, and that these two rates never change. When the city was built, almost everyone rented.",
+    "question": "Many years later, about what share of residents own their home?",
+    "explain": "When the shares are steady, the number of renters who become owners each year equals the number of owners who become renters. 4% of the renters equals 1% of the owners, so there are four times as many owners as renters. Starting with almost everyone renting only decides how long it takes to get there.",
+    "options": [
+     {
+      "text": "About 80%",
+      "correct": true,
+      "feedback": "The ratio of owners to renters equals 4% to 1%, so owners make up four-fifths."
+     },
+     {
+      "text": "It depends on how many renters there were when the city was built",
+      "correct": false,
+      "feedback": "The start only affects how long it takes to get there, not the final share, because the share leaving each side every year is fixed."
+     },
+     {
+      "text": "About 20%",
+      "correct": false,
+      "feedback": "This turns the ratio upside down: the 4% who buy is more than the 1% who sell, so the owners' side ends up bigger."
+     },
+     {
+      "text": "About 96%",
+      "correct": false,
+      "feedback": "96% comes from 100% minus 4%. That is the share who stay renters each year, not the long-run share of owners."
+     }
+    ]
+   },
+   {
+    "stem": "You run an online course platform, and the share of learners who are active has held steady at about 40% for several years. You have the month-by-month data and want to know whether this long-run share is already changing.",
+    "question": "Which piece of data best shows that the long-run share is changing?",
+    "explain": "The long-run share is set by two rates together: the share of active learners who go dormant each month, and the share of dormant learners who come back. If one of them keeps moving in the same direction for several months, the end point is moving. A single month's rise or fall in numbers doesn't touch either rate.",
+    "options": [
+     {
+      "text": "In one month the active share was 5 points below 40%",
+      "correct": false,
+      "feedback": "One month runs low, but next month the rates still follow the old pattern, and the share comes back."
+     },
+     {
+      "text": "More learners signed up this year than last year",
+      "correct": false,
+      "feedback": "New sign-ups are the number coming in. They have nothing to do with the monthly rates at which existing learners stay or leave."
+     },
+     {
+      "text": "Active learners this month were up 20% on last month",
+      "correct": false,
+      "feedback": "A single month's rise or fall in numbers usually comes from a one-off promotion. It doesn't show that any rate has changed."
+     },
+     {
+      "text": "The share going dormant each month rose from 30% to 35% over six months in a row",
+      "correct": true,
+      "feedback": "When a stay-or-leave rate keeps moving in one direction, the point where in and out cancel moves with it."
+     }
+    ]
+   },
+   {
+    "stem": "You are running a training course. Each month, 80% of the learners keep studying, 15% graduate and 5% drop out. People who graduate or drop out don't come back. The course starts with 100 new learners.",
+    "question": "Once everyone has left the course, about how many will have graduated?",
+    "explain": "Of the people who leave each month, 15 out of 20, or three-quarters, graduate. The 80% who keep studying leave in later months in the same proportions, so in the end about 75 graduate.",
+    "options": [
+     {
+      "text": "About 15",
+      "correct": false,
+      "feedback": "15% is only the share who graduate each month. Some of those who keep studying will graduate in later months."
+     },
+     {
+      "text": "About 80",
+      "correct": false,
+      "feedback": "80% is the share who keep studying, not the share who graduate."
+     },
+     {
+      "text": "About 75",
+      "correct": true,
+      "feedback": "Of the people who leave each month, 15 out of 20 graduate."
+     },
+     {
+      "text": "About 25",
+      "correct": false,
+      "feedback": "Graduates and dropouts come in a ratio of 15 to 5, so more people graduate."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Two starts, one place a year later",
+  "caption": "Drag the two switching rates: the end point moves. Where you start only sets how long it takes to get there.",
+  "x": {
+   "label": "Month"
+  },
+  "y": {
+   "label": "Store A's share",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "A to B each month",
+    "min": 5,
+    "max": 40,
+    "step": 5,
+    "value": 10,
+    "unit": "%"
+   },
+   {
+    "id": "q",
+    "label": "B to A each month",
+    "min": 5,
+    "max": 40,
+    "step": 5,
+    "value": 20,
+    "unit": "%"
+   }
+  ],
+  "model": {
+   "steps": 12,
+   "init": {
+    "a": 1,
+    "b": 0
+   },
+   "next": {
+    "a": "a*(1-p/100) + (1-a)*q/100",
+    "b": "b*(1-p/100) + (1-b)*q/100"
+   }
+  },
+  "series": [
+   {
+    "name": "All start at A",
+    "expr": "a*100",
+    "tone": "accent",
+    "dots": "small"
+   },
+   {
+    "name": "All start at B",
+    "expr": "b*100",
+    "tone": "ink",
+    "dots": "small"
+   }
+  ],
+  "marks": [
+   {
+    "y": "q/(p+q)*100",
+    "text": "In and out cancel"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "A's long-run share",
+    "expr": "q/(p+q)*100",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

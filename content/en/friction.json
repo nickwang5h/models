@@ -1,0 +1,190 @@
+{
+ "id": "friction",
+ "name": "Friction",
+ "en": "摩擦",
+ "discipline": "physics",
+ "one_line": "Add one more step or a bit more hassle, and some people give up halfway.",
+ "story": "Amazon launches 1-Click ordering: returning customers order with one click, using their saved address and credit card",
+ "shallow": {
+  "scene": "In 1997 Jeff Bezos's Amazon, in Seattle, added a button to its website. Before, once customers had picked a book, they had to go to the shopping cart, check their address, choose how to pay, and click to confirm page after page. With 1-Click ordering, a returning customer clicked once and the order went straight through, using their saved address and credit card details. The book was the same book and the price hadn't changed; the pages in between were gone.",
+  "plain": "You want to get up early and run, but your running shoes are buried at the bottom of the shoe cabinet. Digging them out takes three minutes, and you still have to find socks. Your wish to run hasn't changed, but most mornings it loses to those three minutes. Put the shoes by the bed one day, where you can reach out and put them on, and the same wish actually gets you running: of two people who want to run just as much, the one whose shoes are closer runs more times in a month. People borrow a word from physics for these small resistances that slow you down on the way to doing something: friction, the force between two surfaces rubbing against each other that holds back sliding."
+ },
+ "deep": {
+  "mechanism": "### Every step is a chance to stop\n\nThe urge to do something doesn't stay at full strength. Each extra step in a process is one more chance for the urge to be interrupted: in the few seconds while a page makes you type your address again, the phone rings, you think of comparing prices at another store, or you ask yourself, \"Do I really want this?\" Most people who are interrupted don't come back. So one step's hassle doesn't need to be large. If each step stops 20% of people, a few steps stacked together lose a lot.\n\n### Each extra step in a process screens out another batch of people\n\nTake 100 people who want to buy something and send them through a process, and at each step 80% are willing to click on. That 80% is of the people left from the step before:\n\n- Step one: 80 left\n- Step two: 64 left\n- Step three: about 51 left\n- Step four: about 41 left\n- Step five: about 33 left\n\nEach step loses only 20%, but after five steps only a third are left. If the shares kept at each step are $p_1,p_2,\\dots,p_n$, the share who make it to the end is\n\n$$p_1\\times p_2\\times\\cdots\\times p_n$$\n\nThe shares kept are multiplied together step by step, so whichever step keeps the fewest, the whole process ends up with fewer. Five steps that each keep 80% give $0.8^5\\approx0.33$.\n\n### The same extra step does opposite things depending on where it goes\n\nThe same extra confirmation, put in front of a sign-up form, loses people who wanted to sign up; put in front of the send button for \"message all members,\" it stops people who clicked by mistake.",
+  "origin": "\"Friction\" comes from mechanics. Leonardo da Vinci left records of experiments around 1493. Amontons published the rules of thumb for dry friction in 1699. Coulomb's paper, submitted in 1781 and published in 1785, separated the friction on something standing still from the friction on something sliding. Using the word for the steps of getting things done is a later borrowing: friction in physics has coefficients you can look up, and friction in a process doesn't.",
+  "limits": "Friction is easiest to fix when people already want to do something and are only tripped up by the procedure: merge four pages into one, and more people place orders. If customers don't trust the store, or don't have the money on hand, what's stopping them isn't the steps, and however short the page, nobody orders. If you aim only for smoothness and delete the checks and the way out along with everything else, more people finish, and more people make mistakes too."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Find where a food-ordering app loses people: line up the number of people clicking at each step. The step with the biggest drop is the place to first remove repeated typing and one fewer page jump."
+   },
+   {
+    "use": "explain",
+    "text": "Automatic renewal keeps noticeably more customers than manual renewal. The service is the same; the difference is the one extra payment action each month."
+   },
+   {
+    "use": "act",
+    "text": "To build a habit, count the steps on the way from thinking of it to doing it: sort your pills into a weekly pill box, book the next checkup when the results of the last one come in, and get each step ready in advance."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Education",
+    "title": "Filling in the financial aid form while doing taxes",
+    "text": "To apply for financial aid, American college students first have to fill in a long federal application form. Starting in 2008, a few economists ran an experiment at H&R Block tax-preparation offices in Ohio and North Carolina: when low-income families came in to do their taxes, staff used the tax data to fill in the form for them, which took only eight minutes on average. Among the children in these families who were of age to start college, the next year's enrollment rate rose from 34% to about 42%. In the group that was only given information about financial aid, with no help filling in the form, the enrollment rate did not change."
+   },
+   {
+    "field": "Work",
+    "title": "Making it easier to report bugs",
+    "text": "While testing, you find a bug on a page and want to report it to the developers, but first you'd have to log into a different system, find the project and fill in six fields. So you leave the screenshot on your desktop for now, and later you forget. The team puts a bug-report button right on the current page that attaches the version and logs automatically. You only need to write how to reproduce it, and one click submits it."
+   },
+   {
+    "field": "Investing",
+    "title": "One more step before you buy",
+    "text": "On your lunch break you see a stock you own surging, and your hand is already reaching for the buy button. You've set yourself a rule: before adding to a position on impulse, first open your original investment notes and write down the reason for the extra purchase and the amount. If all you can write in the notes is \"the price went up,\" you close the app and look again after work."
+   }
+  ],
+  "ask": [
+   "Someone who already wants to do this: at which step, exactly, do they stop? Look at the number of people clicking at each step, or just ask someone who didn't finish.",
+   "Is this step stopping mistakes, or just wearing out patience? Count how many of the people it stops really clicked by mistake.",
+   "After the change, how do the number of people who finish, the number of mistaken clicks and the time it takes to finish each change?"
+  ],
+  "with": [
+   {
+    "id": "one-way-two-way-doors",
+    "sees": "A cloud storage team wants to remove the confirmation page before \"delete permanently,\" because it adds six seconds to every deletion. Seen as friction, removing the page lets people who want to delete do it in one step. One-way and two-way doors see it the other way. If deleted files go to the trash and can be recovered within thirty days, it is a two-way door, and the confirmation page can go. If one click wipes the file out for good, it is a one-way door, and the page should stay, even at six seconds slower."
+   },
+   {
+    "id": "default-effect",
+    "sees": "You want every new employee to join the company savings plan. Cutting the form from twelve fields to four reduces friction, so people who want to join fill it in faster. The default effect sees that some people still won't fill in even four fields. Change it so new hires are enrolled automatically and fill in a form only to opt out, and the people who never act are counted in too. If you want everyone in, change the default; only if you want to save willing people effort should you cut fields."
+   },
+   {
+    "id": "incentives",
+    "sees": "To get employees to fill in their timesheets on time, the incentive approach is a small bonus; the friction approach is to fill in their projects automatically when they log in, so they have fewer fields to complete. If everyone wants to fill it in and is just put off by logging in and finding projects, the bonus is money wasted. If employees think nobody reads the timesheet, cutting fields won't keep them, however few are left; first make filling it in worth something."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're building the sign-up page for an online course platform, and you've designed two versions, each tried by 1,000 people. Version A has five steps, and at each step 90% of people are willing to click on. Version B has only two steps, and at each step 70% of people are willing to click on.",
+    "question": "How many people finish signing up in each version?",
+    "explain": "The share kept at each step has to be multiplied, not just subtracted. Five 90%s multiplied come to about 59%; two 70%s come to under 50%. The version with fewer steps does not necessarily have more people finishing.",
+    "options": [
+     {
+      "text": "About the same for both: most of the loss happens at the first step, and later steps matter little.",
+      "correct": false,
+      "feedback": "In the question every step keeps the same share, so every step screens people out by the same proportion; it isn't only the first step that matters."
+     },
+     {
+      "text": "More for B: fewer steps lose fewer people, so about 700 finish.",
+      "correct": false,
+      "feedback": "70% means every step keeps only 70%. After two steps that is under half, not 70%."
+     },
+     {
+      "text": "More for A: about 590 finish, against about 490 for B.",
+      "correct": true,
+      "feedback": "Five 90%s multiplied come to about 59%, and two 70%s to about 49%. The version that loses less per step ends up with more in total."
+     },
+     {
+      "text": "More for A: about 950 finish, because each step loses only 10%.",
+      "correct": false,
+      "feedback": "Losing 10% at each step means over five steps the 10%s are lost one after another. The total comes from multiplying, not from losing 10% only once."
+     }
+    ]
+   },
+   {
+    "stem": "You're in charge of the money transfer process in a bank's phone app. Right now it has just three steps: enter the account number, enter the amount, tap confirm. The figures show that almost all mistaken transfers happen the first time someone sends money to an account and types one digit of the account number wrong; customers who send money to the same people every month rarely make mistakes. You want fewer mistaken transfers without slowing down these regular customers.",
+    "question": "Which change both reduces mistaken transfers and doesn't slow down most transfers?",
+    "explain": "Mistaken transfers cluster on new accounts being paid for the first time; regular accounts rarely go wrong. Put the check there, and regular customers take the same route as before, while the place where mistakes happen gets one more chance to see clearly who is being paid.",
+    "options": [
+     {
+      "text": "Only for a new account being paid for the first time, show the account holder's name before confirming, and ask the customer to check it.",
+      "correct": true,
+      "feedback": "If the name doesn't match, the customer sees at a glance that the account number is wrong. Regular accounts don't trigger this step, so most people never notice it."
+     },
+     {
+      "text": "Change the note under the confirm button to big red text: \"Please check the account number carefully.\"",
+      "correct": false,
+      "feedback": "This adds no step. Someone who typed one digit wrong, looking at the number they typed, usually can't see where the mistake is."
+     },
+     {
+      "text": "Add a text-message verification code before confirming every transfer.",
+      "correct": false,
+      "feedback": "It adds a hurdle, but the code checks that the sender is who they say they are. It doesn't help them notice a wrong digit in the account number, and it slows down the people who transfer every month."
+     },
+     {
+      "text": "Remove the confirmation step to make transfers faster, and let people who typed it wrong contact customer service afterward.",
+      "correct": false,
+      "feedback": "Getting money back once it has gone out depends on the other person cooperating. Fixing it afterward costs far more than stopping it before the transfer."
+     }
+    ]
+   },
+   {
+    "stem": "At a community health station, booking a flu shot used to mean phoning, taking a queue number, and then registering at a window. The station switched to booking in one step by scanning a QR code, but the number of bookings barely changed. A nurse asked around among the elderly people who hadn't booked. Most said they were afraid of getting a fever after the shot, and some had heard you can still get the flu after having it.",
+    "question": "Where should the station put its effort next?",
+    "explain": "Cutting steps only helps people who already want to do something and are tripped up by the procedure. The people here who haven't booked are stuck on their worries, not on the procedure, so however few the steps, they won't book. The station first has to respond to the things they are afraid of.",
+    "options": [
+     {
+      "text": "Drop the QR-code booking too and let people walk in for the shot, one step fewer again.",
+      "correct": false,
+      "feedback": "The elderly people didn't come because they fear side effects and doubt it works. The procedure is already short, and cutting another step doesn't touch that reason."
+     },
+     {
+      "text": "Have a doctor explain in the community how likely a fever after the shot is and what to do about it, and answer questions on the spot.",
+      "correct": true,
+      "feedback": "What the people who haven't booked lack is reassurance, not a shorter procedure. Only answering their worries might make them want the shot."
+     },
+     {
+      "text": "Redesign the booking page to look better, with bigger text and brighter colors.",
+      "correct": false,
+      "feedback": "How good the page looks can't change the fear of a fever. They weren't planning to open it in the first place."
+     },
+     {
+      "text": "Add an informed-consent page before booking, asking the elderly to confirm each side effect one by one.",
+      "correct": false,
+      "feedback": "An extra step will only cut the number of people who did want the shot, and doesn't resolve the worries at all."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "type": "bar",
+  "title": "Keep 80% a step: half at 3, a third at 5",
+  "caption": "100 people who want to buy something, and at each step 80% are willing to click on. They all want to buy, yet each extra step means fewer people reach the end.",
+  "categories": [
+   "Start",
+   "1 step",
+   "2 steps",
+   "3 steps",
+   "4 steps",
+   "5 steps"
+  ],
+  "y": {
+   "label": "People still clicking on"
+  },
+  "series": [
+   {
+    "name": "People left",
+    "values": [
+     100,
+     80,
+     64,
+     51,
+     41,
+     33
+    ],
+    "tones": [
+     "ink",
+     "ink",
+     "ink",
+     "accent",
+     "ink",
+     "warn"
+    ]
+   }
+  ]
+ }
+}

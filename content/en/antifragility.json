@@ -1,0 +1,230 @@
+{
+ "id": "antifragility",
+ "name": "Resilience and Antifragility",
+ "en": "韧性与反脆弱",
+ "discipline": "systems",
+ "one_line": "Withstanding a shock is resilience, and coming out of it stronger is antifragility.",
+ "story": "On April 21, Amazon's cloud fails in the eastern US and many websites go down, while Netflix, long used to drills where Chaos Monkey shuts servers down at random, mostly keeps running",
+ "shallow": {
+  "scene": "On April 21, 2011, Amazon's cloud had a major failure at a data center in the eastern US, and many websites that ran on it were down for hours. Netflix ran on the same cloud, yet its video streaming mostly carried on as usual.\n\nNetflix had long had a habit of shutting down its own servers at random while the service was live, using a tool its engineers called Chaos Monkey. Each server shut down could expose a weak spot nobody had thought of, and the engineers fixed it right away, so that the next time the system lost a server it would switch to other machines automatically. The fixes these small failures bought added up, and they became the groundwork that carried Netflix through the big failure.",
+  "plain": "A rubber ball that doesn't break when dropped and bounces back into shape is only resilient. The antifragility that Nassim Taleb talks about is something else: a shock makes it stronger, as long as the shock stays within what it can take. Someone lifts dumbbells three times a week and can manage only 10 kilograms at first. After a workout his muscles ache, and two days later they've recovered; next time 10 kilograms feels light, and he moves up to 12. If his body only recovered to how it was before training, he'd still be at 10 kilograms after a year. It's because his muscles grow a little extra while recovering that he gets stronger each time.\n\nBut if he jumped straight to 40 kilograms, beyond what he can take, he'd only injure himself."
+ },
+ "deep": {
+  "mechanism": "### Resilience gets back to where it was; antifragility ends up ahead\n\nAn online shop's warehouse loses power and keeps shipping on a generator: that's resilience. The losses are made up, and the books are back to where they were before the outage. Antifragility asks for more: after the same shock, with all its costs subtracted, you're better off than before.\n\n### A shock becomes a gain only if its cost is capped and what it brings back stays\n\nFor a shock to turn into a gain, something has to convert it along the way: muscles grow a bit extra while recovering, a weak spot the system exposed gets fixed. Each shock's cost has a ceiling, but what it brings back stays useful.\n\nSuppose you run a short-video account and try one new topic a week, losing at most 200 yuan in filming costs each time. Try fifty-two and you lose at most 10,400 yuan, and the ones that flop also tell you what viewers don't want. Five of them become evergreen topics that people keep watching, each bringing in 3,000 yuan more a month, year after year. If each loss were 200,000 yuan, say from scrapping the whole account and starting over, a single failure might shut you down before any evergreen topic showed up. Losses capped, gains not capped: that lopsidedness is where getting stronger comes from.\n\n### Ask who exactly gets stronger\n\nAn industry weeds out bad methods through companies going bust: the industry gets better, but the owners who went bust don't. So to say a system is antifragile, you have to say who gains and who pays, and how big and how frequent the shocks are.",
+  "origin": "Resilience was originally an engineering term for the ability to return to the original state after a disturbance. In 1973 the ecologist C. S. Holling applied it to ecosystems, to mean a system's ability to absorb disturbance without changing its nature. In 2012 Taleb published *Antifragile*, which put forward the property of gaining from volatility, and he worked with the mathematician Raphael Douady on a mathematical definition of it.",
+  "limits": "Antifragility works best where losses are capped and you can try again and again, as with small trial and error, regular drills, and newcomers starting on small projects. When a shock is big enough to crush the whole thing at once, or shocks come so often there's no time to recover, there's no getting stronger; and anything involving human lives should never be tested this way. A drill instructor training new recruits who takes \"has been through hardship\" to mean \"has got stronger\" sees only the ones who made it through, not the ones injured in training and discharged partway."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "For a new employee's first assignment, give a small project where a mistake would cost at most half a day. Someone is there to catch errors, and there's a chance to see where the newcomer is weak."
+   },
+   {
+    "use": "act",
+    "text": "When deciding where to put your savings, first keep enough to cover six months of expenses in case your income stops, then put a small part of the rest into trying new things; even if it's all lost, the rent is untouched."
+   },
+   {
+    "use": "explore",
+    "text": "Go through the work on your plate and find the small failures that would cost almost nothing but show you problems you can't see now."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Aviation",
+    "title": "Accidents become rules",
+    "text": "After an airliner crashes, investigators publish the cause, and manufacturers and airlines change designs, procedures and training to match. The whole industry's accident rate has kept falling for decades, but the price was paid by the people on the flights that crashed."
+   },
+   {
+    "field": "Investing",
+    "title": "Cash that waits for low prices",
+    "text": "You always keep cash equal to a year's living costs. When the stock market crashes, you don't have to sell shares to pay your bills; that's resilience. When prices fall to a level you'd long thought was a good buy, you can still buy; only then does the swing bring you something extra. The cost is that the cash earns little the rest of the time."
+   },
+   {
+    "field": "Personal growth",
+    "title": "Practicing in a five-person book club",
+    "text": "You're afraid of speaking in public, so every week you speak for three minutes at a five-person book club, ask the listeners to point out the sentence that was hardest to follow, then rewrite it and say it again. When you stumble, all you lose is a few minutes of face, and what stays is a clearer way of putting things. A few weeks later, faced with similar questions, you can answer straight away."
+   }
+  ],
+  "ask": [
+   "Which key function did this shock break, what can I use instead, and how long until it's back?",
+   "How much can one failure cost at most? After that loss, do I still get another try?",
+   "After subtracting all the costs of trial and error and backups, what did the shock actually give me? Who gets stronger, and who pays?"
+  ],
+  "with": [
+   {
+    "id": "redundancy",
+    "sees": "A startup has twelve months of cash in the bank. To keep resilience through redundancy, it should leave every cent alone, ready to absorb surprises; to make use of volatility, it should take out a small piece for small experiments that bring back lessons. Keeping more is staying alive and trying more is getting better, and both are fighting over the same money. First look at how far the company is from running out of cash: under six months, hold on to it; a year or more, take a small piece and try."
+   },
+   {
+    "id": "avoid-ruin",
+    "sees": "You want to change careers. If you first take a night class in your spare time, all you can lose is the fee, and if it doesn't work out you go back to your old job, so it's fine to try: that's trial and error with a cap. If you'd first have to quit and stake your mortgage payments on studying full time, then however big the opportunity looks, avoiding ruin will stop you. Lose everything once and there's no next time; getting stronger depends on staying alive to try a second time."
+   },
+   {
+    "id": "survivorship-bias",
+    "sees": "At a reunion of people who went through a high-pressure training camp, everyone says that time transformed them. Survivorship bias is plain to see here: you're seeing the people who stayed to the end, and those injured or told to leave partway aren't in the room. First find out how many dropped out, then talk about pressure making people stronger."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A rainstorm closes the roads, and a neighborhood pharmacy brings in backup couriers; deliveries are only 20 minutes late. Looking back afterward, the manager finds that two housing complexes weren't covered, and adds delivery stations there. In the next rainstorm, no orders from those two complexes are lost, and the pharmacy also picks up orders other platforms couldn't deliver; the extra money is more than the stations cost.",
+    "question": "After this rainstorm, which part shows getting stronger?",
+    "explain": "The backup couriers kept deliveries at their usual level, which only counts as recovering. After the stations were added, the same shock brought a net gain, showing that the problem the shock exposed had been turned into a capability.",
+    "options": [
+     {
+      "text": "Adding the stations cost money, so overall this rainstorm was a loss.",
+      "correct": false,
+      "feedback": "The station money was earned back in the next rainstorm, with some to spare."
+     },
+     {
+      "text": "The manager held a review meeting, and everyone said they learned something.",
+      "correct": false,
+      "feedback": "The meeting itself isn't a gain; what matters is whether the improvements bring results worth more than they cost."
+     },
+     {
+      "text": "After the stations were added, the same rainstorm no longer lost orders and brought in extra ones.",
+      "correct": true,
+      "feedback": "The gap was exposed by the rainstorm; once it was fixed, the shock even brought a net gain. That's getting stronger."
+     },
+     {
+      "text": "Bringing in backup couriers kept the delay within 20 minutes.",
+      "correct": false,
+      "feedback": "The backup couriers only kept things at the usual level; nothing was better than before the storm."
+     }
+    ]
+   },
+   {
+    "stem": "A barbershop owner hears that \"trial and error makes you stronger\" and decides to renovate the shop, replace every service and raise prices by 30%, all at once, borrowing the renovation money from relatives. Three months after reopening, customers have dropped off, his cash will last only one more month, and he still has to keep repaying the loan.",
+    "question": "Where did he go wrong?",
+    "explain": "Trial and error makes you stronger only if each loss is capped and you can try again after losing. He staked everything on one attempt, and what he learned has no chance to be used.",
+    "options": [
+     {
+      "text": "He overhauled the whole shop at once, so one failure is more than he can afford, and there's no chance to try again.",
+      "correct": true,
+      "feedback": "Right: the loss wasn't capped, one failure used up his cash, and the lessons from trying can't be put to use."
+     },
+     {
+      "text": "Borrowing was the mistake; with only his own money, he could safely try this much at once.",
+      "correct": false,
+      "feedback": "With only his own money, his savings would still be staked on one attempt and lost in one go."
+     },
+     {
+      "text": "He tried too little; he should change his services several more times to find what customers like.",
+      "correct": false,
+      "feedback": "The number of tries isn't the problem; the problem is that he can't afford to lose. Now he can't even last until the next try."
+     },
+     {
+      "text": "He didn't stick with it. If he holds out another year, the customers will come back on their own, and the cash problem will go away.",
+      "correct": false,
+      "feedback": "This takes \"has been through hardship\" to mean \"will get stronger\"; if the cash doesn't last until then, sticking with it only means losing more."
+     }
+    ]
+   },
+   {
+    "stem": "A runner goes from running three times a week to running every day, hoping the strain will make him stronger. Two weeks later his knee pain is getting worse day by day and a night's rest doesn't ease it; a checkup finds a stress injury. He sees a few people in his running group who run every day and keep setting new personal bests, and plans to carry on with his original plan.",
+    "question": "What should he do next?",
+    "explain": "A stimulus helps only within the range the body can recover from. The injury shows this step up was too big and recovery couldn't keep up; heal first, then build back up from a smaller load.",
+    "options": [
+     {
+      "text": "Grit his teeth and keep running every day; once his body gets through this stretch, it will adapt.",
+      "correct": false,
+      "feedback": "Pain that gets worse every day and doesn't ease with rest means damage, not adaptation."
+     },
+     {
+      "text": "Give up running for good, so his knee won't get hurt again and he doesn't have to worry about recovery.",
+      "correct": false,
+      "feedback": "That gives up all stimulus; the right amount of load would make the body stronger."
+     },
+     {
+      "text": "Double the distance of each run, using a bigger stimulus to force the body to adapt.",
+      "correct": false,
+      "feedback": "Adding more before the injury heals will only make the damage worse."
+     },
+     {
+      "text": "Stop and let it heal first, then cut the training load and build up slowly, with recovery days.",
+      "correct": true,
+      "feedback": "Only by keeping each dose of stimulus within what you can recover from can you get stronger the more you train."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Cost capped and the fix kept: then a shock pays",
+  "caption": "Green is antifragility: a shock shows a weak spot, the fix stays, you hold up better next time. Just bouncing back is resilience; red is too much at once.",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "Small shock",
+    "sub": "Cost capped"
+   },
+   {
+    "id": "b",
+    "label": "Weak spot",
+    "sub": "Ache, crash"
+   },
+   {
+    "id": "c",
+    "label": "Adds a bit",
+    "sub": "Muscle, a fix",
+    "tone": "accent"
+   },
+   {
+    "id": "d",
+    "label": "Tougher next",
+    "sub": "The fix lasts",
+    "tone": "accent"
+   },
+   {
+    "id": "e",
+    "label": "Just recovers",
+    "sub": "Resilience",
+    "tone": "muted"
+   },
+   {
+    "id": "f",
+    "label": "Big shock",
+    "sub": "Too much",
+    "tone": "warn",
+    "layer": 0
+   },
+   {
+    "id": "g",
+    "label": "Out",
+    "sub": "No next time",
+    "tone": "warn",
+    "layer": 1
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b"
+   },
+   {
+    "from": "b",
+    "to": "c",
+    "label": "Converted",
+    "tone": "accent"
+   },
+   {
+    "from": "c",
+    "to": "d",
+    "tone": "accent"
+   },
+   {
+    "from": "b",
+    "to": "e",
+    "label": "Not converted",
+    "tone": "muted"
+   },
+   {
+    "from": "f",
+    "to": "g",
+    "tone": "warn"
+   }
+  ]
+ }
+}

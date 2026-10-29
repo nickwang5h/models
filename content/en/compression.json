@@ -1,0 +1,211 @@
+{
+ "id": "compression",
+ "name": "Compression",
+ "en": "数据压缩",
+ "discipline": "computing",
+ "one_line": "If you can say something shorter without losing anything, you've found its pattern.",
+ "story": "MIT graduate student David Huffman, trying to get out of Robert Fano's information theory final, comes up with the optimal code that starts by merging the two rarest symbols, and publishes it in 1952",
+ "shallow": {
+  "scene": "In a Chinese work group chat, once a task has been handed out, everyone replies with just \"1\" to mean \"got it.\" A sentence you say every day gets squeezed down to a single character; a sentence you only say now and then, nobody bothers to shorten.\n\nIn 1951 David Huffman, a graduate student at MIT, ran into the arithmetic version of this. He was taking Robert Fano's course on information theory, and Fano gave the students a choice: sit the final exam, or solve a problem. The problem went like this. A computer records each letter as a string of 0s and 1s, giving common letters short strings and rare letters long ones. How should the strings be assigned so that a piece of text uses up the fewest 0s and 1s?\n\nHuffman chose the problem. For months he got nowhere, and he was about to give up and go back to studying for the exam. Then it occurred to him that he could start from the rarest letters. First join the two rarest letters into a group and treat it as one letter; then join that with whatever is now rarest, and keep joining, layer by layer, up to the most common letter. Each join adds one digit to the string of every letter in the group, so the rarest letters end up with the longest strings and the most common letter with the shortest. He published the method in 1952, and formats like ZIP and JPEG later came to use it. How much it saves depends entirely on how uneven the letters' frequencies are: the more lopsided, the more it saves.",
+  "plain": "When you tell your roommate \"the usual place,\" you mean the bubble tea shop by the complex's east gate, which saves six words each time. Say it twenty times a month and you save 120 words. You can only save like this because the two of you go to that one shop over and over. If you went to a different shop every time, no place would be worth a code name. The cost is that both of you have to remember where \"the usual place\" is, and that agreement also counts toward the total length.\n\nThat is what data compression is: find what keeps coming up, give it a short name, write that down together with the agreement, and you can still get back the original word for word. The shorter you can make it, the better you have worked out the pattern in the data."
+ },
+ "deep": {
+  "mechanism": "### Short codes only pay off when frequencies are uneven\n\nIf four letters A, B, C and D each make up a quarter of the text, writing every letter as two binary digits is already as short as it gets, and it won't compress. Now say A makes up half, B a quarter, and C and D an eighth each. Code A as 0, B as 10, C as 110 and D as 111. Multiply each letter's number of digits by how often it appears and add them up, and you get the average code length:\n\n$$\\frac{1}{2}\\times1+\\frac{1}{4}\\times2+\\frac{1}{8}\\times3+\\frac{1}{8}\\times3=1.75$$\n\nHalf the letters take just 1 digit, and only a quarter take 3, so each letter averages 1.75 digits. A hundred letters take 25 digits fewer than writing two digits each. Write the common ones short and the rare ones long, and the total length comes down.\n\nThis code can be built with Huffman's method. First join C and D, the rarest, into a group. That group makes up a quarter, so join it with B, which is also a quarter, and finally join that with A. Every time two groups are joined, one more 0 or 1 is needed to tell them apart, so every letter in the group gets one more digit in its code. C and D, joined first, are the longest; A, joined last, has just one digit. The extra digits all land on the rarest letters.\n\n### Count the rule and the exceptions together\n\nA thousand characters are all A, except the 500th, which is B. Writing \"A repeated a thousand times, with the 500th changed to B\" takes only a dozen or so words. If three hundred Bs are scattered through the thousand characters, you have to list all three hundred positions one by one. That list of exceptions is longer than the original, so the rule was a waste of space. To judge whether you've found a pattern, check whether the rule plus the exceptions is shorter than just copying out the original.\n\n### Being able to compress shows you understand\n\nCopying down the sunrise time for every day of a year takes 365 lines. If you understand how the Earth turns, a few numbers let you work out any day. Both records are equally complete. The difference is that the short one isn't copied, it's worked out: it can also work out any day next year, while the copied table can't work out a single line. Being able to compress shows you've found the rule that produces the data, and that rule can also produce data you haven't seen yet.",
+  "origin": "In a 1948 paper, Claude Shannon worked out the lower limit for lossless coding: the fewest digits each letter needs on average. In the example where A makes up half, 1.75 digits is exactly that limit. In 1965 Andrey Kolmogorov proposed that how much information a piece of data holds depends on the length of the shortest program that can produce it. In 1978 Jorma Rissanen proposed the minimum description length principle: when choosing a model, add up the length of the rule plus the exceptions, and pick the shortest.",
+  "limits": "Data with lots of repetition, a lopsided spread, or values that depend on what came before compresses best. A record of coin tosses won't compress, because there was never a pattern in it. Nor can a lossless method make every input shorter. There are so many possible strings of a thousand digits that there aren't enough shorter strings to go around, so two inputs must end up as the same short string, and when you decompress you can't tell them apart. Lossy compression means deciding first what to throw away: delete a rare fault from an incident report, and the report gets shorter, but whoever investigates loses the clue."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Compressing a ZIP file a second time barely shrinks it, because the first pass already used up the repetition there was to use."
+   },
+   {
+    "use": "design",
+    "text": "When designing a daily stock report, write only the rows that differ from yesterday instead of sending the whole table again; on days with few changes, the report is short."
+   },
+   {
+    "use": "communicate",
+    "text": "When reporting thirty pages of meeting notes to your boss, start with the two rules that ran through the whole meeting, then report separately the three things that didn't fit those rules."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "Not one pixel lost",
+    "text": "In 1996 the World Wide Web Consortium published the first recommended specification for the PNG image format. It rewrites each pixel as its difference from the neighboring pixel, then compresses the data that repeats. In a picture with large areas of solid color, most of the differences are zero, so that's where it saves the most space. When the file is opened, the decoder runs the steps backward, and every pixel comes back exactly as it was."
+   },
+   {
+    "field": "Investing",
+    "title": "Fewer surprises in the earnings report",
+    "text": "You're reading the financial reports of a coffee shop brand. You first estimate next quarter from past sales at its established stores, and list new stores ramping up and store closures separately. When the new quarter's books arrive, most of the sales can be explained this way, with only a small amount left over. That means you've grasped how the company works. If every store needs a reason of its own, it's time to rewrite the explanation."
+   },
+   {
+    "field": "Personal life",
+    "title": "Turn what you forget into rules",
+    "text": "You travel a lot for work. Every time, you make a new packing list, and every time you forget the same few things. So you merge all your old lists into one standing list, plus two extra lines: \"Overnight: add toiletry bag\" and \"Rain: add umbrella.\" From then on, each trip you only note the unusual items. What's common is written once, the conditions are spelled out, and the exceptions are kept on their own."
+   }
+  ],
+  "ask": [
+   "In these records, what keeps coming up, or can be worked out from what came before?",
+   "Adding up the rule, when it applies and all the exceptions, is that shorter than writing each item out?",
+   "Would the details I'm deleting change the decision I have to make next?"
+  ],
+  "with": [
+   {
+    "id": "occams-razor",
+    "sees": "There are two explanations: a short rule that needs twenty exceptions, and a somewhat longer rule with almost none. Occam's razor picks the first, because it's simpler. Counting the total length of rule plus exceptions, the second is shorter, so pick the second. Only when you can't tell how many exceptions each explanation carries is it the razor's turn to choose."
+   },
+   {
+    "id": "redundancy",
+    "sees": "You need to send a rescue instruction over a radio link that keeps cutting out. Compression says cut the repetition and make it shorter; redundancy says say the key part twice, so it can be pieced together even if half is missed. If the line is clean and bandwidth is tight, compress; if the line is bad and not one word can be wrong, keep the repetition."
+   },
+   {
+    "id": "map-territory",
+    "sees": "The map is not the territory: a map squeezes reality down to a few lines, and which details to keep depends on what you'll use it for. For a tourist following a route, the alleys left out don't matter; for a building crew that needs to see pipes underground, the same map won't do."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A warehouse's goods fall into four classes. Their shares of shipments are: class A 60%, class B 20%, classes C and D 10% each. The warehouse manager wants to give each class a binary label, and no label may be the start of another label, so the scanner can read them one after another without a break.",
+    "question": "Which assignment uses the fewest digits in total for the labels on a thousand items?",
+    "explain": "Give the goods that ship most the short labels and the goods that ship least the long ones. Class A gets one digit each, class B two, C and D three each, for 1,600 digits across a thousand items.",
+    "options": [
+     {
+      "text": "A 110, B 0, C 10, D 111",
+      "correct": false,
+      "feedback": "The shortest label goes to class B, only a fifth of shipments, while class A needs three digits. That comes to 2,500 digits."
+     },
+     {
+      "text": "A 0, B 10, C 110, D 111",
+      "correct": true,
+      "feedback": "Six hundred items use one digit, two hundred use two, and the other two hundred use three, for 1,600 digits in all, the shortest of the options."
+     },
+     {
+      "text": "A 111, B 110, C 10, D 0",
+      "correct": false,
+      "feedback": "This gives the goods that ship most the longest label. A thousand items need 2,700 digits, more than using two digits for all four classes."
+     },
+     {
+      "text": "Two digits for all four classes: 00, 01, 10, 11",
+      "correct": false,
+      "feedback": "Two digits for all four classes comes to 2,000 digits. The four classes have different shares, and this assignment does nothing with the goods that ship most."
+     }
+    ]
+   },
+   {
+    "stem": "The same compression program handles two sets of data, each ten thousand lines long. One is the hourly count of people entering a subway station, and it shrinks a lot. The other is a sequence of numbers from a random number generator, and it barely changes.",
+    "question": "What is the most direct explanation for why the second set hardly compresses?",
+    "explain": "Compression relies on repetition, unevenness and values that depend on what came before. A random sequence has none of these, so there is no pattern to use.",
+    "options": [
+     {
+      "text": "The sequence has no pattern this program can use.",
+      "correct": true,
+      "feedback": "No number can be worked out from the ones before it, and the numbers come up about equally often, so there is nothing to save."
+     },
+     {
+      "text": "The sequence is too long for the program to handle; it should be cut into short pieces first.",
+      "correct": false,
+      "feedback": "The subway data is just as long, and it shrank. Cutting it short only leaves each piece with even less pattern to find."
+     },
+     {
+      "text": "Random numbers hold less information than the subway data, so there's no need to compress them.",
+      "correct": false,
+      "feedback": "It's the opposite: every number is a surprise, so every number has to be recorded, and it takes more digits, not fewer."
+     },
+     {
+      "text": "The program has a flaw; a stronger program could shrink it as small as the first set.",
+      "correct": false,
+      "feedback": "No lossless program can rescue data with no pattern. The data itself has nothing that can be saved."
+     }
+    ]
+   },
+   {
+    "stem": "A food factory's monthly quality report runs to twenty pages. The manager wants to squeeze it onto one page with only the month's average defect rate. Every year there are one or two batches of raw material that go wrong, and afterward the factory has to trace which batches and which production line were involved.",
+    "question": "How should the page be changed so it is short and still lets them trace the problem?",
+    "explain": "An average is good for the overall picture, but it wipes out the differences between batches. Tracing a problem depends on exactly those few unusual batches, so they have to stay.",
+    "options": [
+     {
+      "text": "Keep all twenty pages, shrink the font and fit them onto one page.",
+      "correct": false,
+      "feedback": "A smaller font leaves nothing out; it's just harder to read."
+     },
+     {
+      "text": "Switch to one average per quarter, which is steadier and shorter too.",
+      "correct": false,
+      "feedback": "The longer the period averaged, the more a single batch's problem gets spread thin, and the less there is to trace it with."
+     },
+     {
+      "text": "Keep only the average defect rate for the last three months and delete the earlier ones.",
+      "correct": false,
+      "feedback": "The time span is shorter, but the problem batches still aren't recorded, so when something goes wrong it still can't be traced."
+     },
+     {
+      "text": "Besides the average defect rate, list each batch and line that went over the standard.",
+      "correct": true,
+      "feedback": "The average sums up the normal batches and the unusual ones are kept one by one, so the report is shorter and still holds the details needed to trace a problem."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "The commoner A is, the more short codes save",
+  "caption": "Drag to change A's share. B takes half of what's left, C and D split the rest. The codes stay 0, 10, 110, 111; see how far they pull away from two bits each.",
+  "x": {
+   "label": "A's share of all letters",
+   "unit": "%",
+   "min": 40,
+   "max": 90
+  },
+  "y": {
+   "label": "Average bits per letter",
+   "min": 0,
+   "max": 2.5
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "A's share",
+    "min": 40,
+    "max": 90,
+    "step": 10,
+    "value": 50,
+    "unit": "%"
+   }
+  ],
+  "series": [
+   {
+    "name": "Two bits each",
+    "expr": "2",
+    "tone": "muted",
+    "dashed": true
+   },
+   {
+    "name": "Coded by frequency",
+    "expr": "2.5-1.5*x/100",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "x": "p"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Average per letter",
+    "expr": "2.5-1.5*p/100",
+    "unit": " bits",
+    "digits": 2
+   },
+   {
+    "label": "Saved per 100 letters",
+    "expr": "150*p/100-50",
+    "unit": " bits",
+    "digits": 0
+   }
+  ]
+ }
+}

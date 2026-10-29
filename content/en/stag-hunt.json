@@ -1,0 +1,213 @@
+{
+ "id": "stag-hunt",
+ "name": "Stag Hunt",
+ "en": "猎鹿博弈",
+ "discipline": "games",
+ "one_line": "Working together pays most, but fear of being let down makes everyone play it safe alone.",
+ "story": "The US and the Soviet Union sign an agreement and prepare together for three years; in 1975 Apollo and Soyuz dock and the astronauts shake hands in orbit",
+ "shallow": {
+  "scene": "A few people pool one online order to reach a store's \"spend this much, get money off\" threshold. If just one of them drops out at the last minute, whatever the others added to reach it was bought for nothing. In the 1970s the United States and the Soviet Union ran into the same situation, only with far bigger stakes. The two countries were Cold War rivals, locked in the space race, yet in 1972 they signed an agreement to dock their spacecraft in Earth orbit. The docking ports had to fit each other exactly, so for the next three years the two countries' teams designed the docking equipment together and agreed on how to communicate, and the astronauts trained at each other's bases.\n\nAll this preparation was useful only if the other side also did its part on time. If either side's technology let it down, or the political winds shifted and it pulled out midway, the other side's three years of work would be wasted, and both would have been safer flying on their own. Neither side backed out, because the drawings had been made together, the people had trained at each other's sites, and each could see how far the other had got.\n\nOn July 17, 1975, Apollo and Soyuz docked in orbit, and the two commanders shook hands at the hatch. Rivals who don't trust each other can still give up their safe option and go together for the biggest payoff, as long as each can see that the other will surely show up.",
+  "plain": "The trouble with the stag hunt is that nobody means any harm. You and a friend agree to climb a hill together early on Saturday morning to watch the sunrise. If you both go, you each get 4 points of good mood; if you climb up alone, it's no fun in the cold wind, and you get 0; if you stay home and sleep in, you're sure of 3. The night before, your friend replies, \"I'll try.\" You can't tell whether he'll come, so you turn off your alarm. He may be just as unsure, and sleep in too. You both wanted to see the sunrise, and you both slept through it."
+ },
+ "deep": {
+  "mechanism": "### Both going and both sleeping are each stable\n\nKeep the sunrise scores: both go, each gets 4; both sleep, each gets 3; one goes and one sleeps, the one who goes gets 0 and the sleeper gets 3. If he goes, going gets you 4 and sleeping 3, so you should go; if he sleeps, going gets you 0 and sleeping 3, so you should sleep. So once things settle on both going or both sleeping, whoever changes their mind alone loses out.\n\n### The comfier the safe option, the surer you need to be before going\n\nSay that how sure you are he'll go is $p$, between 0 and 1. If you go, there's a $p$ chance you both climb and get 4, and the rest of the time you're alone and get 0, so on average you get $4p$; sleeping gets a sure 3. Getting up is worth it when\n\n$$4p>3$$\n\nthat is, only when $p$ is above three quarters do you climb. Raise sleeping in to 3.6 and you need $4p>3.6$, so the bar rises to 90%; lower it to 2 and you only need $4p>2$, so just over half is enough.\n\n### Shrink the loss of going alone, and the bar drops with it\n\nArrange to meet at the breakfast stall at the foot of the hill. Even if he doesn't come, you get a hot breakfast, and the score for going alone rises from 0 to 2. The average for going becomes $4p+2(1-p)=2+2p$, which beats 3 once $p$ is above half. If he sends you a screenshot of his booked ticket the night before, that raises $p$ directly.",
+  "origin": "The stag story comes from Rousseau's 1755 *Discourse on the Origin and Basis of Inequality Among Men*: several hunters surround a stag, one of them turns away to grab a passing hare, and the hunt falls apart. Game theory later turned it into a coordination game, meaning one where things turn out well only if everyone picks the same course. In 1990 Van Huyck, Battalio and Beil ran the minimum-effort experiment: a team's payoff was set by whoever put in the least, and larger groups slid more easily toward low effort.",
+  "limits": "It fits best when doing it together makes money, going alone loses money, and each going their own way already brings in an income, such as two companies switching to a new interface at the same time. If you could make more by backing out while the other side cooperates, that's a different matter: what holds people back is the payoff, and no amount of trust will stop someone taking advantage. Nor should it be used to blame people who hold back. Someone who can't afford the loss of going alone and keeps the safe option has done the sums right; what needs to change is the loss of going alone."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When two small shops run a joint promotion, write into the agreement that \"sales start on the same day, once both sides have signed and all the stock is in,\" so neither has to stock up first and bet on the other."
+   },
+   {
+    "use": "explain",
+    "text": "Everyone on the team says they support the new process, yet nobody actually uses it: each is waiting for others to go first, and the old process at least doesn't go wrong."
+   },
+   {
+    "use": "predict",
+    "text": "To estimate whether a city's ride-hailing platforms will all adopt a common fare standard at the same time, look at whose old system still makes money and who would lose most by being alone. That one will move last."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "Switching ports together",
+    "text": "In 1996 the USB 1.0 specification, drawn up jointly by Intel, Microsoft, IBM and other companies, was released. A computer maker fitting the new port needed the devices that plug into it to keep up; a maker of those devices needed computers to have the port first. Each side already had a ready market with the old ports, and the new port was only useful if both sides switched at the same time. A public, shared specification let both sides prepare their products against the same document."
+   },
+   {
+    "field": "Work",
+    "title": "Two people quit together",
+    "text": "You and a coworker are talking about quitting your big company together to open a coffee shop as partners. If you both leave, you can pull together enough money and hands; if you both stay, you each keep your salary; if only one of you leaves, one person can't run the shop alone and has lost a salary too. Only after you agree on a date to hand in your resignations together, and sign the shop lease so it takes effect only if both of you put in money, does either of you dare take the first step."
+   },
+   {
+    "field": "Business",
+    "title": "Same launch day for the booking app",
+    "text": "You run a car repair shop, and the owner next door also wants to move bookings from phone calls to the same booking app, so drivers out on the street can compare both shops' open slots. If both switch, drivers can choose at a glance; if only one does, there's just one shop in the app and nobody opens it, while the regulars' calls can't be kept up with either. You agree to go live on the same day, and to keep taking phone bookings as usual for the first month."
+   }
+  ],
+  "ask": [
+   "When he cooperates, is it better for me to cooperate? When he backs out, is it better for me to take the safe option?",
+   "If only I put in, what would I lose? Can I afford that loss?",
+   "Could I start with small-scale cooperation, launch in step, or keep a way out, to shrink the loss of going alone?"
+  ],
+  "with": [
+   {
+    "id": "credible-commitment",
+    "sees": "Two logistics companies agree to switch to the same shipping-label format on the same day. If going alone costs only a week of testing hours, setting a date and watching each other's progress is enough. If going alone means building a production line for nothing, a verbal agreement won't hold, and it takes a credible commitment: put money into a joint account first, or sign a contract with penalties for backing out."
+   },
+   {
+    "id": "prisoners-dilemma",
+    "sees": "When nobody on a project moves forward, first ask whether you'd make more by backing out while the other side cooperates. If not, it's a stag hunt: agreeing to start together and letting each other see progress will get things moving. If so, it's a prisoner's dilemma: the same public pledges won't work, and it takes contracts, penalties or repeated dealings to make betrayal not pay."
+   },
+   {
+    "id": "schelling-point",
+    "sees": "Two people both want to cooperate, but when they made the plan they didn't say where to meet or when to start. The stag hunt gives two stable outcomes and doesn't say which to pick; people tend to land on the one everyone finds obvious. Putting forward a striking Schelling point like \"Monday, 9 a.m., at the office door\" helps more than debating who is more sincere."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're a freelance designer about to take on a big job with a peer. If you both do it, you each get 80,000 yuan; if the other drops out midway, you can only pass on the finished part and get 30,000; if you skip the job and do the small jobs you already have, you're sure of 60,000. You're 70% sure your peer won't leave you in the lurch.",
+    "question": "What should you choose?",
+    "explain": "The expected value of taking it together is 80,000×0.7 + 30,000×0.3 = 65,000 yuan, more than the sure 60,000. Even going alone pays 30,000, so the bar is only 60%, and 70% is past it.",
+    "options": [
+     {
+      "text": "Skip it. You're not yet three-quarters sure, so it isn't worth giving up the sure 60,000 yuan.",
+      "correct": false,
+      "feedback": "Three quarters is the bar when going alone gets 0. Here going alone still gets 30,000, so the bar is much lower."
+     },
+     {
+      "text": "Take it together. The expected value is 65,000 yuan, and your confidence is past the 60% bar.",
+      "correct": true,
+      "feedback": "Counting in units of 10,000 yuan, 8p + 3(1−p) > 6 gives p > 0.6. 70% is past the bar."
+     },
+     {
+      "text": "Skip it. There's a 30% chance of being left alone, and that risk isn't worth taking.",
+      "correct": false,
+      "feedback": "The loss from a 30% chance of being left alone has to be weighed with the gain: alone you still get 30,000, and the expected 65,000 is more than 60,000."
+     },
+     {
+      "text": "Take it together. The 80,000 from cooperating beats the safe 60,000, so there's no need to think about the other person.",
+      "correct": false,
+      "feedback": "If the other drops out you get only 30,000, less than the safe option. Whether taking it together pays depends on how sure you are the other will stay."
+     }
+    ]
+   },
+   {
+    "stem": "In a community choir, each person sings one voice part, and the choir is switching from a three-part piece to an eight-part one. If any one part is missing, the whole piece falls apart. The group chat posts every evening who has confirmed for rehearsal, so communication is no problem. Each member is 95% likely to show up on time. As the members go from 3 to 8, fewer and fewer turn up; everyone feels the group won't be complete, so they don't want to come.",
+    "question": "Why is it harder to get everyone together once there are more members?",
+    "explain": "The chance that everyone shows up is each person's chance multiplied together: about 86% for 3 people, about 66% for 8. The lower the chance of a full group, the more each person feels that coming won't lead to singing, so even fewer come.",
+    "options": [
+     {
+      "text": "Each person's chance of showing up multiplies together, so the more people, the lower the chance that all of them come.",
+      "correct": true,
+      "feedback": "0.95 multiplied 8 times is about 66%, lower than with 3 people. Seeing that number, everyone is less sure that if they come, they'll get to sing."
+     },
+     {
+      "text": "With more people, each member's contribution to the performance is diluted, so they can't be bothered to come.",
+      "correct": false,
+      "feedback": "Here one missing part ruins the whole piece, so each person's contribution isn't diluted; it matters more."
+     },
+     {
+      "text": "With more people, messages travel more slowly, and people don't know who has come and who hasn't.",
+      "correct": false,
+      "feedback": "In the question, the group chat posts confirmations every evening; messages are no problem."
+     },
+     {
+      "text": "With more people, some members sing worse and drag down the overall quality.",
+      "correct": false,
+      "feedback": "Nothing in the question points to differences in skill. It's hard to get together because one missing part means the piece can't be sung."
+     }
+    ]
+   },
+   {
+    "stem": "Two neighboring flower shops plan to join a shared delivery platform on the same day. If both join, each makes 8,000 yuan a month in profit; if only one joins, its delivery van runs half empty and it loses 2,000 a month; if neither joins, each keeps making 3,000. The platform has announced that 90% of shops that paid the joining fee went live on schedule. The other shop paid its fee yesterday.",
+    "question": "You own the shop that hasn't paid yet. What should you do now?",
+    "explain": "Joining together is best, and joining alone loses the most. The platform says 90% of shops that paid the fee went live on schedule, and the other shop paid yesterday, so the chance is far above the 50% bar.",
+    "options": [
+     {
+      "text": "Join, because joining together brings in 8,000 yuan a month, the best deal of all.",
+      "correct": false,
+      "feedback": "This ignores the loss if the other shop doesn't go live. It only pays if you're sure enough the other will stay."
+     },
+     {
+      "text": "Don't join, because as long as the other might back out, losing 2,000 alone is worse than making 3,000.",
+      "correct": false,
+      "feedback": "You have to work it out with the probability: if the other is more than half likely to go live, the expected value beats the 3,000 you make now."
+     },
+     {
+      "text": "Wait another month to see whether the other shop really goes live.",
+      "correct": false,
+      "feedback": "The other shop has already paid; waiting only drags things out until it loses patience first."
+     },
+     {
+      "text": "Join, because 90% of shops that paid the fee went live on schedule, far above the bar of one half.",
+      "correct": true,
+      "feedback": "The expected value of joining is 8000p − 2000(1−p), which beats 3,000 only if p is above one half. Going live 90% of the time is far above that bar."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Only past 75% sure he'll go is the climb worth it",
+  "caption": "Both go: 4 each. Alone: 0. Sleep: a sure 3. Drag the sleep-in score to move the bar; raise the alone score (say, breakfast at the foot of the hill) to lower it.",
+  "x": {
+   "label": "How sure he'll go",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "y": {
+   "label": "Score",
+   "min": 0,
+   "max": 5
+  },
+  "params": [
+   {
+    "id": "s",
+    "label": "Sleep-in score",
+    "min": 2,
+    "max": 3.6,
+    "step": 0.2,
+    "value": 3
+   },
+   {
+    "id": "l",
+    "label": "Alone score",
+    "min": 0,
+    "max": 2,
+    "step": 0.5,
+    "value": 0
+   }
+  ],
+  "series": [
+   {
+    "name": "Climb",
+    "expr": "l+(4-l)*x/100",
+    "tone": "accent"
+   },
+   {
+    "name": "Sleep at home",
+    "expr": "s",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "x": "(s-l)/(4-l)*100",
+    "text": "The bar"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Sureness needed",
+    "expr": "(s-l)/(4-l)*100",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

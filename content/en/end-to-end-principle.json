@@ -1,0 +1,208 @@
+{
+ "id": "end-to-end-principle",
+ "name": "End-to-End Principle",
+ "en": "端到端原则",
+ "discipline": "computing",
+ "one_line": "Only the two ends can finally confirm whether the job came out right.",
+ "story": "In April WhatsApp makes end-to-end encryption the default; its servers still pass messages on but hold no key to read them",
+ "shallow": {
+  "scene": "When you chat on WhatsApp, a line of small print sits at the top of every chat: messages are end-to-end encrypted, and no one outside the chat, not even WhatsApp itself, can read them. Since April 2016 this encryption has been the default. Your phone first scrambles each message into gibberish nobody can make sense of; it passes through the servers, and only on the other person's phone is it turned back into words.\n\nIf only the stretch from your phone to the server were locked, each message would be unlocked at the server before being passed on, and both the company's staff and any hacker who broke into the server could see what it said. Now the servers still pass on every message, but they don't hold the key that turns it back into words.\n\nThe result \"only the other person can read this\" can be guaranteed only by the two phones. The keys are in their hands alone, and no server, however reliable, can stand in for them. It's the same with keeping secrets, delivering things or sending files: whether the job got done has to be vouched for by the two ends.",
+  "plain": "Under the end-to-end principle, whether a box arrived in good shape has to be checked between the sender and the receiver. You mail a box of 12 glasses to a friend in another city. The pickup, the sorting hub and the delivery each stamp it: packaging intact. Your friend opens the box and 3 are broken. None of the three stamps lied: each stop only looked at the outside of the box. You counted 12 before sending, your friend counts 9 unbroken, and when the two counts are compared, the 3 broken ones come to light."
+ },
+ "deep": {
+  "mechanism": "### Every stop along the way reports no errors, and the last step can still go wrong\n\nYou send a contract to a client. On the internet the contract is cut into many small pieces to travel, and each piece is called a packet. The network delivers every packet correctly, but the client's computer corrupts the file while writing it to the disk. Each device along the way only looks after its own stretch; nobody is watching the step where the file is written to the disk on your behalf.\n\n### When the two ends check against each other, a failure gets fixed\n\nThe sender works out a checksum from the original file; if the file's contents are off by even a little, this number comes out different. After saving, the receiver reads the file back off the disk and works the number out again. If it doesn't match, it asks the sender to send again; only if it matches does it report the job done. What gets checked is the file read back from the disk, so errors made while saving are caught too.\n\n### Whether checks along the way are worth it depends on the error rate\n\nCut the contract into 1,000 packets, and suppose each packet has a 1% chance of being damaged. On average 10 packets go bad on every send, and the chance that the whole file gets through right the first time is less than 1 in 10,000. With checks only at the two ends, almost every send would have to be redone in full; if each stretch along the way resends its own damaged packets on the spot, a great deal of redoing is saved. Bring the chance down to 1 in 100,000, and the whole file gets through right the first time about 99% of the time, so checks along the way save almost nothing. In both cases, the final check between the two ends still gets done.",
+  "origin": "In 1981 Saltzer, Reed and Clark put forward this argument, and in 1984 they published a revised version, \"End-to-End Arguments in System Design.\" The paper uses reliable file transfer as its example: every stretch of the transfer can be correct and the file the receiver saves can still be wrong.",
+  "limits": "The end-to-end principle helps most with results that only the two ends can see, such as a file saved to the disk, an order going through, or a chat that only the other person can read. The two ends can also only check the goal they agreed on. If a phone is hacked, the plain text of the chat still leaks out of the phone; if the original contract has a mistake in it, what arrives complete is still wrong.\n\nIf the result you need to protect sits entirely within one stretch, say you only worry about someone listening in on the office's wireless signal, then the two ends of that stretch are the ends, and encrypting that stretch is enough. And even with a check between the two ends, don't remove the checks along the way; otherwise every packet damaged on the wireless link means resending the whole file."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When designing a mobile payment flow, decide \"success\" by whether the order shows up in the merchant's order system, not by the receipt the payment channel sends back."
+   },
+   {
+    "use": "explain",
+    "text": "An online course platform says \"video uploaded successfully,\" yet the teacher finds it freezes at minute 3: the upload only confirmed that all the bytes arrived, and nobody played it through from the start."
+   },
+   {
+    "use": "act",
+    "text": "You set up monthly automatic payment of your parents' electricity bill, and the bank shows \"direct debit set up.\" Only after the first payment has gone out, when you log in to the power company's account and see this bill marked paid, is the job done."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Securities",
+    "title": "Seven of eight servers updated",
+    "text": "On August 1, 2012, the American market maker Knight Capital switched on new trading code. A technician failed to copy the new code to one of its eight servers, and no second person checked. That machine started running old code that hadn't been used in years, and in 45 minutes it sent millions of orders into the market; the company lost more than 460 million dollars. The rollout was treated as done, but nobody had looked machine by machine at which version each one was running."
+   },
+   {
+    "field": "Medicine",
+    "title": "Stop before the first cut",
+    "text": "The schedule, the consent form and the medical record can all say which side to operate on, and surgeons still sometimes operate on the wrong part. From July 1, 2004, the Joint Commission, which accredits American hospitals, brought in a Universal Protocol: check before surgery; have the patient take part in marking the surgical site; and just before the first cut, the whole team stops to check the patient, the procedure and the site one last time. The patient knows which leg it is and the surgeon is standing at the table; with the people at both ends in the room, a mistake passed along through the paperwork can be stopped."
+   },
+   {
+    "field": "Personal life",
+    "title": "Booking confirmed, no name on the room",
+    "text": "A travel website says your booking went through, but when you get to the hotel front desk, there is no room under your name: the website's booking never reached them. Since then, after booking a room you always call the hotel directly and give your dates and name."
+   }
+  ],
+  "ask": [
+   "At what point does this count as done, and who can see the result directly?",
+   "After the steps in the middle report success, what step could still ruin the result?",
+   "Of the information needed to judge the result, which is held only by the person who started it or the one who finally receives it? If it failed, who makes it right?"
+  ],
+  "with": [
+   {
+    "id": "abstraction",
+    "sees": "A company's storage team promises everyone else: \"Once a write returns success, the data is durable.\" Abstraction advises the application team not to worry about how storage works inside and to trust this interface; end-to-end advises reading key data back after writing it and checking it yourself. For caches and logs that don't matter if lost, the storage team has the whole picture, and trusting the interface is enough. For a ledger where losing one entry costs money, the application team has to read it back and check it itself."
+   },
+   {
+    "id": "principal-agent",
+    "sees": "You hire an agent to handle a property transfer, and the agent says, \"All the papers have been filed.\" Principal-agent watches whether the agent has a reason to slack off, and the fix is to tie the fee to getting it done. End-to-end points out that even if the agent has no selfish motive at all, filing the papers is not the same as the name being changed in the land register; you have to check the registration yourself."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A hospital's medical records system has moved to a new database, and the migration tool reports table by table: \"row counts match, no errors.\" After the switch, doctors find that for some patients the allergy history field in the new system is blank. The project team is redesigning the sign-off for the next migration.",
+    "question": "What kind of sign-off would catch this kind of problem?",
+    "explain": "What the doctors need to see appearing on the new system's screens is where the migration ends. Something that was in the old database but is missing from the new screens can only be found by comparing what the two sides finally show.",
+    "options": [
+     {
+      "text": "Freeze the old database before migrating and shorten the migration window, to cut down on data changes made partway through.",
+      "correct": false,
+      "feedback": "Freezing the old database guards against new data added partway through. This time what got lost was a field that already existed, so a shorter window changes nothing."
+     },
+     {
+      "text": "Compare row counts and checksums table by table, with the migration tool issuing a matching report for each table.",
+      "correct": false,
+      "feedback": "That is exactly the check that was already done. In a table whose row count matches, a field can still fail to come across."
+     },
+     {
+      "text": "Take the same group of patients, open the screens doctors use every day in both the old and new systems, compare them item by item, and have each department sign off.",
+      "correct": true,
+      "feedback": "The end point is what doctors see. Comparing the two sides' screens item by item shows any missing field directly, and whatever doesn't match gets migrated again."
+     },
+     {
+      "text": "Have the migration tool keep more detailed logs, recording each table's read and write times, retries and error counts.",
+      "correct": false,
+      "feedback": "Logs record the process. This migration reported no errors; the allergy history was lost in a step that didn't go wrong."
+     }
+    ]
+   },
+   {
+    "stem": "The owner of a small office worries that a neighbor is using the Wi-Fi without permission and could also pick up the data in the wireless signal. The office computers and router all belong to the company, and the internal wiring beyond the router runs in the server room, where outsiders can't get at it. The company also has a dozen or so old applications that nobody maintains and that can't be changed.",
+    "question": "What should be done about this worry?",
+    "explain": "The only thing to protect is the stretch from the computers to the router. The devices at both ends of this stretch belong to the company, which has the full picture, so encrypting it here is enough; there's no need to make each application do it again on its own.",
+    "options": [
+     {
+      "text": "Turn on encryption for the wireless link and set a strong password, so the signal between the computers and the router can't be read.",
+      "correct": true,
+      "feedback": "The threat lies only in the stretch from the computers to the router, and the devices at both ends belong to the company, so encrypting this stretch covers the whole threat."
+     },
+     {
+      "text": "Have staff compress important files before sending them over the wireless network.",
+      "correct": false,
+      "feedback": "Compression only changes a file's size and format; anyone who picks up the signal can still unpack what's inside."
+     },
+     {
+      "text": "Add encryption from sender to receiver to every one of the company's applications, and leave the router stretch alone.",
+      "correct": false,
+      "feedback": "The threat lies only in the stretch from the computers to the router, and the old applications can't be changed anyway. Reworking every application is a big project to patch one stretch of line."
+     },
+     {
+      "text": "Require a checksum comparison on every file transfer, and resend when they don't match.",
+      "correct": false,
+      "feedback": "A checksum guards against damage in transit, not against someone looking; the signal can still be picked up."
+     }
+    ]
+   },
+   {
+    "stem": "A same-city delivery platform wants a single rule: for every merchant's orders, the platform checks that \"the goods and the address are correct\" on the merchant's behalf before delivery, and merchants no longer need to confirm. The merchants include restaurants, pharmacies and florists.",
+    "question": "What is the main problem with this rule?",
+    "explain": "What counts as \"correct\" differs from one business to another: the dishes, the dose of a medicine, the message on a bouquet. The platform doesn't have this information, so a single check can't catch everything, and it makes every merchant pay for checks they have no use for.",
+    "options": [
+     {
+      "text": "Merchants and customers already know what they want and would only repeat the platform's work, so the merchants' confirmation should be dropped.",
+      "correct": false,
+      "feedback": "The reasoning is backwards: it's the merchants and customers who have the full picture, and what should be dropped is the platform's single check done on their behalf."
+     },
+     {
+      "text": "The platform doesn't know how each kind of business judges \"correct,\" so a single check can't catch everything and makes merchants pay for nothing.",
+      "correct": true,
+      "feedback": "What counts as done differs for each business, and only the merchants and customers at the two ends know it. The platform only needs to get the message there reliably."
+     },
+     {
+      "text": "The platform's checks are unreliable in themselves; a more specialized third party should check on the merchants' behalf.",
+      "correct": false,
+      "feedback": "It makes no difference who checks: what's missing is each business's idea of \"correct,\" not the checker's skill."
+     },
+     {
+      "text": "The platform's checking process is too slow and will hold up every delivery; squeezing the checking step would fix it.",
+      "correct": false,
+      "feedback": "Speed is a side issue. Even if it were fast, the platform wouldn't know the dose of a medicine or what the message on a bouquet says."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Three stamps say intact, the ends count 3 short",
+  "caption": "Each stop answers only for its own stretch, and no stamp is wrong. You counted what you sent, your friend what arrived; compare the two and the gap shows.",
+  "nodes": [
+   {
+    "id": "s",
+    "label": "12 sent",
+    "sub": "You counted",
+    "tone": "accent"
+   },
+   {
+    "id": "a",
+    "label": "Pickup",
+    "sub": "Intact"
+   },
+   {
+    "id": "b",
+    "label": "Hub",
+    "sub": "Intact"
+   },
+   {
+    "id": "c",
+    "label": "Delivery",
+    "sub": "Intact"
+   },
+   {
+    "id": "r",
+    "label": "9 arrived",
+    "sub": "Friend counted",
+    "tone": "warn"
+   }
+  ],
+  "edges": [
+   {
+    "from": "s",
+    "to": "a"
+   },
+   {
+    "from": "a",
+    "to": "b"
+   },
+   {
+    "from": "b",
+    "to": "c"
+   },
+   {
+    "from": "c",
+    "to": "r"
+   },
+   {
+    "from": "r",
+    "to": "s",
+    "label": "Compare",
+    "dashed": true,
+    "tone": "accent"
+   }
+  ]
+ }
+}

@@ -1,0 +1,216 @@
+{
+ "id": "probabilistic-thinking",
+ "name": "Probabilistic Thinking",
+ "en": "概率思维",
+ "discipline": "thinking",
+ "one_line": "Don't just say yes or no. Say how sure you are and how far off it could be.",
+ "story": "FiveThirtyEight gives Trump a 28.6% chance of winning the presidential election, and Trump wins",
+ "shallow": {
+  "scene": "November 8, 2016 was election day in the United States. FiveThirtyEight, Nate Silver's team's website, published its final forecast: Hillary Clinton had a 71.4% chance of winning and Donald Trump 28.6%. That night Trump won. The next day, some people said the forecast had been completely wrong. Others dug up that 28.6% and said a result like this would come up about two times in seven anyway. Both groups had read the same forecast, yet they were surprised by the result to completely different degrees.",
+  "plain": "Before you head out, the forecast says there's a 30% chance of rain in the afternoon. You don't treat that as \"it won't rain,\" and you don't treat it as \"it will definitely rain.\" Suppose getting soaked once costs the equivalent of 100 yuan: your clothes need dry cleaning and you're miserable all afternoon. Call the bother of carrying an umbrella 10 yuan. Without an umbrella, 30% times 100 yuan means you lose 30 yuan on average, more than the 10 yuan for the umbrella, so you tuck a folding umbrella into your bag.\n\nProbabilistic thinking starts from this step. First turn how sure you are into a number, then multiply it by the cost of being wrong, and see how much margin to leave. The same \"it should be fine\" may stand for 60% or for 99%, and the margin to leave is completely different."
+ },
+ "deep": {
+  "mechanism": "### Put how sure you are into a number, and the margin has something to stand on\n\nYou're rushing to catch a high-speed train. If you're 70% sure you'll make it, there's a 30% chance you'll miss it. Suppose missing it means changing your ticket and waiting three more hours, which you count as 300 yuan. 30% times 300 yuan means you lose 90 yuan on average. Leaving an hour early costs you only an hour, which you count as 40 yuan, so it's worth it. If you're 99% sure, missing the train costs you only 3 yuan on average, less than 40, so you leave at the usual time. There's just one rule: if the chance of being wrong times the cost of being wrong is more than the cost of leaving a margin, leave the margin.\n\nWhere the number comes from: first find how often things of the same kind have happened before, for example on what share of days last year this road was jammed, then adjust it up or down for the situation this time. If you have no comparable record, give a wide range. The event also needs a clear end point: \"passes acceptance testing by the end of this month, 60% sure.\" At the end of the month, one check tells you whether it happened.\n\n### The more outcomes a range must cover, the wider it gets\n\nSuppose you're estimating how long a renovation will take, with the same information in hand throughout. You're 50% sure it will land between seven and nine weeks; that's the 50% interval. The 80% interval is six to ten weeks, and the 95% interval is five to fourteen weeks. The interval stretches later more than it stretches earlier, because a schedule can hardly be brought forward, while a delay has no limit.\n\nWhich interval to work from is again decided by the chance of being wrong times the cost. If a week or two late only means staying somewhere else a few more days, you plan by the 80% interval, give the workers ten weeks, and note that there's still a 20% chance it falls outside. If you must move in before a wedding and being late means paying out a lot, plan by the 95% interval, out to fourteen weeks.\n\n### Only a batch of forecasts shows whether the numbers were right\n\nIf something you called 70% doesn't happen, that one case alone can't tell you whether the number was wrong or you just landed in the other 30%. Gather everything you called 70% last year: if only 50% of it happened, the numbers in the next batch should come down. When things you call 70% happen about 70% of the time over the long run, that is called calibration.",
+  "origin": "Probabilistic thinking comes from probability theory, statistics and the study of decisions, and has no single founder. In 1950 the meteorologist Glenn Brier proposed a way to score probability forecasts, and from then on forecasters could test the numbers they gave against what actually happened.",
+  "limits": "Numbers carry the most weight in fields like weather, insurance and sports, where the same kind of event happens again and again and there are plenty of records. In a completely new situation with no comparable record, a precise percentage just adds a decimal point to a gut feeling; then write a wide range, or write \"no reliable probability yet.\" When a project manager gives every task an odd number like 63% or 71% with no records behind it, other people will still take them as measured."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "Booking shipping for goods that must reach a trade show in time: if the chance of arriving late is about 20%, being late costs 50,000 in penalties, and booking one extra day of cargo space costs only 8,000, the money is well spent."
+   },
+   {
+    "use": "communicate",
+    "text": "When you report next quarter's sales to your boss, give a range you're 80% sure of, not a single number, and they'll know how much room to leave in the budget."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Work",
+    "title": "Putting odds on a launch date",
+    "text": "You're the product lead, and two parts of the integration testing still haven't passed. You tell the operations team: you're 60% sure of launching on Friday and 90% sure of next Wednesday. Operations schedules the official promotion for next Wednesday and only invites a group of longtime users to try it on Friday. Each of the two dates comes with a number, so the chance of delay is written into the schedule too."
+   },
+   {
+    "field": "Investing",
+    "title": "Splitting growth into three ranges",
+    "text": "You own shares in a software company and want to know what next year's revenue will look like. Going through its orders and renewal records, you estimate a 30% chance of growth above 20%, 50% for growth between 0% and 20%, and 20% for revenue falling. The three add up to 100%. Your valuation only holds if growth is above 20%, so you record your confidence in this holding as 30%."
+   },
+   {
+    "field": "Weather",
+    "title": "A range for the number of storms",
+    "text": "On May 23, 2024, the U.S. National Oceanic and Atmospheric Administration (NOAA) released its Atlantic hurricane season outlook. It didn't give just one number: it said it was 70% confident there would be 17 to 25 named storms that year. The final count was 18, inside the range. That year's hit only counts once. To know whether NOAA's numbers are right, you have to look over many years at whether its 70% ranges caught the actual count in about 70% of them."
+   }
+  ],
+  "ask": [
+   "What exactly is the end point and the deadline here, and can it be checked in one sentence afterward?",
+   "Does the evidence I have support giving a number, or only a wide range?",
+   "If it lands outside the range, what happens, and can my current plans take it?"
+  ],
+  "with": [
+   {
+    "id": "avoid-ruin",
+    "sees": "Someone urges you to quit a steady job for an opportunity, saying the chance of success is high. Probabilistic thinking looks at the odds of success and failure and decides it's worth doing; avoiding ruin keeps its eye on the failure side. Quit, and if it fails you have no job to go back to and no savings, so only bet the part you can afford to lose. With the same odds, whether you can start over decides which question comes first."
+   },
+   {
+    "id": "base-rate",
+    "sees": "You want to estimate the chance that your own newly launched product is still on the market after its first year. Probabilistic thinking starts from specific evidence such as the features, the team and the first users' feedback, and easily ends up very confident. Base rates first ask what share of similar products were not pulled in their first year. First look up how often similar products were pulled, then adjust up or down for your own product's specific circumstances."
+   },
+   {
+    "id": "bayesian-updating",
+    "sees": "You said you were 60% sure of the launch, and then testing turned up two new defects. Probabilistic thinking wrote down how sure you are now, but didn't say how to change it when new evidence arrives. Bayesian updating is about exactly that step: it works out whether the new evidence should raise or lower your earlier confidence, and by how much."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Before a game, a sports data website gives the home team an 80% chance of winning, but the home team loses, and many fans say the forecast was wrong. The site has records of all its pregame forecasts from the past three seasons.",
+    "question": "To judge whether the site's confidence numbers are right, what should you check?",
+    "explain": "One game's result can't prove whether 80% was right. Pooling all the games forecast at around 80% and seeing roughly what share the home team won is what actually tests the numbers.",
+    "options": [
+     {
+      "text": "Pool all the games forecast at around 80% and see roughly what share the home team won.",
+      "correct": true,
+      "feedback": "Games called at 80% should be won about 80% of the time over the long run. Far fewer wins means the number was too high; close to it means it was right."
+     },
+     {
+      "text": "Count how many games were forecast at 80%; the more there are, the more reliable it is.",
+      "correct": false,
+      "feedback": "More games only make the test stronger. What share were won is the test itself."
+     },
+     {
+      "text": "Look only at this game: the home team lost, so 80% was too high.",
+      "correct": false,
+      "feedback": "Saying 80% already left a 20% chance of losing, and one loss falls within that 20%."
+     },
+     {
+      "text": "Pick out the games with the highest forecast chances and see whether any were lost.",
+      "correct": false,
+      "feedback": "Picking only games from one end tells you nothing about whether the other levels are right, and some losses are to be expected anyway."
+     }
+    ]
+   },
+   {
+    "stem": "Three product managers are asked about the same new feature. A says, \"This feature will probably succeed.\" B says, \"By the end of next quarter, at least 10% of daily active users will be using this feature; I'm 60% sure.\" C says, \"I feel pretty confident about this feature.\"",
+    "question": "Which of the three statements can be checked afterward?",
+    "explain": "B spelled out the event, the deadline and the confidence, so at the end of the quarter you can check whether it happened. Gather a batch of statements like this, and you can also check whether the 60% was right. The other statements have no end point.",
+    "options": [
+     {
+      "text": "C: \"pretty confident,\" because the more certain the statement sounds, the easier it is to test.",
+      "correct": false,
+      "feedback": "A confident tone isn't something you can test. Without an event and a deadline, there's nothing to check it against."
+     },
+     {
+      "text": "B: it spells out the share of users, the deadline and the confidence.",
+      "correct": true,
+      "feedback": "At the end of the quarter you can count, and whether it happened is perfectly clear."
+     },
+     {
+      "text": "All three can be checked; just wait until the end of next quarter.",
+      "correct": false,
+      "feedback": "A and C never said what counts as success, so no amount of waiting lets you check them."
+     },
+     {
+      "text": "A: \"will probably succeed,\" because \"probably\" means more than 50% sure.",
+      "correct": false,
+      "feedback": "It says neither what success means nor when to judge it, and \"probably\" has no number, so afterward anyone can claim they were right."
+     }
+    ]
+   },
+   {
+    "stem": "You estimate a new shop's foot traffic for its first month and give a 90% interval: 3,000 to 6,000 people. The owner says he only wants a \"most likely\" range and asks you to give a 50% interval instead. The evidence you have hasn't changed.",
+    "question": "How will the new interval change?",
+    "explain": "50% only needs to cover half of the possible outcomes, so the range can shrink to a stretch in the middle. With the same evidence and a lower required confidence, the interval gets narrower.",
+    "options": [
+     {
+      "text": "It stays the same; just change the label from \"90%\" to \"50%.\"",
+      "correct": false,
+      "feedback": "The share of outcomes a given range covers is fixed, and changing the label can't change it."
+     },
+     {
+      "text": "It gets wider, with a lower bottom and a higher top.",
+      "correct": false,
+      "feedback": "The required confidence went down, so the interval doesn't need to stretch outward. Widening is for when more confidence is required."
+     },
+     {
+      "text": "The top stays put and the bottom drops to zero.",
+      "correct": false,
+      "feedback": "Stretching further down only covers more outcomes, the opposite of needing only half."
+     },
+     {
+      "text": "It gets narrower, closing in on a stretch in the middle.",
+      "correct": true,
+      "feedback": "It only needs to cover half the possible outcomes, so a piece is trimmed off each end and the range narrows."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Rain chance × cost of wet > bother? Take one",
+  "caption": "Slope: average loss, no umbrella. Flat: carrying one. They cross at the threshold. Raise the cost of getting wet and it moves left; even small odds are worth it.",
+  "x": {
+   "label": "Chance of rain",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "y": {
+   "label": "Average cost per outing",
+   "unit": " yuan",
+   "min": 0
+  },
+  "params": [
+   {
+    "id": "l",
+    "label": "Cost if wet",
+    "min": 30,
+    "max": 300,
+    "step": 10,
+    "value": 100,
+    "unit": " yuan"
+   },
+   {
+    "id": "c",
+    "label": "Bother",
+    "min": 5,
+    "max": 30,
+    "step": 5,
+    "value": 10,
+    "unit": " yuan"
+   }
+  ],
+  "series": [
+   {
+    "name": "No umbrella",
+    "expr": "x/100*l",
+    "tone": "ink"
+   },
+   {
+    "name": "Umbrella",
+    "expr": "c",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "x": "min(100*c/l, 100)",
+    "text": "Above this, take one"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Threshold",
+    "expr": "min(100*c/l, 100)",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "Avg loss, 30% rain",
+    "expr": "0.3*l",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

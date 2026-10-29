@@ -1,0 +1,218 @@
+{
+ "id": "shapley-value",
+ "name": "Cooperative Games and the Shapley Value",
+ "en": "合作博弈与夏普利值",
+ "discipline": "games",
+ "one_line": "Split what a team earns by how much each person adds on average.",
+ "story": "Shapley and Shubik propose a voting power index in the American Political Science Review, using the 11-member Security Council (7 votes needed, including all five permanent members) as the example, where the five permanent members hold about 98.7%",
+ "shallow": {
+  "scene": "When a few people pull something off together, the easiest thing to fight over is how to split it at the end: who couldn't be done without, who could have been left out, and everyone has their own view. In 1954 Lloyd Shapley and Martin Shubik worked out a startling number for this kind of question. The UN Security Council had 11 members at the time. By their method, the five permanent members together held 98.7% of the weight, and the other six members put together had only 1.3%. Back then, passing a resolution took 7 votes, and not one of the five permanent members could be missing.\n\nTheir way of counting was simple. Picture the 11 members standing in a line, raising their hands in favor one after another. Whoever raises a hand at the exact moment the resolution passes casts the deciding vote that time. Go through every possible order of the line, and count how many times each member cast the deciding vote. Without any one of the permanent members nothing passes, so the deciding vote almost always fell to them.\n\nA member's weight doesn't depend on how many votes it holds. It depends on how many times it was the one that couldn't be left out.",
+  "plain": "You own a 3D scanner and earn 6,000 yuan taking jobs on your own. Your friend has no equipment and earns 0 alone. Together you take on a survey of an old building and earn 10,000 yuan. To split the 10,000, the Shapley value has everyone join one at a time in every possible order, notes how much the total grows when each person joins, and then averages over all the orders.\n\nWith two people there are only two orders. If you arrive first, you bring 6,000, and when he joins he adds 4,000. If he arrives first, he brings 0, and when you join you add 10,000. Split by just one order, and the shares depend entirely on who walked in first: you get only 6,000 if you're first, and 10,000 if he is. Who walks in first is pure chance, so averaging over both orders wipes that chance out. You get the average of 6,000 and 10,000, which is 8,000; he gets the average of 4,000 and 0, which is 2,000."
+ },
+ "deep": {
+  "mechanism": "### Someone who can be replaced adds little when they join\n\nSuppose an owner has an empty shopfront on the street, and two people, A and B, both want to rent it. Whoever rents it can earn 100,000 yuan a year. Without the shop, nobody earns anything, and the shop only has room for one. The three can arrive in 6 orders. How much the total grows when each person joins (in units of 10,000 yuan) is listed below:\n\n| Order of arrival | Owner adds | A adds | B adds |\n|---|---|---|---|\n| Owner, A, B | 0 | 10 | 0 |\n| Owner, B, A | 0 | 0 | 10 |\n| A, Owner, B | 10 | 0 | 0 |\n| A, B, Owner | 10 | 0 | 0 |\n| B, Owner, A | 10 | 0 | 0 |\n| B, A, Owner | 10 | 0 | 0 |\n| Average | 6.67 | 1.67 | 1.67 |\n\nA renter who arrives first has no shop and can't earn anything, so as long as the owner isn't first, walking in pushes the total from 0 to 100,000. A adds 100,000 only when arriving right after the owner. If A comes before the owner, there's no shop to rent; if A comes after B, B has already rented it. The owner adds 100,000 in 4 of the orders, and A and B in only 1 each. So on average the owner gets about 66,700, and A and B about 16,700 each. The three shares add up to exactly 100,000.\n\n### The more people want to rent, the bigger the owner's share\n\nWhen $m$ people want to rent, there are $m+1$ people counting the owner, and each is equally likely to be first. The owner adds nothing only in the orders where he arrives first, which make up $\\frac{1}{m+1}$ of them; in every other order he adds 100,000. So the owner's share $S$ (in units of 10,000 yuan) is:\n\n$$S=10\\times\\frac{m}{m+1}$$\n\nIn other words, the owner gets 100,000 times the share of orders in which he is not first. With two would-be renters he gets 66,700; with three he gets 75,000, leaving each renter only about 8,300; with nine he gets 90,000, and each renter about 1,100. The renters can replace one another, so each extra one makes every renter's share thinner.\n\n### Accept four fairness rules, and only this way of splitting is left\n\nIn 1953 Shapley proved that any way of splitting that meets the four rules below can only be the average over all orders. First, the whole result is handed out, no more and no less. Second, if two people add the same amount to every group they join, they get the same share. Third, someone who adds nothing to any group they join gets zero. Fourth, if the same people do two projects together, settling each one separately and adding the shares up gives everyone the same amount as splitting the two as one sum. All four sound fair, and any other way of splitting breaks at least one of them.",
+  "origin": "Shapley proposed this way of splitting in his 1953 paper \"A Value for n-Person Games,\" and in 1954 he and Shubik used it to measure voting power. In 2012 Shapley shared the Nobel Prize in economics with Alvin Roth, for the theory of stable allocations and market design. In 2017 Scott Lundberg and Su-In Lee proposed SHAP, which uses it to work out how much each input feature contributed to one prediction of a machine learning model.",
+  "limits": "The Shapley value works best when you can say what every group is worth and the result can be divided up. Each extra member doubles the number of groups: thirty members (thirty features, say) make more than a billion, and usually it can only be approximated by sampling. A fair share also doesn't stop a few people from deciding they'd do better leaving to start on their own, and in some partnerships they really would earn more alone."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When several companies run a trade show together and need to split the venue rent, first estimate what it would cost each to run one alone and each pair to run one together, then split by the average over every order of arrival."
+   },
+   {
+    "use": "explain",
+    "text": "Make clear why a small party with only 2 seats in parliament can carry as much weight as a big party with 49: any two of the three parties together make a majority, so each of the three casts the deciding vote equally often."
+   },
+   {
+    "use": "explore",
+    "text": "Take a model whose predictions are off, break one prediction down by feature, and find the one you never expected the model to lean on so heavily."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Machine learning",
+    "title": "Breaking down one pickup time",
+    "text": "You predict pickup times at a ride-hailing company. For one ride the model estimates 14 minutes, while the average over all rides is 9 minutes. The extra 5 minutes are split among the features by the Shapley value: traffic 3 minutes, rain 1 minute, a hard-to-find pickup point 1 minute, which adds up to exactly 5. Operations uses this table to check how that pickup point is marked."
+   },
+   {
+    "field": "Rural life",
+    "title": "Three households build a mountain road",
+    "text": "Your yard and your two neighbors' yards lie along a mountain road. Counting from where the road begins, reaching your house costs 60,000 yuan to build, reaching the second house 120,000, and reaching the farthest house 180,000. A road built to the farthest house also reaches the two nearer ones, for 180,000 in all. The three households share the cost by averaging, over every order, the extra cost each one adds. Your house is nearest and pays 20,000; the second house pays 50,000; the farthest pays 110,000."
+   },
+   {
+    "field": "Online retail",
+    "title": "Which ad gets credit for a sale",
+    "text": "You run ads for an online shop. Search ads alone bring in 30 orders, short-video ads alone bring in 10, and both together bring in 80. Averaging those 80 orders over every order of arrival credits 50 to search and 30 to short video, and next month's budget is split between the two channels 5 to 3."
+   }
+  ],
+  "ask": [
+   "Make a table of what each group can get done: without him, which part can the rest still do?",
+   "Do the gains differ much between who comes first and who comes later? Look at the gains under several orders. The bigger the difference, the less you can go by just one order.",
+   "Of the values for each group, which are real numbers from the books, and which are your estimates?"
+  ],
+  "with": [
+   {
+    "id": "marginal-thinking",
+    "sees": "A five-person design studio is deciding whether to hire a sixth. Marginal thinking only asks how much total income goes up if that person comes, and hires if it's more than the salary. But if, when splitting the money at year's end, you also look only at what each person adds as \"the last to join,\" the figures often don't add up to the total income, and some people get too much while others get too little. Use the margin for hiring; to hand out a whole year's income, use the average over all orders."
+   },
+   {
+    "id": "batna",
+    "sees": "A and B take on a job together that can earn 100,000 yuan, and neither can do it without the other. B also has another offer worth 40,000. If you value the groups by this job alone, the Shapley value gives each of them 50,000. The BATNA view is that B won't come for less than 40,000, so his other offer is his bargaining chip. Count that offer as what B earns alone, and the Shapley value gives B 70,000 and A 30,000, and the two views agree. When a third party sets the split by contribution, use the first; when the two bargain face to face, each one's fallback still gets into the price."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You, B and C are making a mobile game together. You can program: you and B together, or you and C together, can make a demo worth 200,000 yuan. None of the three can make anything alone, and B and C together can't make anything either. All three together make the full game, worth 1 million yuan. The three agree that each gets the average of what they add across every order of joining.",
+    "question": "How much should B get?",
+    "explain": "Across the six orders, B adds 0, 0, 0, 200,000, 800,000 and 800,000, an average of 300,000. You get 400,000, and C, like B, gets 300,000. The three shares add up to 1 million.",
+    "options": [
+     {
+      "text": "400,000 yuan",
+      "correct": false,
+      "feedback": "400,000 is your share. B and C play the same part, so they get 300,000 each."
+     },
+     {
+      "text": "300,000 yuan",
+      "correct": true,
+      "feedback": "Across the six orders, B adds 0, 0, 0, 200,000, 800,000 and 800,000, an average of 300,000."
+     },
+     {
+      "text": "330,000 yuan",
+      "correct": false,
+      "feedback": "An equal split treats all three as playing the same part. Your joining makes the demo possible, which neither B nor C can do alone, so your share should be bigger than B's."
+     },
+     {
+      "text": "200,000 yuan",
+      "correct": false,
+      "feedback": "200,000 is only the order where B joins right after you. In the other orders B adds 0 or 800,000, and all of them have to be averaged."
+     }
+    ]
+   },
+   {
+    "stem": "You and two partners run a studio. C joined first, and A arrived half a year before B. By the books, A and B add the same amount to any group they join. This year you agree that each person gets the average of what they add across every order of joining.",
+    "question": "Who gets more, A or B?",
+    "explain": "The two add the same amount to any group, so if you swap A and B in every order, what each adds swaps too, and the averages come out the same. Who came first only changes what someone adds in a particular order, not the average.",
+    "options": [
+     {
+      "text": "They get the same, whoever came first",
+      "correct": true,
+      "feedback": "A and B add the same amount to every group. Swap them across all the orders and the averages are equal, so the shares are the same."
+     },
+     {
+      "text": "Split in proportion to how long each has been a partner",
+      "correct": false,
+      "feedback": "Time as a partner doesn't enter this way of splitting. It only looks at what each person adds to the various groups, and since the two add the same, their shares are the same."
+     },
+     {
+      "text": "A gets a bit more, because A came earlier",
+      "correct": false,
+      "feedback": "Coming earlier only puts A first in some orders. In other orders B comes first, and the two come first equally often, so the averages are the same."
+     },
+     {
+      "text": "B gets a bit more, because there were already clients when B came",
+      "correct": false,
+      "feedback": "B joined when there were clients already, but in other orders A meets the same situation. On average the two add the same."
+     }
+    ]
+   },
+   {
+    "stem": "A bank scores customers with a model that predicts default. For one customer, the model's chance of default is 12 percentage points above the average for all customers. Breaking it down by each feature's average gain across every order gives this: the district the customer lives in pushes it up 8 percentage points, and everything else together pushes it up 4.",
+    "question": "What does this result most directly show?",
+    "explain": "This kind of breakdown answers which inputs hold up the model's prediction. It doesn't answer why this customer would default in real life, and it can't be used directly to predict what would happen if an input changed.",
+    "options": [
+     {
+      "text": "If this customer moved to another district, the chance of default would drop by 8 percentage points.",
+      "correct": false,
+      "feedback": "What the breakdown shows is how the model depends on the current inputs. After a move other features would change too, and the model's score need not drop by 8 percentage points."
+     },
+     {
+      "text": "The district the customer lives in is the cause of their default.",
+      "correct": false,
+      "feedback": "The breakdown only shows how the model uses this feature. It says nothing about why the customer would default."
+     },
+     {
+      "text": "In this prediction, the model puts the biggest piece on the district the customer lives in.",
+      "correct": true,
+      "feedback": "The district accounts for 8 of the 12 percentage points, making it the input the model leaned on most in this prediction."
+     },
+     {
+      "text": "The other features have no effect on the chance of default.",
+      "correct": false,
+      "feedback": "The other features together pushed it up 4 percentage points, so they did affect this prediction."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Your share lands halfway between the two orders",
+  "caption": "Together you earn 10,000 yuan; your friend alone earns 0. One order gives you one dashed line or the other; the average sits halfway. Drag what you earn alone.",
+  "x": {
+   "label": "What you earn alone (yuan)",
+   "min": 0,
+   "max": 8000
+  },
+  "y": {
+   "label": "Your cut",
+   "unit": " yuan",
+   "min": 0,
+   "max": 10000
+  },
+  "params": [
+   {
+    "id": "s",
+    "label": "You earn alone",
+    "min": 0,
+    "max": 8000,
+    "step": 500,
+    "value": 6000,
+    "unit": " yuan"
+   }
+  ],
+  "series": [
+   {
+    "name": "Friend first: you get",
+    "expr": "10000",
+    "tone": "muted",
+    "dashed": true
+   },
+   {
+    "name": "You first: you get",
+    "expr": "x",
+    "tone": "muted",
+    "dashed": true
+   },
+   {
+    "name": "Avg: your share",
+    "expr": "(x+10000)/2",
+    "tone": "accent"
+   },
+   {
+    "name": "Avg: friend's share",
+    "expr": "(10000-x)/2",
+    "tone": "ink"
+   }
+  ],
+  "marks": [
+   {
+    "x": "s"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "You get",
+    "expr": "(s+10000)/2",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "Friend gets",
+    "expr": "(10000-s)/2",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

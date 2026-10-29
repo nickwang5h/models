@@ -1,0 +1,211 @@
+{
+ "id": "half-life",
+ "name": "Half-Life",
+ "en": "半衰期",
+ "discipline": "physics",
+ "one_line": "Every time the same stretch of time passes, half of what's left is gone.",
+ "story": "Helmut and Erika Simon, a married couple, find Ötzi the Iceman in the Alps on September 19, and carbon-14 dating places him more than 5,000 years ago",
+ "shallow": {
+  "scene": "In September 1991, two climbers high in the Alps, on the border between Italy and Austria, saw a body sticking out of the ice. People later called him Ötzi the Iceman. How long had he been dead? The answer was in the carbon-14 in his body.\n\nWhile a person is alive, the food they eat keeps topping up their carbon-14, so the amount in the body stays about the same. After death the topping up stops, and the carbon-14 in the body slowly decays, losing half every 5,700-odd years. Researchers measured that Ötzi still had a little over half of his original carbon-14. That meant not even one stretch of 5,700-odd years had passed, so he lived more than 5,000 years ago.\n\nWhen something loses half in every fixed stretch of time, how much is left tells you how much time has passed.",
+  "plain": "Toss a thousand coins once each, take away the ones that land heads up, and toss the rest again. The first round takes away about 500, the second about 250, the third about 120-something. Each round takes away fewer, but it is always about half of the coins tossed in that round. That's because a coin doesn't remember how many times it has been tossed: a coin tossed five times still has an even chance of heads on the sixth. By the eighth round, only about four are left on average, and whether one or three are left after the next round is down to luck.\n\nAtomic nuclei are like a crowd of these coins. Over a fixed stretch of time, each nucleus has an even chance of decaying, no matter how long it has existed, so every time that stretch passes, half of what's left is gone. That stretch is called the half-life. The body clears caffeine and many drugs by the same rule."
+ },
+ "deep": {
+  "mechanism": "### None of them keeps track of age, so each stretch takes the same share\n\nA crowd of nuclei is like those thousand coins, each one taking its chances: in one half-life each has an even chance of decaying, and how long it has lasted already doesn't change that. When many are left, many decay in that stretch; when fewer are left, fewer decay, and the share is always half. When only a few nuclei are left, how many remain after the next half-life is down to luck. But even a small sample holds more nuclei than anyone could count, so the extra decays and the missing decays cancel out, and the amount left drops steadily by half every half-life.\n\n### The longer the half-life, the longer the wait to get down to the same amount\n\nStart with $N_0$, with a half-life of $T$. After time $t$, the amount left is $N$:\n\n$$N=N_0\\left(\\tfrac12\\right)^{t/T}$$\n\n$t/T$ counts how many half-lives have passed, and each one multiplies by one half. Carbon-14 has a half-life of about 5,730 years: the carbon-14 in a piece of fresh wood is down to half after one half-life, a quarter after two, an eighth after three. Getting down to an eighth takes three half-lives. For iodine-131, with a half-life of about eight days, that is only twenty-four days; for carbon-14 it is more than 17,000 years.\n\n### Read it backwards: how much is left tells you how long it has been\n\nÖtzi's carbon-14 was a little over half of the original, which means less than one half-life had passed, about 5,300 years: $\\left(\\tfrac12\\right)^{5300/5730}\\approx0.53$. Once a sample is more than ten half-lives old, less than a thousandth of its carbon-14 is left, so little that it is about the size of the measurement error, and the reading can't be trusted. That is why carbon-14 dating tops out at around 50,000 years. Older things call for uranium, whose half-life is far longer.\n\n### Topped up and drained at once, it settles where in equals out\n\nTake the same dose of a drug on schedule every day, and the drug in your blood doesn't keep rising. Suppose a drug is half cleared each day, and you take 100 milligrams every morning. After the first dose there are 100 milligrams. The next morning 50 are left, and with the new 100 that makes 150. The third day it is 75 plus 100, 175, getting closer and closer to 200.\n\nNear 200, the amount cleared in a day is close to 100, exactly the 100 added each morning, so the level stays there. The more is left, the more gets cleared, so what goes out always catches up with what comes in.",
+  "origin": "In 1850, Ludwig Wilhelmy studied how acid speeds up the breakdown of sucrose, and showed by experiment that the reacting substance decreases exponentially, that is, by the same share in each equal stretch of time. In 1902–1903, Ernest Rutherford and Frederick Soddy put forward the theory of radioactive decay, and radioactive substances turned out to decrease by the same rule. In 1949, Willard Libby published his work on carbon-14 dating, which turned this rule into a clock for archaeology, and he won the 1960 Nobel Prize in Chemistry for it.",
+  "limits": "Atomic nuclei have no age, and their decay is barely affected by temperature or pressure, so radioactive decay is the cleanest case of a half-life. A stockroom that clears out ten boxes a day loses a fixed number of boxes, not a fixed share. Plotted, it is a straight line, and there is no half-life to speak of.\n\nWhen a fast part and a slow part are mixed together, the measured half-life keeps getting longer. Among new users, some try a product once and leave, and some will stay for a long time. Most of those who leave in the first few weeks are the first kind, so the numbers drop fast; most of those still left are the second kind, so later the numbers drop slowly. The two groups have to be counted separately. Treating every decline as a fixed-share decrease and then working out the day it reaches zero is projecting into a place where there is no data."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "reason",
+    "text": "How much is left of a tritium source that has sat for forty-eight years (half-life about twelve years)? No need to measure it again: four halvings leave a sixteenth."
+   },
+   {
+    "use": "act",
+    "text": "Plan your afternoon coffee: if you know the half-life of caffeine in your body, you can work out what share will be left at bedtime and decide the hour after which you stop drinking it."
+   },
+   {
+    "use": "predict",
+    "text": "Estimate how long until the smell of smoke in a room fades to nothing worth noticing: take two readings, work out how long it takes to halve, then project forward. If a third reading doesn't fit, new smoke is coming in."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Space engineering",
+    "title": "A probe slowly runs short of power",
+    "text": "Voyager 1 was launched in 1977 and runs on the heat given off by decaying plutonium-238. Plutonium-238 has a half-life of about 88 years, so its heat output falls to half over that span. The devices that turn heat into electricity also wear out, so the electric power drops faster still. The mission team switches off instruments one by one, saving the remaining power for the equipment that still works."
+   },
+   {
+    "field": "Environment",
+    "title": "Cesium in the soil",
+    "text": "In April 1986, the accident at the Chernobyl nuclear power plant scattered radioactive cesium-137 over the surrounding land. Cesium-137 has a half-life of about thirty years. Counting decay alone, half of that cesium was left by 2016, and a quarter will be left by 2046."
+   },
+   {
+    "field": "Business",
+    "title": "New users halve every three weeks",
+    "text": "Your budgeting app got 1,600 new users in the first week of March. Tracking them, you find that every three weeks the number still using it halves: 800 after three weeks, 400 after six, 200 after nine. You write \"three weeks\" at the top of the sheet, and measure again after every redesign to see whether that number has grown longer."
+   }
+  ],
+  "ask": [
+   "Which batch of things am I tracking, and did anything new come in or get taken out along the way?",
+   "If I measure twice, the same stretch of time apart, is the decrease a fixed amount or a fixed share of what's left?",
+   "How low does it need to get before it's low enough, and how many half-lives is that?"
+  ],
+  "with": [
+   {
+    "id": "lindy-effect",
+    "sees": "You want to judge whether an open-source library will still be in use next year: one has been around for twenty years, the other came out last month. Going by the half-life assumption, the share that disappears is the same every year, and a library's age tells you nothing. The Lindy effect sees it the opposite way: lasting twenty years is evidence in itself, so the old library can be expected to last another twenty, and the new one will most likely drop out first. Libraries are sifted by whether anyone still uses them, so age counts as evidence, and you should go with Lindy. Use the half-life only for things like atoms and drug levels, where each one's risk doesn't change with age."
+   },
+   {
+    "id": "compounding",
+    "sees": "You have a sum of money. You put part of it in an account paying 7% a year and leave part in a drawer, and inflation runs at 7% a year (an assumption). After ten more years, compounding says the money in the account has roughly doubled, and the half-life says the money in the drawer buys only about half as much. The two curves use the same arithmetic in opposite directions. First see whether the money grows by a fixed share each year or shrinks by one, then decide whether to wait or move it."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A lab's wastewater contains a tracer whose concentration halves every 4 hours. Before the water is released, a sample is tested every 4 hours, and it may be released only when a test shows less than 2% of the starting concentration.",
+    "question": "Counting from the starting concentration, after the test at which hour can the water first be released?",
+    "explain": "With half left every 4 hours, getting below 2% takes halving again and again until less than a fiftieth is left. At the 20-hour test about 3.1% is still left; the 24-hour test comes after 6 halvings, with about 1.6% left.",
+    "options": [
+     {
+      "text": "48 hours",
+      "correct": false,
+      "feedback": "It already met the limit at 24 hours. Waiting another 24 is just wasted time."
+     },
+     {
+      "text": "8 hours",
+      "correct": false,
+      "feedback": "8 hours is only two halvings, with 25% still left, far from 2%."
+     },
+     {
+      "text": "20 hours",
+      "correct": false,
+      "feedback": "20 hours is five halvings, with about 3.1% left, still above 2%."
+     },
+     {
+      "text": "24 hours",
+      "correct": true,
+      "feedback": "Six halvings leave about 1.6%, the first time it is below 2%."
+     }
+    ]
+   },
+   {
+    "stem": "Two cleaning products wash into the same stream, starting at the same concentration. In the stream, A's concentration halves every 4 days, and B's every 8 days.",
+    "question": "After 24 days, B's concentration is how many times A's?",
+    "explain": "In 24 days A halves 6 times, leaving 1/64; B halves 3 times, leaving 1/8, so B is 8 times A. The gap between them keeps growing over time.",
+    "options": [
+     {
+      "text": "2 times",
+      "correct": false,
+      "feedback": "2 is just the ratio of the two half-lives. In 24 days the two halve a different number of times, and the gap builds up with each extra halving."
+     },
+     {
+      "text": "4 times",
+      "correct": false,
+      "feedback": "4 times would mean A halved two more times than B. It actually halved three more times."
+     },
+     {
+      "text": "8 times",
+      "correct": true,
+      "feedback": "A has 1/64 left and B has 1/8; divide one by the other and you get 8."
+     },
+     {
+      "text": "6 times",
+      "correct": false,
+      "feedback": "6 is the number of times A halves, not the ratio of the concentrations. For the ratio, divide the two shares that are left."
+     }
+    ]
+   },
+   {
+    "stem": "The rain barrel in your yard takes in 60 liters of rainwater every morning. Each evening half the water in the barrel gets used, the next morning another 60 liters comes in, and this goes on day after day.",
+    "question": "In the long run, about how much water is in the barrel each morning once the rain has come in?",
+    "explain": "Once it is steady, the half left in the evening plus the 60 liters that come in the morning exactly equals that morning's amount, so the amount is 120 liters.",
+    "options": [
+     {
+      "text": "120 liters",
+      "correct": true,
+      "feedback": "60 liters are left in the evening, and with the morning's 60 it comes back to exactly 120, then stays the same every day."
+     },
+     {
+      "text": "It keeps growing with no limit",
+      "correct": false,
+      "feedback": "The more water in the barrel, the more gets used in the evening. At 120 liters, in and out are equal, and it stops growing."
+     },
+     {
+      "text": "60 liters",
+      "correct": false,
+      "feedback": "60 liters is only one day's inflow. It leaves out the half left from the night before."
+     },
+     {
+      "text": "90 liters",
+      "correct": false,
+      "feedback": "90 liters is the amount on the second morning. After that it keeps rising each day."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "More coins, closer to exactly half each round",
+  "caption": "Each thin line is one run: remove the heads, toss the rest. At 1,000 coins the lines hug the dashed one; at 10 they soon jump about. Tap \"Reroll\" to toss again.",
+  "x": {
+   "label": "Rounds tossed"
+  },
+  "y": {
+   "label": "Coins left",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "m",
+    "label": "Starting coins",
+    "min": 10,
+    "max": 1000,
+    "step": 10,
+    "value": 1000,
+    "unit": ""
+   }
+  ],
+  "runs": 12,
+  "model": {
+   "steps": 8,
+   "init": {
+    "c": "m"
+   },
+   "next": {
+    "c": "clamp(round(c/2 + randn()*sqrt(c)/2), 0, c)"
+   }
+  },
+  "series": [
+   {
+    "name": "Each run",
+    "expr": "c/m*100",
+    "tone": "accent"
+   },
+   {
+    "name": "Exactly half",
+    "expr": "100*0.5^k",
+    "tone": "ink",
+    "dashed": true,
+    "thin": false
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Avg taken in round 1",
+    "expr": "m/2",
+    "unit": " coins",
+    "digits": 0
+   },
+   {
+    "label": "Avg left after 8",
+    "expr": "m*0.5^8",
+    "unit": " coins",
+    "digits": 1
+   }
+  ]
+ }
+}

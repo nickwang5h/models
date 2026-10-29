@@ -1,0 +1,202 @@
+{
+ "id": "checks-and-balances",
+ "name": "Checks and Balances",
+ "en": "制衡与分权",
+ "discipline": "society",
+ "one_line": "Let the people who can say no watch each other, so nobody gets the final word alone.",
+ "story": "In United States v. Nixon the Supreme Court rules 8–0 that the president must hand over the Watergate tapes, and Nixon resigns",
+ "shallow": {
+  "scene": "In the summer of 1972, several men broke into the Democratic Party's headquarters in the Watergate building in Washington to plant listening devices and were caught in the act. This was the Watergate scandal. The investigation led step by step to President Nixon's White House. Conversations in the president's office had all been recorded. The investigators wanted the tapes, and Nixon refused to hand them over, on the grounds that the president's conversations with his advisers were his right to keep private.\n\nIn July 1974, the Supreme Court ruled 8 to 0 that he had to hand them over. On the tapes, a few days after the break-in, he had discussed with his advisers how to get the FBI to stop investigating. By then Congress was already moving toward impeachment. Once the tapes were made public, even members of Congress who had been protecting him turned against him, and impeachment looked certain to pass. On August 8, Nixon announced his resignation.\n\nThe Chief Justice who wrote that ruling, Burger, had been appointed by Nixon himself. Federal judges serve for life: the president could put Burger on the court but could not remove him, so Burger dared to rule against the man who had appointed him.",
+  "plain": "Take a 200,000-yuan purchase. If the same person picks the supplier, approves the payment and checks the goods, then however honest he is, nobody would spot a mistake. Checks and balances first hands these three steps to three people: purchasing picks, finance pays, the warehouse checks. Splitting them up isn't enough on its own. Finance also needs the power to refuse payment, and the warehouse the power to refuse delivery; otherwise the other two just stamp whatever comes, and the order goes all the way through anyway. If the buyer wants to put this money in his own pocket, he has to win over the other two at once, and one person's idea becomes a three-person conspiracy."
+ },
+ "deep": {
+  "mechanism": "### The more people you have to win over to cross the line, the higher the cost\n\nIf one person handles an order from start to finish, crossing the line (say, diverting payment for the goods) only takes his own decision. Split the order between two people, and he needs one accomplice; split it among three, and he has to win over two at once. Each extra person who handles it adds one more risk of being reported, and one more share of the gains that has to be handed out.\n\n### The person who says no must be able to see, able to stop, and not afraid of being removed\n\nIf any one of the three is missing, the power to refuse payment is just for show. If finance only sees a summary sheet handed over by purchasing and has never seen the original contract, it might as well not look. If the system pays anyway after finance refuses, it hasn't stopped anything. If the buyer's boss can move the finance person to another job at any time, finance won't dare refuse. Burger dared to rule against Nixon because of exactly the third: the president appointed him but couldn't remove him.\n\n### Draw the joint-signing threshold somewhere in the middle\n\nAbove a certain amount, an order only counts if several people all sign it; this is called joint signing. Draw the line at 0 yuan, and even buying a box of printer paper needs three signatures and takes a week to approve. Draw it at 1 million, and a 900,000-yuan purchase can go through with one person. Most companies draw the line in the middle: below 5,000 yuan, approve directly; above that, joint signing.",
+  "origin": "The mixed government of ancient Rome already had similar arrangements. Montesquieu set out the separation of powers systematically in *The Spirit of the Laws* in 1748, and the US Constitution of 1787 built it into a system. In 1788, in No. 51 of *The Federalist Papers*, Madison argued that \"ambition must be made to counteract ambition.\"",
+  "limits": "Splitting power suits decisions that affect other people's interests, where someone has to answer for it if things go wrong. A sudden accident can't wait for joint signing, so the person in charge on the spot should be given time-limited authority in advance, with a review afterward. The easiest place for it to go wrong is where several parties can all say no, but nobody is responsible for the result: each person only looks after their own checkpoint, and when a bad result comes, there's nobody who has to answer for it."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Set up the cash process for a community canteen: the person who takes the money, the person who keeps the books and the person who counts the stock are three different people, so nobody gets the chance to leave an entry out."
+   },
+   {
+    "use": "explain",
+    "text": "Explain why a bill the president vetoed can still become law: if two-thirds of both the House and the Senate vote for it again, the veto is overridden."
+   },
+   {
+    "use": "act",
+    "text": "Before you sign a contract, first check whether your signature can stop the thing: if it can't, your signature is just sharing the blame for someone else."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "The trader also kept the custody records",
+    "text": "In 1995, Toshihide Iguchi, a bond trader at Daiwa Bank's New York branch, wrote to the head office to confess that over eleven or twelve years he had hidden about 1.1 billion dollars in losses. He had started in the back office handling securities custody, and later both trading and the custody records came under him. When he lost money, he secretly sold bonds held in the custody accounts to cover it and then altered the records, so the reports always matched. In November that year, US regulators ordered Daiwa Bank to stop doing business in the United States."
+   },
+   {
+    "field": "Technology",
+    "title": "The release button isn't in the developers' hands",
+    "text": "Your payments team has a rule: merging code needs another engineer's approval, and only the operations team has the button to release to production. In a week of rushing to meet a deadline, one developer wanted to skip review and go live directly. The system rejected his release, so he had to go to the reviewer and walk through his changes one by one. At the third change, the reviewer found a bug that would charge customers twice."
+   },
+   {
+    "field": "Personal life",
+    "title": "A club's money handled by three people",
+    "text": "You take over the funds of a campus club. The rule is that the president approves the budget, the cashier takes out the money, and the bookkeeper collects receipts and records them, and no one holds two of these jobs. Partway through the term, the president wants to use the leftover money to book a dinner first. The cashier won't take out the money without seeing a signed approval, and you won't record it without seeing a receipt. The president writes an approval stating what the money is for, and two weeks later comes back with the receipt to settle the accounts."
+   }
+  ],
+  "ask": [
+   "From drafting to final release, is there anyone who can make this happen without anyone else's nod? Start by looking at the last person to sign in the approval chain.",
+   "Can the person who says no get the original documents? Find out who put together the material they're given.",
+   "When did someone last say \"no\" at this checkpoint, and what happened? Go through the record of what was sent back."
+  ],
+  "with": [
+   {
+    "id": "transaction-costs",
+    "sees": "Every order needs three people to sign it in advance. Checks and balances counts what would slip through if one checkpoint were dropped; transaction costs counts how many hours of people's time those three checkpoints use up each month. Switch small orders to one person's approval, and have finance pick 20% at random each month to review: anyone taking kickbacks still fears being picked, but orders no longer have to wait."
+   },
+   {
+    "id": "principal-agent",
+    "sees": "Principal-agent first works out his side of the sums for you: give him a share of the profits, so that selling more also earns him more. Checks and balances sends someone else to check the books, rather than relying on his good conduct. A profit share works against everyday slacking that eats into profits; for the kind of thing where one purchase could empty out a month of the shop's takings, you need the person who checks the books."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Company rules say that purchase contracts must be signed by both the purchasing manager and the finance manager. Both managers report to the same vice president, and both their year-end bonuses are tied to the same cost-cutting target. The vice president wants a supplier with personal connections to win the contract, and the two managers sign it one after the other.",
+    "question": "Why didn't the two signatures stop this contract?",
+    "explain": "The number of signatures isn't the strength of the check. When both people's futures are decided by the vice president, two signatures are just one wish of the vice president. For two signatures to work, the people signing must not both be under the sway of the same person.",
+    "options": [
+     {
+      "text": "The approval process for contracts is too short; there should be more approval steps.",
+      "correct": false,
+      "feedback": "With more steps, as long as each one answers to the same person, each one still lets it through."
+     },
+     {
+      "text": "The two managers have had no training in purchasing compliance, so they don't know which suppliers are a problem.",
+      "correct": false,
+      "feedback": "The question doesn't say the two didn't know; it says they signed in the face of the vice president's wishes. Training supplies knowledge, not the backbone to say no."
+     },
+     {
+      "text": "Both managers' jobs and bonuses are decided by the vice president, so the two signatures really express one person's will.",
+      "correct": true,
+      "feedback": "Whether it can be stopped depends on whether the people signing dare to say no. Both fear the same person, so nobody is willing to pay the price of saying no."
+     },
+     {
+      "text": "The contract is too large; two signatures aren't enough, and it should go up to five people.",
+      "correct": false,
+      "feedback": "If the added people also report to the vice president, one word from him gets all five to sign. The number of people doesn't change who has the final say."
+     }
+    ]
+   },
+   {
+    "stem": "A fund's compliance officer finds a trade that goes beyond the client's authorized level of risk, flags it red in the system and sends it back. The head of trading sees this, uses his own access to click \"override,\" and the trade goes through as usual, with no notice sent to anyone by the system. The compliance officer's term is decided by the investment committee, and he can see all the trading records.",
+    "question": "To make the compliance officer's \"no\" really take effect, what should change?",
+    "explain": "The compliance officer can see, and his term isn't controlled by the trading desk. What's missing is the ability to stop: the head of trading can push through any trade he sends back with one click. The power to override should be given to an independent party other than the compliance officer, and leave a record.",
+    "options": [
+     {
+      "text": "Have the compliance officer send a daily summary of flagged trades to the head of trading, as a reminder.",
+      "correct": false,
+      "feedback": "The head of trading can already see the red flags; a reminder doesn't change the fact that he can still override with one click."
+     },
+     {
+      "text": "Give the head of trading compliance training so he understands the authorized risk levels better.",
+      "correct": false,
+      "feedback": "He knows the limits when he overrides. The gap is in whose hands the override power is in, not in his understanding."
+     },
+     {
+      "text": "Add a second compliance officer, so that both can flag and send trades back.",
+      "correct": false,
+      "feedback": "Flagging and sending back is already there. With one more person flagging, the head of trading can still override."
+     },
+     {
+      "text": "Overriding a flagged trade must be approved by an independent party other than the compliance officer, and reported to the board for the record.",
+      "correct": true,
+      "feedback": "Overriding is no longer up to one person on the trading desk, so the compliance officer's send-back can't be overturned with one click."
+     }
+    ]
+   },
+   {
+    "stem": "Your company's articles say that major matters need the agreement of both founders, who each hold half the shares, and either one can veto. The two have been deadlocked for half a year over whether to accept a round of funding, and a competitor has taken the chance to win away two big clients.",
+    "question": "While keeping both sides' veto, what else should the articles add?",
+    "explain": "That both sides can veto is where this company's checks and balances lie. What's missing is what to do once things are stuck: set a deadline for the vote, and if there's still no result when it runs out, hand the matter to a third party named in advance. The veto is kept, and the company won't be dragged down.",
+    "options": [
+     {
+      "text": "Agree on a deadline for the vote; if there's still no result when it runs out, a third party named in advance decides.",
+      "correct": true,
+      "feedback": "The deadline and the step up to an outside decision give the deadlock a way out, and both founders keep their veto."
+     },
+     {
+      "text": "Narrow the major matters that need both founders' agreement down to funding alone.",
+      "correct": false,
+      "feedback": "Once it's narrowed, the one remaining matter can still get stuck; the problem of having no way out hasn't been touched."
+     },
+     {
+      "text": "Remove one side's veto, and have the chair decide major matters alone.",
+      "correct": false,
+      "feedback": "Remove the veto, and major decisions are back in one person's hands, so the checks and balances are gone."
+     },
+     {
+      "text": "Require the two founders to hold one more meeting a week to talk things through.",
+      "correct": false,
+      "feedback": "However many meetings they hold, without a rule that forces a decision by a deadline, the two can keep vetoing forever."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "grid",
+  "title": "Miss one of three, and finance's \"no\" is for show",
+  "caption": "Same 200,000-yuan purchase; finance can refuse to pay. If any box on the left holds, the check is hollow; only with all three on the right does refusal count.",
+  "rowLabel": "Finance check",
+  "colLabel": "Checks and balances",
+  "rows": [
+   "Can see",
+   "Can stop",
+   "Can't be removed"
+  ],
+  "cols": [
+   "Broken",
+   "Working"
+  ],
+  "cells": [
+   [
+    {
+     "text": "Sees summary only",
+     "sub": "Never saw the contract",
+     "tone": "warn"
+    },
+    {
+     "text": "Sees the contract",
+     "sub": "Original goes straight to finance",
+     "tone": "accent"
+    }
+   ],
+   [
+    {
+     "text": "System pays anyway",
+     "sub": "\"No\" is just a comment",
+     "tone": "warn"
+    },
+    {
+     "text": "Refusal stops it",
+     "sub": "No release, no payment",
+     "tone": "accent"
+    }
+   ],
+   [
+    {
+     "text": "Buyer's boss can move him",
+     "sub": "One refusal, job at risk",
+     "tone": "warn"
+    },
+    {
+     "text": "Purchasing can't fire",
+     "sub": "Like a justice for life",
+     "tone": "accent"
+    }
+   ]
+  ]
+ }
+}

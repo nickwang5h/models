@@ -1,0 +1,178 @@
+{
+ "id": "network-effects",
+ "name": "Network Effects",
+ "en": "网络效应",
+ "discipline": "business",
+ "one_line": "The more people use it, the more it's worth to each of them.",
+ "story": "Zuckerberg puts TheFacebook online at Harvard on February 4, and by the afternoon of February 8 more than 650 people have signed up",
+ "shallow": {
+  "scene": "On February 4, 2004, Mark Zuckerberg put TheFacebook online from his dorm room at Harvard. Students could look up classmates by course, dorm and club. One early user said that when he didn't know anyone in a class, he used it to find classmates to ask for help. By the afternoon of February 8, more than 650 students had signed up. Each new classmate who filled in a profile gave everyone already there one more person they could find, and gave the next student one more reason to sign up.",
+  "plain": "Your family puts in a telephone, the only one in town. Pick up the receiver and there's no one to call. The neighbors put one in too, and now you have one person you can call. Once the town has ten phones, you can call nine households, yet your phone and the line haven't changed at all. When economists talk about network effects, this is what they are looking at: newcomers make the same thing in existing users' hands more useful. It works in reverse too. As households move away one by one, the same phone slowly turns back into an ornament."
+ },
+ "deep": {
+  "mechanism": "### Double the people and the pairs that can connect more than quadruple\n\nIf ten people can each reach everyone else, each person can contact the other nine, and there are 45 pairs. With $n$ people, each can contact the other $n-1$; every pair gets counted once from each end, so the number of pairs is\n\n$$\\frac{n(n-1)}{2}$$\n\nPairs grow faster than people because every newcomer gives every existing user one more person to contact. Going from ten people to twenty takes the pairs from 45 to $\\frac{20\\times19}{2}=190$, more than four times as many; at thirty people there are 435 pairs. When Metcalfe estimated the value of a network, he multiplied the number of pairs by the value of each connection.\n\n### The people who join have to be people others can use\n\nSuppose that in a group of twenty, only a tenth of the pairs actually deal with each other. Of the 190 pairs, only 19 are useful, fewer than the 45 pairs in a group of ten where everyone has reason to contact everyone else. That is why, in a work group chat, one engineer who can fix the equipment joining is worth more than a hundred strangers joining.\n\n### The benefit can take a detour to reach existing users\n\nIn a messaging app, a new user directly becomes someone you can contact. An operating system is different: only once it has more users are developers willing to write software for it, so existing users get a whole batch of new software to choose from without switching systems. The first kind is called a direct network effect, the second an indirect network effect.",
+  "origin": "In 1985, Michael Katz and Carl Shapiro published \"Network Externalities, Competition, and Compatibility,\" which analyzed how this effect shapes competition between companies. Around 1980, Robert Metcalfe used the number of connections to explain the value of Ethernet, and in 1993 George Gilder named this way of counting Metcalfe's law. It makes a network's value grow with the square of the number of people, but it is only an estimate, and it assumes every connection is worth the same.",
+  "limits": "Network effects make sense whenever a newcomer gives existing users a little more: messaging, matching buyers with sellers, software ecosystems. But past a certain size, queues, spam and harassment grow along with the crowd, and existing users' experience gets worse instead. Networks also split up by place and by interest, and people mostly contact only one small part, so a small, close-knit circle can beat a large, loose one. Plugging the number of sign-ups into the squared formula to put a value on a company gets the sums wrong: dead accounts and people with nothing to do with each other get counted as value too."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "On a team there's always someone urging coworkers to switch to the same document tool, and the reason is plain: only when coworkers use it too do your own documents have someone to edit them with."
+   },
+   {
+    "use": "act",
+    "text": "Before handing out subsidies to bring in new users, ask what one more person gives existing users. If you can't answer, the subsidy is only buying a number."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "More articles, readers come back",
+    "text": "When Wikipedia launched in 2001 it had very few articles. Whatever you looked up wasn't there, and few people bothered to come back. Once the articles multiplied, readers found answers more often and more of them came back. Some of them fixed typos or added articles while they were there, and the next reader found a little more."
+   },
+   {
+    "field": "Medicine",
+    "title": "Kidneys in a matching pool",
+    "text": "A patient with kidney failure may have a relative who is willing to donate a kidney but whose blood type doesn't match. The patient and the relative can join a matching pool together and swap donations with other patients and relatives. When the pool holds only a few pairs, most people can't find a cycle of swaps that works. With more pairs, people who had no way out start getting scheduled for surgery."
+   },
+   {
+    "field": "Personal life",
+    "title": "Doubles in the badminton group chat",
+    "text": "The badminton group chat you joined has only eight people, and on weekends there often aren't enough players for doubles, so some people have started not showing up. Then three new players join who play at a similar level and are free on Saturday mornings. Two courts' worth of doubles come together more often, and the people who were thinking of leaving the group stay."
+   }
+  ],
+  "ask": [
+   "When one more user joins, which kind of existing user gets what extra use out of it, exactly?",
+   "What really shapes an existing user's experience: all the users, or only the ones they actually deal with?",
+   "If another batch of people joined, would that add usable connections, or add queues and harassment?"
+  ],
+  "with": [
+   {
+    "id": "unit-economics",
+    "sees": "You subsidize every ride to bring in new passengers; suppose each ride gets 8 yuan off. The network-effects sums say that each extra passenger makes it easier for drivers to get rides and shortens existing passengers' wait for a car, so the subsidy pays. The unit-economics sums say that once the subsidy stops, people leave, and the money has left nothing behind. First check how many users stay after the subsidy stops. If many stay, keep subsidizing; if few stay, stop first and fix the product."
+   },
+   {
+    "id": "critical-mass",
+    "sees": "A new community has only forty people. On average each person can find too few partners, and people leave after using it twice. Network effects explain why things spin faster and faster once there are more people; critical mass asks how many people you must gather first before it starts spinning at all. In the early stage, go first for the small circle that's easiest to fill."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You run an app for booking tutoring lessons within a city. It has 600 parents and tutors, and a booking request often waits several days for a reply. The budget only covers one thing. Plan one advertises nationwide and is expected to add 30,000 sign-ups spread across 300 cities. Plan two promotes only in schools in your city and is expected to add 1,200 parents and tutors whose subjects and time slots match the current users'.",
+    "question": "To help current users book lessons faster, how do the two plans compare?",
+    "explain": "A lesson has to be booked within one city. The 1,200 new people in your city are people current users can actually book with; the 30,000 elsewhere give them no one to book with.",
+    "options": [
+     {
+      "text": "The nationwide plan is better: it brings 25 times as many people, and far more connections in total.",
+      "correct": false,
+      "feedback": "Most of those connections fall between cities that have nothing to do with each other, and not one of them helps a current user book a lesson."
+     },
+     {
+      "text": "The nationwide plan is better: more sign-ups make the platform better known, and parents feel safer.",
+      "correct": false,
+      "feedback": "Those people are in other cities. Not one tutor or student that current users could book has been added."
+     },
+     {
+      "text": "The local plan is better: the new people are ones current users can actually book with.",
+      "correct": true,
+      "feedback": "The new parents and tutors in your city match current users' subjects and time slots, so the wait for a reply will get shorter."
+     },
+     {
+      "text": "They're about the same; how fast lessons get booked depends mainly on the app's matching feature.",
+      "correct": false,
+      "feedback": "With the feature unchanged, only more people who can be matched means more chances to book."
+     }
+    ]
+   },
+   {
+    "stem": "You do the numbers at a factory that makes water purifiers. Orders have risen from 2,000 units a month to 8,000, the molds and production line are the same as before, and the fixed cost spread over each unit has halved. A colleague says in a meeting: the more people buy, the more useful each existing customer's purifier becomes.",
+    "question": "What is wrong with this claim?",
+    "explain": "The change happened only in the factory's books: with bigger batches, the fixed cost is spread thinner. Existing customers' purifiers and the way they use them haven't changed, and new customers haven't added anything for them.",
+    "options": [
+     {
+      "text": "Nothing is wrong with it: with more buyers, there will be more service centers too.",
+      "correct": false,
+      "feedback": "Nothing in the question says service centers increased. The only thing that changed is the factory's cost per unit."
+     },
+     {
+      "text": "The claim holds only when existing customers buy replacement filters.",
+      "correct": false,
+      "feedback": "Buying replacement filters is existing customers' own spending, not something new customers joining gave them."
+     },
+     {
+      "text": "If costs fall, the price should fall; without a price cut, nothing has become more useful.",
+      "correct": false,
+      "feedback": "Whether to cut the price is a pricing question. It has nothing to do with whether what existing customers own has become more useful."
+     },
+     {
+      "text": "Existing customers' purifiers haven't changed; only the factory's cost per unit has.",
+      "correct": true,
+      "feedback": "New customers bought machines, existing customers are still using the same machines, and all the benefit is in the factory's books."
+     }
+    ]
+   },
+   {
+    "stem": "You work on the owners' community for an electric car brand. Owners have grown from 20,000 to 200,000. The brand hasn't built a single new charging station itself, yet charging companies have been putting in chargers one after another in the residential complexes where owners are concentrated. Existing owners haven't changed cars or updated any software, but they find there are more chargers nearby they can use.",
+    "question": "Where does this extra convenience for existing owners come from?",
+    "explain": "New owners enlarged the charging business, and only then were charging companies willing to spend money putting in chargers. The benefit didn't come directly from the new owners; it took a detour before reaching existing owners.",
+    "options": [
+     {
+      "text": "With more owners, the brand earns more and spends some of it paying for existing owners' charging.",
+      "correct": false,
+      "feedback": "In the question the brand built no new stations and paid no subsidy. The chargers were put in by charging companies."
+     },
+     {
+      "text": "With more owners, putting in chargers pays better, so charging companies come in, and existing owners get to use the chargers too.",
+      "correct": true,
+      "feedback": "New owners gave the charging companies a return on their spending. More chargers went in, and existing owners got more choices without doing anything."
+     },
+     {
+      "text": "New owners recommended good charging spots in the community, and existing owners followed their tips.",
+      "correct": false,
+      "feedback": "A recommendation can only point the way; it can't create charging spots out of nothing. What increased in the question was actual chargers."
+     },
+     {
+      "text": "With more owners, the brand's reputation improved, and existing owners' cars are worth more.",
+      "correct": false,
+      "feedback": "Reputation and resale value are a different matter. What existing owners gained in the question was easier charging."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "type": "bar",
+  "title": "Double the people, more than 4× the pairs",
+  "caption": "Each newcomer adds one contact for everyone already there. From 10 to 30 people, each person's contacts go from 9 to 29; pairs, from 45 to 435.",
+  "categories": [
+   "10 people",
+   "20 people",
+   "30 people"
+  ],
+  "y": {
+   "label": "Count"
+  },
+  "series": [
+   {
+    "name": "Each can contact",
+    "values": [
+     9,
+     19,
+     29
+    ],
+    "tone": "muted"
+   },
+   {
+    "name": "Pairs in the group",
+    "values": [
+     45,
+     190,
+     435
+    ],
+    "tone": "accent"
+   }
+  ]
+ }
+}

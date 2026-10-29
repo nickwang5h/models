@@ -1,0 +1,245 @@
+{
+ "id": "credible-commitment",
+ "name": "Credible Commitment",
+ "en": "可信承诺",
+ "discipline": "games",
+ "one_line": "Make it impossible to back out, and people will believe you'll follow through.",
+ "story": "At the Battle of Julu, Xiang Yu crosses the river, sinks the boats, smashes the cooking pots, burns the shelters and carries three days' food, and crushes the Qin army",
+ "shallow": {
+  "scene": "The Chinese saying \"break the cauldrons and sink the boats\" describes something that really happened. In 207 BC, the Qin army surrounded the city of Julu, held by the army of Zhao, and Xiang Yu led the army of Chu across a river to rescue it. According to the *Records of the Grand Historian*, as soon as they were across, he ordered all the boats sunk, the cooking pots smashed and the camp's shelters burned, and each man carried only three days' food.\n\nThis was done for his own soldiers to see. With the boats sunk, there was no going back; with food for only three days, they couldn't hold out either. Every man understood that if they didn't win this battle, they would die. In the fighting, each Chu soldier was a match for ten, and they crushed the Qin army and broke the siege of Julu.\n\nXiang Yu didn't shout \"Never retreat!\" one more time. He took away the road back, and his soldiers were left with only one choice: fight with everything they had.",
+  "plain": "Every morning you drive two coworkers to work. You agree to leave at 7:30, and they are always late. You say you won't wait for them anymore, and nobody takes it seriously: they know you always wait, because waiting ten more minutes costs you nothing much. Then you take on chairing a 7:50 morning meeting. A chair who is late gets named in front of everyone, and your two coworkers know this too. Now if you wait for them, you are the one who gets named, so they can work out that at 7:30 you will definitely leave. The next day, both are downstairs at 7:20.\n\nYou didn't say a single tougher word. You just made waiting too costly for you, and they stopped betting that you would wait. That is credible commitment: when the day comes to follow through, backing out is no longer worth it to you, or you can't back out at all, and only then will others plan around what you said."
+ },
+ "deep": {
+  "mechanism": "### The other side weighs what you will gain or lose when the time comes, not your promises\n\nYou run a small machinery plant. A customer wants to order a batch of equipment and worries that once you've taken the advance payment, you'll turn around and take a more profitable rush order. The contract can include a penalty for breaking it, but the penalty isn't always collected: the customer has to pursue it, and you only pay if they do. Say delaying earns you $g$ yuan more, the penalty is $F$ yuan, and the chance of being pursued after breaking the contract is $p$. Since you only pay when pursued, on average each breach costs you $pF$ yuan. For the penalty to hold back the delay, you need\n\n$$pF>g$$\n\nthat is, the penalty you can expect to pay on average must be more than the extra money from delaying. Suppose delaying earns 2,000 yuan more, the penalty is 5,000 yuan, and only three breaches in ten get pursued. On average you'd pay $0.3\\times5000=1500$ yuan, less than 2,000, so delaying still pays, and the customer is right to worry.\n\nRaise the chance of being pursued to one in two, and you'd pay 2,500 on average, more than 2,000, so you no longer delay. With only a one-in-ten chance of being pursued but a penalty written at 50,000 yuan, you'd pay 5,000 on average, which holds the delay back just as well.\n\n### The tightest constraint takes the option to back out away\n\nHowever high the penalty, it only counts if someone goes after it. If the advance payment goes straight into a third-party escrow account and you can't take out a cent until the goods pass inspection, you can't use that money to take a rush order, and the customer doesn't have to count on anyone pursuing anything. The Chu army at Julu was in the same position: the boats were sunk and the shelters burned to the ground, every soldier could see it, and the only move left to them was forward.\n\n### The constraint has to come before the other side decides, where they can see it\n\nYou are running for student council president and want classmates to believe you'll hand over the job when your time is up. A week before the vote, you print \"One-year term, handed over when it ends,\" together with your step-down date, on your posters and put them up. When classmates vote, they judge from that poster whether you'll hand over when the time comes. If you announce this only after you've been elected, the votes are already cast, and nobody voted on the basis of it.",
+  "origin": "Thomas Schelling set this idea out systematically in his 1960 book *The Strategy of Conflict*: a negotiator can change what the other side expects of him by limiting his own actions. Breaking the cauldrons and sinking the boats was a much earlier practice; Schelling distilled such moves into a tool for analyzing threats, commitments and bargaining.",
+  "limits": "Credible commitment is strongest in one-off deals between strangers: the other side has no other way to know you, and can only look at what you've put on the table in front of them. When the other side has another way out, however tightly you lock yourself in, they can just turn and walk away. Don't lock in too tightly on things you expect to change: if circumstances shift, you can only keep going down the old road."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Set a return policy for a new online shop: put \"Returns within seven days, no reason needed, and I pay the shipping\" on the product page. Buyers see it before they order, so they dare to order."
+   },
+   {
+    "use": "act",
+    "text": "Before a renovation, agree with the building crew to pay by stages: the next payment comes only after each stage passes inspection. That takes away the gain from dragging the job out, so they won't treat your schedule as just a suggestion."
+   },
+   {
+    "use": "predict",
+    "text": "Judge whether a government's \"no tax rises\" can be relied on: see whether it has given up the power to raise taxes, or written the promise into law. If not, treat it as still just words."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Public policy",
+    "title": "Handing over interest rates",
+    "text": "In May 1997, soon after Britain's Labour government came to power, the Chancellor of the Exchequer, Gordon Brown, announced that the power to set interest rates would pass to the Bank of England, which would set them to meet an inflation target set by the government. Before that, the Chancellor had the final say on rates, and the government was tempted to push them down. Afterward, rates were decided each month by the Bank's Monetary Policy Committee, and this was written into law in 1998. The Treasury can take the power back only in extreme circumstances, through a public procedure set by law."
+   },
+   {
+    "field": "Technology",
+    "title": "A total written into code",
+    "text": "In 2009, the Bitcoin network started up, with a rule capping the total number of coins at about 21 million. The people who run nodes each check blocks against the rules and reject blocks that issue too many coins. Anyone who wants to issue more first has to persuade enough node operators to switch to new software; developers can't change a single node just by saying so."
+   },
+   {
+    "field": "Personal life",
+    "title": "A whole year's rent paid up front",
+    "text": "You want to rent a flat for three years. The landlord worries you'll leave after a few months and won't lower the price. You pay a whole year's rent in advance, and the contract says that if you move out early, the rest won't be refunded. The landlord lowers the monthly rent from 5,000 yuan (say) to 4,600."
+   }
+  ],
+  "ask": [
+   "When the day comes to follow through, how much more can I (or the other side) gain by backing out? Write it as a number and set it next to the cost that would have to be paid.",
+   "If I set up this constraint, what is the most I could lose myself? Can I afford that?",
+   "Besides trusting my constraint, does the other side have another way out? If so, they can ignore me."
+  ],
+  "with": [
+   {
+    "id": "optionality",
+    "sees": "Should your small team sign a three-year usage commitment with a cloud provider? The provider offers its discount (say 30% cheaper) only to customers who are locked in: only after you give up the right to leave partway does it dare to cut the price. Optionality sees the other side: your product's direction isn't settled, next year's usage might be a tenth of today's, and over three years you'd still pay for capacity you don't use. If usage has barely changed for months, sign for three years; if the direction is still shifting, pay the higher pay-as-you-go price and keep the exit open."
+   },
+   {
+    "id": "repeated-games",
+    "sees": "A supplier you've worked with for ten years: should new orders have the advance payment held in escrow? By credible commitment's sums, the bigger his gain from running off with the money, the heavier the constraint has to be. Repeated games sees it differently: he is still counting on next year's orders, losing you would cost him more than this one deal, so the future already keeps the terms in check, and forcing escrow on him sounds like saying you don't trust him. With a new supplier you're working with for the first time, there is no future to speak of, and escrow should come in."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You represent a renovation company bidding to refurbish a school building. A rule went out in the company's internal group chat: no proposal priced below 800,000 yuan may be submitted, anyone who quotes lower without permission makes up the difference out of their own bonus, and not even the general manager can change this rule. The client's purchasing manager doesn't know about the rule, and in meetings he keeps pressing you to come down to 700,000.",
+    "question": "Why didn't this rule stop him pushing the price down?",
+    "options": [
+     {
+      "text": "The client doesn't know about the rule, so he still expects you to give way, and pushing on price costs him nothing.",
+      "correct": true,
+      "feedback": "A constraint only changes the other side's prediction when they can see it. He doesn't know about it, so he still works on the basis that you'll give way."
+     },
+     {
+      "text": "The client's purchasing side cares more about price than quality, so he won't let go of the price.",
+      "correct": false,
+      "feedback": "The question says nothing about what the client prefers. He pushes on price because he doesn't know your floor is locked."
+     },
+     {
+      "text": "Making up the difference only comes out of a personal bonus, not the company, so the rule itself doesn't carry enough weight.",
+      "correct": false,
+      "feedback": "Whether it carries enough weight depends on how the other side does the sums. In the question not even the general manager can change the rule, so the constraint itself is firm."
+     },
+     {
+      "text": "The client thinks that, to win the project, the company will quietly cover the difference for the employee when the time comes.",
+      "correct": false,
+      "feedback": "That is only a guess about the client, and there's no sign of it in the question. He pushes on price because he has never seen the rule."
+     }
+    ],
+    "explain": "A constraint only counts if the other side can see it. However tightly the rule locks you in, the client hasn't seen it, so he still bids as if you'll give way. Put the rule on the table, and the pressure on price will stop."
+   },
+   {
+    "stem": "You are the general manager of an internet company. At a sales meeting you announce that the regional manager whose quarterly results come last will be demoted to an ordinary salesperson from the next month. You have nobody at all who could replace him. In the third quarter, the East China regional manager comes last, and he goes on planning next quarter's client visits as usual.",
+    "question": "Why is he so sure of himself?",
+    "options": [
+     {
+      "text": "The rule was only announced out loud at the meeting, and he thinks it doesn't count without a written notice.",
+      "correct": false,
+      "feedback": "The question doesn't mention any written notice. His confidence comes from your having nobody to replace him."
+     },
+     {
+      "text": "He can see that demoting him would leave you with nobody to do the job, so you may not really act when the time comes.",
+      "correct": true,
+      "feedback": "A threat is carried out only by really acting when the time comes. If carrying it out hurts you, he assumes you won't act."
+     },
+     {
+      "text": "He isn't clear which measure the ranking uses, so he isn't sure he counts as last.",
+      "correct": false,
+      "feedback": "He clearly came last and is still planning as usual; the issue isn't that he's unclear about the measure."
+     },
+     {
+      "text": "His pay would barely change after a demotion, so the punishment is too light for him.",
+      "correct": false,
+      "feedback": "The question gives no change in pay. He is sure of himself because he sees that carrying out this rule would cost you."
+     }
+    ],
+    "explain": "Whether a threat is believable depends on whether carrying it out would cost you. Demoting him would first cost you the only person you can use, so he is sure you won't act. Get a replacement ready first, and then your words carry weight."
+   },
+   {
+    "stem": "You rent out a flat and promise the tenant no rent increase for three years. The contract says so, and then adds: \"In the event of major changes in the market, both parties may negotiate an adjustment.\"",
+    "question": "How will the tenant see this promise?",
+    "options": [
+     {
+      "text": "The contract says in black and white that the rent won't rise for three years, so the tenant will treat it as settled.",
+      "correct": false,
+      "feedback": "The added line about negotiating an adjustment leaves the opening for a rent rise in your hands, so the tenant won't treat it as settled."
+     },
+     {
+      "text": "The contract doesn't spell out the penalty for breaking it, so the tenant won't take the promise seriously at all.",
+      "correct": false,
+      "feedback": "Whether there is a penalty isn't the point here. The point is that the clause leaves an opening that you decide on."
+     },
+     {
+      "text": "It's up to you whether to use that opening, so the tenant will only half believe the promise.",
+      "correct": true,
+      "feedback": "The key to undoing it is in your hands, so the tenant has to consider that you might use it someday, and in his eyes the promise doesn't count."
+     },
+     {
+      "text": "The tenant only looks at your usual reputation; the contract's wording won't affect his judgment.",
+      "correct": false,
+      "feedback": "All he has is this contract, and the opening left in its wording directly affects how he sizes you up."
+     }
+    ],
+    "explain": "A promise that leaves an opening, with the opening in your hands, isn't locked at all. \"Both parties may negotiate an adjustment\" leaves the decision on raising the rent with you, so the tenant can only half believe three years without a rise."
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "You change your options; they change their choice",
+  "caption": "Top, before: you can wait, they know you will, so they're late. Bottom: chairing removes \"wait a bit more\" (gray dashes); they know you'll go and are down at 7:20.",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "Before",
+    "sub": "Waiting costs nothing",
+    "layer": 0
+   },
+   {
+    "id": "c",
+    "label": "You still wait",
+    "layer": 1
+   },
+   {
+    "id": "f",
+    "label": "Sure you'll wait",
+    "layer": 2
+   },
+   {
+    "id": "h",
+    "label": "Late as usual",
+    "tone": "warn",
+    "layer": 3
+   },
+   {
+    "id": "b",
+    "label": "Chair the meeting",
+    "sub": "Waiting gets you named",
+    "tone": "accent",
+    "layer": 0
+   },
+   {
+    "id": "d",
+    "label": "Leave 7:30 sharp",
+    "layer": 1
+   },
+   {
+    "id": "e",
+    "label": "Wait a bit more",
+    "sub": "Path removed",
+    "tone": "muted",
+    "layer": 1
+   },
+   {
+    "id": "g",
+    "label": "Sure you'll go",
+    "layer": 2
+   },
+   {
+    "id": "i",
+    "label": "Down at 7:20",
+    "tone": "accent",
+    "layer": 3
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "c"
+   },
+   {
+    "from": "c",
+    "to": "f",
+    "label": "Seen"
+   },
+   {
+    "from": "f",
+    "to": "h",
+    "label": "So"
+   },
+   {
+    "from": "b",
+    "to": "d"
+   },
+   {
+    "from": "b",
+    "to": "e",
+    "label": "Removed",
+    "tone": "muted",
+    "dashed": true
+   },
+   {
+    "from": "d",
+    "to": "g",
+    "label": "Seen"
+   },
+   {
+    "from": "g",
+    "to": "i",
+    "label": "So"
+   }
+  ]
+ }
+}

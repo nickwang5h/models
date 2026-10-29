@@ -1,0 +1,213 @@
+{
+ "id": "social-capital",
+ "name": "Social Capital",
+ "en": "社会资本",
+ "discipline": "society",
+ "one_line": "Relationships you can trust save you the work of finding people, checking them and haggling.",
+ "story": "A fire at an Aisin Seiki plant stops Toyota, and its suppliers pitch in on their own to get production going again within days",
+ "shallow": {
+  "scene": "On February 1, 1997, a fire broke out at the Aisin Seiki plant in Kariya, Japan. The supply of a key Toyota brake part was cut off, and the assembly lines soon stopped. Engineers from other suppliers rushed over with the drawings, lent equipment and people, and set up one makeshift production line after another, without first haggling over who owned the know-how or who would pay them back. On February 6, Toyota started production again. These suppliers had spent years improving processes and solving problems together. They knew whom to call, and they trusted that the help they gave would be remembered.",
+  "plain": "A pipe in your home starts leaking in the middle of the night. With a plumber you don't know, you have to make three calls to compare prices, and you still worry that he'll charge whatever he likes or that the leak will be back once he's gone. But if your downstairs neighbor recommended a plumber last month, one call sets it up: no comparing, no checking, no worrying. Sociologists call the information, help and trust you can draw from relationships like this social capital. Unlike money, it can't be put in a bank. It exists only between you and other people, and with a stranger, all of it has to start again from zero."
+ },
+ "deep": {
+  "mechanism": "### Relationships that keep their word save you three things\n\nAn acquaintance gives you a lead, which saves the search. The other side has kept its word before, which saves checking up and keeping watch. Ways of working you both know save explaining things over and over and bargaining over terms. Toyota's suppliers were spared all three, so they went straight to work.\n\n### The further news of a broken promise travels, the more keeping your word pays\n\nSuppose 30 people in a circle all do business with one another, and you skip out on a debt. If the news reaches only 1 person, you lose one customer, and skipping out may still pay. If the news reaches the whole circle, you lose the whole circle's business, and nobody will put up money first for you again. So the further the news travels, the worse a deal skipping out on debts becomes, the more people trust others not to skip out, and the more willing they are to go first where a contract doesn't spell everything out. The other way around, once the circle breaks up and news no longer travels, that confidence to go first goes too.\n\nKeeping your word, answering quickly and solving hard problems together all count toward the next time you work together; one serious broken promise can cancel years of it.\n\n### Close ties give support, looser ties bring news\n\nFamily and close friends are the people to borrow tools from, to ask to look after someone, and to get through hard times with, because you know each other through and through. But close friends mostly know one another, so they hear the same news. For a new job or new customers, you need looser acquaintances who spend their time in other circles.",
+  "origin": "Hanifan used the term in 1916 to explain how people in rural communities helped one another. Bourdieu in 1980 and Coleman in 1988 each built it into a theory of how relationships become a resource and how they get people to cooperate. Coleman described how New York diamond merchants, relying on their reputation in the community, would hand diamonds to another dealer to take away and examine. Putnam brought it into political science in 1993 with a study of Italy's regions.",
+  "limits": "Social capital saves the most where the circle is stable and news gets around, as with longtime neighbors or a supplier of many years. On a platform where half the people change every year, they leave before a reputation can spread, and trust can't build up. Someone with a thousand people in their contacts thinks they hold this asset, and when trouble comes finds that only two or three will call back. Trust inside a circle can also become a barrier that keeps newcomers out, and it can lead people to keep quiet about a colleague's mistakes so as not to hurt feelings."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Two people run the same kind of small business, but one can buy stock on credit and the other must pay cash. The difference is often that the first has spent years building a name on that street for paying what they owe."
+   },
+   {
+    "use": "act",
+    "text": "Before taking over a new team, list the people you can get to do things for you, and who can get you to do things for them, then decide whom to spend your first week on."
+   },
+   {
+    "use": "predict",
+    "text": "Take two wholesale markets: in one the stallholders have stayed the same for over ten years, in the other the stalls change hands every year. Expect taking goods first and paying at the end of the month to be far more common in the first."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Careers",
+    "title": "Jobs from people you rarely see",
+    "text": "Granovetter's study, published in 1973, interviewed white-collar workers in Newton, Massachusetts, who had changed jobs in the past few years. Of those who found a job through someone they knew, most saw that person only now and then, or even rarely. These contacts were mostly former colleagues and old classmates who had gone to work elsewhere, and that is how jobs that never came up in people's everyday circles got passed along to them."
+   },
+   {
+    "field": "Small business",
+    "title": "Take the goods now, pay at the weekend",
+    "text": "You sell fruit at a wholesale market and have bought from the same orchard for three years, always paying on time. Early this summer, a batch of lychees has to be sold fast. On Monday the orchard owner lets you take it away and pay on Friday; a new stallholder who wants the same goods is told to pay half up front. You sell the whole batch and on Friday bring the money over, every cent of it."
+   },
+   {
+    "field": "Community",
+    "title": "Two neighborhoods in a heat wave",
+    "text": "The Chicago heat wave of July 1995 is often estimated to have killed more than seven hundred people. The sociologist Klinenberg later compared two neighboring areas. North Lawndale lost 40 people per 100,000; South Lawndale lost only 4. Both had many poor older people living alone. South Lawndale's streets were full of shops and people coming and going, so older people felt safe going out to sit in an air-conditioned store, and they would open the door to people coming round to check on them. North Lawndale had many empty lots and a lot of crime, and older people stayed indoors with their doors and windows shut."
+   }
+  ],
+  "ask": [
+   "What takes the most work here: finding people, checking them, or agreeing terms? Which of my relationships could save me one of these?",
+   "When I trust this person, what specific thing am I trusting them to do? What record of keeping their word on that can I actually see?",
+   "Do my contacts all come from the same circle? Go through my contact list and count how many work in different fields."
+  ],
+  "with": [
+   {
+    "id": "principal-agent",
+    "sees": "You hand a shop over to your cousin to run. Social capital says family can be trusted, and checking the books every day hurts feelings and does more harm than good. The principal-agent problem says only he sees the shop's whole accounts, so even someone you trust should go over them with you once a week. If the stock is small and you can take the shop back any time, go with the first; if a lot of cash moves through and a mistake can't be recovered, going over the accounts doesn't have to mean you don't trust him."
+   },
+   {
+    "id": "social-proof",
+    "sees": "Someone in your alumni group chat recommends a project, and the chat fills with praise. Social capital takes this as a signal you can rely on: these are classmates you can count on. Social proof sees something else: silence doesn't mean nobody has doubts, and the people praising it may just be watching each other. Here it helps more to ask someone outside that circle on your own than to count the praise in the chat again."
+   },
+   {
+    "id": "repeated-games",
+    "sees": "A souvenir shop at the entrance to a tourist site sees each customer once in a lifetime. Repeated games tell you there is no next time here, so reputation doesn't hold the shop back; social capital is no use here, and only marked prices and checking the goods on the spot will do. Turn the same shop into one serving regulars in a housing estate, and buying on credit or getting a free extra handful of vegetables is fine."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You handle subscription renewals at an online course company. Every week your team listens to feedback in the students' group chat. For the past few months, what they hear has been much the same, yet the renewal rate keeps falling. A college classmate of yours runs course administration at another organization offering similar courses, and the two of you have helped each other out before.",
+    "question": "Which of these steps is most likely to turn up leads your team can't hear now?",
+    "explain": "In your existing circle, the information comes from the same group of people, and holding more sessions only repeats it. Your classmate's information comes from somewhere else, and since the two of you have helped each other before, he is willing to tell you the truth.",
+    "options": [
+     {
+      "text": "Meet your classmate and ask why the students who don't renew at his organization leave.",
+      "correct": true,
+      "feedback": "Your classmate deals with a different group of students, so the information comes from somewhere else, and your past friendship makes him willing to tell the truth."
+     },
+     {
+      "text": "Sort the feedback from the students' group chat into a report by how often each point comes up.",
+      "correct": false,
+      "feedback": "Sorting only puts what you already have in order. All of it comes from the same people, so no new leads get in."
+     },
+     {
+      "text": "Hold one more student discussion session each week and double the number who attend.",
+      "correct": false,
+      "feedback": "More people come, but they are still the kind of students who speak up in the group chat, so what you hear is still much the same."
+     },
+     {
+      "text": "Ask the longest-serving member of the team to judge from experience why the renewal rate is falling.",
+      "correct": false,
+      "feedback": "Your longest-serving colleague looks at the same feedback as the rest of you, so there's no new information."
+     }
+    ]
+   },
+   {
+    "stem": "Over the years, your childhood friend has borrowed money from you a few times and always paid it back by the agreed date. Now he wants to open a gym and asks you to guarantee a large loan. He hasn't shown you the gym's budget or accounts yet.",
+    "question": "What does his record of keeping his word tell you here?",
+    "explain": "His record shows only that he can be trusted to repay what he borrows. It says nothing about whether he can run a gym, or about how much you would lose if the loan went wrong.",
+    "options": [
+     {
+      "text": "That his gym will succeed too, so the budget and accounts can wait until after it opens.",
+      "correct": false,
+      "feedback": "Being reliable about repaying and being good at running a business are two different things; the first doesn't tell you the second."
+     },
+     {
+      "text": "That the bank will trust him the way you do, so the loan is low-risk.",
+      "correct": false,
+      "feedback": "The bank has never dealt with him. It looks at the accounts and his ability to repay, and your trust doesn't carry over."
+     },
+     {
+      "text": "He can be trusted with a loan, but his skill at running a business and your possible loss still depend on the accounts.",
+      "correct": true,
+      "feedback": "The trust rests on the specific matter of borrowing and repaying. The guarantee is large, so you still have to do the checking and plan how you'd get out."
+     },
+     {
+      "text": "That the risk of the guarantee is small enough to ignore, since he won't let you take any loss.",
+      "correct": false,
+      "feedback": "Wanting to repay is not the same as being able to repay. If the gym loses money, his good intentions won't help you."
+     }
+    ]
+   },
+   {
+    "stem": "A factory's buyer worked with a parts maker for ten years. The parts maker often shipped first and collected payment at the end of the month, and when the factory was in a rush it would move the order up the queue. The buyer was then moved to another city. In his successor's first month, the parts maker asked for payment before shipping and politely turned down a rush request. The company's contract terms hadn't changed, and the successor works hard.",
+    "question": "Why did the parts maker change how it does business?",
+    "explain": "Ten years of credit had built up between the previous buyer and the parts maker. His paying on time, again and again, was the reason the parts maker was willing to ship first. The successor has no record of his own yet, so the parts maker can only treat him the way it treats a customer it doesn't know.",
+    "options": [
+     {
+      "text": "The company's ability to pay had dropped, and the parts maker was protecting itself early.",
+      "correct": false,
+      "feedback": "The contract terms didn't change, and there was no sign of payments getting worse."
+     },
+     {
+      "text": "The trust rested on the previous buyer's record of keeping his word, and the successor doesn't have one yet.",
+      "correct": true,
+      "feedback": "Shipping first and jumping the queue relied on knowing the previous buyer; the successor has to build that up again."
+     },
+     {
+      "text": "The successor isn't as capable as the previous buyer, so the parts maker no longer feels safe with him.",
+      "correct": false,
+      "feedback": "The question says the successor works hard; all the parts maker sees is that he has no record of keeping his word yet."
+     },
+     {
+      "text": "The parts maker wanted to use the change of buyer as a chance to raise its prices.",
+      "correct": false,
+      "feedback": "Nothing in the question points to a price rise; what changed was how payment worked and how rush requests were treated."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "One word from a neighbor skips the price checks",
+  "caption": "Your downstairs neighbor recommended a plumber last month, so one call sets it up. With a stranger, finding, checking and agreeing terms all start from zero.",
+  "nodes": [
+   {
+    "id": "s",
+    "label": "Pipe leaks at night"
+   },
+   {
+    "id": "a",
+    "label": "Call a stranger",
+    "tone": "muted"
+   },
+   {
+    "id": "a1",
+    "label": "Compare three quotes",
+    "tone": "muted"
+   },
+   {
+    "id": "a2",
+    "label": "Fear he overcharges",
+    "sub": "Or the leak comes back",
+    "tone": "muted"
+   },
+   {
+    "id": "b",
+    "label": "Ask the neighbor",
+    "tone": "accent"
+   },
+   {
+    "id": "b1",
+    "label": "One call, booked",
+    "sub": "No comparing, no checks",
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "s",
+    "to": "b"
+   },
+   {
+    "from": "s",
+    "to": "a"
+   },
+   {
+    "from": "b",
+    "to": "b1"
+   },
+   {
+    "from": "a",
+    "to": "a1"
+   },
+   {
+    "from": "a1",
+    "to": "a2"
+   }
+  ]
+ }
+}

@@ -1,0 +1,1005 @@
+{
+ "id": "multiple-comparisons",
+ "name": "Multiple Comparisons",
+ "en": "多重比较",
+ "discipline": "math",
+ "one_line": "The more things you try, the more likely you are to hit a \"discovery\" that's pure chance.",
+ "story": "Craig Bennett scans a dead salmon in an fMRI machine and, without correcting for multiple comparisons, \"finds\" brain activity (reported in 2009)",
+ "shallow": {
+  "scene": "In 2005, Craig Bennett, a graduate student at Dartmouth College, put an Atlantic salmon he had bought into a brain scanner. The fish was dead. He showed it photos of people in social situations, then checked the tens of thousands of tiny boxes in the scan one by one to see whether the signal anywhere changed with the photos. A small cluster of boxes in the fish's brain really did pass the statistical threshold. When they made this public in 2009, they also wrote that once all the boxes checked were corrected for together, the cluster disappeared.",
+  "plain": "You have a twenty-sided die, and rolling a 1 wins. The chance on one roll is 5%. If you roll only once, nobody would call a win skill. Roll it twenty times, and the chance of winning at least once is about 64%, nothing unusual at all. This is where the trouble with multiple comparisons lies. Test twenty options that actually don't work, judging each against a 5% threshold, and each one has a 5% chance of clearing it by luck, so the whole round is just like rolling the die twenty times. But if the report mentions only the one that cleared the bar and says nothing at all about the other nineteen, the reader sees a hit on the first try."
+ },
+ "deep": {
+  "mechanism": "### Run enough tests and a chance \"win\" is almost certain\n\nSuppose none of the options work. Each test is judged against a threshold $p$, and you run $n$ tests. The chance of at least one false alarm is\n\n$$1-(1-p)^n$$\n\nThe chance that one test gives no false alarm is $1-p$; multiplied together $n$ times, it's the chance that none of them does. One minus that is the chance of at least one false alarm. With a 5% threshold, 1 test gives a 5% chance of a false alarm; 5 tests raise it to 23%; with 14 tests, $1-0.95^{14}\\approx0.51$, more than half; with 100 tests, over 99%.\n\n### Switching measures, slicing groups and shifting dates all add tests\n\nNo result overall? Look at click-through rate instead. Nothing there? Split people by age and region. Then shift the date range a couple of times. Every path that could be picked out and reported counts as one more test, even if in the end only the winning one is written up.\n\n### The whole round shares one budget for false alarms\n\nIf you decide in advance to run 20 tests and want the chance of a false alarm across the whole round to stay at 5% or less, split that 5% evenly over the 20 tests, lowering each one's threshold to 0.05/20, or 0.25%. This way of splitting it is called the Bonferroni correction. If the winner was picked out after the fact, there's no counting how many tries there were, so you can't split it like this. In that case, fix the rule for picking first, then test it on new data that played no part in the picking.",
+  "origin": "In 1953 Tukey wrote The Problem of Multiple Comparisons, a systematic look at how a set of comparisons shares the risk of false alarms. In 1995, Benjamini and Hochberg proposed a way to control \"the share of false alarms in the list of discoveries\": instead of demanding not a single false alarm, it only limits what share of the list is false, which suits screening a large batch of candidates at once. Bennett's dead salmon later became the best-known demonstration.",
+  "limits": "Try as much as you like while exploring. Multiple comparisons is about what you announce after the trying: a comparison decided in advance, and the only one run, needs no correction. When tests are closely linked, they tend to clear the bar together or miss it together, so multiplying the chances overstates the false alarms; the Bonferroni correction still works, it's just on the strict side. The other way around, deciding that results must all be false because many things were tried, or holding all exploring to the strictest threshold, throws out real leads along with the false ones."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Annual reports and press releases always seem to have more \"surprising findings\" than you'd expect. First count how many paths were tried behind them, and you'll know how many were pieced together by random ups and downs."
+   },
+   {
+    "use": "act",
+    "text": "When you're handed a result saying \"customers of a certain type convert better,\" first ask whether that group was defined in advance or sliced out after looking at the data. Only then talk about whether to add budget."
+   },
+   {
+    "use": "design",
+    "text": "Set rules for your team's experiments: before running one, register the main measures and the analysis plan; if there are several main measures, agree in advance how to split the threshold among them."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Medicine",
+    "title": "You can group by star sign too",
+    "text": "The ISIS-2 trial, published in 1988, enrolled more than 17,000 patients with a suspected heart attack, and the overall result was that aspirin lowered the death rate. When the researchers grouped patients by star sign, patients born under Gemini and Libra showed no benefit. They made a point of putting this result in the paper."
+   },
+   {
+    "field": "Investing",
+    "title": "Where backtest champions come from",
+    "text": "At your computer you try every combination of moving-average lengths, buy and sell thresholds, and start and end years, run more than a thousand strategies, and pick the one with the nicest-looking return curve. It won out of more than a thousand contests, so it can't carry the same weight as a strategy chosen in advance and run once. You lock the rules and wait for the next six months of the market, which played no part in the picking, to see whether it makes money."
+   },
+   {
+    "field": "Human resources",
+    "title": "Staff turnover and blood type",
+    "text": "You're a company's HR analyst. You test 40 employee traits one by one against the rate at which people quit, including blood type, star sign, commute distance and the school they graduated from. Suppose none of the 40 actually has anything to do with it: with a 5% threshold for each, on average two will still look \"linked.\" You leave those two out of your report and keep only commute distance, which you had a reason to suspect beforehand, to check against next quarter's new hires."
+   }
+  ],
+  "ask": [
+   "Was this result named in advance as the one to test, or picked out after looking at the data?",
+   "To get it, how many measures, groups, settings and time windows did I or the other side try in all? Were the ones that didn't work written down?",
+   "Once the rule is locked, does it show up again in new data that played no part in the picking?"
+  ],
+  "with": [
+   {
+    "id": "bayesian-updating",
+    "sees": "The team tested 15 new features, and only one cleared the threshold. Multiple comparisons would say: hitting one in 15 tries is nothing special, so don't believe it yet. Bayesian updating looks at something else: whether there was a reason to expect this feature to work beforehand. If research had already pointed to it working, the prior is high, and this one result deserves to be taken seriously; if it was just tried on a whim, the prior is low, and clearing the bar shouldn't change your view much. With no reason beforehand, discount it for the number of tries; with a reason, give it credit for the reason."
+   },
+   {
+    "id": "explore-exploit",
+    "sees": "Should a startup run more lines of experiments? Explore and exploit urges you to try more, because missing a good opportunity costs more than a few extra tries. Multiple comparisons warns that the more you try, the more likely the \"good opportunities\" you bring back are false. Both are right, and each governs one stage: try freely while casting the net, stop once you've picked out candidates, test them again on new data, and only put in more once they pass the retest."
+   },
+   {
+    "id": "regression-to-mean",
+    "sees": "The champion picked from a batch of options often does noticeably worse the next round. Regression to the mean explains it this way: part of the champion's result was luck, and luck won't come again next round. Multiple comparisons explains it this way: pick the strongest from many contenders and you've picked up the luck along with them. Both look at the same drop; the first tells you to expect it, the second tells you how to subtract it in advance."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A property manager puts the same energy-saving lights in all 12 buildings of a housing estate, then compares each building's shared electricity bill for the month before and the month after. Only Building 7's drop in the bill clears the 5% statistical threshold for a single test; the other 11 show no clear change. The manager wants to put Building 7's figures in the promotional material.",
+    "question": "How should this result be handled?",
+    "explain": "Picking one building out of 12 that clears the bar is well within what chance would give you: a 5% false alarm for each building adds up to about 46% across 12. Building 7 clearing the bar is only a lead. You need another round of data that played no part in the picking before you can say whether the lights work.",
+    "options": [
+     {
+      "text": "Building 7 has already cleared the threshold, so put it straight in the material and roll the lights out to the other buildings.",
+      "correct": false,
+      "feedback": "What cleared the bar is the one building picked out of 12 comparisons. The other 11 showed no change, and writing up only this one hides the picking."
+     },
+     {
+      "text": "Test all 12 buildings again together; if there's no change overall, that shows Building 7 had no effect either.",
+      "correct": false,
+      "feedback": "A combined test answers \"was there a change overall?\" One building's effect can be diluted by the other 11, so it doesn't follow that Building 7 had no effect."
+     },
+     {
+      "text": "Treat it as a lead and test again on a different period that wasn't in the comparison, or on a few other buildings.",
+      "correct": true,
+      "feedback": "The lead was picked out; only when the retest data played no part in the picking can the result count as evidence."
+     },
+     {
+      "text": "Building 7 has the most residents, so its test is more sensitive and its result is more believable than the other buildings'.",
+      "correct": false,
+      "feedback": "More residents doesn't take away the picking that happened here. Whether this one building out of 12 was luck still has to be checked on new data."
+     }
+    ]
+   },
+   {
+    "stem": "A clinical trial registered four main endpoints in advance and set the rule that the chance of at least one false alarm across the whole round must not exceed 5%. The four endpoints' p-values are 0.03, 0.02, 0.20 and 0.60. The person leading the trial has to decide what goes into the conclusion.",
+    "question": "Which statement about these results is correct?",
+    "explain": "The four share a 5% budget, so each one's threshold is 0.05÷4, or 0.0125. Even the smallest p-value, 0.02, is above that, so none of the four clears it. 0.03 and 0.02 clear the bar only by the standard of 5% for a single test.",
+    "options": [
+     {
+      "text": "Two cleared the bar and two didn't, so taken together the trial worked overall.",
+      "correct": false,
+      "feedback": "Two clearing the bar by the single-test standard doesn't mean the combined false alarms stay within budget. \"Worked overall\" was also not registered in advance."
+     },
+     {
+      "text": "The two with p-values below 0.05 can be declared effective, and the other two not.",
+      "correct": false,
+      "feedback": "That gives each test its own 5%. With four tests together, the false alarms across the round add up to more than 5%."
+     },
+     {
+      "text": "Declare only the one with the smallest p-value, 0.02, since it's the surest.",
+      "correct": false,
+      "feedback": "Even the smallest has to clear the threshold. Picking the smallest is singling out the winner from four tests."
+     },
+     {
+      "text": "None of the four meets the 5% requirement for the whole round, so none can be declared effective.",
+      "correct": true,
+      "feedback": "Each threshold is 0.0125, and the smallest p-value, 0.02, is still above it."
+     }
+    ]
+   },
+   {
+    "stem": "A production line is working perfectly. Every day the quality-control system runs one test on that day's products, with this threshold: if nothing is wrong with the line, each test has a 5% chance of a false alarm. The system runs for 30 days in a row, and each day's test is independent of the others.",
+    "question": "Over these 30 days, roughly what is the chance of at least one day with a false alarm?",
+    "explain": "The chance of no false alarm on a given day is 95%, and the chance of none in all 30 days is 0.95 to the power 30, about 21%. So the chance of at least one false alarm is about 79%, far more than 5%.",
+    "options": [
+     {
+      "text": "Over 99%: over a month, a false alarm is almost certain.",
+      "correct": false,
+      "feedback": "30 tests add up to about 79%; it takes close to 90 tests to pass 99%."
+     },
+     {
+      "text": "About 80%.",
+      "correct": true,
+      "feedback": "0.95 multiplied by itself 30 times is about 21%, and 1 minus that is about 79%."
+     },
+     {
+      "text": "About 5%, since the daily threshold hasn't changed.",
+      "correct": false,
+      "feedback": "5% is the chance of a false alarm on one day. Over many days, each day's 5% adds up, and the false alarm chance for the month is no longer 5%."
+     },
+     {
+      "text": "About 30%, because there are 30 days in the month.",
+      "correct": false,
+      "feedback": "There's no basis for turning the number of days straight into a percentage; the chance of a false alarm builds up by multiplying, and much faster."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "title": "By 14 tests, a false alarm is over 50% likely",
+  "caption": "Every option is useless, each judged at the 5% bar. Lower the bar to 0.25%, or 0.05÷20, and 20 tests are back down to 5% false alarms.",
+  "x": {
+   "label": "Number of tests",
+   "min": 0,
+   "max": 100
+  },
+  "y": {
+   "label": "Chance of any false alarm",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "series": [
+   {
+    "name": "5% bar per test",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      9.8
+     ],
+     [
+      3,
+      14.3
+     ],
+     [
+      4,
+      18.5
+     ],
+     [
+      5,
+      22.6
+     ],
+     [
+      6,
+      26.5
+     ],
+     [
+      7,
+      30.2
+     ],
+     [
+      8,
+      33.7
+     ],
+     [
+      9,
+      37
+     ],
+     [
+      10,
+      40.1
+     ],
+     [
+      11,
+      43.1
+     ],
+     [
+      12,
+      46
+     ],
+     [
+      13,
+      48.7
+     ],
+     [
+      14,
+      51.2
+     ],
+     [
+      15,
+      53.7
+     ],
+     [
+      16,
+      56
+     ],
+     [
+      17,
+      58.2
+     ],
+     [
+      18,
+      60.3
+     ],
+     [
+      19,
+      62.3
+     ],
+     [
+      20,
+      64.2
+     ],
+     [
+      21,
+      65.9
+     ],
+     [
+      22,
+      67.6
+     ],
+     [
+      23,
+      69.3
+     ],
+     [
+      24,
+      70.8
+     ],
+     [
+      25,
+      72.3
+     ],
+     [
+      26,
+      73.6
+     ],
+     [
+      27,
+      75
+     ],
+     [
+      28,
+      76.2
+     ],
+     [
+      29,
+      77.4
+     ],
+     [
+      30,
+      78.5
+     ],
+     [
+      31,
+      79.6
+     ],
+     [
+      32,
+      80.6
+     ],
+     [
+      33,
+      81.6
+     ],
+     [
+      34,
+      82.5
+     ],
+     [
+      35,
+      83.4
+     ],
+     [
+      36,
+      84.2
+     ],
+     [
+      37,
+      85
+     ],
+     [
+      38,
+      85.8
+     ],
+     [
+      39,
+      86.5
+     ],
+     [
+      40,
+      87.1
+     ],
+     [
+      41,
+      87.8
+     ],
+     [
+      42,
+      88.4
+     ],
+     [
+      43,
+      89
+     ],
+     [
+      44,
+      89.5
+     ],
+     [
+      45,
+      90.1
+     ],
+     [
+      46,
+      90.6
+     ],
+     [
+      47,
+      91
+     ],
+     [
+      48,
+      91.5
+     ],
+     [
+      49,
+      91.9
+     ],
+     [
+      50,
+      92.3
+     ],
+     [
+      51,
+      92.7
+     ],
+     [
+      52,
+      93.1
+     ],
+     [
+      53,
+      93.4
+     ],
+     [
+      54,
+      93.7
+     ],
+     [
+      55,
+      94
+     ],
+     [
+      56,
+      94.3
+     ],
+     [
+      57,
+      94.6
+     ],
+     [
+      58,
+      94.9
+     ],
+     [
+      59,
+      95.2
+     ],
+     [
+      60,
+      95.4
+     ],
+     [
+      61,
+      95.6
+     ],
+     [
+      62,
+      95.8
+     ],
+     [
+      63,
+      96.1
+     ],
+     [
+      64,
+      96.2
+     ],
+     [
+      65,
+      96.4
+     ],
+     [
+      66,
+      96.6
+     ],
+     [
+      67,
+      96.8
+     ],
+     [
+      68,
+      96.9
+     ],
+     [
+      69,
+      97.1
+     ],
+     [
+      70,
+      97.2
+     ],
+     [
+      71,
+      97.4
+     ],
+     [
+      72,
+      97.5
+     ],
+     [
+      73,
+      97.6
+     ],
+     [
+      74,
+      97.8
+     ],
+     [
+      75,
+      97.9
+     ],
+     [
+      76,
+      98
+     ],
+     [
+      77,
+      98.1
+     ],
+     [
+      78,
+      98.2
+     ],
+     [
+      79,
+      98.3
+     ],
+     [
+      80,
+      98.3
+     ],
+     [
+      81,
+      98.4
+     ],
+     [
+      82,
+      98.5
+     ],
+     [
+      83,
+      98.6
+     ],
+     [
+      84,
+      98.7
+     ],
+     [
+      85,
+      98.7
+     ],
+     [
+      86,
+      98.8
+     ],
+     [
+      87,
+      98.8
+     ],
+     [
+      88,
+      98.9
+     ],
+     [
+      89,
+      99
+     ],
+     [
+      90,
+      99
+     ],
+     [
+      91,
+      99.1
+     ],
+     [
+      92,
+      99.1
+     ],
+     [
+      93,
+      99.2
+     ],
+     [
+      94,
+      99.2
+     ],
+     [
+      95,
+      99.2
+     ],
+     [
+      96,
+      99.3
+     ],
+     [
+      97,
+      99.3
+     ],
+     [
+      98,
+      99.3
+     ],
+     [
+      99,
+      99.4
+     ],
+     [
+      100,
+      99.4
+     ]
+    ],
+    "tone": "accent"
+   },
+   {
+    "name": "0.25% bar per test",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      0.2
+     ],
+     [
+      2,
+      0.5
+     ],
+     [
+      3,
+      0.7
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      5,
+      1.2
+     ],
+     [
+      6,
+      1.5
+     ],
+     [
+      7,
+      1.7
+     ],
+     [
+      8,
+      2
+     ],
+     [
+      9,
+      2.2
+     ],
+     [
+      10,
+      2.5
+     ],
+     [
+      11,
+      2.7
+     ],
+     [
+      12,
+      3
+     ],
+     [
+      13,
+      3.2
+     ],
+     [
+      14,
+      3.4
+     ],
+     [
+      15,
+      3.7
+     ],
+     [
+      16,
+      3.9
+     ],
+     [
+      17,
+      4.2
+     ],
+     [
+      18,
+      4.4
+     ],
+     [
+      19,
+      4.6
+     ],
+     [
+      20,
+      4.9
+     ],
+     [
+      21,
+      5.1
+     ],
+     [
+      22,
+      5.4
+     ],
+     [
+      23,
+      5.6
+     ],
+     [
+      24,
+      5.8
+     ],
+     [
+      25,
+      6.1
+     ],
+     [
+      26,
+      6.3
+     ],
+     [
+      27,
+      6.5
+     ],
+     [
+      28,
+      6.8
+     ],
+     [
+      29,
+      7
+     ],
+     [
+      30,
+      7.2
+     ],
+     [
+      31,
+      7.5
+     ],
+     [
+      32,
+      7.7
+     ],
+     [
+      33,
+      7.9
+     ],
+     [
+      34,
+      8.2
+     ],
+     [
+      35,
+      8.4
+     ],
+     [
+      36,
+      8.6
+     ],
+     [
+      37,
+      8.8
+     ],
+     [
+      38,
+      9.1
+     ],
+     [
+      39,
+      9.3
+     ],
+     [
+      40,
+      9.5
+     ],
+     [
+      41,
+      9.8
+     ],
+     [
+      42,
+      10
+     ],
+     [
+      43,
+      10.2
+     ],
+     [
+      44,
+      10.4
+     ],
+     [
+      45,
+      10.7
+     ],
+     [
+      46,
+      10.9
+     ],
+     [
+      47,
+      11.1
+     ],
+     [
+      48,
+      11.3
+     ],
+     [
+      49,
+      11.5
+     ],
+     [
+      50,
+      11.8
+     ],
+     [
+      51,
+      12
+     ],
+     [
+      52,
+      12.2
+     ],
+     [
+      53,
+      12.4
+     ],
+     [
+      54,
+      12.6
+     ],
+     [
+      55,
+      12.9
+     ],
+     [
+      56,
+      13.1
+     ],
+     [
+      57,
+      13.3
+     ],
+     [
+      58,
+      13.5
+     ],
+     [
+      59,
+      13.7
+     ],
+     [
+      60,
+      13.9
+     ],
+     [
+      61,
+      14.2
+     ],
+     [
+      62,
+      14.4
+     ],
+     [
+      63,
+      14.6
+     ],
+     [
+      64,
+      14.8
+     ],
+     [
+      65,
+      15
+     ],
+     [
+      66,
+      15.2
+     ],
+     [
+      67,
+      15.4
+     ],
+     [
+      68,
+      15.7
+     ],
+     [
+      69,
+      15.9
+     ],
+     [
+      70,
+      16.1
+     ],
+     [
+      71,
+      16.3
+     ],
+     [
+      72,
+      16.5
+     ],
+     [
+      73,
+      16.7
+     ],
+     [
+      74,
+      16.9
+     ],
+     [
+      75,
+      17.1
+     ],
+     [
+      76,
+      17.3
+     ],
+     [
+      77,
+      17.5
+     ],
+     [
+      78,
+      17.7
+     ],
+     [
+      79,
+      17.9
+     ],
+     [
+      80,
+      18.1
+     ],
+     [
+      81,
+      18.4
+     ],
+     [
+      82,
+      18.6
+     ],
+     [
+      83,
+      18.8
+     ],
+     [
+      84,
+      19
+     ],
+     [
+      85,
+      19.2
+     ],
+     [
+      86,
+      19.4
+     ],
+     [
+      87,
+      19.6
+     ],
+     [
+      88,
+      19.8
+     ],
+     [
+      89,
+      20
+     ],
+     [
+      90,
+      20.2
+     ],
+     [
+      91,
+      20.4
+     ],
+     [
+      92,
+      20.6
+     ],
+     [
+      93,
+      20.8
+     ],
+     [
+      94,
+      21
+     ],
+     [
+      95,
+      21.2
+     ],
+     [
+      96,
+      21.4
+     ],
+     [
+      97,
+      21.6
+     ],
+     [
+      98,
+      21.8
+     ],
+     [
+      99,
+      21.9
+     ],
+     [
+      100,
+      22.1
+     ]
+    ],
+    "tone": "ink"
+   }
+  ],
+  "marks": [
+   {
+    "y": 50,
+    "text": "Over half"
+   },
+   {
+    "x": 14,
+    "y": 51.2,
+    "text": "14 tests"
+   },
+   {
+    "x": 20,
+    "y": 4.9
+   }
+  ]
+ }
+}

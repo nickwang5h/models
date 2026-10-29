@@ -1,0 +1,183 @@
+{
+ "id": "strategy-tradeoffs",
+ "name": "Strategy as Trade-offs",
+ "en": "战略即取舍",
+ "discipline": "business",
+ "one_line": "Strategy is deciding what you won't do.",
+ "story": "Steve Jobs returns to Apple and cuts its product line down to a four-square grid, then in 1998 announces the end of the Newton",
+ "shallow": {
+  "scene": "In 1997 Steve Jobs came back to Apple and found a long list of computer models. Every one of them had customers using it and a team working on it. He cut the products down to a grid of four squares: one row for consumers and one for professionals, one column for desktops and one for portables, and just one product in each square. The next year Apple also announced it was dropping the Newton, its handheld computer. Every product that was cut had customers willing to pay for it, and people who had worked themselves hard for it. Once the four squares were set, research, design and sales were all reorganized around those four products.",
+  "plain": "You run a key-cutting stall at the entrance to a housing complex. Your sign says \"Done in ten minutes, no need to come back.\" A key costs 10 yuan, and you cut three in half an hour. One day a resident asks whether you'd hem a pair of trousers: 40 yuan a pair, and it takes half an hour. In the same half hour, cutting keys brings in 30 yuan and hemming brings in 40, so you'd make 10 yuan more. Strategy as trade-offs doesn't ask whether this one job pays. It asks: if you take it, does the line on your sign still hold?\n\nYou take it. In the half hour you spend bent over the trousers, three of the five people in line walk off. By the second week, there are no longer enough people coming in the morning to form a line."
+ },
+ "deep": {
+  "mechanism": "### Conflict starts when a new job takes longer than the limit you promised\n\nBack at the key stall, you promise that nobody in line waits more than ten minutes. Someone asks you to replace a zipper pull. It takes five minutes, and the line keeps moving. Replacing the zipper in a pair of trousers takes fifteen minutes, so the people behind have to wait fifteen minutes, longer than the ten you promised. Hemming takes half an hour, so the people behind wait thirty minutes, three times the promise. Same stall, same skills: as the time a job takes grows from five minutes to half an hour, taking it changes from no trouble at all to tearing down your own sign.\n\n### The sign, the work in your hands and what customers expect all have to fit at once\n\nIf the sign says fast, passers-by judge you on speed. If you also set up a sewing machine and hang a price list for alterations, they can no longer tell whether you cut keys or mend clothes. Once customers' expectations are muddled, your own work gets muddled too. Cutting keys is done standing, and you can put down what you're doing at any moment. Sewing is done sitting, and you can't get up until the hem is finished. Anyone who comes for a key then has to wait until you finish sewing.\n\n### Give one thing up, and the practices that remain hold each other up\n\nIf you take no alterations, the workbench can be laid out in the order key cutting needs, with the common blanks within reach. The ten-minute promise holds only because of that layout. If the stall across the way wants to copy you, changing its sign to \"Done in ten minutes\" isn't enough. It also has to get rid of its sewing machine. If it can't bear to, the sign is just a board.",
+  "origin": "In 1996 Michael Porter published \"What Is Strategy?\" in the *Harvard Business Review*, and put trade-offs at the heart of strategy. Different positions need different sets of practices, so a company that tries to hold both often does both badly. The comparison he used was Southwest Airlines against Continental Airlines, which tried to copy it with a low-cost service.",
+  "limits": "Trade-offs are most useful in a business where what customers want is already clear and every practice is out in the open. Fast, cheap or fine each needs its own set of practices, and the conflicts between them are plain to see. When technology changes, an old conflict may disappear, so practices given up years ago should be worked out again at that point. Treating refusal as the goal also goes wrong: a stall that turns everything down can't build a reputation either."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When a big order looks like a great deal, first ask which promise to your existing customers it would make you change, and only then work out the profit."
+   },
+   {
+    "use": "design",
+    "text": "When you set the team's list of things not to do this quarter, write down for each item: if we took it on, which current process would have to change, and which existing customers would get worse service."
+   },
+   {
+    "use": "explain",
+    "text": "To see why an old shop kept getting more cluttered and less memorable, go back year by year and find the year it started taking on work that clashed with its sign."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Investing",
+    "title": "A fund that doesn't pick stocks",
+    "text": "In 1976 John Bogle launched a fund at Vanguard that tracked the S&P 500 index. It hired no star manager to pick stocks and kept its fees very low. It gave up the selling point of beating the market: people who wanted a manager picking stocks for them went elsewhere, and people willing to take the market's average return put their money in."
+   },
+   {
+    "field": "Products",
+    "title": "A console that doesn't compete on graphics",
+    "text": "In November 2006 Nintendo's Wii went on sale in the US at 249.99 dollars. Its picture went up to only 480p, with no high definition; Sony's PS3, out at the same time, started at 499 dollars. The money saved showed up in the price, and the motion controller let family members who rarely played games pick it up too. Players who cared most about graphics bought someone else's console."
+   },
+   {
+    "field": "Personal work",
+    "title": "Whole books only",
+    "text": "You are a book designer who only takes on whole books, doing the cover, the spine and the page layout together. A company wants you to do a few flyers each month on the side, and the pay is good. You turn it down, write \"Whole books only, no single pages\" on your booking page, and block out two straight weeks for every book in your schedule."
+   }
+  ],
+  "ask": [
+   "Which promise to my existing customers, and which step in my process, would this new business make me change?",
+   "The things I say I won't do: are they written into my price list, budget or schedule?",
+   "If a rival wanted to copy my sign, what would it have to give up first? Would it be willing to?"
+  ],
+  "with": [
+   {
+    "id": "explore-exploit",
+    "sees": "Your new product has been out for three months, and you don't yet know who will keep buying it. Trade-offs say decide now who it's for and whom to turn away; explore and exploit says don't close the door yet, try more kinds of customers. If each trial is a change small enough to undo at any time, try it first. Once one kind of customer starts demanding changes to your core process that can't be undone, it's time to act on trade-offs."
+   },
+   {
+    "id": "economies-of-scale",
+    "sees": "A factory line makes only three standard parts and sits idle half its shifts, and a customer comes asking for small custom batches. Economies of scale sees the idle half: taking the work would spread the fixed costs thinner. Strategy as trade-offs sees that every changeover stops the rhythm of the standard parts and pushes back delivery for existing customers. First count how many shifts one changeover eats. If it's few, take the work; if it's many, the cost savings won't make up for the late deliveries."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You run a document courier. Your sign says \"Delivered across the city in two hours,\" and your customers are mostly law firms and design studios. You have one team of riders and one dispatch system. A drug company will pay three times your rate for daily round trips carrying refrigerated medicines to three plants in the outer suburbs, about three hours each way. A separate cold-chain team would mean hiring twice as many people and vehicles, and you don't have the money.",
+    "question": "How should you answer the drug company?",
+    "explain": "The drug company's work would pull the same riders out of the city. What the triple rate buys is the two-hour promise held by the law firms and design studios. Turn it down, and the team and dispatch can keep serving the two-hour promise alone.",
+    "options": [
+     {
+      "text": "Turn it down, and keep doing only two-hour delivery across the city.",
+      "correct": true,
+      "feedback": "This order would make the riders and dispatch work a different way, and it would cost your existing customers their two hours. Turning it down is how the sign holds."
+     },
+     {
+      "text": "Take it, and deliver the drug company's orders only when riders are free, pushing them back when they aren't.",
+      "correct": false,
+      "feedback": "The drug company needs a round trip every day. A delayed order means nothing was delivered, so neither promise is kept."
+     },
+     {
+      "text": "Take it, and change every customer's promise to \"same-day delivery\" so there is one process.",
+      "correct": false,
+      "feedback": "Once the promise is loosened to same-day, the speed the law firms want is gone, and existing customers get worse service than before."
+     },
+     {
+      "text": "Take it, have the same dispatchers handle both kinds of order, and send the drug company's first at peak times.",
+      "correct": false,
+      "feedback": "If the drug company goes first at peak times, the city orders drop to the back of the line, and the two-hour promise fails exactly when you're busiest."
+     }
+    ]
+   },
+   {
+    "stem": "You run a barbershop whose sign says \"Cut in fifteen minutes.\" There's an empty space in the shop, and this month you can make only one investment.",
+    "question": "Which one best supports the sign?",
+    "explain": "The sign rests on the chairs and the layout: every chair turns over every fifteen minutes, and the tools are set out in the order a haircut needs. Perms and coloring, hair washing and retail all keep a chair busy for longer than fifteen minutes, or take your hands out of the rhythm of cutting.",
+    "options": [
+     {
+      "text": "Stock some high-end styling products and sell them by the till.",
+      "correct": false,
+      "feedback": "Selling products takes time away from cutting, and it doesn't add a single chair that turns over."
+     },
+     {
+      "text": "Add two hair-washing sinks, and wash customers before cutting.",
+      "correct": false,
+      "feedback": "Washing makes every customer take longer, and the people waiting see a line longer than fifteen minutes."
+     },
+     {
+      "text": "Wall off a room for perms and coloring, and let the higher prices help with the rent.",
+      "correct": false,
+      "feedback": "Perms and coloring keep a chair busy for longer than fifteen minutes. The promise on the sign breaks in that room first."
+     },
+     {
+      "text": "Add one more quick-cut chair, with clippers and combs laid out within reach in the order a haircut needs.",
+      "correct": true,
+      "feedback": "The chair and the layout are both built around fifteen minutes, and that is how the promise holds."
+     }
+    ]
+   },
+   {
+    "stem": "You run an online coffee bean shop whose sign says \"Shipped within three days of roasting.\" A new bag-sealing machine cuts sealing from four minutes an order to one. Roasting and bagging happen in the same order as before, and the machine takes none of the roaster's time. Your partner worries: \"Once we speed up, we won't be able to keep the freshness promise.\"",
+    "question": "What do you make of your partner's worry?",
+    "explain": "The freshness promise depends on the gap between roasting and shipping. The sealing machine only shortens bagging. It doesn't touch roasting or squeeze any other step, so there is no conflict and nothing to give up.",
+    "options": [
+     {
+      "text": "The worry is fair: any speed-up lowers freshness, so keep sealing by hand.",
+      "correct": false,
+      "feedback": "Freshness depends on how many days pass between roasting and shipping. Faster bagging can only make that gap shorter."
+     },
+     {
+      "text": "Buy it, and loosen the promise to shipping within five days, using the time saved to take more orders.",
+      "correct": false,
+      "feedback": "Loosening the promise to five days means throwing away the most valuable line on your sign yourself, and the orders it brings in can't be relied on."
+     },
+     {
+      "text": "There's no conflict: the machine doesn't touch the order of roasting and shipping, so just buy it.",
+      "correct": true,
+      "feedback": "Sealing gets faster, the promise to ship within three days is untouched, and no practice has to be given up."
+     },
+     {
+      "text": "Don't buy it yet; wait until you're clear on whether speed or freshness matters more.",
+      "correct": false,
+      "feedback": "This machine doesn't force a choice between speed and freshness. Waiting to set priorities is just putting it off."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "type": "bar",
+  "title": "A job over ten minutes breaks the sign's promise",
+  "caption": "Promised wait: 10 min. A zipper pull (5) keeps the line moving; hemming (30) triples it.",
+  "categories": [
+   "Promise: max wait",
+   "Zipper pull",
+   "Trouser zipper",
+   "Hemming"
+  ],
+  "y": {
+   "label": "Minutes",
+   "unit": " min",
+   "min": 0,
+   "max": 30
+  },
+  "series": [
+   {
+    "name": "Minutes",
+    "values": [
+     10,
+     5,
+     15,
+     30
+    ],
+    "tones": [
+     "muted",
+     "ink",
+     "warn",
+     "warn"
+    ]
+   }
+  ]
+ }
+}

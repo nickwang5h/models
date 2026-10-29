@@ -1,0 +1,215 @@
+{
+ "id": "emergence",
+ "name": "Emergence",
+ "en": "涌现",
+ "discipline": "systems",
+ "one_line": "Everyone follows small local rules, and the whole takes a shape nobody designed.",
+ "story": "Yuki Sugiyama's ring-road experiment at Nagoya University, where 22 cars form a traffic jam out of nowhere",
+ "shallow": {
+  "scene": "Most people who have been stuck in highway traffic have had this happen: the cars go stop-and-go for half an hour, and when you finally get through, there's no accident ahead and no roadwork. The road just suddenly clears.\n\nIn 2008 Yuki Sugiyama and colleagues at Nagoya University in Japan recreated this on an open lot. They had 22 cars drive around a circular track 230 meters long, and the drivers were only asked to keep to about 30 km/h. At first the line of cars moved along smoothly.\n\nThen the tiny differences in gaps and speeds between the cars slowly grew. One stretch of the line began to go stop-and-go, and this jam moved backward along the line of cars. There were no traffic lights on the track, no accident, and no cars merging in. The jam came out of the traffic itself.",
+  "plain": "Suppose you're following another car on the highway at 60 km/h, only 15 meters behind it. For some reason the car ahead taps its brakes, and its speed drops by 5 km/h. You see the brake lights come on and pause for a moment before braking. In that moment the gap between you shrinks a bit more, so you have to brake harder than he did. The driver behind you sees your braking, also pauses for a moment, and brakes harder than you. Passed from car to car, ten or so cars back, someone has to stop dead.\n\nBy now the car that braked first is long gone, but behind it there is a stretch of stopped cars. The cars at the front of this stretch drive off one by one, and new cars arriving at the back stop and join it one by one, so the stretch moves backward. If the gap had been 40 meters, the car ahead would have got back up to speed before you got close, and the braking would have died out by the time it reached you.\n\nThis jam isn't in any one car. Each driver does only one thing: keep up with the car ahead without hitting it. Once the gaps get narrow, these small reactions link up end to end, and the whole stream of traffic grows a stop-and-go that nobody wanted. Individuals affect each other only by following rules about what's right in front of them, yet the whole shows a property that no individual has. That is emergence."
+ },
+ "deep": {
+  "mechanism": "### The car behind brakes harder than the one ahead, so one tap on the brakes grows as it passes back\n\nBetween seeing the brake lights and pressing the pedal, a driver is always a beat slow. In that beat the car ahead has already slowed, the gap between the two cars has shrunk a bit, and the car behind can only avoid a crash by braking harder than the car ahead. When the gap is wide, that lost bit doesn't matter, and the car behind can even brake more gently than the car ahead.\n\nIn other words, with each car further back, the drop in speed gets multiplied by a factor. With narrow gaps the factor is bigger than 1; with wide gaps it is smaller than 1. If the factor is bigger than 1, the drop in speed gets bigger car after car, and further back some car always stops dead. If it is smaller than 1, the drop gets smaller car after car and dies out after a few cars. Which side of 1 the factor falls on is decided by the gaps; no driver is deciding whether there will be a jam.\n\n### Once there are too many cars for the gaps, the same rules jam up into a stopped stretch\n\nHave cars drive around a loop on a computer, following one simple set of car-following rules, and you can see what the gaps do. This set of rules is called the Nagel–Schreckenberg model; the numbers below come from this card's own simulation, not from anyone's published results. The road is a loop of 1,000 cells. Each car moves at most 5 cells per step and never runs into the car ahead. On each step there is also a 30% chance that it eases off the gas for no reason. Each car only looks at the empty space in front of itself; the word \"jam\" appears nowhere in the rules.\n\nWith 100 cars, there are on average 9 empty cells in front of each car, a good deal more than the 5 cells a car can move in one step, and at any moment less than 1% of cars are stopped. Raise it to 150 cars, and the average gap is under 6 cells, only a little more than 5. When the car ahead eases off the gas, the car behind doesn't have enough room to keep going as normal and has to slow down too. So nearly 20% of the cars are stopped, and a stopped stretch moves backward through the line. Raise it to 200 cars, and nearly 30% are stopped. Not one word of the rules changed.\n\n### Take away the easing off for no reason, and the same number of cars doesn't jam\n\nA jam needs a disturbance to start it, which narrow gaps then magnify all the way back. Change the chance of easing off the gas from 30% to zero, and not one of the 150 cars stops; they all move at 5 cells per step. The number of cars passing any point on the road per step rises from about 0.46 to 0.75.",
+  "origin": "In 1875 the English philosopher George Henry Lewes used the word \"emergent\" for results in a whole that don't come from simply adding up its parts. In 1992 the German physicists Nagel and Schreckenberg proposed a car-following model with only a few rules, which is the one this card's computer simulation uses. The 2008 ring-track experiment in Nagoya then saw the same stop-and-go with real human drivers.",
+  "limits": "Emergence is the right lens for traffic, ant colonies and crowds in a transfer corridor, where the overall pattern is held up by neighbors acting back and forth on each other. When the result is just the parts added up, emergence doesn't help: for the total of ten bank deposits, adding them up is enough. Some people use \"emergence\" in a report as the answer for \"the causes are complicated and hard to explain,\" yet can't say who is interacting with whom or what rules they follow. Used like this, it explains nothing."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "In a group chat with nobody in charge, after a few weeks everyone greets each other the same way. You can work out why: each person just copies the last few messages they saw, and with everyone copying everyone, it settles on one way."
+   },
+   {
+    "use": "design",
+    "text": "When everyone on a team works hard but they keep interrupting each other, don't ask each person to try harder. Change who can interrupt whom: replace asking questions any time with two question-and-answer slots a day."
+   },
+   {
+    "use": "explore",
+    "text": "To find out what a group of individuals will produce as a whole, first write a few dozen lines of code, run it with the individuals' rules, then change one rule and run it again, and compare the two patterns."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Biology",
+    "title": "Ants line up into a trail",
+    "text": "You drop a cookie by the wall on your balcony. The first few ants to find it leave a scent all the way back to the nest; the ants that come after follow the scent there and leave scent of their own. The more the trail is walked, the stronger it gets, and more ants join. No ant knows the whole route, and none gave an order. Once the cookie has all been carried off, no ant adds more scent to the trail, and the line by the wall breaks up."
+   },
+   {
+    "field": "Technology",
+    "title": "A glider grows out of a grid",
+    "text": "In 1970 the mathematician John Conway's \"Game of Life\" was first presented to the public. Each square on the grid is either alive or dead, and each one only counts how many of the eight squares around it are alive. A live square with two or three live neighbors stays alive; a dead square with exactly three live neighbors comes alive; all others die. One arrangement of five live squares moves one square diagonally every four rounds and is called a glider. No square ever moves; what moves is the whole pattern, which keeps growing back."
+   },
+   {
+    "field": "Everyday life",
+    "title": "The lunch line at the elevators",
+    "text": "You manage an office building and notice that every day around 11:55 a long line forms at the elevators. Nobody arranged it. Each person just sees someone at the next desk stand up and wants to get down before it gets crowded, and their standing up is seen by the people behind them in turn. You set lunch bells ten minutes apart for neighboring floors, and the next day the line at the elevators was shorter."
+   }
+  ],
+  "ask": [
+   "Could I find the property I'm seeing by looking at the members one at a time, on their own?",
+   "What can each member see before acting: which few neighbors, which piece of news? Check what they actually see, not what I assume they see.",
+   "If I change just one rule of how they interact, leave everything else alone, and try it on a small part first, does the overall pattern change?"
+  ],
+  "with": [
+   {
+    "id": "first-principles",
+    "sees": "A ten-person customer service team always gets its replies out a day late. First principles breaks the work into parts: how long one ticket takes on its own, and whether each step can be cut. Emergence reminds you that even if single tickets are handled fast, the slowness may come from how tickets get passed between people, a layer you can't see by taking the parts apart. So first measure how long one ticket takes. If it's already short, stop squeezing each person and change the hand-off rules; only if it's absurdly long should you start on the parts."
+   },
+   {
+    "id": "mechanism-design",
+    "sees": "When you set the pickup rules for a neighborhood's shared parcel lockers, mechanism design works backward from the result you want: write the goal first, then set the rules. Emergence reminds you that once the rules go live, residents each react to them locally, and the pattern the whole grows into may not be the goal. Try the rules in one building for two weeks first, see when the real pickup rush comes, and then roll them out to the whole neighborhood."
+   },
+   {
+    "id": "feedback-loops",
+    "sees": "A rumor says the supermarket is about to run out, so someone takes two extra packs of toilet paper. The people after them see the shelf half empty and take extra too; the next day the shelf is completely empty. Feedback loops explain how this loop of \"see an empty shelf, take more\" strengthens itself. Emergence points out that nobody wanted to empty the whole city's shelves, yet the shelves were emptied. To bring the shelves back, first break that link: limit how much each person can buy, or get the restocking trucks there ahead of the rumor."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "The service you run has 200 clients. When a request fails, every client retries after exactly 1 second. After the server is briefly overloaded, the number of requests spikes every 1 second and drops off clearly in between. Keeping the number of clients and the number of retries the same, an engineer changes the wait before a retry to a random time between 0.5 and 1.5 seconds.",
+    "question": "What change is this most likely to bring?",
+    "explain": "Each client decides when to retry based only on its failed response, yet through the shared server they fall into a collective rhythm: failing together, then retrying together. Change the waiting rule, and the shape of the overall load changes even without fewer clients or retries.",
+    "options": [
+     {
+      "text": "The spikes get even worse, because some clients retry sooner than before.",
+      "correct": false,
+      "feedback": "Some clients move up to 0.5 seconds, and just as many move back to 1.5 seconds. The requests that all crowded in at 1 second get spread out, so the spikes won't get worse."
+     },
+     {
+      "text": "The spikes disappear completely, and requests arrive evenly spread out.",
+      "correct": false,
+      "feedback": "With randomly drawn waits, some requests will still happen to bunch up. The spikes will only get smaller, not go to zero."
+     },
+     {
+      "text": "The spikes stay about the same, since neither the number of clients nor the number of retries went down.",
+      "correct": false,
+      "feedback": "How high the spikes are depends on when requests arrive. The same total doesn't mean the same arrival times."
+     },
+     {
+      "text": "The spikes get clearly weaker, because requests after a failure no longer pile up at the same moment.",
+      "correct": true,
+      "feedback": "A fixed wait made the clients retry in sync, causing regular spikes. A random wait scatters the retry times, so the server handles them in batches."
+     }
+    ]
+   },
+   {
+    "stem": "Four roommates share the milk in the kitchen. Whoever sees fewer than two cartons in the fridge orders four, delivered the next day; after ordering, nobody tells anyone else. Each time the milk is about to run out, several people often order separately, the fridge then gets crammed full, and some of the milk goes past its date. All four say they only wanted to avoid running out.",
+    "question": "Which small experiment directly tests whether the problem is that nobody can see the others' orders when ordering?",
+    "explain": "Each person is trying to avoid running out, but together they keep ending up with too much. One person's order never enters the others' judgment. Adding the amount still on its way into the basis for restocking changes the link between their actions.",
+    "options": [
+     {
+      "text": "Lower the restocking threshold to when only one carton is left, then see whether less milk expires.",
+      "correct": false,
+      "feedback": "Several people still see the same low stock and each places an order; they just order a few days later."
+     },
+     {
+      "text": "Put an on-order list on the fridge door. Whoever orders writes it down, and everyone restocks based on milk in the fridge plus milk on order. Then see whether less milk expires.",
+      "correct": true,
+      "feedback": "The number of people, the threshold and the size of each order all stay the same; only one person's order now enters the others' judgment, so any change can only come from that."
+     },
+     {
+      "text": "Ask everyone to count the milk carefully before ordering, then see whether less milk expires.",
+      "correct": false,
+      "feedback": "However accurately each person counts, they still can't see orders others have already placed, so the duplicate orders go on."
+     },
+     {
+      "text": "Give everyone the same spending limit, then see whether less milk expires.",
+      "correct": false,
+      "feedback": "A limit also cuts the total bought, so if less milk expires you can't tell whether the duplicate orders stopped or they just bought less."
+     }
+    ]
+   },
+   {
+    "stem": "Six funds sell the same stock on the same day. The day before, head office sent all of them an order to cut their holdings, stating exactly how much each fund should sell and on what date. Someone says this was the result of the fund managers watching each other and following each other in selling.",
+    "question": "Where should you look first for the cause of this selling in sync?",
+    "explain": "The single order from head office directly set the overall action, so trace the cause through the order first. To put any extra pattern in how it was carried out down to local interaction, you'd first have to show how the managers watched and influenced each other.",
+    "options": [
+     {
+      "text": "The single order from head office; first find out why it said what it said.",
+      "correct": true,
+      "feedback": "The order already set how much to sell and when, which directly explains the action in sync."
+     },
+     {
+      "text": "The managers' views were pooled and converged, and the order just recorded that result.",
+      "correct": false,
+      "feedback": "Nothing in the question suggests any views were pooled. That the order was sent is the known fact."
+     },
+     {
+      "text": "Selling so much in sync shows the managers are already strongly reinforcing each other.",
+      "correct": false,
+      "feedback": "Head office set the date, so the order is what produced the sync. It can't count as evidence of the managers reinforcing each other."
+     },
+     {
+      "text": "The six managers following each other, since each of them carried out the sale separately.",
+      "correct": false,
+      "feedback": "The six funds carried out the same order. How many people carried it out doesn't change the fact that the decision came from head office."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Narrow gaps: one brake grows down the line",
+  "caption": "A sketch rule: the gap alone sets if each car brakes more or less than the one ahead. Drag the gap: above 25 m the drop shrinks; below, it grows till a car stops.",
+  "x": {
+   "label": "Cars behind the first",
+   "min": 1,
+   "max": 20
+  },
+  "y": {
+   "label": "Speed this car must shed (km/h)",
+   "min": 0,
+   "max": 70
+  },
+  "params": [
+   {
+    "id": "d",
+    "label": "Gap",
+    "min": 10,
+    "max": 60,
+    "step": 5,
+    "value": 15,
+    "unit": " m"
+   },
+   {
+    "id": "s",
+    "label": "Lead car's drop",
+    "min": 1,
+    "max": 20,
+    "step": 1,
+    "value": 5,
+    "unit": " km/h"
+   }
+  ],
+  "series": [
+   {
+    "name": "Speed to shed",
+    "expr": "min(s*pow(50/(d+25), x-1), 60)",
+    "tone": "accent",
+    "dots": "small"
+   }
+  ],
+  "marks": [
+   {
+    "y": 60,
+    "text": "Down 60: stopped"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Brakes vs car ahead",
+    "expr": "50/(d+25)",
+    "unit": "×",
+    "digits": 2
+   },
+   {
+    "label": "Car 20 slows by",
+    "expr": "min(s*pow(50/(d+25), 19), 60)",
+    "unit": " km/h",
+    "digits": 1
+   }
+  ]
+ }
+}

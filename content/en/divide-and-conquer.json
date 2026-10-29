@@ -1,0 +1,228 @@
+{
+ "id": "divide-and-conquer",
+ "name": "Divide and Conquer",
+ "en": "分而治之",
+ "discipline": "computing",
+ "one_line": "Split a big problem into smaller copies of itself, solve each, then put them back together.",
+ "story": "On July 14 Djokovic beats Federer in five sets in the Wimbledon men's final; the 128-player draw is split section by section, seven knockout rounds",
+ "shallow": {
+  "scene": "On July 14, 2019, on Centre Court at the All England Club in London, Novak Djokovic beat Roger Federer in a five-set epic to win the Wimbledon men's singles title. That title didn't come from all 128 players playing each other. The draw is first split into a top half and a bottom half, each half into smaller sections, and so on down to the smallest groups of just two people, where one match settles it. Each round's winners move up to meet, the number of players halves, and after seven rounds only one of the 128 names is left.",
+  "plain": "You need to sort a shuffled deck of 52 cards by rank. If you insert the cards one at a time into the sorted pile, the bigger the sorted pile gets, the longer it takes to find the spot for each new card. Divide and conquer does it differently. You first split the cards into two piles of 26 and sort each one. Then you compare the top card of the two piles and put the smaller one on the result pile, until both piles are empty. Each of the two piles is sorted the same way: split it in half again, and keep going until each pile has just one card, and one card doesn't need sorting."
+ },
+ "deep": {
+  "mechanism": "### After you cut it, what's left is still the same problem\n\nCut a list of numbers in half, and each half still needs sorting, just with fewer numbers. Cut again, until each piece holds only one number, and one number is sorted by nature. From there, merge back up: two sorted lists combine into one longer one, layer by layer, until you're back to the full list.\n\n### Small answers fit into a big one only if the seams follow a rule\n\nTo merge two sorted lists, look only at the number at the front of each list, take the smaller, and repeat. What you take is always the smallest of the numbers left, because in each list no later number is smaller than an earlier one. Some problems have no seam like this. Cut a list of numbers in half and find the median of each half: those two numbers can't tell you how the numbers in the two halves interleave, so they can't be combined into the median of the whole list. Each piece would have to keep more information.\n\n### The more data, the more you save\n\nGo from 10,000 records to 1 million, 100 times as many. Inserting records one by one into a sorted line, the work grows roughly with the square of the number of records, about 10,000 times. When you split and merge, $n$ records cut in half go at most $\\log_2 n$ layers deep, and each layer's merging passes over all $n$ records once, so the work grows roughly with the number of records times the number of layers. 10,000 records is about 13 layers and 1 million about 20, so the work grows only about 150 times. These savings don't come from having more hands. Even one person doing it all from start to finish saves just as much.",
+  "origin": "Divide and conquer has no single inventor. Around 1945, John von Neumann wrote merge sort for an early computer. In 1965 James Cooley and John Tukey published the fast Fourier transform, which cut the amount of computing from the square of the number of items to the number of items times the number of layers. Later it was found that Carl Friedrich Gauss had already used the same way of splitting in the early nineteenth century.",
+  "limits": "Divide and conquer works best when each piece, once done, can be joined directly to the others without going back to change anything, as in sorting, counting votes or counting log entries. It fails when the pieces change each other's conditions. Cut a map in half and find the shortest route around each half, and putting them together may not give the shortest route on the whole map, because how you go through one half depends on where you come in from the other. If a job is divided among several departments but nobody writes down how the results join up, what the departments hand in won't fit together."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "Estimate how many days it takes to total up a national census: count how many levels there are, from province to city to county to township, and how long totaling takes at each level, then add them up."
+   },
+   {
+    "use": "explore",
+    "text": "When you face a hard problem and don't know where to start, first ask what the smallest piece looks like. Solve that, then work out how two pieces combine."
+   },
+   {
+    "use": "act",
+    "text": "Split check-in for twenty people across several desks by the first letter of their surname. Each desk's list overlaps with no other, so all the desks can let people in at once when the doors open."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "A thousand machines counting logs",
+    "text": "You want to count how many times each web address was opened in 100 million access log entries, and one machine would take a long time. You cut the log into a thousand parts and give them to a thousand machines. Each machine counts only its own part and returns a table of \"address: count.\" Then you merge the tables two at a time, adding up the counts for the same address, until only one total table is left. It is exactly the same as what one machine would have counted on its own."
+   },
+   {
+    "field": "Investing",
+    "title": "Valuing a group layer by layer",
+    "text": "You need to value a listed group that makes food and household goods. First you split it into its two businesses, then split each business by product line. For each product line, you use a discount rate that fits its risk to turn future cash flows into today's money. One layer up, you add up the values of the product lines. Head-office costs are subtracted only once, at the very top, and finally you subtract net debt to get the value of the equity."
+   },
+   {
+    "field": "Society",
+    "title": "Counting votes on election night",
+    "text": "You work in a county election office and have to report the county's result that night. Each polling station counts its own votes and reports just one table: each candidate's votes and the number of spoiled ballots. Each township adds up the tables of its stations, and the county then adds up the townships' tables. The county total is out."
+   }
+  ],
+  "ask": [
+   "How small does this problem have to get before I can just say the answer?",
+   "Once the two pieces are each done, how do I join them? How much work does that joining step take?"
+  ],
+  "with": [
+   {
+    "id": "tight-coupling",
+    "sees": "A piece of software is split among three small teams, each writing one module. Divide and conquer says to write each part to an agreed interface and put them together at the end, with all three teams working at once, which is fastest. Tight coupling sees that the three modules share one database and have to be released on the same night, so changing one place pulls on the other two, and it suggests leaving these parts to one team and not splitting them yet. If the modules talk to each other only through a few clear interfaces, split; if every change needs all three teams to meet, keep them together for now."
+   },
+   {
+    "id": "abstraction",
+    "sees": "When the teams' work doesn't fit together after splitting, it's often because nobody first decided what each piece hands to the others. Abstraction is what settles that: each piece shows only a few inputs and outputs, and how it works inside doesn't matter. Only on that basis can divide and conquer join the pieces' answers into a whole."
+   },
+   {
+    "id": "combinatorial-explosion",
+    "sees": "You're fitting 30 courses into a weekly timetable, with clashes between courses over teachers and classrooms, and combinatorial explosion sees more possible timetables than you could ever try. Divide and conquer wants to split by year group and schedule each separately, but some teachers teach across year groups, so the two separately scheduled timetables won't fit together. If the clashes fall on only a few teachers, schedule their classes first, then split; if there are clashes everywhere, don't split."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "An operations engineer wants to find, from a week of records, how many minutes the longest unbroken outage lasted. For each minute the record says only \"online\" or \"down.\" He keeps cutting the records in half until each piece is a single minute, then merges summaries of neighboring pieces layer by layer. An unbroken outage may run across the place where the records were cut.",
+    "question": "Which of these summaries lets the merge work out the right answer?",
+    "explain": "When merging, you need to look at three places: the longest outage inside each of the two pieces, and the stretch where the end of the left piece runs into the start of the right one. If the summary leaves out how long the outage runs at the start and end, an outage that crosses the cut will be missed.",
+    "options": [
+     {
+      "text": "The number of outages in the piece, the total minutes down, and the longest unbroken outage inside it.",
+      "correct": false,
+      "feedback": "The count and total describe how often it was down, but keep nothing about what happens near the cut, so an outage across pieces is still missed."
+     },
+     {
+      "text": "The times of the piece's first and last outage, and the length of the longest unbroken outage inside it.",
+      "correct": false,
+      "feedback": "It may have come back online between those two times, so they can't tell how long the outage ran unbroken at the start and at the end."
+     },
+     {
+      "text": "The piece's total minutes, its total minutes down, and the longest unbroken outage inside it.",
+      "correct": false,
+      "feedback": "The total down shows how bad the piece was overall, but not whether the outages sit against its two ends, so the length at the seam can't be worked out."
+     },
+     {
+      "text": "The piece's total minutes, the unbroken outage at its start, the unbroken outage at its end, and the longest unbroken outage inside it.",
+      "correct": true,
+      "feedback": "The left piece's end plus the right piece's start gives the stretch across the cut. When a whole piece is down, its start length equals its total minutes, and that's also how the new summary's start and end are worked out."
+     }
+    ]
+   },
+   {
+    "stem": "A researcher wants to find the highest yield to maturity among 512 bond quotes. Each value is already worked out, and no two are the same. Scanning straight through from the start takes 511 comparisons. The new method keeps splitting the quotes in half, keeps the highest value in each group, then compares the groups' winners layer by layer. He still does every step himself, one after another.",
+    "question": "How many comparisons does the new method take in all?",
+    "explain": "To end up with one highest value, every other candidate has to be ruled out, and each comparison rules out only one, so there can't be fewer comparisons. Splitting only changes how the comparisons are organized; here it doesn't save a single one.",
+    "options": [
+     {
+      "text": "About 9: there are as many comparisons as there are layers.",
+      "correct": false,
+      "feedback": "9 is the number of layers. Each layer has many groups that each need comparing, so the comparisons are the sum over all layers."
+     },
+     {
+      "text": "Still 511: each comparison knocks out exactly one candidate.",
+      "correct": true,
+      "feedback": "To get from 512 down to 1, each comparison removes exactly one, so the total is fixed, split or not."
+     },
+     {
+      "text": "About 256: one layer of pairwise comparisons knocks out half, and the other layers don't count.",
+      "correct": false,
+      "feedback": "The first layer knocks out half, but the remaining winners still have to keep being compared, so the later layers' comparisons count too."
+     },
+     {
+      "text": "About 1,000: the winners get taken out and compared again and again, twice as many as a straight scan.",
+      "correct": false,
+      "feedback": "Each comparison knocks out one candidate, and it stops when only one is left. No winner needs to be compared over again."
+     }
+    ]
+   },
+   {
+    "stem": "You need to sort 1,024 orders by amount. Both plans \"cut until each piece has one order, then merge layer by layer.\" Plan A cuts the orders still to be sorted in half each time; Plan B cuts off just one order each time and keeps cutting the rest. Both plans merge the same way: compare the fronts of the two lists and take the smaller first.",
+    "question": "Why is Plan B's total work so much more than Plan A's?",
+    "explain": "The merge rule isn't wrong; the difference is in how it cuts. Plan B shaves off only one order each time, so instead of about 10 layers there are over a thousand, and each layer still has about half the orders to merge on average.",
+    "options": [
+     {
+      "text": "Plan B can't be split among several people working at once, so its total work is much bigger than Plan A's.",
+      "correct": false,
+      "feedback": "Here both plans are done by one person. What's being compared is how many comparisons there are in total, which has nothing to do with how many hands there are."
+     },
+     {
+      "text": "The single order Plan B cuts off is hard to compare, so every merge takes a lot of extra effort.",
+      "correct": false,
+      "feedback": "A single order is sorted by nature and needs no sorting. The extra work comes from over a thousand layers of merging."
+     },
+     {
+      "text": "Plan B shaves off only one order each time, so there are over a thousand layers, and each layer's merge still goes over about half the orders on average.",
+      "correct": true,
+      "feedback": "Plan A has about 10 layers, each going over all the orders once. Plan B has a hundred times as many layers, and each still goes over about half the orders on average."
+     },
+     {
+      "text": "Plan B's merge rule sorts wrongly, so the order comes out wrong and can only be fixed by re-sorting again and again.",
+      "correct": false,
+      "feedback": "Both plans merge the same way, both sort correctly, and neither needs re-sorting."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Halve down to single cards, then merge in pairs",
+  "caption": "Every layer is still \"sort a pile of cards,\" just with fewer cards. When merging, compare only the top card of the two piles; the smaller goes first.",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "52 shuffled"
+   },
+   {
+    "id": "b1",
+    "label": "26 cards"
+   },
+   {
+    "id": "b2",
+    "label": "26 cards"
+   },
+   {
+    "id": "c",
+    "label": "1 per pile",
+    "sub": "Nothing to sort",
+    "tone": "accent"
+   },
+   {
+    "id": "d1",
+    "label": "26 sorted"
+   },
+   {
+    "id": "d2",
+    "label": "26 sorted"
+   },
+   {
+    "id": "e",
+    "label": "52 sorted",
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b1",
+    "label": "Halve"
+   },
+   {
+    "from": "a",
+    "to": "b2"
+   },
+   {
+    "from": "b1",
+    "to": "c",
+    "label": "Again"
+   },
+   {
+    "from": "b2",
+    "to": "c"
+   },
+   {
+    "from": "c",
+    "to": "d1",
+    "label": "Merge"
+   },
+   {
+    "from": "c",
+    "to": "d2"
+   },
+   {
+    "from": "d1",
+    "to": "e",
+    "label": "Compare"
+   },
+   {
+    "from": "d2",
+    "to": "e"
+   }
+  ]
+ }
+}

@@ -1,0 +1,186 @@
+{
+ "id": "ecological-niche",
+ "name": "Ecological Niche",
+ "en": "生态位",
+ "discipline": "biology",
+ "one_line": "Every species lives on its own set of conditions, and rivals squeeze its ground smaller.",
+ "story": "Connell clears the big barnacles off the low rocks on Scotland's Isle of Cumbrae, and the small barnacles survive down there",
+ "shallow": {
+  "scene": "If you have looked at rocks by the sea, you have probably seen layer upon layer of small white shells packed close together. They stand out of the water at low tide and go under again at high tide. These are barnacles, small animals that glue themselves to a rock and stay there for life; they are distant relatives of shrimps and crabs. On the shore of the Isle of Cumbrae in Scotland, the shells form two bands, one above the other: a small kind lives higher up, and a big kind lives lower down.\n\nThe ecologist Joseph Connell wanted to find out whether the small barnacles could not live lower down, or had been pushed up. On some patches of the low rock he cleared away the big barnacles, and there the small ones survived. Where he left the big ones, they grew fast and squeezed out the small barnacles next to them or grew over them. The big barnacles, though, could not move up, because at low tide the high rock sits in the sun too long and they could not stand drying out.\n\nIn 1961 he published the result: the small barnacles hold the high rock not because they can't live on the low rock, but because the big barnacles pushed them up there.",
+  "plain": "On a rooftop terrace, the south-facing row gets the most light. The first year, you and your neighbor both grow tomatoes in that row. The neighbor's seedlings shoot up first and shade yours, and yours wilt for lack of sun. Tomatoes need plenty of light, warmth and water; this whole set of conditions that keeps a tomato alive is the tomato's niche. Two pots of tomatoes need the same set of conditions, so if they are crowded into the same row, one of them will not make it. The second year you plant mint in the north-facing row. Mint needs less light, and there is enough there for it to grow until autumn. In autumn your neighbor picks tomatoes and you pick mint, and neither gets in the other's way."
+ },
+ "deep": {
+  "mechanism": "### Where a species could live is wider than where it actually lives\n\nThe range of conditions a species can survive in when it has no rivals is called its fundamental niche. The part it actually holds once rivals are there is called its realized niche. The small barnacle's fundamental niche covers both the high and the low band of rock: once the big barnacles were cleared, it held on lower down. With the big barnacles present, its realized niche is only the upper band.\n\n### A rival eats a shared resource down below your threshold\n\nEvery living thing has a food threshold: when food falls below it, more of them die than are born. Suppose A's threshold is 2 and B's is 3. Raise the two together, and the food gets eaten lower and lower. Once it drops below 3, B starts to shrink while A is still growing, and A keeps eating the food down to around 2. At that level B cannot get enough to eat, and its numbers keep falling. So the side with the lower threshold wins: it can push the food down to a level where its rival can't hold on and it can still live. Change B's threshold to 1.5, and A becomes the one pushed out.\n\n### Only when their conditions don't overlap can two species both stay\n\nIn 1934 Gause put two kinds of paramecium, Paramecium caudatum and Paramecium aurelia, into the same flask to eat the same bacteria, and in the end only P. aurelia was left. When he raised P. caudatum with Paramecium bursaria instead, both stayed: P. bursaria mostly ate yeast at the bottom of the flask, P. caudatum ate bacteria in the water, and neither pushed the other's food below its threshold.",
+  "origin": "In 1917 Grinnell used the word niche for the environment a species needs. In 1927 Elton stressed the role a species plays in its community. In 1957 Hutchinson treated each condition as one dimension and described the niche as a space of conditions with many dimensions. Gause's 1934 paramecium experiments are the classic evidence for competitive exclusion: two species that need the same conditions cannot live side by side for long. That is why the rule is also called Gause's principle.",
+  "limits": "When resources are limited, two species whose niches overlap have the hardest time living side by side. The same goes for businesses in the same trade: if two shops' customers live far apart and buy different things, neither can push the other out. So treating every competitor as having exactly the same niche, and declaring that only one business will be left in the market, is a misuse of the principle: differences in what customers like and where shops are can be enough to keep several of them going."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Two tutoring centers on the same street teach the same way; one keeps losing students and the other barely changes: they are fighting over the same students in the same time slots."
+   },
+   {
+    "use": "predict",
+    "text": "After a new rival arrives, the first of your customers to leave are the ones who need the same set of conditions he does."
+   },
+   {
+    "use": "act",
+    "text": "Facing a stronger rival, first compare your thresholds; if yours is higher, move to the customers and time slots he can't reach."
+   },
+   {
+    "use": "explore",
+    "text": "Look at a map for places where you could live but haven't gone: see which rival got there first."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Ecology",
+    "title": "Remove the gray squirrels, and red squirrels fill the island",
+    "text": "After gray squirrels were brought to Britain from North America, wherever they spread, red squirrels withdrew. In the mid-1990s Anglesey, an island in Wales, had more than 3,500 gray squirrels and only about forty red ones. Conservationists cleared gray squirrels from the whole island and removed the last one in 2013. Red squirrels then filled the island's broadleaf woods, hedgerows, parks and suburban gardens, and there are now about seven hundred: they could always have lived in those woods, but the gray squirrels had them."
+   },
+   {
+    "field": "Medicine",
+    "title": "Antibiotics clear the gut, and C. difficile takes it over",
+    "text": "The bacterium Clostridioides difficile can live in the human gut, but normally the huge numbers of bacteria that live there keep it down, and it never amounts to much. A course of broad-spectrum antibiotics clears those rivals away, and it takes over the space they leave, causing diarrhea that keeps coming back. In a 2013 randomized trial in the Netherlands, patients whose infection kept coming back were given the bacteria from a healthy person's stool: after one infusion, 81% had no relapse within ten weeks, against only 31% in the group given vancomycin alone. Put the rivals back, and it is squeezed back into a corner."
+   },
+   {
+    "field": "Retail",
+    "title": "Toys \"R\" Us falls, and Target widens its toy aisles",
+    "text": "In 2018 Toys \"R\" Us went into liquidation and closed its stores in the United States. The same year, Target added nearly 250,000 square feet of toy space in about five hundred stores, and roughly doubled the number of new exclusive toys on its shelves compared with the year before. Its merchandising chief said that stores within five miles of a closed Toys \"R\" Us sold noticeably more toys: Target had always been able to serve these toy-buying families, but the specialist store used to get to them first."
+   }
+  ],
+  "ask": [
+   "Which few conditions do I live on, and which one, if a rival took it, would I not survive without?",
+   "The places I don't hold: is it that I can't survive there, or that someone got there first?",
+   "How much of what I need is the very same thing my nearest rival needs?"
+  ],
+  "with": [
+   {
+    "id": "hotelling-competition",
+    "sees": "An old street is two kilometers long, and the customers of your breakfast stall and another one choose only by distance. Spatial competition pushes you to move your stall toward the middle, and the other stall will do the same, until the two face each other across the street. The niche gives the opposite advice: facing each other means fighting for the same people, and spreading apart gives each its own customers. When customers care only about distance, move toward the middle; when they also choose by what's on offer and by time of day, spread apart."
+   },
+   {
+    "id": "bottlenecks",
+    "sees": "Two parcel pickup points in the same business park overlap in everything: customers, vans, staff. That overlap doesn't matter much. What matters is the one share that holds both of you back, say the entrance has only three loading bays. First use bottlenecks to find that share, then work out how not to crowd onto it with the other side."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Nearly all the users of a budgeting app are students; few office workers use it. The founder wants to know whether the product itself doesn't suit office workers, or an established app took those people long ago. He has user data for each city, and in one city the established app has never launched.",
+    "question": "Which data would best tell these two possibilities apart?",
+    "explain": "Few office workers could be down to the product, or to a rival holding the spot. The city without the established app is as if the rival had been taken away: if office workers still don't use it there, the problem is the product; if they use it a lot, the rival was in the way.",
+    "options": [
+     {
+      "text": "The share of office workers among users in the city that has no established app.",
+      "correct": true,
+      "feedback": "With no established app, few office workers there means a product problem and many means the rival was blocking the way, so this one separates the two possibilities."
+     },
+     {
+      "text": "How the established app's office-worker users rate it.",
+      "correct": false,
+      "feedback": "Ratings say whether the established app is good; they can't say whether it is what keeps office workers away."
+     },
+     {
+      "text": "How the share of student users across the country changes month by month.",
+      "correct": false,
+      "feedback": "This shows how fast students are growing; it can't show whether the lack of office workers comes from the product or the rival."
+     },
+     {
+      "text": "A survey of current office-worker users asking why they don't use it much.",
+      "correct": false,
+      "feedback": "The survey only asks people who already came; the office workers who never came aren't in it, and it can't separate out the rival's part either."
+     }
+    ]
+   },
+   {
+    "stem": "Two bubble-tea shops stand at the door of a university cafeteria, selling almost the same drinks at almost the same prices to the same students. Shop A brews its own tea base, at a cost of 6 yuan a cup; shop B uses bought-in ingredients, at 8 yuan a cup. Both want more customers, and prices keep getting pushed down.",
+    "question": "If neither shop switches to selling something else, what is the most likely picture a year from now?",
+    "explain": "When two shops fight for the same customers, the price gets pushed to where the low-cost side can still survive and the high-cost side can't. A's floor is 6 yuan and B's is 8, so the price ends up between the two, and B is the one pushed out.",
+    "options": [
+     {
+      "text": "Each shop keeps half the customers, and the price settles at 9 yuan, where both make money.",
+      "correct": false,
+      "feedback": "Both want more customers, so the price can't stay at 9 yuan: A still makes money below 8 yuan, so it has reason to keep cutting."
+     },
+     {
+      "text": "The price is pushed below 8 yuan; A still makes money, B loses money on every cup and in the end can't keep going.",
+      "correct": true,
+      "feedback": "The low-cost side can push the price below its rival's floor and still make money; B can only close or switch to selling something else."
+     },
+     {
+      "text": "Shop B charges a bit more and keeps half the customers through a better reputation.",
+      "correct": false,
+      "feedback": "In the question the two shops sell almost the same drinks to the same customers, so B has no difference to rely on."
+     },
+     {
+      "text": "Both shops lose money, and the price war ends with neither left standing.",
+      "correct": false,
+      "feedback": "While the price is between 6 and 8 yuan, A still makes money; only B is losing."
+     }
+    ]
+   },
+   {
+    "stem": "In her city, lots of people illustrate children's picture books, and one illustrator finds that her fees have been pushed very low. Now and then a local traditional Chinese medicine clinic asks about illustrations explaining medicinal herbs, and almost no other illustrator does that work. She is thinking of switching to this kind of job.",
+    "question": "To judge whether this path can support her, what is the key missing data?",
+    "explain": "Having no other illustrators there only means nobody is competing with her; it doesn't say whether this work pays enough to cover her costs. Only the total number of jobs a year and the fee for each can be set against the income she needs.",
+    "options": [
+     {
+      "text": "How many picture-book illustrators there are in the city, and how many jobs each gets a year.",
+      "correct": false,
+      "feedback": "This is how crowded the old market is. She already knows the competition there is fierce, and it tells her nothing about income from the new path."
+     },
+     {
+      "text": "Where her picture-book portfolio ranks among other illustrators in the city, and what her reputation is.",
+      "correct": false,
+      "feedback": "This is her place in picture books, and has nothing to do with how much income the clinic path can bring."
+     },
+     {
+      "text": "What drawing style the clinic owners like, and which kinds of illustration they prefer.",
+      "correct": false,
+      "feedback": "Style decides which jobs she wins, not how many jobs there are a year or how much each pays."
+     },
+     {
+      "text": "How many of these illustration jobs there are in a year, and how much each pays.",
+      "correct": true,
+      "feedback": "With the number of jobs and the fee for each, she can work out this path's total income for a year and compare it with the income she needs."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "grid",
+  "title": "Small barnacles can live low but get pushed up",
+  "caption": "When Connell cleared the big barnacles from the low rock, the small ones settled there; the big ones couldn't move up, where the rock stays dry too long.",
+  "rows": [
+   "High rock",
+   "Low rock"
+  ],
+  "cols": [
+   "Small barnacle",
+   "Big barnacle"
+  ],
+  "cells": [
+   [
+    "Lives here",
+    {
+     "text": "Can't survive",
+     "sub": "Rock dry too long",
+     "tone": "muted"
+    }
+   ],
+   [
+    {
+     "text": "Could live, doesn't",
+     "sub": "Settles once big ones go",
+     "tone": "accent"
+    },
+    {
+     "text": "Lives here",
+     "sub": "Pushed small ones out"
+    }
+   ]
+  ]
+ }
+}

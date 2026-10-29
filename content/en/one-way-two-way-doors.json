@@ -1,0 +1,191 @@
+{
+ "id": "one-way-two-way-doors",
+ "name": "One-Way and Two-Way Doors",
+ "en": "单向门与双向门",
+ "discipline": "thinking",
+ "one_line": "Make the decisions you can undo quickly, and take your time over the ones you can't.",
+ "story": "On April 23 Coca-Cola announces a new formula; on July 11, 79 days later, it brings back \"Coca-Cola Classic\" and pays the price",
+ "shallow": {
+  "scene": "On April 23, 1985, the Coca-Cola Company, led by Roberto Goizueta, announced that it was replacing its classic formula. Taste tests favored the new formula, but once it was on sale some people stockpiled the old Coke and others phoned in to protest. Before the change the company's hotline took about 400 calls a day; by June it was taking more than 1,500 a day.\n\nOn July 11 the company announced that the old formula was coming back, sold as \"Coca-Cola Classic\" alongside the new one. From the announcement to the return, 79 days had passed, and in that time the company spent a good deal of money handling protests, restocking stores and redoing its advertising.",
+  "plain": "Jeff Bezos of Amazon called a decision you can undo a two-way door: if you go through and don't like it, you can come back out. One you can't undo is a one-way door: once you go through, there's no way back. Buying a coat at the mall, which you can return within seven days, doesn't need much agonizing; take it home, try it on, and you'll know. A haircut is different. Cut it too short and it takes months to grow back, so before the scissors come out you need to tell the hairdresser exactly how much to leave. Trying on a coat doesn't need a meeting; a haircut is worth an extra five minutes."
+ },
+ "deep": {
+  "mechanism": "### Which way a door swings depends on the price of the way back\n\nYou're trying out a tool for your studio. Pay monthly, and canceling costs you only 200 yuan; prepay a year, and quitting partway costs you nearly 10,000. Either way you \"can stop using it,\" but one way back costs dozens of times more than the other. Suppose you cut the prepaid period from a year to three months: quitting partway now costs at most 2,500 yuan, and the door has moved a long way from one-way toward two-way.\n\n### The sooner you find out, the more two-way the door\n\nTake the monthly plan again. If your colleagues can tell within a week whether the tool works for them, the most you waste is one week's money. If it takes six months to see the results, you are losing money every month for those six months, and the team is forming habits around the tool. The price of canceling hasn't changed, but the longer it drags on, the more money and habit you sink into it, and the narrower the door gets.\n\n### At a one-way door, spend your effort on what could change the decision\n\nIf you're about to sign a long-term contract, go and check that the need is real, then get the other side to write an exit clause into it. Holding another round of meetings over the same papers won't change the decision.",
+  "origin": "This framework comes from the practice of running companies. In Amazon's 2015 letter to shareholders (released in 2016), Jeff Bezos wrote that big decisions that are hard to reverse belong to one kind and reversible decisions to another, and that the two kinds should be handled at different speeds and through different processes. The idea spread through Amazon's practice; no widely accepted classic experiment has proved it on its own.",
+  "limits": "The distinction only tells you how much effort to put into a decision; it doesn't judge for you which option is better. It works best for decisions where the cost of backing out can be worked out clearly and problems can be spotted in time. Being able to stop is not the same as being able to restore: delete a message, and the screenshots don't come back; shut down a system, and the leaked data doesn't come back. When things are urgent, you have to act first even if the action can't be taken back, because by the time you've checked everything it will be too late."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When you're unsure whether to act right away, first ask how much money and how many days it would cost to back out, then decide whether to just try it or to check first."
+   },
+   {
+    "use": "design",
+    "text": "Set approval rules for a team: two levels by the cost of backing out. Anything that can be withdrawn within a day, one person decides; anything that can't be withdrawn needs the signatures of two or more people."
+   },
+   {
+    "use": "explore",
+    "text": "List which steps in this plan can be taken back and which can't. Try the steps that can be taken back first, then see whether the one that can't is still worth taking."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "A switch and a deletion",
+    "text": "You're launching a new checkout page. You first turn it on for five percent of users with a switch, so if something goes wrong you can turn it off within a minute. The same release includes one more thing: deleting the old orders table. You make a backup first and keep the old table for thirty days before scheduling the deletion."
+   },
+   {
+    "field": "Personal life",
+    "title": "Three months of weekends first",
+    "text": "You want to leave office work and become a woodworker. Instead of quitting, you spend every weekend working in a friend's workshop for three months, writing down your energy, earnings and mood each day. By the third month you know you like making furniture and dislike chasing clients, so you take a part-time job at a furniture factory."
+   },
+   {
+    "field": "Medicine",
+    "title": "Pills before surgery",
+    "text": "Your father's knee has hurt for six months, and the doctor offers two paths: physical therapy and medication first, switching if that doesn't work, or a knee replacement right away. You choose the first. After three months the pain hasn't eased much, so he goes for the replacement, and he signs only after you've asked about the surgical risks and the recovery time."
+   }
+  ],
+  "ask": [
+   "If I found out tomorrow that I'd chosen wrong, how exactly would I back out, and how much money, time and whose trust would it cost?",
+   "Once a bad result shows up, can I spot it and call a halt before the losses go past what I can bear?",
+   "Can I bear the worst step myself, or would someone else have to carry it for me?"
+  ],
+  "with": [
+   {
+    "id": "avoid-ruin",
+    "sees": "A founder wants to put 30% of their savings into testing a new venture and can pull out at any time after a year. The two-way door says that since pulling out is cheap, do it first and learn as you go. Avoiding ruin watches something else: if that 30% is all lost, what is left? However two-way the door, if the worst single outcome is enough to knock you out, first cut what you put in down to an amount you can afford to lose."
+   },
+   {
+    "id": "opportunity-cost",
+    "sees": "A team of eight is arguing about whether to replace its task system. By the two-way door's reckoning, the way back is cheap, so try the new one for a month. Opportunity cost reminds you that whatever else those eight people don't do during the trial has a price too. If a one-month trial means stopping the main project, the door is not as cheap as it looks."
+   },
+   {
+    "id": "path-dependence",
+    "sees": "A small trial gets plugged into more and more of the business, and the cost of backing out rises week by week. What path dependence sees is that a door that was cheap at first gets welded shut, bit by bit, by everything put in afterward. When a trial starts, write down its deadline and who can call a halt."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A warehouse manager wants to change the picking routes but doesn't know whether the new routes are faster. One self-contained area can try them for three days with temporary signs, at a cost of about 1,000 yuan; it can be put back the same day, and shipping from other areas isn't affected. Changing the whole warehouse would mean stopping work for two days and retraining every worker.",
+    "question": "How should the manager go about it?",
+    "explain": "A local trial trades a limited loss for real data, so it suits acting fast. Changing the whole warehouse can also be undone, but backing out costs far more, so that should be judged separately once there's feedback.",
+    "options": [
+     {
+      "text": "Adopt the new routes and keep the old signs; since it can be put back, roll it out across the whole warehouse right away.",
+      "correct": false,
+      "feedback": "The signs can be swapped back, but the two days of stopped work and the retraining can't be recovered, so that's no reason to expand straight away."
+     },
+     {
+      "text": "Try it for three days in the self-contained area, record the time taken and the mistakes, and agree in advance on when to put things back.",
+      "correct": true,
+      "feedback": "The loss is limited, problems can be spotted in time and there's a clear way back. Get working data first, then decide whether to expand."
+     },
+     {
+      "text": "Try it across the whole warehouse first; only after training everyone can the overall effect be judged accurately.",
+      "correct": false,
+      "feedback": "A warehouse-wide trial adds the cost of stopping work and training, and a local trial can already answer the question of speed."
+     },
+     {
+      "text": "Gather opinions from all the workers first, and once everyone approves of the new routes, arrange a local trial.",
+      "correct": false,
+      "feedback": "Whether it's faster has to be tested by actually doing it. Waiting for everyone to approve only delays this cheap experiment."
+     }
+    ]
+   },
+   {
+    "stem": "A friend invites you to buy a share in a coffee shop, and the first payment is only 20,000 yuan. The agreement has one more clause: if the shop loses money in the next three years, shareholders must put in more money in proportion to their shares, and anyone who refuses pays a penalty. Accounts are provided once a quarter. You can afford to lose 20,000 yuan, and your friend says this is just a small test.",
+    "question": "To judge whether this money counts as a small test, which piece of information are you missing most?",
+    "explain": "The 20,000 yuan is only the first payment; the three years of obligation to put in more decide how expensive the way back is. Only by finding out the total limit on extra payments and the exit terms can you know the most you could lose.",
+    "options": [
+     {
+      "text": "Why the accounts are provided only once a quarter.",
+      "correct": false,
+      "feedback": "However often you see the accounts, they don't release you from the obligation to put in more."
+     },
+     {
+      "text": "Roughly how many customers the shop has had each day over the past three months.",
+      "correct": false,
+      "feedback": "Customer numbers tell you whether business is good, not whether you can get out of this investment."
+     },
+     {
+      "text": "The limit on extra payments in the agreement, and what happens if you refuse to pay.",
+      "correct": true,
+      "feedback": "This decides directly how much you could lose at worst and whether you can stop. It's the key to whether this is \"small.\""
+     },
+     {
+      "text": "How many shops your friend has run before, and how long each lasted.",
+      "correct": false,
+      "feedback": "The obligation to put in more is written into the agreement; how many shops your friend has run doesn't change it."
+     }
+    ]
+   },
+   {
+    "stem": "You run the office at a company of twelve people. The company wants to move its lunch ordering from Platform A to Platform B. Both charge per order, you can switch back at any time, and there's no deposit. The boss wants two weeks of research first, comparing six platforms, and three meetings before deciding.",
+    "question": "Where is this plan using the wrong way of thinking?",
+    "explain": "For a small decision that costs nothing to reverse, a week's trial gives a truer answer than research; putting two weeks of research and three meetings into it treats a two-way door as a one-way door.",
+    "options": [
+     {
+      "text": "It spends two weeks researching a small decision that can be reversed at any time, when a week's trial would give the answer.",
+      "correct": true,
+      "feedback": "The way back is cheap, so acting is itself the fastest research. The research and meetings delay the answer."
+     },
+     {
+      "text": "It didn't write down the steps for switching back to Platform A in advance.",
+      "correct": false,
+      "feedback": "The question already says you can switch back at any time at no cost. A way back isn't what's missing."
+     },
+     {
+      "text": "It didn't have staff try out all six platforms during the research.",
+      "correct": false,
+      "feedback": "That would only make the research heavier, and a small decision doesn't need that much work up front."
+     },
+     {
+      "text": "It didn't ask everyone in the company for their opinion before deciding.",
+      "correct": false,
+      "feedback": "The problem isn't who gets asked; it's whether this decision is worth that much effort."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "grid",
+  "title": "Costlier way back, slower to see: more one-way",
+  "caption": "Same tool: canceling monthly costs only 200 yuan; quitting a prepaid year partway costs nearly 10,000. How long it takes to see if it works also turns the door.",
+  "rowLabel": "Cost to exit",
+  "colLabel": "Time to see if it works",
+  "rows": [
+   "Monthly, 200 yuan",
+   "Prepaid year, ~10k"
+  ],
+  "cols": [
+   "A week",
+   "Six months"
+  ],
+  "cells": [
+   [
+    {
+     "text": "Two-way door",
+     "sub": "Try it, act fast",
+     "tone": "accent"
+    },
+    {
+     "text": "Door narrowing",
+     "sub": "Paying in each month"
+    }
+   ],
+   [
+    {
+     "text": "Leaning one-way",
+     "sub": "Shorten the prepay"
+    },
+    {
+     "text": "One-way door",
+     "sub": "Check need and exit terms first",
+     "tone": "warn"
+    }
+   ]
+  ]
+ }
+}

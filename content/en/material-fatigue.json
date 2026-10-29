@@ -1,0 +1,394 @@
+{
+ "id": "material-fatigue",
+ "name": "Material Fatigue",
+ "en": "材料疲劳",
+ "discipline": "physics",
+ "one_line": "A force something can take once can still break it if it comes thousands of times.",
+ "story": "A Comet airliner breaks up in midair near Elba; water-tank tests at Farnborough recreate the fatigue cracks from cabin pressure",
+ "shallow": {
+  "scene": "On January 10, 1954, a Comet airliner of British Overseas Airways Corporation, flying from Rome to London, broke up in midair near the Italian island of Elba and fell into the sea. All 35 people on board were killed. Each time this new kind of jet airliner climbed, pressurizing the cabin pushed the body of the plane outward once, and on the way down it shrank back. After the accident, investigators at Farnborough in England put the body of a plane of the same model into a water tank and pressurized and released it over and over. The cracks in it grew a little with each round, and in the end a whole section burst open.",
+  "plain": "You bend a paper clip back and forth, each time to the same angle as the first, yet after a dozen or so bends it snaps in two at the bend. This kind of damage, from bending back and forth, is material fatigue. After the first bend the clip looks fine, but inside, an invisible crack has already started. Each bend after that pushes the crack a little deeper, until the small piece left uncracked can't take the same bend."
+ },
+ "deep": {
+  "mechanism": "### Damage starts at the point where force crowds most\n\nNotches, welds, the edges of holes and scratches on the surface squeeze force into a tiny spot, where the stress is far higher than the average over the whole piece. Putting a load on and taking it off once counts as one cycle. With each cycle, the metal inside at that point slips a little; after enough slipping, tiny cracks appear first, and then they join into a crack. The part as a whole can look undamaged while that one point has already used up most of its life.\n\n### The longer the crack, the faster it grows each cycle\n\nThe stress at the tip of a crack rises with how much the load swings each cycle and with the length of the crack. A common assumption is that a crack's growth per cycle is proportional to the cube of the stress at its tip. Double the swing, and the stress at the tip doubles, so the growth per cycle is $2^3=8$ times as much. Double the crack's length, and the stress at the tip only rises to about 1.4 times (it grows with the square root of the length), so the growth per cycle is about $1.4^3\\approx 3$ times as much. So the longer a crack is, the faster it grows: slowly in the first half of its life, then faster and faster in the second.\n\n### The last cycle breaks what's left\n\nThe crack eats into the cross-section, until what's left finally can't take the peak load of one cycle and breaks in an instant. The load in that cycle is just as big as in the tens of thousands of cycles before; what got smaller is the cross-section left. Engineers look it up on a stress–life curve: for a given swing in stress per cycle, how many cycles the material can go through before it breaks.",
+  "origin": "In the mid-19th century, the German railway engineer August Wöhler ran systematic tests with repeated loading to find out why railway axles broke. His test data were set out in tables, and later people drew them as a stress–life curve: for the same material, the bigger the swing in stress each cycle, the fewer cycles it can go through before breaking. This became the basis of later fatigue design.",
+  "limits": "It covers metal parts that are loaded over and over, like axles, wings and the welds in bridges. In the first half of its life a crack grows slowly and can't be seen, so inspection records are more reliable than how long something has been in use without trouble. Some steels have a fatigue limit under specified conditions: if the swing in stress stays below it, they can go through cycles for a very long time; with corrosion or a notch, that line no longer holds. Treating human tiredness as a crack is also a mistake: what a night's sleep restores doesn't build up."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When choosing the connecting bolts for a compressor that starts and stops hundreds of times a day, first bring the swing in stress each time within what the material's stress–life curve allows, then decide how thick the bolts are and how many to use."
+   },
+   {
+    "use": "predict",
+    "text": "Take the number of vehicles that cross a steel bridge each day and the swing in stress each one causes, check them against the material's stress–life curve, and estimate how many more years the welds in the deck can last."
+   },
+   {
+    "use": "explain",
+    "text": "Work out why a folding chair used for years suddenly collapsed one day when you sat down: each time someone sat on it, the riveted joint on a leg gained a little more crack, and that day the crack simply used up the cross-section that was left."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Offshore engineering",
+    "title": "A welded fitting on a brace",
+    "text": "On March 27, 1980, the Alexander L. Kielland, an offshore platform where workers lived in the North Sea, capsized, and 123 people died. The investigation found that a fatigue crack in one brace started near a welded fitting that held a hydrophone, an underwater microphone. Waves loaded it again and again, the crack spread little by little, and finally the brace broke off and the platform capsized."
+   },
+   {
+    "field": "Everyday things",
+    "title": "The charging cable breaks at the base",
+    "text": "Your phone charging cable has been in use for a year. The outer coating is intact, but it keeps losing contact right where it meets the plug. Plugging and unplugging it every day and winding it up bend it at the same spot, and the fine copper strands inside break one by one, until the few left can't carry the current. You wind the cable more loosely and switch to one with a protective sleeve, and the bend at the base becomes much smaller."
+   },
+   {
+    "field": "Sports and health",
+    "title": "A dull ache at the front of the shin",
+    "text": "You're training for a marathon, running a bit more each week than the week before. The front of your right shin starts to ache dully, and you grit your teeth and keep training. Bone isn't like metal: at rest it repairs tiny damage by itself, but if the repair can't keep up, tiny cracks join into a stress fracture. You stop running for a few weeks, and once you've recovered, you build up again from half your old mileage."
+   }
+  ],
+  "ask": [
+   "How many times a day does this part's load change, and how big is each change?",
+   "Which corner, weld or hole takes the most concentrated stress, and how long was the crack measured there at the last inspection?",
+   "Is there anything that can undo the damage left behind after each load?"
+  ],
+  "with": [
+   {
+    "id": "margin-of-safety",
+    "sees": "An elevator's steel cable has been given a large margin over its rated load, but it goes up and down hundreds of times a day. A margin of safety measures how heavy a single pull has to be to break it; fatigue looks at how many trips it has made and how much the load swings on each trip. With many trips, check the stress–life curve first; if it's used only a few times a year, the margin you left is the main thing to go on."
+   },
+   {
+    "id": "hormesis",
+    "sees": "Hormesis sees the repair after each shock. With the same shock repeated every week, a person training for strength gets stronger muscles, but a metal beam grows more brittle the more it's shaken. The difference is whether there's repair after each shock, and whether the repair keeps up with the damage. Muscle and bone repair themselves, so training has to leave time to recover; metal doesn't, so you have to rely on inspection and replacement."
+   },
+   {
+    "id": "redundancy",
+    "sees": "A suspension bridge uses two identical cables, so if one breaks the other can still hold; the redundancy looks solid. But the two cables bear the same swings in load and age at almost the same rate, so when one cracks, the other isn't far from cracking. Backup has to come from replacing them with new ones from a different batch, not just from fitting one more of the same."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You manage a crane at a port, and a crack has been found at a weld on its arm. At the last inspection, six months ago, the crack was 3 millimeters long; this time it measures 5 millimeters. The amount of work the crane does each day and the weights it lifts haven't changed.",
+    "question": "When should the next inspection be scheduled?",
+    "explain": "Each bit the crack grows makes the stress at its tip a bit bigger, so the next cycle it grows faster. With the same workload, it will grow more in the next six months than in the last six, so the inspection should be scheduled within six months.",
+    "options": [
+     {
+      "text": "Still in six months: the workload hasn't changed, so the crack grows 2 millimeters every six months.",
+      "correct": false,
+      "feedback": "This assumes the crack grows at a steady rate. The longer the crack, the faster it grows each cycle, so in the next six months it will grow more than 2 millimeters."
+     },
+     {
+      "text": "Sooner than six months: the longer a crack is, the faster it grows, so the same workload will make it grow more.",
+      "correct": true,
+      "feedback": "The stress at the crack's tip rises with its length, so each cycle it grows faster than the last; inspections need to be closer together."
+     },
+     {
+      "text": "Put it off for a year: 5 millimeters is still short compared with the arm.",
+      "correct": false,
+      "feedback": "A short crack is not the same as a safe one. It is growing faster and faster, and in a year it may have grown so far that the cross-section left can't hold."
+     },
+     {
+      "text": "Wait until the crack reaches 10 millimeters before inspecting, and keep working until then.",
+      "correct": false,
+      "feedback": "This sets no inspection at all and doesn't check how fast the crack is growing; by the time it reaches 10 millimeters, it may already be past the point of breaking."
+     }
+    ]
+   },
+   {
+    "stem": "Two steam boilers of the same model each run 12 hours a day, with walls of the same steel and the same thickness. Boiler A stays at the same pressure the whole time it's on; boiler B is shut down to release the pressure and brought back up to pressure once an hour. Both reach the same maximum pressure.",
+    "question": "After ten years, which boiler is more likely to have fatigue cracks in the welds of its wall?",
+    "explain": "B goes up and down once an hour, more than 40,000 cycles in ten years; A goes up and down only once a day, when it's started and shut down, a little over 3,000 cycles in ten years, more than ten times fewer. In the boiler with more cycles, cracks in the welds advance further.",
+    "options": [
+     {
+      "text": "B: its pressure goes up and down over and over every day, so in ten years its load changes many more times.",
+      "correct": true,
+      "feedback": "Each time the pressure goes up and is released, the weld goes through one cycle. More cycles mean more chances for a crack to advance."
+     },
+     {
+      "text": "Neither: same steel, same thickness, and both are designed with a margin over the maximum pressure.",
+      "correct": false,
+      "feedback": "A margin over the maximum pressure guards against bursting in one go; it can't stop B's dozen or so pressure swings a day from slowly tearing cracks into the welds."
+     },
+     {
+      "text": "About the same: the running time and the maximum pressure are the same.",
+      "correct": false,
+      "feedback": "The running hours and maximum pressure are the same, but the number of load changes differs by more than ten times, so their lives differ."
+     },
+     {
+      "text": "A: its wall bears the maximum pressure the whole time, for ten years.",
+      "correct": false,
+      "feedback": "A's pressure goes up and down only once a day, a little over 3,000 cycles in ten years, more than ten times fewer than B."
+     }
+    ]
+   },
+   {
+    "stem": "A steel shaft that is bent back and forth over and over needs a groove cut into it to hold a retaining ring. The groove's width and depth are already set; only the shape of the bottom of the groove is left to choose.",
+    "question": "Which shape for the bottom of the groove lowers the risk of a crack starting there?",
+    "explain": "The sharper the corner at the bottom of the groove, the more the force crowds there, and the sooner tiny cracks appear. A larger rounded corner spreads the force out, so the point where a crack starts comes later.",
+    "options": [
+     {
+      "text": "Keep the fine tool marks left by the cutter, so the surface is a little rough.",
+      "correct": false,
+      "feedback": "Each tool mark is a small notch, and under repeated bending each one crowds force into its own spot, so cracks start more easily."
+     },
+     {
+      "text": "Cut the bottom of the groove into a sharp, nearly right-angled corner, so the ring sits tighter.",
+      "correct": false,
+      "feedback": "A sharp corner concentrates force at one point, and under repeated bending, that's where a crack appears first."
+     },
+     {
+      "text": "Cut the bottom of the groove a little deeper than the rest, to leave room for the ring.",
+      "correct": false,
+      "feedback": "Going deeper makes the shaft thinner at the groove while the corner stays sharp, so the force is even more concentrated than before."
+     },
+     {
+      "text": "Make the rounded corner at the bottom of the groove bigger, so the corner curves smoothly.",
+      "correct": true,
+      "feedback": "With a big rounded corner, the force at the corner is spread out, so that point rises less far above the average stress."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "title": "A crack grows slowly, then faster and faster",
+  "caption": "Assume growth per cycle goes with the cube of the stress, and the crack breaks at 10 times its first length. Halfway through its life, it's just over twice as long.",
+  "x": {
+   "label": "Life used up",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "y": {
+   "label": "Times its first length",
+   "min": 0,
+   "max": 13
+  },
+  "series": [
+   {
+    "name": "",
+    "points": [
+     [
+      0,
+      1
+     ],
+     [
+      2,
+      1.03
+     ],
+     [
+      4,
+      1.06
+     ],
+     [
+      6,
+      1.09
+     ],
+     [
+      8,
+      1.12
+     ],
+     [
+      10,
+      1.15
+     ],
+     [
+      12,
+      1.19
+     ],
+     [
+      14,
+      1.22
+     ],
+     [
+      16,
+      1.26
+     ],
+     [
+      18,
+      1.3
+     ],
+     [
+      20,
+      1.34
+     ],
+     [
+      22,
+      1.39
+     ],
+     [
+      24,
+      1.43
+     ],
+     [
+      26,
+      1.48
+     ],
+     [
+      28,
+      1.53
+     ],
+     [
+      30,
+      1.58
+     ],
+     [
+      32,
+      1.64
+     ],
+     [
+      34,
+      1.7
+     ],
+     [
+      36,
+      1.76
+     ],
+     [
+      38,
+      1.83
+     ],
+     [
+      40,
+      1.89
+     ],
+     [
+      42,
+      1.97
+     ],
+     [
+      44,
+      2.05
+     ],
+     [
+      46,
+      2.13
+     ],
+     [
+      48,
+      2.22
+     ],
+     [
+      50,
+      2.31
+     ],
+     [
+      52,
+      2.41
+     ],
+     [
+      54,
+      2.51
+     ],
+     [
+      56,
+      2.63
+     ],
+     [
+      58,
+      2.75
+     ],
+     [
+      60,
+      2.88
+     ],
+     [
+      62,
+      3.01
+     ],
+     [
+      64,
+      3.16
+     ],
+     [
+      66,
+      3.32
+     ],
+     [
+      68,
+      3.49
+     ],
+     [
+      70,
+      3.68
+     ],
+     [
+      72,
+      3.88
+     ],
+     [
+      74,
+      4.1
+     ],
+     [
+      76,
+      4.33
+     ],
+     [
+      78,
+      4.59
+     ],
+     [
+      80,
+      4.87
+     ],
+     [
+      82,
+      5.18
+     ],
+     [
+      84,
+      5.52
+     ],
+     [
+      86,
+      5.89
+     ],
+     [
+      88,
+      6.3
+     ],
+     [
+      90,
+      6.76
+     ],
+     [
+      92,
+      7.27
+     ],
+     [
+      94,
+      7.84
+     ],
+     [
+      96,
+      8.47
+     ],
+     [
+      98,
+      9.19
+     ],
+     [
+      100,
+      10
+     ]
+    ],
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "x": 50,
+    "text": "Half its life: 2.3x"
+   },
+   {
+    "x": 50,
+    "y": 2.31
+   },
+   {
+    "y": 10,
+    "text": "At 10x, it breaks"
+   }
+  ]
+ }
+}

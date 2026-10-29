@@ -1,0 +1,266 @@
+{
+ "id": "overfitting",
+ "name": "Overfitting",
+ "en": "过拟合",
+ "discipline": "computing",
+ "one_line": "Treating flukes in old data as patterns looks accurate until you use it.",
+ "story": "Google Flu Trends launches, then underestimates the first wave of H1N1 in 2009",
+ "shallow": {
+  "scene": "When you've been sick, you have probably searched online for \"fever\" or \"sore throat.\" In 2008 Google launched Flu Trends, which counted searches like these to estimate where in the United States the flu was going around. From a huge pool of search terms the researchers picked out a few dozen. The test was whose search volume rose and fell most closely in step with the flu doctor-visit records kept over the years by the US Centers for Disease Control and Prevention. A curve built from those few dozen terms, laid over the visit records of the past few years, matched them tightly.\n\nBut when terms are picked only on how well they match, terms that just happen to rise and fall in winter along with the flu get in too: \"high school basketball,\" whose season happens to fall in winter, at one point also looked related to the flu. The team removed terms like that, which were obvious at a glance. Ones that weren't obvious could still be in there.\n\nIn the spring of 2009, H1N1 flu broke out in a season when flu doesn't usually spread, and the system underestimated the first wave. Part of why it had matched the past few years so well was a coincidence: flu always came in winter.",
+  "plain": "You're studying for a final exam. You learn ten past papers by heart and get 98% right on practice runs; the real exam is a new paper, and you get 80% right. What you memorized includes reasoning that carries over to new questions, and also accidents that belong only to those ten papers, such as one question's answer happening to be C. However much of the second kind you memorize, it won't earn you a single point on a new paper. A model looking for patterns in old data can do the same thing. It records accidents that belong only to this batch of data as if they were patterns, so it scores very high on the old data and goes wrong on new data. This is called overfitting."
+ },
+ "deep": {
+  "mechanism": "### The more a curve can bend, the closer it fits the old points and the wilder it gets between them\n\nSuppose you hang 1 to 10 weights on a spring, one more each time, and write down how many centimeters it stretches. The spring really stretches one centimeter for each weight, but each reading of the scale is a little off. So the ten readings, drawn as points, lie roughly along a sloping line, each a little above or below it. Fit a straight line to the ten points and it misses each one by a bit, and the misses are exactly the reading errors. A quadratic curve misses by slightly less. A ninth-degree curve has ten coefficients, and ten readings are just enough to pin it down completely: it bends to pass through every point, with zero error.\n\nBut the places it passes through carry the reading errors. To satisfy ten points that sit above and below at the same time, it has to swing back and forth between them, and the swings get bigger toward both ends. Hang 9.5 weights and the spring should stretch 9.5 centimeters. The straight line estimates 9.6; the ninth-degree curve estimates 12.4. The higher a curve's degree, the more it can bend, and the more slack it has to chase these chance errors. On the old points the error falls all the way to zero. On new points the error is smallest around the straight line and the quadratic, and rises as the degree goes higher.\n\n### The more rules you try, the more chances for one to win by luck\n\nYou can overfit without fitting any curve, just by screening rules. Test hundreds of indicators and time windows on the same stretch of history, and a few will match the outcome purely by coincidence. The short rule you end up keeping looks simple, but there are hundreds of attempts behind it.\n\n### Independent data can check a model only once\n\nBuild the rules with one part of the data, choose between options with another part, and finally keep back a set nobody has touched to check the result. When predicting the future, the checking data should come from a later time than the data the model was built on; only then is it like predicting something that hasn't happened yet. Every time you look at the check score and go back to change the rules, the checking data turns into practice questions, and you need a new set. Limiting the parameters (such as the curve's degree) and deleting exceptions patched in along the way means chasing fewer chance details. After the changes, check again on a new set of data.",
+  "origin": "Overfitting comes from statistical modeling and later became a core problem in machine learning; no single person is credited with proposing it. In 1974 the statistician Mervyn Stone made a systematic study of cross-validation: setting aside part of the data in turn for testing, and using the test scores to choose and assess prediction rules. The classic demonstration is polynomial fitting like the spring: a high-degree curve passes through every old point with its errors, yet on new points it loses to a simpler curve.",
+  "limits": "Overfitting is a problem only when you use limited data to infer cases you haven't seen. When all you need is a faithful record of what happened, every detail should be kept. Complexity itself is not the illness: with enough data and the right constraints, a complex model can predict more accurately. When a new system or a new population changes a relationship that used to be stable, predictions fail too, but that is the world changing; the model didn't learn the old samples wrongly. Cut parameters from every complex model on sight, and what you cut may be the real pattern."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "A recognition program scores full marks in lab tests and keeps making mistakes in the field: what it memorized was the lighting and backgrounds of the test scenes, not the thing it was meant to recognize."
+   },
+   {
+    "use": "predict",
+    "text": "Estimate how much of a stock-picking rule screened out of dozens of indicators will still hold next year: the more indicators were tried, the bigger the discount."
+   },
+   {
+    "use": "design",
+    "text": "Set the rules for an internal algorithm contest: the leaderboard uses only public data, and final rankings are scored on a set of data released only after the contest, so contestants can't tune their parameters to the leaderboard."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Investing",
+    "title": "Butter explains the stock market",
+    "text": "In an article published in 2007, David Leinweber fit the historical level of the S&P 500 using butter production in Bangladesh, and the fit was quite good. When he added other farm variables, the fit got even better."
+   },
+   {
+    "field": "Business",
+    "title": "Promotion rules get finer and finer",
+    "text": "You analyze last month's orders. First you choose to send coupons on Fridays, then you add age, city and number of page views, until every purchase can be explained by the rules. Once the rules go live, new customers order at almost the same rate as people who got no coupon. Next you have a new batch of customers get a coupon or not at random, and compare only the extra orders in this batch."
+   },
+   {
+    "field": "Personal life",
+    "title": "Writing coincidences into habits",
+    "text": "A runner looks back on the three races he won and finds that each time he wore a blue vest, drank coffee beforehand and arrived ten minutes early, so he makes the three into a routine for winning. For the next several races, he writes down what he wore, when he arrived and how he did. He keeps only the preparations that have a reason behind them."
+   }
+  ],
+  "ask": [
+   "Does this pattern explain results already known, or predict results that haven't happened yet?",
+   "How many indicators, time windows and exceptions were tried to find it? Go back through the original experiment records.",
+   "Is there a set of data that played no part in choosing the rule? In a later period or with another group of people, can it still beat a simple baseline?"
+  ],
+  "with": [
+   {
+    "id": "fat-tails",
+    "sees": "You're setting the flood standard for a reservoir. You have fifty years of water-level records, and one huge flood last year stands far above all the rest. When predicting water levels in ordinary months, you shouldn't bend the curve for this one point; it is most likely chance. But setting the height of the dam is about exactly that most extreme point. In the view of normal versus fat-tailed distributions, a single extreme value in a fat-tailed distribution can decide the whole loss. For everyday prediction, treat it as noise; for the flood limit, set it by that point."
+   },
+   {
+    "id": "multiple-comparisons",
+    "sees": "A drug trial misses its endpoint overall. The analysis team splits the patients into twenty groups by age, sex and region and tests each one, and one group comes out significant. Multiple comparisons tells you that the more ways you split, the greater the chance that one significant result turns up by luck. Overfitting asks the question that comes after: does this rule still hold for new patients who weren't part of the splitting?"
+   },
+   {
+    "id": "occams-razor",
+    "sees": "Two prediction schemes score the same on old data. One has three conditions, the other thirty. With no other information, Occam's razor has you keep the simple one first. But once there is new data, if the complex one does clearly better on it, it should stay. What overfitting cares about is the score on new data; the number of conditions is not the test."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You price second-hand homes at a real estate agency. You build a model on 800 sales records, and another 200 sales play no part in building it. Option A uses 3 variables: its average error is 120,000 yuan on the 800 and 130,000 yuan on the 200. Option B uses 40 variables: its average error is 20,000 yuan on the 800 and 190,000 yuan on the 200.",
+    "question": "Which option should you use to price new listings?",
+    "explain": "Pricing deals with homes the model hasn't seen, and the 200 are data of that kind. A's errors on the two sets are close. B's error is small on the data it was built on and grows on data it never learned from, which shows it memorized chance details of the 800.",
+    "options": [
+     {
+      "text": "B, after adding a few more variables to push its error on the 200 down.",
+      "correct": false,
+      "feedback": "More variables would only make it more accurate on the 800. On the 200 its error is already well above A's."
+     },
+     {
+      "text": "B: its error on the 800 is much smaller, and it captures more detail.",
+      "correct": false,
+      "feedback": "The 800 are data it learned from. A small error there shows it remembers them well, not that it can recognize new homes."
+     },
+     {
+      "text": "A: its error is smaller on the 200 that played no part in building it, and its scores on the two sets are close.",
+      "correct": true,
+      "feedback": "On the unseen data, A is off by 130,000 and B by 190,000. A's two scores barely differ, which shows it captured things that carry over to new homes."
+     },
+     {
+      "text": "Neither: both do worse on the 200 than on the 800, so both learned the wrong thing.",
+      "correct": false,
+      "feedback": "Doing a little worse on new data is normal. A is only 10,000 worse; B is 170,000 worse. The two are not on the same scale."
+     }
+    ]
+   },
+   {
+    "stem": "You have data on 1,000 users and want to predict who will leave. The analyst first picks out the 20 indicators most related to leaving, using all 1,000 people, then splits them at random into 800 for training and 200 for testing. On the test set the hit rate is 88%. After launch, the hit rate is only 61%.",
+    "question": "Why did the 88% on the test overstate how the model would do after launch?",
+    "explain": "The step of picking indicators used whether all 1,000 people left, so the answers for those 200 test users had already seeped into the model. The test score was therefore no longer a score on unseen data.",
+    "options": [
+     {
+      "text": "Keeping only 20 indicators made the model too simple to capture the users after launch.",
+      "correct": false,
+      "feedback": "If the model were too simple, the test score would be low too; here the test score is 88%."
+     },
+     {
+      "text": "The indicators were picked after seeing whether those 200 people left, so the test data actually took part in building the model.",
+      "correct": true,
+      "feedback": "The indicators were picked against everyone's results, the test users included, so the test set amounted to being handed the answers in advance."
+     },
+     {
+      "text": "The test set had only 200 people, too small a sample, so the hit rate was unsteady anyway.",
+      "correct": false,
+      "feedback": "A small sample only makes the score swing high or low; it doesn't keep pushing it high, and it can't explain a gap of 27 points."
+     },
+     {
+      "text": "The users after launch were completely different from the 1,000, and it has nothing to do with how the indicators were picked.",
+      "correct": false,
+      "feedback": "Nothing in the question suggests the users changed. What to check first is whether the test score itself is clean."
+     }
+    ]
+   },
+   {
+    "stem": "A community clinic has only 200 patient records and wants to build a program that predicts whether a patient will come back for a follow-up visit. It can't get any more data. The first version used 60 fields and got 99% right on these 200 records; on new patients it dropped to 70%.",
+    "question": "Which of these steps can narrow that gap?",
+    "explain": "Sixty fields are too flexible for 200 records: the program has enough freedom to memorize each person's chance traits. Keeping only a few fields with a medical basis tightens the details it can chase, and checking it on new patients afterward is the only way to know whether that helped.",
+    "options": [
+     {
+      "text": "Keep only a few fields that have a medical basis, then check it on newly arriving patients.",
+      "correct": true,
+      "feedback": "With fewer fields, the program has no freedom to memorize individual records; its score on new patients shows whether the change helped."
+     },
+     {
+      "text": "Add a few new patients' records to the 200, recompute the hit rate and report it honestly.",
+      "correct": false,
+      "feedback": "Once they're added, those patients become data it has learned from, and the score you report is an old-data score again."
+     },
+     {
+      "text": "Combine the fields in pairs to make more features, so the program sees in finer detail.",
+      "correct": false,
+      "feedback": "More features mean more chance details to chase; that only makes the gap bigger."
+     },
+     {
+      "text": "Keep training until it gets 100% right on the 200 records.",
+      "correct": false,
+      "feedback": "Getting 100% on the old records means memorizing the remaining chance details too; it will only do worse on new patients."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "9th-degree curve hits every point, swings between",
+  "caption": "Ten spring readings, 1 to 10 weights, each a bit off. Drag \"New weights\" to compare; at 1.5 the curve's stretch is negative. \"Reading error\" at 0 merges the lines.",
+  "x": {
+   "label": "Weights hung",
+   "min": 1,
+   "max": 10
+  },
+  "y": {
+   "label": "Stretch in cm",
+   "min": -3,
+   "max": 15
+  },
+  "params": [
+   {
+    "id": "a",
+    "label": "New weights",
+    "min": 1,
+    "max": 10,
+    "step": 0.5,
+    "value": 9.5,
+    "unit": ""
+   },
+   {
+    "id": "s",
+    "label": "Reading error",
+    "min": 0,
+    "max": 1.5,
+    "step": 0.5,
+    "value": 1,
+    "unit": "×"
+   }
+  ],
+  "series": [
+   {
+    "name": "Straight line",
+    "expr": "x + s*(0.12 + 0.004848*(x-5.5))",
+    "tone": "ink"
+   },
+   {
+    "name": "9th-degree curve",
+    "expr": "clamp(x + s*(3 + (x-1)*(-7 + (x-2)/2*(13 + (x-3)/3*(-16 + (x-4)/4*(10 + (x-5)/5*(7 + (x-6)/6*(-24 + (x-7)/7*(5 + (x-8)/8*(122 + (x-9)/9*(-464))))))))))/5, -3, 15)",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "x": 1,
+    "y": "1 + s*0.6"
+   },
+   {
+    "x": 2,
+    "y": "2 - s*0.8"
+   },
+   {
+    "x": 3,
+    "y": "3 + s*0.4"
+   },
+   {
+    "x": 4,
+    "y": "4 + s*1.0"
+   },
+   {
+    "x": 5,
+    "y": "5 - s*0.2"
+   },
+   {
+    "x": 6,
+    "y": "6 - s*1.0"
+   },
+   {
+    "x": 7,
+    "y": "7 + s*0.8"
+   },
+   {
+    "x": 8,
+    "y": "8 + s*0.2"
+   },
+   {
+    "x": 9,
+    "y": "9 - s*0.6"
+   },
+   {
+    "x": 10,
+    "y": "10 + s*0.8"
+   },
+   {
+    "x": "a",
+    "y": "a",
+    "text": "Actual stretch"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Actual stretch",
+    "expr": "a",
+    "unit": " cm",
+    "digits": 1
+   },
+   {
+    "label": "Straight line",
+    "expr": "a + s*(0.12 + 0.004848*(a-5.5))",
+    "unit": " cm",
+    "digits": 1
+   },
+   {
+    "label": "9th-degree curve",
+    "expr": "a + s*(3 + (a-1)*(-7 + (a-2)/2*(13 + (a-3)/3*(-16 + (a-4)/4*(10 + (a-5)/5*(7 + (a-6)/6*(-24 + (a-7)/7*(5 + (a-8)/8*(122 + (a-9)/9*(-464))))))))))/5",
+    "unit": " cm",
+    "digits": 1
+   }
+  ]
+ }
+}

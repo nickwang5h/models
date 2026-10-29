@@ -1,0 +1,190 @@
+{
+ "id": "collective-action",
+ "name": "Collective Action Problem",
+ "en": "集体行动困境",
+ "discipline": "society",
+ "one_line": "Everyone shares the benefit, but nobody wants to be the first to do the work.",
+ "story": "After Rosa Parks's arrest in December, Black riders in Montgomery stay off the buses for 381 days, kept in touch through churches and carried by volunteer carpools, until the buses are desegregated in December 1956",
+ "shallow": {
+  "scene": "On December 1, 1955, Rosa Parks refused to give up her seat to a white passenger on a bus in Montgomery, Alabama, and was arrested. A few days later, the city's Black riders began refusing, together, to ride the buses. The hard part fell on each person: one person not riding made no difference at all to the bus company, but that person had to walk a long way to work.\n\nTwo things turned these sums around. One was the churches: people went every week anyway, so they could keep in touch and hold meetings there without having to gather everyone from scratch, and everyone could see who didn't show up. The other was carpools: volunteers arranged cars to pick up and drop off riders, which pushed down the cost of not taking the bus, and only then did the sums work for each person.\n\nThe boycott lasted 381 days. In December 1956 the Supreme Court's ruling reached Montgomery, and the buses ended racial segregation.",
+  "plain": "The little road you live on has no streetlights. Some three hundred households all want them, and each household thinks they're worth twenty yuan. But to get them put up, someone has to write a joint letter and keep going to the local government office, which takes several weekends, and nobody will do all that running around for twenty yuan. Besides, once the lights are up, the neighbors who did nothing will walk on the lit road too, so everyone waits for someone else to do the running around. A year later the road is still dark, and the joint letter is still just an opening line. That is the collective action problem: something everyone wants doesn't get done, because each person waits for someone else to do the work."
+ },
+ "deep": {
+  "mechanism": "### When the benefit is concentrated in a few hands, the money gets raised\n\nSuppose twenty pig farms skip building one set of wastewater facilities and together save 10 million yuan a year, and lobbying to keep the rule that allows this costs 600,000 yuan. No single farm will pay the 600,000 on its own. The 10 million saved is split among twenty farms, so each gets only 500,000, and paying 600,000 alone would leave it 100,000 down. Pooling the money is different: split twenty ways, each farm pays only 30,000 and gets 500,000 back. The twenty farms know each other, so if one doesn't pay, the other nineteen can see it at a glance, and next time they leave it out. So the money gets raised.\n\n### The side with many people can't get organized, however big its total loss\n\nThe wastewater treatment costs the pig farms save are shifted onto the water bills of 100,000 households: each pays 200 yuan more a year, 20 million in all across the 100,000 households, more than the 10 million the farms save. For the residents to lobby to change the rule, they too would need to raise 600,000, which means each household paying only six yuan. But nobody knows who hasn't paid, and nobody goes door to door to collect. Each household is just one in 100,000, and whether it pays barely changes the outcome, so everyone waits for someone else to move first. The more people there are, the thinner each person's share, and the easier it is to hide who didn't do their part.\n\n### Keep the benefit from people who don't contribute, and nobody needs to wait for others\n\nThe fix is to close off the option of \"waiting for someone else.\" One way is to give the benefit only to those who contribute: you only get into the stadium if you buy a ticket, and you only get to use the activity room if you pay the membership fee, so people who don't pay can wait all they like and get nothing. The other is to fold the money into a fee people already have to pay. If the streetlights on that little road from the start were put up by the property management company, with the electricity added to the management fee, every household would pay and nobody could dodge it, so nobody would need to step forward and do the running around.",
+  "origin": "Mancur Olson set out this explanation in *The Logic of Collective Action* in 1965. He wrote the book because he didn't believe that people with a shared interest naturally band together. His material was mainly labor unions and trade associations, and his argument rested on theoretical reasoning plus cases from these organizations.",
+  "limits": "The collective action problem predicts who gets organized first, not who wins in the end: the pig farms may hire someone full-time to lobby, and the regulator can still tighten the rule because of data from environmental inspections. Reading it as \"the few always beat the many\" gets it backward. All Olson said is which side finds it easier to get people organized."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "Once a homeowners' group chat grows from thirty households to three hundred, you can expect fewer cases of people chipping in on their own to fix the entry gate, unless the property management company folds that money into the management fee."
+   },
+   {
+    "use": "design",
+    "text": "Set a rule for your housing complex: the elevator repair fund is paid in full when people move in, by floor area, and written into the bylaws, instead of waiting until the elevator breaks and then going door to door for donations."
+   },
+   {
+    "use": "act",
+    "text": "When you need everyone to chip in a little, cut each person's share into something small, and post in the group chat who has paid and who hasn't."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Investing",
+    "title": "A big shareholder is willing to step up",
+    "text": "Trian Fund Management was a large shareholder in Procter & Gamble, and in 2017 it launched a proxy fight to get Nelson Peltz onto P&G's board. The fund paid for researching the company, rounding up votes and hiring lawyers itself. Even if scattered small shareholders agreed with it, none of them would have been the first to put up that money. Peltz won his board seat in the end."
+   },
+   {
+    "field": "Work",
+    "title": "The shared tool nobody fixes",
+    "text": "Ten business teams all complain that the company's internal search is too slow. Suppose each team wastes around five minutes a day, but fixing it would take one engineer two weeks, and nobody is willing to be first to lend a person. A year later, the hours wasted by the ten teams together have long since passed those two weeks, and the search is as slow as ever."
+   },
+   {
+    "field": "Personal life",
+    "title": "Dues get the choir into formation",
+    "text": "Your community choir has twenty-one members, and the same two people always cover the rent for the rehearsal room. In the group chat everyone says it should be shared, but nobody follows up. Then you start collecting dues at the beginning of the term: only those who've paid get into the rehearsal chat and get a performance outfit. Eighteen people paid that week, and the three who hadn't weren't placed in the formation that weekend."
+   }
+  ],
+  "ask": [
+   "Once this succeeds, can people who did nothing benefit just the same? Count how many such people there are.",
+   "Split the total benefit by head. Comparing each person's share with the cost of stepping up, whose sums turn positive first?",
+   "Last time someone took the lead, what made them willing to? What will it rest on next time, the same person or a rule?"
+  ],
+  "with": [
+   {
+    "id": "critical-mass",
+    "sees": "You start a group order for water filter cartridges in your housing complex, and the maker only gives the group price once thirty households sign up. Critical mass looks at whether the first batch of people can bring in the next, and advises you to first gather a few households in one building and build a good word of mouth that the neighbors can see. The collective action problem looks at how the benefit of the group order goes to everyone, so everyone wants to wait for others to sign up first, and advises you to collect deposits first, with nobody counted until they've paid. If you fear the first batch has nobody to lead them, follow critical mass and show an example first; if lots of people sign up but few pay, follow the collective action problem and collect the money first."
+   },
+   {
+    "id": "social-capital",
+    "sees": "A village of twenty-odd households needs to raise money to repair the stone bridge at its entrance. Social capital sees years of favors given and returned: say the word and everyone pays, and setting up rules to collect money would look like distrust. The collective action problem sees that each household's share is small, it's hard to check who hasn't paid, and a spoken promise doesn't settle anything. In a village with few households where everyone knows everyone, rely on relationships first; in a village with many households and plenty of people working away, first settle who collects the money and how."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A new national rule cuts the income of two groups by 3,000 yuan each per year: 50,000 nurses and 50,000 people who each run their own online shop. The nurses' union takes dues out of their pay every month and has full-time staff; the online shop owners have no association, only their own separate shop chats.",
+    "question": "Within a month of the rule being announced, which group is more likely to put out a joint letter of objection?",
+    "explain": "The two groups have the same number of people and the same loss per person. The difference is whether someone has already paid the cost of keeping in touch and raising money. The side with a union only has to hand its anger to a channel that already exists.",
+    "options": [
+     {
+      "text": "About the same for both: the loss per person and the number of people are the same.",
+      "correct": false,
+      "feedback": "The loss and the numbers are the same, but the cost of acting isn't: one side already has funds and full-time staff, while for the other every objection has to be organized from scratch."
+     },
+     {
+      "text": "The nurses: the union's funds and full-time staff have already paid the cost of organizing.",
+      "correct": true,
+      "feedback": "Dues come out of pay every month and the staff are already paid, so a joint letter only needs people to sign. Nobody has to put up money or time first."
+     },
+     {
+      "text": "Neither: among 50,000 people, each person's part is too small.",
+      "correct": false,
+      "feedback": "Each person's small part is a difficulty for large groups, but on the side that already has a union, a channel has long since solved it, so it won't stay idle."
+     },
+     {
+      "text": "The online shop owners: the 3,000 yuan comes straight out of their own profit, so it hurts more.",
+      "correct": false,
+      "feedback": "Each nurse also loses 3,000 yuan. The pain is the same, so it isn't what separates the two groups."
+     }
+    ]
+   },
+   {
+    "stem": "Twenty freelance writers want to buy a shared subscription to an industry database of writers' fees. It costs 12,000 yuan a year, 600 yuan each. Logins go only to those who pay, and the data isn't shared beyond them. In the group chat everyone says they want it, but only four people have sent money. The organizer says, \"Everyone is waiting for someone else to pay first.\"",
+    "question": "Why doesn't that explanation hold up?",
+    "explain": "Waiting for others to pay first only makes sense if you'd get to use it once they've paid. Logins go only to those who pay, so people who haven't sent money gain nothing by waiting. The low payment rate has to be explained by the price and how much people really need it.",
+    "options": [
+     {
+      "text": "600 yuan each is too little to be worth the trouble of a transfer, which is why few have paid.",
+      "correct": false,
+      "feedback": "How big 600 yuan is doesn't decide whether \"waiting for others\" holds; with logins only for those who pay, there's no benefit to wait for here in the first place."
+     },
+     {
+      "text": "Wanting something and being willing to pay for it are two different things, so what people say in the chat doesn't count anyway.",
+      "correct": false,
+      "feedback": "That answers a different question. The people here who haven't paid aren't waiting for others, because waiting won't get them a login."
+     },
+     {
+      "text": "Without paying you don't get a login, and others paying won't let you use it.",
+      "correct": true,
+      "feedback": "The result goes only to those who pay, so nobody can get to use it by waiting. There's nothing here to wait for."
+     },
+     {
+      "text": "With twenty people and nobody in charge of collecting the money, everyone ends up waiting on each other.",
+      "correct": false,
+      "feedback": "Someone collecting the money solves raising funds when the result is shared by everyone. Here logins go only to those who pay, and waiting gets you nothing; the problem isn't a missing person in charge."
+     }
+    ]
+   },
+   {
+    "stem": "Five shops on a street voluntarily club together to hire a night guard, at 6,000 yuan a month. The biggest, a supermarket, gets half the street's foot traffic; the other four are small shops.",
+    "question": "After a month, what is the most likely way the money each shop actually pays has turned out?",
+    "explain": "The guard is worth the most to the supermarket, so even if it paid alone, its sums would still come out positive. The small shops know the guard will come anyway, so each pays less than its share by foot traffic.",
+    "options": [
+     {
+      "text": "The five split it equally, 1,200 yuan each, with no haggling.",
+      "correct": false,
+      "feedback": "An equal split needs all five to agree to pay the same amount. The small shops gain little and only need to pay a little less each, and the supermarket won't just go along with an equal split for nothing."
+     },
+     {
+      "text": "Nobody pays, the guard isn't hired, and all five keep worrying about theft on their own.",
+      "correct": false,
+      "feedback": "The supermarket's own benefit is enough for it to pay most of the cost, so the guard does get hired; it's just that the paying is very uneven."
+     },
+     {
+      "text": "The five pay in proportion to foot traffic: the supermarket 3,000 yuan, each small shop 750 yuan.",
+      "correct": false,
+      "feedback": "With voluntary payments nobody checks the proportions, and the small shops only need to pay a little less each, so it won't come out exactly by foot traffic."
+     },
+     {
+      "text": "The supermarket pays most of it, and the small shops each pay a little or nothing at all.",
+      "correct": true,
+      "feedback": "The supermarket gets the most from the guard, so paying most of the cost still makes sense for it; whether the small shops pay more or less, the guard comes, so they pay little."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "grid",
+  "title": "Residents lose more, but each pays just 200 yuan",
+  "caption": "One rule: pig farms skip wastewater facilities, and the cost moves onto residents' water bills. Half a day of letters and offices isn't worth 200 yuan.",
+  "rows": [
+   "Pig farms",
+   "Residents"
+  ],
+  "cols": [
+   "In all",
+   "Each one",
+   "Who acts"
+  ],
+  "cells": [
+   [
+    {
+     "text": "Save 10 million",
+     "sub": "20 farms in all"
+    },
+    {
+     "text": "Save 500,000"
+    },
+    {
+     "text": "Pay to lobby",
+     "tone": "accent"
+    }
+   ],
+   [
+    {
+     "text": "Pay 20 million more",
+     "sub": "100,000 homes in all"
+    },
+    {
+     "text": "Pay 200 more"
+    },
+    {
+     "text": "Nobody steps up",
+     "tone": "warn"
+    }
+   ]
+  ]
+ }
+}

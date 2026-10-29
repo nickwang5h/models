@@ -1,0 +1,207 @@
+{
+ "id": "reciprocity",
+ "name": "Reciprocity",
+ "en": "互惠",
+ "discipline": "psychology",
+ "one_line": "When someone gives you a little first, you feel you owe them and want to repay.",
+ "story": "Regan's experiment: subjects handed a Coke by an assistant buy about twice as many raffle tickets as those who got nothing, whether or not they like him",
+ "shallow": {
+  "scene": "In 1971 Dennis Regan published an experiment. The subjects thought they were rating paintings together with another person, who was really the experimenter's assistant. During a break the assistant stepped out for a while and came back with a bottle of Coke for some of the subjects, and nothing for the others. After the paintings were rated, the assistant asked them to buy some raffle tickets. Those who had been given a Coke bought about twice as many tickets on average as those who hadn't. The assistant never said the Coke needed repaying, and the subjects hadn't asked him to get them a drink. And whether or not the subjects liked the assistant, those who got a Coke bought more.",
+  "plain": "A coworker comes back from a business trip and, without anyone asking, brings you a box of pastries. A week later he asks whether you could cover his shift on Friday night. You had meant to say no, but you hear yourself saying yes. The box of pastries cost a few dozen yuan; a night shift means four hours of staying up. At the time you never worked out how far apart the two are. That is how reciprocity works: it doesn't look at what the gift was worth, only at whether you accepted it. Once you've accepted, you feel you should pay it back, and what you pay back is often more than what you got. That Friday night you sat in the office until ten."
+ },
+ "deep": {
+  "mechanism": "### The feeling of owing arrives the moment you accept\n\nFrom childhood people are taught that you give and take in return. Someone who only takes and never gives back is seen as taking advantage, and later nobody helps them. Sociologists call this rule the norm of reciprocity. So when you accept a favor, even one you didn't ask for that is only worth 8 yuan, you make a note of a debt in your head, feel you owe it, and feel uneasy. The unease comes before you've even thought about what the gift was worth, and only paying it back puts your mind at rest.\n\n### What you pay back is decided by what they ask for\n\nYou could pay back with a thank-you, a cup of coffee, or an afternoon of help. Which one isn't up to you. The feeling of owing doesn't say what you should pay back, so as soon as the person who did you the favor asks for something, the debt lands on whatever they named: if he asks you for an afternoon of help, you'll most likely give it.\n\n### When the other side backs down, that counts as a gift too\n\nHe makes a big request first, you turn it down, and then he makes a small one. What you see isn't just a smaller request; you also see that he gave ground, so you feel you should give ground too, and you agree. Imagine the first thing he asks is \"run with me every day for a whole month,\" and when you refuse he changes it to \"run with me once this week.\" Compared with him asking for just one run this week from the start, you are much more likely to say yes. If the first request is so big it's almost a joke, nobody takes the concession seriously, and you say no all the same.",
+  "origin": "In 1960 the sociologist Alvin Gouldner published a paper in the *American Sociological Review* that discussed the norm of reciprocity systematically. Regan's 1971 Coke experiment added experimental evidence for it. In 1984 Robert Cialdini published *Influence*, which listed reciprocity as one of a handful of basic principles that lead people to agree to requests.",
+  "limits": "When the terms are laid out in advance, it is a deal, not a favor. A free test drive asks for your phone number first; you just weigh whether a phone number is worth a test drive, and after weighing it you don't feel you owe anyone. If the intent behind a gift is plain at a glance, the feeling of owing turns into wariness. In an experiment Meyer published in 2016, Christmas cards were sent to 755 strangers, and only about 2% sent one back. In a survey he went on to run, the more suspicious people found a letter from a stranger, the more they said they would not reply. If a request is so big that you'd lose out, however many gifts the other side gives you, all it gets them is a no."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Why hospitals forbid drug company reps from buying doctors dinner: the dinner comes with no conditions, but the doctor remembers it when writing prescriptions."
+   },
+   {
+    "use": "design",
+    "text": "Design the first contact on a page recruiting volunteers: first give away a useful guide with no request attached, then send the invitation a few days later. More people will respond than if you sent the invitation right at the start."
+   },
+   {
+    "use": "act",
+    "text": "When someone has just done you a big favor and then asks you for something, first say \"let me think about it, I'll give you an answer on Wednesday.\" Express your thanks on the spot, and make the decision later."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Sociology",
+    "title": "Christmas cards from a stranger",
+    "text": "Around 1974, the sociologist Kunz at Brigham Young University sent signed Christmas cards to about 600 complete strangers. Cards came back one after another; about one in five replied, and some included letters three or four pages long about what their family had done that year. These people didn't know Kunz. They had simply received a card, and felt they should send one back. In 1976 he and a co-author published the results."
+   },
+   {
+    "field": "Business",
+    "title": "One pack from the sample stand",
+    "text": "At a free-sample stand in a warehouse club, you take a small piece of sausage. When you've finished chewing, the person at the stand smiles at you and says nothing. You hadn't planned to buy any, but your hand puts a pack into your cart."
+   },
+   {
+    "field": "Personal life",
+    "title": "New Year gifts that keep getting bigger",
+    "text": "Every Lunar New Year a relative gives you a box of fruit. The next year you gave back a bigger box, and the year after that they added two boxes of pastries. After a few years of this, both families feel the other gives more than they do, neither dares to stop first, and this year you each made another trip to the wholesale market."
+   }
+  ],
+  "ask": [
+   "If I wrote the other person's request as a sentence on its own, with everything they did for me before erased, would I still agree?",
+   "If I convert what they gave and what I'd have to pay into money or hours and write them on paper, which side is heavier?",
+   "What I want to pay back: is it the thing they gave, or the thing they asked for?"
+  ],
+  "with": [
+   {
+    "id": "commitment-consistency",
+    "sees": "You want to bring a coworker onto your project. Should you help him once first and then ask (reciprocity), or first get him to agree to something small and then ask (commitment and consistency)? With the first, he's paying you back; with the second, he's following what he just said himself. If he's been short of time lately and you can save him a chunk of work, give first; if he has no interest in the project and what you want is to make him one of your own, ask first."
+   },
+   {
+    "id": "principal-agent",
+    "sees": "You're choosing a supplier for your company, and one of them repaired your equipment twice for free last month. What principal-agent sees is that the money for this purchase isn't yours, so a price comparison and a second person signing off are needed to separate the favor from the order. What reciprocity adds is that the hardest part of separating them is in your own head. So the price comparison should be settled before that supplier's quote comes in, and someone else should collect it."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're a neighborhood photographer. Last month a client, on his own initiative, sent you a job from someone else, and asked for nothing in return. This month he asks you to photograph his company's annual party at half price, and your normal rate is already only a little above cost. You feel you should repay him, but you also know that shooting it at half price would bring in almost nothing.",
+    "question": "How do you respond to his request?",
+    "explain": "A favor has no price list. If you repay it with half price, the amount is set by his request, and he never discussed it with you. Quote your normal price and find something else you can afford to repay the favor with, and then both sides are square.",
+    "options": [
+     {
+      "text": "Turn down the job, and don't mention last month's referral again.",
+      "correct": false,
+      "feedback": "You can't act as if the job he sent you never happened. The favor should be repaid, in a different way."
+     },
+     {
+      "text": "Take it on first, and ask him for the rest of the price once it's done.",
+      "correct": false,
+      "feedback": "If you ask for more afterward, you've already put in your time at half price, and he'll feel you're turning around and demanding payment."
+     },
+     {
+      "text": "Quote your normal price, and separately refer a client to him or take him out for a meal.",
+      "correct": true,
+      "feedback": "The price is based on the job itself, and your thanks go into something else you can afford, so neither side loses out."
+     },
+     {
+      "text": "Take the job at half price and count that as repaying last month's favor.",
+      "correct": false,
+      "feedback": "Half price leaves you with almost no income. How much the favor is worth gets decided by his request, and you had no say in setting the price."
+     }
+    ]
+   },
+   {
+    "stem": "A Friends of the Library society is recruiting members at the same entrance on two weekend mornings, with the same foot traffic, weather, pitch and membership fee. On Saturday, volunteers give everyone who comes in the same free bookmark and then ask them to join. On Sunday, the volunteers pick one person at random from each group that comes in, write a reading list for them on the spot based on their interests, give it to that one person only, and then ask them to join. The people picked on Sunday join at a much higher rate.",
+    "question": "What is the most likely reason the Sunday sign-up rate was higher?",
+    "explain": "Both were free, but the reading list went to just this one person, a favor set aside for them. Everyone gets a bookmark, so the person receiving it doesn't feel it was meant for them alone, and the feeling of owing is weak.",
+    "options": [
+     {
+      "text": "The reading list showed him more clearly what activities the society runs, so he decided to join.",
+      "correct": false,
+      "feedback": "The reading list was a list of books based on his interests. It said nothing about the society's activities and didn't change the reasons to join."
+     },
+     {
+      "text": "The reading list was written just for him, so he felt the favor was owed by him alone.",
+      "correct": true,
+      "feedback": "The free gift landed on him alone, so the debt became specific, and joining was the easiest way to give something back."
+     },
+     {
+      "text": "There were too many people on Saturday, and the volunteers didn't have time to explain the benefits of joining.",
+      "correct": false,
+      "feedback": "The question says foot traffic and pitch were the same both days. Nothing suggests Saturday's explanation was cut short."
+     },
+     {
+      "text": "The reading list cost more than the bookmark, so he felt the membership fee was worth it.",
+      "correct": false,
+      "feedback": "The question gives no prices for the two items, and no hint of comparing the membership fee with the value of the gift."
+     }
+    ]
+   },
+   {
+    "stem": "You claim a free e-book online. The page says: \"This guide is yours. Please attend one of our product presentations within a week; it takes about an hour.\" You flip through it, find the guide fairly ordinary, and don't want to spend an hour on the presentation.",
+    "question": "How should you think about this hour?",
+    "explain": "The terms were laid out when you claimed it, so this is a deal, not a favor you somehow came to owe. Whether the hour is worth it, you work out as you would for any deal; if it isn't, don't go, and there's no need to feel guilty.",
+    "options": [
+     {
+      "text": "Don't go, and leave a bad review on their page to cancel out what you owe for taking the guide.",
+      "correct": false,
+      "feedback": "A bad review hurts them but doesn't answer the question of whether the hour is worth it."
+     },
+     {
+      "text": "Taking the guide means you owe a favor, and the hour is what you should pay back.",
+      "correct": false,
+      "feedback": "They stated the terms on the page where you claimed it. That's an exchange laid out on the table, not a favor that turned up out of nowhere."
+     },
+     {
+      "text": "Go, and buy a small product afterward; only then are you even.",
+      "correct": false,
+      "feedback": "The terms only asked you to listen for an hour, not to buy anything. Counting a purchase as part of what you owe raises the price for them."
+     },
+     {
+      "text": "Treat it as an exchange with a clear price, and decide whether to go by whether the hour is worth it.",
+      "correct": true,
+      "feedback": "They wrote out the terms of the exchange themselves. You can accept or walk away, and there's no need to treat it as a favor."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "A gift or a concession both leave you owing",
+  "caption": "The feeling of owing ignores what the gift was worth: a few dozen yuan of pastries bought four hours of night shift. What you pay back is set by what they ask.",
+  "nodes": [
+   {
+    "id": "big",
+    "label": "Big ask refused",
+    "sub": "A month of runs",
+    "layer": 0
+   },
+   {
+    "id": "small",
+    "label": "Smaller ask",
+    "sub": "One run this week",
+    "layer": 1
+   },
+   {
+    "id": "gift",
+    "label": "Take pastries",
+    "sub": "Unasked for",
+    "layer": 1
+   },
+   {
+    "id": "owe",
+    "label": "Feel you owe",
+    "tone": "accent",
+    "layer": 2
+   },
+   {
+    "id": "yes",
+    "label": "Agree after all",
+    "sub": "His shift till 10",
+    "tone": "warn",
+    "layer": 3
+   }
+  ],
+  "edges": [
+   {
+    "from": "big",
+    "to": "small",
+    "label": "He yields"
+   },
+   {
+    "from": "small",
+    "to": "owe"
+   },
+   {
+    "from": "gift",
+    "to": "owe"
+   },
+   {
+    "from": "owe",
+    "to": "yes",
+    "label": "He asks"
+   }
+  ]
+ }
+}

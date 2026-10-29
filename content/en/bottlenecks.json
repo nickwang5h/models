@@ -1,0 +1,179 @@
+{
+ "id": "bottlenecks",
+ "name": "Bottlenecks",
+ "en": "瓶颈",
+ "discipline": "systems",
+ "one_line": "A whole line can only go as fast as its slowest step.",
+ "story": "The Ever Given runs aground across the Suez Canal from March 23 to 29, and hundreds of ships wait at both ends",
+ "shallow": {
+  "scene": "On March 23, 2021, the container ship Ever Given, about 400 meters long, ran aground in the Suez Canal. It lay sideways across the channel, and at both ends cargo ships stopped one after another; hundreds of them ended up waiting. The canal authority sent tugboats to pull from both sides, and dredgers cleared the mud and sand around the bow. On March 29 the ship floated free, and the canal reopened to traffic.",
+  "plain": "Three people in a club are putting out an issue of their magazine. A folds pages, 90 copies an hour; B binds them with a single stapler, 40 copies an hour; C sticks on cover labels, 60 copies an hour. Every copy has to go through these three steps in order, and B's stapler can only finish 40 copies an hour, so the whole line can only turn out 40 an hour. The bottleneck is the stapler. However fast A folds, the extra folded pages just pile higher and higher next to B. Give A a faster folding jig, and the line still turns out 40 copies an hour."
+ },
+ "deep": {
+  "mechanism": "### The faster the stapler, the more comes out, until the next-slowest step stops it\n\nThe stapler does 40 copies an hour, labeling 60, folding 90. Switch to a stapler that does 50 an hour, and the whole line turns out 50; switch to one that does 60, and it turns out 60. Switch again to one that does 100 an hour, and it's still 60, because the slowest step is now labeling: C can only label 60 copies an hour.\n\n### When a fast step comes before a slow one, the extra work can only pile up\n\nFolding makes 50 more copies an hour than the stapler can take. In an eight-hour day, 400 folded copies pile up next to the stapler; the paper edges curl and the table fills up. The stapler can only finish 320 copies in eight hours, so A can stop once 320 are folded, and the day's output is still 320.",
+  "origin": "A \"bottleneck\" is originally the narrow neck of a bottle, and production management long ago took the word for the narrowest link in a process. In 1984 Eliyahu Goldratt and Jeff Cox published the novel *The Goal*, which uses the story of a factory to explain the theory of constraints: improvements should center on the link that limits total output, that is, the bottleneck. The factory in the book is made up; it is not a record of an experiment.",
+  "limits": "Bottlenecks show most clearly on a production line where goods go through the steps one by one and orders are booked up. When there aren't enough orders, what holds output back is demand, and adding capacity doesn't help; when several products share the same equipment, which step is the tight one can shift with this week's product mix. Looking for the bottleneck by who complains most about being tired or who works the most overtime easily goes wrong: the department complaining may just be redoing work for the one upstream."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When planning shifts, give overtime only to the narrowest step, and let the other steps go home on time."
+   },
+   {
+    "use": "explain",
+    "text": "Explain why, when one exit ramp at an interchange backs up, the main road several kilometers away stops too: however many cars the narrowest point lets through is all that can move behind it."
+   },
+   {
+    "use": "design",
+    "text": "When laying out the steps of a new production line, keep a small batch of work waiting in front of the narrowest step, so that if the upstream steps stop for a while now and then, it won't stop."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Study",
+    "title": "Prepare samples for the machine time you have",
+    "text": "You're a graduate student, and your research group shares one mass spectrometer. The machine time you get each week is only enough to run 12 samples, but you can prepare 40 a week. You cut the samples you prepare each week to 12 and spend the time you save talking with others in the group about swapping machine time. Two weeks later you've swapped for enough time to run 20 a week, and you raise the samples you prepare each week to 20."
+   },
+   {
+    "field": "Farming",
+    "title": "Bigger cold store, and now it's the tricycles",
+    "text": "Your apple orchard has reached the autumn harvest, and the pickers can pick 10 tons a day. In past years the holdup was the village cold store, which could take only 6 tons a day. This year the cold store has been expanded to take 12 tons a day, but what goes into it stops at 8 tons, because on the road from the orchard to the cold store, your two cargo tricycles can only haul 8 tons a day. You go to the next village and borrow a small truck."
+   },
+   {
+    "field": "Software",
+    "title": "Only one person can approve a merge",
+    "text": "Your eight-person front-end team submits about 15 merge requests a day, and only the team lead is allowed to approve them. She can approve 6 a day, and the waiting list grows by 45 a week. You give approval rights to two teammates, and small changes are merged once one person has reviewed them. The waiting list starts to shrink."
+   }
+  ],
+  "ask": [
+   "Over the past month, which step's daily output is closest to the whole line's daily shipments? Go through each step's daily reports and compare.",
+   "Is there always work piled on the table in front of this step, and are the people after it often waiting?",
+   "Is the place I plan to spend money this step? Once it's faster, which one becomes the next narrowest?"
+  ],
+  "with": [
+   {
+    "id": "economies-of-scale",
+    "sees": "A workshop has a laser cutter, and running it flat out spreads its cost as thin as possible. By the economies-of-scale sums, it should run two shifts back to back. But it cuts much faster than the bending machine after it, so running flat out only produces a batch of cut sheets that nobody can bend for now. The bottleneck view is that the cutter should keep pace with the bending, and the machine time left idle is not waste. Which side wins depends on whether the cutter has jobs that don't go through bending: if it does, use the idle time for those jobs, and running flat out pays; if not, run it at the bending machine's pace."
+   },
+   {
+    "id": "queueing-theory",
+    "sees": "A CNC machining center is the narrowest link in a mold workshop. The plant manager says it must never sit idle, and keeps it fully booked with orders. The bottleneck view reminds you that since it's the narrowest link in the whole plant, there should be work waiting in front of it. Queueing theory sees the other side: orders arrive at random and take different times to machine, so once the machining center is booked above 90%, the wait for a rush order multiplies, and delivery dates go haywire. A workshop with many rush orders and tight deadlines should leave it 10% to 20% slack; only a workshop whose orders are steady and can be scheduled ahead is worth booking it full."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "On Friday afternoon, the injection molding machine (the narrowest step on the whole line) and the paint line both break down at once, and there's only one repair technician. The paint line is much faster than the molding machine, and the packing step after it has enough painted parts on hand to last two hours.",
+    "question": "Which should be repaired first?",
+    "explain": "The molding machine is the narrowest step on the line, and every hour it's down, the whole line produces an hour's less output, which can't be made up. The paint line is faster to begin with and has stock behind it to keep things going, so if its repair waits a while, it can catch up later.",
+    "options": [
+     {
+      "text": "Whichever is quicker to repair.",
+      "correct": false,
+      "feedback": "A quick repair only saves the technician's time. The line's output depends on which step is down, not on how fast a repair is."
+     },
+     {
+      "text": "The molding machine first, the paint line after.",
+      "correct": true,
+      "feedback": "Every hour the molding machine is down, the line produces an hour's less output; if the paint line is repaired later, there's stock behind it, and it can still catch up."
+     },
+     {
+      "text": "In the order the breakdowns were reported.",
+      "correct": false,
+      "feedback": "The order of reports only says who noticed first, not which one is holding back output. If the molding machine is second in line, it stays down for nothing."
+     },
+     {
+      "text": "The paint line first, because it's closer to shipping.",
+      "correct": false,
+      "feedback": "Being closer to shipping doesn't mean holding back output: the paint line is faster than the molding machine, and time lost waiting for its repair can be made up later."
+     }
+    ]
+   },
+   {
+    "stem": "A production line for aluminum alloy wheels has three steps: casting, 60 wheels an hour; machining, 40 an hour; painting, 80 an hour. Each wheel goes through them in order. A tenth of the cast blanks have air holes, and right now they're only found at the inspection after painting, and the whole wheel is scrapped. There are plenty of orders. With none of the three steps' equipment changed, about 36 good wheels come out each hour.",
+    "question": "The factory can add only one more inspection station to catch blanks with air holes. Where should it go to get the most good wheels per hour?",
+    "explain": "Machining is the narrowest step and can only handle 40 an hour. Put the inspection before it, and all 40 are good blanks, so good wheels rise to 40. Put it after, and blanks with air holes have already used up 4 of its slots, so good wheels stay at 36.",
+    "options": [
+     {
+      "text": "After painting, replacing the current inspection with a stricter recheck.",
+      "correct": false,
+      "feedback": "The scrap has already used up slots in machining. However strict the recheck, good wheels per hour are still 36."
+     },
+     {
+      "text": "After machining, before painting.",
+      "correct": false,
+      "feedback": "Blanks with air holes have already used up machining slots, so good wheels per hour are still 36; it only saves painting a few scrap pieces."
+     },
+     {
+      "text": "After casting, before machining.",
+      "correct": true,
+      "feedback": "Blanks with air holes are taken out before machining, so all 40 machining slots go to good blanks, and good wheels rise to 40 an hour."
+     },
+     {
+      "text": "Before casting, checking the raw ingots.",
+      "correct": false,
+      "feedback": "Air holes only form during casting. Checking the ingots can't catch blanks with air holes, and machining will still work on them."
+     }
+    ]
+   },
+   {
+    "stem": "At a neighborhood parcel pickup station during the evening rush, everyone collecting a parcel first has to scan a code at the entrance to check in, and the entrance can let through 100 people an hour. After check-in there are two ways to go: the staffed counter serves 30 people an hour, and the self-service lockers serve 90 an hour. Each person uses only one of them. There's a constant line outside the entrance, and inside, people are being served at both.",
+    "question": "During the evening rush, at most how many people an hour can the station let collect their parcels?",
+    "explain": "The two routes serve different people, so they add up, to 120 in all. But everyone has to get through the entrance first, and the entrance only lets in 100, so the overall limit is 100.",
+    "options": [
+     {
+      "text": "About 30, set by the slower route, the staffed counter.",
+      "correct": false,
+      "feedback": "Each person uses only one route, and the lockers don't wait for the counter, so the two routes' capacities add up."
+     },
+     {
+      "text": "About 120, since the two routes together can serve 120 an hour.",
+      "correct": false,
+      "feedback": "Everyone has to get through the entrance first, and it only lets in 100 people an hour, so the capacity of 120 can't be fully used."
+     },
+     {
+      "text": "About 90, as many as the lockers can serve.",
+      "correct": false,
+      "feedback": "The staffed counter is serving people too, so the two routes together handle more than 90."
+     },
+     {
+      "text": "About 100, because the entrance check-in can't let through more.",
+      "correct": true,
+      "feedback": "Everyone has to get through the entrance first, and it only lets in 100 people an hour, so the two routes inside can't be fully used."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "type": "hbar",
+  "title": "The slowest step, stapling, sets 40 an hour",
+  "caption": "Folding 90 an hour and labeling 60 don't help: every copy goes through the stapler, and the extra folded pages just pile up next to B.",
+  "categories": [
+   "A folds",
+   "B staples",
+   "C adds labels"
+  ],
+  "y": {
+   "label": "Copies per hour",
+   "min": 0,
+   "max": 100
+  },
+  "series": [
+   {
+    "name": "Copies per hour",
+    "values": [
+     90,
+     40,
+     60
+    ],
+    "tones": [
+     "muted",
+     "warn",
+     "muted"
+    ]
+   }
+  ]
+ }
+}

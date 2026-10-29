@@ -1,0 +1,245 @@
+{
+ "id": "map-territory",
+ "name": "The Map Is Not the Territory",
+ "en": "地图不是疆域",
+ "discipline": "thinking",
+ "one_line": "Maps and reports leave out details, and trouble often hides in what they left out.",
+ "story": "Harry Beck's London Underground diagram gives up true distances so it is easy to read",
+ "shallow": {
+  "scene": "Plenty of people who have taken the subway in a strange city know this: you follow the map and ride one stop, walk out, and find the station you got on at is just around the corner, a few minutes' walk away. The London Underground map often sends people the long way like this.\n\nIn 1931, Harry Beck, an engineering draftsman for the Underground, drew a new map of the lines in his spare time, and it was printed in 1933. He straightened the lines into horizontal, vertical and 45-degree diagonal strokes. He enlarged the crowded city center, shrank the empty suburbs, and deleted almost all the streets above ground, keeping only the River Thames. Passengers could see at a glance where to change trains.\n\nBut the real distances were deleted too. On the map, Leicester Square and Covent Garden are two clearly separate stations; above ground they are only a few hundred meters apart. Many tourists go down into the station just to ride that one stop, when, counting the stairs and the wait for the train, walking is actually faster. The map made it clear how to change trains, and it also hid those few hundred meters of street.",
+  "plain": "You sketch a map to your home for a friend, with just three intersections and one traffic light, and he gets it at a glance. What the sketch leaves out doesn't disappear because of that. This week the north gate of your apartment complex is fenced off, and he only finds out when he gets there and has to go around to the south gate. The sketch is useful because it leaves out details; it lets you down for the same reason. In 1931 the Polish-American scholar Alfred Korzybski boiled this down to one sentence: a map is not the territory it represents."
+ },
+ "deep": {
+  "mechanism": "### What a map should keep depends on the decision you're making\n\nThe same subway map is good enough for deciding where to change trains. Ask instead how long it takes to walk between two stations, and the evenly spaced stops on the map mislead you: a few hundred meters is drawn like a long stretch. Ask it to find a route for a wheelchair user, and since the map shows no elevators, it is no use at all.\n\n### One summary number fits many different realities\n\nA system that responds in two seconds on average might make you wait two seconds all ten times, or one second each for nine times and eleven seconds once. In the second case, even if that one wait drags on to sixteen seconds, the ten add up to 25 seconds and the average only rises to two and a half; but the person who had to wait that once left long ago.\n\n### When reality changes, the old map's lines stay just as clear\n\nA road is closed, but it is still drawn on the old map; customers' habits change, but the old model keeps putting out numbers to the decimal point that look just as precise. For conclusions that matter, check once more against the scene itself, the original records, or the actual results.",
+  "origin": "In 1931 Korzybski said \"A map is not the territory it represents,\" and in 1933 he built it into his general semantics in the book *Science and Sanity*. His view was that words and ideas are like maps: they show only part of the world.",
+  "limits": "When a decision is small and can be undone, a rough map is enough: you ask the way with a sketch, and if you go wrong you turn around. The worst case is when all you have are numbers someone else has summed up, and you have to make a decision you can't take back. You can't see what they left out, and if it goes wrong you can't turn around. Someone who reads \"the map is not the territory\" and then treats all data as waste paper and trusts only their gut is using a map too, and one that leaves out even more."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "The monthly report shows every measure in the green, yet customer complaints are rising. Look at which kinds of customers the report lumped into the same number; the gap is often there."
+   },
+   {
+    "use": "communicate",
+    "text": "Before drawing a process chart for a new colleague, first ask what they'll use it for: finding who to ask, or tracing which step went wrong. The two uses need different details kept."
+   },
+   {
+    "use": "act",
+    "text": "Before using a number to make a decision you can't undo, first write down which facts the decision needs, then check one by one whether the number contains them."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Investing",
+    "title": "Stock prices mixed into net income",
+    "text": "From 2018, under US accounting rules, Berkshire Hathaway has counted the rise and fall in the market value of the stocks it owns as part of its net income. In that year's letter to shareholders, Buffett explained that this would make net income swing wildly with the stock market. To see how the businesses it owns are doing at selling things and making money, shareholders have to look at operating earnings separately from the change in the prices of its holdings."
+   },
+   {
+    "field": "Technology",
+    "title": "The map put a town in the wilderness",
+    "text": "In December 2012, police in Victoria, Australia, issued a warning: Apple Maps had placed the town of Mildura in Murray-Sunset National Park, tens of kilometers away. Some drivers had followed the directions into the park and got stranded in dry wilderness without water. Police told people not to use this map to get to the town for now."
+   },
+   {
+    "field": "Personal life",
+    "title": "A home beyond floor area",
+    "text": "You and your partner pick the apartment with more floor space, then go see it at night and find the restaurant's exhaust fans right outside the bedroom window. You add noise at bedtime, daylight in the day, and how much wall there is to put furniture against to your comparison, and in the end you rent the smaller one."
+   }
+  ],
+  "ask": [
+   "What decision am I making? Among the facts this map keeps, are the ones that decision needs?",
+   "Which thing it leaves out could be enough to change my choice? Which original records could I look through, or which place could I go and see?",
+   "Do this number's definition, what it covers and when it was last updated still match the question I have today?"
+  ],
+  "with": [
+   {
+    "id": "abstraction",
+    "sees": "You are writing a guide to the shipping process for new hires. Abstraction and modularity urge you to cut the special cases that come up once every three months and keep only the main line, so new hires can remember it and change it. The map is not the territory has you look through the incident records first: if those special cases are exactly where things went wrong, you can't cut them. Cut the ones that never caused trouble, and put the ones that did on a separate page."
+   },
+   {
+    "id": "overfitting",
+    "sees": "Last year's sales forecast was far off, and someone wants to add twenty more variables for weather, holidays and promotions. This model says a map missing details should have them filled in; overfitting says that filling it in until it fits last year's data exactly only draws last year's flukes into the map too, and it will be less accurate this year. First test on data from the second half of last year that wasn't used to build the model, and keep the new variables only if the forecast gets more accurate."
+   },
+   {
+    "id": "goodharts-law",
+    "sees": "The customer service team is judged on call length. The map is not the territory has you ask before using it for reviews: does a shorter call mean the problem was solved? Goodhart's law goes on to say that once a measure is tied to reviews, the agents will start hurrying customers off the phone, and even that little link between them is gone. So try spot-checking call recordings first; where the measure is already part of reviews, change it."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You run a print shop at the entrance to a housing complex and plan next month's Saturday shifts from last year's order sheet: on Saturdays you take 300 orders on average. This spring, the tutoring school next door moved to a new campus, and you've noticed clearly fewer customers on the last three Saturdays.",
+    "question": "Before planning next month's Saturday shifts, what should you do first?",
+    "explain": "The order sheet records last year's situation. Once the tutoring school moved, a different set of people came through the door. To plan shifts, you need the actual number of orders you're taking now.",
+    "options": [
+     {
+      "text": "Count how many orders you actually took on the last few Saturdays, and plan the shifts around that number.",
+      "correct": true,
+      "feedback": "The real number of orders since the tutoring school moved away is the closest picture of next month's customers."
+     },
+     {
+      "text": "Plan for 300 orders, and keep one extra person on hand just in case.",
+      "correct": false,
+      "feedback": "An extra person only adds a bit of insurance; the shifts are still based on last year's sheet, which no longer matches."
+     },
+     {
+      "text": "Plan the shifts as usual for now, and adjust once next month is over and you've seen the results.",
+      "correct": false,
+      "feedback": "That spends a whole month of staff on trial and error, when what happened on three Saturdays is already visible."
+     },
+     {
+      "text": "Go through last year's order sheet again to make sure nothing was recorded wrong.",
+      "correct": false,
+      "feedback": "The sheet is very likely correct. What's wrong is that the neighborhood changed, and last year's numbers no longer describe the present."
+     }
+    ]
+   },
+   {
+    "stem": "You're helping a small renovation company look at its monthly report: profit this month is 300,000 yuan, because several big jobs were just finished and their income was booked on completion. Two of those clients agreed to pay only 90 days after the final inspection. The company has to pay 250,000 yuan for materials next week and has only 80,000 yuan in cash. Holding the report, the boss says, \"We made 300,000 this month, so paying for materials is no problem.\"",
+    "question": "Where does the boss's judgment go wrong?",
+    "explain": "This report counts income when a job is finished; it doesn't record when the money arrives. Using it to answer \"can we pay next week?\" uses it for the wrong thing.",
+    "options": [
+     {
+      "text": "The materials bill is too big; push the price down first, then compare it with profit.",
+      "correct": false,
+      "feedback": "Pushing the price down saves money later; it can't tell you whether there's enough money in the account next week."
+     },
+     {
+      "text": "Too many jobs finished at the same time; the report shouldn't come out monthly.",
+      "correct": false,
+      "feedback": "Make it quarterly and the profit figure still has no payment dates in it."
+     },
+     {
+      "text": "The report counts income only when jobs are finished and keeps no payment dates, so it can't answer whether they can pay next week.",
+      "correct": true,
+      "feedback": "Two clients pay only after 90 days; the cash in the account is what to look at for next week's payment."
+     },
+     {
+      "text": "Profit is an estimated number and can't be trusted anyway; look only at the bank statements.",
+      "correct": false,
+      "feedback": "Booking profit on completion is a sensible rule, and there's nothing wrong with using it to judge how the business is doing."
+     }
+    ]
+   },
+   {
+    "stem": "An app's monthly report shows active users falling from 2 million to 1.2 million. At the operations meeting, someone proposes cutting next quarter's budget for winning new users right away. A colleague from the data team adds that last month the definition of \"active\" changed from \"opened in the past 30 days\" to \"opened in the past 7 days.\"",
+    "question": "Before cutting the budget, what should be done first?",
+    "explain": "The two months' numbers use different definitions, so subtracting one from the other doesn't compare the same thing. Only by recounting both months with the same definition can you tell whether there really are fewer users.",
+    "options": [
+     {
+      "text": "Check rival apps' downloads over the same period to judge whether users were stolen.",
+      "correct": false,
+      "feedback": "Until you know how much of the drop comes from the change in definition, checking rivals is looking for the cause of a drop that may not exist."
+     },
+     {
+      "text": "Recount active users for both months with the same definition, then compare.",
+      "correct": true,
+      "feedback": "Only with the same definition can the two numbers be compared."
+     },
+     {
+      "text": "Wait for next month's data and see whether it keeps falling.",
+      "correct": false,
+      "feedback": "The new report still uses the new definition. Wait another month and the two numbers still can't be compared directly."
+     },
+     {
+      "text": "Change \"active\" back to the old definition and stop changing it in future reports.",
+      "correct": false,
+      "feedback": "Changing it back only makes future reports comparable. Whether this drop is real still has no answer."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "title": "Same 2-second average, one wait of 11",
+  "caption": "Ten requests averaging two seconds: each can take two, or nine can take one second and the last eleven. The average can't tell these apart.",
+  "x": {
+   "label": "Request number",
+   "min": 1,
+   "max": 10,
+   "ticks": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ]
+  },
+  "y": {
+   "label": "Wait",
+   "unit": " s",
+   "min": 0,
+   "max": 12
+  },
+  "series": [
+   {
+    "name": "Both average 2 s",
+    "points": [
+     [
+      1,
+      2
+     ],
+     [
+      10,
+      2
+     ]
+    ],
+    "tone": "muted",
+    "dashed": true
+   },
+   {
+    "name": "Nine fast, one slow",
+    "points": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      5,
+      1
+     ],
+     [
+      6,
+      1
+     ],
+     [
+      7,
+      1
+     ],
+     [
+      8,
+      1
+     ],
+     [
+      9,
+      1
+     ],
+     [
+      10,
+      11
+     ]
+    ],
+    "tone": "warn",
+    "dots": true,
+    "line": false
+   }
+  ]
+ }
+}

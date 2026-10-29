@@ -1,0 +1,234 @@
+{
+ "id": "marginal-thinking",
+ "name": "Marginal Thinking",
+ "en": "边际思维",
+ "discipline": "economics",
+ "one_line": "To decide on one more step, weigh only what that step adds in gain and cost.",
+ "story": "Braniff cuts the Dallas–Houston fare to 13 dollars, and Southwest answers with a 26-dollar fare that comes with free whiskey",
+ "shallow": {
+  "scene": "In 1973, on the route from Dallas to Houston, the rival airline Braniff cut its one-way fare to 13 dollars, half of Southwest Airlines' 26-dollar fare. Southwest didn't simply cut its price to match. It gave passengers a choice: pay 13 dollars, or pay 26 dollars and take home a bottle of liquor. Plenty of business travelers chose the pricier option, because their company paid for the ticket and the bottle was theirs to keep.\n\nFor Southwest, both options paid. The plane was going to take off on schedule anyway, and one more person in an empty seat cost only a little more in service. Even 13 dollars was more than that little extra; leaving the seat empty was what brought in nothing at all.",
+  "plain": "You're cooking noodles, the water is on and the burner is lit. Counting water, gas and toppings, a bowl works out to 8 yuan on average. A friend comes in and says he'd like a bowl too. This is when to use marginal thinking: look only at how much more it costs to cook this one extra bowl. Thinking in terms of 8 yuan, it seems like a loss. But the water and the burner are already going, so another handful of noodles and another spoonful of toppings cost only 3 yuan more. You drop in another handful of noodles."
+ },
+ "deep": {
+  "mechanism": "### Look at the extra difference, not the average\n\nYou do same-city deliveries, 20 drop-offs a day. Van rental and your own wages come to 400 yuan, and fuel to 60 yuan, so each delivery costs 23 yuan on average. Just before you finish for the day, someone asks you to take one more package on your way, offering only 12 yuan. It means a 1-kilometer detour, 2 kilometers there and back. At 0.75 yuan of fuel per kilometer, this package adds only 1.5 yuan of fuel. Twelve yuan is below the 23-yuan average, but the van rental and your wages won't go up by a cent because of this package. You take it, and make 10.5 yuan more that day.\n\n### The longer the detour, the smaller the difference, until it turns negative\n\nThe extra income is fixed at 12 yuan. Each extra kilometer of detour one way means 2 more kilometers there and back, and 1.5 yuan more in fuel. So with a one-way detour of $d$ kilometers, the yuan you net from taking this package is:\n\n$$12-1.5d$$\n\nAt an 8-kilometer detour one way, 16 kilometers there and back, fuel comes to 12 yuan, which equals the income. At 10 kilometers, fuel is 15 yuan, a 3-yuan loss. You draw the line at 8 kilometers one way and turn down any package beyond it.\n\n### Cross a threshold and the extra cost comes back as a whole lump\n\nThe van holds at most 22 packages. A 23rd won't fit, so you'd have to go back to the warehouse and make another whole run; fuel plus half an hour comes to 18 yuan in all. Now the extra cost isn't 1.5 yuan of fuel but the whole 18-yuan run, more than the 12 yuan of income. You leave the 23rd package for tomorrow.",
+  "origin": "In 1871 William Stanley Jevons in Britain and Carl Menger in Austria each published a book. In 1874 Léon Walras, in Switzerland, published *Elements of Pure Economics*. The three of them, almost at the same time, based value on the usefulness of \"one more unit,\" which later came to be called the marginal revolution. This solved the water-and-diamonds puzzle left by Adam Smith: water's total value is far greater than diamonds', yet its price is much lower, because price depends on one more unit, and one more glass of water is worth very little.",
+  "limits": "When capacity is sitting idle and most of the costs are already fixed, counting only the extra works well: as long as one more order pays more than the bit of extra fuel, take it. For things whose payoff only appears once the whole set is done, such as traffic lights that can only be coordinated after all three intersections are rebuilt, counting step by step will say every step isn't worth it. Taking every order at a price that only covers the fuel is an even worse misuse: by the end of the year, nobody has paid the van rental and the wages."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When cargo space, seats or workstations are sitting idle and someone offers less than your average cost, list only the extra income and extra spending from taking this one order. If the difference is positive, take it; if negative, turn it down."
+   },
+   {
+    "use": "predict",
+    "text": "When a rival cuts prices below your cost line and you want to know how long he can hold out, work out the extra cost of him selling one more order: as long as the price stays above that line, he won't stop."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Farming",
+    "title": "The last two peach trees, at the top",
+    "text": "Autumn has come to your orchard, and the orchard as a whole is making money, at an average cost of 2.5 yuan per jin (half a kilogram) of peaches. The two tallest trees left need a ladder and a hired picker for a day. The wages are 200 yuan, a day's picking yields only 40 jin, and the wholesale price is 4 yuan a jin. Compared with the average cost, 4 yuan is above 2.5, so you should pick. Compared with this one day: 160 yuan of extra income against 200 yuan of extra wages. You leave those two trees to the birds."
+   },
+   {
+    "field": "Personal life",
+    "title": "Adding an item to pay less",
+    "text": "There's a deal for 30 yuan off orders of 199 yuan or more, and your cart holds 175 yuan of things. You were going to buy laundry detergent anyway, at 24 yuan a bottle. Add it, and the total is 199 yuan; take off 30, and you pay 169 yuan, 6 yuan less than without it. You place the order with the detergent in your cart."
+   },
+   {
+    "field": "Technology",
+    "title": "How much memory the new service takes",
+    "text": "Two small services your team runs share a machine that rents for 300 yuan a month, and 70% of its memory is in use. The product team wants to launch a new service, expected to bring in 200 yuan of value a month. A slimmed-down version takes only 20% and costs nothing extra. The full version takes 40%, and the machine would have to move up to the 600-yuan-a-month tier. You launch the slim version and schedule the full one for next quarter."
+   }
+  ],
+  "ask": [
+   "Which sums of money will this step change? Which ones get paid whether I do it or not?",
+   "Is the number I'm holding an average over the whole account, or the extra from this step? Go through the details and add up, separately, only the lines that have to do with this step.",
+   "If I go one step further, will I hit a threshold where I have to pay a whole lump again?"
+  ],
+  "with": [
+   {
+    "id": "second-order-thinking",
+    "sees": "In the off-season, your guesthouse's rooms sit empty from Tuesday to Thursday. Someone offers only half price, and you'd only have to wash one more set of sheets. Marginal thinking says take it, since those nights would be empty anyway. Second-order thinking asks about what comes after: if regular guests hear that the off-season is half price, will they all wait until then to book next year? If the half price is only for new guests who have never stayed, and you can keep the price private, take it; if regular guests can see it, don't."
+   },
+   {
+    "id": "opportunity-cost",
+    "sees": "You have an old desktop computer sitting unused, and a friend wants to borrow it for a year. It wouldn't cost you a cent more. Looking only at extra cash, this account is zero. Opportunity cost also counts the best thing this machine could otherwise have got you: you could have sold it for a few hundred yuan, and that money is the real cost of lending it out."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Your online shop has part-time customer-service staff working in shifts. For the night shift (10 p.m. to midnight), you pay one person 50 yuan a night. During the night shift, an average of 4 sales are made each night, each with a gross profit of 10 yuan. You've gone through the records: for 2 of these sales, the customer would still have placed the order the next morning even with no one replying; the other 2 would be lost.",
+    "question": "If you cancel the night shift, how does each night's account change?",
+    "explain": "Cancel the night shift and you save 50 yuan in wages each night; all you lose is the 2 sales that would go away, 20 yuan of gross profit in total. The 2 sales that would still be made don't disappear because the shift is canceled.",
+    "options": [
+     {
+      "text": "You make 30 yuan more each night: you save 50 yuan in wages and lose only the 2 sales that would go away.",
+      "correct": true,
+      "feedback": "Save 50 yuan, lose 20 yuan of gross profit, and you're 30 yuan better off."
+     },
+     {
+      "text": "You make 10 yuan more each night: the night shift's gross profit is 40 yuan, less than the 50 yuan in wages.",
+      "correct": false,
+      "feedback": "2 of the 4 sales still happen the next day, so you don't lose all 40 yuan of gross profit."
+     },
+     {
+      "text": "You can't tell: first work out the average gross profit across all of the day's shifts, then compare the night shift with it.",
+      "correct": false,
+      "feedback": "The whole day's average gross profit has nothing to do with this night. Checking the night shift's own 4 sales is enough."
+     },
+     {
+      "text": "You make 30 yuan less each night: the night shift's 4 sales of gross profit are lost, and the staff wages are counted elsewhere.",
+      "correct": false,
+      "feedback": "Cancel the night shift and you no longer pay that 50 yuan, so the wages can't be said to be counted elsewhere."
+     }
+    ]
+   },
+   {
+    "stem": "After your fishing boat comes in, the catch has to be sorted the same day. Each extra sorter you hire adds, in turn, 80, 50, 30 and 10 kilograms of top-quality fish sorted that day. Each kilogram sorted sells for 4 yuan more, and a sorter's day wage is 100 yuan.",
+    "question": "How many sorters should you hire to make the most that day?",
+    "explain": "The 1st to 3rd sorters add 320, 200 and 120 yuan of sales, all above the 100-yuan day wage; the 4th adds only 40 yuan, below the wage. Hiring 3 adds 340 yuan net that day, the most of any choice.",
+    "options": [
+     {
+      "text": "Hire 2: at that point each adds 260 yuan of sales on average, already far above the day wage.",
+      "correct": false,
+      "feedback": "The 3rd adds 120 yuan of sales, above the 100-yuan day wage. Hiring 2 adds 320 yuan net, 20 yuan less than hiring 3."
+     },
+     {
+      "text": "Hire 3: what the 3rd adds in sales is still above the day wage, and what the 4th adds is below it.",
+      "correct": true,
+      "feedback": "That's a net gain of 340 yuan, the most of any choice."
+     },
+     {
+      "text": "Hire 4: together the 4 add 680 yuan of sales, 170 yuan each on average, above the day wage.",
+      "correct": false,
+      "feedback": "The 4th adds only 40 yuan of sales. Pay him the 100-yuan day wage and the day's net gain actually drops from 340 yuan to 280."
+     },
+     {
+      "text": "Hire 1: the 1st adds the most in sales, and everyone after him adds less.",
+      "correct": false,
+      "feedback": "What the 2nd and 3rd add in sales is still above the day wage. Hiring only 1 adds 220 yuan net, 120 yuan less than hiring 3."
+     }
+    ]
+   },
+   {
+    "stem": "You have a car. The car loan is 2,000 yuan a month and insurance is 3,600 yuan a year, and neither changes with how much you drive. This weekend you're making a 600-kilometer round trip to see an exhibition in another city. Driving, fuel and tolls come to 260 yuan, and tires and maintenance, which go with mileage, add about 120 yuan more (say). A high-speed rail round-trip ticket is 420 yuan, and the two ways take the same time and have the same other costs.",
+    "question": "Comparing only the extra money for this one trip, which is cheaper?",
+    "explain": "Driving adds 260 plus 120, 380 yuan in all; the train is 420 yuan, so driving saves 40 yuan. The car loan and insurance are paid whether you drive or not, so they aren't extra money for this trip.",
+    "options": [
+     {
+      "text": "Driving: only 260 yuan of fuel and tolls, 160 yuan less than the train.",
+      "correct": false,
+      "feedback": "That leaves out the 120 yuan of extra tire wear and maintenance over 600 kilometers. Driving adds 380 yuan."
+     },
+     {
+      "text": "The train: driving has to share in the car loan and insurance, so the total is far above 420 yuan.",
+      "correct": false,
+      "feedback": "The car loan and insurance are paid whether you go or not, so they aren't extra money for this trip."
+     },
+     {
+      "text": "The train: the monthly car loan, spread over each day, is already more than 420 yuan.",
+      "correct": false,
+      "feedback": "The 2,000-yuan monthly car loan doesn't change with this trip, so it has nothing to do with this comparison."
+     },
+     {
+      "text": "Driving: it adds 380 yuan, 40 yuan less than the train's 420.",
+      "correct": true,
+      "feedback": "Fuel and tolls, plus the extra wear on tires and maintenance, come to 380 yuan."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "title": "Under an 8 km detour, the 12-yuan job pays",
+  "caption": "Each extra km of detour adds 1.5 yuan of fuel there and back; van rental and wages don't rise a cent. At the 23-yuan average cost, this package always loses.",
+  "x": {
+   "label": "Detour, one way (km)"
+  },
+  "y": {
+   "label": "Net from this package",
+   "unit": " yuan"
+  },
+  "series": [
+   {
+    "name": "Extra fuel only",
+    "points": [
+     [
+      0,
+      12
+     ],
+     [
+      1,
+      10.5
+     ],
+     [
+      2,
+      9
+     ],
+     [
+      3,
+      7.5
+     ],
+     [
+      4,
+      6
+     ],
+     [
+      5,
+      4.5
+     ],
+     [
+      6,
+      3
+     ],
+     [
+      7,
+      1.5
+     ],
+     [
+      8,
+      0
+     ],
+     [
+      9,
+      -1.5
+     ],
+     [
+      10,
+      -3
+     ]
+    ],
+    "tone": "accent"
+   },
+   {
+    "name": "At average cost",
+    "points": [
+     [
+      0,
+      -11
+     ],
+     [
+      10,
+      -11
+     ]
+    ],
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "x": 1,
+    "y": 10.5,
+    "text": "1 km detour: +10.5"
+   },
+   {
+    "x": 8,
+    "text": "8 km: break even"
+   }
+  ]
+ }
+}

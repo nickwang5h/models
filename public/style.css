@@ -27,6 +27,18 @@ html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);
   font-size:17px;line-height:1.85;font-feature-settings:"tnum" 1,"cv11" 1;letter-spacing:.02em;
   -webkit-font-smoothing:antialiased;overflow-x:hidden}
+/* English pages: the tracking suits Chinese; Latin text reads better closer */
+html[lang="en"] body{letter-spacing:.005em}
+/* English names of the disciplines and uses are longer: on wide screens the row wraps to two lines, on phones the grid
+   takes them a size smaller */
+@media (min-width:721px){
+  html[lang="en"] .sieve .wrap{height:auto;padding-top:10px;padding-bottom:10px}
+  html[lang="en"] .sieve .tg{flex-wrap:wrap;row-gap:4px;overflow:visible}
+  html[lang="en"] .sieve button[data-d][aria-pressed="true"]::after{bottom:-3px}
+}
+@media (max-width:720px){
+  html[lang="en"] .sieve .tg button[data-d]{font-size:14px;letter-spacing:0}
+}
 /* figure labels are measured without tracking, and KaTeX sets its own; headings below set theirs */
 .fig svg,.katex{letter-spacing:normal}
 /* KaTeX's 1.21em makes inline math stand taller than the Chinese around it */

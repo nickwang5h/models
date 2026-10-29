@@ -1,0 +1,197 @@
+{
+ "id": "feynman-technique",
+ "name": "Feynman Technique",
+ "en": "费曼技巧",
+ "discipline": "thinking",
+ "one_line": "Explain it plainly to an outsider, and where you get stuck is what you don't understand.",
+ "story": "Goodstein asks Feynman to explain why spin-1/2 particles obey Fermi–Dirac statistics; Feynman says he can't bring it down to freshman level, so we don't really understand it (Physics Today; collected in Feynman's Lost Lecture, 1996)",
+ "shallow": {
+  "scene": "David Goodstein, a physicist at Caltech, asked Feynman to explain to him why particles with spin one-half obey Fermi–Dirac statistics. Feynman said he would prepare a lecture on it for first-year students. A few days later he came back and said he hadn't managed it. He couldn't reduce it to the freshman level, he said, and that meant we didn't really understand it. Goodstein wrote down this exchange in *Physics Today* in 1989, and it was later included in *Feynman's Lost Lecture*, published in 1996.",
+  "plain": "A friend asks you: how does a rice cooker know the rice is done and switch itself off? You answer: there's a temperature switch inside. Your friend asks again: how does the switch know the rice is done? You open your mouth and can't answer. The first half of the Feynman technique is now done: you explain something to an outsider, the explanation breaks off at a follow-up question, and the place it breaks is the place you haven't understood. You look it up. Boiling water stays at 100°C, so as long as there's water in the pot, the bottom of the pot is held at around 100 degrees. Once the water has boiled off, the bottom of the pot keeps heating up, a heat-sensitive magnet loses its magnetism as it gets hot, and the switch pops up. You explain it again, and your friend nods."
+ },
+ "deep": {
+  "mechanism": "### Each follow-up question goes one layer deeper and shows one more gap\nYou are explaining to a ten-year-old why the sky is blue. The first sentence, \"sunlight gets scattered by the air,\" goes smoothly. The child asks: why does blue light get scattered more? You answer: blue light has a shorter wavelength. The next question: why does a shorter wavelength get scattered more? You have nothing more to say. With no follow-up questions, every sentence sounds fine; one layer down, you're relying on a conclusion you memorized; two layers down, the blank shows. You note this spot and look it up: the strength of scattering is inversely proportional to the fourth power of the wavelength. Red light (about 700 nanometers) has a wavelength about 1.56 times that of blue light (about 450 nanometers), and 1.56 to the fourth power is about 6, so blue light is scattered about six times as much as red.\n\n### The less expert the listener, the less jargon can get you through\nWith the engineers on your own team, \"requests carry an idempotency key\" gets through in one sentence, because they know the term and won't ask about it. With a colleague in finance, you have to say: each payment carries a number, and when the system sees the same number again, it charges only once. When you get to \"how does the system recognize the same number,\" you realize you've never read that part of the code.\n\n### Once the gap is filled, explain it again with a different example\nOne round has four steps: pick a specific question; close your notes and explain it in everyday words; mark where you got stuck and look it up; explain it again, using a different example. You take the explanation of the blue sky and use it to explain why sunsets are red: in the evening, sunlight passes at a slant through more air, the blue light is scattered away first, and what's left is reddish. If you get stuck again at the step \"the blue light is scattered away first,\" go back to the second step and explain it again.",
+  "origin": "Feynman himself never laid down any steps; the name comes from the weight he put on explaining physics to outsiders. The four-step routine was put together later by writers on learning, and Scott Young has presented it under this name. Psychology has related evidence: in 2002, Rozenblit and Keil had people first rate how well they understood everyday devices such as zippers and flush toilets, then explain one in detail; when they rated themselves again, their scores went down.",
+  "limits": "The Feynman technique is best for testing whether a chain of cause and effect holds together: how a set of rules works, how a reaction happens. Explain it once and the gaps show. Skills of the hands, like riding a bike or swimming, don't rest on a chain of causes; however clearly you explain them, you still have to practice. Cutting out key conditions so an outsider can follow bends the explanation out of shape. Turn \"vaccination lowers your risk of getting sick\" into \"get the shot and you won't get sick,\" and the outsider does understand, but what they understand is wrong."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "communicate",
+    "text": "Before explaining a plan to a client who doesn't know the field, first explain to an outsider how the plan works, from start to finish; the step where you can't go on is one the client will ask about too."
+   },
+   {
+    "use": "explain",
+    "text": "When a presentation you thought was clear left everyone lost, go through the script sentence by sentence and find the few lines that got by on jargon."
+   },
+   {
+    "use": "act",
+    "text": "When training a new hire, have them close the manual and explain the process to you; the step where they get stuck is the one you need to teach again next week."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Studying medicine",
+    "title": "Why heart failure makes legs swell",
+    "text": "You and two classmates agree that each of you will close the book and explain one disease. Your turn is why heart failure makes the legs swell: the right side of the heart pumps worse, blood backs up in the veins, and the pressure rises. A classmate asks: fine, the pressure is higher, but what makes the water leave the blood vessels? You only remember one line from the book, \"fluid leaks out,\" and can't say how the pressure pushes water out of the capillaries. You turn back to that page, draw the pressures inside and outside the vessels as two columns, and the next day you explain it again."
+   },
+   {
+    "field": "Work",
+    "title": "Phone numbers stay out of spreadsheets",
+    "text": "Your company has just made a rule: customers' phone numbers may not be kept in personal spreadsheets. For the sales meeting you prepared only one line: \"This risks a leak.\" A salesperson asks on the spot: my spreadsheet has a password, isn't that just as safe? You can't answer. After the meeting you ask the legal team and learn that the rule wants the system to keep a record of who looked at a number and when, and a password-protected spreadsheet can't keep that record. At the next sales meeting, you start with that record."
+   },
+   {
+    "field": "Personal finance",
+    "title": "A monthly investment that keeps falling",
+    "text": "You tell your mother: put in a fixed 500 yuan every month, and in months when the price is low you buy more units, so there's no need to panic when it falls. Your mother asks: what if it just keeps falling? You answer \"it will go up in the long run,\" but can't say why. At home you lay it out with numbers. In the first month the price is 10 yuan, and you buy 50 units; in the second month it falls to 5 yuan, and you buy 100 units; if the price climbs back to 10 yuan, 150 units are worth 1,500 yuan. If the price stays stuck at 5 yuan, 150 units are worth only 750 yuan, against 1,000 yuan put in. The next time you bring it up, you start with these two outcomes."
+   }
+  ],
+  "ask": [
+   "When I retell this, which \"so\" have I just memorized? Find someone who has never studied the field and ask them to ask why after every \"so.\"",
+   "Which word that I use every day have I never taken apart? Ask the people who use it what specific action it refers to.",
+   "Which page of my notes reads smoothly to me, yet I have never written it out in my own words?"
+  ],
+  "with": [
+   {
+    "id": "abstraction",
+    "sees": "A team is writing documentation for a payment service. Abstraction and modularity say the page for callers should cover only \"what goes in, what comes back\" and tuck the internal details away, so readers don't drown in them; the Feynman technique says the author must be able to explain the tucked-away part, step by step, to an outsider. The page for callers stops at the interface; the author, with the documents closed, must be able to explain it all the way down; and whoever will answer for failures has to read down to the layer where it's all spelled out."
+   },
+   {
+    "id": "spacing-retrieval",
+    "sees": "You have two weeks to prepare for an exam, and time is short. Scattered facts, like legal provisions and drug names, have no chain of cause and effect to explain. Leave them to spacing and retrieval practice, where closing the book every few days and writing them out from memory pays off best. With chapters on mechanisms and derivations, you only know them if you can explain them, so leave those to the Feynman technique."
+   },
+   {
+    "id": "circle-of-competence",
+    "sees": "You want to bet some money on an industry you don't know well. Whether you know it is a feeling; whether you can explain to an outsider how it makes money is the test. The step where you get stuck is where the edge of your circle of competence lies."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A colleague is walking you through a new plan for the refund process, and you want to judge whether he has really got it to hang together.",
+    "question": "Which sign best shows that one of his steps doesn't hang together?",
+    "explain": "If, when asked \"why,\" he can only go back to the definition, he holds only the conclusion, not the process that links this step to the one before.",
+    "options": [
+     {
+      "text": "Asked \"why does this step happen,\" he reads out the earlier definition again.",
+      "correct": true,
+      "feedback": "The question was about the process, and he gave the conclusion again; this step got by on memory, with no cause and effect to explain."
+     },
+     {
+      "text": "Asked about a step, he's silent for a few seconds before he starts answering.",
+      "correct": false,
+      "feedback": "A pause by itself shows nothing; what matters is whether what comes after it is a process or a definition."
+     },
+     {
+      "text": "The example he gives isn't the one in the plan document; he came up with it himself.",
+      "correct": false,
+      "feedback": "Still making sense with a different example is exactly a sign that he understands how things connect."
+     },
+     {
+      "text": "He speaks very fluently, using technical terms all the way through, with hardly a pause.",
+      "correct": false,
+      "feedback": "Speed and the number of technical terms only reflect how he tends to talk; the same content put more slowly might also hang together."
+     }
+    ]
+   },
+   {
+    "stem": "You're explaining to a friend that when the heating is on in winter, the amount of water in the air in the room doesn't drop, yet people feel the air is drier. When you get to \"the temperature rises, so the relative humidity falls,\" your friend asks: \"The water hasn't changed, so why does the humidity fall?\" You realize you only remember this conclusion.",
+    "question": "What's the best thing to do next to fill this gap?",
+    "explain": "What got stuck is one specific step, so the fix is to look that step up and explain it again in your own words.",
+    "options": [
+     {
+      "text": "Tell him \"it just gets drier, that's all,\" and without stopping, carry on with the rest.",
+      "correct": false,
+      "feedback": "Skipping this step leaves the gap as it was, and your friend still has no answer."
+     },
+     {
+      "text": "Switch to a more vivid comparison and use it to cover the step, without answering directly.",
+      "correct": false,
+      "feedback": "A comparison is just new wrapping. You still can't say why the humidity falls, and your friend's next question will get you stuck again."
+     },
+     {
+      "text": "Memorize the first half a few more times, so the lead-up to where you got stuck sounds smoother.",
+      "correct": false,
+      "feedback": "The first half was already smooth; memorizing it more won't fill in the step where you got stuck."
+     },
+     {
+      "text": "Note this step, look up how temperature and relative humidity are linked, and explain this step again in your own words.",
+      "correct": true,
+      "feedback": "The gap is at the step \"how temperature changes relative humidity\"; only by looking it up and explaining it again do you turn the gap into understanding."
+     }
+    ]
+   },
+   {
+    "stem": "You're explaining to your family why planes can fly: the air above the wing has a longer path to travel, so it has to go faster to reach the back edge of the wing at the same time as the air below; where the air is faster the pressure is lower, so the wing is held up. Your family keeps nodding.",
+    "question": "How do you check whether this explanation is right?",
+    "explain": "Your family nodding only shows the words are easy to follow. \"Must arrive at the same time\" is the premise of the whole explanation, and you need to check it against reliable sources. Checked, it turns out air follows no such rule, so this step has to change.",
+    "options": [
+     {
+      "text": "Switch to a more vivid comparison, so your family remembers it better and longer afterward.",
+      "correct": false,
+      "feedback": "A comparison changes how easy it is to remember, not whether the premise is right."
+     },
+     {
+      "text": "Look up reliable sources and check the premise that \"the two streams of air must reach the back edge at the same time.\"",
+      "correct": true,
+      "feedback": "The whole chain of cause and effect rests on this premise. If the premise doesn't hold, then however smoothly you explain it, it's wrong."
+     },
+     {
+      "text": "Ask your family to retell it in their own words; if they can, the explanation is right.",
+      "correct": false,
+      "feedback": "Your family can also retell a wrong explanation just as it was told; retelling only checks whether you explained it clearly."
+     },
+     {
+      "text": "Slow down and say each sentence again exactly as before, and see whether anyone in the family raises a question.",
+      "correct": false,
+      "feedback": "Nobody asking only shows that everyone believed it; a wrong premise explained again more slowly is still wrong."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "loop",
+  "title": "Where you get stuck is what you don't understand",
+  "caption": "A friend asks how a rice cooker knows the rice is done. It breaks at \"how does the switch know\": look up the magnet, retell it. Stuck on a new example? Go back.",
+  "center": "Cooker",
+  "centerSub": "How it clicks off",
+  "nodes": [
+   {
+    "id": "b",
+    "label": "Explain, notes shut",
+    "sub": "To a non-expert friend"
+   },
+   {
+    "id": "c",
+    "label": "Look up where stuck",
+    "sub": "How does the switch know?",
+    "tone": "warn"
+   },
+   {
+    "id": "d",
+    "label": "Explain again",
+    "sub": "Your friend nods",
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "b",
+    "to": "c",
+    "label": "Asked why"
+   },
+   {
+    "from": "c",
+    "to": "d",
+    "label": "Heat magnet"
+   },
+   {
+    "from": "d",
+    "to": "b",
+    "label": "New example, stuck",
+    "dashed": true
+   }
+  ]
+ }
+}

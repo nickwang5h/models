@@ -1,0 +1,592 @@
+{
+ "id": "optimal-stopping",
+ "name": "Optimal Stopping",
+ "en": "最优停止",
+ "discipline": "computing",
+ "one_line": "When you can't go back, let the first few pass, then take the first that beats them all.",
+ "story": "Armstrong flies the lunar module over a field of boulders and picks a landing spot before the fuel runs out",
+ "shallow": {
+  "scene": "On July 20, 1969, Apollo 11's lunar module was heading for the Moon's Sea of Tranquility when Neil Armstrong saw that the autopilot was taking it into an area covered in boulders. He switched to flying it by hand and kept going, looking for flat ground to land on. The fuel dropped second by second. Houston called out sixty seconds left before the fuel warning point, then thirty. He set the lunar module down on a flat patch. One more second of flying might find flatter ground, but it also burned one more second of fuel, and he couldn't go back over ground he had passed. When to stop was the question he had to answer the whole way down.",
+  "plain": "You need to rent one of ten apartments. Each one needs an answer on the spot: if you don't sign, someone else takes it, and you can't go back to one you've seen. The first one is decent. Do you sign? If you do, a better one may come later; if you keep looking, you don't know when to stop. Optimal stopping offers a ready-made method. For the first three, only look and don't sign, and remember the best of them. From the fourth on, sign the first one that is better than all of the first three; if none comes, take the last one. Do it this way, and your chance of getting the best of the ten is about four in ten. Picking at random, it's only one in ten."
+ },
+ "deep": {
+  "mechanism": "### Let a batch go, then wait for the first one that sets a new record\n\nA hundred people come in one at a time to be interviewed. You must hire or reject each on the spot, anyone who leaves can't be called back, and you only want the very best of all of them. Let a first batch go and note the strongest among them. After that, hire the first person who is stronger than everyone in that batch; if no such person shows up, hire the last one. The first batch is there only to set the bar, not to be hired.\n\n### Let too few or too many go, and the success rate drops\n\nLet only 10 people go, and the success rate is about 23%: the bar is too low, a middling person soon beats it, and you hire them. Let 70 go, and the success rate is about 25%: the bar is solid, but there is a 70% chance the very best is already among the people you let go. It is highest when you let 37 go, with a success rate close to 37%.\n\nThis number can be worked out. With $n$ people and the first $r$ let go, the very best person is equally likely to be in any position, with a chance of $\\frac{1}{n}$ for each. If they are in position $k$ ($k>r$), then for you to hire them, the strongest of the $k-1$ people before them must be in the batch you let go; otherwise you would have stopped before position $k$. The chance of that is $\\frac{r}{k-1}$. Multiply the two chances and add them up from position $r+1$ to position $n$, and the success rate is:\n\n$$\\frac{r}{n}\\left(\\frac{1}{r}+\\frac{1}{r+1}+\\cdots+\\frac{1}{n-1}\\right)$$\n\nWith many people, the part in brackets is about $\\ln\\frac{n}{r}$ ($\\ln$ is the natural logarithm). Call the share you let go $x$, and the success rate is about:\n\n$$x\\ln\\frac{1}{x}$$\n\nIf $x$ is too small, the first factor $x$ is small: the bar is too low, and you hire a middling person early. If $x$ is too large, $\\ln\\frac{1}{x}$ is small: the very best has most likely been let go already. The product of the two is largest at $x=\\frac{1}{e}\\approx0.37$, and the success rate there is also $\\frac{1}{e}$.\n\nThe number of people doesn't appear in the formula, so with a hundred people you let 37 go, and with a thousand you let 368 go. Even doing this, you still miss more than six times out of ten: either the very best was let go, or partway through you hired someone who wasn't the best.\n\n### When every extra wait costs something, stop once the expected gain is less than the cost\n\nWhen you sell a house or look for a parking space, the second best also counts, but every extra wait costs something: a week's interest, a stretch of extra walking. Then whether to stop is a matter of doing the sums. What you expect to gain by waiting once more equals the chance of meeting a better option times how much better it is; if that is less than what you pay, take the one in front of you. The better the option you already have, the smaller the chance that a much better one comes later; and the fewer chances remain, the more you should stop.",
+  "origin": "This problem later became known as the secretary problem: an employer interviews applicants one after another and must hire or reject each on the spot. In 1960 Martin Gardner introduced it in his column in Scientific American, and from there it spread; in 1961 Dennis Lindley published a mathematical analysis. The 1/e share comes from a proof: work out the chance of success for every number of people let go, then find the largest.",
+  "limits": "The method only holds when the number of options is known, the order is random, a rejection can't be undone, and only first place counts. When you shop online and can put several items in your cart at once, or other people's offers stay open for a few days, just set the candidates side by side and compare them. If you want \"good enough\" rather than \"the best,\" setting a line you'll accept is simpler. Carrying \"let the first 37% go\" over to the love choices of a whole life is copying the answer to one problem onto a different problem."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When interviews fill a whole week and candidates want an answer on the spot, write down before the first one how many people you will only look at, and what kind of candidate after that gets an offer. Then you don't agonize all over again after each one."
+   },
+   {
+    "use": "explain",
+    "text": "After an afternoon of shopping, what you end up buying is often the first item, in one of the later shops, that beats everything before it: the earlier shops set your bar."
+   },
+   {
+    "use": "predict",
+    "text": "Predict how this method turns out: even if you follow it, you still miss the best more than six times in ten, so before you commit, ask whether you can live with missing it."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "Setting a line to sell a home",
+    "text": "You put your old home on the market. Buyers view it one at a time and make an offer on the spot; if you don't accept, they go look elsewhere. Suppose each extra week on the market costs another 10,000 yuan in mortgage interest and property fees. Offers in the first two weeks fall between 1.7 million and 1.8 million yuan. You estimate that if the offer in hand reaches 1.85 million, waiting another week gives only about a 20% chance of a buyer offering 50,000 more. That is an expected gain of 10,000 yuan, which just covers a week's costs. So you set your line at 1.85 million. In the third week a buyer offers 1.88 million, and you sign that day."
+   },
+   {
+    "field": "Everyday life",
+    "title": "Finding parking on a one-way street",
+    "text": "On the one-way street to a restaurant, once you drive past an empty space you can't go back, and you can't see whether there are spaces ahead. While you are still far from the restaurant, plenty of spaces ahead might open up, and passing one is expected to save you a long walk, so you pass two. The closer you get to the door, the fewer spaces are left ahead, and passing another one most likely means circling around to look again. Almost at the restaurant's door, you meet an empty space and pull straight in, whether or not it's the closest one."
+   },
+   {
+    "field": "Photography",
+    "title": "The last frame of film",
+    "text": "You carry a film camera down a one-way trail with only one frame of film left, and you want to shoot the most beautiful view on the whole walk. The map marks 12 viewpoints. You won't go back once you pass one, and you don't know in advance which is the most beautiful. At the first 4 you only look, and you remember the best of them. At the 7th, the sea of clouds is better than at any of the 6 before it, and you press the shutter. Shooting this way, your chance of catching the most beautiful view of the whole walk is about four in ten."
+   }
+  ],
+  "ask": [
+   "Do I want the very best of all, or one that's good enough?",
+   "How many more options will come, who decides their order, and can I go back to one I've passed?",
+   "If I keep looking, how much more do I expect to gain, and what does each extra look cost me?"
+  ],
+  "with": [
+   {
+    "id": "explore-exploit",
+    "sees": "You've just moved to a new city and want a regular barber. This is the explore-exploit trade-off: try a new shop, or stick with one you know is decent. If you plan to live there ten years, try more shops, and don't settle too soon even if the first two are decent, because every month afterward pays back what the trials cost. If you're moving away next month and have only three haircuts left, you must settle on one after a few tries. When you can try many times, try more shops; when tries are limited and a missed one is gone, decide first how many to pass up, and then settle on the first one that's better."
+   },
+   {
+    "id": "bounded-rationality",
+    "sees": "Take buying a washing machine. Someone chasing the best one on the whole market will keep comparing and never be able to stop. Bounded rationality reminds you that you can't think through every option, so set the bar at \"good enough\" and buy the first machine that meets it. Optimal stopping is worth following, letting a batch pass at its pace, only when you truly must have the best and can look at each option only once."
+   },
+   {
+    "id": "sunk-cost",
+    "sees": "You've interviewed twenty people and hired none of them. If you want to keep interviewing, the reason shouldn't be \"I've already put in so much work.\" The work already spent is a sunk cost and can't be recovered. Whether one more interview is worth it depends only on how much improvement one more person is expected to bring, and on what each extra day of waiting costs you."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "At a procurement fair, 24 suppliers come on stage one after another to present their bids, in random order. After each one, you must answer on the spot; any supplier you pass on signs with someone else that day, with no going back. You can reliably compare the bids you've already heard, and your goal is to pick the best supplier of all.",
+    "question": "How should you set the point where you commit?",
+    "explain": "The number is known, the order is random, there's no going back, and only first place counts: exactly the situation where you let a batch pass first. Let about nine go to set the bar; after that, wait for the one that sets a new record. Beating the average isn't enough.",
+    "options": [
+     {
+      "text": "Hear about 9 without signing, then sign the first one above that batch's average; if none, sign the last one.",
+      "correct": false,
+      "feedback": "Plenty are above average. The first ordinary bid like that will stop you, and the best one later never gets its chance."
+     },
+     {
+      "text": "Hear about 9 without signing, then sign the first one better than all before it; if none, sign the last one.",
+      "correct": true,
+      "feedback": "About 9 is the number divided by e. Between letting too few go and too many, it gives the best chance of picking the best supplier."
+     },
+     {
+      "text": "Set a passing line and sign the first one that clears it; if none, sign the last one.",
+      "correct": false,
+      "feedback": "A line suits someone who only wants good enough. Here you want first place, and an ordinary bid that clears the line will stop you too early."
+     },
+     {
+      "text": "Hear the first 12 without signing, then sign the first one better than all before it; if none, sign the last one.",
+      "correct": false,
+      "feedback": "Hear 12 first and you let as many as half go, so the chance that the best supplier is among those 12 is bigger than when you let about 9 go."
+     }
+    ]
+   },
+   {
+    "stem": "You're looking for a place to rent. A listings site has 12 places that meet your needs, every landlord will hold theirs for a week, and you can go back and compare at any time. A friend suggests: look at four without signing, then sign the first one better than all four.",
+    "question": "Does this advice fit your situation?",
+    "explain": "Letting a batch pass is a way to set a bar first when a wrong choice can't be undone. Here the places are held and you can go back to them, so put the candidates side by side and compare. You won't miss any, and you don't have to give any up first.",
+    "options": [
+     {
+      "text": "It fits, but raise the number you only look at to six, so the bar is firmer.",
+      "correct": false,
+      "feedback": "You can go back to the places, so the bar doesn't need to be set by giving places up. Looking at six first just lets candidates go for nothing."
+     },
+     {
+      "text": "It fits: four out of twelve is exactly a third, which is the best share to let pass.",
+      "correct": false,
+      "feedback": "Getting the share right doesn't help. That share was worked out for when you can't go back; if you can go back, its premise is gone."
+     },
+     {
+      "text": "It doesn't fit: 12 places is too small a sample, so you should look at more listings before using this method.",
+      "correct": false,
+      "feedback": "A small total doesn't stop the method from working. The real issue is that you can go back to the places, so there's no rule that a missed one is gone for good."
+     },
+     {
+      "text": "It doesn't fit: the places are held and you can go back, so put the candidates side by side and pick the best.",
+      "correct": true,
+      "feedback": "A missed option never coming back is the premise for letting a batch pass. With the places held, that premise is gone, and comparing directly is safer."
+     }
+    ]
+   },
+   {
+    "stem": "You've had a used guitar listed for three days. Now someone offers 1,800 yuan and will keep the offer open for one day. If you wait one more day, there's a 25% chance a buyer offering 2,000 yuan comes along; otherwise you still sell for 1,800. You put the cost of waiting one more day (the loss from it sitting unused, platform fees) at 80 yuan.",
+    "question": "Going only on this information, what is the most sensible thing to do?",
+    "explain": "You can go back and sell at the current offer, so what matters is how much one more day is expected to improve things. 25% times 200 yuan is an expected 50 yuan more, less than the 80-yuan cost, so it's time to stop. Having already listed it for three days doesn't change this comparison.",
+    "options": [
+     {
+      "text": "Wait another day; you could get up to 200 yuan more, which is more than the 80-yuan cost.",
+      "correct": false,
+      "feedback": "You only get the 200 yuan with a 25% chance. You can't treat the best outcome as a sure gain."
+     },
+     {
+      "text": "Wait another day; the offer is held, so waiting a day carries no risk.",
+      "correct": false,
+      "feedback": "The offer being held only means you won't lose the 1,800 yuan. Waiting a day still costs 80 yuan, and the expected gain is only 50."
+     },
+     {
+      "text": "Sell now; waiting a day is expected to bring 50 yuan more, less than the 80-yuan cost.",
+      "correct": true,
+      "feedback": "25% times 200 yuan is 50 yuan, against 80 yuan paid. On average you lose, so selling now is the better deal."
+     },
+     {
+      "text": "Wait another day; it's been listed for three days, and one more day makes it more likely the earlier wait pays off.",
+      "correct": false,
+      "feedback": "The first three days of waiting can't be got back. Whether the next day is worth it depends only on what that day adds and costs."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "title": "Let the first 37 go: best odds of the very best",
+  "caption": "100 interviews, decided on the spot, only the best counts. Let a batch go to set the bar, then hire the first to beat them. Let 10 go: 23%. Let 70 go: only 25%.",
+  "x": {
+   "label": "How many you let go first",
+   "min": 0,
+   "max": 100
+  },
+  "y": {
+   "label": "Chance of hiring the best",
+   "unit": "%",
+   "min": 0,
+   "max": 45
+  },
+  "series": [
+   {
+    "name": "Success rate",
+    "points": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      5.2
+     ],
+     [
+      2,
+      8.4
+     ],
+     [
+      3,
+      11
+     ],
+     [
+      4,
+      13.4
+     ],
+     [
+      5,
+      15.5
+     ],
+     [
+      6,
+      17.4
+     ],
+     [
+      7,
+      19.1
+     ],
+     [
+      8,
+      20.7
+     ],
+     [
+      9,
+      22.1
+     ],
+     [
+      10,
+      23.5
+     ],
+     [
+      11,
+      24.7
+     ],
+     [
+      12,
+      25.9
+     ],
+     [
+      13,
+      27
+     ],
+     [
+      14,
+      28
+     ],
+     [
+      15,
+      28.9
+     ],
+     [
+      16,
+      29.7
+     ],
+     [
+      17,
+      30.5
+     ],
+     [
+      18,
+      31.3
+     ],
+     [
+      19,
+      32
+     ],
+     [
+      20,
+      32.6
+     ],
+     [
+      21,
+      33.2
+     ],
+     [
+      22,
+      33.7
+     ],
+     [
+      23,
+      34.2
+     ],
+     [
+      24,
+      34.6
+     ],
+     [
+      25,
+      35
+     ],
+     [
+      26,
+      35.4
+     ],
+     [
+      27,
+      35.7
+     ],
+     [
+      28,
+      36
+     ],
+     [
+      29,
+      36.3
+     ],
+     [
+      30,
+      36.5
+     ],
+     [
+      31,
+      36.7
+     ],
+     [
+      32,
+      36.8
+     ],
+     [
+      33,
+      36.9
+     ],
+     [
+      34,
+      37
+     ],
+     [
+      35,
+      37.1
+     ],
+     [
+      36,
+      37.1
+     ],
+     [
+      37,
+      37.1
+     ],
+     [
+      38,
+      37.1
+     ],
+     [
+      39,
+      37
+     ],
+     [
+      40,
+      37
+     ],
+     [
+      41,
+      36.9
+     ],
+     [
+      42,
+      36.7
+     ],
+     [
+      43,
+      36.6
+     ],
+     [
+      44,
+      36.4
+     ],
+     [
+      45,
+      36.2
+     ],
+     [
+      46,
+      36
+     ],
+     [
+      47,
+      35.8
+     ],
+     [
+      48,
+      35.5
+     ],
+     [
+      49,
+      35.2
+     ],
+     [
+      50,
+      34.9
+     ],
+     [
+      51,
+      34.6
+     ],
+     [
+      52,
+      34.2
+     ],
+     [
+      53,
+      33.9
+     ],
+     [
+      54,
+      33.5
+     ],
+     [
+      55,
+      33.1
+     ],
+     [
+      56,
+      32.7
+     ],
+     [
+      57,
+      32.3
+     ],
+     [
+      58,
+      31.8
+     ],
+     [
+      59,
+      31.3
+     ],
+     [
+      60,
+      30.9
+     ],
+     [
+      61,
+      30.3
+     ],
+     [
+      62,
+      29.8
+     ],
+     [
+      63,
+      29.3
+     ],
+     [
+      64,
+      28.7
+     ],
+     [
+      65,
+      28.2
+     ],
+     [
+      66,
+      27.6
+     ],
+     [
+      67,
+      27
+     ],
+     [
+      68,
+      26.4
+     ],
+     [
+      69,
+      25.8
+     ],
+     [
+      70,
+      25.1
+     ],
+     [
+      71,
+      24.5
+     ],
+     [
+      72,
+      23.8
+     ],
+     [
+      73,
+      23.1
+     ],
+     [
+      74,
+      22.4
+     ],
+     [
+      75,
+      21.7
+     ],
+     [
+      76,
+      21
+     ],
+     [
+      77,
+      20.2
+     ],
+     [
+      78,
+      19.5
+     ],
+     [
+      79,
+      18.7
+     ],
+     [
+      80,
+      18
+     ],
+     [
+      81,
+      17.2
+     ],
+     [
+      82,
+      16.4
+     ],
+     [
+      83,
+      15.6
+     ],
+     [
+      84,
+      14.7
+     ],
+     [
+      85,
+      13.9
+     ],
+     [
+      86,
+      13
+     ],
+     [
+      87,
+      12.2
+     ],
+     [
+      88,
+      11.3
+     ],
+     [
+      89,
+      10.4
+     ],
+     [
+      90,
+      9.5
+     ],
+     [
+      91,
+      8.6
+     ],
+     [
+      92,
+      7.7
+     ],
+     [
+      93,
+      6.8
+     ],
+     [
+      94,
+      5.8
+     ],
+     [
+      95,
+      4.9
+     ],
+     [
+      96,
+      3.9
+     ],
+     [
+      97,
+      3
+     ],
+     [
+      98,
+      2
+     ],
+     [
+      99,
+      1
+     ]
+    ],
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "x": 10,
+    "y": 23,
+    "text": "10 let go: 23%"
+   },
+   {
+    "x": 37,
+    "y": 37,
+    "text": "37 let go: 37%"
+   },
+   {
+    "x": 70,
+    "y": 25
+   }
+  ]
+ }
+}

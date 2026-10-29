@@ -1,0 +1,216 @@
+{
+ "id": "spacing-retrieval",
+ "name": "Spacing Effect and Retrieval Practice",
+ "en": "间隔效应与检索练习",
+ "discipline": "psychology",
+ "one_line": "Recalling it with the book shut every few days beats rereading it five times in a row.",
+ "story": "Ebbinghaus, his own only subject, learns nonsense syllables, measures forgetting by how many repetitions he saves, and publishes On Memory in 1885",
+ "shallow": {
+  "scene": "You stay up all night cramming before an exam, do well the next day, and within a few days have forgotten most of it. The first person to measure this kind of forgetting was the German psychologist Hermann Ebbinghaus.\n\nStarting in 1879, he sat alone in a room memorizing lists of syllables, each made of a consonant, a vowel and a consonant. The syllables had no meaning, so he couldn't lean on anything he already knew to remember them. He would learn a list until he could recite it without a single mistake, and note how many times through it took. After a few minutes, a day or a month, he learned the same list again until it was perfect, and counted the times through once more. The second time always took a few fewer, because part of the list was still in his head; the longer the gap, the fewer times through he saved.\n\nHe kept this up for several years, with himself as the only subject, and in 1885 wrote *On Memory* (*Über das Gedächtnis*), the book that held the first measured forgetting curve. He also found that the same list took fewer times through in total if he spread them over several days than if he did them all in one day. That is how the spacing effect was first measured.",
+  "plain": "A new colleague has just introduced himself, and you repeat his name straight away with no effort at all, but the next day you can't come up with it. Now take another case. Half an hour later you need to call out to him; the name is on the tip of your tongue, and after a few seconds' pause it comes back to you. The next day you say it the moment you see him. The repeat right after hearing it came while the name was still in your ears, so your brain did no work and it didn't stick. The effortful moment of pulling it back just as it was slipping away is what pinned it down.\n\nStudying works the same way. Say you go over the material five times. If you cram all five into the night before the exam, once the exam is over the memory slides steadily down from its high point. If you spread them over several days, and each time first close the book and write out what you remember, opening the book only when you get stuck, then each time you recall it the memory goes back to the top, and afterwards it falls more slowly. The benefit of spacing out your reviews and doing each one just as you're about to forget is called the spacing effect. Recalling with the book closed makes things last longer than reading them again with your eyes open; that is called retrieval practice, or the testing effect."
+ },
+ "deep": {
+  "mechanism": "### How far the second pass is from the first decides how hard the recall is\n\nSuppose you have to learn 30 traffic fines. You've gone through them once, and the test is in a week. If you read them a second time straight away, the material is still fresh, and you take it in with almost no thinking; precisely because you don't have to think, it hardly strengthens anything. Come back a day later, and a few of them won't come to mind. You use clues to dig them back out, and that digging is what makes them stick better. Put the second pass off until the sixth day, and the ones you've forgotten have to be learned from scratch, with only one day left before the test.\n\nIn 2008 Cepeda and colleagues ran an experiment that stretched the gap between two study sessions from zero to more than a hundred days, then looked at the scores on a final test. As the gap grew, scores first rose, then fell. The longer you want to remember something, the longer the gap that gives the best score; and a gap that's too long costs you less than one that's too short.\n\n### Recalling with the book closed lasts longer than reading it again\n\nIn 2006 Roediger and Karpicke had college students read short passages. One group read a passage four times; the other read it once and then wrote down what they remembered, three rounds in all. Tested right after studying, the group that read it four times did better. Tested a week later, the result flipped: the readers remembered about 40%, the writers about 60%. Recalling is itself a round of learning. When the cues aren't enough, you dig the material out, and that act of digging strengthens it. Rereading feels smooth because the words are right in front of you, which doesn't show you'll still remember them once the book is closed.\n\n### Put the two together and you get self-testing at longer and longer gaps\n\nTwo or three days after learning something, close the book and write it out from memory once. After a somewhat longer gap, do it again. Each time, look up the few items you got stuck on, and test those first next time.",
+  "origin": "Ebbinghaus began using himself as his subject in 1879, and in 1885 published *On Memory*, which measured the forgetting curve. In 2006 Roediger and Karpicke published their recall experiment in *Psychological Science*; the same year, Cepeda and colleagues reviewed more than three hundred experiments on spacing. In 2013 Dunlosky and colleagues rated ten study techniques, and only two, spaced review and retrieval practice, were rated \"high utility\".",
+  "limits": "These two techniques work best on scattered facts you need to keep for a long time, such as words, drug names or points of law. In Roediger and Karpicke's passage experiment, a week later the recall group remembered twenty percentage points more than the rereading group. For material you can only understand through a whole chain of reasoning, the evidence for the two techniques is weaker, and there is no agreed figure for the best gap.\n\nIn practice they often go wrong in two places. One is adding new material too fast. A flashcard app that pushes in a hundred or more new words a day means every one of those words needs reviewing some days later, so the reviews falling due pile up higher and higher, and many people give up within a few weeks. The other is sneaking a look at the answer before trying to recall it. Without the effortful digging, that pass slides back into plain rereading."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Plan training for new hires: for the procedures taught in the first week, set aside ten minutes in the second week and ten in the fourth for them to do each one without the manual."
+   },
+   {
+    "use": "predict",
+    "text": "If you know someone only crams in the three days before an exam, you can predict that a month later he'll have lost more than someone who spent the same total time but spread it out."
+   },
+   {
+    "use": "act",
+    "text": "Three weeks before a talk, split memorizing the script into three sessions. Each time, first give the talk once without the script, and look at it only where you get stuck."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Languages",
+    "title": "Words that show up only when they're due",
+    "text": "You're learning Japanese, and the flashcard app on your phone shows you only the words that are due that day. If you recognize a word, the day it next shows up is pushed further out; if you don't, it comes back tomorrow. You spend ten minutes a day. Common words come up only once a month, and hard ones every other day."
+   },
+   {
+    "field": "Job training",
+    "title": "Refresher training for nurses",
+    "text": "You run CPR refresher training for the nurses at a community hospital. It used to be one day a year, going through the whole procedure from start to finish. You change it to ten minutes every quarter. Without looking at the flowchart, each nurse does the whole procedure on the spot on a training dummy, and the instructor prompts her only when she stops. You note on a sheet the steps where people stop, and the next quarter's practice starts with those steps."
+   },
+   {
+    "field": "Reading",
+    "title": "The evening you close the book",
+    "text": "You finish a book about management. That evening you close it and write down on a blank sheet the main points you remember, and you get seven. Three days later you write them out again and get four, two of which you had newly remembered. You stick these four next to your monitor, and a week later write them out a third time."
+   }
+  ],
+  "ask": [
+   "Of what I learned this week, how much could I write out with the book closed?",
+   "How long has it been since I last reviewed it? Check the dates in my notes and see whether it's less than a day.",
+   "In this review, how many minutes was I staring at the answers, and how many was I writing from memory?"
+  ],
+  "with": [
+   {
+    "id": "explore-exploit",
+    "sees": "You have only six hours a week, and more than half of the new chapters are still unread. Explore versus exploit's account says to try more new things: each new chapter is a fresh gain. The spacing effect's account says last week's material is best reviewed now; any later and you'll have to learn it again. If the exam is still far off, split the time half new and half old; if the old material is patchy and the exam is next week, go back and review first."
+   },
+   {
+    "id": "diminishing-returns",
+    "sees": "Take the same act of reading a chapter one more time. Diminishing returns says the second reading is already less useful than the first, so you should go and read something new. The spacing effect says a second reading a day later lands right where you're about to forget, and is worth more than one straight after. Look at the gap: reading again straight away is where returns diminish; read it again after a gap, and the diminishing-returns account no longer holds."
+   },
+   {
+    "id": "feynman-technique",
+    "sees": "You want to learn a concept. The Feynman technique has you explain it to someone else, and where the explanation breaks down is where you don't understand; it takes care of understanding. Retrieval practice only takes care of being able to say it: close the book and write it out, without asking whether the logic you wrote down holds together. Use the first to understand it, then the second to write it out every few days, and it will stay with you."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You need to learn 60 drug names for an exam in a month, and you have six hours in total. You pick one of the four plans below.",
+    "question": "Which plan will leave you remembering more a month from now?",
+    "explain": "With the same six hours, the plan that spreads the sessions out and starts each one with recall from memory uses both spacing and recall.",
+    "options": [
+     {
+      "text": "Read the list six times in one day, start to finish each time.",
+      "correct": false,
+      "feedback": "Six readings are crammed into one day, and none of them takes much effort; a month later, the least is left."
+     },
+     {
+      "text": "Read it through once in the first three hours and once in the next three, back to back.",
+      "correct": false,
+      "feedback": "The two sessions are too close together. The second reads smoothly, with almost no digging things out of memory."
+     },
+     {
+      "text": "Read your notes once a day for six days in a row, and leave them alone the rest of the time.",
+      "correct": false,
+      "feedback": "The spacing is there, but each time your eyes just skim the notes. Without the recall step, it does worse than the plan that writes from memory first."
+     },
+     {
+      "text": "Over three weeks, two hours a week: write out the drug names from memory first, then check against your notes.",
+      "correct": true,
+      "feedback": "The weekly sessions are spread out, each one is recall from memory, and the mistakes get checked, so more is left after a month."
+     }
+    ]
+   },
+   {
+    "stem": "For the same chapter, you close the book and try to write it out, but only manage a third and feel discouraged. You open the book and reread it, and it goes much more smoothly. You decide rereading is the easier way after all, and plan to review like this from now on.",
+    "question": "What does this smoothness when rereading tell you?",
+    "explain": "The smoothness you feel with the material in front of you comes from the page in front of you. It doesn't prove the material will stay once the book is closed.",
+    "options": [
+     {
+      "text": "It shows you've already learned the chapter well; you couldn't write it out only because you were nervous.",
+      "correct": false,
+      "feedback": "Not being able to write it out is closer to what happens in the exam. It measures exactly how much is left once the book is closed."
+     },
+     {
+      "text": "It shows the smoothness comes from the content being in front of you; the parts you couldn't write out are the ones to practice.",
+      "correct": true,
+      "feedback": "The effortful pass is the one that strengthens memory, and the places where it doesn't flow are the places you haven't learned yet."
+     },
+     {
+      "text": "It shows this chapter is harder than the others, and hard material isn't suited to self-testing.",
+      "correct": false,
+      "feedback": "How hard a chapter is has nothing to do with whether to test yourself; the parts you can't write out need it all the more."
+     },
+     {
+      "text": "It shows rereading suits you better, and recalling from memory doesn't work for you.",
+      "correct": false,
+      "feedback": "Recall works for most people. Writing out only a little is a sign you should recall more, not less."
+     }
+    ]
+   },
+   {
+    "stem": "You test yourself on biology with flashcards and get a dozen or more wrong. Afraid of getting discouraged, you put those cards back in the box without turning them over to see the answers, and plan to test them again next week.",
+    "question": "Which of these will do most to help you remember this material a month from now?",
+    "explain": "For the ones you got wrong, you need to see the correct answer and then retest after a shorter gap. If you just leave them, you'll most likely get them wrong again next time.",
+    "options": [
+     {
+      "text": "Turn them over and look at the answers right away, test again tomorrow, then gradually lengthen the gaps.",
+      "correct": true,
+      "feedback": "First fill in the correct answer, recall it once after a short gap, then spread the gaps out step by step."
+     },
+     {
+      "text": "Copy out the ones you got wrong ten times, then don't test them again for a month.",
+      "correct": false,
+      "feedback": "Copying is just looking at it again, with no recall and no retest after a gap."
+     },
+     {
+      "text": "Stick to the plan: don't look at the answers, and test these cards again next week.",
+      "correct": false,
+      "feedback": "Without seeing the correct answers, next week you'll very likely make the same mistakes."
+     },
+     {
+      "text": "Take these cards out of the box and set them aside until you've learned them some other time.",
+      "correct": false,
+      "feedback": "The ones you can't answer need practice most; taking them out gives up on exactly the part that most needs strengthening."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Five spaced recalls outlast five reads in a night",
+  "caption": "Sketch: each recall lifts the curve back to the top and slows its fall. 1 day apart is too easy to help much; 5 is nearly relearning; 3–4 keeps most by day 30.",
+  "x": {
+   "label": "Day"
+  },
+  "y": {
+   "label": "Remembered",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "g",
+    "label": "Days apart",
+    "min": 1,
+    "max": 5,
+    "step": 1,
+    "value": 3,
+    "unit": " days"
+   }
+  ],
+  "model": {
+   "steps": 30,
+   "init": {
+    "d": 0,
+    "s": 1.5,
+    "t": 0
+   },
+   "next": {
+    "d": "d+1",
+    "s": "s*(1 + 6*((d+1)%g<0.5)*((d+1)<4*g+0.5)*exp(-(t+1)/s)*(1-exp(-(t+1)/s)))",
+    "t": "(t+1)*(1-((d+1)%g<0.5)*((d+1)<4*g+0.5))"
+   }
+  },
+  "series": [
+   {
+    "name": "5 reads, 1 night",
+    "expr": "100*exp(-d/8)",
+    "tone": "ink"
+   },
+   {
+    "name": "Spaced recall",
+    "expr": "100*exp(-t/s)",
+    "tone": "accent"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Spaced, at day 30",
+    "expr": "100*exp(-t/s)",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "One night, at day 30",
+    "expr": "100*exp(-d/8)",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

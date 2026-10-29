@@ -1,0 +1,221 @@
+{
+ "id": "random-walk",
+ "name": "Random Walk",
+ "en": "随机游走",
+ "discipline": "math",
+ "one_line": "Each step is pure luck, yet the path looks like it's heading somewhere and keeps spreading out.",
+ "story": "In the summer, the botanist Robert Brown watches through a microscope in London as tiny particles from pollen in water keep jiggling, and ground-up nonliving grains jiggle just the same",
+ "shallow": {
+  "scene": "In the summer of 1827, the botanist Robert Brown was looking through a microscope in London at pollen soaking in water, and saw that the tiny particles given off by the pollen never stopped jiggling. Keep your eye on one and it shifts a little to the left, then a moment later turns off somewhere else. At first Brown suspected this was a sign of life, so he tried ground-up nonliving material instead, but the particles moved just the same. Only later did it become clear that water molecules were hitting the particles from every side. At each moment the hits don't exactly cancel out, so the particle gets a push; add up push after tiny push, and it traces a crooked, zigzag path.",
+  "plain": "The simplest random walk goes like this. You stand in the middle of a hallway and take one step for each coin toss: heads forward, tails back. No step favors either direction, yet after a hundred tosses you're rarely back where you started. Most likely you end up somewhere around ten steps from the start."
+ },
+ "deep": {
+  "mechanism": "### Each step is independent, but the position carries the past\n\nYou start at 0 and toss a coin six times, going right on heads and left on tails. The results are right, right, left, right, right, right, so your positions are 1, 2, 1, 2, 3, 4, which together look like a rising trend. The seventh step has nothing to do with the first six, and the chance of going right is still one half. There is no momentum to keep rising and no force pulling the position back to zero. But this step starts from 4, so it can only reach 3 or 5. The first six steps don't decide the seventh step's direction, only where it starts from.\n\n### Four times the steps, only twice the typical distance\n\nWith each step of length 1, after $n$ steps the typical distance $d$ from the start is about\n\n$$d\\approx\\sqrt{n}$$\n\nThe steps forward and back mostly cancel each other out, so the distance grows only with the square root of the number of steps. The typical distance is the square root of the average squared distance. The reason is hidden in the squared distance. When you're already $d$ steps from the start, the next step takes you to $d+1$ or $d-1$, half the time each, and the average of the two squares is $\\frac{(d+1)^2+(d-1)^2}{2}=d^2+1$. So each step adds exactly 1 to the average squared distance. At the start it is 0, so after $n$ steps it is $n$, and its square root gives the typical distance $\\sqrt{n}$.\n\n100 steps gives about 10, 400 steps about 20, and 10,000 steps about 100: a hundred times the walking, but only ten times the typical distance.\n\n### Lean each step a little, and in the long run the direction outgrows the spread\n\nChange the chance of going right from 0.5 to 0.51, and each step goes right by $0.51-0.49=0.02$ steps on average. After $n$ steps you've been pushed out $0.02n$ steps on average and have spread out about $\\sqrt{n}$ steps. The first grows in proportion to the number of steps, faster than the second.\n\nAfter 2,500 steps the average push is 50 steps, and the spread is also around 50 steps, so the two are even. By 10,000 steps the average push is 200 steps and the spread only about 100. The curve starts heading steadily right, and this time there really is a direction.",
+  "origin": "In 1905 Karl Pearson posed the random walk problem in the journal *Nature* and gave it its name: a man takes steps of a fixed length, each in any direction, so where will he be after n steps? The same year, Einstein used the heat motion of molecules to work out the rule for how far tiny particles move, and Jean Perrin then confirmed it by experiment. The jiggling Brown had seen now had an explanation with numbers.",
+  "limits": "Coin-toss walks fit best for quantities that add up and don't show any lean yet, such as a particle's position, measurement errors, or a rise that has only just started. Once a system has a rule that pulls things back, the coin-toss walk no longer applies. When the room temperature drifts, the air conditioning pulls it back, so it doesn't wander further and further, and you need a model with a pull-back force. The opposite mistake happens too: seeing that a curve could have been drawn at random, you decide there's no mechanism behind it at all and don't even check for a lean. Yet a lean of 0.51 stays hidden in the spread for more than 2,000 steps."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explore",
+    "text": "When you suspect a rise in a curve is just chance, replace each step with a coin toss, draw a few dozen curves, and count how many of them show a rising stretch like this one too."
+   },
+   {
+    "use": "communicate",
+    "text": "To show colleagues why a curve looks like it has a trend, toss a coin 20 times on the spot and plot the position one square at a time on the whiteboard. A rising stretch shows up by itself."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Biology",
+    "title": "Bacteria swim toward sugar",
+    "text": "An E. coli bacterium swims a short way, tumbles, and swims off again in a random new direction, much like a pollen particle. It can sense changes in how much sugar is around: when it senses things getting sweeter as it goes, it swims a little longer before tumbling. The lean at each step is tiny, but over thousands upon thousands of steps the whole colony gradually gathers on the side with more sugar."
+   },
+   {
+    "field": "Materials",
+    "title": "Plastic molecules curl into balls",
+    "text": "In the simplest model, a plastic molecule is a chain of about 40,000 links, each pointing in a direction independent of the others, like a random route of 40,000 steps. Stretched out straight it is 40,000 links long; curled into a ball, its two ends are only about 200 links apart. Pulling it open takes force, and when you let go it shrinks back into a ball."
+   },
+   {
+    "field": "Sports",
+    "title": "Two equally matched chess players",
+    "text": "You watch two equally matched chess players play 100 games with no draws, and draw a line of the running win-loss tally. Working it out as a fair coin, in about 40% of cases one player is ahead in over 90% of the games. On the chart, the line stays almost entirely on one side of zero."
+   }
+  ],
+  "ask": [
+   "Am I looking at the change at each step, or at the position the changes add up to?",
+   "Where can I get the raw data for each step of this curve?",
+   "Is there a concrete rule that makes the next step depend on the current position, such as restocking, scheduling or calibration?"
+  ],
+  "with": [
+   {
+    "id": "regression-to-mean",
+    "sees": "Your shop's sales this week were well above normal. Should you stock more for next week? Regression to the mean sees that this number is held by the usual flow of customers, so next week it will most likely fall back, and you should stock as usual. A random walk sees that if the number is a position that adds up, like total members or stock in the warehouse, this week's level won't fall back on its own; next week starts from here, so stock for the new starting point. First check whether a steady level is pulling this number."
+   },
+   {
+    "id": "signal-noise",
+    "sees": "A salesperson shows you a fund's curve rising steadily for three years. Signal-to-noise asks how much of the line is signal and how much is noise. A random walk gives you something to compare it with: let each day's rise or fall be random, and the curve that builds up often has a long, handsome rising stretch too. From this line alone you can't tell the two apart."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A small cart's position is estimated by adding up its movement second by second. Each second's estimate adds an independent error that is equally likely to be plus or minus and always 1 millimeter in size, and nothing recalibrates it along the way. After 25 seconds of running, the typical position error is about 5 millimeters.",
+    "question": "How many seconds in total must it run for the typical error to reach 15 millimeters?",
+    "explain": "Independent errors add up second by second, and the typical error grows with the square root of the number of steps. To make the error 3 times as big, the steps must be 9 times as many, and 9 times 25 seconds is 225 seconds.",
+    "options": [
+     {
+      "text": "150 seconds",
+      "correct": false,
+      "feedback": "150 seconds is 6 times 25 seconds, so the typical error only becomes about 2.4 times as big, about 12 millimeters, still short."
+     },
+     {
+      "text": "25 seconds",
+      "correct": false,
+      "feedback": "Equal chances of plus and minus only mean the average error is zero. The typical error still grows with running time, and 25 seconds won't reach 15 millimeters."
+     },
+     {
+      "text": "225 seconds",
+      "correct": true,
+      "feedback": "The error grows with the square root of the number of steps, so 3 times the error takes 9 times the steps."
+     },
+     {
+      "text": "75 seconds",
+      "correct": false,
+      "feedback": "That treats the error as proportional to time. Plus and minus errors partly cancel each other, so the error grows more slowly than time."
+     }
+    ]
+   },
+   {
+    "stem": "You and a friend play a game in which you toss a fair coin each round. On heads your friend gives you 1 yuan; on tails you give your friend 1 yuan. Every round is independent. After the first 20 rounds you're up 6 yuan in total, and you play another 80 rounds under the same rules.",
+    "question": "When all 100 rounds are done, how much would you expect to be up in total?",
+    "explain": "In each of the last 80 rounds the expected win or loss is zero, so the part added is expected to be zero, and the 6 yuan you won earlier stays on the books as it is.",
+    "options": [
+     {
+      "text": "About 6 yuan",
+      "correct": true,
+      "feedback": "Over the last 80 rounds wins and losses cancel on average, and the earlier 6 yuan stays on the books."
+     },
+     {
+      "text": "About 1.2 yuan",
+      "correct": false,
+      "feedback": "That spreads the 6 yuan over 100 rounds, treating an amount as a rate. The amount on the books is added up round by round and doesn't get averaged away."
+     },
+     {
+      "text": "About 0 yuan",
+      "correct": false,
+      "feedback": "The coin doesn't look at the books. It won't make up the first 20 rounds' difference to be fair."
+     },
+     {
+      "text": "About 30 yuan",
+      "correct": false,
+      "feedback": "Winning more in the first 20 rounds doesn't mean your chance of winning is higher. In every round you still win half the time."
+     }
+    ]
+   },
+   {
+    "stem": "A bubble-tea shop takes each day's actual sales minus its forecast sales, adds the differences up day after day, and plots the running total as a curve. The curve has gone up 40 days in a row, and the manager wants to know whether the forecast is systematically too low or the shop has just been lucky.",
+    "question": "Which of these checks can tell the two apart?",
+    "explain": "A running-total curve keeps every random difference, so a long rise or a steeper stretch can both be luck. What to look at is each day's difference itself. Only if their average is clearly away from zero, beyond the ordinary swings of those differences, does it look like a systematic underestimate.",
+    "options": [
+     {
+      "text": "Count how many days in a row it has gone up; the more days, the less likely it's luck.",
+      "correct": false,
+      "feedback": "Random steps also produce long stretches in the same direction, so a run of rising days can't count as evidence on its own."
+     },
+     {
+      "text": "Split the curve into two halves and see whether the second half is steeper.",
+      "correct": false,
+      "feedback": "A curve built from random steps turns steep and flat by turns, so two halves of different steepness are normal."
+     },
+     {
+      "text": "See whether the running-total curve is still going up.",
+      "correct": false,
+      "feedback": "Random steps with no lean can also build up a rising stretch, so a curve going up can't tell the two apart."
+     },
+     {
+      "text": "Average the 40 daily differences and compare that with the ordinary size of their swings, to see whether the average is clearly away from zero.",
+      "correct": true,
+      "feedback": "This checks whether each step leans, and a lean only means something when compared with the random swings."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Each step is a coin toss, yet paths spread",
+  "caption": "Eight people walk it once each. Four times the steps, twice the spread. Set going right to 51%: by 2,000 steps the average push of 40 nearly matches the spread.",
+  "x": {
+   "label": "Steps"
+  },
+  "y": {
+   "label": "Steps from start"
+  },
+  "params": [
+   {
+    "id": "s",
+    "label": "Steps",
+    "min": 100,
+    "max": 2000,
+    "step": 100,
+    "value": 100
+   },
+   {
+    "id": "p",
+    "label": "Chance right",
+    "min": 50,
+    "max": 52,
+    "step": 0.5,
+    "value": 50,
+    "unit": "%"
+   }
+  ],
+  "runs": 8,
+  "model": {
+   "steps": "s",
+   "init": {
+    "pos": 0
+   },
+   "next": {
+    "pos": "pos + 2*flip(p/100) - 1"
+   }
+  },
+  "series": [
+   {
+    "name": "",
+    "expr": "pos",
+    "tone": "accent"
+   },
+   {
+    "name": "Average push",
+    "expr": "k*(2*p/100-1)",
+    "tone": "ink",
+    "dashed": true,
+    "thin": false
+   }
+  ],
+  "marks": [
+   {
+    "y": "sqrt(s)",
+    "text": "Typical distance"
+   },
+   {
+    "y": "-sqrt(s)"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Typical distance",
+    "expr": "sqrt(s)",
+    "unit": " steps",
+    "digits": 0
+   },
+   {
+    "label": "Average push",
+    "expr": "s*(2*p/100-1)",
+    "unit": " steps",
+    "digits": 0
+   }
+  ]
+ }
+}

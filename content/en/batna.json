@@ -1,0 +1,199 @@
+{
+ "id": "batna",
+ "name": "BATNA",
+ "en": "谈判底牌",
+ "discipline": "games",
+ "one_line": "Your strength at the table comes from where you can go if the talks fail.",
+ "story": "Apple needs a new operating system; when talks to buy Be fall apart, it buys NeXT instead for about 400 million dollars",
+ "shallow": {
+  "scene": "In 1996, Apple badly needed a new operating system, and its chief executive, Gil Amelio, had to buy one from outside. He went to the company Be first. Its founder, Jean-Louis Gassée, was a former Apple executive. Gassée thought Apple's offer was far too low and insisted on more than 200 million dollars; Amelio thought that price was absurd.\n\nBe was not the only thing Apple could buy: Steve Jobs's company NeXT also had a ready-made operating system. On December 20, Apple announced it would buy NeXT for about 400 million dollars, and Jobs came back to Apple with it. In Apple's eyes, buying NeXT and bringing Jobs back along with it was worth more than buying Be at Gassée's price.\n\nBe was left out in the cold.",
+  "plain": "You're selling an old camera. A buyer online has agreed to pay 2,400 yuan, but you have to ship it, and shipping and insurance cost 100 yuan, so you net 2,300 yuan. Now a local buyer who will pay cash in person offers only 2,000 yuan, and you won't agree: turn him down and you still have 2,300 yuan. The online route is the path you can still take if the talks with the local buyer fall through. It's called your BATNA, the best alternative to a negotiated agreement, and it's counted at its net value after costs. If the local buyer sees you have this path, he knows 2,000 yuan won't get a deal."
+ },
+ "deep": {
+  "mechanism": "### What your fallback nets you is your floor\n\nYour floor is 2,300 yuan: the online buyer's 2,400 yuan minus 100 yuan for shipping and insurance. If shipping and insurance rose to 300 yuan, your fallback would be worth only 2,100 yuan, and if the local buyer went above 2,100 yuan, you should agree. The other way around, if another buyer turned up offering 2,600 yuan, your floor would rise to 2,500 yuan, and the local buyer would have to offer more than 2,500 yuan before you agreed.\n\n### The other side has a fallback too, and the deal lands between the two\n\nThe local buyer has a fallback as well: buying the same model elsewhere, with the running around and waiting, would cost him 2,450 yuan, so the most he'll pay is 2,450 yuan. There are 150 yuan between his ceiling and your floor of 2,300 yuan, and the price will land somewhere in that gap; whoever is less in a hurry gets more of it. If he could buy one elsewhere for just 2,200 yuan, his ceiling would be below your floor, the gap would be gone, and no deal could be made.\n\n### A fallback that isn't nailed down can't be counted in full\n\nA friend saying \"I might want that camera\" doesn't count as a fallback. If you treat him as your floor and turn down the local buyer, then once he changes his mind you're left with nothing on either side. First ask him whether he wants it, which day he'll pay and how you'll hand it over; only when you have an answer on all three do you count him as a fallback.",
+  "origin": "Roger Fisher and William Ury coined the name in 1981 in *Getting to Yes*; it means the best alternative to a negotiated agreement, what you do if the talks don't succeed. The mathematics behind it is older: in John Nash's 1950 bargaining model, what each side gets if the talks break down is called the disagreement point. *Getting to Yes* is a framework for practical negotiating; the book has no landmark experiment.",
+  "limits": "A BATNA is most useful in deals where both sides can negotiate the price and each has somewhere else to go if talks fail: selling a house, signing a supply contract, weighing two job offers. It is no use when buying a share: nobody will lower the price to keep you, and having better government bonds on hand won't make the share price fall. Letting the other side know you have a fallback is enough; don't say what it's worth. Once they know your path nets 2,300 yuan, they'll only offer a little more than 2,300."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "Before the lease on a place you rent out ends, turn the months it might sit empty into lost rent. Then you know the least the tenant has to pay for you not to lose out, and how much more you can still ask for."
+   },
+   {
+    "use": "communicate",
+    "text": "When you ask your boss for a budget, first make clear what you'll do if it isn't agreed and what that will cost. What they see then is two paths that both have a price, not a threat."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "Pixar looks for another distributor",
+    "text": "In January 2004, Steve Jobs announced that Pixar's talks with Disney about renewing their deal were over and that Pixar was starting to talk to other distributors: it had hit films and plenty of money, and its new films would have no trouble finding a partner. Disney's fallback, though, was poor: its own 2004 animated film *Home on the Range* had flopped at the box office, and without Pixar its animation business had nothing to carry on with. In January 2006, Disney announced it would buy all of Pixar for about 7.4 billion dollars."
+   },
+   {
+    "field": "Work",
+    "title": "The other offer in hand",
+    "text": "You've been a front-end developer for three years, and another company has given you a written offer: 3,000 yuan a month more than you earn now, and an extra hour of commuting each day. You turn the commute and the smaller year-end bonus into money and work out that you'd net 1,800 yuan a month more. Then you go to your manager about a raise. Your manager offers a raise of 1,000 yuan; you say that isn't enough and that you'll give your answer in a week."
+   },
+   {
+    "field": "Personal life",
+    "title": "The same car in the next city",
+    "text": "You're negotiating for a new car at your local dealership. A dealer in the next city quotes 3,000 yuan less for the same model, but you'd have to drive 200 kilometers to pick it up and make a trip yourself to register the plates. You count the fuel, the day off and the half day of your time as 1,200 yuan, and tell the local dealer: if it's more than the other city's price plus 1,200 yuan, you'll go to the other city. The dealer first takes off 2,000 yuan, then throws in a full set of floor mats."
+   }
+  ],
+  "ask": [
+   "If the talks fail today, what exactly will I do tomorrow? For that path's price, payment and timing, which do I have a clear answer on from the other party, and which are only my hopes?",
+   "After costs, waiting and risk are taken off, what is my fallback actually worth to me? How much better than that does this deal have to be before I sign?",
+   "Where can the other side go if they leave this table, and how much is left after their costs?"
+  ],
+  "with": [
+   {
+    "id": "credible-commitment",
+    "sees": "You're negotiating a price with a building crew, and they ask whether you'll go to someone else. BATNA has you keep your fallback and put it on the table as leverage; credible commitment does the opposite and closes off your way out, for instance by announcing that the budget has been approved and not a cent can be added, so that the other side believes you have no room to give. If you have a good fallback that's nailed down, put it on the table; if you don't, don't pretend, and fix your budget limit for good."
+   },
+   {
+    "id": "switching-costs",
+    "sees": "You want to negotiate a lower renewal price, only to find that switching to another supplier means reinstalling the system and retraining your staff. This switching cost has to be taken off your fallback, so your fallback isn't worth as much, and once the other side sees you can't leave, they hold firm on price. First work out the cost of switching over, then decide whether to negotiate the price or first find a way to bring that cost down."
+   },
+   {
+    "id": "anchoring",
+    "sees": "Anchoring warns you that the first number named will pull you toward it. The other side has named a high price first. Work out what your fallback nets you before you look at their number: it is only their opening offer, not where the negotiation starts."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're a freelance data analyst, and this month you can only take on one project. Client B has confirmed they'll pay 120,000 yuan, but you'd have to pay 20,000 yuan to subcontract part of the work, and the payment won't come until next quarter; that delay amounts to a loss of 5,000 yuan. Client A's project has no extra costs.",
+    "question": "At least how much does Client A have to offer for taking his project to be no worse than taking Client B's?",
+    "explain": "Client B's 120,000 yuan has the subcontracting fee and the cost of the delay taken off first, leaving 95,000 yuan in hand. That's the number Client A has to beat. Taking off only the subcontracting fee gives 100,000 yuan, which leaves out the delay.",
+    "options": [
+     {
+      "text": "95,000 yuan.",
+      "correct": true,
+      "feedback": "120,000 minus the 20,000 subcontracting fee and the 5,000-yuan loss from the delay leaves your fallback netting 95,000 yuan. If Client A offers that much, he's no worse than Client B."
+     },
+     {
+      "text": "110,000 yuan: a bit less than Client B's offer, to leave room to negotiate.",
+      "correct": false,
+      "feedback": "Leaving room is a way of haggling, not a floor; the floor depends only on what Client B's path is worth after costs."
+     },
+     {
+      "text": "100,000 yuan.",
+      "correct": false,
+      "feedback": "This only takes off the subcontracting fee and leaves out the loss from the payment coming next quarter."
+     },
+     {
+      "text": "120,000 yuan, since Client B has already confirmed that price.",
+      "correct": false,
+      "feedback": "120,000 yuan is Client B's total payment, before taking off what you'd pay out for it."
+     }
+    ]
+   },
+   {
+    "stem": "You own a small cleaning company and are renewing your contract with the management of an office building. The building manager has a quote from another company that is 10% lower than yours. That company has never worked on an office building like this one; switching over would mean two weeks of settling in, during which the building would have to supply its own staff for cleaning.",
+    "question": "To estimate how big a price rise the building management will accept at most, what should you find out first?",
+    "explain": "The building management's floor comes from the total cost of switching: the other company's quote is 10% lower, but the extra staff and risk during the settling-in period have to be taken off. This total says more about how far the manager will go at most than your costs or how long you've worked together.",
+    "options": [
+     {
+      "text": "What your own costs plus a reasonable profit come to.",
+      "correct": false,
+      "feedback": "This sets your floor, but it doesn't show how much the building management is willing to pay."
+     },
+     {
+      "text": "How many years you've worked together.",
+      "correct": false,
+      "feedback": "The years you've worked together aren't a cost the building management pays for switching, so they can't tell you how far the manager will go at most."
+     },
+     {
+      "text": "If the building management switches, counting the extra costs of the settling-in period, how much more or less it spends in total than if it keeps you.",
+      "correct": true,
+      "feedback": "This is the net value of the building manager's fallback; the most he'll go up to will not be more than this."
+     },
+     {
+      "text": "The figure that the other company's quote is 10% lower than yours.",
+      "correct": false,
+      "feedback": "10% lower is only the quote on paper; the staff for the settling-in period and the lost cleaning time haven't been counted, so it can't be taken as his fallback."
+     }
+    ]
+   },
+   {
+    "stem": "The printer that supplies the packaging boxes for your small shop tells you that from next month each box will cost 15% more. You want to say no, but all you have is another printer's business card from a trade fair, where they said \"we can quote if you need us\"; they have never made you a sample.",
+    "question": "Before you go back to negotiate the price, what would most strengthen your hand in refusing the rise?",
+    "explain": "A business card is not yet a path you can take. Only once you have a quote, a sample and a confirmed delivery time do you know how much more switching would actually cost, and only then can you say no at the table with confidence.",
+    "options": [
+     {
+      "text": "First tell the current printer's boss you have other printers to choose from, and see how he reacts.",
+      "correct": false,
+      "feedback": "You don't have a path you've tried, so when he presses you, you'll have nothing to say, and the stance won't hold up."
+     },
+     {
+      "text": "Ask that printer for a quote and a sample and confirm the delivery time, then work out how much more switching would cost in total.",
+      "correct": true,
+      "feedback": "Once the quote, the sample and the delivery time all have answers, your fallback is nailed down, and you can compare it with the raised price."
+     },
+     {
+      "text": "Look up how much prices have risen on average for others in your trade, and take that as the rise you can accept.",
+      "correct": false,
+      "feedback": "The rise others have seen is a reference point; it has nothing to do with where you can go if the talks fail."
+     },
+     {
+      "text": "Gather the records of your years of orders with the current printer to show you're a long-standing customer.",
+      "correct": false,
+      "feedback": "Records of being a long-standing customer don't say where your boxes will come from if the talks fail, so the other side won't think you can walk away."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "The price lands between your floor and his ceiling",
+  "caption": "Online offer 2,400 yuan; minus shipping and insurance you net 2,300, your floor. Buying elsewhere costs the local buyer 2,450, his ceiling. His 2,000 gets no deal.",
+  "nodes": [
+   {
+    "id": "o",
+    "label": "Online offer 2,400",
+    "sub": "Shipping, insurance 100"
+   },
+   {
+    "id": "c",
+    "label": "He buys elsewhere",
+    "sub": "2,450 with running around"
+   },
+   {
+    "id": "m",
+    "label": "Your floor 2,300"
+   },
+   {
+    "id": "h",
+    "label": "His ceiling 2,450"
+   },
+   {
+    "id": "z",
+    "label": "Deal zone",
+    "sub": "2,300 to 2,450 yuan",
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "o",
+    "to": "m",
+    "label": "Minus costs"
+   },
+   {
+    "from": "c",
+    "to": "h"
+   },
+   {
+    "from": "m",
+    "to": "z"
+   },
+   {
+    "from": "h",
+    "to": "z"
+   }
+  ]
+ }
+}

@@ -1,0 +1,225 @@
+{
+ "id": "linear-regression",
+ "name": "Linear Regression",
+ "en": "线性回归",
+ "discipline": "math",
+ "one_line": "One straight-line formula shows how much each factor moves the result.",
+ "story": "Ashenfelter predicts Bordeaux wine prices from three weather numbers: winter rain, growing-season temperature and harvest rain",
+ "shallow": {
+  "scene": "What is a bottle of Bordeaux worth? Traditionally you had to wait for expert tasters to open it, taste it and give the vintage a score. Orley Ashenfelter, an economist at Princeton, said there was no need to taste it. Look only at three weather numbers from that year (winter rainfall, the average temperature during the grape-growing season, and rainfall at harvest time), add how many years the wine has been stored, and a single formula can estimate its auction price.\n\nThe formula multiplies each number by a weight and adds them up. He had weather records and auction prices for several dozen vintages, and he used these old records to set the weights: whichever set of weights gave prices closest to the real sale prices was the set he used. The direction they showed was clear: the warmer the growing season and the drier the harvest, the more expensive the wine.\n\nIn March 1990 *The New York Times* reported on the formula, and the wine experts were not pleased; in 1995 he and two co-authors published it formally. Before the bottle was even opened, the judgment the experts had spent years training was already worked out from a weather table and a few weights.",
+  "plain": "You're looking for a flat to rent, and you have a rule in your head: a base of 1,500 yuan, plus 40 yuan for each square meter, minus 30 yuan for every 100 meters farther from the subway. By this rule, a 60-square-meter flat 300 meters from the subway rents for 3,810 yuan a month. One the same size 500 meters from the subway is 3,750 yuan, and the 60-yuan difference comes only from the extra 200 meters.\n\nThe 40 yuan per square meter can be found from the rents flats actually went for. Suppose you have twenty flats that were just rented, all 300 meters from the subway. Then the differences in their rents depend only on size.\n\nFirst guess 30 yuan per square meter and use that rule to estimate the twenty. Every square meter is undercounted, so the bigger the flat, the more it falls short, and the big flats all come out too low. Change it to 50 yuan, and now the big flats come out too high. Change it to 40, and some come out high and some low, and the misses are smallest overall. Several factors, each with its own weight, are added up to give the result, and the weights are set at the values that make the misses smallest: that is linear regression."
+ },
+ "deep": {
+  "mechanism": "### The weights are the set that makes the total miss smallest\n\nUse one rule to estimate twenty flats, and each estimate will be a little high or a little low. Square each flat's miss and add them up, and you have the rule's total miss:\n\n$$S=\\sum_{i=1}^{20}\\left(y_i-\\hat{y}_i\\right)^2$$\n\n$y_i$ is the actual rent of flat $i$ and $\\hat{y}_i$ is the rule's estimate. The smaller $S$ is, the closer the rule is to the real rents. You square before adding because if you simply added, an estimate 200 yuan too high and one 200 yuan too low would cancel out to zero. Squaring also magnifies big errors: a miss of 600 yuan, squared, is nine times a miss of 200 squared. So to make $S$ small, the weights bend first toward the few flats that are furthest off.\n\nBack to the rule that guessed 30 yuan: it undercounts each square meter by 10 yuan, so the 68-square-meter flat comes out 680 yuan lower than it would at 40 yuan. Regression doesn't need to try one setting after another like this. It solves directly for the set of weights that makes $S$ smallest, a method called least squares. In a regression table, the fitted weights are called coefficients.\n\n### Add a variable, and the coefficient already there changes\n\nSuppose you get hold of a company's payroll. Fit it with years of service alone, and each extra year adds 900 yuan to monthly pay. Put in \"has a master's degree\" as well, and the years-of-service term drops to 400 yuan a year, while the master's term is 3,000 yuan.\n\nIn its early years the company hired only people with master's degrees, so many of the long-serving staff have one. Looking at years of service alone, part of the higher pay of long-serving staff came from their degrees, but it was credited to years of service; put the degree in, and that part goes back to the degree. Write monthly pay as $y$ and years of service as $t$, and let $d=1$ for a master's degree and $d=0$ for a bachelor's. The fitted formula is:\n\n$$y=8000+400t+3000d$$\n\nWith the same degree, $d$ doesn't change, and then one year's difference in service makes only 400 yuan of difference in monthly pay. With the same years of service, someone with a master's earns 3,000 yuan more than someone with a bachelor's.\n\n### When two variables rise and fall almost together, their separate coefficients can't be read reliably\n\nFit body weight on left foot length and right foot length together. If someone's left foot is a centimeter longer, their right foot is almost always about a centimeter longer too. So as long as the two coefficients add up to the right total, however that total is split between left and right, the estimated weights come out about the same. As a result, one group of people may give the left foot a big coefficient and the right foot a small one, and another group may give the exact opposite, while the two added together barely move.",
+  "origin": "Legendre published the method of least squares in 1805. In a book published in 1809, Gauss said he had already been using the method as early as 1795, and the two quarreled over who came first.",
+  "limits": "Linear regression works best when the factors don't interfere with one another, when a little more of each one adds a little more to the result, and when what you want to know is exactly how much the result changes when one factor alone goes up by one unit. Dose and body weight do pull on each other: the same dose acts differently on a light person and a heavy one, so a single weight for dose can't get it right.\n\nRanking factors by the size of their coefficients goes wrong, because a coefficient follows its unit. Change one factor's unit from meters to millimeters and its coefficient shrinks a thousandfold, while what the factor does hasn't changed at all. The formula has also only been tested within the range the data covers. Fit the heights of children aged three to ten and you get six centimeters of growth a year; carry that on to age thirty, and a person would be 2.5 meters tall."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Break down the gap in average pay between male and female staff: put in job level and years of service, and see what share of the gap is still left in the gender term."
+   },
+   {
+    "use": "design",
+    "text": "Score loan applications: income, debt ratio and number of late payments each get a weight, fitted from past repayment records, and the loan officer just adds them up to get the score."
+   },
+   {
+    "use": "predict",
+    "text": "Estimate how many lunches the canteen should prepare next week: temperature, whether it's a Monday and whether it's payday each get a term. Plug in next week's values and you get a specific number of meals."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Sports",
+    "title": "What a guard's age is worth in points",
+    "text": "You do data analysis for a basketball club, and a scout wants to know whether a young guard is worth signing. You take past guards' points per game in the following season and fit them on this season's minutes played, shooting percentage and age together. Suppose the age term is 0.4 points fewer for each year older: with the same minutes and shooting percentage, a 22-year-old guard is expected to score 2.4 points more than a 28-year-old. The scout takes this number into the price talks with the player's agent."
+   },
+   {
+    "field": "Economics",
+    "title": "One more year of school",
+    "text": "In 1974 Jacob Mincer put wages, years of schooling and years of work experience into one formula. He worked out differences in wages not in dollars but in percentages, so the schooling term can be read directly: for two people with the same work experience, one more year of schooling means wages higher by that percentage on average. Later, labor economists used the same kind of formula to estimate the return to education in country after country. A 2018 review gathered more than a thousand estimates from 139 countries: on average, one more year of schooling meant wages about 9% higher."
+   },
+   {
+    "field": "Personal life",
+    "title": "The month the power bill ran over",
+    "text": "You fit the last two years of monthly electricity bills on the month's average temperature and the number of days the whole family was at home. The formula says July should cost 410 yuan (an assumed figure), but the bill says 560. You dig out that month's records and find the water heater's timer was left on. Once you turn it off, the next month is back to around 420 yuan."
+   }
+  ],
+  "ask": [
+   "With which other variables held the same is this coefficient being read? Pull up the list of variables in the regression table, take out the one most closely related to it, fit again, and see how much it moves.",
+   "Are there two variables that rise and fall almost together? Work out their correlation coefficient. The more closely they move together, the less you can read either coefficient on its own.",
+   "What unit is the coefficient in? Before comparing two terms, put them in the same units, then see which is bigger."
+  ],
+  "with": [
+   {
+    "id": "correlation-causation",
+    "sees": "You have a regression table: each extra salesperson in a store goes with monthly sales 80,000 yuan higher on average (an assumed figure), and the owner wants to add two people to every store. Linear regression only compares: among stores with different numbers of salespeople and everything else the same, how much do sales differ? Seen through correlation versus causation, you first ask what decides the number of salespeople. If busy stores hire more people to begin with, adding people may not make the sales go up. Try adding staff at two or three stores first, compare sales before and after, and then decide whether to roll it out."
+   },
+   {
+    "id": "overfitting",
+    "sees": "You have data on only 40 stores, but you want to put all 25 factors you can think of into the formula. Linear regression's account is that each extra variable can only make the fit to this data a little better, never worse. Overfitting's account is the opposite: with many factors and few data points, the formula also memorizes the chance ups and downs in this data, and it's off when you move to new stores. Hold back ten stores from fitting the weights and use them to test the predictions; if the test gets worse, drop variables."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A food-delivery platform fit a formula on last month's orders: delivery minutes = 12 + 4.5 × distance (km) + 7 × rain (1 on a rainy day, otherwise 0). Last month, rainy-day orders were on average 2 km farther than sunny-day orders.",
+    "question": "Last month, how many minutes longer did rainy-day orders take on average than sunny-day ones?",
+    "explain": "Rainy-day orders have more of two things: the 7 minutes of the rain term, and the extra 2 km times 4.5, which is 9 minutes. Together that is 16 minutes.",
+    "options": [
+     {
+      "text": "7 minutes",
+      "correct": false,
+      "feedback": "7 minutes is the difference at the same distance, but here the rainy-day orders were also 2 km farther."
+     },
+     {
+      "text": "16 minutes",
+      "correct": true,
+      "feedback": "7 minutes plus 9 minutes for the 2 km: rainy-day orders have more of both."
+     },
+     {
+      "text": "9 minutes",
+      "correct": false,
+      "feedback": "This counts only the extra 2 km and leaves out the rain term's own 7 minutes."
+     },
+     {
+      "text": "14 minutes",
+      "correct": false,
+      "feedback": "This multiplies the rain term by 2. It's a fixed 7 minutes and doesn't change with distance."
+     }
+    ]
+   },
+   {
+    "stem": "An online shop owner fit a formula on 24 months of data: with monthly ad spending between 2,000 and 10,000 yuan, each extra 1,000 yuan brings on average 5,000 yuan more in monthly sales, and the dots sit close to the line. He plans to spend 60,000 yuan next month, and by the formula he expects sales 250,000 yuan higher than at 10,000 yuan.",
+    "question": "What is the biggest flaw in this prediction?",
+    "explain": "The formula has only been tested against data between 2,000 and 10,000 yuan. Extending it beyond that treats the straight line as a law.",
+    "options": [
+     {
+      "text": "Only 24 months is too small a sample; no prediction made from data like this can be trusted.",
+      "correct": false,
+      "feedback": "Sample size isn't the flaw here: the prediction at 60,000 yuan is far outside the data's 2,000 to 10,000 yuan."
+     },
+     {
+      "text": "Spending more on ads must bring diminishing returns, so the real rise will certainly be less than the formula's 250,000 yuan.",
+      "correct": false,
+      "feedback": "Like the owner's prediction, this draws a conclusion where the data doesn't reach. The data says neither that returns diminish nor that they don't."
+     },
+     {
+      "text": "Sales and ad spending just happened to rise together; spending more on ads won't bring more sales.",
+      "correct": false,
+      "feedback": "Nothing in the question suggests a coincidence. The flaw is that the prediction is too far from the data, whether or not the two are linked."
+     },
+     {
+      "text": "No month in the data spent anywhere near this much, so the data doesn't say whether the line carries on that far.",
+      "correct": true,
+      "feedback": "The prediction is far outside the range the data covers. Of what sales look like out there, these 24 months have not a single point."
+     }
+    ]
+   },
+   {
+    "stem": "You fit a pricing formula for second-hand flats and put in both \"gross floor area\" (which includes a share of the building's common areas) and \"usable floor area\". In this batch, the usable area is almost always 80% of the gross area, so the two rise and fall together. The fit says each extra square meter of gross area adds 60,000 yuan to the price, while each extra square meter of usable area takes 20,000 yuan off. The estate agent is puzzled: the bigger the usable area, the cheaper the flat?",
+    "question": "How should this minus sign be read?",
+    "explain": "The two terms change almost together, so the data only recognizes their combined effect. One more square meter of gross area comes with about 0.8 more square meters of usable area, so together that is 60,000 − 20,000 × 0.8 = 44,000 yuan. The number given to each term separately could flip completely with a different batch of flats.",
+    "options": [
+     {
+      "text": "The two change almost together, so their separate coefficients can't be read reliably; look at their combined effect.",
+      "correct": true,
+      "feedback": "The data can't tell which term deserves the credit, and the minus sign is just how the formula split it between the two. Together, one more square meter of gross area adds about 44,000 yuan."
+     },
+     {
+      "text": "Usable area really does push prices down; buyers care more about the common space that the shared area brings.",
+      "correct": false,
+      "feedback": "The two are tied together, so the formula can't see the effect of usable area on its own. The minus sign says nothing about what buyers prefer."
+     },
+     {
+      "text": "A few flats in the data were entered wrongly; delete them and the minus sign will turn into a plus.",
+      "correct": false,
+      "feedback": "This happens even with no entry errors. When two terms rise and fall together, a different batch of flats can change the coefficients' size and sign completely."
+     },
+     {
+      "text": "Gross area matters three times as much as usable area, so listings should play up the gross area.",
+      "correct": false,
+      "feedback": "Neither coefficient can be read reliably, so comparing their sizes compares numbers the formula split off arbitrarily."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "About 40 yuan per m² fits the twenty best",
+  "caption": "20 flats just rented, all 300 m from the subway. Drag \"Yuan per m²\" to see the line and the average miss per flat. The smallest miss is the weight regression fits.",
+  "x": {
+   "label": "Size (m²)",
+   "ticks": [
+    {
+     "at": 0,
+     "label": "30"
+    },
+    {
+     "at": 5,
+     "label": "40"
+    },
+    {
+     "at": 10,
+     "label": "50"
+    },
+    {
+     "at": 15,
+     "label": "60"
+    }
+   ]
+  },
+  "y": {
+   "label": "Rent (yuan)",
+   "min": 1500,
+   "max": 5500
+  },
+  "params": [
+   {
+    "id": "s",
+    "label": "Yuan per m²",
+    "min": 20,
+    "max": 60,
+    "step": 2,
+    "value": 30,
+    "unit": " yuan"
+   }
+  ],
+  "model": {
+   "steps": 19,
+   "init": {
+    "a": 30,
+    "y": "2610+randn()*150",
+    "S": 0
+   },
+   "next": {
+    "a": "a+2",
+    "y": "1410+40*(a+2)+randn()*150",
+    "S": "S+(y-1410-s*a)^2"
+   }
+  },
+  "series": [
+   {
+    "name": "Actual rent",
+    "expr": "y",
+    "tone": "ink",
+    "line": false,
+    "dots": true
+   },
+   {
+    "name": "Your rule",
+    "expr": "1410+s*a",
+    "tone": "accent"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Avg miss per flat",
+    "expr": "sqrt((S+(y-1410-s*a)^2)/20)",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

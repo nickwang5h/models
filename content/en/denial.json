@@ -1,0 +1,200 @@
+{
+ "id": "denial",
+ "name": "Denial",
+ "en": "否认",
+ "discipline": "psychology",
+ "one_line": "When reality hurts too much, people first pretend it isn't there.",
+ "story": "Joan Didion's husband dies suddenly, and she still can't give away his shoes (The Year of Magical Thinking)",
+ "shallow": {
+  "scene": "On the evening of December 30, 2003, Joan Didion and her husband, the writer John Gregory Dunne, had just sat down to dinner at their home in New York when Dunne had a heart attack and died. When she told other people what had happened, she was clear and orderly; she knew he was dead. But when she sorted through his things, she couldn't give his shoes away. He would need them, she thought, when he came back. She wrote down this thought in *The Year of Magical Thinking*.",
+  "plain": "One line on your checkup report has a red arrow next to it. It means a follow-up test, time off work, maybe treatment. Plenty of people put the report in a drawer at this point and tell themselves they'll look at it next month. That is denial: if you don't acknowledge the arrow, you don't have to face the trouble that comes after it. The report in the drawer hasn't changed; the only thing that changed is that you can sleep tonight. When you go for the follow-up next month, you're already a month late."
+ },
+ "deep": {
+  "mechanism": "### The bigger the consequences, the more easily they're shut out\n\nWhat denial shuts out is often the consequences, not just the facts. Imagine the same abnormal test result. If the doctor says \"just take your pills on time,\" most people do it; if the doctor says \"you need to go into the hospital for surgery and take six months off,\" the drawer becomes especially tempting. Some people simply say the test was wrong: that is refusing the fact. Others accept the illness but decide it doesn't need treatment: that is refusing the consequences.\n\n### Dodge once, and you want to dodge more next time\n\nPut the report back in the drawer and the anxiety drops right away, and that bit of relief makes you want to dodge again next time. Psychology calls this negative reinforcement, but it explains only part of the avoiding. The other part is that a problem nobody deals with grows the longer it is put off, so the reality to face next time is heavier.\n\n### Shrink the next step, and the fact becomes something you can hold\n\n\"Get well first\" is so big it freezes you; \"read the report,\" \"book one consultation\" and \"work out next month's cash shortfall\" are each just one action. If accepting the fact comes with a small thing you can do today, the fact is no longer only a threat, and you can act before your feelings have settled.",
+  "origin": "Denial comes from psychoanalytic research on how the mind defends itself. In the early 20th century Freud discussed how people refuse to acknowledge a painful reality; in 1936 his daughter Anna Freud set out the various defenses systematically in *The Ego and the Mechanisms of Defence*. In 1969 Elisabeth Kübler-Ross recorded interviews with dying patients in *On Death and Dying*, including the denial of patients who learned they were going to die.",
+  "limits": "\"Denial\" explains best when the evidence is already right in front of someone, yet they refuse to accept it at exactly the point that hurts most. Someone who has just lost a family member and can't believe it for a few days is giving themselves a cushion; there's no need to hurry them. But for things with a deadline, like a surgery consent form that must be signed next week, first help them through the one necessary step. Calling every disagreement from a coworker denial is a misuse: an objection that has evidence has to be answered with evidence."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "When someone can explain their diagnosis clearly but hasn't changed a thing in their life, it's because what they are shutting out is the consequences, not the fact."
+   },
+   {
+    "use": "act",
+    "text": "When you help someone through bad news, first ask what specific consequence they fear most, then push just one small step, such as going with them to book a follow-up."
+   },
+   {
+    "use": "predict",
+    "text": "Predict which news a person will steer around: the news that, once accepted, would mean changing most of their plans is the most likely to be put off until later."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Health",
+    "title": "Putting off surgery",
+    "text": "In 2003 Steve Jobs was diagnosed with a pancreatic neuroendocrine tumor, and he put off surgery for about nine months. His biographer Walter Isaacson records that he didn't want his body cut open, and that he later regretted the delay. Isaacson's reading is that Jobs hoped that by ignoring the disease he could make it not exist."
+   },
+   {
+    "field": "Investing",
+    "title": "Refusing to open the announcement",
+    "text": "A company announces that a major customer has ended its contract. That day, a man who has put his down payment for a home into the company's stock doesn't open the announcement and keeps holding it on the old revenue forecast. Just thinking about his down payment taking a hit and the home purchase being pushed back makes him panic."
+   },
+   {
+    "field": "Work",
+    "title": "Steering around the delivery gap",
+    "text": "The client's sign-off is on Friday, and on Wednesday two core features still won't run. The person in charge has read the test records, but has the team keep rehearsing the demo and avoids any talk of a delay. On the day, the client tries the product on the spot and it fails, and the team hasn't prepared even one alternative it could discuss."
+   }
+  ],
+  "ask": [
+   "Which piece of news makes me want to close the page right away, change the subject, or put it off until later?",
+   "If I accept that this is true, what specific consequence would be hardest for me to bear?",
+   "I say I accept the fact, but on what assumption that no longer holds am I still arranging my life? What is the smallest step I could take today?"
+  ],
+  "with": [
+   {
+    "id": "premortem",
+    "sees": "A man who runs a neighborhood group buy, collecting his neighbors' orders and buying in bulk from a supplier, finds out the supplier may run out of stock in three days, yet he keeps putting off checking the inventory sheet. A premortem asks the whole group to write down right away \"how this went wrong,\" putting the worst case on the table. But the organizer wants to change the subject as soon as he sees the inventory sheet, and forcing him to make a list in front of everyone will most likely make him pull back further. Take the two apart: first check one number with him, such as how many days the stock will last, and once that step is done, run the premortem."
+   },
+   {
+    "id": "sunk-cost",
+    "sees": "Someone is holding on to a small shop that has been open three years and is still losing money. A person held back by sunk costs, who can't bear to waste the money spent fitting out the shop, puts in more; a person who doesn't dare open the books does nothing. The first should ask, \"If I got this money only today, would I still spend it this way?\" The second should ask, \"If I open the books, which line am I most afraid to see?\" The two problems need different cures, so first find out whether he has opened the books."
+   },
+   {
+    "id": "confirmation-bias",
+    "sees": "A mother holding her child's report card picks out only the lines where the teacher gave praise. If she has actually read all the comments and is just picking the good news, that is confirmation bias; if she won't even open the report card, that is denial. For the first, showing her the evidence on the other side helps; for the second, first make the step of opening the envelope smaller."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A hotel's head of security finds that a stolen account has downloaded guests' names, phone numbers and records of their stays. He reports the number of downloads to management, but insists, \"They can't do anything with that data.\" He hasn't disabled the account or checked what it accessed afterward. Whenever coworkers bring up the harm to guests and his responsibility, he panics, ends the discussion and turns to planning next week's system upgrade.",
+    "question": "Why has he never dealt with the leak?",
+    "explain": "He can report the facts and isn't trying to cover anything up; he just can't bear it once the talk turns to losses and responsibility. Disabling the stolen account first and checking how far its access went would break the crushing responsibility down into actions he can take right now.",
+    "options": [
+     {
+      "text": "He knows the data has gotten out but can't bear the responsibility that comes with it, so he backs off whenever it comes up.",
+      "correct": true,
+      "feedback": "He arranges his work as if the system were secure, and whenever losses and responsibility come up, he panics and leaves: the painful consequences are blocking action."
+     },
+     {
+      "text": "He's waiting for real damage to show up, and will decide what to do based on how big it is.",
+      "correct": false,
+      "feedback": "The stolen account can still get into the system, so waiting lets the risk keep growing; he also hasn't proposed any way of watching for damage."
+     },
+     {
+      "text": "He's using familiar work to ease the pressure, and will deal with the leak as soon as the upgrade is done.",
+      "correct": false,
+      "feedback": "Nothing suggests he'll come back to it after the upgrade. That kind of relief instead encourages him to keep dodging next time, and with the stolen account still active, the risk is growing."
+     },
+     {
+      "text": "He's deliberately playing down the impact and using the upgrade to cover up his failure.",
+      "correct": false,
+      "feedback": "He reported the number of downloads himself and didn't hide the facts; each time he backs off, it comes after he panics, which doesn't look like a calculated move."
+     }
+    ]
+   },
+   {
+    "stem": "A university teacher eight years from retirement has put part of her retirement savings in a broad index fund. After the fund falls 20%, she reads its announcements and holdings and confirms it is still run by its stated rules. She also puts the shrunken assets into her retirement budget and works out her emergency cash and when she'll need the money. The plan she wrote before buying says to rebalance back to her set proportions after a swing like this, and she follows it. A coworker says, \"Down that much and still not selling? She just can't accept the loss.\"",
+    "question": "The coworker says she can't accept the loss. Is that right?",
+    "explain": "She has accepted the loss, changed her budget to match and checked when she'll need the money. To judge whether someone is in denial, look at whether the bad news has entered their decisions, not at whether they sold.",
+    "options": [
+     {
+      "text": "No: the plan was written before buying, so following it is bound to be sensible.",
+      "correct": false,
+      "feedback": "An old plan may not hold up against new facts. She is being sensible because this time she really tested the plan against the new facts, not because the plan was written early."
+     },
+     {
+      "text": "Yes: eight years is a long time, so this drop can be assessed closer to retirement.",
+      "correct": false,
+      "feedback": "Putting off the assessment is exactly how avoiding works. She did the opposite: she checked her savings target and what she'll put in from here on, now."
+     },
+     {
+      "text": "No: she has put the loss into her budget and checked the conditions for sticking with the plan.",
+      "correct": true,
+      "feedback": "The new facts have entered how she arranges her money. Holding on is a choice made after that check, not a way of dodging."
+     },
+     {
+      "text": "Yes: down 20% and still not selling shows she hasn't faced the loss.",
+      "correct": false,
+      "feedback": "Selling isn't the only sign of accepting reality. She has put the loss into her budget and her timeline for using the money, so she's already planning around the new situation."
+     }
+    ]
+   },
+   {
+    "stem": "A renter who has lived with her partner for five years is told clearly that they're breaking up. The partner moves their things out and says again that they won't get back together. She can repeat these words to friends, yet she still books a trip for two next month, saying, \"We'll have made up by then.\" Their shared lease ends in three days, and whenever she thinks about living alone, she closes the landlord's message about renewing.",
+    "question": "What's the best way for a friend to help her next?",
+    "explain": "She knows the relationship is over, but still arranges her life as if her partner will come back. A friend can give her an emotional cushion while helping her deal with the lease that ends in three days, so that her life first responds to the change that has already happened.",
+    "options": [
+     {
+      "text": "Go back over the breakup talk with her and look for signs the partner might want to get back together.",
+      "correct": false,
+      "feedback": "The partner has been clear. Searching for a turnaround helps her hold on to the idea of a shared life, which no longer holds."
+     },
+     {
+      "text": "Work out a budget for living alone with her, then ask the landlord about the deadlines for renewing or moving out.",
+      "correct": true,
+      "feedback": "A budget and deadlines turn living alone into small, concrete tasks. She can start on them while still sad, and keep the choices she has right now."
+     },
+     {
+      "text": "Urge her to cancel the trip right away, and keep telling her the partner isn't coming back.",
+      "correct": false,
+      "feedback": "She already knows the facts, and pushing her again and again to admit them will only make her resist more. What has her stuck is the budget and deadlines for living alone, and no one is helping her get started on them."
+     },
+     {
+      "text": "Help her get through these feelings first, then decide whether to reply to the landlord.",
+      "correct": false,
+      "feedback": "The lease ends in three days. If housing waits until her feelings settle, she'll have fewer and fewer choices left."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "loop",
+  "title": "Dodge once, feel relief; next time it's heavier",
+  "caption": "Shut the report and anxiety drops at once, and that relief makes you want to dodge again. One small thing to do today, like booking a follow-up, breaks the loop.",
+  "center": "Dodge once",
+  "centerSub": "Want to dodge more",
+  "nodes": [
+   {
+    "id": "red",
+    "label": "Red arrow on report"
+   },
+   {
+    "id": "drawer",
+    "label": "Into the drawer",
+    "tone": "warn"
+   },
+   {
+    "id": "relief",
+    "label": "Sleep fine tonight",
+    "sub": "Anxiety drops at once"
+   },
+   {
+    "id": "worse",
+    "label": "Problem keeps growing"
+   }
+  ],
+  "edges": [
+   {
+    "from": "red",
+    "to": "drawer"
+   },
+   {
+    "from": "drawer",
+    "to": "relief"
+   },
+   {
+    "from": "relief",
+    "to": "worse"
+   },
+   {
+    "from": "worse",
+    "to": "red",
+    "label": "Heavier next time",
+    "tone": "warn"
+   }
+  ]
+ }
+}

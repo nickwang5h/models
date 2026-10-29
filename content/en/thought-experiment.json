@@ -1,0 +1,206 @@
+{
+ "id": "thought-experiment",
+ "name": "Thought Experiment",
+ "en": "思想实验",
+ "discipline": "thinking",
+ "one_line": "Without lifting a finger, push a condition to the extreme in your head and see what follows.",
+ "story": "At the patent office in Bern, Einstein realizes that a person in free fall can't feel his own weight",
+ "shallow": {
+  "scene": "When an elevator suddenly drops, or a roller coaster rushes downhill, your body goes light and your stomach floats up, and for that moment you can hardly feel how heavy you are. In 1907 Albert Einstein was working at the patent office in Bern, Switzerland. Sitting in his chair, he pushed this feeling all the way: a person falling freely from a roof would not feel his own weight at all. Anything he let go of would fall along with him and just hang beside him. Years later, Einstein recalled this as the happiest thought of his life.\n\nNext he imagined the person shut inside a small room with no windows. When the room falls freely, the person inside floats, just as if he were hanging in space with no gravity. Turn it around: put the room out in space and have a rocket pull it upward, speeding up all the time. The person inside will be pressed against the floor, and anything he lets go of will fall to the floor, just as if he were standing on Earth. Falling cancels gravity, and speeding up creates it. So whatever experiment the person in the room does, he can't tell whether he is speeding up or being pulled by gravity.\n\nFrom this Einstein concluded that gravity and acceleration are at bottom the same thing. This step later led him to general relativity, and he did not run a single experiment. He just pushed falling all the way in his head.",
+  "plain": "Take a sheet of paper and a coin and let go of them at the same moment from the same height. The coin hits the ground at once, while the paper drifts and sways for a long time. Crumple the paper into a ball and drop it again, and the ball lands only a little after the coin. It's the same paper with the same weight; what changed is that it now catches less air.\n\nThe next step you can't do with your hands, only in your head. Take the air around them away bit by bit. The paper ball meets less and less resistance, and the gap gets smaller and smaller. Once every last bit of air is gone, the paper ball and the coin land side by side. So you reach a conclusion you have never seen with your own eyes: the paper falls slowly because the air holds it back, not because it is light. That is a thought experiment: follow a change you've seen with your own hands, push one condition all the way in your head, and see what the result turns into."
+ },
+ "deep": {
+  "mechanism": "### Before pushing to the end, see which way the result is moving\n\nReasoning in your head rests on a trend you've already seen in real life. In the paper-and-coin example, the first two steps were real throws. Crumple the flat paper into a ball, it catches less air, and the gap between the paper and the coin landing shrinks with it. If the condition keeps moving the same way, the result should keep changing the same way. Imagine taking the air away bit by bit, and the gap shrinks all the way to zero. It is because you saw the trend with your own eyes that the last step, pushed to the end, holds up.\n\n### Bring two lines of reasoning together in one scene, and the premise fights itself\n\nGalileo first assumed that \"heavier things fall faster\" was true, then tied a heavy stone and a light stone together. The light one falls more slowly and would hold back the heavy one, so the pair should fall more slowly than the heavy stone alone. But the pair together weighs more than the heavy stone, so by the same claim it should fall faster. The same pair leads to two opposite answers, which shows that \"heavier things fall faster\" can't stand. The argument doesn't need a single stone to be thrown.\n\n### If you reach a contradiction, go back to the premises; if you reach a new claim, test it\n\nReaching a contradiction means at least one premise is wrong. Then you go back over them one by one and find the ones that clash. If what you reach is a new conclusion, like \"without air, the paper ball and the coin land side by side,\" it is still only a claim waiting to be tested. This claim was later tested for real: people put a feather and a coin in a glass tube with the air pumped out, turned it over, and the two fell to the bottom together. In 1971 an Apollo 15 astronaut, on the airless Moon, let go of a hammer and a feather at the same moment, and they too hit the ground together.",
+  "origin": "Thought experiments have a long tradition in philosophy and physics, with no single founder. In 1638, in *Two New Sciences*, Galileo used light and heavy bodies tied together to challenge the old account of falling. In 1907 Einstein started from the situation of a person in free fall, and later developed it into the equivalence principle, that is, \"gravity and acceleration are the same thing.\"",
+  "limits": "Thought experiments work best when you want to check whether rules and concepts hang together and you can't run a real experiment. If the imagined scene deletes the very thing you want to study, nothing follows from it. Say you want to know what the interactions on a social platform are worth, but you start by imagining that every user leaves. Once the users go, the interactions go too, and there's nothing left to reason about. A sneakier fault is to quietly write the reaction you hope for into the premise and then present what follows as a discovery: first assume \"every customer will notice the new label,\" then announce that sales will rise."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "reason",
+    "text": "In places where you can't run an experiment, like near the speed of light or on a surface with no friction, work out the conclusion first, then decide what to go and measure."
+   },
+   {
+    "use": "explore",
+    "text": "Take away a condition you assume is always there and ask \"what if it weren't?\" It often turns up possibilities you hadn't thought of."
+   },
+   {
+    "use": "communicate",
+    "text": "When you explain an abstract idea to someone outside the field, build an extreme scene you can describe in two sentences and let them walk to the conclusion themselves."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Physics",
+    "title": "The chain of beads that won't turn",
+    "text": "In 1586, in a book on statics, the mathematician Simon Stevin imagined a string of evenly spaced beads hung over a triangular block of wood. The long slope was twice as long as the short one, and the beads underneath hung down in a loop. The long slope held twice as many beads, so it seemed they should pull the chain around. But if the chain started turning by itself, it would turn forever and be a perpetual motion machine. He concluded that the chain stays still: the four beads on the long slope exactly balance the two on the short one. That is how he worked out the law of balance on an inclined plane, without weighing anything once."
+   },
+   {
+    "field": "Society",
+    "title": "Not knowing who you'll be",
+    "text": "In 1971, in *A Theory of Justice*, John Rawls asked readers to imagine people setting the rules of a society without knowing whether they would be rich or poor, clever or ordinary, or which family they would be born into. Once the rules were set, any one of them might turn out to be the person who comes off worst. From this Rawls argued that such people would first make sure that even those in the worst position could get by."
+   },
+   {
+    "field": "Philosophy",
+    "title": "The man shut in a room",
+    "text": "In 1980 the philosopher John Searle asked readers to imagine a man who doesn't understand Chinese, shut in a room with a rule book. Notes in Chinese are passed in, and following the book, he matches each with a reply and passes it out. The people outside read the replies and believe someone who understands Chinese is sitting in the room. From this Searle argued that shuffling symbols by rules is not the same as understanding what they mean."
+   }
+  ],
+  "ask": [
+   "What is the statement I want to test, and which premises does it rest on?",
+   "Is the thing I've removed from the scene the very thing I want to study?"
+  ],
+  "with": [
+   {
+    "id": "map-territory",
+    "sees": "Sitting in the office, you work through a plan for a new cafeteria: suppose each person takes only one minute to get served, so eight serving counters are enough. A thought experiment has you push these premises all the way first, to see whether they contradict themselves. The map is not the territory has you first go and stand in the old cafeteria through one lunch rush, to see why getting served takes more than a minute. When the premises themselves are open to doubt, go to the scene first; when the premises are settled and you're only checking whether the rules clash, stay in your head and reason it out."
+   },
+   {
+    "id": "falsifiability",
+    "sees": "A coworker uses a very neat line of reasoning to argue that the whole team should move to another city, and you can't think of anything you could observe that would prove him wrong. A thought experiment can help him lay out his premises clearly. Falsifiability presses a different question: six months after the move, what would you have to see to say the reasoning was wrong? If he can't answer, it is still only an idea and can't be used to make a decision."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A board game designer has written three rules: at the start of each turn, a player must draw a card from the deck; when the deck runs out, the game goes on; used cards go to the discard pile and may not be used again. Before printing, she plays a game through in her head up to the moment the deck runs out.",
+    "question": "What can this step of reasoning show?",
+    "explain": "Once the deck is empty, the first rule says draw, the second says keep going, and the third shuts off every card that could be drawn. The contradiction is between the rules, and you can see it without a test game.",
+    "options": [
+     {
+      "text": "The three rules can't all be followed at once, and one of them has to change before printing.",
+      "correct": true,
+      "feedback": "At this moment the three rules jam each other, and changing any one of them lets play go on."
+     },
+     {
+      "text": "The rules are fine, because the deck running out hardly ever happens.",
+      "correct": false,
+      "feedback": "Whether the rules can all be followed is a separate question from how often it happens; as long as this moment can come up, the rules have to say what to do."
+     },
+     {
+      "text": "The game should simply end when the deck runs out; changing it that way is the fix.",
+      "correct": false,
+      "feedback": "The reasoning only proves that the rules clash, not that ending the game is the fix; shuffling the discard pile back in or skipping the draw would also resolve it."
+     },
+     {
+      "text": "It also tells you how many turns the deck lasts on average.",
+      "correct": false,
+      "feedback": "The reasoning only went through one particular moment, with no data from any real game, so it can't give an average number of turns."
+     }
+    ]
+   },
+   {
+    "stem": "A movie theater manager wants to know whether raising the price of popcorn will cut sales. In his head he raises it to 1,000 yuan a serving, concludes that \"nobody would buy it,\" and writes, \"Even a small increase will cut sales a lot.\"",
+    "question": "How far does this reasoning support his conclusion?",
+    "explain": "An extreme setup can show which way sales move with price, but not by how much. How much a small increase actually cuts sales has to be measured with a trial increase or past sales data.",
+    "options": [
+     {
+      "text": "It supports it: since nobody buys at that price, a small increase is sure to cut sales a lot.",
+      "correct": false,
+      "feedback": "The reasoning only shows that at a high enough price nobody buys. It gives no basis at all for how much a small increase cuts sales."
+     },
+     {
+      "text": "It only supports that raising the price pushes sales down; how much has to come from a trial increase or past data.",
+      "correct": true,
+      "feedback": "The reasoning gives the direction; the size has to be measured with data."
+     },
+     {
+      "text": "Work through a few more, even higher prices, and you can calculate sales after a small increase.",
+      "correct": false,
+      "feedback": "Higher prices only repeat the same trend; they can't tell you what happens in the small stretch near the current price."
+     },
+     {
+      "text": "It supports no conclusion at all, because a price like that would never happen in real life.",
+      "correct": false,
+      "feedback": "An extreme setup doesn't need to happen; the reasoning has already given the trend that higher prices mean lower sales."
+     }
+    ]
+   },
+   {
+    "stem": "You're drawing up next month's night shifts for a 24-hour pharmacy, and you work through four premises on paper: seven nights a week, at least one person in the shop each night; each person works at most three nights a week; only two people can work nights this month; no outside hires and no extra staff. When you get to Sunday night, there's nobody left to put on.",
+    "question": "What is the best next step?",
+    "explain": "Two people can cover at most six nights a week, while the premises require all seven nights to be covered, so the four premises rule each other out. Only by going back over them one by one can you find which to relax; dropping one you dislike, redoing the sums, or trying it out first all have no basis.",
+    "options": [
+     {
+      "text": "Delete the premise you like least and draw up the schedule again.",
+      "correct": false,
+      "feedback": "You haven't checked which premises clash yet, so the one you delete is down to taste; delete the wrong one and the contradiction is still there."
+     },
+     {
+      "text": "Open the shop on this schedule for a trial week and see what problems actually come up.",
+      "correct": false,
+      "feedback": "The paper already shows nobody on Sunday night; opening the shop would only put the gap on a real night."
+     },
+     {
+      "text": "The reasoning must have a mistake, so redo it from the start.",
+      "correct": false,
+      "feedback": "The four premises themselves rule each other out, so however many times you redo it, you get the same gap."
+     },
+     {
+      "text": "Go back over the four premises one by one and find the ones that clash.",
+      "correct": true,
+      "feedback": "A contradiction points back to the premises. Find the ones that clash, and you know where to relax."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "down",
+  "title": "Take the air away, and the gap shrinks to zero",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "Flat paper and coin",
+    "sub": "Paper drifts a long time",
+    "tone": "muted"
+   },
+   {
+    "id": "b",
+    "label": "Paper crumpled",
+    "sub": "Lands just a little later"
+   },
+   {
+    "id": "c",
+    "label": "Half the air gone",
+    "sub": "The gap is smaller"
+   },
+   {
+    "id": "d",
+    "label": "All the air gone",
+    "sub": "Ball and coin land together",
+    "tone": "accent"
+   },
+   {
+    "id": "e",
+    "label": "The gap is the air",
+    "sub": "Not the paper's lightness"
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b",
+    "label": "By hand"
+   },
+   {
+    "from": "b",
+    "to": "c",
+    "label": "In your head",
+    "dashed": true
+   },
+   {
+    "from": "c",
+    "to": "d",
+    "label": "To the end",
+    "dashed": true
+   },
+   {
+    "from": "d",
+    "to": "e",
+    "label": "Conclude"
+   }
+  ],
+  "caption": "The first two steps you can do by hand; the dashed two only in your head. The gap shrinks with the air, and at the end it shows: the air held the paper back."
+ }
+}

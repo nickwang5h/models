@@ -1,0 +1,232 @@
+{
+ "id": "principal-agent",
+ "name": "Principal-Agent Problem",
+ "en": "委托代理",
+ "discipline": "economics",
+ "one_line": "People acting for you look after their own interests, and drift where you can't see.",
+ "story": "Enron's chief financial officer, Andrew Fastow, also runs partnerships that do deals with the company and profits from them, and Enron goes bankrupt",
+ "shallow": {
+  "scene": "Nobody would hire someone to haggle on their behalf if that person were also the seller's boss. Yet the board of the American energy company Enron agreed to just that. From 1999, Enron's chief financial officer, Andrew Fastow, did deals for Enron while also personally running several partnerships set up to do deals with Enron, and he was paid by those partnerships. When Enron wanted to move ugly assets and losses off its books, the buyer was often one of the partnerships he ran, and the people negotiating with him on Enron's side were his own subordinates. He personally took home more than 30 million dollars. Enron's books looked good, but its debts were hidden in these deals, and shareholders couldn't see them in the financial statements.\n\nIn December 2001, Enron filed for bankruptcy. The chief financial officer, who should have been guarding the gate for shareholders, was sitting on the other side of the deals, and only he could see the books clearly, so in effect nobody was guarding the gate at all.",
+  "plain": "You want to sell a home worth 1 million yuan and hire an agent to sell it for you, for a commission of 2% of the sale price. Someone offers 980,000, and the agent urges you: \"Sell now. Waiting won't get you much more.\" Here's how the math looks to him. Wait another month, and it might sell for 1 million. Of the extra 20,000, you'd get nearly 20,000, and he'd get only 400 yuan; but during that month, he might also miss out on other business. He knows how many groups of buyers have viewed the place and what each offered, while you can only go by what he tells you.\n\nWhen someone acting for you has their own sums to do, and you can't see clearly what they're doing, they lean toward their own side. This kind of relationship is called principal and agent: you are the principal, and the real estate agent is the agent."
+ },
+ "deep": {
+  "mechanism": "### He only counts the share that comes to him\n\nWhether the agent is willing to wait depends on what he gains or loses, not on what you do. Call the extra money from selling higher $g$, his share of it $s$, and the cost to him of waiting another month $c$ (missing out on another sale, for example). He'll wait only if\n\n$$s\\times g>c$$\n\nIn other words, his small share of the extra money has to outweigh his own loss. With a commission of 2% of the sale price, $s=2\\%$ and $g$ is 20,000, so he gets only $2\\%\\times 20000=400$ yuan more. Suppose missing another sale means he earns 2,000 yuan less, so $c=2000$. 400 is less than 2,000, so pushing you to close the deal pays off for him. To make him willing to wait, $s$ would have to be at least $2000\\div 20000=10\\%$.\n\n### He can only drift because you can't see his cards\n\nInterests that don't line up aren't enough on their own for him to drift; you also have to be unable to see clearly what he's doing. The agent knows how many groups viewed the home this month and what each offered, while you only hear the one offer he passes on. When he says \"the market's cold,\" you have no way to check. If you could see every offer, his case for lowering the price wouldn't hold up.\n\nIt's the same between shareholders and managers. A manager makes dozens of decisions a day, the reasons are all in his head, and no contract can spell out every situation. If shareholders checked every single one, they could stop any drift; but checking costs time and money, so shareholders keep an eye on only the few things that matter most, such as where the money goes and the original records.\n\n### Make the consequences land back on him, and keep one check he can't touch\n\nTo deal with interests that don't line up, change his sums. Make the commission 40% of the extra amount, and of the extra 20,000 he can get 8,000 yuan, more than the 2,000 he'd lose by missing another sale, so he'll be willing to wait with you. The same goes for a manager: he gets this year's bonus, while long-term losses fall on the shareholders. If the bonus is paid out over three years, and any part not yet paid is withheld when losses turn up during those three years, the consequences land back on the manager.\n\nTo deal with not being able to see, ask people who don't answer to him to check the original records; then things like putting off maintenance or dressing up the numbers become hard to hide. That one check was exactly what Enron lacked: the people negotiating with Fastow were his own subordinates.",
+  "origin": "The principal-agent idea comes from economists' study of ownership, control and contracts. In 1973 Stephen Ross wrote the agency relationship down as a formal model; in 1976 Michael Jensen and William Meckling published \"Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure,\" which analyzed agency costs systematically. The clash of interests between company managers and shareholders is the theory's most classic subject.",
+  "limits": "The model works best for looking at people who make decisions for others while their interests don't fully match those of the people they act for, such as brokers, managers, doctors and lawyers. For an owner who runs their own shop and minds it themselves, the principal and the agent are the same person, so nobody drifts away from anybody. When a project fails, it may also be because the agent wasn't capable enough or ran into bad luck; you can't work backward from that to say he was serving himself. Giving managers shares doesn't settle things once and for all either: however many shares he holds, he cares about more than the share price, including his own job and his personal risk."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When setting how to pay a home cleaning team: pay by the hour, and they have a reason to drag it out; pay per room once it passes inspection, and spot-check the corners that weren't cleaned, and you've changed their sums."
+   },
+   {
+    "use": "explain",
+    "text": "In a hospital department that pays bonuses by the number of tests ordered, the test orders always come out to more than the illness calls for: the person ordering gets paid, and the patient can't make sense of the orders."
+   },
+   {
+    "use": "predict",
+    "text": "Expect that a manager paid entirely in this year's cash bonus will cut research that takes three years to pay off, because the spending he cuts becomes profit this year and raises his bonus."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Investing",
+    "title": "The client behind the research report",
+    "text": "The people who read a brokerage's research reports and the people who pay for them can be two different groups. In 2003, US regulators reached a settlement with ten large investment banks over conflicts of interest among their research analysts. These firms' investment banking departments charged fees to listed companies, while their research departments gave investors ratings on those companies' stocks."
+   },
+   {
+    "field": "Technology",
+    "title": "Who takes over after sign-off",
+    "text": "You hire an outside team to build an order system, with the final payment due once the demo passes. To deliver on time, the team leaves the operations guide blank, and when your engineers take over they can't even find where the error logs are. Later you write the handover documents, the actual deployment and a period of maintenance into the payment terms, and the other side starts worrying about what comes after before the sign-off."
+   },
+   {
+    "field": "Personal life",
+    "title": "The study-abroad agent's kickbacks",
+    "text": "You hire a study-abroad agent to help choose a school for your child, hoping for a good fit at reasonable fees. The agent keeps recommending the same few schools but doesn't mention that these schools pay him a kickback. You ask him to write down every source of his pay, then look up these schools' admission data and courses yourself."
+   }
+  ],
+  "ask": [
+   "Who is deciding for whom? Who ends up with the gains, and who with the losses?",
+   "What does he get out of this: money, status, less work, or not being blamed?",
+   "Which of his steps can only he see? Which records could I go through, or which person could I ask, to check it independently?"
+  ],
+  "with": [
+   {
+    "id": "moral-hazard",
+    "sees": "You want a manager to take fewer risks, but find that the two models give opposite advice. The principal-agent problem says his rewards are cut off from the company's, so give him equity and big bonuses to put him on the shareholders' side. Moral hazard sees that when the upside goes to him and the company covers the downside, he'll bet bigger, so he should bear part of the losses himself. If the manager gets options but loses nothing when things go wrong, first make him bear part of the losses; if he's on a fixed salary and gets the same whether he does well or badly, first give him equity."
+   },
+   {
+    "id": "goodharts-law",
+    "sees": "You want to tie your sales director to a visible number to keep him pulling in the same direction as the company. The principal-agent problem would say: then pay bonuses by sales. Goodhart's law warns that once this number becomes a target, he'll make it look good by cutting prices to push volume and booking revenue early. If the number is hard to fake and easy to get hold of, you can tie pay to it; if it can obviously be pumped up, pair it with spot checks of the original contracts."
+   },
+   {
+    "id": "checks-and-balances",
+    "sees": "You hand power to the head of a branch office and worry that he alone will call the shots. The principal-agent problem explains why you worry: he holds the power and controls the information. Checks and balances gives you a way to act: split approving, bookkeeping and checking among different people, so nobody can approve their own accounts."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You hand three branches of your bubble tea shop to one manager, whose monthly bonus is based on that month's sales. He finds that swapping fresh fruit for syrup brings that month's costs down, and repeat customers only start dropping off a month or two later. You look only at the monthly report at the end of each month.",
+    "question": "To get him to stop, what would be the most effective thing to change?",
+    "explain": "The manager is paid on this month's numbers, while the cost of slipping quality falls on the months after and on your business. Tie the bonus to later repeat purchases and bad reviews, and spot-check the purchase orders, and the consequences come back to the person making the decision.",
+    "options": [
+     {
+      "text": "Double his commission rate, to give him more reason to make the whole shop do well.",
+      "correct": false,
+      "feedback": "The higher the commission on this month's sales, the more he wants to cut this month's costs, and the more swapping to syrup pays."
+     },
+     {
+      "text": "Have him send photos every day showing what each branch is serving.",
+      "correct": false,
+      "feedback": "He chooses the photos himself; what to shoot and what not to shoot is all in his hands."
+     },
+     {
+      "text": "Base half the bonus on the repeat-purchase rate three months later, and spot-check the purchase orders.",
+      "correct": true,
+      "feedback": "The consequences are pushed back onto him, and the purchase orders are an independent record he can't change."
+     },
+     {
+      "text": "Give him a special training session on food quality.",
+      "correct": false,
+      "feedback": "He already knows; he swapped to syrup because it pays, and training won't change those sums."
+     }
+    ]
+   },
+   {
+    "stem": "You hand your retirement savings to a financial adviser. He charges a purchase fee based on the amount of each purchase you make, not on your returns. You've told him you plan to hold for twenty years, yet he advises you to switch products once a year, each time with a new story.",
+    "question": "How should you read his advice?",
+    "explain": "You want results over twenty years, while his income goes up with the number of switches. You can't check his stories one by one, so first look at where his income comes from, then ask for an independent check.",
+    "options": [
+     {
+      "text": "Markets change fast, so switching products once a year is a normal response.",
+      "correct": false,
+      "feedback": "You've already said you plan to hold for twenty years; switching every year doesn't fit that goal."
+     },
+     {
+      "text": "The more often he switches, the more he earns, and his reasons are hard for you to check, so he may not have your interests at heart.",
+      "correct": true,
+      "feedback": "His income rises with the number of switches, and you can't see through his reasons: that's exactly where the room to drift is."
+     },
+     {
+      "text": "He wants you to make money over the long run, so each year's product is better than the last.",
+      "correct": false,
+      "feedback": "He earns a purchase fee each time; your long-term returns don't decide his income."
+     },
+     {
+      "text": "He isn't skilled enough, which is why he keeps coming up with new ideas all year.",
+      "correct": false,
+      "feedback": "Nothing in the question suggests he lacks skill; the way he charges already explains his motive."
+     }
+    ]
+   },
+   {
+    "stem": "The board wants to know whether the \"falling customer loss rate\" the general manager reported is true. All the quarterly numbers are put together by departments that report to the general manager, and his bonus is tied to the customer loss rate.",
+    "question": "How can the board really check it?",
+    "explain": "These numbers come from the general manager's departments, and his bonus is tied to the result, so he has both the motive and the means to dress them up. Only by having people he doesn't manage spot-check the original orders and renewal records directly does the board get around the information he controls.",
+    "options": [
+     {
+      "text": "Ask the general manager to write more detailed quarterly reports.",
+      "correct": false,
+      "feedback": "The reports are still put together by his departments; however detailed, they show what he chooses to show."
+     },
+     {
+      "text": "Tie his bonus even more tightly to the customer loss rate.",
+      "correct": false,
+      "feedback": "Tying it more tightly makes the motive to dress up the numbers even stronger."
+     },
+     {
+      "text": "Have the general manager sign the report, promising the numbers are true.",
+      "correct": false,
+      "feedback": "A signature is only his own guarantee; the person checking is still him."
+     },
+     {
+      "text": "Ask auditors who don't report to him to spot-check the original orders and renewal records directly.",
+      "correct": true,
+      "feedback": "Only original records and an independent checker get around his control of the information."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Past a 10% share, the agent will wait",
+  "caption": "Waiting a month could fetch 20,000 more. Drag his share: he waits only when his extra cut tops his cost of waiting. At 2% it's 400 yuan, so he pushes you to sell.",
+  "x": {
+   "label": "Agent's share of extra",
+   "unit": "%",
+   "min": 0,
+   "max": 50
+  },
+  "y": {
+   "label": "Money from waiting",
+   "unit": " yuan",
+   "min": 0,
+   "max": 10000
+  },
+  "params": [
+   {
+    "id": "s",
+    "label": "His share",
+    "min": 0,
+    "max": 50,
+    "step": 1,
+    "value": 2,
+    "unit": "%"
+   },
+   {
+    "id": "c",
+    "label": "Cost to wait",
+    "min": 500,
+    "max": 6000,
+    "step": 500,
+    "value": 2000,
+    "unit": " yuan"
+   }
+  ],
+  "series": [
+   {
+    "name": "His extra cut",
+    "expr": "x*200",
+    "tone": "accent"
+   },
+   {
+    "name": "His cost to wait",
+    "expr": "c",
+    "tone": "warn",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "x": "s"
+   },
+   {
+    "x": "c/200",
+    "y": "c",
+    "text": "Past here he'll wait"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Agent's extra",
+    "expr": "s*200",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "Your extra",
+    "expr": "20000-s*200",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "Net gain if he waits",
+    "expr": "s*200-c",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

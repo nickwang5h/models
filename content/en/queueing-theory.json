@@ -1,0 +1,506 @@
+{
+ "id": "queueing-theory",
+ "name": "Queueing Theory",
+ "en": "排队论",
+ "discipline": "computing",
+ "one_line": "When things are almost too busy, a few more people make the line frighteningly long.",
+ "story": "In the fall, container ships line up off the Port of Los Angeles, and Biden announces the port will work around the clock",
+ "shallow": {
+  "scene": "In the fall of 2021, out at sea off the Port of Los Angeles, container ships dropped anchor one after another to wait for a berth. The docks hadn't stopped, but imports had surged, and trucks and warehouses were stretched too: before one load had been hauled away, the next ships had already arrived. On October 13, Biden announced at the White House that the Port of Los Angeles would switch to working around the clock, using longer hours to handle more cargo.",
+  "plain": "An office has one service window. Each person takes one minute on average, so at most 60 people an hour can be served. People arrive at random, and some take longer than others. By queueing theory, when 30 people come an hour, the window sits idle half the time; you can be served almost as soon as you arrive, and the average wait is just one minute. On a busy day, arrivals go up to 54. That's only 80% more people, but the window is now busy 90% of the time, the average wait is nine minutes, nine times as long as before, and there are often eight or nine people in line."
+ },
+ "deep": {
+  "mechanism": "### At 80–90% busy, the wait multiplies\n\nThe window takes $s$ minutes per person on average, and the share of time it is busy is $u$. Take the simplest setup: people arrive at random and independently of each other, service times vary, whoever comes first is served first, and nobody leaves the line partway. The average time spent in line is:\n\n$$\\frac{u}{1-u}\\times s$$\n\nThe busy share divided by the idle share, times each person's service time. In this setup, when you arrive there are on average $\\frac{u}{1-u}$ people at the window, counting the one being served. You wait through them one by one, which comes to that many $s$. With one minute per person:\n\n| Window busy | Average wait in line |\n| --- | --- |\n| 50% | 1 minute |\n| 80% | 4 minutes |\n| 90% | 9 minutes |\n| 99% | 99 minutes |\n\n### When service times vary, the same busyness means a longer wait\n\nAt the same 90% busy, if everyone took exactly one minute, the average wait in line would be only 4.5 minutes, half of 9. When someone takes ten minutes, everyone who arrives in the meantime piles up behind them. When someone finishes early and nobody is waiting, the window sits empty, and that idle time can't be saved up to make up for a long job later.\n\n### The less spare capacity, the slower a backlog clears\n\nThe window can serve 60 people an hour. When 48 come, it can still serve 12 more an hour; that is the spare capacity. If 6 extra people suddenly show up, they are cleared in half an hour. When 57 come, the spare capacity is only 3 people an hour, and the same 6 people take two hours to clear.",
+  "origin": "In 1909, the Danish mathematician Erlang, working for the Copenhagen Telephone Company, studied how many lines were needed so that calls coming in at random would not often find the line busy. That was the start of queueing theory. In 1961, Kingman gave an approximate formula for the wait at a single window running close to full load. It tied together, in one formula, how busy the window is, how much arrival times and service times vary, and how long people wait on average. The formula was later used in computer performance and in production management.",
+  "limits": "A single window, random arrivals, first come first served: that kind of line fits this curve best. In systems where customers leave after waiting too long, the formula will put the wait too high, because once impatient people leave, the line gets shorter. Treating \"80% busy\" as a safety line that holds everywhere is a mistake. How much slack to leave depends on how irregular arrivals and service times are, and how long you are willing to let people wait."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Set staffing for each shift on a customer service line: from the number of calls at peak hours and the average length of a call, work out how many agents you need so that the average wait before a call is answered is no more than a minute."
+   },
+   {
+    "use": "predict",
+    "text": "Estimate how much longer callers will wait to get through if calls rise 10% next month: look at which part of the curve you're on now, rather than just adding 10%."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Transportation",
+    "title": "Full runways: one gust and the day runs late",
+    "text": "For years, London Heathrow's two runways have been used at around 98% of the airport's yearly flight limit. Flights always arrive a bit earlier or later than the timetable says, and each plane holds the runway for a different length of time. A strong gust of wind, or one plane holding up the runway, pushes back every takeoff and landing behind it, and the delays roll on until that evening before they clear."
+   },
+   {
+    "field": "Personal life",
+    "title": "The homework piles up",
+    "text": "You set aside two hours each evening to grade your students' homework, and over a week the work averages exactly two hours. On two days one class hands theirs in late, and it all comes at once. The extra work spills into the next day, and the next day's work is buried under new homework. Three weeks later you always have a stack of ungraded work at hand, and by the time students get their homework back, two weeks have gone by."
+   },
+   {
+    "field": "Health care",
+    "title": "Once 85% of the beds are full",
+    "text": "In 1999, Bagust and colleagues published a study of hospital beds in the *British Medical Journal*. Using random simulation, they built an imaginary emergency hospital in England, where emergency patients were admitted at random and stayed for different lengths of time. Once average bed occupancy passed 85%, the risk of having no bed for an emergency patient began to appear; above 90%, bed shortages became routine, with a bed crisis every so often."
+   }
+  ],
+  "ask": [
+   "What share of the time is the window for this line busy? Have I measured both how fast people arrive and how long each person takes?",
+   "In the busiest hour, how many times the average number of people arrive? How much of the service time do the few longest jobs take up?",
+   "For the backlog I need to work through, is there enough spare capacity to clear it before the next wave arrives?"
+  ],
+  "with": [
+   {
+    "id": "marginal-thinking",
+    "sees": "You run a medical imaging department, and the machines are already booked to 90%. Sales wants to take on a batch of scans referred from other hospitals. Marginal thinking does the sums for this one order: the machines are running anyway, one more scan costs almost nothing, so take it. Queueing theory does the sums for everyone: a few points busier, and every patient's average wait doubles, so the income from the new orders has to be weighed against the cost of the existing patients' extra waiting. Which sums to go by depends on whether waiting in this department has a price."
+   },
+   {
+    "id": "goodharts-law",
+    "sees": "Head office makes equipment utilization a performance target, so the plant manager fills the schedule to the brim. Goodhart's law sees the number being made to look good; queueing theory sees that once the schedule is full, every order's wait multiplies. Keep tracking utilization, but judge people on delivery times and waiting."
+   },
+   {
+    "id": "stocks-and-flows",
+    "sees": "A line is a stock: people arriving are the inflow, and people served are the outflow. When the line grows, don't just count the people in it; look at whether the inflow is faster than the outflow all the time. If it is faster all the time, the line won't go back down; if it is only faster now and then, and there is enough spare capacity, the line slowly clears."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A tourist site has two ticket gates. Each gate can check 30 people an hour, and some checks take longer than others. Visitors arrive at random, 54 an hour in all. Right now each gate has its own line; visitors pick a line when they arrive and don't switch. The site is thinking of switching to one snaking line, where the next person goes to whichever gate is free. Arrivals and checking speed stay the same.",
+    "question": "With one shared line, what is most likely to happen to visitors' average wait?",
+    "explain": "With a line per gate, when one gate is free, the line at the other gate is still waiting. With one shared line, neither gate sits idle while people are in line, so with the same people and the same speed, the wait is much shorter.",
+    "options": [
+     {
+      "text": "It gets shorter, because the shared line makes ticket checking faster.",
+      "correct": false,
+      "feedback": "The checking speed hasn't changed; the wait gets shorter because the gates no longer sit idle."
+     },
+     {
+      "text": "It gets longer: there are more people in one line, so those at the back wait longer.",
+      "correct": false,
+      "feedback": "Each person is waiting for a free gate, and merging the lines doesn't change the number of people. What changes is that no gate sits idle."
+     },
+     {
+      "text": "It stays about the same: the total number of visitors and the total checking speed haven't changed.",
+      "correct": false,
+      "feedback": "With a line per gate, one side can be empty while the other has a line. A shared line removes that waste, so the wait gets shorter."
+     },
+     {
+      "text": "It gets clearly shorter: no gate sits idle while people are in line.",
+      "correct": true,
+      "feedback": "As soon as a gate finishes, it takes the next person, so nobody in one line is stuck waiting while the gate next to them is empty."
+     }
+    ]
+   },
+   {
+    "stem": "You take over a car repair shop. Cars are first inspected, then painted, and there is a line in front of each step. The inspection bay can handle 20 cars an hour, and on average 19 arrive each hour. The paint booth can handle 40 cars an hour, and the same 19 an hour come through. The budget only covers speeding up one step, raising its speed by 20%.",
+    "question": "Which step should you speed up to cut more of customers' total wait from arriving to finished paint?",
+    "explain": "The inspection bay is busy almost to full load. Speed it up by 20%, and its busy share falls from very high to below 80%, so the line shrinks a lot. The paint booth already sits empty more than half the time, so speeding it up saves very little waiting.",
+    "options": [
+     {
+      "text": "Neither needs it: both steps are faster on average than cars arrive, so there won't be a line.",
+      "correct": false,
+      "feedback": "Cars arrive at random, and the inspection bay is only slightly faster than the arrivals, so its line is already very long."
+     },
+     {
+      "text": "The inspection bay: it is busy almost all the time, so speeding it up will shrink the line a lot.",
+      "correct": true,
+      "feedback": "The average wait at the inspection bay is on the order of tens of minutes; a 20% speedup brings it down to around ten minutes. At the paint booth you'd save less than a minute."
+     },
+     {
+      "text": "It makes no difference: speed either one up by 20% and you save the same time.",
+      "correct": false,
+      "feedback": "The same 20% saves far more minutes at a step that is almost at full load than at one that sits empty."
+     },
+     {
+      "text": "The paint booth: it's the last step, so it's the wait customers care about most.",
+      "correct": false,
+      "feedback": "The paint booth is empty more than half the time, so its line is already short, and speeding it up won't save many minutes."
+     }
+    ]
+   },
+   {
+    "stem": "A lawyer offers consultations every afternoon, booking one client every 30 minutes, and clients all arrive on time. Half the consultations take 8 minutes and half take 40, for an average of 24 minutes, shorter than the gap between bookings.",
+    "question": "Over an afternoon, what is the clients' waiting most likely to look like?",
+    "explain": "Booking makes arrivals regular, but consultation times are uneven. After a 40-minute client, the next one has to go in late, and the time saved when an 8-minute consultation ends early can't be passed on to let later clients in sooner.",
+    "options": [
+     {
+      "text": "Some people wait: after a 40-minute client, the next one has to go in late, and the gaps from early finishes can't make up for it.",
+      "correct": true,
+      "feedback": "The freed-up time stays in a slot that has already passed; later clients can't use it."
+     },
+     {
+      "text": "Nobody waits: the bookings already spread arrivals out, and the average length is shorter than the gap.",
+      "correct": false,
+      "feedback": "Since the average length is shorter than the gap, the line won't keep growing over time; but after a 40-minute client, the next one still has to wait."
+     },
+     {
+      "text": "People only wait if the average consultation runs over 30 minutes.",
+      "correct": false,
+      "feedback": "The average is under 30 minutes, but when two long consultations come in a row, the people after them still wait."
+     },
+     {
+      "text": "How long people wait depends only on how many are booked, not on how long each consultation takes.",
+      "correct": false,
+      "feedback": "With the same number booked, the more uneven the consultation times, the more people wait."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "title": "At 90% busy, the average wait is 9 minutes",
+  "caption": "One minute per person on average. 50% busy: a 1-minute wait; 80%: 4 minutes; 90%: 9. If each takes exactly a minute, the same busyness halves the wait.",
+  "x": {
+   "label": "Window busy",
+   "unit": "%",
+   "min": 0,
+   "max": 95
+  },
+  "y": {
+   "label": "Average wait (minutes)",
+   "min": 0,
+   "max": 20
+  },
+  "series": [
+   {
+    "name": "Times vary",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      2.5,
+      0.03
+     ],
+     [
+      5,
+      0.05
+     ],
+     [
+      7.5,
+      0.08
+     ],
+     [
+      10,
+      0.11
+     ],
+     [
+      12.5,
+      0.14
+     ],
+     [
+      15,
+      0.18
+     ],
+     [
+      17.5,
+      0.21
+     ],
+     [
+      20,
+      0.25
+     ],
+     [
+      22.5,
+      0.29
+     ],
+     [
+      25,
+      0.33
+     ],
+     [
+      27.5,
+      0.38
+     ],
+     [
+      30,
+      0.43
+     ],
+     [
+      32.5,
+      0.48
+     ],
+     [
+      35,
+      0.54
+     ],
+     [
+      37.5,
+      0.6
+     ],
+     [
+      40,
+      0.67
+     ],
+     [
+      42.5,
+      0.74
+     ],
+     [
+      45,
+      0.82
+     ],
+     [
+      47.5,
+      0.9
+     ],
+     [
+      50,
+      1
+     ],
+     [
+      52.5,
+      1.11
+     ],
+     [
+      55,
+      1.22
+     ],
+     [
+      57.5,
+      1.35
+     ],
+     [
+      60,
+      1.5
+     ],
+     [
+      62.5,
+      1.67
+     ],
+     [
+      65,
+      1.86
+     ],
+     [
+      67.5,
+      2.08
+     ],
+     [
+      70,
+      2.33
+     ],
+     [
+      72.5,
+      2.64
+     ],
+     [
+      75,
+      3
+     ],
+     [
+      77.5,
+      3.44
+     ],
+     [
+      80,
+      4
+     ],
+     [
+      82.5,
+      4.71
+     ],
+     [
+      85,
+      5.67
+     ],
+     [
+      87.5,
+      7
+     ],
+     [
+      90,
+      9
+     ],
+     [
+      92.5,
+      12.33
+     ],
+     [
+      95,
+      19
+     ]
+    ],
+    "tone": "accent"
+   },
+   {
+    "name": "Exactly 1 minute",
+    "points": [
+     [
+      0,
+      0
+     ],
+     [
+      2.5,
+      0.02
+     ],
+     [
+      5,
+      0.03
+     ],
+     [
+      7.5,
+      0.04
+     ],
+     [
+      10,
+      0.06
+     ],
+     [
+      12.5,
+      0.07
+     ],
+     [
+      15,
+      0.09
+     ],
+     [
+      17.5,
+      0.11
+     ],
+     [
+      20,
+      0.13
+     ],
+     [
+      22.5,
+      0.14
+     ],
+     [
+      25,
+      0.17
+     ],
+     [
+      27.5,
+      0.19
+     ],
+     [
+      30,
+      0.22
+     ],
+     [
+      32.5,
+      0.24
+     ],
+     [
+      35,
+      0.27
+     ],
+     [
+      37.5,
+      0.3
+     ],
+     [
+      40,
+      0.34
+     ],
+     [
+      42.5,
+      0.37
+     ],
+     [
+      45,
+      0.41
+     ],
+     [
+      47.5,
+      0.45
+     ],
+     [
+      50,
+      0.5
+     ],
+     [
+      52.5,
+      0.56
+     ],
+     [
+      55,
+      0.61
+     ],
+     [
+      57.5,
+      0.68
+     ],
+     [
+      60,
+      0.75
+     ],
+     [
+      62.5,
+      0.84
+     ],
+     [
+      65,
+      0.93
+     ],
+     [
+      67.5,
+      1.04
+     ],
+     [
+      70,
+      1.17
+     ],
+     [
+      72.5,
+      1.32
+     ],
+     [
+      75,
+      1.5
+     ],
+     [
+      77.5,
+      1.72
+     ],
+     [
+      80,
+      2
+     ],
+     [
+      82.5,
+      2.36
+     ],
+     [
+      85,
+      2.84
+     ],
+     [
+      87.5,
+      3.5
+     ],
+     [
+      90,
+      4.5
+     ],
+     [
+      92.5,
+      6.17
+     ],
+     [
+      95,
+      9.5
+     ]
+    ],
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "x": 50,
+    "y": 1
+   },
+   {
+    "x": 80,
+    "y": 4
+   },
+   {
+    "x": 90,
+    "y": 9,
+    "text": "9 minutes"
+   }
+  ]
+ }
+}

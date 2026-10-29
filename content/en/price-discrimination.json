@@ -1,0 +1,187 @@
+{
+ "id": "price-discrimination",
+ "name": "Price Discrimination",
+ "en": "价格歧视",
+ "discipline": "economics",
+ "one_line": "Charge more for the same thing to the people willing to pay more.",
+ "story": "Spotify launches half-price student Premium in the US, with SheerID checking who is a student",
+ "shallow": {
+  "scene": "On March 25, 2014, Spotify launched a student discount in the US. Regular users paid 9.99 dollars a month; eligible college students paid only 4.99 dollars. Both got the same Premium: the same music library, the same lack of ads. Spotify did not make a cheaper set of songs for students. At the payment page it had SheerID check who was a student, and the students who passed saw a bill for half.",
+  "plain": "The \"discrimination\" in price discrimination only means the prices differ; it is neither praise nor blame. Imagine you run an online talk, and one more listener costs you nothing. Two friends will pay at most 100 yuan, and a third, a student, will pay at most 30 yuan. Charge everyone 100 yuan and only the two friends come, for 200 yuan. Charge everyone 30 yuan and all three come, for 90 yuan. Charge the two friends 100 yuan and the student 30, and all three come, for 230 yuan, more than either single price."
+ },
+ "deep": {
+  "mechanism": "### Let one person slip through the door and the gap loses money\n\nCharging in tiers earns more only because the people willing to pay the high price can't get through the low-price door. If one of the two friends pretends to be a student and gets in for 30 yuan, income becomes 100 + 30 + 30 = 160 yuan, less than charging everyone 100. If both pretend, income falls to the level of charging everyone 30. Each person who slips through costs 70 yuan. If a rival runs the same talk for just 30 yuan, the door is broken from the outside, and the two friends leave just the same.\n\n### There are two ways to build the door\n\nOne is to check identity: a student card, proof that you live there, an account in your real name. The other is to let buyers sort themselves: coupons take time to find, big packs mean buying a lot at once, half price on Tuesdays means going when it's quiet. The people willing to go to that trouble are mostly the ones who didn't want to pay more anyway, and they get the low price; the people who want things easy pay full price. The seller never needs to know who is who.\n\n### To see how much more you earn, put three sums side by side\n\nCharging each person the most they would pay is first degree; letting buyers choose by quantity or plan is second degree; charging by group, such as students or residents, is third degree. At every degree, look at three sums: what the new buyers pay minus the cost, what old buyers save by switching to the low price, and the cost of checking identity and stopping fakes. In the talk, these are the student's 30 yuan, the 70 yuan each pretender doesn't pay, and the effort of checking cards. If the last two together are bigger than the first, charging in tiers loses money.",
+  "origin": "The economist Arthur Pigou discussed this way of charging systematically in *The Economics of Welfare*, published in 1920, and divided it into three degrees. Railways charging different passengers different fares were the classic case to study. The theory came from studying how markets charge; there is no agreed experiment where it began.",
+  "limits": "Charging in tiers works best for a business where selling one more costs almost nothing, buyers differ a lot in what they would pay, and an ID or a time slot can separate them: software, talks, shows, museums. If the goods can easily be resold, people who buy at the low price will resell to buyers who would pay more; if a rival goes after the low-price end, the high-price buyers will go there too. In these two kinds of market, the price gap can't hold. Damning all price discrimination as a rip-off also misses half the picture: half price for students lets people who couldn't otherwise afford a service use it; it is just that people who don't qualify pay full price."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When pricing a subscription tool, set three tiers, student, individual and team, and decide at the same time what each tier needs as proof: the student tier verifies identity, the team tier limits the number of seats."
+   },
+   {
+    "use": "act",
+    "text": "When the same item carries two prices, first find the door: is the gap guarded by an ID, a coupon or a queue? If the door is open on your side, take the low price."
+   },
+   {
+    "use": "explain",
+    "text": "The same movie is cheaper on a weekday afternoon than on a weekend evening: people willing to go in the daytime have time to spare and care more about money, so the cinema doesn't have to ask who is who."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Personal life",
+    "title": "The coupon finder pays 15 yuan",
+    "text": "You want to buy a bottle of shampoo priced at 20 yuan. The members' page has a 5-yuan coupon, but you have to click through several layers of pages to get it. Your next-door neighbor clicked through and paid 15 yuan; you went straight to checkout and paid 20."
+   },
+   {
+    "field": "Society and public services",
+    "title": "Your address sets the ticket price",
+    "text": "From March 1, 2018, the Metropolitan Museum of Art in New York followed a new admission policy. Adult visitors from outside the state had to pay 25 dollars, while New York State residents could still pay whatever they chose. Two people look at the same exhibits side by side; one hands over 25 dollars, the other pays as much as they like."
+   },
+   {
+    "field": "Investing",
+    "title": "What the student version buys",
+    "text": "You are reading a design-software company's materials for investors. Suppose its student version costs a few dozen yuan a year and its business version a few thousand. You need to dig out what share of student users become paying users after they graduate. If the share is high, the student version is signing up future customers in advance; if it is low, this tier is just money not collected."
+   }
+  ],
+  "ask": [
+   "How did the seller guess how much I would pay: from an ID I showed, or from the time I was willing to spend?",
+   "Do I qualify for the low-price door? How much time would it take, or what proof would I need?",
+   "Does the low-price tier bring in future paying customers, or does it just give away money that would have been paid at full price?"
+  ],
+  "with": [
+   {
+    "id": "price-elasticity",
+    "sees": "A scenic site gets few visitors in the off season, and its operator must choose between two paths. Price elasticity looks at the whole: if visitors are sensitive to price, cut the price for everyone. Price discrimination suggests the opposite: let only the sensitive pay less, with local residents and students on the low price and visitors from elsewhere still paying full. Cutting the price for everyone means the people who would have paid full also pay less. This only works if the site can tell who is who; if it can't, it's back to cutting the price for everyone."
+   },
+   {
+    "id": "arbitrage",
+    "sees": "The same pair of sneakers has different price tags in two cities. Price discrimination wants to hold on to the two prices; arbitrage sees the shoes shipped from the cheap city to the expensive one, and the gap flattened by the people moving them. Shoes can be moved and resold, so the gap can't hold; a talk or an account in your real name can't be moved, so the gap stays."
+   },
+   {
+    "id": "signaling-screening",
+    "sees": "An airline sells tickets on one route, and gives the low fare only if you stay over a Saturday night. Business travelers won't spend a weekend away, so they reveal their type themselves. Signaling and screening is about how this door gets people to declare themselves; price discrimination is about how much to charge on each side of it."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You run an online typesetting tool. Each month, 300 customers used to buy its export service at 60 yuan each, and each order cost 10 yuan to deliver. You add a new route: fill in a 15-minute questionnaire and get the same service for just 40 yuan. That month, 100 existing customers switch to the questionnaire route, and 80 new customers arrive, all also paying 40 yuan. The questionnaire system and the work of handling it cost an extra 1,000 yuan; all other costs stay the same.",
+    "question": "Compared with the original plan, how much does profit change?",
+    "explain": "The 80 new customers each contribute 30 yuan, 2,400 yuan in all; the 100 existing customers each pay 20 yuan less, 2,000 yuan in all; the questionnaire costs another 1,000 yuan. Put the three together, and profit falls by 600 yuan.",
+    "options": [
+     {
+      "text": "Up 2,400 yuan.",
+      "correct": false,
+      "feedback": "The 80 new customers brought in 2,400 yuan. What existing customers no longer pay and the cost of the questionnaire haven't been taken off yet."
+     },
+     {
+      "text": "Down 600 yuan.",
+      "correct": true,
+      "feedback": "The new orders contribute 2,400 yuan, existing customers pay 2,000 less, and the questionnaire costs another 1,000: 600 less in all."
+     },
+     {
+      "text": "Down 3,000 yuan.",
+      "correct": false,
+      "feedback": "The existing customers' lower price and the questionnaire cost come to 3,000 yuan together. The 2,400 yuan from the new customers hasn't been counted."
+     },
+     {
+      "text": "Up 400 yuan.",
+      "correct": false,
+      "feedback": "The new income minus what existing customers no longer pay leaves 400 yuan. The extra 1,000 yuan for the questionnaire has to be taken off too."
+     }
+    ]
+   },
+   {
+    "stem": "A new gym opens in an office building near your home. A 360-yuan monthly pass lets you in at any time; another monthly pass, at 180 yuan, only lets you in on weekdays from 9 a.m. to 4 p.m. No ID is checked when you sign up, and the two passes cost the same to run. Most of the office workers in the building aren't free until evening.",
+    "question": "Which statement about the 180-yuan pass is right?",
+    "explain": "No ID is checked; the limit is on when you can get in. The office workers aren't free then, so they won't use it in place of the full-price pass, while people who are free in the daytime and care about money will pick it themselves. The equal costs show that the price gap comes from the buyers, not from the cost of supplying the service.",
+    "options": [
+     {
+      "text": "The two passes cost the same, so the gap only shows the gym giving up some profit; you can't tell that it is charging buyers in tiers.",
+      "correct": false,
+      "feedback": "The equal costs are exactly what show that the gap doesn't come from the cost of supply, but from the buyers and what they are willing to pay."
+     },
+     {
+      "text": "As long as new customers buy the half-price pass, the gym's profit is sure to rise.",
+      "correct": false,
+      "feedback": "The money from new customers has to be counted together with what existing full-price customers stop paying when they switch to the half-price pass."
+     },
+     {
+      "text": "The time limit lets people who are happy to avoid peak hours and care more about money pick the half-price pass themselves, while full-price customers still have a reason to buy the full-price pass.",
+      "correct": true,
+      "feedback": "The limit lets each kind of customer take what suits them: daytime users with free time pay half, busy office workers still pay full, and no ID check is needed."
+     },
+     {
+      "text": "No ID is checked, so anyone can buy the half-price pass, and the price gap will soon fall apart.",
+      "correct": false,
+      "feedback": "The half-price pass only works in the daytime, so office workers who are free only in the evening can't use it even if they buy it. The gap is held by the time slot, not by ID."
+     }
+    ]
+   },
+   {
+    "stem": "You and your father buy accident insurance for the same trip. The cover is exactly the same, but your premium is 80 yuan and your father's is 260 yuan. The insurer's pricing documents show that the expected claims per policy for your father's age group are 180 yuan higher than for yours, and that the two groups carry the same commission, running costs and profit markup.",
+    "question": "Which explanation of the 180-yuan difference in premium is right?",
+    "explain": "The two of you get the same promise of cover, but the claims the insurer expects to pay differ, and the 180-yuan cost gap matches the 180-yuan premium gap exactly. To judge whether a price is set by what the buyer is willing to pay, you can't look only at who they are and the price tag; you also have to look at the cost of supplying it.",
+    "options": [
+     {
+      "text": "The difference in expected claims explains the whole premium gap exactly; the facts support quoting different prices by the cost of the cover.",
+      "correct": true,
+      "feedback": "The same terms can come with different expected claims. Here the whole price gap has a cost behind it, so the age groups can't simply be taken as charging by willingness to pay."
+     },
+     {
+      "text": "The cover is identical, so charging different premiums by age is enough to show the insurer is charging by willingness to pay.",
+      "correct": false,
+      "feedback": "The same contract going to different kinds of people is only a starting point. The expected cost of this cover also differs; first see whether cost explains the gap, and only then talk about charging by willingness to pay."
+     },
+     {
+      "text": "Older travelers worry more about accidents and are keener to buy cover, so the premium gap mainly reflects a difference in demand.",
+      "correct": false,
+      "feedback": "The difference in expected claims given in the question already explains the whole gap; there is no need to guess at a difference in demand."
+     },
+     {
+      "text": "Younger travelers pay less, which draws more of them to buy, so the gap is mainly there to widen the customer base.",
+      "correct": false,
+      "feedback": "The question gives no data on whether low premiums bring in more young travelers. The gap rests on the expected cost of claims and has nothing to do with attracting customers."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "type": "hbar",
+  "title": "Two tiers take 230; one slip-in drops it to 160",
+  "caption": "The two friends will pay at most 100 yuan, the student at most 30. Each friend who slips in posing as a student costs 70 yuan.",
+  "categories": [
+   "All pay 100",
+   "All pay 30",
+   "Two tiers",
+   "Two tiers, 1 slips in",
+   "Two tiers, 2 slip in"
+  ],
+  "y": {
+   "unit": " yuan"
+  },
+  "series": [
+   {
+    "name": "Talk income",
+    "values": [
+     200,
+     90,
+     230,
+     160,
+     90
+    ],
+    "tones": [
+     "ink",
+     "ink",
+     "accent",
+     "warn",
+     "warn"
+    ]
+   }
+  ]
+ }
+}

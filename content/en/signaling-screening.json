@@ -1,0 +1,208 @@
+{
+ "id": "signaling-screening",
+ "name": "Signaling and Screening",
+ "en": "信号与筛选",
+ "discipline": "games",
+ "one_line": "To make people believe you, do something a fake couldn't afford to do.",
+ "story": "Hyundai launches a ten-year, 100,000-mile powertrain warranty in the US",
+ "shallow": {
+  "scene": "When you shop online and the seller promises \"ten times your money back if it's fake,\" you feel a bit safer: a store that really sells fakes couldn't afford the payouts. In 1998 Hyundai used the same trick in the US. At the time, when Americans thought of Hyundai, they still thought of the problems with its early models.\n\nHyundai brought out a warranty: if the engine or transmission of a first owner's car broke down within ten years or 100,000 miles, the maker would pay for the repairs. Buyers couldn't see how quality was managed in the factory, but they could work out one thing: if the cars broke down often, the repair bills would sink the maker, so a maker with poor quality couldn't afford a warranty like this. By daring to write it into the contract, Hyundai was telling buyers it was confident in its own cars.",
+  "plain": "You need to hire a French translator. A dozen or so résumés all say \"fluent in French,\" and you can't tell who really is. You change the rules: anyone with a C1 certificate gets 10,000 yuan more for the job. Here the certificate is a signal. It's believable because people faking it can't afford it. Someone who really knows French needs a month of exam prep, worth about 2,000 yuan, so it pays off. A dabbler would need a year of prep, about 20,000 yuan, more than the extra 10,000, so they won't take the exam. You have each person who hands in a certificate translate a passage of a contract on the spot, and not one of them gets stuck."
+ },
+ "deep": {
+  "mechanism": "### A warranty only sorts makers when the extra price falls between their two costs\n\nA washing machine maker is thinking about adding a ten-year warranty (the numbers are made up). A good maker expects to pay 200 yuan in repairs per machine; a bad maker expects 1,000 yuan. Buyers are willing to pay 600 yuan more for the warranty. After the 200 yuan, the good maker clears 400, so it is willing to offer the warranty; a bad maker that copies it loses 400.\n\nIf the extra price drops to 150 yuan, even the good maker loses, and nobody offers it. If it rises to 1,200 yuan, even the bad maker makes money, and both offer it. Only when the extra price falls between 200 and 1,000 yuan is the good maker the only one willing to offer it.\n\n### A diploma can sort people even if it teaches no skills\n\nIn Spence's 1973 model of education, the diploma itself doesn't make anyone better at the job, yet it still sorts people. Suppose an employer pays people with a diploma 30,000 yuan more a year. For a fast learner, getting the diploma costs the equivalent of 20,000 yuan, so it's worth it; a slow learner would have to pay 40,000, so doesn't do it. If the employer sets pay by the diploma alone, the two kinds of people sort themselves: everyone with a diploma is a fast learner, even if nothing taught in class is any use on the job.\n\nIn 1975 the biologist Zahavi used the same reasoning to explain the peacock's tail: it is big and heavy, and only a male in good health can afford to drag it around. In the case of the peacock, the evidence from the wild is still disputed.\n\n### Who moves first decides whether it's a signal or a screen\n\nWhen the side that knows the truth moves first, it's a signal: a seller offers a warranty, a job seeker goes and gets a certificate. When the side that doesn't know sets terms first, it's a screen: an insurer offers two contracts side by side, one with a low premium where the policyholder pays more out of pocket after a claim, and one with a high premium where they pay less. People at high risk are willing to pay a higher premium for the protection, so they choose the expensive one; whichever they choose gives away the truth about them.",
+  "origin": "Spence published \"Job Market Signaling\" in 1973; in 1976 Rothschild and Stiglitz used insurance contracts to study screening. Spence and Stiglitz shared the Nobel Prize in economics in 2001. Zahavi proposed the handicap principle in 1975 (the more an ornament burdens its owner, the more believable it is), and Grafen modeled it in 1990. In 1994 Petrie and Halliday cut eyespots off the tails of some male peacocks at Whipsnade Zoo in England, and the trimmed males mated less successfully than the untrimmed ones. But in 2008 Japanese researchers who had watched a free-ranging flock of peafowl for seven years saw no sign that peahens preferred males with showier tails.",
+  "limits": "A signal is reliable when one side knows the truth and someone faking it has to pay a good deal more than someone who has the real thing; job hunting, warranties and pet adoptions are all like this. Things you can check directly don't need signals: whether a bedroom is noisy at night, you can find out by spending a few dozen yuan to test it for a night. If the same effort is light for the rich and heavy for the poor, what it reveals is family wealth: the same tuition is easy for a rich student to pay, while a poor student has to borrow it."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "Before paying for a certificate yourself, first ask whether it is much harder for people just filling a slot than for people who can really do the work."
+   },
+   {
+    "use": "design",
+    "text": "When recruiting new volunteers, make the trial task in the process one that's easy for serious people and a lot of trouble for those just tagging along."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Hiring",
+    "title": "A puzzle by the road",
+    "text": "In 2004 a billboard appeared beside Highway 101 in California with no company name, only a puzzle: the first ten-digit prime found in the digits of e, followed by .com. Google didn't write the word \"hiring\" on it. Those who worked it out and went to that web address found a second puzzle waiting, and only after solving it did they get an invitation to apply for a job. Most people driving by glanced at it and moved on; those who could work it out and were willing to spend an evening doing so stepped forward on their own."
+   },
+   {
+    "field": "Business",
+    "title": "One minute at the Super Bowl",
+    "text": "On January 22, 1984, during a break in the broadcast of the Super Bowl, the American football final, Apple aired the ad \"1984,\" directed by Ridley Scott, to launch the soon-to-be-released Macintosh computer. Ad slots like this on TV are famously expensive. Viewers had no way of testing the computer, but they could see that Apple had already spent the money, and could only earn it back by selling the computers one by one. If the product is bad, customers buy once and never return, and the money never comes back; only a good product that can count on repeat customers and word of mouth can afford to throw the money out first."
+   },
+   {
+    "field": "Charity",
+    "title": "Three steps to adopt",
+    "text": "You volunteer at an animal rescue center and are finding a home for an abandoned adult cat. Lots of people want to adopt, and even more say they'll take good care of it. You added three steps: fill in a questionnaire, have a volunteer visit the home, and a follow-up within three months with photos sent in. People who really want a cat finish them without a second thought; people acting on a whim stop replying when they reach the home visit."
+   }
+  ],
+  "ask": [
+   "In this situation, who knows the truth, and who can only see the surface?",
+   "For the same evidence, is the extra a faker has to pay bigger than what he'd gain by faking it successfully?",
+   "Is the other side trying to make me believe in their ability, their sincerity or their money, and which of these is this evidence tied to?"
+  ],
+  "with": [
+   {
+    "id": "goodharts-law",
+    "sees": "You're in charge of hiring. Should you make the C1 certificate a hard requirement? Signaling and screening says yes: the certificate is cheap for people who know French and expensive for those who don't. Goodhart's law says that once it's a requirement, prep courses will spring up that drill people on likely questions, and having the certificate will no longer mean knowing French. First check whether the cost of preparing has changed. If it still takes a year, keep the requirement; if there are already courses on the market that guarantee a pass, switch to an interview on the spot and stop looking at the certificate."
+   },
+   {
+    "id": "adverse-selection",
+    "sees": "You sell handmade leather goods online. Buyers can't tell good from bad, so they all push you down to the average price. Adverse selection explains why they push the price down, and also why good goods are the first to leave the market. Signaling and screening offers a way out: you number each leather piece and publish your leather purchase invoices, so buyers can look up which batch of leather a numbered piece used. For a shop with shoddy goods to follow suit, it would have to put its invoices for cheap leather on show."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're hiring summer interns and have added a new requirement for applications: attach a head-and-shoulders photo in formal clothes, which takes a phone and a few minutes. You want this to show who wants the job more and who is more capable. In the end, 90% of applicants attach a photo.",
+    "question": "What did this requirement do for your screening?",
+    "explain": "The requirement is equally easy for everyone. How much someone wants the job or how capable they are doesn't make the photo any harder to take, so it can barely tell anyone apart.",
+    "options": [
+     {
+      "text": "It picked out the more capable people, because they know better how to prepare their materials.",
+      "correct": false,
+      "feedback": "Taking a photo has no bar to clear, and being more or less capable doesn't change how hard it is."
+     },
+     {
+      "text": "It barely told anyone apart, because taking a photo is equally easy whether or not you want the job or are capable.",
+      "correct": true,
+      "feedback": "Everyone paid equally little, 90% of applicants sent a photo, and the remaining 10% can't be taken to mean they're no good."
+     },
+     {
+      "text": "It picked out the people who want the job more, because they were willing to spend time on the photo.",
+      "correct": false,
+      "feedback": "It takes a few minutes. Nobody would refuse because they don't want the job that much, so it can't show who wants it."
+     },
+     {
+      "text": "It picked out the people who follow rules better, because they submitted complete materials as asked.",
+      "correct": false,
+      "feedback": "90% sent one. Those who didn't most likely just missed the instructions, which can't count as evidence of whether they follow rules."
+     }
+    ]
+   },
+   {
+    "stem": "The chairman of a listed company says he's optimistic about the company and announces it will use 500 million yuan of its cash to buy back shares. He himself hasn't bought a single extra share in years, and the cost of the buyback is shared by all shareholders according to how many shares they hold.",
+    "question": "How far does this buyback show that the chairman himself is optimistic about the company?",
+    "explain": "For a signal to be convincing, the one sending it has to bear the loss if they're wrong. Here the money comes from the company's accounts and is shared by all shareholders, and the chairman personally loses almost nothing, so it shows little.",
+    "options": [
+     {
+      "text": "It only shows the company has a lot of cash.",
+      "correct": false,
+      "feedback": "Companies with a lot of cash don't necessarily buy back shares. What matters is who bears the loss if he's wrong, and here it's all the shareholders, not him alone."
+     },
+     {
+      "text": "It shows it fully: 500 million yuan is no small sum, and someone without confidence wouldn't spend it.",
+      "correct": false,
+      "feedback": "It's all the shareholders' money, so even someone without confidence would be happy to spend it. The size of the sum can't stand in for how much he has bet himself."
+     },
+     {
+      "text": "It shows nothing at all: buybacks have nothing to do with how good a company is.",
+      "correct": false,
+      "feedback": "Buybacks do relate to how good the company is; it depends who pays. If he bought shares with his own money, he'd lose if he were wrong, and that would show it."
+     },
+     {
+      "text": "It shows little: it's all the shareholders' money, and he personally loses almost nothing if he's wrong.",
+      "correct": true,
+      "feedback": "The cost of imitating it falls on others, so a chairman without confidence would happily do the same. The cost has to land on him personally to carry weight."
+     }
+    ]
+   },
+   {
+    "stem": "You have an apartment to rent out and don't know whether tenants will take care of it. You offer two contracts at once. A: a deposit of 8,000 yuan and rent of 3,000 yuan a month. B: no deposit and rent of 3,300 yuan a month. A's deposit is returned in full only if the tenant stays a full year and the apartment is undamaged; otherwise it's kept. One tenant chooses A.",
+    "question": "What is the most reasonable guess about this tenant?",
+    "explain": "Someone who stays a full year and takes care of the place gets the deposit back, so A is 300 yuan cheaper a month. Someone who plans to leave early or won't take care of it would lose the deposit, so B is the better deal. Choosing A tells you what the tenant plans to do.",
+    "options": [
+     {
+      "text": "He more likely plans to stay only a few months, because A's rent is cheaper.",
+      "correct": false,
+      "feedback": "If he doesn't stay a full year, the deposit is kept, and the savings on rent don't make up for it. Someone like that would choose B."
+     },
+     {
+      "text": "He's more likely short of money and wants to save on rent, so he chose A.",
+      "correct": false,
+      "feedback": "Someone short of money would struggle more to put down an 8,000 yuan deposit, so choosing A would be harder, not easier."
+     },
+     {
+      "text": "He more likely plans to stay a full year and will take care of the apartment.",
+      "correct": true,
+      "feedback": "Someone like that gets the deposit back and pays less rent, so A is the best deal for him; choosing A amounts to telling you his plans."
+     },
+     {
+      "text": "The choice says nothing, since everyone wants the cheaper option.",
+      "correct": false,
+      "feedback": "A is cheaper only for people who will get the deposit back; for everyone else it costs more. That is why the choice carries information."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Bonus between the two costs sorts people",
+  "caption": "Prep costs the fluent about 2,000, dabblers 20,000. Drag the bonus: in between, the fluent gain and dabblers lose, so it sorts them; above 20,000, both take it.",
+  "x": {
+   "label": "Extra pay for the certificate",
+   "min": 0,
+   "max": 30000,
+   "format": "en"
+  },
+  "y": {
+   "label": "Net gain from the exam",
+   "unit": " yuan",
+   "min": -20000,
+   "max": 30000,
+   "format": "en"
+  },
+  "params": [
+   {
+    "id": "b",
+    "label": "Certificate bonus",
+    "min": 0,
+    "max": 30000,
+    "step": 1000,
+    "value": 10000,
+    "unit": " yuan"
+   }
+  ],
+  "series": [
+   {
+    "name": "Fluent: net gain",
+    "expr": "x-2000",
+    "tone": "accent"
+   },
+   {
+    "name": "Dabbler: net gain",
+    "expr": "x-20000",
+    "tone": "warn"
+   }
+  ],
+  "marks": [
+   {
+    "x": "b"
+   },
+   {
+    "y": 0,
+    "text": "Break even"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Fluent: net gain",
+    "expr": "b-2000",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "Dabbler: net gain",
+    "expr": "b-20000",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

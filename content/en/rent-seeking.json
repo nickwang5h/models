@@ -1,0 +1,220 @@
+{
+ "id": "rent-seeking",
+ "name": "Rent-Seeking",
+ "en": "寻租",
+ "discipline": "economics",
+ "one_line": "The harder people fight over an existing prize, the more is wasted, and nothing new is made.",
+ "story": "In March, Britain's Parliament passes the Corn Laws, banning imported wheat until the home price reaches 80 shillings a quarter, and landlords' rents stay high along with the price of bread",
+ "shallow": {
+  "scene": "Anyone who has bought water at an airport has seen it: bottled water that costs 2 yuan in a supermarket sells there for over 10 yuan, because only a few approved shops are allowed to sell inside and nobody else can get in. Two hundred years ago, English landlords used the same trick to hold up the price of wheat. Grain prices had climbed through years of war and looked set to fall once peace came.\n\nIn March 1815, Britain's Parliament passed the Corn Laws: until the home price of wheat rose to the line of 80 shillings, no foreign wheat at all could be imported. With cheap foreign wheat kept out, the home price couldn't fall. While the bill was being debated, people in London gathered outside Parliament to protest; but landlords made up most of Parliament, the law passed anyway, and it stayed until it was repealed in 1846.\n\nThe landlords didn't have to grow a single extra acre of wheat; they only cast a vote in Parliament. With wheat dear, the farmers who rented land to grow it earned more, so rents rose too, and the extra money people paid for bread went into the landlords' pockets.",
+  "plain": "Anyone who has fought for train tickets before a big holiday in China knows those few minutes: before tickets go on sale, the whole family has their phones open, refreshing again and again. The train doesn't get a single extra seat. All those hours of refreshing only decide whose hands the tickets land in. The more people want them, the smaller your chance of getting one, and the more time everyone burns all together.\n\nThe same goes for money. Suppose a county is going to issue one exclusive license to run freight, and the company that gets it earns an extra 1 million yuan a year. The more a company spends to win favor, the better its chance of being picked. As long as everyone's spending together is still clearly less than 1 million, someone will be willing to spend a little more for better odds; the more companies join in, the closer the total spent gets to 1 million. None of that money moves a single extra parcel; it only decides who gets the license. Spending money and effort to fight over a benefit that already exists is what economists call rent-seeking."
+ },
+ "deep": {
+  "mechanism": "### The more who compete, the closer the spending gets to the prize itself\n\nOne exclusive license earns whoever holds it an extra 1 million yuan a year. If only your company wants it, spending 100,000 yuan to win favor is enough. Once more companies come in, everyone raises their spending.\n\nSuppose the chance of being picked is in proportion to what you spend: whatever share of the total spending is yours, that is your share of the chance. Think of the license as a prize worth $V$, with $n$ equally strong companies competing. When they have raised their spending until nobody wants to raise it any more, the total spent, $T$, is:\n\n$$T=V\\times\\frac{n-1}{n}$$\n\nIn other words, only one $n$-th of the prize is left unspent. With five companies competing, they spend 800,000 yuan in total, 160,000 each; with ten, they spend 900,000 in total, 90,000 each.\n\n### Spending stops rising where one more yuan brings back only one yuan\n\nWhen the total spent is $T$ and you spend 1 more yuan, your share first goes up by about $\\frac{1}{T}$. But the total has grown too, so your existing one $n$-th gets diluted by about $\\frac{1}{n}\\times\\frac{1}{T}$. Your odds therefore rise, net, by about $\\frac{n-1}{n}\\times\\frac{1}{T}$, and multiplying that by $V$ gives the money this 1 yuan brings back.\n\nTake five companies, counting in units of 10,000 yuan. When the total is only 500,000, one more yuan brings back $100\\times0.8\\div50=1.6$ yuan, so of course you add more. When the total reaches 800,000, it brings back $100\\times0.8\\div80=1$ yuan, and adding more would lose money, so spending stops there. The more who compete, the closer $\\frac{n-1}{n}$ gets to 1, and the closer the stopping point gets to the whole prize.\n\n### Money that changes pockets isn't a loss; the cost of fighting is\n\nBack to 1815: grain prices were propped up, and every penny of the extra bread money went into the landlords' rents. That part only changed pockets. What was truly used up was two things: the time spent by the people fighting over the law, and the bread that people who bought less of it never got to eat.\n\nWhen the benefit can be sold on, the money changes pockets once more. Later buyers bid according to how much extra they can earn in the future, so the extra earnings are paid to whoever grabbed the benefit first, on the day of the sale, and the buyer gets only an ordinary return. That is why, when a barrier is removed, those who hurt most are the ones who just paid a high price for the right: the extra earnings they paid for in advance are suddenly gone.",
+  "origin": "In 1967 Gordon Tullock published \"The Welfare Costs of Tariffs, Monopolies, and Theft,\" pointing out that the cost of monopolies and tariffs also includes the resources people use up trying to get them. In 1974 Anne Krueger, using import licenses in India and Turkey as examples, wrote \"The Political Economy of the Rent-Seeking Society,\" and from then on the word \"rent-seeking\" caught on. \"Rent\" here originally meant the rent paid for land.",
+  "limits": "Rent-seeking applies where a single decision on paper can change who gets more, such as licenses, quotas, tariffs and subsidies. Earning high profits by making a better product doesn't count, because that money comes from newly created value. A campaign to get a safety gap fixed is fighting to make things safer; filing that kind of lobbying under rent-seeking too is going too far."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "See why, in an industry that runs on government approvals, bright graduates all crowd into application and public-relations jobs instead of technical ones."
+   },
+   {
+    "use": "design",
+    "text": "When setting how to hand out a scarce right, whether by open bidding, by lottery or by checking conditions, see whether each method steers the money spent on fighting for it to lobbyists or to the public treasury."
+   },
+   {
+    "use": "predict",
+    "text": "Estimate who will protest loudest once an industry's licenses are opened up: the thicker the rent behind the barrier, the less the established license holders want to see it torn down."
+   }
+  ],
+  "examples": [
+   {
+    "field": "History",
+    "title": "Monopolies granted by the queen",
+    "text": "In the late 16th century, England's Queen Elizabeth I granted courtiers and merchants the sole right to sell goods such as salt, starch and playing cards, as a reward for serving the Crown; anyone who wanted one first had to work at court and compete for the queen's favor. Holders had the trade to themselves, and no one else could touch it. Prices of those goods went up as a result. In 1601 members of Parliament protested to the queen, and she said she would cancel a batch of the monopolies. In 1624 Parliament passed the Statute of Monopolies, which in principle banned granting any more."
+   },
+   {
+    "field": "Trade",
+    "title": "India's industrial licenses",
+    "text": "Before 1991, an Indian company that wanted to build a factory, expand output or switch to a new product first had to apply to the central government for an industrial license, and a single project could need approval from as many as 80 government agencies. Big companies were better at working their way through the layers of paperwork; an official inquiry also found that some big groups applied for licenses only to grab capacity and keep rivals out. After the balance-of-payments crisis of 1991, India brought in reforms and dropped the license requirement for most industries. Companies no longer needed an official approval on paper before expanding."
+   },
+   {
+    "field": "Management",
+    "title": "The year-end discretionary fund",
+    "text": "For three weeks before the end of the year, you spend every evening reworking the slides for your budget pitch. Three departments are competing for the same 6 million yuan discretionary fund, and the reviewers pick whoever pitches most persuasively. The other two managers are also asking finance for numbers and sounding out the boss's assistant about what the boss likes. In the end the money goes to the second department, and your project doesn't get finished that quarter."
+   }
+  ],
+  "ask": [
+   "Does this company's high income come from new customers and new products, or from licenses and approvals renewed year after year? Go through its annual report and see where its revenue growth comes from.",
+   "Who proposed this rule? Look up the proposal records and the lobbying register, and see who spoke up first.",
+   "If this barrier were removed, who could come in the next day? Go and ask someone who wants to get in and can't."
+  ],
+  "with": [
+   {
+    "id": "zero-sum",
+    "sees": "Two companies are competing for the same government subsidy. Zero-sum and positive-sum thinking first asks: can this subsidy let the two of them together create something new? If it can't, all that's left is how to split it. Rent-seeking sees the spending before the split: both are hiring people to write applications and asking contacts to put in a word, and those people could have been doing something else. If the way the subsidy is handed out makes that spending grow every year, change the method first, then talk about who should get it."
+   },
+   {
+    "id": "moat",
+    "sees": "You're looking at a company whose profits have been high for ten years. The moat test is: after a price rise, do customers keep buying? If they do, it's a good business. Rent-seeking asks you to go one step further: do customers keep buying because they want its product, or because the rules let only this company sell? The first kind of moat it has to defend itself, year after year; the second disappears as soon as the rules change, and the company's value should be marked down."
+   },
+   {
+    "id": "mechanism-design",
+    "sees": "You're designing the bidding rules for the right to run a new bus route. Mechanism design works backward from the result you want: to get the route into the hands of whoever runs it best, hold an open auction and let everyone bid by their own sums. Rent-seeking makes you look one layer further: before the rules come out, someone will fight for clauses such as \"qualification thresholds\" that keep rivals out of the bidding. In the rules, who may take part and who can change the terms should be written out as carefully as how the bids are scored."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A province rules that only 3 licenses will be issued for the wholesale trade in baijiu, a Chinese grain liquor, and each license holder pays a license fee to the provincial treasury every year. Five wholesale companies apply at the same time, and three are picked in the end. The extra money they make each year from exclusive wholesaling comes from shops paying more for their stock. All five companies hired consultants and pulled strings, and each spent half a year on it.",
+    "question": "Looking at society as a whole, which of these is a resource simply used up, rather than just passed from one party to another?",
+    "explain": "The money paid for stock and the license fees both have someone receiving them, so that money only changes pockets. The staff time and consultants' time the five companies put into applying could have gone to other work; once spent, it's gone.",
+    "options": [
+     {
+      "text": "The staff and consultants' time the five companies spent fighting for the licenses.",
+      "correct": true,
+      "feedback": "These people could have done other work. Once spent on applying, that time is gone, and it's the same for the two companies that lost."
+     },
+     {
+      "text": "The extra money shops pay the wholesalers for their stock.",
+      "correct": false,
+      "feedback": "The extra money the shops pay goes into the wholesalers' pockets; it only changes hands."
+     },
+     {
+      "text": "The license fees the provincial treasury receives.",
+      "correct": false,
+      "feedback": "The license fees move from the companies to the treasury. The money still exists; it hasn't been used up."
+     },
+     {
+      "text": "The extra wholesale profit the chosen companies make each year.",
+      "correct": false,
+      "feedback": "This money comes from the extra the shops pay for stock. It only changes pockets, and society's total hasn't shrunk."
+     }
+    ]
+   },
+   {
+    "stem": "In one stretch of sea, fishing licenses are capped, and holders can sell them on. How much more a license holder earns from fishing each year, compared with putting the same money somewhere else, is public, and buyers all bid by that number. A license now sells for 20 million yuan. You pay 20 million for one and buy the boat and gear separately.",
+    "question": "What will your returns roughly look like from then on?",
+    "explain": "Buyers bid according to the extra money they'll earn in the future, so the extra a license earns has already been paid to the seller when you bought it. After that, your return is about the same as putting the money somewhere else.",
+    "options": [
+     {
+      "text": "A loss, because 20 million is more than the value of all the fish behind the license.",
+      "correct": false,
+      "feedback": "In the question, buyers bid by the extra they earn, so the price matches the catch's value. There's no reason to lose money."
+     },
+     {
+      "text": "Returns will keep rising, because licenses only go up in price, never down.",
+      "correct": false,
+      "feedback": "The price depends on how much extra the license earns each year. No rule guarantees it only goes up."
+     },
+     {
+      "text": "Steady extra returns every year, clearly above other investments, because the license keeps others out.",
+      "correct": false,
+      "feedback": "The extra returns were paid to the seller when you bought the license. What you bought is only an ordinary return."
+     },
+     {
+      "text": "About the same as investing elsewhere: the extra earnings were paid to the seller when you bought the license.",
+      "correct": true,
+      "feedback": "The price already counted in the extra money of the future, so the buyer is left with only an ordinary return."
+     }
+    ]
+   },
+   {
+    "stem": "In one country, customs officers have the power to decide, shipment by shipment, which imported goods get a cut in import duty. Year after year, importers keep staff stationed at every port, treating officials to meals and giving gifts, trying to get their own goods a cut. The finance ministry still wants to collect duties, but it wants the most direct way to cut the staff and money importers spend on this.",
+    "question": "Of all the possible approaches, which does this most directly?",
+    "explain": "Importers spend money because every single cut is worth money. Scrap the case-by-case cuts and publish one set of rates, and there's nothing left to fight over.",
+    "options": [
+     {
+      "text": "Raise customs officers' pay so they no longer care about gifts.",
+      "correct": false,
+      "feedback": "The value of a cut hasn't changed, so importers are still willing to spend for it; a pay rise doesn't touch that value."
+     },
+     {
+      "text": "Make the penalties for accepting gifts heavier.",
+      "correct": false,
+      "feedback": "Penalties don't change what a cut is worth, so importers still have a reason to put staff into getting one."
+     },
+     {
+      "text": "Scrap the case-by-case cuts and publish one standard table of duty rates.",
+      "correct": true,
+      "feedback": "With no cuts to negotiate, there's no benefit to fight over, and importers have no reason to spend staff on it any more."
+     },
+     {
+      "text": "Rotate the officers who approve the cuts once a year.",
+      "correct": false,
+      "feedback": "Rotation only changes who gets visited. Importers have more people to keep in touch with, so they won't spend less on staff."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "More firms, more of the prize fought away",
+  "caption": "One license earns an extra 1 million yuan a year. Drag to add firms: each spends less and less, but the total spent keeps closing in on the 1 million line.",
+  "x": {
+   "label": "Firms competing",
+   "min": 2,
+   "max": 20
+  },
+  "y": {
+   "label": "Spent (10,000 yuan)",
+   "unit": "",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "m",
+    "label": "Firms competing",
+    "min": 2,
+    "max": 20,
+    "step": 1,
+    "value": 5,
+    "unit": " firms"
+   }
+  ],
+  "series": [
+   {
+    "name": "Total spent",
+    "expr": "100*(x-1)/x",
+    "tone": "accent"
+   },
+   {
+    "name": "Each firm",
+    "expr": "100*(x-1)/x^2",
+    "tone": "ink"
+   }
+  ],
+  "marks": [
+   {
+    "x": "m"
+   },
+   {
+    "y": 100,
+    "text": "License worth 1M a year"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Total (10k yuan)",
+    "expr": "100*(m-1)/m",
+    "unit": "",
+    "digits": 0
+   },
+   {
+    "label": "Each firm (10k yuan)",
+    "expr": "100*(m-1)/m^2",
+    "unit": "",
+    "digits": 1
+   },
+   {
+    "label": "Unspent (10k yuan)",
+    "expr": "100/m",
+    "unit": "",
+    "digits": 0
+   }
+  ]
+ }
+}

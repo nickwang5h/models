@@ -1,0 +1,188 @@
+{
+ "id": "legitimacy",
+ "name": "Legitimacy",
+ "en": "合法性",
+ "discipline": "society",
+ "one_line": "When people accept someone's right to decide, they follow without threats or rewards.",
+ "story": "On December 13, after the Supreme Court halts the recount, Gore gives his concession speech",
+ "shallow": {
+  "scene": "In the 2000 US presidential election, Al Gore and George W. Bush were only a few hundred votes apart in Florida, and who would be president hung in the balance for five weeks. On December 12, a Supreme Court ruling made it impossible for Florida's recount to go on. The next evening, Gore gave a televised speech in Washington. He said plainly that he disagreed with the ruling, but announced that he accepted the result, promised to help Bush, the president-elect, and asked his supporters to do the same.",
+  "plain": "At a weekend amateur soccer game, the referee gives a penalty you think he shouldn't have. You swear a couple of times, but you still go back to the center line. Nobody would punish you, and obeying him doesn't earn you a cent; you go along because you accept that he has the right to make the call. If a stranger pulled in off the street blew the same whistle, you'd most likely ignore him. So it isn't the whistle that makes people obey. It's the players accepting who has the right to judge, and that acceptance is called legitimacy. With it, you can take away the fines and the rewards, and the game still gets played."
+ },
+ "deep": {
+  "mechanism": "### Take away punishment and gain, and acceptance is still there\n\nFear makes people ask what punishment comes with defying; self-interest makes them ask what they get for going along. Acceptance is a different kind of reason: people treat obeying as the right thing to do, even when this decision costs them. Take away all monitoring, rewards and punishments, and the first two kinds of obedience vanish on the spot; obedience that comes from acceptance remains.\n\n### There's more than one reason to accept power\n\nSome listen to their elders because they believe in an order handed down from their ancestors; some follow a leader because they believe in his abilities and mission; some obey a newly appointed manager because they accept that the rules for appointing people gave the post its authority. Max Weber called these the traditional, charismatic and legal-rational types.\n\n### The more it costs you, the more you look at the process\n\nFor decisions that cost nothing, no one cares who has the say. The more a decision costs people, the more they look at three things: whether they had a chance to speak, whether the same rules bind the decision-maker too, and whether the decision-maker gave reasons. With all three, the losers mostly still go along. If the decision-maker changes the rules on the spot or favors people he knows, acceptance falls apart, and people go back to weighing punishment and gain.",
+  "origin": "The systematic account of legitimacy comes from sociology. Weber's *Economy and Society*, published in 1922 after his death, distinguished three types of rule: traditional, charismatic and legal-rational. In 1990 the social psychologist Tom Tyler published *Why People Obey the Law*. From a survey of Chicago residents, he found that whether people felt procedures were fair, and whether they accepted the authorities, were both linked to how willing they were to obey the law.",
+  "limits": "Legitimacy is best at explaining obedience and cooperation over the long run. From a single nod, you can't tell acceptance from fear: an employee who complies may just be afraid of losing the job. Acceptance also covers only particular things: an employee who accepts the manager's right to set shifts doesn't thereby accept him prying into her private life. And being accepted doesn't make something morally right: people have sincerely accepted unjust systems."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "A new store manager sends out the same kind of shift schedule as the last one did; the longtime staff followed the last manager's but drag their feet on his. The difference is whom the staff accept as having the right to set shifts."
+   },
+   {
+    "use": "design",
+    "text": "When setting rules for meetings with a rotating chair, put who sets the agenda and how often the chair changes to a vote at the first meeting. Then whoever chairs later, what people are accepting is this rule."
+   },
+   {
+    "use": "predict",
+    "text": "To know whether a team will fall apart once supervision is removed, first look at whether people are obeying the position or one particular person."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "The code changed; who followed?",
+    "text": "After the DAO, an investment fund run by code on Ethereum, was attacked in 2016, Ethereum used a hard fork to move the affected funds into a new contract from which they could be claimed back. Some participants opposed this intervention and kept running the original chain, which became Ethereum Classic."
+   },
+   {
+    "field": "Medicine",
+    "title": "Who works Lunar New Year's Eve",
+    "text": "You're the head nurse on a hospital ward, drawing up the duty roster for the Lunar New Year holiday. You post the rotation rules a month ahead, with yourself on the roster too, and ask the nurses who draw New Year's Eve to tell you their difficulties in person, explaining each assignment one by one. The nurses who draw the New Year's Eve shift are still unhappy, but nobody goes over your head to the department director, and swapped shifts follow the rules you posted."
+   },
+   {
+    "field": "Education",
+    "title": "Class rules bind the teacher too",
+    "text": "In the first week of term, you and your students set the class rules together; one says that during class all phones go on the teacher's desk. At the end of the month, you take a phone call yourself during a lesson. After class you explain to the whole class what happened, put your phone on the desk, and leave it there for a whole day."
+   }
+  ],
+  "ask": [
+   "If rewards, punishments and monitoring were all removed, what would still make them accept my right to decide?",
+   "Are they objecting to this outcome, or to my right to decide and the way I did it?",
+   "Can the people who lose out speak up, get an explanation, and see that the same rule binds me too?"
+  ],
+  "with": [
+   {
+    "id": "incentives",
+    "sees": "You want store staff to do something voluntarily that isn't in their performance reviews, such as tidying the stockroom after closing. Incentives would add a bonus; legitimacy suggests the opposite: don't rush to put a price on it. If the staff already accept your arrangements, putting a price on the task turns it from part of the job into a deal, and some will do only the part that's paid. If the staff don't accept you to begin with, a bonus is the only lever within reach for now; give it first, then work on the acceptance."
+   },
+   {
+    "id": "preference-falsification",
+    "sees": "In a vote, 92% raise their hands in favor (a made-up figure). Preference falsification says don't trust the number; switch to a secret ballot and see. Legitimacy says that if the process is open and the rules bind the decision-maker too, the losing side will mostly go along, even if some only raised their hands because they didn't dare not to. If nobody works around the decision afterward, go with this vote; if some people quietly organize resistance, redo it by secret ballot."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A store manager decides to take a stationery brand out of the window display, and anyone who doesn't comply has that month's performance score docked. The staff all comply, though a few privately think it's a mistake. A month later, the manager drops the checks and the penalties.",
+    "question": "Which observation best shows that the staff accept the manager's right to make this decision?",
+    "explain": "Once the checks and penalties are gone, fear of punishment is no longer a reason; turning down perks from the supplier takes away gain as a reason too. If they still comply, and take their complaints through the channel of raising them in person, that shows they accept the manager's right to decide.",
+    "options": [
+     {
+      "text": "The supplier quietly hands staff free samples to put the brand back in the window, and they all refuse; those who disagree go to the manager to say so in person.",
+      "correct": true,
+      "feedback": "There's no punishment, and putting it back would bring a benefit, yet the staff don't move it, and their complaints go through raising them in person. That shows they treat the manager's arrangement as something they ought to follow."
+     },
+     {
+      "text": "A month after the brand was removed, overall stationery sales haven't fallen, and the store's revenue is about the same.",
+      "correct": false,
+      "feedback": "Sales show the result was good for the store. Gain can explain going along; it doesn't show acceptance of the right to decide."
+     },
+     {
+      "text": "Nobody in the group chat openly objects to the change, and the few who thought it was a mistake also say nothing.",
+      "correct": false,
+      "feedback": "Nobody objecting openly may just mean nobody wants trouble; you can't tell acceptance from silence."
+     },
+     {
+      "text": "During head office inspections, every store's window display is exactly the same, with nothing missing or misplaced.",
+      "correct": false,
+      "feedback": "Being the same during inspections may just come from fear of a docked score; you can't tell acceptance from fear."
+     }
+    ]
+   },
+   {
+    "stem": "The founder of a design studio led the team for ten years, and the staff obeyed him because they trusted his eye for designs. When he retired, he handed his partner's seat to his favorite protégé, and the partnership agreement spelled out the handover. The protégé issues decisions through the same process, yet the staff begin asking him to explain his reasons first for every decision.",
+    "question": "Why did the staff's attitude change?",
+    "explain": "What the staff obeyed before was their belief in the founder's personal judgment. The agreement gave the protégé the position, but that belief in a person didn't pass to him along with it.",
+    "options": [
+     {
+      "text": "The protégé has less power to reward and punish than the founder, so the staff seize the chance to bargain more.",
+      "correct": false,
+      "feedback": "Nothing in the question suggests the power to reward or punish changed; what the staff want is reasons, not benefits."
+     },
+     {
+      "text": "The staff trusted the founder himself, and handing over the position can't hand over that trust.",
+      "correct": true,
+      "feedback": "A position can be handed over by an agreement; belief in a person can't."
+     },
+     {
+      "text": "The staff were really afraid of the founder, and once he was gone they weren't afraid anymore.",
+      "correct": false,
+      "feedback": "The question says the staff obeyed because they trusted his eye, not because they feared him."
+     },
+     {
+      "text": "The process the protégé kept is less sensible than the founder's original one, and the staff look down on it.",
+      "correct": false,
+      "feedback": "The question says the process hasn't changed; what changed is who issues the decisions."
+     }
+    ]
+   },
+   {
+    "stem": "Two community canteens raise the price of a lunch by 10% on the same day. Canteen A posts its cost sheet in advance, invites representatives of its regulars to check the books, and applies the rise equally at every counter. Canteen B simply changes its prices one morning, keeping the old price for a few longtime customers only. A month later, most of A's customers still come as usual, while outside B there are arguments every day and some customers have gone elsewhere.",
+    "question": "The price rise is the same; why are the results different?",
+    "explain": "A let people see the books and speak up, and the rule was the same for everyone, so those who lost out had reason to accept it. B changed prices on the spot and favored people it knew, so the argument was no longer about 10% on the price but about by what right.",
+    "options": [
+     {
+      "text": "B's food got worse, and customers left over the food, not the price.",
+      "correct": false,
+      "feedback": "The question says nothing about the food changing; the anger is about how the price was changed."
+     },
+     {
+      "text": "After A's rise, customers get a little extra in return, so losing out becomes a bargain, and they stay.",
+      "correct": false,
+      "feedback": "In the question, A's customers also pay 10% more, with nothing extra in return."
+     },
+     {
+      "text": "A let people check the books and speak up, with one rule for all; B changed prices on the spot and favored people it knew.",
+      "correct": true,
+      "feedback": "Losing out just as much, people still accept it when there's an explanation, a chance to speak and the same rule for all. When the process is unfair, the dispute turns to whether the decision-maker has the right."
+     },
+     {
+      "text": "A's customers aren't sensitive to price, while B's are more sensitive, so they react differently.",
+      "correct": false,
+      "feedback": "The two raised prices by the same amount, and the question says nothing about differences in customers' incomes."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "grid",
+  "title": "Fines and rewards gone, only acceptance is left",
+  "caption": "Three reasons to obey. Take away fines and rewards, and only the last is left: you accept the referee's right to make the call.",
+  "rowLabel": "Why you obey",
+  "colLabel": "Fines and rewards",
+  "rows": [
+   "Fear of a fine",
+   "Hope of a reward",
+   "Accept his right"
+  ],
+  "cols": [
+   "In place",
+   "Taken away"
+  ],
+  "cells": [
+   [
+    "Obey",
+    {
+     "text": "Ignore",
+     "tone": "muted"
+    }
+   ],
+   [
+    "Obey",
+    {
+     "text": "Ignore",
+     "tone": "muted"
+    }
+   ],
+   [
+    "Obey",
+    {
+     "text": "Obey",
+     "sub": "The game goes on",
+     "tone": "accent"
+    }
+   ]
+  ]
+ }
+}

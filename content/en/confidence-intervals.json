@@ -1,0 +1,216 @@
+{
+ "id": "confidence-intervals",
+ "name": "Confidence Intervals",
+ "en": "置信区间",
+ "discipline": "math",
+ "one_line": "When you estimate a number, say how far off it might be too.",
+ "story": "The New England Journal of Medicine publishes Moderna's phase 3 vaccine trial: efficacy 94.1% (89.3%–96.8%)",
+ "shallow": {
+  "scene": "During the two years of the pandemic, the news often said things like \"such-and-such vaccine is 95% effective.\" To see where a number like that comes from, look at the phase 3 trial of the Moderna vaccine. More than 30,000 volunteers were split at random into two groups of about the same size. One group got the vaccine; the other got a placebo, a shot with no vaccine in it.\n\nIn the end, 185 people in the placebo group got infections with symptoms, and only 11 in the vaccine group. 11 is about 6% of 185, which means the vaccine cut infections by about 94%. On December 30, 2020, the *New England Journal of Medicine* published the result. It gave the efficacy as 94.1%, followed by a range: 89.3% to 96.8%.\n\nThere were fewer than two hundred cases in all. Run the trial again with a different set of volunteers, and both 11 and 185 would change, and so would the efficacy worked out from them. The range says roughly where the true efficacy lies. Even if the true efficacy were at the very bottom, 89%, it would still be far above the 50% that regulators had required in advance.",
+  "plain": "In a ring toss at a fair, the ring lands somewhere different every throw. Now swap the post for a number nobody can see: the share of people in the city who take the subway to work. Nobody knows it; suppose the true figure is 60%. You ask 100 people at random and 62 say yes. That's like throwing a ring whose center lands on 62%.\n\nFrom the number of people you asked, you can work out how big the ring is: here about 10 percentage points either way, from 52% to 72%. That ring is the confidence interval. Ask another 100 people and you might get 58%, or 66%, and the ring lands somewhere else.\n\n\"95% confidence\" describes the way you throw. Ask 100 people each time, draw a ring about 10 points either way each time, throw like this a hundred times, and about ninety-five of the rings will land around the post. The post doesn't move; the ring does. Whether the one ring you threw caught the post, you can't see, even after the throw. The more people you ask, the more tightly the rings' centers bunch together, and the rings shrink too, yet the share that catch the post stays at 95%."
+ },
+ "deep": {
+  "mechanism": "### Four times the sample makes the interval only half as wide\n\nSuppose you pick $n=100$ delivery orders at random from a large number of them, and the sample average $\\bar{x}$ is 30 minutes. Two quantities here differ by just one word, so separate them first. The standard deviation $s$ measures single orders: how much faster or slower than average one order usually is, here 10 minutes. The standard error measures the average: how much the average would usually change if you took another 100 orders. It equals $s/\\sqrt{n}$.\n\nYou divide by $\\sqrt{n}$ rather than $n$ because the misses partly cancel out. Some orders are fast and some slow, so the misses of 100 orders added together are not 100 times one order's miss, only about $\\sqrt{100}=10$ times. Take two orders, each off by 10 minutes. If they're off in the same direction, the misses add up to 20, and the square is 400; if one is fast and one is slow, they cancel to 0. Each case happens half the time, so the average square is 200, exactly twice one order's (100). Each extra order adds one more share to the square, so 100 orders give 100 shares, and taking the square root brings it back to 10 times. Spread over 100 orders as an average, that leaves just a tenth of one order's miss. The average's wobble is roughly bell-shaped, with the middle 95% falling within 1.96 standard errors either side, so the 95% interval is:\n\n$$\\bar{x}\\pm1.96\\frac{s}{\\sqrt{n}}$$\n\nThat is, go 1.96 standard errors out from the sample average on each side. Put the numbers in: the standard error is $10\\div\\sqrt{100}=1$ minute, and the interval is about 28 to 32 minutes. With 400 orders the standard error drops to 0.5, and the interval narrows to 29 to 31. With only 25 orders the standard error is 2, and the interval widens to 26 to 34. If orders differed from each other more, with a standard deviation of 20, even 100 orders would only give you 26 to 34.\n\nThe subway survey uses the same formula. Each person answers only yes (counted as 1) or no (counted as 0). If 62% of the people asked are 1s, the standard deviation of a single answer is $s=\\sqrt{0.62\\times0.38}\\approx0.49$. Ask 100 people and the standard error is about 0.049; times 1.96, that's about 10 percentage points either way.\n\n### Decide how narrow you want the interval, and you can work back to how many to sample\n\nTo squeeze the interval to 0.5 minutes either way, with the standard deviation still 10, set $1.96\\times10\\div\\sqrt{n}=0.5$. That gives $\\sqrt{n}=39.2$, so you need about 1,537 orders. For 1 minute either way, about 384 orders is enough.\n\n### The 95% describes the method, not any one interval\n\nBack to deliveries. Take 100 orders each time and work out an interval each time. Do it a hundred times, and about ninety-five intervals cover the true average delivery time, while about five don't. The true average delivery time is the post in the ring toss; it doesn't move. What moves is the interval. The one in your hand is one of those hundred, and whether it covers the true value, nobody knows, even after sampling.",
+  "origin": "In 1937 the Polish-born statistician Jerzy Neyman published a paper that set out confidence intervals systematically. The question he wanted to answer was this: without making any guess beforehand about what the true value might be, how do you say clearly how reliable one estimate is? His answer was to say nothing about the probability for the one interval in your hand, and to give a guarantee only about the steps for drawing intervals. Whatever the true value is, if you follow these steps over and over, the intervals cover it in the agreed share of the times.",
+  "limits": "It works best when the sampling is random and the observations are independent of each other. It can estimate an average, a proportion, or the difference between two groups. When one user clicks a few hundred times, those clicks are very much alike, so their misses don't cancel out; treat them as a few hundred independent samples and the interval comes out unrealistically narrow. Promising customers that \"every order will arrive within the interval for the average delivery time\" mistakes the range for the average for the range of single orders: a single order is usually 10 minutes faster or slower."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "communicate",
+    "text": "When reporting a survey to the marketing team, write \"satisfaction 71%, give or take 4 percentage points,\" and they'll know there's no need to argue over the difference between 69% and 73%."
+   },
+   {
+    "use": "act",
+    "text": "A restaurant chain says a new staff schedule cut the average wait for a table by 3 minutes. Look at the interval first. If it's 1 to 5 minutes, roll the schedule out to every branch; if it's -1 to 7 minutes, run it in two branches for another month first."
+   },
+   {
+    "use": "design",
+    "text": "Before doing user interviews, decide how many points either way you want to pin satisfaction down to, then use the formula to work back to how many people to interview, so you don't find out afterward that the interval is too wide to use."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "Check the range before a redesign",
+    "text": "You run an online shop and show a new checkout page to a random half of visitors. After three weeks, the new page's conversion rate is 0.6 percentage points higher than the old one's, with a 95% interval of -0.2 to +1.4. That range includes a small loss as well as a clear gain. The redesign means rebuilding the payment system and costs a lot, so you decide to test for another three weeks. If it were a change of button color that one click could undo, you'd just roll it out to some of your visitors first."
+   },
+   {
+    "field": "Medicine",
+    "title": "Both ends of a blood pressure trial",
+    "text": "Between 2010 and 2013, the US SPRINT trial split more than nine thousand patients with high blood pressure into two groups at random. One group brought their systolic pressure below 120, the other below 140. In the results published in 2015, the intensive group's hazard ratio for major cardiovascular events such as heart attack and stroke was 0.75, with a 95% interval of 0.64 to 0.89. A hazard ratio of 1 means the two groups had the same risk, and the whole interval is below 1."
+   },
+   {
+    "field": "Investing",
+    "title": "The low end of the rent",
+    "text": "You want to buy an apartment to rent out. From leases already signed in the same neighborhood you pick 60 at random: the average rent is 4,000 yuan a month, with a 95% interval of 3,700 to 4,300 yuan. Your mortgage payment plus building fees come to 3,900 yuan a month. Put in 3,700 and you're 200 short each month, so you lower your offer a notch."
+   }
+  ],
+  "ask": [
+   "How was this number sampled, and who was left off the list?",
+   "Put each end of the interval into the decision in turn. Does the conclusion change?",
+   "Are the people or clicks in the sample independent of each other? Was the same person counted several times?"
+  ],
+  "with": [
+   {
+    "id": "bayesian-updating",
+    "sees": "You're testing a new product with data from only 8 users, while the previous generation of a similar product left records from several hundred users. A confidence interval counts only these 8 people, and comes out too wide to use. Bayesian updating lets you start from the old records and then correct them with the new data, which gives a much narrower conclusion; the price is that the old records must really resemble the new product. With no precedent at all, stick with the interval; with a reliable precedent, bring it in."
+   },
+   {
+    "id": "statistical-vs-practical-significance",
+    "sees": "A test on several hundred thousand people comes back: the new ranking makes the page 0.03 seconds faster, with an interval of 0.02 to 0.04, all of it above zero. The interval tells you the effect is real. Statistical versus practical significance goes on to ask whether 0.03 seconds is worth an engineer's time. Whether it goes on the engineers' schedule depends on that second question."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're running a poll for a client. You interviewed 600 people at random, and the margin of error on the support rate is about 4 percentage points either way. The client thinks that's too wide and wants it down to about 2 points either way, with the same sampling method.",
+    "question": "About how many people do you need to interview?",
+    "explain": "The margin of error is inversely proportional to the square root of the sample size. To halve it, multiply the sample size by four: 600 people becomes 2,400.",
+    "options": [
+     {
+      "text": "About 1,200: to halve the error, doubling the number of people is enough.",
+      "correct": false,
+      "feedback": "Doubling the people only shrinks the error to about 70% of what it was, from 4 points to about 2.8."
+     },
+     {
+      "text": "About 1,800: every extra 600 people takes 1 point off the error.",
+      "correct": false,
+      "feedback": "The error doesn't fall at a steady rate as people are added. The further you go, the less each extra person buys you."
+     },
+     {
+      "text": "About 2,400: multiply the people by four to halve the error.",
+      "correct": true,
+      "feedback": "The error is inversely proportional to the square root of the number of people, so halving it means multiplying the people by four."
+     },
+     {
+      "text": "About 4,800: to be safe when halving the error, multiply the people by eight.",
+      "correct": false,
+      "feedback": "Multiplying by eight brings the error down to about 1.4 points, narrower than asked for, and costs twice as much."
+     }
+    ]
+   },
+   {
+    "stem": "Your data team ran one randomized test on each of 1,000 unrelated product changes, and each time worked out a 95% interval with the same method. All the sampling was random, and every other condition the method requires held.",
+    "question": "Of these 1,000 intervals, about how many fail to cover the true effect of their change?",
+    "explain": "The 95% describes this method's long-run hit rate: of a thousand intervals, about nine hundred fifty cover the true value and about fifty don't.",
+    "options": [
+     {
+      "text": "About 50: each one has a 5% chance of missing.",
+      "correct": true,
+      "feedback": "5% of 1,000 intervals is about 50."
+     },
+     {
+      "text": "About 5: only very few intervals go wrong.",
+      "correct": false,
+      "feedback": "The share that miss is 5%, which for a thousand is about 50, not 5."
+     },
+     {
+      "text": "0: with the right method and conditions, an interval always covers the true value.",
+      "correct": false,
+      "feedback": "Even with the right method and the conditions holding, about 5% of samples happen to come out lopsided, and their intervals drift off with them."
+     },
+     {
+      "text": "About 950: 95% of the intervals are off from the true value.",
+      "correct": false,
+      "feedback": "950 is the number that cover the true value; about 50 don't."
+     }
+    ]
+   },
+   {
+    "stem": "A hospital phones discharged patients and asks them to rate their recovery from 1 to 5. Only the 800 who picked up answered; the average is 4.3, with a 95% interval of 4.2 to 4.4. Nurses report that most of the people who didn't pick up have trouble getting around and are recovering slowly. The hospital director says, \"The average for all discharged patients is definitely within this range.\"",
+    "question": "What is wrong with the director's claim?",
+    "explain": "The interval can only measure the sampling wobble among the people who picked up. The people who didn't pick up are different from them, so the average for everyone may fall outside the range.",
+    "options": [
+     {
+      "text": "800 people is too few; the sample is too small, which is why the interval is this wide.",
+      "correct": false,
+      "feedback": "4.2 to 4.4 is only 0.2 wide, a narrow interval. The problem is the people missing from the list, not the number of people."
+     },
+     {
+      "text": "The interval is too narrow; switch to the 99% calculation to widen the range.",
+      "correct": false,
+      "feedback": "Widened, the range still centers on the people who picked up; the ones who didn't are still not covered."
+     },
+     {
+      "text": "An average is easily dragged off by extreme low scores; use the median and work out the interval again.",
+      "correct": false,
+      "feedback": "With the median, the people who didn't pick up still haven't answered, and the bias is still there."
+     },
+     {
+      "text": "The interval reflects only the sampling wobble among those who picked up. If those who didn't are recovering worse, the average for everyone will fall outside the range.",
+      "correct": true,
+      "feedback": "The list itself left out one kind of patient. However narrow the interval, it only circles the people who picked up."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Truth stays put, intervals move: about 19 in 20 hit",
+  "caption": "Dot: a survey's share. Bar: its interval. Line: the unseen true 60%; a bar touching it is a catch. Raise \"People asked\": bars shrink, catches stay near 19.",
+  "x": {
+   "label": "Survey number"
+  },
+  "y": {
+   "label": "Share found",
+   "unit": "%",
+   "min": 20,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "m",
+    "label": "People asked",
+    "min": 25,
+    "max": 400,
+    "step": 25,
+    "value": 100,
+    "unit": ""
+   }
+  ],
+  "model": {
+   "steps": 20,
+   "init": {
+    "z": 0,
+    "c": -1
+   },
+   "next": {
+    "z": "randn()",
+    "c": "c + (abs(z) < 1.96)"
+   }
+  },
+  "series": [
+   {
+    "name": "This interval",
+    "expr": "clamp(60 + z*100*sqrt(0.24/m), 0, 100)",
+    "err": "196*sqrt(0.24/m)",
+    "tone": "accent",
+    "dots": true,
+    "line": false,
+    "from": 1
+   }
+  ],
+  "marks": [
+   {
+    "y": 60,
+    "text": "True share 60%"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Catches in 20",
+    "expr": "c + (abs(z) < 1.96)",
+    "unit": "",
+    "digits": 0
+   },
+   {
+    "label": "Width each side",
+    "expr": "196*sqrt(0.24/m)",
+    "unit": " pts",
+    "digits": 1
+   }
+  ],
+  "seed": 3
+ }
+}

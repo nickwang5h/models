@@ -1,0 +1,219 @@
+{
+ "id": "money-illusion",
+ "name": "Money Illusion",
+ "en": "货币幻觉",
+ "discipline": "economics",
+ "one_line": "We see the amount went up and forget to ask how much it still buys.",
+ "story": "Fisher buys a shirt in Berlin, and the shopkeeper, in the middle of hyperinflation, still thinks selling above cost means making money",
+ "shallow": {
+  "scene": "In 1922, while Germany was in the grip of severe inflation, the economist Irving Fisher bought a shirt in Berlin. The woman who owned the shop was sure she had made money: if the selling price was higher than what she had paid for the shirt, that was profit. But she also admitted that restocking the same shirt now would take all the money she had just received for it. On paper there was a markup, but all the money had to go on restocking, so she hadn't actually made anything. Fisher later recorded this conversation in a book.",
+  "plain": "Money illusion is comparing a new amount only with the old one, and forgetting that what the same yuan can buy has changed. The number on your payslip is right there to see, but how much prices have risen you have to work out yourself. Your monthly pay goes from 10,000 yuan to 10,500, and the payslip says you got a 5% raise. But the basket of everyday things you buy each month went from 100 yuan to 110 over the same period. A month's pay used to buy 100 baskets; now it buys only a little over 95."
+ },
+ "deep": {
+  "mechanism": "### When prices rise faster than pay, a raise is a pay cut\n\nSay pay rises 8% each time. If prices rise 2%, you can buy about 5.9% more; if prices also rise 8%, you break even; if prices rise 20%, you buy 10% less. The payslip says an 8% raise every time, yet in the last case you are getting poorer.\n\n### With big increases, divide instead of subtracting\n\nLet the pay increase be $w$ and the price increase $p$. Your money is $1+w$ times what it was, and prices are $1+p$ times what they were. Divide one by the other and subtract 1, and you get how much the amount you can buy has changed:\n\n$$\\frac{1+w}{1+p}-1=\\frac{w-p}{1+p}$$\n\nSimplified, it shows that the difference between the two increases still has to be divided by $1+p$. When the increases are small, $1+p$ is close to 1, and simply subtracting is accurate enough. With pay up 30% and prices up 80%, subtracting gives 50% less. But that 50% has to be divided by 1.8, and in reality it's only about 28% less.\n\n### The pay figure is right in front of you; what it buys you have to work out\n\nPicture two colleagues. A's payslip shows a 1% raise while prices rise 3%. B's payslip shows a 2% pay cut while prices stay put. Both can actually buy about 2% less, but A got a notice of a raise and B a notice of a pay cut, and they feel completely differently about it.",
+  "origin": "In 1928 Fisher published *The Money Illusion*, which set out this mistake in full. In 1997 Eldar Shafir, Peter Diamond and Amos Tversky published a questionnaire study: most respondents rated the person with the bigger raise on the payslip as happier, even when that person's raise was smaller once rising prices were taken out.",
+  "limits": "To compare price tags at two shops in the same month, or pay in two years when prices were steady, comparing the amounts directly is enough. It's when you compare pay, savings and budgets across years that you need to convert, and you should use the basket of things you yourself usually buy. Rent and tuition rise faster than average prices across the country. Convert using the national average increase, and the \"real income\" you get will look better than it really is."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "Before you negotiate a raise, multiply your current monthly pay by how many times more your basket of everyday things now costs. That figure is the lowest you can ask for just to keep your current standard of living."
+   },
+   {
+    "use": "predict",
+    "text": "To estimate what a pension that isn't adjusted for prices will be worth in ten years, multiply each year's price increase factors together, and convert it back into what it would buy today."
+   },
+   {
+    "use": "communicate",
+    "text": "When telling family or clients about a change in pay or a price rise, write down the new amount together with how much it buys, so they don't just remember the bigger number."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Work",
+    "title": "Pay cuts anger people; no raise, no fuss",
+    "text": "In 1986 Daniel Kahneman, Jack Knetsch and Richard Thaler ran a telephone survey of randomly chosen residents. A company is making a small profit, the local economy is in a slump, and many people are waiting for jobs. With no inflation, the company cuts pay by 7%: 62% said that was unfair. With prices rising 12%, the company raises pay by only 5%: only 22% said that was unfair. Either way, what employees can buy falls by six or seven percentage points, yet people were angry only about the one where the amount got smaller."
+   },
+   {
+    "field": "Taxes",
+    "title": "Pay bought no more, but the tax bracket went up",
+    "text": "US personal income tax is charged in brackets by amount, with the bracket thresholds fixed in law. In the second half of the 1970s, prices rose nearly 9% a year on average. Pay rose along with prices, so people weren't buying any more than before, yet they were pushed into higher tax brackets, and the extra tax needed no vote in Congress. In 1960 only about 3% of taxpayers faced a marginal tax rate above 30%; by 1981 it was 34%. That year Congress passed the Economic Recovery Tax Act, and from 1985 the bracket thresholds were raised every year in line with the Consumer Price Index."
+   },
+   {
+    "field": "Public administration",
+    "title": "The budget grew, the books didn't",
+    "text": "You're a librarian at a community library, and the yearly budget for buying books rises from 80,000 yuan to 92,000. Seeing the budget up 15%, the head librarian writes in the plan at the start of the year: 15% more new books, too. But the kind of books the library usually buys also went up 15% in price on average over the same period. At the year-end count, the number of new books is the same as last year, and the plan has fallen through."
+   }
+  ],
+  "ask": [
+   "Which year's money is this figure in? Turned into the basket of things I usually buy, is the quantity bigger or smaller?",
+   "Have the two amounts I'm comparing been converted using prices from the same year, for the same basket?",
+   "Is the amount of this money fixed by contract, or will it move with prices?"
+  ],
+  "with": [
+   {
+    "id": "avoid-ruin",
+    "sees": "You're 60, with savings you'll start using in ten years, and prices rise every year. Money illusion sees this: in a fixed-term deposit, the number in the account grows every year, but what it buys shrinks year after year, so the money should go somewhere that keeps up with prices. Avoiding ruin sees this: if you lose a big chunk before you need the money, there's no time left to make it back, so don't gamble money you can't afford to lose. The two give opposite advice. The closer the day you'll need the money, the larger the share that should stay where the principal is safe; for the part you won't need for twenty years, the shrinking that money illusion works out is the bigger risk."
+   },
+   {
+    "id": "loss-aversion",
+    "sees": "A company wants to hold down labor costs in a year of inflation. Cut pay outright by 4%, and employees will protest. Freeze pay for a year while prices rise 4%, and in real terms they lose just as much, yet hardly anyone complains. Loss aversion explains the first reaction, and money illusion the second: if the number on paper hasn't gone down, it doesn't feel like a loss. To predict how employees will react, look first at whether the nominal figure goes up or down, then at where purchasing power actually ends up."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "An engineer who is retiring can choose between two monthly pensions. A: a fixed 3,000 yuan a month that never changes. B: 2,600 yuan a month in the first year, raised every year in line with price increases. In these years prices rise 4% a year. He chooses A, reasoning that \"A pays 400 yuan more than B every month.\"",
+    "question": "What does his reasoning leave out?",
+    "explain": "A's 3,000 yuan never changes, and with prices rising 4% a year, it buys less every year. B rises with prices, and by the fifth year it's about 3,040 yuan a month, more than A even in amount. Measured by what it buys, B doesn't shrink by a cent from the first year on. Comparing only the amounts, you can't see this.",
+    "options": [
+     {
+      "text": "B's money will be eaten up by inflation, and A's won't.",
+      "correct": false,
+      "feedback": "It's the other way around. B is raised every year in line with prices, so what it buys stays the same; it's the fixed A that inflation eats away year after year."
+     },
+     {
+      "text": "What A's 3,000 yuan buys shrinks every year, while B rises with prices and from the fifth year is bigger in amount too.",
+      "correct": true,
+      "feedback": "2,600 yuan multiplied by 1.04 each year, four times over, is about 3,040 yuan. A's number doesn't move, but its purchasing power shrinks by about 4% a year."
+     },
+     {
+      "text": "Nothing: A pays more every month, so of course it's the better deal.",
+      "correct": false,
+      "feedback": "It pays more only for the first few years. As prices rise year after year, A's 3,000 yuan goes less and less far, and after a few years B overtakes it even in amount."
+     },
+     {
+      "text": "Income tax: the bigger pension means paying more tax.",
+      "correct": false,
+      "feedback": "Tax is a separate matter. Even if neither pension were taxed, his reasoning would still have a hole: he's comparing today's amounts with money paid in every future year."
+     }
+    ]
+   },
+   {
+    "stem": "You pay 3,000 yuan a month on your mortgage, fixed by contract and not adjusted for prices. Last year your monthly pay was 10,000 yuan; this year it rose to 11,000. Over the same period, the things you buy day to day rose 10% in price on average.",
+    "question": "Compared with last year, how has the pressure of the monthly payment changed?",
+    "explain": "The monthly payment didn't rise by a single yuan while pay rose, so its share falls from 3,000 ÷ 10,000, or 30%, to 3,000 ÷ 11,000, about 27%.",
+    "options": [
+     {
+      "text": "There's no way to compare: the payment is a fixed figure and has nothing to do with how pay changes.",
+      "correct": false,
+      "feedback": "The payment's share of monthly pay can be worked out every month, and when pay changes, the share changes with it."
+     },
+     {
+      "text": "No change: pay and prices both rose 10%, so they cancel out.",
+      "correct": false,
+      "feedback": "The payment is a fixed figure in the contract and didn't rise, so there's nothing to cancel out."
+     },
+     {
+      "text": "Lighter: the payment's share of monthly pay falls from 30% to about 27%.",
+      "correct": true,
+      "feedback": "The burden of a fixed amount gets lighter as pay rises."
+     },
+     {
+      "text": "Heavier: the payment is still 3,000 yuan, but prices have gone up, so things are tighter.",
+      "correct": false,
+      "feedback": "Pay rose 10% and the payment didn't rise by a single yuan, so the payment's share of pay fell. Everyday spending costing more is a separate matter, and shouldn't be counted in the pressure from the payment."
+     }
+    ]
+   },
+   {
+    "stem": "A works in a country with fairly high inflation. A's yearly pay rose 9%, and local prices rose 8% over the same period. B works in a country where prices are steady. B's yearly pay rose 3%, and local prices rose 1%.",
+    "question": "Compared with last year, whose pay this year buys more extra?",
+    "explain": "Divide each person's pay increase by local prices: for A it's 1.09 ÷ 1.08, for B 1.03 ÷ 1.01. B can buy more extra.",
+    "options": [
+     {
+      "text": "A: yearly pay rose 9%, 6 points more than B's.",
+      "correct": false,
+      "feedback": "9% is the figure on the payslip. Prices where A lives also rose 8%, eating up most of it."
+     },
+     {
+      "text": "About the same: both rose a little more than local prices.",
+      "correct": false,
+      "feedback": "A is only 1 point ahead and B is 2 points ahead, so the extra B can buy is about twice A's."
+     },
+     {
+      "text": "There's no way to compare: they live in different countries with different currencies.",
+      "correct": false,
+      "feedback": "Each only needs to be compared with what they could buy last year. There's no need for a common currency."
+     },
+     {
+      "text": "B: B can buy about 2% more, while A can buy only about 0.9% more.",
+      "correct": true,
+      "feedback": "1.03 ÷ 1.01 is about 1.020, and 1.09 ÷ 1.08 is about 1.009."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "When prices outrun pay, a raise is a pay cut",
+  "caption": "The raise on the payslip stays positive. Once prices rise faster, you can buy less. Try pay up 30% and prices up 80%: subtracting says 50% less; really it's 28%.",
+  "x": {
+   "label": "Price increase",
+   "unit": "%",
+   "min": 0,
+   "max": 100,
+   "step": 1
+  },
+  "y": {
+   "label": "Vs. last year",
+   "unit": "%",
+   "min": -50,
+   "max": 50
+  },
+  "params": [
+   {
+    "id": "w",
+    "label": "Pay increase",
+    "min": 0,
+    "max": 50,
+    "step": 1,
+    "value": 8,
+    "unit": "%"
+   },
+   {
+    "id": "p",
+    "label": "Price increase",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "value": 20,
+    "unit": "%"
+   }
+  ],
+  "series": [
+   {
+    "name": "Raise on payslip",
+    "expr": "w",
+    "tone": "muted",
+    "dashed": true
+   },
+   {
+    "name": "What you can buy",
+    "expr": "((1+w/100)/(1+x/100)-1)*100",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "x": "p",
+    "y": "((1+w/100)/(1+p/100)-1)*100"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "What you can buy",
+    "expr": "((1+w/100)/(1+p/100)-1)*100",
+    "unit": "%",
+    "digits": 1
+   },
+   {
+    "label": "Simple subtraction",
+    "expr": "w-p",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

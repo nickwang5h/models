@@ -1,0 +1,189 @@
+{
+ "id": "redundancy",
+ "name": "Redundancy",
+ "en": "冗余",
+ "discipline": "systems",
+ "one_line": "Keep a spare of anything vital, so one failure doesn't stop everything.",
+ "story": "Apollo 13's service module fails, and the lunar module's backup power and life support bring three men home",
+ "shallow": {
+  "scene": "On April 13, 1970, Apollo 13 was on its way to the Moon when an oxygen tank in the service module exploded. Oxygen poured out, and the fuel cells, which ran on oxygen, could no longer supply power. The crew, Jim Lovell, Jack Swigert and Fred Haise, gave up the Moon landing and moved into the lunar module. It was only meant for landing on the Moon, but it had its own power and life-support equipment, and the explosion had not touched it. The ground team helped them save power and water and correct their course, and at the end the three moved back into the command module and returned to Earth.",
+  "plain": "The arithmetic of redundancy can be done in a single morning. You have a 7 a.m. flight, and the night before you set two alarms: one on your phone, one on the digital clock by the bed. Suppose each alarm has a 1% chance of not going off on a given day. With only one, you'd miss your flight one morning in a hundred. If the two alarms have nothing to do with each other, the chance that both fail is 1% of 1%, about one morning in ten thousand. But if both alarms are set on the same phone, they go silent together when the phone's battery dies, and the one-in-ten-thousand sum no longer holds."
+ },
+ "deep": {
+  "mechanism": "### Each extra independent backup multiplies the chance of a stoppage once more\n\nA water pump has a 10% chance of breaking down in a given period. If it is your only supply, the chance the water stops is 10%. Add a second, independent pump, and the water stops only if both break at once. In the periods when the first pump breaks, the second still has only a 10% chance of breaking too, so both break together 1% of the time; with three pumps it is 0.1%. Call each pump's chance of breaking $p$. The chance that $n$ pumps that have nothing to do with each other all break together is\n\n$$p\\times p\\times\\cdots\\times p=p^n$$\n\nThe bigger $p$ is, the less one more pump saves. If each pump has a 30% chance of breaking, two break together 9% of the time, and three still do $0.3^3=2.7\\%$ of the time, which is higher than with two pumps that fail 10% of the time each.\n\n### A margin is a part's backup for itself\n\nA load-bearing beam is expected to carry 10 kilonewtons and can actually carry 20. Divide one by the other and the safety factor is 2. If wind pushes the load up to 15 kilonewtons, the beam is still short of its limit; a beam with a factor of only 1.1 can carry at most 11 kilonewtons, and the same wind overloads it. The bigger the factor, the better the beam copes with loads above what was expected and with material weaker than its rating, and the heavier and more expensive it is.\n\n### The backup and the main part must not fall to the same thing\n\nIf two pumps are on the same power line, they both stop when the line goes down. Then they are no longer independent, the 1% sum no longer applies, and the chance the water stops is at least the failure rate of that line. The backup pump also has to pump enough, be able to start, and have been test-run; otherwise you find out it won't turn only when its turn comes.",
+  "origin": "Redundancy has no single inventor; mechanical, civil and electrical engineering were using it long ago. In 1956 John von Neumann published \"Probabilistic Logics and the Synthesis of Reliable Organisms from Unreliable Components,\" which studied how adding components and arranging the way they connect can make reliable systems out of unreliable parts. Safety factors, for their part, wrote load margins into design codes.",
+  "limits": "Backups pay off most where a failure costs a great deal and can't be fixed on the spot, as in flying and surgery. Where a failure costs little and recovery is quick, an extra set of equipment brings upkeep, switch-over steps and new points of failure, which can be more trouble than the failure itself. More backups also don't mean independent ones: two servers in the same machine room lose power together, and a synchronized backup copies an accidental deletion right along with everything else."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When planning the water supply for a primary school in the mountains, decide which pipe the backup tank connects to and how many days without water its size should cover, so that if the main source fails, the classrooms and the canteen can hold out until it is fixed."
+   },
+   {
+    "use": "act",
+    "text": "The night before a hike, go through the single points of failure on the route. If there is only one path you can take, or only one person carrying the keys, find a stand-in that can take its place first."
+   },
+   {
+    "use": "explore",
+    "text": "Take a plan that relies on one person, one line or one supplier, and ask item by item which one, if it fell, would bring the whole thing down first. That pushes you to find a second route."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Aerospace engineering",
+    "title": "Main and backup fail together",
+    "text": "In 1996 the European Ariane 5 rocket failed on its first flight. It carried two inertial reference systems, a main and a backup, running the same software. They met the same set of data and shut down one after the other because of the same software error. The backup couldn't take over, because it fell to the same error as the main one."
+   },
+   {
+    "field": "Personal finance",
+    "title": "Six months of cushion",
+    "text": "Your household's essential spending is 10,000 yuan a month, and you keep another 60,000 yuan in cash that you can take out at any time. Within one year you lose your job and the stock market drops sharply. That cash pays six months of spending. You pay the rent without selling a single share, and use the time to find a new job."
+   },
+   {
+    "field": "Teamwork",
+    "title": "Only one person can do the schedule",
+    "text": "You run a volunteer team that drives elderly people to the hospital on weekends, and only one volunteer knows how to use the schedule and the elderly people's contact details. The week he has a bad cold, nobody on the team dares touch the spreadsheet, and three elderly people wait for a car that never comes. Afterwards you have another member go over the schedule with him every month, and you try doing a week of scheduling yourself. The next time he takes time off, the schedule still gets made and the cars still go out."
+   }
+  ],
+  "ask": [
+   "Which part, which person, which source would stop the whole thing if it fell?",
+   "Do the main and the backup share a power supply, a location, software or an upstream source? Go through the wiring diagrams, the contracts and the code dependencies.",
+   "How much loss would one more backup save? Is that worth its upkeep and the extra switch-over steps?"
+  ],
+  "with": [
+   {
+    "id": "opportunity-cost",
+    "sees": "The kitchen of a small noodle shop has a backup fridge that usually sits idle. At the end of the month the owner wants to sell it, and the money could buy a new coffee machine. Redundancy says keep it: if the main fridge breaks, a whole fridge of ingredients is ruined that day. Opportunity cost says this fridge ties up money and floor space that could be doing something else. Multiply what one breakdown of the main fridge costs by the number of times it might break in a year. If that is bigger than the money and space the backup ties up, keep it; if it is much smaller, sell it."
+   },
+   {
+    "id": "antifragility",
+    "sees": "An online shop's payment channel goes down briefly, and after switching to the backup channel it doesn't lose a single order. Redundancy's job ends there: everything is the same after the outage as before. Resilience and antifragility go on to ask which step of the switch-over this outage showed to be slow, and whether it's worth fixing now, treating the next small outage as a drill."
+   },
+   {
+    "id": "diversification",
+    "sees": "You have two suppliers, and both bring their goods in through the same port. Redundancy sees two contracts; diversification and correlation sees one shipping route: if the port closes, both run out of stock together. Count how many upstream sources the two share. The more they share, the more the backup should be replaced with a supplier that ships through a different port."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're organizing an outdoor music festival, and the stage and sound system need 6 kilowatts in total at night. There are two generators on site, each with a maximum of 4 kilowatts, and normally they share the load at 3 kilowatts each. The organizers say that if either one stops partway through, the show won't be affected.",
+    "question": "However many machines you use to make it up, how many more kilowatts of output need to be connected for that statement to just hold?",
+    "explain": "After one stops, the other can give at most 4 kilowatts, which is 2 short of 6; add those 2 kilowatts and the statement just holds. The two outputs add up to 8 kilowatts, but that is only the normal total. Whether a backup is any use depends on what is left once one machine is gone.",
+    "options": [
+     {
+      "text": "2 kilowatts short: after one stops only 4 are left, and the gap to 6 has to be made up.",
+      "correct": true,
+      "feedback": "The remaining one at full power gives 4 kilowatts, still 2 short of 6, so at least that much output has to be ready to take over at once."
+     },
+     {
+      "text": "Connect 4 more kilowatts: make it up with a whole machine, another generator like the ones already there.",
+      "correct": false,
+      "feedback": "Connecting 4 more kilowatts adds twice the 2-kilowatt gap, which is more than the statement needs to just hold."
+     },
+     {
+      "text": "Nothing more is needed: the two together make 8 kilowatts, 2 more than 6.",
+      "correct": false,
+      "feedback": "8 kilowatts is the total while both are running; when one stops, the total drops straight to 4, below 6."
+     },
+     {
+      "text": "Connect 6 more kilowatts: the backup has to carry all the power on its own.",
+      "correct": false,
+      "feedback": "When one stops, the other is still giving 4 kilowatts, so the backup doesn't need to carry all 6 on its own."
+     }
+    ]
+   },
+   {
+    "stem": "A small rural health center has a backup diesel generator, which the person on duty starts by hand when the power goes out. It hasn't been run in three years, and the diesel in its tank was put in last year. The center wants to guarantee that power comes back to the operating room within five minutes of an outage.",
+    "question": "To be sure the five-minute goal can be met, what is missing now?",
+    "explain": "Having a backup sitting there doesn't mean that, the moment it has to take over, it will start and be up to the job. Only by actually starting it once under load do you find out how long it takes and whether anything goes wrong.",
+    "options": [
+     {
+      "text": "Read through the manual to confirm that the generator's rated power is enough for the operating room.",
+      "correct": false,
+      "feedback": "Enough power only shows it is capable. Whether it starts, and how long it takes, you only learn by actually starting it."
+     },
+     {
+      "text": "Buy another generator of the same model and put it in the same machine room.",
+      "correct": false,
+      "feedback": "One more is one more machine nobody has tried, and in the same room a single flood or broken circuit could hit both."
+     },
+     {
+      "text": "Cut the power once, have the person on duty start it under load, and time how many minutes it takes to restore power.",
+      "correct": true,
+      "feedback": "One real drill measures how long it takes, and it also brings problems like failing to ignite or a blocked fuel line to light ahead of time."
+     },
+     {
+      "text": "Fill the tank with fresh diesel, and keep a contact list of the people on duty.",
+      "correct": false,
+      "feedback": "Whether a machine that hasn't run in three years will start, and in how many minutes, is still unknown after the fresh fuel and the list."
+     }
+    ]
+   },
+   {
+    "stem": "A mountaintop weather station sends its data back over two links, satellite and radio. Each has a 20% chance of going down in a given night, and the equipment for the two links is completely independent. But both links run off the same set of batteries at the station, which has a 5% chance of failing in a night, and when it fails, both links go down at once.",
+    "question": "What is the chance that in one night no data gets back at all?",
+    "explain": "There are two ways for the data not to get back, and they don't overlap. The batteries fail: 5%. Or the batteries are fine (95%) and both links go down on their own: 95% × 4% = 3.8%. Together that is 8.8%.",
+    "options": [
+     {
+      "text": "24%",
+      "correct": false,
+      "feedback": "24% adds 20% and 4% straight together. 4% is the chance that both links are down at once, and the two numbers are not two separate, independent items."
+     },
+     {
+      "text": "8.8%",
+      "correct": true,
+      "feedback": "5% + 95% × 20% × 20% = 8.8%: the shared batteries take their 5% first, and only in the remaining nights do the two links fail on their own."
+     },
+     {
+      "text": "5%",
+      "correct": false,
+      "feedback": "5% counts only the battery failure. When the batteries are fine, the two links can still happen to go down at the same time."
+     },
+     {
+      "text": "4%",
+      "correct": false,
+      "feedback": "4% counts only the two links failing on their own, and misses the other route, through the shared batteries."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "type": "bar",
+  "title": "Each independent pump multiplies the odds again",
+  "caption": "If each pump fails 10% of the time, one, two and three pumps give 10%, 1%, 0.1%; at 30% each, three still give 2.7%. Only if they don't share a power line.",
+  "categories": [
+   "1 pump",
+   "2 pumps",
+   "3 pumps"
+  ],
+  "y": {
+   "label": "Chance of no water",
+   "unit": "%",
+   "min": 0
+  },
+  "digits": 1,
+  "series": [
+   {
+    "name": "Each fails 10%",
+    "values": [
+     10,
+     1,
+     0.1
+    ],
+    "tone": "accent"
+   },
+   {
+    "name": "Each fails 30%",
+    "values": [
+     30,
+     9,
+     2.7
+    ],
+    "tone": "muted"
+   }
+  ]
+ }
+}

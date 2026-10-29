@@ -1,0 +1,222 @@
+{
+ "id": "margin-of-safety",
+ "name": "Margin of Safety",
+ "en": "安全边际",
+ "discipline": "investing",
+ "one_line": "Leave yourself some room, so that even if you're wrong you don't go under.",
+ "story": "Buffett buys Washington Post Company stock at about a quarter of what he thinks it's worth, and it keeps falling into 1974",
+ "shallow": {
+  "scene": "In 1973, Warren Buffett used Berkshire Hathaway's money to buy shares in The Washington Post Company. At the time the stock market valued the whole company at about 100 million dollars. He had gone through its newspaper and TV station businesses one by one and reckoned that together they were worth 400 to 500 million dollars. In other words, for each dollar he spent, he was buying a business worth four or five dollars.\n\nAfter he bought, the share price fell instead of rising: by the end of 1974, the holding was worth about a quarter less than he had paid. But the paper still came out as usual, and the TV stations still sold ads as usual. The business itself hadn't changed; only the price quoted on the stock market had. He had paid only about a quarter of his valuation, so even if the valuation was 70% too high he wouldn't lose money. He didn't need to sell, and he didn't.\n\nHe held on to the shares for decades, and they later rose more than a hundredfold. **Because he had kept the price he paid low enough, he could hold on however ugly the quoted price looked.**",
+  "plain": "In a secondhand music shop, you guess from memory that an old guitar could be resold for 1,000 yuan, and the owner asks 600. That gives you a 400-yuan margin of safety: even if your guess is off, you can be wrong by up to 400 yuan. After buying it you find out it's a replica, worth only 700. Having paid 600, you still make 100; someone who paid 950 for the same model at another shop loses 250."
+ },
+ "deep": {
+  "mechanism": "### However big the gap is, that's how wrong your estimate can be\n\nSay your estimate of the value is $V$ and the price you pay is $P$. As long as the true value doesn't fall below what you paid, you don't lose. The distance it can fall from $V$ is $V-P$, which as a share of the estimate is:\n\n$$1-\\frac{P}{V}$$\n\nIn other words, if your estimate turns out too high by no more than this share, you don't lose. Take the guitar: $1-600/1000=40\\%$, so as long as the true value is less than 40% below the estimate, you don't lose. The replica was only 30% below, so you still made money. A plot of land works the same way. If you value it at 2 million yuan and buy it for 1.2 million, you can be 40% wrong. Raise the price to 1.8 million and you can only be 10% wrong; push it down to 800,000 and you can be 60% wrong.\n\nEngineering writes this as a multiple. A tie rod is expected to carry a pull of 10 kN; you build it to withstand 30 kN before it breaks, so the safety factor is 3. If the pull rises to 15 kN, it still has twice the room it needs.\n\n### The gap only counts if the valuation rests on evidence\n\nRaise your valuation and the gap on paper grows with it, but the true value hasn't changed, and you are not one bit better protected. You have to start from contracts, debts and cash that can be checked, and strike out any growth with no evidence behind it before doing the sums. If you can't put together a believable range for something, don't buy it.\n\nIn engineering the multiple is the force something can bear divided by the force it actually takes. If the material is weaker than its rating, the top of the fraction shrinks; if the load is bigger than expected, the bottom grows. These two often come together. Suppose that tie rod can really bear only 20 kN and then meets a pull of 15 kN: 20 divided by 15, and the factor of 3 has shrunk to just over 1.3.\n\n### Put the extra room on the side most likely to go wrong\n\nIf the material is unfamiliar, the calculations are rough, and a failure can't be undone, choose a large factor; only when test results and a record of use are complete can you risk a small one. With a given reserve fund, rather than spreading a little over every item, keep it all for the item you're least sure about.",
+  "origin": "In 1934 Benjamin Graham wrote *Security Analysis* with David Dodd, and in 1949, in *The Intelligent Investor*, he made the margin of safety the central idea of investing. The safety factor in engineering is older: the Scottish engineer William Rankine was already discussing it in his *Manual of Applied Mechanics* of 1858.",
+  "limits": "A margin is worth the most when the valuation rests on evidence and a wrong call can't be undone: buying stocks, building bridges and signing fixed-price contracts all count. When the valuation hangs on something that hasn't happened yet, such as a new drug getting approved or a lawsuit being won, it is worth a lot if it comes off and next to nothing if it doesn't. You can't estimate a range, and no amount of haggling the price down creates a margin. Taking a quick discount off an optimistic valuation and calling that protection is fooling yourself, because the starting point of the discount was too high in the first place. The same goes for engineering: however big the factor, it can't guard against a kind of failure left out at the design stage."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "Before making an offer, first write down the one or two items in your valuation most likely to be too high, then set a top price. If the asking price goes over it, walk away from the deal."
+   },
+   {
+    "use": "design",
+    "text": "When choosing how thick to make a hanging rod, first write down whether you're guarding against it snapping or against the joint coming loose, then make its load capacity at least the agreed multiple of the expected load."
+   },
+   {
+    "use": "reason",
+    "text": "With the same 20% gap, an office building valued from its leases and a startup valued on raising money next year can absorb different-sized mistakes. The first is usually wrong by 10% or 20%; the second may go to zero altogether."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Engineering",
+    "title": "Bad wire in the main cables",
+    "text": "In 1878, while the main cables of the Brooklyn Bridge were being spun, the site found that the supplier had mixed wire that had failed inspection into its deliveries, and some of it was already spun into the cables. Tearing it out and starting over would have cost a huge amount. The chief engineer, Washington Roebling, redid the calculations: the original design had far more strength than the calculations required, so he had 150 more good wires added to each main cable. The bridge opened in 1883."
+   },
+   {
+    "field": "Personal life",
+    "title": "Five extra relatives",
+    "text": "You're cooking for a family dinner for thirty. At 400 grams a person you need 12 kilograms, and you make 15. On the day, five more relatives turn up, and there's just enough food; nobody can tell extra people came."
+   },
+   {
+    "field": "Business",
+    "title": "A fixed-price booth job",
+    "text": "You run a small company that builds exhibition booths, and you take on a booth for a fixed price of 80,000 yuan. Boards, labor and transport come to 60,000 in costs. Halfway through, the price of boards goes up and one wall has to be redone; together these cost an extra 15,000, and the job still makes 5,000 in the end."
+   }
+  ],
+  "ask": [
+   "Which part of this valuation is something I hope will happen, rather than something that already has?",
+   "For the item most likely to be wrong, how wrong would it have to be to use up the gap?",
+   "If the price or the margin never gets to where it should be, am I willing to give this up?"
+  ],
+  "with": [
+   {
+    "id": "opportunity-cost",
+    "sees": "You have your eye on a used freight truck. You value it at 400,000 yuan, it's priced at 340,000, and you want to wait until it drops to 260,000. Margin of safety says 340,000 leaves only 15% of room: if your valuation is 20% too high you lose, so it's worth waiting. Opportunity cost says every month the money sits idle, you miss what it could earn elsewhere, and if the price never gets to 260,000, the waiting costs you too. If every item in the valuation rests on evidence and you've worked out the worst case, a 15% gap is enough to act on; if half the valuation is guesswork, keep waiting."
+   },
+   {
+    "id": "redundancy",
+    "sees": "For a server that has to sit in the server room, you can buy twice the disk space, or buy a second identical machine. The extra space guards against more data than you estimated; the second machine is redundancy, guarding against the whole thing losing power. If you can't tell how fast the data will grow, add space first; if the machine is old and the wiring is poor, buy the second machine first."
+   },
+   {
+    "id": "premortem",
+    "sees": "The budget for an event has 20% set aside as a margin, but nobody knows where to put it. First hold a premortem: imagine the event has flopped. Was it most likely the venue raising its price at the last minute, the weather, or a supplier backing out? Put the margin behind the item people mention most."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You want to buy a small rented shop, and the seller asks 3 million yuan. Using the rents from the tenants' best days, you work out that it's worth 4.5 million, and you think it's a third off. But two of the three leases run out within a year, and those tenants have said they won't renew. At the rents you can confirm now, it's worth only 3.2 million.",
+    "question": "How much room for error does this deal leave you?",
+    "explain": "The 4.5 million comes from the rents at their best, with no evidence that they'll return; the only value you can check is 3.2 million. The gap is 200,000 yuan, about 6% of the valuation. If the valuation drops by another 6%, the gap is used up.",
+    "options": [
+     {
+      "text": "About a third, enough to absorb mistakes in the valuation.",
+      "correct": false,
+      "feedback": "The third is worked out from the 4.5 million, which has no evidence behind it. Once the leases run out, the rents can't go back to that level."
+     },
+     {
+      "text": "About 6%; the gap is positive, so you can't lose by buying.",
+      "correct": false,
+      "feedback": "A positive gap only means you don't lose at today's rents. If one more lease runs into trouble, that 6% is used up."
+     },
+     {
+      "text": "No gap: 3 million is already higher than any valuation.",
+      "correct": false,
+      "feedback": "The value you can check is 3.2 million, above the 3 million price, so there is still a gap, just a thin one."
+     },
+     {
+      "text": "About 6%; a small cut to the valuation means a loss, so keep pushing the price down or walk away.",
+      "correct": true,
+      "feedback": "The gap is only 200,000 yuan, and another 6% cut to the valuation uses it up. Either keep pushing the price down or walk away."
+     }
+    ]
+   },
+   {
+    "stem": "You're installing a hanging rod in a workshop. The largest pull it's expected to take is 60 kN, and its load capacity must be 3 times that pull. When this batch of rods arrives and is tested, their real strength is only 75% of their rated strength.",
+    "question": "What is the lowest rated strength of rod you can choose?",
+    "explain": "The real capacity has to reach 3×60=180 kN, and real strength is only 0.75 of the rating, so the rating must be at least 180÷0.75=240 kN. Check: 240×0.75=180.",
+    "options": [
+     {
+      "text": "225 kN.",
+      "correct": false,
+      "feedback": "225 kN adds 25% to 180 kN. With 75% of the rating, you have to divide by 0.75, not multiply by 1.25; after the shortfall it is only about 169 kN."
+     },
+     {
+      "text": "240 kN.",
+      "correct": true,
+      "feedback": "75% of 240 kN is 180 kN, exactly 3 times 60 kN."
+     },
+     {
+      "text": "180 kN.",
+      "correct": false,
+      "feedback": "180 kN is the real strength you need. The rods arrive at only 75% of their rating, so a rod chosen this way really has only 135 kN."
+     },
+     {
+      "text": "80 kN.",
+      "correct": false,
+      "feedback": "80 kN is 60 kN divided by 0.75. It leaves out the factor of 3, and the real strength is only 60 kN."
+     }
+    ]
+   },
+   {
+    "stem": "You bought shares in a small factory that makes industrial film at 60% of your valuation. Six months later the share price has fallen another 30%. The annual report says that two big customers, who made up half its revenue, have stopped placing orders; it doesn't say why.",
+    "question": "What should you do now?",
+    "explain": "Paying 60% left a margin against the valuation from six months ago, when all the customers were still there. With half the revenue gone, the old valuation is out of date. Work it out again from the customers that are left, then compare it with the current price.",
+    "options": [
+     {
+      "text": "Do nothing: buying at 60% already left enough room, and the drop is just the price moving around.",
+      "correct": false,
+      "feedback": "The room was left against the valuation at the time. Half of what the valuation rested on has collapsed, and the room went with it."
+     },
+     {
+      "text": "Sell right away: the falling price shows that your judgment when buying was wrong.",
+      "correct": false,
+      "feedback": "A falling price by itself doesn't show where the judgment went wrong. Whether to sell depends on the value after you work it out again."
+     },
+     {
+      "text": "Value it again based on the customers that are left, then compare with the current price; if the gap is gone, get out.",
+      "correct": true,
+      "feedback": "Only a new valuation tells you how much of the gap is left. If the gap is gone, there's no reason to keep holding."
+     },
+     {
+      "text": "Buy more: the price is now even further below the valuation, so the gap is bigger.",
+      "correct": false,
+      "feedback": "The valuation was worked out when all the customers were there. With half the revenue gone it is out of date, so there's no way to measure the gap against it."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Pay less, and your estimate can be off by more",
+  "caption": "The guitar valued at 1,000 yuan. Drag your price: the further right the solid line meets break-even, the more room for error. Dashed: bought at 950 elsewhere.",
+  "x": {
+   "label": "True value below estimate by",
+   "unit": "%",
+   "min": 0,
+   "max": 60
+  },
+  "y": {
+   "label": "Profit after buying",
+   "unit": " yuan",
+   "min": -600,
+   "max": 600
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "Your price",
+    "min": 400,
+    "max": 1000,
+    "step": 50,
+    "value": 600,
+    "unit": " yuan"
+   }
+  ],
+  "series": [
+   {
+    "name": "You",
+    "expr": "1000*(1-x/100)-p",
+    "tone": "accent"
+   },
+   {
+    "name": "Bought at 950",
+    "expr": "1000*(1-x/100)-950",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "y": 0,
+    "text": "Break even"
+   },
+   {
+    "x": 30,
+    "text": "Replica worth only 700"
+   },
+   {
+    "x": "100-p/10",
+    "y": 0,
+    "text": "Can be wrong to here"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Room for error",
+    "expr": "100-p/10",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "Profit if worth 700",
+    "expr": "700-p",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

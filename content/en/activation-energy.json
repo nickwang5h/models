@@ -1,0 +1,211 @@
+{
+ "id": "activation-energy",
+ "name": "Activation Energy",
+ "en": "活化能",
+ "discipline": "physics",
+ "one_line": "Even the best deal needs a push over a hump before it gets going.",
+ "story": "Faraday lectures on \"The Chemical History of a Candle\" at the Royal Institution and relights a candle just blown out by running a taper's flame down its white smoke",
+ "shallow": {
+  "scene": "Blow out the candles on a birthday cake and a wisp of white smoke rises from each wick. It isn't ash; it's wax vapor that hasn't burned yet, and it can still burn. At the end of 1860, Michael Faraday showed this in front of an audience while lecturing on \"The Chemical History of a Candle\" at the Royal Institution in London. He blew out one candle and held another lit, thin candle just above the white smoke. The flame ran down the smoke and the wick lit up again. He took the thin candle away, and the flame kept burning on the heat it gave off itself. The fuel and the air had been there all along; all that was missing was that small first bit of flame.",
+  "plain": "Your car stalls on the road. Ahead there's a small rise, and past it a long stretch downhill. You get out and push. The few meters uphill are the hardest, and every step takes effort. Once the car is over the top, it rolls down by itself, faster and faster, and you don't need to push any more. The far side is much lower than this side, so what you get from rolling down is far more than what you spent pushing up.\n\nWood and air are like the car sitting on this side of the rise. Burning into smoke and ash gives off a lot of heat, but the molecules first have to be pushed up a slope before they start to react. The height of that slope is called the activation energy. A match is that push: it heats a small piece of wood, and as the temperature rises, the number of molecules that can get over the slope multiplies. Once it's lit, the heat from burning pushes the molecules next to it up the slope, and the fire spreads by itself. Many things start with a slope like this: hard work at first, and smooth once you're over the top."
+ },
+ "deep": {
+  "mechanism": "### Make the slope a bit higher and far fewer molecules get pushed over\n\nThe molecules in a glass of liquid are always bumping into each other at random, with energies high and low. Most are near the average, and the higher you go the fewer there are, and they thin out very fast. Only molecules with enough energy to get over the top of the slope, and that collide at the right angle, react. How fast a reaction goes is measured by the rate constant:\n\n$$k=Ae^{-E_a/(RT)}$$\n\n$E_a$ is the activation energy, the height of the slope. $T$ is the absolute temperature, $R$ is the gas constant, and $A$ reflects how often the molecules collide. Think of $RT$ as a ruler for measuring the molecules' energy; at 300 kelvin it is about 2.5 kilojoules per mole. What the formula says is that each extra $RT$ of slope height shrinks the share of molecules that can reach the top to about 0.37 times what it was.\n\nRaising the activation energy from 50 kilojoules per mole to 100 at 300 kelvin makes the slope 20 $RT$ higher, which means multiplying by 0.37 twenty times. With $A$ unchanged, the reaction slows to about one five-hundred-millionth of its old rate.\n\n### Heating multiplies the small group with the most energy\n\nHeating doesn't change the height of the slope; it changes how energy is spread among the molecules. The whole spread shifts upward, and the small group at the very top grows the fastest. The higher the slope, the more the molecules that can reach its top are crowded into that top end, so the bigger the multiple heating brings. Going from 300 kelvin to 310 kelvin, with an activation energy of 50 kilojoules per mole, the rate constant becomes about 1.9 times as large; at 100 kilojoules, about 3.6 times.\n\nWood doesn't burn on its own at room temperature, because the slope is too high and almost no molecules get over it. A match heats one spot to several hundred degrees, and suddenly many more molecules get over. Once the wood is burning, the heat it gives off keeps the wood next to it hot, just as the car rushes downhill by itself once it's over the top, and you don't need to strike a second match.\n\n### People get going once over the threshold because the preparation stays\n\nPeople doing things don't give off heat by themselves the way fire does. Things go smoothly once a person is over the threshold because most of what the threshold holds is one-time preparation: tools, information, a decision, getting through an unfamiliar situation once. Pay for them once and they stay; you don't have to pay again next time, as if the slope had been flattened. So first tell apart what is holding you back: something you pay for once and keep, or a cost you have to pay again every time.",
+  "origin": "In 1889 the Swedish chemist Svante Arrhenius studied how the rate at which sucrose breaks down in acid changes with temperature. He wrote down a quantitative relation between the rate constant and temperature, and proposed that only \"activated\" molecules react. That is where the name activation energy comes from, and it later came to be used widely in chemistry and engineering.",
+  "limits": "Things whose difficulty is all at the start and which get easy once you're past it, like setting up a tool for the first time or walking into an unfamiliar place for the first time, are exactly where this model is useful. It doesn't touch costs you pay every time: an hour's commute each day doesn't get shorter because the first day went smoothly. And the second confirmation before a large bank transfer is a threshold put there on purpose; take it away and mistakes only go through more smoothly."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "For something you've put off for a long time, first find the single hardest action at the start, such as installing the software or making the first phone call. Get just that step ready, and don't plan the whole thing."
+   },
+   {
+    "use": "design",
+    "text": "When designing how new users get started: if after signing up they have to set up three things themselves before they see any result, set up two of them in advance, so the very first click gets a response."
+   },
+   {
+    "use": "predict",
+    "text": "To predict how many people will take up a new procedure: if they first have to visit two counters and fill in five forms, most people will stop before the procedure, and whether the rule is any good matters less."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "Setting customers up on the spot",
+    "text": "In Stripe's early days, when the Collison brothers pitched the product to founders and the founder said they'd be willing to try it, the brothers would say, \"Right then, give me your laptop,\" and set it up then and there. Paul Graham wrote about this in a 2013 essay. That same day, a spoken yes turned into actually using it."
+   },
+   {
+    "field": "Personal life",
+    "title": "Write three rough sentences first",
+    "text": "You want to write articles about your industry in the evenings. You open the document and start by reworking the title; half an hour later, the body still has not a single word. You change that night's task to writing three rough sentences of opinion, and ten minutes later there's something on the screen you can edit. The next day you carry on from the third sentence."
+   },
+   {
+    "field": "Technology",
+    "title": "One script takes over two days",
+    "text": "New engineers spent their first two days setting up the development environment: three versions didn't match, and permissions needed sign-off from four people. The team wrote every step into one script. The next new hire had the service running on their own machine by the morning and submitted their first change in the afternoon."
+   }
+  ],
+  "ask": [
+   "Which specific action at the start is holding me back? What does it ask me to pay first: time, attention, or looking foolish in front of strangers?",
+   "Looking back at the last time I did something like this, was the second day or the second week clearly easier? Or was it just as hard every time?",
+   "Can this step be made smaller, or done for me by someone else, or prepared in advance?"
+  ],
+  "with": [
+   {
+    "id": "sunk-cost",
+    "sees": "You started a side business by telling yourself \"put in 5,000 yuan first and see,\" and three months later the numbers are poor. Activation energy says: the start is the hardest part, and now that things are moving, keep going; it gets smoother. Sunk cost says the opposite: that 5,000 yuan is already spent and shouldn't decide the next 5,000. Before you start, listen to activation energy; once you've started, ask yourself every so often: if I were starting from zero today, would I still start this?"
+   },
+   {
+    "id": "friction",
+    "sees": "Sorting out the household accounts on Sunday evening always gets put off. First see whether the difficulty is one-time or there every time. Learning to export the data and match up the fields the first time is the threshold at the start; set up a template for it and you're past it. Checking the statements from three accounts by hand every month is friction, and what needs cutting is the repeated steps."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You start a used-clothing donation drive in your neighborhood. In the group chat, everyone says they're willing, yet in a month you collect only three bags. Several neighbors say that having to wash things, sort them, and find out where to take them made them give up just thinking about it. People who have already donated say the second time they just dropped it off on the way.",
+    "question": "What next step is most likely to get donations going?",
+    "explain": "The neighbors are already willing to donate; what is holding them up is the string of effort they have to put in the first time. Put a bin with sorting instructions at each building's door, and take washing, sorting and finding a place off their hands.",
+    "options": [
+     {
+      "text": "Put a collection bin with sorting instructions on it at the door of each building.",
+      "correct": true,
+      "feedback": "The burden of washing, sorting and finding where to take it is taken away, and the first donation becomes dropping off a bag on the way. People who have donated once say the second time is easy, so the threshold is the first time."
+     },
+     {
+      "text": "Ask residents to register a list of their old clothes first, then drop them off according to the list.",
+      "correct": false,
+      "feedback": "Registering adds yet another step at the start, and people who already find it a hassle are even less likely to come."
+     },
+     {
+      "text": "Give every donor a small gift.",
+      "correct": false,
+      "feedback": "A gift adds a reason; it doesn't take away any of the things they have to do the first time."
+     },
+     {
+      "text": "Send out another round of appeals about how recycling old clothes helps the environment.",
+      "correct": false,
+      "feedback": "Everyone in the chat already says they're willing, so reasons aren't what's missing. Explaining the benefits again leaves every first-time task in place."
+     }
+    ]
+   },
+   {
+    "stem": "You're learning piano. You got started with \"just touch the piano for five minutes every day,\" and for the first two weeks you managed an hour of practice almost every day. Since the third week, every time you sit down you still spend twenty minutes deciding what to play today, and after practicing you're unsure what to go on with tomorrow.",
+    "question": "What should you do now?",
+    "explain": "The threshold at the start was crossed two weeks ago. What eats your time every day now is having to decide afresh each time what to practice. Making the first step smaller doesn't touch that; plan a list of pieces once, and every day you'll know what to play as soon as you sit down.",
+    "options": [
+     {
+      "text": "Force yourself to practice an extra hour every day to catch up.",
+      "correct": false,
+      "feedback": "That raises what you put in each day, while the cost of twenty minutes of dithering every day stays exactly where it was."
+     },
+     {
+      "text": "Move to a quieter practice room.",
+      "correct": false,
+      "feedback": "You dither because you don't know what to play, and however quiet the room is, that doesn't change."
+     },
+     {
+      "text": "Spend one evening planning a month's list of pieces, and each day carry on from the list.",
+      "correct": true,
+      "feedback": "The decision you had to make afresh every day is replaced by a list of pieces, so you can start practicing as soon as you sit down."
+     },
+     {
+      "text": "Make the first step even smaller, changing it to \"just touch the piano lid first.\"",
+      "correct": false,
+      "feedback": "You're already practicing every day, so starting is no longer the problem. Making the first step smaller doesn't touch the twenty minutes of dithering each day."
+     }
+    ]
+   },
+   {
+    "stem": "A lab has two reactions, A and B, both very slow at room temperature. Everything else is the same, except that A has a lower energy barrier to get over and B a higher one. Now both reactions are heated from 20 degrees Celsius to 30 degrees Celsius.",
+    "question": "Comparing how many times faster each reaction becomes, which statement is right?",
+    "explain": "The higher the energy barrier, the fewer molecules can get over it, and the more the reaction depends on heat to push more molecules up. With the same 10-degree rise, B's rate grows by a bigger multiple than A's.",
+    "options": [
+     {
+      "text": "The multiples are the same for both, because the temperature rises by the same amount.",
+      "correct": false,
+      "feedback": "The multiple depends on the activation energy, not on how much the temperature rises; the two reactions have different activation energies, so the multiples differ."
+     },
+     {
+      "text": "Neither changes much, because heating only helps reactions that give off heat.",
+      "correct": false,
+      "feedback": "Rate rising with temperature applies to reactions that give off heat and to those that take it in; it has nothing to do with whether a reaction gives off heat."
+     },
+     {
+      "text": "A grows by a bigger multiple, because A was faster to begin with.",
+      "correct": false,
+      "feedback": "The question asks about the multiple. B, with the higher barrier, has the bigger multiple; A being faster to begin with may only make its increase bigger in absolute terms."
+     },
+     {
+      "text": "B grows by a bigger multiple: the higher the energy barrier, the more it relies on heating.",
+      "correct": true,
+      "feedback": "With a high barrier, the share of molecules that can get over it at room temperature is tiny to begin with; heating pushes more molecules to the top of the barrier, and that share grows by a bigger multiple."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Higher slope, bigger speed-up from 10 degrees",
+  "caption": "Across: temperature. Up: times faster than at 300 K. Raise the barrier and the curve turns up more steeply: +10 degrees gives 1.9× at 50 kJ, 3.6× at 100 kJ.",
+  "x": {
+   "label": "Temperature (kelvin)",
+   "min": 290,
+   "max": 320
+  },
+  "y": {
+   "label": "Rate vs. at 300 K",
+   "unit": "×",
+   "min": 0
+  },
+  "params": [
+   {
+    "id": "a",
+    "label": "Barrier, per mol",
+    "min": 20,
+    "max": 100,
+    "step": 10,
+    "value": 50,
+    "unit": " kJ"
+   }
+  ],
+  "series": [
+   {
+    "name": "Your barrier",
+    "expr": "exp(a*1000/8.314*(1/300-1/x))",
+    "tone": "accent"
+   },
+   {
+    "name": "Barrier 50 kJ",
+    "expr": "exp(50*1000/8.314*(1/300-1/x))",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "x": 310,
+    "text": "+10 degrees"
+   },
+   {
+    "y": 1,
+    "text": "Rate at 300 K"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Speed-up at +10°",
+    "expr": "exp(a*1000/8.314*(1/300-1/310))",
+    "unit": "×",
+    "digits": 1
+   },
+   {
+    "label": "Speed-up at +20°",
+    "expr": "exp(a*1000/8.314*(1/300-1/320))",
+    "unit": "×",
+    "digits": 1
+   }
+  ]
+ }
+}

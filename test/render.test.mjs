@@ -189,3 +189,30 @@ test('a card page shows which of its three examples is in view, one button each'
   const html = cardPage(all.a, { cards: all, index });
   assert.equal(html.match(/<div class="ex3dots" data-dots>([\s\S]*?)<\/div>/)[1].match(/<button type="button" data-ex="\d"/g).length, 3);
 });
+
+test('an English page is the same frame in English, every link under /en, each page linking its other half', () => {
+  const all = cards();
+  const enIndex = { ...index, disciplines: [{ id: 'math', title: 'Mathematics & Statistics', short: 'Math' }] };
+  const html = cardPage(all.a, { cards: all, index: enIndex, lang: 'en', zh: { card: all.a, entry: index.cards[0] } });
+  assert.match(html, /<html lang="en">/);
+  assert.match(html, /<a class="mark" href="\/en\/">Mental Models<small>3 cards · 12 fields<\/small><\/a>/);
+  assert.match(html, /<a href="\/en\/d\/math">Mathematics &amp; Statistics<\/a>/);
+  assert.match(html, /<a class="w" id="s-w0" href="\/en\/m\/b">/);
+  assert.match(html, /<link rel="alternate" hreflang="zh" href="https:\/\/models.wuhua.app\/m\/a"><link rel="alternate" hreflang="en" href="https:\/\/models.wuhua.app\/en\/m\/a">/);
+  assert.match(html, /<a href="\/m\/a" hreflang="zh" lang="zh-CN">中文<\/a>/);
+  assert.match(html, /<span class="ty">1790<\/span>/);
+  assert.doesNotMatch(html, /feed\.xml|data-subscribe|今日一卡/);
+  const home = homePage(enIndex, listData(enIndex, all, 'en'), { today: { id: 'a', date: '2026-10-23' }, lang: 'en' });
+  assert.match(home, /<a class="today" href="\/en\/m\/a\?day=2026-10-23" data-lead><div class="date"><b>Oct 23<\/b>/);
+  assert.match(home, /<a href="\/en\/#sieve" data-tab="find">/);
+  assert.match(home, /data-u="predict" aria-pressed="false">Predict<\/button>/);
+  assert.doesNotMatch(home, /data-mail|feed\.xml/);
+  const zh = cardPage(all.a, { cards: all, index });
+  assert.match(zh, /<a href="\/en\/m\/a" hreflang="en" lang="en">English<\/a>/);
+});
+
+test('the story year reads as English on an English page', () => {
+  assert.equal(storyYear({ year: -45 }, 'en'), '45 BC');
+  assert.equal(storyYear({ story: '20 世纪 70 年代的实验' }, 'en'), '1970s');
+  assert.equal(storyYear({ year: 1790 }, 'en'), '1790');
+});

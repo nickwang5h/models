@@ -1,0 +1,188 @@
+{
+ "id": "self-serving-bias",
+ "name": "Self-Serving Bias",
+ "en": "自利偏差",
+ "discipline": "psychology",
+ "one_line": "When things go well it was me; when they go badly it was the circumstances.",
+ "story": "Lau and Russell sort what players and coaches say in newspaper sports pages about why they won or lost: wins go to themselves, losses to things outside the team",
+ "shallow": {
+  "scene": "Did well on a test, and it's because you studied hard; did badly, and it's because the questions were unfair. Nearly everyone has said this. In 1980 the psychologists Richard Lau and Dan Russell wanted to see whether people do the same in real life, so they went through the post-game reports in newspaper sports pages. They sorted, one by one, what players and coaches said about why they had won or lost: did they put it down to their own team's ability and effort, or to the opponents, the referees and luck? The result was very neat: the winning side talked more about its own skill and drive, and the losing side more often pushed the cause outside the team. Change the score, and the explanation changes with it.",
+  "plain": "You run a half marathon four minutes faster than last year, and you say the new training plan worked. The next year you're three minutes slower, and you say there was a headwind that day and the water station was crowded. You mean both of these sincerely, and every detail is true. But last year there was wind on this course too, and the water station was just as crowded, and you didn't say a word about it. The wind was always there; you only remembered it in the slow year. This is self-serving bias: good results go to yourself, bad results to the outside. The same evidence goes unmentioned when you run fast and only comes out when you run slow."
+ },
+ "deep": {
+  "mechanism": "### Taking credit feels good and admitting fault hurts, so the two sides need different amounts of evidence\n\nIn the year your half marathon was faster, as soon as the thought \"the new plan worked\" came up, you believed it. It made you happy, so you didn't question it further. In the slow year, \"I didn't train enough\" hurt, so you looked for other explanations first, and only owned up when you really couldn't find one.\n\nPut this difference in strictness into numbers, and look at it in two steps. Step one: when you run faster, a single point of \"what I did right\" is enough for you to claim the credit; when you run slower, you need to collect 3 points of \"this was my fault\" before you admit it. Step two: in any one race, there are usually one or two details in your favor and one or two against you. So when you run faster, 1 point is enough, and the credit goes to you; when you run slower, you can't collect 3, so the cause lands on the wind and the water station. If both sides needed only 1 point, in the slow year you would have to admit \"I didn't train enough,\" and you couldn't bring yourself to blame the headwind.\n\n### The more something touches your pride and your interests, the further apart the two bars\n\nHow far apart the bars are depends on how much the thing matters to you. For a quick quiz in class, it hardly matters how you explain doing well or badly, and the two bars are about the same. For a promotion interview or a whole year's results, losing costs more, and the bar for admitting fault is raised higher. And a review is also told to coworkers and family, so what you're protecting is not just your picture of yourself but how others see you.\n\n### Even when pride isn't at stake, unexpected results get pushed outside\n\nSelf-serving bias has another source that has nothing to do with feelings: people only look for causes when a result is unexpected. You prepared two weeks for an interview and passed; that was expected and needs no explaining. Failing is a surprise, so you look for a cause; but you know you put in plenty of work, so the cause can only be looked for outside: the interviewer asked odd questions, you weren't on form that day. Researchers have long argued about which of these two sources matters more, but the end is the same: nobody questions what went smoothly, and what went wrong gets pushed out the door.",
+  "origin": "Self-serving bias is a finding that took shape gradually in research on how people explain causes; no single person is credited with it. In 1975 Miller and Ross reviewed the evidence and discussed whether the bias comes from protecting self-esteem or from the way people process information. In 2004 Mezulis and colleagues pooled 266 studies and found that overall the bias really does exist, and that its strength varies with culture and state of mind.",
+  "limits": "When an outside cause has an independent record you can check, putting the cause outside is correct: for example, if a power cut stopped work, the grid has records you can check against. Using this model to push a coworker to \"look at yourself first\" just turns the bias around, and still doesn't check the records."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Set the rules for splitting a project bonus before work starts: count each person's contribution by a few items agreed in advance, not by what each person remembers afterward."
+   },
+   {
+    "use": "act",
+    "text": "Before writing your year-end self-review, take the year's smoothest thing and its worst failure and list two columns for each: conditions that would have happened without me, and places where a different choice would have changed things."
+   },
+   {
+    "use": "explain",
+    "text": "In the same coworker's project summary, the part about achievements is full of \"I\" and the part about problems is full of \"circumstances,\" and both parts read as quite sincere."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Education",
+    "title": "Three points in the lesson-plan book",
+    "text": "You teach the final year of middle school. Before the midterm you write a line in your lesson-plan book: having students keep a notebook of the questions they got wrong will raise the class average by three points (the numbers are made up). The results come out, and it went up by one point. When a colleague in the staff room asks, you are about to say \"It went up, it works.\" Instead you turn back to that page of your lesson-plan book, write both \"three points\" and \"one point\" into your summary, and next term you run the mistake notebooks again exactly as before and compare once more."
+   },
+   {
+    "field": "Business",
+    "title": "After the chili sauce sells out",
+    "text": "You sell your own homemade chili sauce in a neighborhood group chat. In the first month you offer three flavors: one sells over four hundred jars, and the other two sell fewer than thirty jars each (the numbers are made up). You tell friends it's because you got the taste just right, and in the second month you put 80% of your money for stock into three new heat levels of that one flavor."
+   },
+   {
+    "field": "Personal life",
+    "title": "Winning and losing at doubles",
+    "text": "You play tennis doubles at the weekend. When you win, you say your serve kept the opponents under pressure; when you lose, you say your partner's two double faults gave away points. You have a friend record the whole match on a phone, and afterward you count against the scoreboard: in the match you won, your partner's volleys at the net won most of the points; in the match you lost, you were broken in two of your own service games. You split where each match's lost points came from, person by person, and write it in your scorebook."
+   }
+  ],
+  "ask": [
+   "If the result had been the other way round, would I use just as many reasons to claim it or push it away?",
+   "Dig out your two most recent review notes, one for something that went well and one for something that went badly: how many causes did each list, and how many of them pointed at yourself?",
+   "Find someone who knows what happened but gets no share of the credit or blame, and have them rank the causes: where does their ranking differ from mine?"
+  ],
+  "with": [
+   {
+    "id": "hindsight-bias",
+    "sees": "Hindsight bias watches the other end of the review. A project failed; in the review meeting you say \"nobody could have foreseen the supplier running out of stock,\" and a coworker says \"the signs were there all along.\" The two claims pull in opposite directions: you remember the clues at the time as smaller, and the coworker remembers them as bigger. Dig out the emails and schedules from before, and count which clues you actually had at the time."
+   },
+   {
+    "id": "luck-and-skill",
+    "sees": "You won a lawsuit, and you say your defense strategy did it. Luck vs skill first asks: in similar cases, with a different judge or a different opponent, would the outcome have been different? Self-serving bias adds one more question: for the cases you lost, did you ask the same thing?"
+   },
+   {
+    "id": "premortem",
+    "sees": "Hold a premortem a month before the exam: you and your roommate each write down \"If I fail this course, the most likely reason is…\", and some of the reasons always land on yourselves, such as notes never sorted out or always sleeping through the weekend. When the results come out, half the reasons for failing are already written on paper, and you can't raise the bar for \"this was my fault\" on the spot when you fail."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "On the same team, there is a ten-minute stand-up review every week and, at the end of the year, a performance review that decides bonuses. At both meetings, each person has to explain why their recent results turned out the way they did.",
+    "question": "At which meeting will \"success is down to me, mistakes are down to the outside\" be more obvious?",
+    "explain": "When things are tied to bonuses and pride, claiming credit for wins and pushing away losses both get pulled further apart. At the stand-up the results are small, and a wrong account is easy to correct, so the two kinds of explanation stay close.",
+    "options": [
+     {
+      "text": "It depends on who runs the meeting: the stricter the chair, the less obvious it is.",
+      "correct": false,
+      "feedback": "The question gives no information about who runs the meeting; this option drags in an unrelated factor."
+     },
+     {
+      "text": "The stand-up, because it's held every week, so people explain more often.",
+      "correct": false,
+      "feedback": "Explaining more often doesn't make the bias bigger. What decides how big it is is how much the result is tied to the person."
+     },
+     {
+      "text": "Equally obvious: the setting of a meeting doesn't change what people say.",
+      "correct": false,
+      "feedback": "The setting does change it: the more the result is tied to you, the further apart the two kinds of explanation are pulled."
+     },
+     {
+      "text": "The performance review, because the results are tied to bonuses, and to pride as well.",
+      "correct": true,
+      "feedback": "With the results tied to bonuses and pride, the gap between claiming more when you win and less when you lose opens up most easily."
+     }
+    ]
+   },
+   {
+    "stem": "A researcher submitted seven papers. Three were accepted, and he says it's because the new ideas were strong enough; four were rejected, and he says the reviewers didn't understand the field. He digs out the reviewers' comments: the comments on all three accepted papers say \"highly original, but the experimental sample is on the small side\"; three of the four rejected papers also say \"sample on the small side.\"",
+    "question": "What will this way of explaining things mean for his next paper?",
+    "explain": "The same comment, \"sample on the small side,\" is treated as a minor point in the accepted papers and as prejudice in the rejected ones. His explanations judge the reviewers' comments by a different standard each time, so the sample problem stays in the next paper.",
+    "options": [
+     {
+      "text": "He will take the reviewers' comments too seriously and give up the new ideas he's most sure of.",
+      "correct": false,
+      "feedback": "Neither time did he treat the reviewers' comments as something he needed to fix; this worries about the opposite problem."
+     },
+     {
+      "text": "He won't enlarge his samples: he has set this comment aside on both sides.",
+      "correct": true,
+      "feedback": "\"Sample on the small side\" came up again and again across the seven papers, but he never treated it as something he could fix, so the next paper will carry it too."
+     },
+     {
+      "text": "He will submit fewer papers, because he thinks all the rejections come from reviewers who don't know the field.",
+      "correct": false,
+      "feedback": "Blaming the reviewers doesn't make people submit less, and the question shows no sign of him submitting less."
+     },
+     {
+      "text": "His new ideas will get weaker, because the three accepted papers got in purely by luck.",
+      "correct": false,
+      "feedback": "Nothing in the question says the acceptances came from luck, and the reviewers of the three accepted papers clearly praised the originality."
+     }
+    ]
+   },
+   {
+    "stem": "The two joint leads of a project each write down their own share of the contribution. The time the project succeeded, one wrote 70% and the other 65%; the time it failed, one wrote that their share was 20% and the other 25%. Each attached specific examples, and afterward nobody was found to have lied.",
+    "question": "Adding up the two people's numbers each time, what can you see?",
+    "explain": "For the success the two add up to 135%; for the failure, 45%. Each of them is sincere, but the bar for claiming a share is different after a win and after a loss, so when the two are added together the books don't come to 100%.",
+    "options": [
+     {
+      "text": "After the failure the total is under 100%, which shows 55% of the cause lay outside the project.",
+      "correct": false,
+      "feedback": "The shortfall is the result of each person pushing the cause outward; the question gives no evidence of any outside cause."
+     },
+     {
+      "text": "Both people's shares were always small, which shows a third person caused the failure.",
+      "correct": false,
+      "feedback": "There is no information about a third person, and in the success the two people's shares weren't small."
+     },
+     {
+      "text": "The total is 135% one time and 45% the other, which shows the standard for claiming a share differs after a win and after a loss.",
+      "correct": true,
+      "feedback": "After a win each person claims more, after a loss each claims less, so the totals fail to add up in both directions."
+     },
+     {
+      "text": "After the success the total is over 100%, which shows at least one person made up examples and should be held to account.",
+      "correct": false,
+      "feedback": "The question says the examples were all true and nobody was found to have lied; going over 100% comes from each person's bar for claiming a share."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "grid",
+  "title": "Fast: the plan. Slow: the wind, unsaid last year",
+  "caption": "Both years were on the same course, and both had wind and a crowded water station. Bringing it up only in the slow year holds the same evidence to two standards.",
+  "rowLabel": "Time",
+  "rows": [
+   "4 minutes faster",
+   "3 minutes slower"
+  ],
+  "cols": [
+   "Your reason",
+   "Credited to"
+  ],
+  "cells": [
+   [
+    {
+     "text": "The new plan worked",
+     "sub": "Wind that year too, unsaid"
+    },
+    {
+     "text": "Yourself",
+     "tone": "accent"
+    }
+   ],
+   [
+    {
+     "text": "Headwind, busy station",
+     "sub": "Every detail is true"
+    },
+    {
+     "text": "The outside",
+     "tone": "warn"
+    }
+   ]
+  ]
+ }
+}

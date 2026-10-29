@@ -1,0 +1,180 @@
+{
+ "id": "conjunction-fallacy",
+ "name": "Conjunction Fallacy",
+ "en": "合取谬误",
+ "discipline": "psychology",
+ "one_line": "The more details a story has, the truer it sounds, but the less likely it is.",
+ "story": "Tversky and Kahneman report the Linda problem in Psychological Review: most people rank \"teller and feminist\" above \"teller\"",
+ "shallow": {
+  "scene": "A psychology questionnaire first describes a woman. Linda is 31, single, outspoken and very bright, and she majored in philosophy. As a student she cared deeply about discrimination and social justice, and she took part in anti-nuclear protests. Then you are asked to rank several statements by how likely they are. Two of them are \"Linda is a bank teller\" and \"Linda is a bank teller and is active in the feminist movement.\" In 1983 the psychologists Amos Tversky and Daniel Kahneman reported the results: the great majority of people ranked the second statement above the first, because it was the one that sounded like Linda.\n\nBut every bank teller who is active in the feminist movement is, to begin with, a bank teller. So the second statement can only cover fewer people than the first, never more.",
+  "plain": "On the subway, the man across from you has half a laptop sticking out of his bag and hiking boots on his feet. A thought pops up: he's a programmer who loves hiking. That sounds even more like him than \"he's a programmer.\"\n\nSuppose there are 5 people in the car like him, with a laptop and hiking boots. 3 of them are programmers, and 2 of those 3 programmers go hiking on weekends. If you say he's a programmer, you have a 3/5 chance of being right; if you say he's a programmer who loves hiking, only 2/5. To be a programmer who loves hiking, he first has to be a programmer, so that statement can only pick from those 3 programmers. Even if all 3 loved hiking, it would only tie, never pull ahead. Each extra detail makes the statement fit the man in front of you better, while the number of people it fits can only shrink or stay the same. Judging the better-fitting statement as more likely is the conjunction fallacy."
+ },
+ "deep": {
+  "mechanism": "### Add a condition, and the number of people who fit can only go down\n\nSuppose there are 1,000 people like Linda, and 50 of them are bank tellers. \"A teller who is also a feminist activist\" can only pick from those 50. If 10 of the 50 are feminist activists, the statement covers 10 people; if 30 are, it covers 30. Even if all 50 are, it only reaches 50, the same as just saying \"teller,\" and it can't go any higher.\n\nCall \"is a teller\" $A$ and \"is a feminist activist\" $B$. $P$ stands for how likely something is, and $A\\cap B$ means both are true. Everyone for whom both are true is inside the group for $A$, so\n\n$$P(A\\cap B)\\le P(A)$$\n\nThe chance that two things are both true can't be higher than the chance that one of them is true on its own.\n\n### People compare how well it fits, not how many people it covers\n\nLinda's description matches a feminist activist very well and doesn't suit a bank teller at all. Add \"feminist activist\" after \"teller,\" and the statement now matches the description. When ranking, people were comparing which sentence sounded more like Linda; they didn't count how many people each sentence covers. Each fitting detail you add makes the statement a little more like Linda, while it covers fewer people. People only looked at how well it fit, so \"a teller who is also a feminist activist\" moved to the front, and plain \"teller\" fell behind.",
+  "origin": "In that 1983 paper, Tversky and Kahneman tested this effect systematically, and the Linda problem is the best known of their questions. Their explanation was the representativeness heuristic: people judge by how much something looks like the type, not by probability. Later researchers pointed out that the word \"probable\" is easily read to mean something else. When the question was reworded to ask people to count heads, far fewer people got it wrong. Still, across many different wordings, the error keeps showing up.",
+  "limits": "This idea gives the cleanest answer when one statement sits inside the other, like \"late\" and \"late because of traffic\": the second can't be more likely than the first. For two things that don't contain each other, like \"interest rates are cut next year\" and \"house prices rise next year,\" it can't tell you which is more likely. It also has nothing against specific guesses. When you're tracking down a fault, a specific guess like \"the migration script locked the table\" is easy to check and easy to rule out, so you can check it first. You just can't give it a higher chance because it is specific."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "communicate",
+    "text": "When you pitch a plan to a client, give the two or three strongest reasons. Each minor reason you squeeze in makes it sound more believable to the listener, but lowers the chance that the whole case holds."
+   },
+   {
+    "use": "act",
+    "text": "When you fill in a risk register, write down next to each scenario how likely each of the events that make it up is, and only then fill in the chance of the whole scenario. That number may not be higher than any of them."
+   },
+   {
+    "use": "explore",
+    "text": "When you hear a forecast full of detail, first cut it down to its broadest statement. Then ask how likely the broad statement is on its own, and see how far apart the two numbers are."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Forecasting",
+    "title": "Two forecasts from the professionals",
+    "text": "In 1982, at the Second International Congress on Forecasting, two groups of professional forecasters each estimated the chance of an event in 1983. One group estimated that the US and the Soviet Union would break off diplomatic relations. The other estimated that the Soviet Union would invade Poland and the US and the Soviet Union would break off diplomatic relations. The second group gave a higher average probability than the first."
+   },
+   {
+    "field": "Technology",
+    "title": "The early-morning alert chat",
+    "text": "An alert fires on the live system, and someone in the group chat says, \"Most likely last night's migration script locked a table and slowed down replication to the replica.\" The story has a beginning and an end, so everyone goes to dig through the script's logs, and after half an hour they've found nothing. Someone else had posted just one line, \"Replication is slow,\" and nobody picked it up. In the end the cause turned out to be a full disk on the replica."
+   },
+   {
+    "field": "Personal life",
+    "title": "Two numbers on a sticky note",
+    "text": "A coworker asks you, \"Will you move to another city next year?\" You say it's unlikely, 10%. He asks it another way: \"Will you move to Shanghai next year because your partner's job is transferred there?\" You think about it and say 20%, because this time there's a concrete reason. Your coworker writes both numbers on a sticky note and pushes it across to you."
+   }
+  ],
+  "ask": [
+   "How many details does this statement carry? Taking each one on its own, how sure am I that it's true?",
+   "Is there a broader statement that contains this scenario? How often has the broad version happened? I can go through the records and count.",
+   "Am I scoring how well it fits, or counting how many? Change the question to \"out of a hundred cases like this, how many?\" and answer it again."
+  ],
+  "with": [
+   {
+    "id": "premortem",
+    "sees": "Before you set off on a hike, your group holds a premortem: each of you writes a detailed account of how the trip went wrong, the more detailed the better, because details help you think of gear and stretches of trail you've missed. The conjunction fallacy takes over once the writing is done. A scenario rich in detail, like \"fog closes the mountain, the group gets split up, and the phones are dead,\" is exactly the least likely one, because each extra detail means multiplying the chance by another number. So write freely, then estimate each story's chance separately once you're done, and rank your fixes by how costly the accident would be and how cheap it is to prevent, not by which story sounds most convincing."
+   },
+   {
+    "id": "base-rate",
+    "sees": "When you judge a startup, the two models handle different steps. The base rate asks first: of similar projects, how many survived? That is the starting point. The conjunction fallacy then checks whether the chance you give \"works on AI for education and raises funding this year\" is higher than the chance you give \"works on AI for education\" by itself. You need both numbers, and the second can't be higher than the first."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "At the emergency triage desk, a 58-year-old man says he has a pressing pain in his chest. Nurse A writes \"suspected heart attack\" in the notes. Nurse B writes \"suspected heart attack, brought on by lifting something heavy this morning.\" The head of the department asks you to give each note a chance of being right.",
+    "question": "How should the two chances compare?",
+    "explain": "For B to be right, there has to be a heart attack, and the cause has to be right as well. The patients who fit B are a subset of the patients who fit A, so B can't be higher than A.",
+    "options": [
+     {
+      "text": "B is the same as A; the cause is just extra explanation.",
+      "correct": false,
+      "feedback": "A patient whose heart attack wasn't caused by lifting something heavy fits A but not B, so the two notes don't cover the same patients."
+     },
+     {
+      "text": "B is higher than A, because spelling out the cause makes the judgment more complete.",
+      "correct": false,
+      "feedback": "Complete and true are different things: the extra cause in B can only screen out more patients."
+     },
+     {
+      "text": "They can't be compared, because one is a diagnosis and the other is a cause.",
+      "correct": false,
+      "feedback": "B contains everything in A and adds one more item, so the two can be compared directly."
+     },
+     {
+      "text": "B can't be higher than A: it needs one more thing to be true, so fewer patients fit.",
+      "correct": true,
+      "feedback": "All the patients B covers are inside the patients A covers, so the most B's chance can do is equal A's."
+     }
+    ]
+   },
+   {
+    "stem": "You're organizing an outdoor book club meeting on Saturday. On the day, three things all have to go right: the speaker arrives on time, the borrowed projector works, and it doesn't rain. You're 80% sure of each one, and none of them affects the others.",
+    "question": "About how likely is it that all three go right?",
+    "explain": "When they don't affect each other, multiply the three chances: 0.8 × 0.8 × 0.8 is about 0.51.",
+    "options": [
+     {
+      "text": "About 64%",
+      "correct": false,
+      "feedback": "0.8 × 0.8 only covers two of the things; the third hasn't been multiplied in yet."
+     },
+     {
+      "text": "About 40%",
+      "correct": false,
+      "feedback": "Adding the three 20% chances of failure and subtracting them from 100% counts the cases where several things go wrong at once more than once, so the answer comes out too low."
+     },
+     {
+      "text": "About 51%",
+      "correct": true,
+      "feedback": "All three have to happen, so the chances multiply: each extra thing takes the total down to 80% of what it was."
+     },
+     {
+      "text": "About 80%",
+      "correct": false,
+      "feedback": "Each thing having the same chance doesn't mean all three together have that chance too. All of them happening together is harder than any one."
+     }
+    ]
+   },
+   {
+    "stem": "Before you travel abroad, an insurance company offers you two travel policies at the same price. One says \"death caused by a terrorist attack, pays 500,000 yuan\"; the other says \"death from any cause, pays 500,000 yuan.\"",
+    "question": "Looking only at the chance of being paid, which one is worth more?",
+    "explain": "Death in a terrorist attack is just one kind of \"death from any cause.\" The cases that set off the second policy include every case that sets off the first, plus illness, accidents and everything else.",
+    "options": [
+     {
+      "text": "They're the same, since both pay 500,000 yuan.",
+      "correct": false,
+      "feedback": "The amount is the same, but what sets them off is not: if you die of illness or an accident, only the second one pays."
+     },
+     {
+      "text": "The one that says any cause, since it includes terrorist attacks too.",
+      "correct": true,
+      "feedback": "Every case that would make the first policy pay would make this one pay too, so its chance of paying can't be smaller."
+     },
+     {
+      "text": "Check the terrorism risk in the country you're going to, then decide which is worth more.",
+      "correct": false,
+      "feedback": "Whether the risk is high or low, the cases that set off the second policy include those of the first, so the answer doesn't depend on that number."
+     },
+     {
+      "text": "The one that names terrorist attacks, because it's specific, so a claim is more certain.",
+      "correct": false,
+      "feedback": "Being specific only makes it feel more fitting; fewer cases can set it off."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "type": "hbar",
+  "title": "Each detail fits him better but covers fewer",
+  "caption": "5 people in the car look like him. \"Programmer\" covers 3; add \"hikes on weekends\" and only 2 are left. The second can only pick from the first, so at most it ties.",
+  "categories": [
+   "People like him",
+   "Programmer",
+   "Hiker programmer"
+  ],
+  "y": {
+   "label": "People",
+   "min": 0,
+   "max": 5,
+   "step": 1
+  },
+  "series": [
+   {
+    "name": "People",
+    "values": [
+     5,
+     3,
+     2
+    ],
+    "tones": [
+     "muted",
+     "ink",
+     "warn"
+    ]
+   }
+  ]
+ }
+}

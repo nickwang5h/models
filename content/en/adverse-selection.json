@@ -1,0 +1,227 @@
+{
+ "id": "adverse-selection",
+ "name": "Adverse Selection",
+ "en": "逆向选择",
+ "discipline": "economics",
+ "one_line": "When one side knows more, one price for everyone drives the good ones away first.",
+ "story": "Harvard switches staff health insurance to a fixed subsidy, healthy employees move to cheaper plans, and Cutler and Reber find the costly plan left with high-cost members",
+ "shallow": {
+  "scene": "When you're healthy, health insurance always feels like money wasted; the colleague who's always at the hospital is the one rushing to buy the most complete cover. In 1995 the faculty and staff of Harvard University sorted themselves in exactly this way. That year the university changed how it subsidized health insurance. Before, if you chose an expensive plan, the university paid most of the extra cost; after the change, the university paid the same amount toward every plan, and employees paid the whole difference themselves.\n\nYoung, healthy employees did the sums and moved to cheaper plans, while the people who needed more medical care stayed in the expensive one. The economists David Cutler and Sarah Reber followed what happened and found that the people left in the expensive plan had higher medical costs on average, so its premiums had to go up again; each rise drove out another batch of healthy people. Within a few years the expensive plan could no longer hold up and was shut down.\n\nWhen the price is the same for everyone, the first to leave are, of all people, the ones who cost the least.",
+  "plain": "In a secondhand group chat there are two kinds of the same phone. A phone in good condition is worth 3,000 yuan, one with lots of problems only 1,000, and you can't tell them apart from the outside. Since you can't tell which you'll get, you'll only pay the middle price, 2,000 yuan. At that price the owners of good phones feel shortchanged and take their phones off the market, while the owners of problem phones are happy to sell. That is how adverse selection starts. By the time you notice that almost every phone listed is a problem phone, 2,000 yuan is actually too much."
+ },
+ "deep": {
+  "mechanism": "### With fewer than two-thirds good cars, good cars won't sell\n\nYou want to buy a used car but can't tell what condition it's in. A good car is worth 100,000 yuan to you, and its owner will take no less than 80,000; a bad car is worth 40,000 yuan to you, and its owner will sell for 20,000.\n\nWith half good and half bad, you'll only offer the average of 100,000 and 40,000, which is 70,000 yuan. That's below the good owners' floor of 80,000, so the good owners keep their cars. Only bad cars are left on the market, and your offer drops to 40,000 yuan. Now raise the share of good cars. At 60%, the average is 76,000 yuan, still not enough; at two-thirds, the average just reaches the floor of 80,000; at 80%, the average is 88,000 yuan, and only then are good owners willing to sell.\n\n### The price picks who stays in the deal\n\nIn insurance, the side that knows more becomes the buyer. People buying insurance know their own health better than the insurer does, yet premiums are charged at the average for everyone. Low-risk people feel it isn't worth it and drop out; high-risk people find it a good deal and stay. Those who stay get sick more often, so average claims rise and premiums have to go up; each rise drives out another batch of low-risk people. That is how Harvard's expensive plan went round and round until it was shut down.\n\n### Let the good side be recognized, or keep them in\n\nAn inspection report lets a good car get its own price, and health questionnaires and claims histories let insurers price by risk. When you can't find out, find ways to keep low-risk people in: subsidies lower the premium they actually pay, and making insurance compulsory stops them from dropping out, so average claims don't rise round after round.",
+  "origin": "Adverse selection was originally an old idea in the insurance business: before taking out insurance, people know their own risk better than the insurer does. In 1970 George Akerlof published \"The Market for 'Lemons',\" using used cars to show how a gap in information crowds out good goods. A \"lemon\" is American slang for a defective car.",
+  "limits": "When one side knows the quality or the risk better than the other, and the price or premium can only be set the same for everyone, adverse selection best explains who stays in the deal: used cars, individual insurance and benefits people sign up for voluntarily all work like this. If a car's condition can be checked on the spot and priced car by car, good cars have no reason to hide. A used car that sells cheaply may also just be old; without a gap in information, adverse selection isn't the explanation."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "Someone lists a home for well below the price of the same layout in the same complex. First ask the neighbors why this household is in a hurry to sell, then decide whether to go and see it."
+   },
+   {
+    "use": "design",
+    "text": "Before pricing a health checkup package people sign up for voluntarily, first ask who is most eager to sign up, and price it on what they're expected to cost, not on the average for the whole population."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Education",
+    "title": "Tutors at one price",
+    "text": "You're looking for a tutor for your child. On the platform every teacher charges the same 150 yuan per lesson, and parents can't tell who teaches well. The teachers who teach well can get private work, and one by one they leave the platform; most of those left have no other work. You try trial lessons with three teachers in a row, all of them dull, and switch to looking for teachers who come recommended by former students."
+   },
+   {
+    "field": "Investing",
+    "title": "One valuation for all",
+    "text": "You offer the same valuation to several unlisted companies at the same stage. The founders with solid orders and plenty of cash turn it down; the ones who accept are mostly in a hurry for money or losing customers. When you review the deals you signed, the payments actually collected are all weaker than what you heard in the interviews. Before your next round of offers, you first ask each company for its record of payments received."
+   },
+   {
+    "field": "Work",
+    "title": "One severance formula for all",
+    "text": "You're a department head, and the company opens voluntary departures, with severance pay based only on years of service. Two weeks later, the people who have signed up are key staff who already had offers through headhunters; not one of the few people you wanted to move on has signed up. You change the places so that each is approved only after a one-on-one interview."
+   }
+  ],
+  "ask": [
+   "Before the deal, who knows the quality of the goods or their own risk better than I do? Can I check it?",
+   "When the terms are the same for everyone, who is most willing to deal, and who will leave first?",
+   "Is the average I'm pricing on taken from the whole population, or from the people willing to deal?"
+  ],
+  "with": [
+   {
+    "id": "moral-hazard",
+    "sees": "The car insurance you sell has a higher claim rate this year than last. Moral hazard says that with insurance, people drive more carelessly, so you should raise the deductible; adverse selection says that once you raise the deductible, the mix of customers will change with it. First see whether the extra claims come from old customers driving harder than before, or from new customers who were never steady drivers. If it's the first, raise the deductible; if it's the second, don't rush to raise it, and first find out where the new customers are coming from."
+   },
+   {
+    "id": "signaling-screening",
+    "sees": "You want to sell a well-maintained car, and buyers all push you down to the average price. Adverse selection explains why buyers push the price down: they can't tell cars apart. Signaling and screening offers a way out: produce proof that owners of bad cars can't afford to fake, such as the manufacturer's service records or an independent inspection report. A report is cheap for a good car's owner, but a bad car's owner won't want to get one, so the report itself separates the two kinds of car."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You open an all-you-can-eat barbecue restaurant in a shopping mall. Lunch is 78 yuan per person, unlimited, a price worked out from \"how much an ordinary customer eats.\" A month later, ingredient costs are well over budget. A few people now regularly come at mealtimes on an empty stomach to \"get their money's worth,\" and regulars with small appetites come less and less. The manager compared the same customers and found that each person eats about the same amount whether paying per head or ordering à la carte.",
+    "question": "Why are costs over budget?",
+    "explain": "One price is a good deal for people with big appetites and a bad one for people with small appetites. The people who come have been sorted by the price, so the average amount eaten is higher than first assumed.",
+    "options": [
+     {
+      "text": "78 yuan is too low, so there are too many customers, the kitchen serves slowly and more food is wasted.",
+      "correct": false,
+      "feedback": "Nothing in the question points to serving or waste. The overspending comes from how much each customer eats, not from how many come."
+     },
+     {
+      "text": "One price is a good deal for big eaters and a bad one for small eaters, so the people who come lean toward those who eat a lot.",
+      "correct": true,
+      "feedback": "Same price, unlimited food: big eaters gain and small eaters lose. Who comes and who doesn't has been sorted by the price, so the actual average eaten is higher than the manager first assumed."
+     },
+     {
+      "text": "Opening-week discounts made every customer eat more than usual, and it will fall back once the discounts end.",
+      "correct": false,
+      "feedback": "There are no discounts in the question. What changed is who comes: more big eaters, fewer small ones."
+     },
+     {
+      "text": "Unlimited food makes every customer eat a few extra plates as soon as they sit down, since it's free anyway.",
+      "correct": false,
+      "feedback": "The comparison shows the same customer eats about the same whether paying per head or ordering à la carte, so individual eating hasn't changed."
+     }
+    ]
+   },
+   {
+    "stem": "Your company offers employees a voluntary dental plan. Everyone pays the same monthly premium, priced on \"the average dental spending of all employees.\" In the first year 30% of employees join, and many of them already knew they needed braces or fillings, so claims are far over budget. You decide to raise the premium in the second year to just cover the first year's claims.",
+    "question": "After the rise, what is most likely to happen in the second year?",
+    "explain": "The rise makes people with good teeth feel even more that it isn't worth it. Once they leave, the members are even more concentrated among people who need dental work, so claims per person rise again, and the higher premium can't catch up with the gap.",
+    "options": [
+     {
+      "text": "The rise makes members more restrained about seeing the dentist, so claims per person fall back to around the budget.",
+      "correct": false,
+      "feedback": "Claims are high because members needed fillings and braces anyway. The need existed before they joined, and a price rise won't stop them going."
+     },
+     {
+      "text": "After the rise, new members are closer to the average of all employees, so claims fall back to the budget.",
+      "correct": false,
+      "feedback": "The people willing to join are still those who find it a good deal. At a higher premium, people with good teeth have even less reason to join."
+     },
+     {
+      "text": "The members stay the same, claims per person match the first year, and the rise exactly covers the gap.",
+      "correct": false,
+      "feedback": "With a higher premium, people with good teeth feel even more that it isn't worth it, and some will leave, so the members won't stay exactly the same."
+     },
+     {
+      "text": "People with good teeth leave, members lean more toward those who need dental work, and claims per person rise again.",
+      "correct": true,
+      "feedback": "The people leaving are the low spenders, so those who stay spend more on average, and a premium set on the first year's claims will fall short again by the end of the year."
+     }
+    ]
+   },
+   {
+    "stem": "You run a campus bookshop that buys back used textbooks. You don't look at their condition and pay a flat 8 yuan a book. Most of the books you take in are marked up or missing pages, and you make almost no profit reselling them; students with books in good condition would rather list them in a secondhand group chat for a higher price. You plan to cut the buyback price to a flat 6 yuan.",
+    "question": "Before cutting the price, what do you need to find out first?",
+    "explain": "A flat cut will make even more students with good books stop selling to you. Only by comparing the books taken in before and after the price change can you know whom the cut filters out.",
+    "options": [
+     {
+      "text": "Check the buyback prices at other bookshops nearby, then decide how far to cut yours.",
+      "correct": false,
+      "feedback": "Other shops' prices can't explain why the books you take in keep getting worse."
+     },
+     {
+      "text": "Work out how many days each book sits on average between buying it in and selling it, to see how fast stock turns over.",
+      "correct": false,
+      "feedback": "How fast stock turns over is a result; it can't point to why the books taken in are in poor condition."
+     },
+     {
+      "text": "Try buying at 6 yuan for a while, and compare the share of books in good condition among those taken in.",
+      "correct": true,
+      "feedback": "A price cut filters out the people who have good books. Only by comparing the share in good condition can you see whether the books coming in will get worse."
+     },
+     {
+      "text": "Count how many students sell several books at once, to see who the main sellers are.",
+      "correct": false,
+      "feedback": "How many books someone sells at once has nothing to do with their condition."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Under 2/3 good: offer misses floor, good cars quit",
+  "caption": "Good car 100,000 to you, bad 40,000; you offer the average. Drag the share: solid below dashed, good owners hold back, good cars read 0, price falls to 40,000.",
+  "x": {
+   "label": "Share of good cars on the market",
+   "min": 0,
+   "max": 100,
+   "ticks": [
+    {
+     "at": 0,
+     "label": "0"
+    },
+    {
+     "at": 66.7,
+     "label": "Two-thirds"
+    },
+    {
+     "at": 100,
+     "label": "All good"
+    }
+   ]
+  },
+  "y": {
+   "label": "Your offer (× 10k yuan)",
+   "min": 0,
+   "max": 10
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "Good-car share",
+    "min": 0,
+    "max": 100,
+    "step": 5,
+    "value": 50,
+    "unit": "%"
+   }
+  ],
+  "series": [
+   {
+    "name": "Your average offer",
+    "expr": "4+0.06*x",
+    "tone": "accent"
+   },
+   {
+    "name": "Good owners' floor",
+    "expr": "8",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "x": "p"
+   },
+   {
+    "x": 66.7,
+    "y": 8,
+    "text": "Just meets the floor"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Your average offer",
+    "expr": "4+0.06*p",
+    "unit": " × 10k yuan",
+    "digits": 1
+   },
+   {
+    "label": "Good cars for sale",
+    "expr": "(4+0.06*p>=8) ? p : 0",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "Final price",
+    "expr": "(4+0.06*p>=8) ? 4+0.06*p : 4",
+    "unit": " × 10k yuan",
+    "digits": 1
+   }
+  ]
+ }
+}

@@ -1,0 +1,231 @@
+{
+ "id": "creative-destruction",
+ "name": "Creative Destruction",
+ "en": "创造性破坏",
+ "discipline": "economics",
+ "one_line": "Something new shows up, old trades get pushed out, and people and money move over.",
+ "story": "Kodak engineer Sasson builds a digital camera, and digital photography finally drives Kodak into bankruptcy in 2012",
+ "shallow": {
+  "scene": "In 1975 Steven Sasson, an engineer at Kodak, built an early digital camera in Rochester, New York. It recorded black-and-white images on cassette tape. In the years that followed, digital cameras and then phones meant people no longer needed film or printing to take photos, look at them or share them. Kodak brought out digital products too, but the money they made couldn't make up for what it was no longer making on film. In 2012 Kodak filed for bankruptcy protection.",
+  "plain": "You run a photo-printing shop on the street. You make 4 yuan on each roll of film and develop 100 rolls a day, and rent and utilities cost 200 yuan a day. A day used to bring in 400 yuan, leaving 200 after rent and utilities. Once phones were everywhere, half your customers stopped coming. The 50 rolls left earn only 200 yuan, just enough to pay rent and utilities, so you work the whole day for nothing.\n\nThe customers who stopped coming take many times more photos on their phones than they used to bring in to be printed. Both halves of what Schumpeter called creative destruction are on this street: the new way made far more photos, and it also tore down your business. The machines didn't break, and your skills didn't get any worse."
+ },
+ "deep": {
+  "mechanism": "### When the new way is cheaper, people and money move from the old trade to the new one\n\nEach extra photo taken on a phone costs almost nothing. So people stop weighing every press of the shutter. They shoot in bursts, delete and shoot again, and both the number of people taking photos and the number of photos go up. That is the \"creative\" half.\n\nCompanies doing the new thing make money, which draws in rivals and investment and hires away engineers and salespeople. The old trade gets fewer orders and can't afford to keep its equipment and shops, so its people and money have to leave. Schumpeter believed this is how an economy grows: the same people and money move from old uses that produce little to new uses that produce more. The printing shop going under and the extra photos on phones are two sides of the same thing.\n\n### When an incumbent can't turn around, it's often because the old business is holding it back\n\nWhen an incumbent (an established company that holds the market) changes course, the first one it hurts is itself: every digital camera Kodak sold helped a customer buy less of its own film. Salespeople earned bonuses on the old products, budgets went to old projects with fatter profits, and the new business's small orders got neither people nor money.\n\nStudying the disk drive industry, Christensen saw another way to lose. When a new way starts out, it is too cheap, too simple and too small in capacity, and the old customers look down on it. Big companies keep chasing their big customers, and by the time the new way has grown up, they can't catch up. This is only one of the ways incumbents lose: when others later went back through the cases in his book, fewer than one in ten fit completely.\n\n### The people who gain and the people who lose are not the same people\n\nConsumers get convenience and new companies get a market, while the old companies' employees and shareholders and the cities they're in bear the losses. Specialized equipment and skills built up over many years can't move to the new trade, and moving money and talent over takes time.",
+  "origin": "Joseph Schumpeter set out creative destruction in *Capitalism, Socialism and Democracy* in 1942, arguing that one industry replacing another is at the heart of growth under capitalism. In 1997 Clayton Christensen's *The Innovator's Dilemma* explained why established companies can't turn around. In 2014 Jill Lepore challenged the book in an article in *The New Yorker*. In 2015 King and Baatartogtokh went back through 77 cases from the book and found that fewer than one in ten met all four conditions of the theory.",
+  "limits": "The model works best when the new way really takes customers away and cuts into the old way's income, as digital photography did to film. When a new product is just one more choice and the old use still has steady demand, old and new can live side by side for a long time, and incumbents don't always lose. A boss who uses it to justify layoffs has no case: the ones who gain are consumers and new companies, and the ones who lose their jobs are a different group of people."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "To judge an old company's prospects, count whether the new business's orders, staff and budget have really moved over. Samples shown at a launch event don't count."
+   },
+   {
+    "use": "communicate",
+    "text": "Explain to your boss why the new business needs its own books and its own targets: put into the old business's reports, its small orders will never make it into the budget."
+   },
+   {
+    "use": "explore",
+    "text": "When taking stock of your own industry, list the new ways customers are using to do the same thing, then go one by one through the equipment, sales channels and skills that will lose income because of them."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "Small disk drives find new buyers",
+    "text": "In 1980 Seagate brought out a 5.25-inch hard drive with a capacity of only 5MB. The makers of large drives sold to minicomputer makers who wanted large capacity and had no use for small drives, so the orders from desktop computer makers, who were just starting out, went to new firms like Seagate. As desktop computers sold more and more, small drives grew in capacity year by year, until they were enough for those original big customers too. The leading small-drive makers were mostly newcomers, and many of the makers of large drives didn't keep up."
+   },
+   {
+    "field": "Work",
+    "title": "Metal type gives way to laser typesetting",
+    "text": "On May 22, 1987, the *Economic Daily*, a national newspaper in China, printed the first Chinese newspaper laid out by computer and typeset by laser. The next year, the paper's printing plant got rid of all its metal type. The workers in the typesetting room switched to learning computer input, and the skill of picking out metal type by hand, built up over decades, was no longer any use."
+   },
+   {
+    "field": "Society",
+    "title": "Skilled workers go back to class",
+    "text": "You run a re-employment program in a small city. The city's biggest glass factory put in an automated production line and cut most of the glassblowing jobs. You set up a training course in equipment maintenance. Most of the people who signed up were middle-aged skilled workers, and many dropped out within the first month: skills built over decades had no use on the new line. You changed the course so that it starts by taking them onto the line to work alongside the crew."
+   }
+  ],
+  "ask": [
+   "What new way are customers using to do the same thing, and what money, time or hassle does it save them?",
+   "Which equipment, channels and skills in this industry earn their income only through the old way? Go through their revenue breakdowns.",
+   "Are the new business's orders, staff and budget growing, or is it stuck at the demo stage?"
+  ],
+  "with": [
+   {
+    "id": "moat",
+    "sees": "You want to buy an established company that has made money for decades through a national dealer network. An economic moat sees a network that's hard to copy, good for holding long term; creative destruction asks whether customers have found a way around the network. First check what share of orders bypass the dealer network. If the share is small, the moat is still working; if it rises quarter after quarter, this holding is on a countdown."
+   },
+   {
+    "id": "cannibalization",
+    "sees": "The company's new product is taking customers from its old one. Cannibalization has you work out how much the business as a whole gains, net, and when the net gain is small it suggests pushing the new product less and protecting the old one. Creative destruction points out that if you don't take those customers, a rival will. Look at whether the number of people outside adopting the new way is growing fast. If it is, take them yourself; if it hasn't taken off yet, go slowly by cannibalization's ledger."
+   },
+   {
+    "id": "local-optimum",
+    "sees": "A company improves its product version after version by following its current customers' feedback, and sales are rising. Local optima see hill climbing: every step makes things better. Creative destruction sees another hill beside this one, and some customers' needs are being taken over by it."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You run an expense-processing company that charges for checking receipts and entering them into the books by hand. A few clients have connected to a new system: after an employee pays, the receipt goes into the books automatically, and only unusual items need a person. Clients have started placing fewer data-entry orders and more orders to review unusual items. You plan to cut prices and make your staff enter data faster.",
+    "question": "How should you see this company's situation?",
+    "explain": "The new system keeps the need for bookkeeping but removes most of the manual data entry. The data-entry skill that used to bring in the income has lost its value, and reviewing unusual items has become the new paid step. The company has to turn along with the work clients are buying.",
+    "options": [
+     {
+      "text": "The staff know the clients' accounts, so the company should rely on that experience to keep its data-entry business going.",
+      "correct": false,
+      "feedback": "The system has taken over routine entry. The experience of knowing the accounts should go into the review work clients still want to pay for."
+     },
+     {
+      "text": "The work clients pay for is moving from data entry to reviewing unusual items, so the company should move its staff and services over.",
+      "correct": true,
+      "feedback": "Clients still want accurate accounts, but what they pay for has shifted from entry to review. The company has to adjust its staff and services, and also take the drop in data-entry income."
+     },
+     {
+      "text": "Clients still need a human service, so the company can treat the new system as an add-on to its existing business.",
+      "correct": false,
+      "feedback": "Data-entry orders are falling and review orders are rising, so the sources of income are already changing. Seeing the system as just an add-on misses this."
+     },
+     {
+      "text": "Clients mainly want to cut their costs, so the company should cut prices and speed up to keep its data-entry orders.",
+      "correct": false,
+      "feedback": "Clients have already dropped most of the data-entry work. Cutting prices and speeding up can't keep pace with automatic entry; orders are falling because the service being bought has changed."
+     }
+    ]
+   },
+   {
+    "stem": "Once streaming platforms caught on, people watched films and shows on demand at home, stopped renting discs and seldom bought single DVDs. Of the four businesses below, whose existing income does this new way replace most directly?",
+    "question": "Whose existing income is replaced most directly?",
+    "explain": "A new way that replaces income takes over the same job: letting people watch at home. A chain that charges for each disc rental sells exactly that, and the new way is cheaper and easier, so its income is replaced most directly. Of the other three, one sells the experience of going out, and demand for the other two actually grows with the platforms.",
+    "options": [
+     {
+      "text": "A network provider that supplies broadband to the platforms and to homes",
+      "correct": false,
+      "feedback": "Streaming uses data, and the more broadband is used, the more the provider sells. Its income rises with the new way."
+     },
+     {
+      "text": "A cinema that sells tickets on the strength of its big screen and the night out",
+      "correct": false,
+      "feedback": "A cinema sells the experience of going out to see a big screen. Streaming at home can't replace that, so old and new can coexist."
+     },
+     {
+      "text": "A chain that charges for each disc rental",
+      "correct": true,
+      "feedback": "A rental shop sells exactly watching at home, and the platforms do it cheaper and more easily, so its income is replaced most directly."
+     },
+     {
+      "text": "A writer who writes series scripts for the platforms",
+      "correct": false,
+      "feedback": "The more content the platforms want, the more scripts are needed. Writers are upstream of the new way, and their income is growing."
+     }
+    ]
+   },
+   {
+    "stem": "You're head of operations at an established map publisher. The company has launched a free map app for phones. Its users grow every month, and orders for paper maps fall at the same pace. The sales team's bonuses are based on paper map sales. Management has made the app a top priority for the year, and the sales team has had two product trainings and knows the app's features well, yet it has hardly ever recommended the app to dealers.",
+    "question": "Why does the sales team hardly ever recommend the app?",
+    "explain": "The sales team's income follows paper map sales. The better the app does, the fewer paper orders there are, and the smaller their own bonuses. The way the old business earns its income has put the resistance to change inside the company.",
+    "options": [
+     {
+      "text": "Management doesn't take the app seriously enough and hasn't set clear goals.",
+      "correct": false,
+      "feedback": "The question says management made the app a top priority for the year. What's missing is a reason for the sales team to push it."
+     },
+     {
+      "text": "The sales team doesn't understand mobile technology, and the training hasn't worked well enough.",
+      "correct": false,
+      "feedback": "The question says they've had two trainings and know the app's features, so not understanding the technology isn't the reason."
+     },
+     {
+      "text": "The app's user growth comes from its being free; customers don't actually like it.",
+      "correct": false,
+      "feedback": "Users grow every month, and nothing suggests customers dislike it. Being free doesn't explain the sales team's attitude either."
+     },
+     {
+      "text": "Recommending the app would make dealers order fewer paper maps, and the sales team's own bonuses would shrink with them.",
+      "correct": true,
+      "feedback": "Bonuses are based on paper map sales, so the app's success means their own income falls. Not recommending it is the choice that serves their own interest."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "One new way builds new business, tears down old",
+  "caption": "Follow \"Cheaper\": creation, more users, the new trade profits. Follow \"Users go\": destruction, old gear and skills idle. Both end where people and money move over.",
+  "nodes": [
+   {
+    "id": "n",
+    "label": "Free photos",
+    "sub": "Phone snaps",
+    "layer": 0
+   },
+   {
+    "id": "a",
+    "label": "More photos",
+    "sub": "Many times more",
+    "tone": "accent",
+    "layer": 1
+   },
+   {
+    "id": "o",
+    "label": "Shop loses half",
+    "sub": "Just pays rent",
+    "tone": "warn",
+    "layer": 1
+   },
+   {
+    "id": "g",
+    "label": "New trade pays",
+    "sub": "Rivals, money in",
+    "layer": 2
+   },
+   {
+    "id": "x",
+    "label": "Gear, skills idle",
+    "sub": "Unbroken, unwanted",
+    "tone": "muted",
+    "layer": 2
+   },
+   {
+    "id": "m",
+    "label": "People, money move",
+    "sub": "Growth comes here",
+    "tone": "accent",
+    "layer": 3
+   }
+  ],
+  "edges": [
+   {
+    "from": "n",
+    "to": "a",
+    "label": "Cheaper"
+   },
+   {
+    "from": "n",
+    "to": "o",
+    "label": "Users go",
+    "tone": "warn"
+   },
+   {
+    "from": "a",
+    "to": "g"
+   },
+   {
+    "from": "o",
+    "to": "x"
+   },
+   {
+    "from": "g",
+    "to": "m",
+    "label": "Hiring"
+   },
+   {
+    "from": "x",
+    "to": "m",
+    "label": "Leave"
+   }
+  ]
+ }
+}

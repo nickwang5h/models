@@ -1,0 +1,207 @@
+{
+ "id": "first-principles",
+ "name": "First Principles",
+ "en": "第一性原理",
+ "discipline": "thinking",
+ "one_line": "Don't just follow custom. Break it down to sure facts and reason it out again.",
+ "story": "Brunelleschi closes the dome of Florence Cathedral without wooden scaffolding, using herringbone bricks laid in rings that hold themselves up",
+ "shallow": {
+  "scene": "In 1418, Florence called for designs for the dome of its cathedral, Santa Maria del Fiore. The eight-sided base walls had long been built, leaving an opening more than forty meters across, but it still stood empty. The custom for building an arch was to first fill the space beneath it with a wooden frame to hold up the bricks. Across a span this wide, though, there was simply not enough timber to be had. Brunelleschi, who had trained as a goldsmith, proposed building without the wooden frame. He had the bricks laid in a herringbone pattern so they locked together, ring after ring, each ring set a little further in. Once a ring closed into a full circle, it could hold itself up. Work began in 1420, and in 1436 the dome was closed at the top.",
+  "plain": "In an old apartment, when you turn on the hot water in the morning, three minutes of cold water run to waste first, and the neighbors all say that's just how old pipes are. First principles asks: what does hot water actually need? Only one thing: the water in the heater has to travel to the tap. Overnight, the water sitting in the pipe has gone cold, so the hot water first has to push that whole pipe of cold water out, and the longer the pipe, the longer the push. Suppose you moved the water heater to the room next to the bathroom: with a short pipe, the wait would likely drop to a few dozen seconds."
+ },
+ "deep": {
+  "mechanism": "### The reasons behind a custom can disappear as conditions change\n\nPutting up a wooden frame before building an arch makes perfect sense over a doorway a few meters wide: a few pieces of timber and a few days' work. Change the span to more than forty meters, and the frame has to be wide and tall and also carry the bricks of the entire dome; it needs more timber than anyone could gather. The rule hadn't changed, but the conditions that supported it had changed long before. That is where the questioning starts: what is the wooden frame actually doing? Its only job is to hold up the bricks until they close.\n\n### Break it down until you reach facts you can check\n\nBrunelleschi broke \"holding up\" down into the forces on the bricks: once each ring of bricks closes into a circle, the bricks push against one another, and nothing needs to support them from below. He took this, together with the herringbone way of laying bricks, as his starting points, and worked out everything else from those two. Starting points like these need evidence behind them: a number that was measured, a rule you can look up, a test that was run.\n\n### The reworked plan must be checkable step by step\n\nFor each step of the new method, you should be able to say what it solves: the herringbone bricks keep bricks from sliding out, and closing in ring by ring lets each ring hold itself up. Before work began, Brunelleschi first built a scaled-down model, and only then used real materials.",
+  "origin": "In the *Posterior Analytics*, Aristotle discussed where knowledge should start. He argued for starting from some points that don't need to be proved by any other statement, and deriving the rest of knowledge from them. Later these starting points came to be called first principles. Euclid's *Elements*, which derives a whole system of geometry from its postulates, is the accepted model example.",
+  "limits": "First principles works best when the goal is clear, the starting points can be checked, and there is still room to change how things are done: when the reasons behind an old rule have changed, it's time to act. On the other hand, when a plane has a fault, the crew has a well-tested checklist in hand, and working things out from scratch on the spot would only lose time. A harder mistake to spot is treating an unchecked assumption as a fact. Counting only the cost of the parts and announcing you can sell at half the price amounts to setting assembly, shipping and after-sales service all at zero; however neat the reasoning, it rests on nothing."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When reworking a process that has been in use for years, first separate the steps forced by law or physics from the steps that are only there because they were always done that way; only the second kind is yours to change."
+   },
+   {
+    "use": "explore",
+    "text": "For something everyone in your field says can't be done, ask of each necessary condition what it protects, then look for another way to protect it. This often turns up a path no one has tried."
+   },
+   {
+    "use": "explain",
+    "text": "A company requires expense forms to be signed by hand by a department manager. That was because there was no electronic approval back then. Now the system keeps a record, so the reason for this step is gone and it can be dropped."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Cooking",
+    "title": "Braised pork doesn't need two hours",
+    "text": "You want your red-braised pork belly tender, and every recipe says to simmer it in an open pot for two hours. Take that apart: tenderness comes from the collagen in the meat slowly turning into gelatin in hot water. What it needs is a high enough temperature plus time; no rule says the pot has to be open. In a pressure cooker, water boils above 100°C. You put the meat in and turn off the heat after about forty minutes."
+   },
+   {
+    "field": "Business",
+    "title": "Two fryers at a fried-chicken stall",
+    "text": "You run a fried-chicken stall at the entrance to a housing complex. At 7:30, people coming home from work line up out to the road, and plenty of them take one look and walk away. You have always fried to order: one batch takes four minutes and makes twelve pieces. At the peak you need to sell ten pieces a minute, but the fryer only supplies three a minute. Customers want food that's hot and fast, not to watch it go into the oil. You add a second fryer, start the two two minutes apart, and before the peak you fry a batch ahead and put it in a warming cabinet."
+   },
+   {
+    "field": "Home",
+    "title": "Breaking down the electric bill",
+    "text": "You want to bring down your monthly electric bill, and the neighbors suggest changing light bulbs and unplugging things. First you go through a year of bills, then break the usage down by appliance: the water heater accounts for nearly half, the light bulbs for less than a tenth. Before changing any bulbs, you set the water heater to heat only during set hours at night and turn the water temperature down from 70°C to 55°C."
+   }
+  ],
+  "ask": [
+   "Why is this step in the process? Go through the rules and contracts, or ask the person who set it up, and see whether you can find where it came from.",
+   "Were the numbers in my hands measured, or did I just hear them? Which one, if it were wrong, would bring the whole plan down?",
+   "Rebuilding from these facts, what is the smallest number of steps I need? How cheaply can I try it once first?"
+  ],
+  "with": [
+   {
+    "id": "chestertons-fence",
+    "sees": "A company shuts down for one day every month so that everyone can count the inventory, and the new head of operations wants to simply scrap it: the goal is for the books to match what's on the shelves, and counting is only a means to that. Chesterton's fence tells him to hold off and first find out who set it up and why. Both are right; they disagree about order. If the reason can be found and no longer applies, scrap it. If the records turn up no reason at all, stop the count in one warehouse for a month, see whether errors appear, and then roll it out."
+   },
+   {
+    "id": "map-territory",
+    "sees": "When you rework a plan starting from a price list and quotes for parts, your starting point may not be the world itself but a table someone else put together. The map is not the territory reminds you, when checking a starting point, to ask how the data was measured and what it left out before you let it into your reasoning."
+   },
+   {
+    "id": "circle-of-competence",
+    "sees": "If you try to work out the compliance cost of a medical device from scratch, you'll find there are starting points you can't check yourself. The circle of competence marks out which starting points you can check with your own hands and which need someone who knows the field. With that step done, the rebuilt reasoning has solid ground to stand on."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You run a neighborhood pharmacy and want to cut how long customers wait for their medicine. Right now one licensed pharmacist on duty does everything: taking the prescription, reviewing it, fetching the medicine, double-checking and taking payment. It has been this way for more than ten years. The law requires every prescription to be reviewed and signed by a licensed pharmacist, and says nothing about who fetches the medicine or takes payment.",
+    "question": "What should the owner do first?",
+    "explain": "Only the review and the signature are forced by the law; the other steps were arranged out of habit. Hand the steps that can change to an assistant, keep the ones the pharmacist must do with the pharmacist, and then test the new arrangement with a week's record of errors.",
+    "options": [
+     {
+      "text": "Go to nearby pharmacies, measure how fast they hand out medicine, and set your own speed by theirs.",
+      "correct": false,
+      "feedback": "The other shop's speed tells you how fast someone else is, not why this step is slow for you; and their way of doing it may not suit this shop."
+     },
+     {
+      "text": "List the steps the law says a pharmacist must do, hand fetching and payment to an assistant, and try it for a week to see the errors.",
+      "correct": true,
+      "feedback": "The steps that must stay are kept, so the steps that can change are where time can be saved, and a week's record shows whether the new arrangement causes mistakes."
+     },
+     {
+      "text": "Tell the pharmacist to review faster, under two minutes per prescription, timing each one.",
+      "correct": false,
+      "feedback": "Review is a step the law requires, and rushing it can mean missing things; the bulk of the waiting may not be in this step either."
+     },
+     {
+      "text": "Hire a second licensed pharmacist, and have each serve half the customers using the full original process, so the line is half as long.",
+      "correct": false,
+      "feedback": "Each customer still waits for a pharmacist to go through every step; the line is just split in two, and the reason each customer waits hasn't been touched."
+     }
+    ]
+   },
+   {
+    "stem": "The Wi-Fi at home keeps lagging in the bedroom. Your internet provider's customer service suggests upgrading your 200 Mbps plan to 500 Mbps, for thirty yuan more a month. Your router is in the living room, two walls away.",
+    "question": "Before paying to upgrade, what should you check first?",
+    "explain": "The plan's speed is the bandwidth coming into the home; the lag in the bedroom may be the signal weakening after it passes through walls. Only by testing the speed next to the router and in the bedroom separately will you know whether the bottleneck is bandwidth or distance, and have a basis for upgrading.",
+    "options": [
+     {
+      "text": "Just upgrade to 500 Mbps and try it for a month; cancel if it doesn't help.",
+      "correct": false,
+      "feedback": "This is paying to try what customer service said without finding out why it lags. After the upgrade it may lag just the same."
+     },
+     {
+      "text": "Ask the neighbors in your building which plan they have, and pick the same one.",
+      "correct": false,
+      "feedback": "Your neighbors' plan and floor plan are both different from yours, so their choice can't tell you where the bottleneck in your bedroom is."
+     },
+     {
+      "text": "Look online for the router brand with the most good reviews, and buy one.",
+      "correct": false,
+      "feedback": "The number of good reviews reflects how other people felt using it; it can't tell you whether the lag in this one bedroom of yours is a bandwidth problem or a wall problem."
+     },
+     {
+      "text": "Test the speed once next to the router and once in the bedroom, and compare how far apart the two readings are.",
+      "correct": true,
+      "feedback": "If the reading next to the router is normal and the bedroom's is very low, the problem is the signal passing through walls, and upgrading the plan won't help the bedroom."
+     }
+    ]
+   },
+   {
+    "stem": "You want to work out how many years rooftop solar panels would take to pay for themselves at your home. The salesperson says six years, without showing how that was worked out. You have last year's electric bills on hand: 3,600 kWh used over the year, at 0.55 yuan per kWh.",
+    "question": "Which of these counts as a reliable starting point?",
+    "explain": "The electric bills are a record of what actually happened. The six years comes from the salesperson, with no working shown. The power generated also has to be worked out from local sunshine records before the two sides can be put into one calculation.",
+    "options": [
+     {
+      "text": "Work backward from six years to payback: what you save each year should equal one sixth of the total price.",
+      "correct": false,
+      "feedback": "This uses the unchecked six years to work backward to the yearly saving, so the number it gives has no basis."
+     },
+     {
+      "text": "Neighbors who bought panels say it was a good deal, so six years to payback should be believable.",
+      "correct": false,
+      "feedback": "Your neighbors' roof direction and power use are both different from yours; how they feel can't be converted into your payback time."
+     },
+     {
+      "text": "The 3,600 kWh and 0.55 yuan on the bills are records; fill in the power generated from local sunshine data.",
+      "correct": true,
+      "feedback": "Power use and price are your home's actual accounts. The power generated also needs a source you can check in the same way before the two sides can be put into one calculation."
+     },
+     {
+      "text": "The salesperson has done many homes, so six years is an experienced figure that can be taken as it is.",
+      "correct": false,
+      "feedback": "Many homes doesn't make the number right: it comes with no working, and it wasn't worked out for your roof."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "A frame only holds bricks; these hold themselves",
+  "caption": "The custom suits a doorway a few meters wide; over forty meters, timber runs short. Ask what the frame does, and you start from the forces on the bricks.",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "Frame first",
+    "sub": "OK for doorways",
+    "tone": "muted"
+   },
+   {
+    "id": "b",
+    "label": "Span 40+ m",
+    "sub": "Not enough wood",
+    "tone": "warn"
+   },
+   {
+    "id": "c",
+    "label": "Frame's job?",
+    "sub": "Holds bricks up"
+   },
+   {
+    "id": "d",
+    "label": "Rings close",
+    "sub": "Bricks brace"
+   },
+   {
+    "id": "e",
+    "label": "Herringbone",
+    "sub": "No wooden frame",
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b"
+   },
+   {
+    "from": "b",
+    "to": "c",
+    "label": "Ask"
+   },
+   {
+    "from": "c",
+    "to": "d"
+   },
+   {
+    "from": "d",
+    "to": "e"
+   }
+  ]
+ }
+}

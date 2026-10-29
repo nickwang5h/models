@@ -1,0 +1,219 @@
+{
+ "id": "ergodicity",
+ "name": "Ergodicity",
+ "en": "遍历性",
+ "discipline": "math",
+ "one_line": "The average of a hundred people betting once isn't what you get betting a hundred times.",
+ "story": "Buffett's February shareholder letter lists the S&P 500 with dividends at -37% in 2008 and +26.5% in 2009, still about a fifth down after the two years",
+ "shallow": {
+  "scene": "When a fund you hold first falls by half and then rises by half, many people think they're back to even. Open the account, though, and only 75% is left, because the later half was a rise on the half that was left after the fall. The US stock market really went through two years like this. Warren Buffett's shareholder letter of February 2010 lists the returns of the S&P 500 including dividends: -37% in 2008 and +26.5% in 2009. Set the two numbers against each other, and it looks as if the two years lost only a tenth.\n\nPut 100 dollars into the index, and at the end of the first year 63 dollars are left. The second year's 26.5% is a rise only on those 63 dollars, so the year ends at about 79.7 dollars. Holding on for the two years, the account shrank by about a fifth, twice the tenth that intuition says.\n\nWhen money rises and falls in proportion, the rise has to be much bigger than the fall to get back to even: after a 37% fall, it takes a rise of nearly 60% to get back to 100 dollars.",
+  "plain": "A hundred people each take 100 yuan and toss a coin once: heads, the money rises by 50%; tails, it falls by 40%. Half of them end up with 150 yuan and half with 60, an average of 105 each, which looks like a game you can't lose. If the average of a group each trying once equals the average of one person trying again and again over a long time, that is called being ergodic. When wins and losses simply add and subtract, the two are equal; when they roll on in proportion, they aren't.\n\nThis game rolls on in proportion. If you keep tossing alone and win once and lose once, in either order, your 100 yuan is down to 90. Toss twenty rounds, with ten wins and ten losses, and you have about 35 yuan left. With enough people, though, the group's average climbs to around 265 yuan."
+ },
+ "deep": {
+  "mechanism": "### A game that wins on average leaves one person who keeps playing with less and less\n\nIn a group, each round half the people multiply by 1.5 and half by 0.6, so on average everyone multiplies by 1.05 each round. If you alone win once and lose once, your money is multiplied by 1.5 and then by 0.6, shrinking to 0.9 times over two rounds. Spread over each round, that's the square root of 0.9:\n\n$$\\frac{1.5+0.6}{2}=1.05,\\qquad \\sqrt{1.5\\times0.6}\\approx0.95$$\n\n1.05 is the factor the group is multiplied by on average each round; 0.95 is the factor you are actually multiplied by each round. After twenty rounds, the group's average is $100\\times1.05^{20}\\approx265$ yuan; with ten wins and ten losses, you have ten 0.9s multiplied together, $100\\times0.9^{10}\\approx35$ yuan. The average is propped up by a lucky few: fewer than six in a hundred people win fourteen times or more, yet they make up two-thirds of the average.\n\n### Only when the fall narrows to a third do you, alone, not lose\n\nCut the fall to 20%, and after one win and one loss 100 yuan becomes 120, so you make money yourself too. Cut it to a third, and you land exactly back at 100 yuan, while the group's average still rises about 8% a round. The gap between the simple average and multiplying through is called volatility drag in investing. The index's two years at the start are an example: the simple average is a loss of about 5.3% a year, while multiplied through it is a loss of about 10.7% a year.",
+  "origin": "The word \"ergodic\" comes from Ludwig Boltzmann's statistical mechanics of gases in the late nineteenth century. In 1931 George David Birkhoff proved the ergodic theorem. In 2019 Ole Peters published \"The ergodicity problem in economics\" in *Nature Physics*, arguing that a bet should be judged by the growth rate of one person rolling it on round after round, not by the average over a group. This claim is still debated among economists.",
+  "limits": "Ergodicity fits best when one person keeps betting the same pot of money that rolls on in proportion: starting a business, long-term investing, a principal that is reinvested again and again. If each bet is only a very small part of what you have, like trying out something new with a few hundred yuan, wins and losses come close to simply adding and subtracting, the two averages almost coincide, and working with the average is fine.\n\nReading ergodicity as \"averages are useless\" goes too far the other way. You just switch to a different average: multiply each round's factors together and take the root. 1.5 times 0.6 is 0.9, and its square root is about 0.95. That is the factor you are actually multiplied by each round, and only if it's above 1 is the game one you make money on yourself."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "Someone invites you into a partnership where the rule is to put all of each round's winnings into the next round. First work out how much is left on a path of half wins and half losses, then decide what share to bet each round."
+   },
+   {
+    "use": "explain",
+    "text": "Explain why a strategy whose average return is positive every year can leave the people using it losing more and more: the average is over a group, but the losses fall on the same person."
+   },
+   {
+    "use": "explore",
+    "text": "Write a small program that has one account toss a thousand rounds in a row, then has a thousand accounts toss one round each. Try a few different rules and see where the two averages part ways."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Investing",
+    "title": "The average on the brochure",
+    "text": "A friend hands you a fund's brochure showing four years of returns: +60%, -30%, +50%, -20%, with a line in big type beside them, \"Average +15% a year.\" Roll 100,000 yuan at 15% for four years and you get about 175,000 yuan. Multiply through the four years' actual rises and falls instead, and it's 134,400 yuan. Next to the big line on the brochure, you write: over four years, actually about +7.7% a year."
+   },
+   {
+    "field": "Outdoor sports",
+    "title": "Ten thousand people ski once, or you ski for thirty years",
+    "text": "Every winter you go backcountry skiing once, and suppose each trip carries a 1% chance of an avalanche or serious injury. If ten thousand skiers each go once, 9,900 come back safe, and the group's average experience is very good. If you alone go thirty years in a row, the chance of at least one accident is about 26%. And once that happens, all the winters after it are gone, and you can never get back into the average. You switch to going with a guide and carrying an avalanche beacon, to push that 1% down first, before talking about going every year."
+   },
+   {
+    "field": "Technology",
+    "title": "Ten redesigns",
+    "text": "You lead a product team. Suppose each redesign has an even chance of raising the conversion rate by 30% or lowering it by 25%. Looked at one at a time, the average is a 2.5% rise, so every one seems worth shipping. You multiply ten redesigns through, five up and five down, and the conversion rate ends at 88% of where it started. The team changes its rule: each redesign is first tried on a small share of traffic, and any that doesn't win is pulled back."
+   }
+  ],
+  "ask": [
+   "Which people, and which stretch of time, was this average worked out over?",
+   "Will the result of one round become the stake for the next?",
+   "How many times will I myself repeat the same rule? On a path of half wins and half losses, what share of my money is left at the end?"
+  ],
+  "with": [
+   {
+    "id": "expected-value",
+    "sees": "A friend pulls you into a game that makes money each round on average, on condition that you stake all the money you have each round. Expected value works out that each round is positive and advises playing every round. Ergodicity looks at you alone playing round after round, where the factors on your money multiply together, and advises staking only a small share each round. If you play only once and losing won't affect anything else, go by expected value; if you'll play again and again and the winnings are staked again, first ask what you get after multiplying through."
+   },
+   {
+    "id": "kelly-criterion",
+    "sees": "You know a game makes money on average, but find that betting everything leaves you with less and less, while betting nothing lets it slip by for nothing. The Kelly criterion turns this intuition into a share: how much to bet so that the same pot grows fastest over the long run. Ergodicity says why betting everything doesn't work; the Kelly criterion says how much to bet."
+   },
+   {
+    "id": "avoid-ruin",
+    "sees": "However badly your plan goes, it can't wipe you out, so avoiding ruin lets it pass. Ergodicity still asks: if you keep doing this plan, do the factors from each round, multiplied together, come to more than 1 or less than 1? Even with no risk of being knocked out, your money can still shrink all the way down."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You run a neighborhood pharmacy and plan to put all your savings into expanding it. An industry report says that the 500 similar pharmacies surveyed grew their sales by 15% on average last year. You want to use it to estimate where your own shop will go over the next ten years.",
+    "question": "Which missing piece of information would best answer this question?",
+    "explain": "The 500 pharmacies each went through last year once, and the average describes a group of shops in the same year. What you care about is one shop over ten years in a row, so you need to see how a single shop's yearly rises and falls stack up, one year after another.",
+    "options": [
+     {
+      "text": "The average floor space of these 500 pharmacies, to see whether your shop is big or small.",
+      "correct": false,
+      "feedback": "Shop size tells you whether you're like the sample; it can't tell you what a single shop's yearly rises and falls add up to."
+     },
+     {
+      "text": "Survey 5,000 more pharmacies about their average growth last year, to make the average more accurate.",
+      "correct": false,
+      "feedback": "However large the sample, it only makes the average of a group of shops in the same year more accurate; it can't say what one shop will do over ten years in a row."
+     },
+     {
+      "text": "The median growth of these 500 last year, to see whether the average was pulled up by extreme values.",
+      "correct": false,
+      "feedback": "The median only corrects for extreme values pulling up the average; it's still a number from 500 shops each going through last year once, and doesn't show where one shop goes when ten years multiply together."
+     },
+     {
+      "text": "Year-by-year records of rises and falls for single shops like yours, to see what a single shop looks like after ten years stack up.",
+      "correct": true,
+      "feedback": "Each shop's rise or fall this year lands on last year's sales, so the ten-year result can only be seen by linking the yearly records one year after another."
+     }
+    ]
+   },
+   {
+    "stem": "You and nine other boat owners each have a fishing boat. Each year each boat's luck is its own: an even chance that its income becomes 1.8 times last year's or 0.5 times, and the boats don't affect each other. You all agree that at the end of each year the ten boats' income is pooled and split equally among the ten households, and the next year each boat carries on from the share it got.",
+    "question": "Compared with each working alone, why does splitting equally improve your boat's long-run position?",
+    "explain": "The average factor hasn't changed; what has changed is the factor each boat is multiplied by each year. With ten boats pooled, good luck and bad luck cancel out within the same year, and a boat rarely gets hit with low factors again and again. That is what turns the result of multiplying the factors through from shrinking into growing.",
+    "options": [
+     {
+      "text": "Splitting equally is only fair; it doesn't change any boat's long-run growth rate.",
+      "correct": false,
+      "feedback": "The average factor stays the same, but the swings in the factor each boat is multiplied by each year change. With smaller swings, multiplying through gives a different result."
+     },
+     {
+      "text": "Splitting equally raises the average factor each year.",
+      "correct": false,
+      "feedback": "Each boat's own average factor is 1.15, the same before and after splitting. Splitting doesn't create extra income out of nothing."
+     },
+     {
+      "text": "Each boat is multiplied each year by the average factor of ten boats; the swings are smaller, so multiplying through no longer shrinks the money.",
+      "correct": true,
+      "feedback": "Good luck and bad luck cancel out within the same year, and a boat rarely gets hit with low factors again and again, so its long-run growth rate turns positive."
+     },
+     {
+      "text": "Splitting equally means no boat ever has a bad year again.",
+      "correct": false,
+      "feedback": "Bad years still come; splitting only spreads them across ten boats, so each household takes a tenth of the blow."
+     }
+    ]
+   },
+   {
+    "stem": "You look after a vending machine. Each day it nets you 200 yuan or loses you 80 yuan, with even chances, and each day is independent of the others. The money made is taken out every night, and losses you cover out of your own pocket, so neither affects how much stock you buy the next day.",
+    "question": "Comparing your average daily net after looking after it alone for a full year with the average daily net of a thousand people each looking after one for a day, which statement is most accurate?",
+    "explain": "Each day's win or loss doesn't change the next day's stake, so one person's daily average over a year in a row will come close to the daily average of a thousand people each doing one day: both around 60 yuan a day.",
+    "options": [
+     {
+      "text": "Winning first and losing later gives a different result from losing first and winning later, so your year's result can't be estimated.",
+      "correct": false,
+      "feedback": "Each day's win or loss simply adds or subtracts, so the order doesn't change the year's total, and the year's result can be estimated perfectly well."
+     },
+     {
+      "text": "The two will be very close, both around 60 yuan a day.",
+      "correct": true,
+      "feedback": "Each day's win or loss doesn't go into the next day's stake, so one person's daily average over a year comes close to the daily average of a group each doing one day."
+     },
+     {
+      "text": "Your daily average will be clearly lower, because the losing days drag down the days after them.",
+      "correct": false,
+      "feedback": "You cover the losses out of your own pocket, and they don't affect the next day's stock, so the days after are no worse for it."
+     },
+     {
+      "text": "The 60-yuan daily average only holds for the thousand people; for you alone, each day's results have to be multiplied together.",
+      "correct": false,
+      "feedback": "The money made each day is taken out and doesn't go into the next day's stake, so there's no need to multiply. Multiplying is only needed when the stake keeps rolling on."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "The group averages 265 yuan; you're left with 35",
+  "caption": "Heads up 50%, tails down 40%, twenty tosses. Dashed: a large group's average. Solid: you, winning half. Only at a 30% fall does your line go up.",
+  "x": {
+   "label": "Rounds",
+   "min": 0,
+   "max": 20
+  },
+  "y": {
+   "label": "Money in hand (yuan)",
+   "min": 0
+  },
+  "params": [
+   {
+    "id": "u",
+    "label": "Rise",
+    "min": 10,
+    "max": 80,
+    "step": 10,
+    "value": 50,
+    "unit": "%"
+   },
+   {
+    "id": "d",
+    "label": "Fall",
+    "min": 10,
+    "max": 60,
+    "step": 5,
+    "value": 40,
+    "unit": "%"
+   }
+  ],
+  "series": [
+   {
+    "name": "Group average",
+    "expr": "100*pow(1+(u-d)/200, x)",
+    "tone": "ink",
+    "dashed": true
+   },
+   {
+    "name": "You, half wins",
+    "expr": "100*pow((1+u/100)*(1-d/100), x/2)",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "y": 100,
+    "text": "Starting money"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Group average",
+    "expr": "100*pow(1+(u-d)/200, 20)",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "You, half wins",
+    "expr": "100*pow((1+u/100)*(1-d/100), 10)",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

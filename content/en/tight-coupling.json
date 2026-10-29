@@ -1,0 +1,224 @@
+{
+ "id": "tight-coupling",
+ "name": "Tight Coupling and Cascading Failure",
+ "en": "紧耦合与级联失效",
+ "discipline": "systems",
+ "one_line": "When every link waits on the last with no slack, one failure runs all the way down.",
+ "story": "In the Northeast blackout of August 14, Ohio power lines touch trees and trip, the alarm system has failed, and the outage cascades until about 50 million people lose power",
+ "shallow": {
+  "scene": "On the afternoon of August 14, 2003, in Ohio, several high-voltage lines belonging to the power company FirstEnergy sagged into trees and tripped, one after another. The alarm system in the control room had already failed, and the operators did not see in time that the grid was getting worse. The current from the tripped lines shifted onto nearby lines, which became overloaded in turn and dropped out of service one after another. The failure spread east to New York and north into Ontario, Canada. About 50 million people lost power, and in New York some passengers were trapped on the subway.",
+  "plain": "You're rushing from work to catch an evening flight, and the trip is a three-leg relay: the subway, the airport express train, the check-in counter. The express runs every half hour, the counter closes forty minutes before takeoff, and you were going to make it just in time. A route like this is tightly coupled: every leg waits on the one before, and there is no slack anywhere in between. The subway runs ten minutes late, you miss this express and have to wait half an hour for the next, and by the time it arrives the counter has closed. Take a taxi straight to the airport instead, and there is no next departure to wait for: ten minutes of traffic only makes you ten minutes late."
+ },
+ "deep": {
+  "mechanism": "### The fuller the lines are, the less the rest can take\n\nFour lines run side by side, and each can carry at most 100 units. When each carries 60 and one drops out, its 60 is shared among the other three, and each rises to 80. That is still within capacity, so the failure stops at that one line. When each carries 80 and one drops out, its 80 is shared among three, and each has to carry about 106.7, over capacity. So another line trips, and the whole 320 lands on the remaining two, 160 each, and they drop out too.\n\n### When failure spreads faster than it's noticed, people can't act in time\n\nOn a production line, a fault reaches the next station every 10 minutes, and it takes the person on duty 25 minutes to notice it and pull the switch. By the time they act, two stations downstream have already stopped, at the 10th and 20th minutes. If half-finished goods enough for 30 minutes of the downstream station's work are stored between every two stations, the person on duty pulls the switch at the 25th minute and not a single station downstream stops.\n\n### When you can't see the connections, the slack goes on working out what's happening\n\nA row of dominoes is tightly coupled too, but dominoes only stand in a single line. You can see at a glance which one has fallen, and pulling out one ahead stops it. In a nuclear power plant there are hundreds or thousands of pipes and valves, and the people on duty can only guess from indicator lights which path the fault has taken. The fault spreads along paths no one ever drew, and while people are still working out what has happened, the slack time runs out.",
+  "origin": "Charles Perrow was a sociologist, and in 1984 he published *Normal Accidents*. The book uses the accident at the Three Mile Island nuclear power plant in the United States in March 1979 as an example: a pressure relief valve was stuck open, but its indicator light only showed that it had been sent the signal to close, so the operators thought it was shut. From this, Perrow judged systems on two counts. One is interactive complexity, meaning so many connections that no one can see them all clearly; the other is tight coupling. A system that has both will sooner or later have this kind of accident.",
+  "limits": "This model is most useful for power grids, payment and settlement, and logistics that relies on on-time handoffs, where each link can only wait minutes to hours. It only answers how a failure spreads, not why it happens: when the root cause is a defect in some part itself, no dependency map, however clear, will find it. It is also wrong to read \"has dependencies\" straight as \"will collapse completely\": in a system whose dependencies are clear and whose failures can be cut off in time, tight connections actually save inventory and waiting."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "When a supplier stops work, estimate which companies the effect will reach: draw out who waits on whom, and write down, link by link, how many days the stock on hand can last."
+   },
+   {
+    "use": "design",
+    "text": "When planning the rollout of a system upgrade, leave room between steps that must happen back to back to stop and roll back, so the step that goes wrong doesn't drag the steps after it along."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Software",
+    "title": "Eleven lines of code",
+    "text": "In March 2016, a developer pulled a batch of his packages from the npm registry. One of them, called left-pad, was only eleven lines long; it added blank spaces to the left of a string. The packages that depended on it were depended on by other packages in turn, and several big projects, Babel among them, began failing to build. Builds only ran again once npm put the package back up."
+   },
+   {
+    "field": "Home renovation",
+    "title": "The tiler who started late",
+    "text": "You're renovating a two-bedroom apartment with four trades: plumbing and wiring, tiling, carpentry and painting. Each starts the day after the one before finishes. The painter was booked for a fixed slot three months ahead, and missing it means waiting until next month. The tiler ran into a stretch of rainy days and worked four days longer. The carpenter started four days late, the painter's slot that week went unused, and you rebooked for the first week of the next month."
+   },
+   {
+    "field": "Finance",
+    "title": "A fund falls below one dollar",
+    "text": "In September 2008, Lehman Brothers filed for bankruptcy. The next day, the Reserve Primary money market fund, which held Lehman's short-term debt, saw its value fall to 97 cents a share, below the 1 dollar it had promised. Investors in other money market funds rushed to pull their money out too, and the funds stopped buying companies' short-term debt. Companies that relied on that kind of debt to keep cash flowing couldn't raise money. A few days later, the US Treasury announced a guarantee for money market funds."
+   }
+  ],
+  "ask": [
+   "Which link, if it stops, leaves the next one with nothing to work with right away? Go count how long its stock or backup supply can last.",
+   "When a link drops out, whose job does its work fall to? How far is that link from full load?",
+   "From the moment something goes wrong to someone noticing and cutting it off, how long does it take? Is that shorter or longer than the slack?"
+  ],
+  "with": [
+   {
+    "id": "redundancy",
+    "sees": "A chemical plant wants to add a backup pump beside its main pump, along with a switchover valve and interlock controls. Redundancy sees that the chance of a single pump failure has been pushed down; tight coupling sees that the switchover gear adds a new connection, the two pumps' states now pull on each other, and a false trip of the interlock becomes a new reason for the pumps to stop. If the backup can start on its own and the switchover logic is simple, add it; if switching over needs a whole system of interlocks, first leave plenty of slack."
+   },
+   {
+    "id": "feedback-loops",
+    "sees": "A city's subway line stops running, and passengers pour onto the buses. Tight coupling asks how much the bus routes can take and whether they have enough room to spare; feedback loops ask whether full buses will make the roads more crowded and slow the buses further, so that the more people the backup takes on, the worse the backup gets. After working out the spare room, look for this loop that comes back and makes things worse."
+   },
+   {
+    "id": "premortem",
+    "sees": "A lab is moving into a new building over the weekend, and before the move it holds a premortem: assume the move went badly and have everyone write down why. Most of what's on the paper is the first thing to go wrong, like \"the refrigerated truck arrives late\" or \"the new building's wiring hasn't passed inspection.\" Tight coupling pushes further: once the refrigerated truck is late, what else stops with it? The samples warm up on the truck, the freezers in the new building aren't powered yet, and Monday's experiments can't be scheduled. Add the things it brings to a halt to the list as well."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A hospital has only one CT scanner, shared by the emergency department, inpatients and outpatient appointments, which wait in line in order of arrival. In the afternoon a badly injured patient comes into the emergency department, and the scan plus extra tests take up three hours. The outpatients with appointments have nothing to do with this injured patient's case.",
+    "question": "What is most likely to happen to that afternoon's outpatient appointment scans?",
+    "explain": "The patients with appointments have nothing to do with the injured patient's case, but they are all waiting for the same machine. While the machine is taken, their start times are pushed back.",
+    "options": [
+     {
+      "text": "They are pushed back; the patients with appointments have to wait for the same machine to free up.",
+      "correct": true,
+      "feedback": "When everyone shares one machine, the time one person takes on it becomes waiting time for everyone behind them."
+     },
+     {
+      "text": "Only inpatients are affected, because they and the emergency department belong to the same hospital system.",
+      "correct": false,
+      "feedback": "Outpatient appointments use this CT scanner too. While the machine is taken, everyone in line waits."
+     },
+     {
+      "text": "They are not affected: the two have nothing to do with each other and each follows its own process.",
+      "correct": false,
+      "feedback": "Having nothing to do with each other doesn't mean not competing for the same machine. While the CT is taken, the patients with appointments have to wait."
+     },
+     {
+      "text": "They start at their appointment times as usual, because appointments come before patients who walk in.",
+      "correct": false,
+      "feedback": "The question says the line goes in order of arrival, so appointments don't get priority, and no rule can free up a machine that is in the middle of a scan."
+     }
+    ]
+   },
+   {
+    "stem": "One morning after a cold snap, the elevators in three buildings in the same apartment complex stopped at almost the same time. The three buildings' power and control systems are not connected to each other, and each is repaired separately. The property manager found that all three elevators used the same batch of guide-rail lubricant from the same maker.",
+    "question": "Which judgement about these stoppages makes more sense?",
+    "explain": "The three buildings don't depend on each other: one building's elevator stopping doesn't change the working conditions in another. It looks more like one cause striking three places separately. What needs checking is how the lubricant behaves at low temperatures, not which building stopped first.",
+    "options": [
+     {
+      "text": "Elevator stoppages will pass from building to building across the complex, and sooner or later all three will stop.",
+      "correct": false,
+      "feedback": "In the question the three buildings don't depend on each other, so there is no path for anything to pass along."
+     },
+     {
+      "text": "It has nothing to do with the cold snap; the complex's overall management has gone wrong.",
+      "correct": false,
+      "feedback": "The stoppages came after the cold snap, and there is the lead of the same batch of lubricant; there is no evidence of a management problem."
+     },
+     {
+      "text": "One cause affected the three buildings separately; check how the lubricant behaves at low temperatures.",
+      "correct": true,
+      "feedback": "The three buildings are independent of each other, so stopping at the same time points to what they share, which is the same batch of lubricant."
+     },
+     {
+      "text": "The building that stopped first dragged the other two down; start checking from its power supply.",
+      "correct": false,
+      "feedback": "The three buildings' power and controls are not connected to each other, so the first building stopping didn't change the working conditions in the other two."
+     }
+    ]
+   },
+   {
+    "stem": "The three hospitals in a city take turns receiving ambulances at their emergency departments. One closes its emergency department because of a power cut, and all the ambulances are sent to the other two. On a normal night, those two already have 90% of their beds in use.",
+    "question": "What is most likely to happen tonight?",
+    "explain": "The two hospitals taking over were nearly full to begin with, and they can't absorb the extra ambulances. Once full, they push patients on to hospitals farther away, and the load spreads outward link by link.",
+    "options": [
+     {
+      "text": "These two hospitals are independent of the one with the power cut, so tonight they take patients as usual, and each one's patient numbers stay the same.",
+      "correct": false,
+      "feedback": "The ambulances have been redirected from the hospital with the power cut, so these two hospitals' patient numbers have already changed."
+     },
+     {
+      "text": "The two hospitals fill up fast, ambulances go on to hospitals farther away, and waiting and transfer times both grow longer.",
+      "correct": true,
+      "feedback": "The links taking over were already close to full load. As soon as the extra work arrives, they drop out too."
+     },
+     {
+      "text": "Only the patients of the hospital with the power cut are affected; the other two emergency departments aren't drawn in.",
+      "correct": false,
+      "feedback": "The two hospitals have to take the ambulances from the one with the power cut, so its closure has already changed their workload."
+     },
+     {
+      "text": "If the ambulances make a few more trips, the three hospitals' emergency departments can absorb the patients.",
+      "correct": false,
+      "feedback": "At night 90% of the beds are already in use. The two hospitals taking over have no room to spare, and more trips only crowd the patients together more."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "At 80 each, losing one line trips all four",
+  "caption": "Each of four lines carries at most 100. Drag the load per line: up to 75, one outage stays at one line; above 75, the rest can't take it and drop out one by one.",
+  "x": {
+   "label": "Round",
+   "ticks": [
+    {
+     "at": 0,
+     "label": "Normal"
+    },
+    {
+     "at": 1,
+     "label": "One out"
+    },
+    {
+     "at": 2,
+     "label": "2"
+    },
+    {
+     "at": 3,
+     "label": "3"
+    },
+    {
+     "at": 4,
+     "label": "4"
+    }
+   ]
+  },
+  "y": {
+   "label": "Lines still running",
+   "unit": " lines",
+   "min": 0,
+   "max": 4
+  },
+  "params": [
+   {
+    "id": "load",
+    "label": "Load per line",
+    "min": 50,
+    "max": 95,
+    "step": 5,
+    "value": 80
+   }
+  ],
+  "model": {
+   "steps": 4,
+   "init": {
+    "m": 4
+   },
+   "next": {
+    "m": "k==0 ? 3 : (m>0 && 4*load/m > 100 ? m-1 : m)"
+   }
+  },
+  "series": [
+   {
+    "name": "Still running",
+    "expr": "m",
+    "tone": "accent",
+    "dots": true
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Each after one is out",
+    "expr": "4*load/3",
+    "digits": 1
+   },
+   {
+    "label": "Left at the end",
+    "expr": "m",
+    "unit": " lines",
+    "digits": 0
+   }
+  ]
+ }
+}

@@ -1,0 +1,211 @@
+{
+ "id": "kelly-criterion",
+ "name": "Kelly Criterion",
+ "en": "凯利公式",
+ "discipline": "investing",
+ "one_line": "When you bet over and over, one fraction you can calculate grows your money fastest.",
+ "story": "Thorp takes a backer's 10,000 dollars to casinos in Reno and Lake Tahoe to test blackjack card counting, betting more when the cards favor him and less when they don't",
+ "shallow": {
+  "scene": "In 1961 the mathematician Edward Thorp took 10,000 dollars from his backers to Reno and Lake Tahoe in Nevada, to test his blackjack card-counting method in the casinos. As the cards were dealt one by one, he used the cards already played to work out how much the cards still left favored the player. When they favored him, he bet big; when they didn't, he bet small. The test trip won money.",
+  "plain": "You have 1,000 yuan, and in front of you is a lopsided coin that lands heads up 60% of the time. You bet on heads. If you're right, you win as much as you bet; if you're wrong, you lose the bet. The game clearly favors you, yet how much you bet each round matters a great deal. Take ten rounds with exactly six wins and four losses. Bet a tenth of your money each round, and 1,000 yuan grows to about 1,162. Bet half each round, with exactly the same wins and losses, and you're left with about 712. The Kelly criterion works out that fraction."
+ },
+ "deep": {
+  "mechanism": "### How much you bet changes the long-run result several times over\n\nTake the same coin that lands heads 60% of the time. The more you bet each round, the harder it is to climb back after a loss. Bet a tenth, and one loss leaves nine-tenths, which a rise of about 11% makes up. Bet half, and one loss leaves half, which has to double to make it up. But bet too little and you earn slowly. So the fraction that grows fastest lies in between. With this coin a win pays as much as you bet, and then the fastest fraction is the win rate minus the loss rate: 0.6 minus 0.4, which is 20%. Betting too much actually loses money. Bet 40%, and after a hundred rounds with sixty wins and forty losses, you're left with only about 0.78 times what you started with.\n\n### The more one win pays, the bigger the fraction you can bet\n\nSwap the coin for a general game. The chance of winning is $p$ and the chance of losing is $q$; a win pays a net $b$ times the bet, and a loss costs the whole bet. The fraction to bet each round is:\n\n$$f=p-\\frac{q}{b}$$\n\nThe bigger $b$ is, the less gets taken off the win rate, and the more you can bet: when one win pays a lot, it makes up for the times you lose. When $b$ equals 1, the formula goes back to the coin game's win rate minus loss rate. Another example: with a 40% success rate and a net gain of four times the stake on success, the fraction is $0.4-\\frac{0.6}{4}=0.25$, a quarter.\n\n### Overestimate the win rate by five points, and betting by the formula nearly stops the growth\n\nYou estimate the coin's win rate at 60%, so by the formula you bet 20% each round. But the true win rate is only 55%, and the best fraction is 0.55 minus 0.45, which is 10%. Count a hundred rounds as fifty-five wins and forty-five losses. Betting 20% leaves you with about 0.99 times your money, nearly standing still; betting 10% gives about 1.65 times.",
+  "origin": "The Kelly criterion comes from information theory. John Kelly of Bell Labs published \"A New Interpretation of Information Rate\" in 1956. He proved that when you bet using information, betting the best fraction each round makes your money grow fastest in the long run. Thorp then applied it to blackjack, and in 1962 he described this way of betting in *Beat the Dealer*.",
+  "limits": "The Kelly criterion works best for games like this: you can bet again and again, the win rate and the payoff have a record you can look up, and you decide how much to bet each time. Card counting is exactly such a game. A stock's returns have countless possible outcomes and can't be squeezed into a formula with only two outcomes, win or lose; it needs a more general calculation. The gains and losses of buying a home or changing jobs can't be settled as multiples of your money either. The formula also assumes that each round has nothing to do with the others and that the rules stay the same. Once the rules change, the old record is worthless."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "You have a marketing budget you can spend again every quarter. Sort past years' campaign results into the number of successes and the multiples gained or lost, and work out the largest share of the budget to try each time."
+   },
+   {
+    "use": "design",
+    "text": "When setting a limit on each position for a trading team, use the win rate and the gain and loss multiples to work out a ceiling, then let traders place their own bets under it."
+   },
+   {
+    "use": "explore",
+    "text": "Write a small program that runs the same game ten thousand times at each of several fractions, and see which fraction has the highest median growth and which does worst in its worst few runs."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Psychology",
+    "title": "Half an hour with a digital coin",
+    "text": "In 2016 Haghani and Dewey published an experiment. Each participant got 25 dollars and half an hour to bet on a digital coin that came up heads 60% of the time. A correct bet won back as much as was staked, and each person chose how much to bet each round. Many of the 61 participants were finance students and professionals, and 28% of them lost all 25 dollars. By the Kelly criterion, betting a fifth of your money each round in this game almost never loses it all; yet 18 of the 61 people bet everything they had at least once."
+   },
+   {
+    "field": "Personal life",
+    "title": "Four out of ten side projects work",
+    "text": "Every quarter you take part of your savings as the starting money for a side project. Your record from past years: of ten projects, four succeeded and six failed. The successes made a net four times their stake; the failures lost all of it. Fewer than half succeed, yet the sums come out positive. Working from this record, you put at most a quarter of your savings into each project, and at the start of each quarter you move that money into a separate side-project account."
+   },
+   {
+    "field": "Business",
+    "title": "Ninety-five percent of the payments",
+    "text": "You run a small wholesale shop and sell on credit to regular customers. In past years, of every twenty sales, nineteen were paid in full when due, earning 10% on top of the price of the goods; in the remaining one the customer vanished and the whole payment was lost. From this record you work out a maximum of 45%. But a record of twenty sales is too short, so you take only half: the goods you sell on credit each time are worth no more than 20% of your working capital."
+   }
+  ],
+  "ask": [
+   "If the true win rate is five points lower than I estimated, will betting at my current fraction still grow in the long run?",
+   "How many times the bet does one win pay, net, and at most what share of the bet can one loss cost? Are both measured against the same sum of money?",
+   "How many times a year will I come across a chance like this?"
+  ],
+  "with": [
+   {
+    "id": "expected-value",
+    "sees": "A company has a pool of cash it can put to work again and again, and two plans both make money on average. Plan A puts in 30% of the cash each time, plan B 80%, and B's average return is higher. Expected value picks B. The Kelly criterion works out long-run growth from the share put in each time: for this game the best share is a little over 20%. A is slightly above it and B far above it, and over a few dozen rounds B's money keeps shrinking while A's keeps growing. When the money has to keep rolling and what you earn goes back in, look at the share Kelly works out; when you do it only this once and a loss won't hurt anything else, comparing average returns is enough."
+   },
+   {
+    "id": "avoid-ruin",
+    "sees": "You come across a game. You're 99% sure to win; a win pays an extra 0.05 yuan for every yuan bet, and a loss costs the whole bet. The Kelly criterion says you can bet up to nearly 80%, and one loss won't take you to zero. Avoiding ruin keeps its eye on that one loss: your money drops to a little over 20%, and it has to grow to nearly 4.8 times that to get back to where you started, and this money also holds next month's rent. If the money is all spare, bet the Kelly fraction. If it includes spending you can't touch, set that part aside first and work out the fraction only from what's left."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You run a small plant nursery. Each season you take part of your working capital to trial a new variety, and the money you make stays in the working capital to use again. Your record from past years: half the new varieties sold, making a net 3 times what they cost; the other half didn't sell, and everything put into them was lost.",
+    "question": "To make your working capital grow fastest in the long run, how much should you put into trials each season?",
+    "explain": "First divide the loss rate by the multiple a win pays: 0.5÷3 is about 0.17. Then subtract that from the win rate of 0.5, which gives about a third. Success and failure are even, but a win makes three times the stake and a loss costs only the stake once, so the game favors you, though not so much that you should stake most of your money.",
+    "options": [
+     {
+      "text": "Half the working capital, as big as the chance of selling.",
+      "correct": false,
+      "feedback": "The chance is only half the information; it leaves out how much a win pays and what a loss costs. Put in half, and two seasons in a row of not selling leave you with only a quarter of your working capital."
+     },
+     {
+      "text": "About a third: 0.5 minus 0.5÷3.",
+      "correct": true,
+      "feedback": "Divide the loss rate by 3 first, then subtract it from the win rate, which gives about a third. At that share your working capital grows fastest in the long run."
+     },
+     {
+      "text": "Nothing at all: success and failure are even, so the win rate minus the loss rate is zero.",
+      "correct": false,
+      "feedback": "Win rate minus loss rate only applies when a win and a loss are the same size. Here a win makes a net three times the stake, so on average each 1 yuan put in earns back 1 yuan. The game favors you."
+     },
+     {
+      "text": "Three quarters of the working capital: a win makes three times the stake, so the more you put in, the more you make.",
+      "correct": false,
+      "feedback": "Put in three quarters, and one season of not selling leaves only a quarter, which has to grow fourfold to get back to where you started. Counting one win and one loss, the working capital keeps shrinking."
+     }
+    ]
+   },
+   {
+    "stem": "You and a friend play a game where a win pays back as much as you bet and a loss costs the bet. You won 7 of the first 10 games. Taking the win rate as 70%, the formula gives 40% as the best fraction. From here on, you decide how much to bet each game.",
+    "question": "For the next stretch, what is the safer amount to bet each game?",
+    "explain": "Ten games is too few results, so the 70% figure could be far off. If the true win rate is somewhat below 70%, 40% is betting too much, so you should bet clearly less than the formula says.",
+    "options": [
+     {
+      "text": "40%: that's what the formula says to bet for a 70% win rate.",
+      "correct": false,
+      "feedback": "What goes into the formula is 70%, and a 70% estimated from ten games could be far off. If the true win rate is a few points lower, 40% is too much."
+     },
+     {
+      "text": "More than 40%: you're on a hot streak, so press on and raise the stakes.",
+      "correct": false,
+      "feedback": "A hot streak is not a reason. Wins and losses over ten games don't buy you a higher win rate, and raising the stakes only moves you further from the best fraction."
+     },
+     {
+      "text": "Clearly less than 40%: the win rate estimated from ten games is still too uncertain.",
+      "correct": true,
+      "feedback": "With a small sample, the win rate may be overestimated. Betting less hurts less if the estimate is wrong, and doesn't leave you far behind if it's right."
+     },
+     {
+      "text": "Everything: a 70% win rate is already high, so win it all in one go.",
+      "correct": false,
+      "feedback": "Bet everything and one loss wipes you out; a 70% win rate can't protect you from that one game."
+     }
+    ]
+   },
+   {
+    "stem": "You keep playing a game that favors you. The win rate and payoff stay steady over time, a loss costs the whole bet, and every round you bet a quarter of your latest money. With 640,000 yuan, you lose three rounds in a row and have 270,000 left.",
+    "question": "How much should you bet in the fourth round to stick most closely to the rule you have always followed?",
+    "explain": "Your rule is to bet a quarter of your latest money each round. The losses in the first three rounds have shrunk your money, so the fourth round's bet should shrink with it. The game itself hasn't changed.",
+    "options": [
+     {
+      "text": "180,000: double the last round's 90,000 to try to win it all back at once.",
+      "correct": false,
+      "feedback": "Chasing losses raises the bet to two-thirds of your money, far above a quarter. Lose once more and you're left with 90,000."
+     },
+     {
+      "text": "160,000: the same amount as the first round, whatever the wins and losses.",
+      "correct": false,
+      "feedback": "160,000 is nearly 60% of the 270,000 you have now. Lose once more and you have only 110,000 left."
+     },
+     {
+      "text": "0: three losses in a row show that the game's win rate has changed.",
+      "correct": false,
+      "feedback": "The question says the win rate and payoff are steady over time. Three losses in a row are a common run in this game, not evidence that the win rate has changed."
+     },
+     {
+      "text": "About 67,500: a quarter of the 270,000 you have now.",
+      "correct": true,
+      "feedback": "The bet stays the same share of your money, and the amount shrinks along with the money. Next round, bet a quarter of 270,000, about 67,500."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Betting 20% grows fastest; 40% ends up losing",
+  "caption": "A coin that lands heads 60% of the time, a win pays the bet, exactly 60 wins in 100 rounds. Drag the win rate to 55%: betting 20% barely grows.",
+  "x": {
+   "label": "Share bet each round",
+   "unit": "%",
+   "min": 0,
+   "max": 60,
+   "step": 1
+  },
+  "y": {
+   "label": "Times your money after 100 rounds"
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "Win rate",
+    "min": 50,
+    "max": 65,
+    "step": 1,
+    "value": 60,
+    "unit": "%"
+   }
+  ],
+  "series": [
+   {
+    "name": "After 100 rounds",
+    "expr": "(1+x/100)^p*(1-x/100)^(100-p)",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "y": 1,
+    "text": "Money unchanged"
+   },
+   {
+    "x": "2*p-100",
+    "text": "Fastest growth"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Fastest share",
+    "expr": "2*p-100",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "Bet 10%",
+    "expr": "1.1^p*0.9^(100-p)",
+    "unit": "×",
+    "digits": 2
+   },
+   {
+    "label": "Bet 20%",
+    "expr": "1.2^p*0.8^(100-p)",
+    "unit": "×",
+    "digits": 2
+   }
+  ]
+ }
+}

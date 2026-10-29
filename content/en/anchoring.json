@@ -1,0 +1,231 @@
+{
+ "id": "anchoring",
+ "name": "Anchoring",
+ "en": "锚定",
+ "discipline": "psychology",
+ "one_line": "The first number you hear drags your estimate toward it, even when it has nothing to do with anything.",
+ "story": "Tversky and Kahneman's rigged wheel stops at 10 or 65 and sways people's guesses of what share of UN members are African countries",
+ "shallow": {
+  "scene": "In 1974, Amos Tversky and Daniel Kahneman put participants in front of a wheel marked from 0 to 100. The wheel was rigged to stop only at 10 or 65. Participants first said whether the share of United Nations member countries that are African was higher or lower than the number on the wheel, then gave their own estimate. In the group whose wheel stopped at 10, the median estimate was 25%; in the group whose wheel stopped at 65, it was 45%. The number on the wheel had nothing to do with the United Nations, yet the two groups' answers ended up twenty percentage points apart.",
+  "plain": "At a tourist spot you ask how much a little ornament costs, and the stallholder says 120 yuan. You offer 60, the deal is done, and afterwards you feel you bargained hard. But that 60 was cut down from 120. You were anchored by the 120, and you never worked out what the ornament is worth. If the stallholder had opened at 40, you would most likely have got it down to twenty-something and felt just as tough."
+ },
+ "deep": {
+  "mechanism": "### People start from the number at hand and adjust until it seems plausible\n\nTo estimate a number they're unsure of, people grab one that's handy and adjust up or down from it. But when you're unsure, the range of \"plausible\" is wide. Adjusting away from the starting point, people stop as soon as they reach the edge of that range, so where they stop is always not far from where they started. Say you estimate how many weeks the renovation of your new home will take. You first think of the six weeks a friend's took, add two weeks, find that it sounds reasonable, and think no further. If the friend's had taken four weeks, where you stopped would also be two weeks lower.\n\n### The adjustment goes only part of the way, so the answer moves with the starting point\n\nBack to the stall. Suppose the ornament is really worth 20 yuan, and you bargain down from the asking price toward 20, but feel you've done enough after covering only 60% of the way. As a formula:\n\n$$B = A - f\\,(A - V)$$\n\n$B$ is the price you offer, $A$ is the stallholder's asking price, $V$ is what the ornament is really worth, and $f$ is the share of the adjustment you complete. Put in $A=120$, $f=0.6$ and $V=20$, and you get $B=120-0.6\\times100=60$, exactly the 60 you offered. Change the asking price to 40, and $B=40-0.6\\times20=28$.\n\nWith $f=0.6$, every 10 yuan more on the asking price raises your offer by 4 yuan. Raise the asking price from 40 to 120, and the share you cut off goes from 30% to half. The more you cut, the tougher you feel, yet what you pay rises from 28 yuan to 60.\n\nThe wheel experiment fits this formula too. The wheel's 10 and 65 are 55 apart, and the two groups' median estimates are 20 apart, so about a third of the gap was carried into the answers. Why a completely unrelated number can serve as a starting point is still being debated. What is certain is the adjustment step: once a starting point is set, the adjustment never goes all the way.\n\n### Only a different route takes you away from the starting point\n\nJust telling yourself \"don't be swayed\" doesn't make the adjustment go any further, and the answer still starts from that number. Take the renovation. First break the job down into materials, labor and stages, look up what a few similar jobs actually cost, and write down your own range. Then look at the quote, and ask which facts explain the part that differs.",
+  "origin": "In 1974, Tversky and Kahneman published a paper in Science that listed \"anchoring and adjustment\" as one of several shortcuts people use when making judgments; the wheel experiment is its best-known evidence. When people work out the starting point themselves, later research has given more support to the idea that they adjust too little. When the starting point is an outside number, why it works is still debated. One explanation, that it makes information that fits it easier to call to mind, did not replicate in five experiments by Harris and colleagues in 2019.",
+  "limits": "People are most easily pulled by the first number when they have nothing else to go on, and experts can't escape it either. In 1987, Northcraft and Neale had real estate agents value the same house, with each group shown a different listing price. The group shown the higher listing price also gave higher values, yet most of the agents said they hadn't used the listing price. When the starting point itself says something about the true value, it isn't a bias: last week's sale price for the same model is the right place to start. And if you open with an extreme price to control a negotiation, a buyer who has quotes from elsewhere won't bargain down from your price. They'll just turn and walk away."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Set a rule for team estimates: everyone first writes their number on paper, then they reveal them in turn, so the first person to speak can't pull the whole room along."
+   },
+   {
+    "use": "predict",
+    "text": "To forecast what a secondhand home will sell for, first look at where the listing price is set: buyers start bargaining from that number, and when it's set high, the sale price often ends up high too."
+   },
+   {
+    "use": "act",
+    "text": "When your landlord says next year's rent will go up to 6,500, don't start haggling around that number. First look up the rents actually agreed for the same type of apartment in the same complex over the last three months, then reply with a range."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "The last two digits become a bid",
+    "text": "In 2003, Dan Ariely, George Loewenstein and Drazen Prelec had MBA students at MIT first write down the last two digits of their Social Security number as a dollar amount. Next the students said whether they would buy a bottle of wine or some chocolate at that price, and finally wrote down the most they would pay. Students whose last two digits were higher bid more overall."
+   },
+   {
+    "field": "Investing",
+    "title": "Cover the purchase price and work it out again",
+    "text": "You bought a stock at 100 yuan a share. Later the company lost its biggest customer, and the price fell to 60. You revalue it starting from 100, revise it down to 90, and feel you've revised enough. Then you cover up your purchase record, look only at the remaining customers, profits and debt, and work it out again: you get 55 yuan."
+   },
+   {
+    "field": "Personal life",
+    "title": "The salary you name first",
+    "text": "In an interview for a new job, HR first asks your current monthly salary. You say 15,000, they offer 18,000, and you're pleased with a 20% raise. Back home you look up offers for the same role on job sites, and most fall between 22,000 and 26,000. When the next company asks what salary you expect, you name 25,000 first."
+   }
+  ],
+  "ask": [
+   "Is the number in my head one I worked out, or one someone else said first?",
+   "If I cover up the quote, the purchase price or the number someone else gave, what range would I write from the facts at hand? Which sales records should I look up, and which costs should I count?",
+   "Can everyone first write down their number separately, then swap, and only then discuss?"
+  ],
+  "with": [
+   {
+    "id": "base-rate",
+    "sees": "You want to estimate whether a newly opened coffee shop will still be around in three years. The base rate says: first look up the three-year survival rate for similar shops, start from that number, then adjust for this shop's location and funding. Anchoring warns of the opposite: a starting point ties you down, and however much you adjust, you stay near it. When the starting point is the overall record of similar cases, follow the base rate; when it's just a number someone tossed out, set it aside and work it out yourself."
+   },
+   {
+    "id": "contrast-effect",
+    "sees": "When you book a hotel, the top of the page shows a suite at 2,980 yuan. That suite raises your sense of what a night at this hotel ought to cost: that's anchoring. The 880-yuan standard room next to it looks cheap: that's the contrast effect. If you want to judge whether this hotel is expensive, contrast will get you to book the 880 room, and anchoring will make 880 seem reasonable too. Set both aside, and look at the room size and at prices for similar rooms in a few nearby hotels of the same class."
+   },
+   {
+    "id": "price-and-value",
+    "sees": "You're looking at a stock, and the first thing your trading app shows is the current price. Work out a range of value first, from how much the business can earn each year, and then look at the price, and the price can't drag you along. Do it the other way round, and the value is just the price plus or minus a bit."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You want to sell an electronic keyboard you've used for five years. A friend says offhand, \"A new one of the same model is 6,000; yours will fetch at least 3,000.\" You haven't checked the market, but in your head it's already 3,000.",
+    "question": "What is the best way to test that 3,000?",
+    "explain": "The 3,000 is something your friend said offhand; it didn't come from the market. Looking up actual sales and setting out a range by condition gives you something to compare with that doesn't depend on it.",
+    "options": [
+     {
+      "text": "List it at 6,000 first, and if no one asks, lower the price bit by bit until someone buys.",
+      "correct": false,
+      "feedback": "6,000 is the price of a new keyboard, not the market for this used one. Coming down from it changes the starting point, but you still have nothing to go on."
+     },
+     {
+      "text": "List it at 300 below 3,000, to leave buyers some room.",
+      "correct": false,
+      "feedback": "The listing price still moves up and down around 3,000, and taking off 300 doesn't bring in any market information."
+     },
+     {
+      "text": "Look up recent secondhand sale prices for the same model, set out a range by condition, then compare it with 3,000.",
+      "correct": true,
+      "feedback": "Sale prices are deals that actually happened. Once you have a range, you can see at a glance whether 3,000 is high or low."
+     },
+     {
+      "text": "Pass on what your friend said to another friend, ask them for a price, and take the average of the two.",
+      "correct": false,
+      "feedback": "The second friend has already heard 3,000, so their price will probably lean toward it too. The average is just an echo of 3,000."
+     }
+    ]
+   },
+   {
+    "stem": "At an auction of old furniture, the auctioneer opens a dining table and chairs at a very high price. A dealer who carries the sale records of this month's three auctions looks through them before bidding, and in the end bids about what he usually does. A tourist there for the first time bids far more than he would normally pay for something similar.",
+    "question": "Why is the dealer pulled along less?",
+    "explain": "The dealer has recent sale records for similar furniture, so the opening price gives him no new information he needs. The tourist has no number to compare with, so the opening price becomes the only number he has.",
+    "options": [
+     {
+      "text": "The dealer is more stubborn and doesn't listen to numbers other people give.",
+      "correct": false,
+      "feedback": "Stubbornness doesn't explain why he isn't pulled along. A stubborn tourist would still have no sale records to use."
+     },
+     {
+      "text": "The dealer has recent prices for similar furniture to compare with, so the opening price is no longer his only starting point.",
+      "correct": true,
+      "feedback": "With sale records to compare with, the first number he hears can't drag him along. The tourist has no other number, so the opening price becomes his starting point."
+     },
+     {
+      "text": "The dealer cares about saving face and won't follow someone else's number.",
+      "correct": false,
+      "feedback": "That is guessing at his character. All the question tells us for certain is that the dealer looked through sale records before bidding."
+     },
+     {
+      "text": "The dealer has more money and doesn't mind spending a few hundred more.",
+      "correct": false,
+      "feedback": "The question says the dealer bid about what he usually does. The difference is whether he had his own point of reference, not how much money he has."
+     }
+    ]
+   },
+   {
+    "stem": "A friend asks you how many people live in a city you've never been to. You first think of the 300,000 people in the county town you grew up in, figure this city is much bigger, go up to 500,000, feel that sounds about right, and give that answer. Later you look it up: 4 million.",
+    "question": "Why was your estimate so far too low?",
+    "explain": "You did adjust upward, but you stopped as soon as you reached a number that sounded plausible. The starting point was 300,000, so where you stopped wasn't far from it.",
+    "options": [
+     {
+      "text": "You adjusted up to a number that sounded plausible and stopped, so the answer still sat close to the starting point.",
+      "correct": true,
+      "feedback": "Adjustments like this naturally fall short: every number along the way sounds plausible, so people stop at the first one they come to."
+     },
+     {
+      "text": "You should have added less; going up to 500,000 was too much.",
+      "correct": false,
+      "feedback": "The real number is 4 million. The problem was adding too little, not too much."
+     },
+     {
+      "text": "You have no feel for a city you don't know, so your number had nothing to do with the starting point; it was a random guess.",
+      "correct": false,
+      "feedback": "You started from 300,000 and added to it. The answer clearly depends on the starting point; it wasn't random."
+     },
+     {
+      "text": "The 300,000 just came to mind and had no source, so it doesn't count as a starting point.",
+      "correct": false,
+      "feedback": "A number that just comes to mind can be a starting point too. What affects the estimate is that it came first; it doesn't need a source."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Stop short: higher ask, higher offer",
+  "caption": "Made-up numbers: the ornament is worth 20 yuan. Below 100% adjustment, your offer rises with the ask. Drag the ask: even cutting half, you overpay.",
+  "x": {
+   "label": "Asking price (yuan)",
+   "unit": "",
+   "min": 40,
+   "max": 200
+  },
+  "y": {
+   "label": "Price (yuan)",
+   "unit": "",
+   "min": 0,
+   "max": 200
+  },
+  "params": [
+   {
+    "id": "f",
+    "label": "Adjustment done",
+    "min": 0,
+    "max": 100,
+    "step": 10,
+    "value": 60,
+    "unit": "%"
+   },
+   {
+    "id": "o",
+    "label": "Asking price",
+    "min": 40,
+    "max": 200,
+    "step": 10,
+    "value": 120,
+    "unit": " yuan"
+   }
+  ],
+  "series": [
+   {
+    "name": "Asking price",
+    "expr": "x",
+    "tone": "muted",
+    "dashed": true
+   },
+   {
+    "name": "Your offer",
+    "expr": "x - f/100*(x-20)",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "y": 20,
+    "text": "Real value: 20 yuan"
+   },
+   {
+    "x": "o"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Offer at this ask",
+    "expr": "o - f/100*(o-20)",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "Share you cut",
+    "expr": "f/100*(o-20)/o*100",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "Paid above value",
+    "expr": "(1-f/100)*(o-20)",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

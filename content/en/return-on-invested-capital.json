@@ -1,0 +1,211 @@
+{
+ "id": "return-on-invested-capital",
+ "name": "Return on Invested Capital",
+ "en": "资本回报率",
+ "discipline": "investing",
+ "one_line": "Look at how much you earn next to how much money you had to tie up.",
+ "story": "Coca-Cola merges its own bottling plants into Coca-Cola Enterprises, takes it public and keeps 49%",
+ "shallow": {
+  "scene": "Plenty of bubble tea shops on the street carry the same brand, but the brand didn't open them itself. The rent, the fit-out and the machines are paid for by franchisees; the brand only sells them ingredients and collects franchise fees. Coca-Cola went the same way. It makes the concentrated syrup itself and hands it to bottlers to fill. Bottling means building plants, setting up production lines and keeping delivery trucks, with large sums of money tied up in them.\n\nIn 1986, Coca-Cola bought two big bottlers and merged them with its own bottling plants into a new company. The new company then went public, and Coca-Cola sold more than half of its shares.\n\nOnce the bottling business was split off, most of the syrup business's profit was still there, but the money tied up in plants and trucks no longer counted against Coca-Cola. It earned about as much, with far less money tied up, so each yuan it tied up brought back more every year.",
+  "plain": "You have two friends who each earn 20,000 yuan a year. One spent 50,000 yuan on a van to do deliveries; the other spent 200,000 yuan taking over a small shop. Look only at profit and the two are the same. Compare them by return on invested capital and the difference shows: for every 1 yuan put in, the van brings back 0.40 yuan a year, which is 40%; the shop brings back only 0.10 yuan, which is 10%. To catch up, the shop owner's 200,000 yuan would have to earn 80,000 a year, which means earning 60,000 more, or tying up only 50,000."
+ },
+ "deep": {
+  "mechanism": "### Double the money tied up, and the return halves\n\nYou run a print shop. Equipment, stock and money customers owe you tie up 2 million yuan on average. After operating costs, depreciation and tax, 300,000 yuan is left each year, a return of 15%. To earn the same 300,000 with 4 million tied up, the return is only 7.5%. Collect some of what customers owe, and the money tied up falls to 1.5 million, and the return rises to 20%. When working out the money tied up, also subtract what suppliers let you owe them for goods. You don't have to put up that money yourself.\n\n### Earning a thick margin and turning money over fast each do half the work\n\nLet after-tax operating profit be $P$, sales $S$, and the capital tied up $C$:\n\n$$\\frac{P}{C}=\\frac{P}{S}\\times\\frac{S}{C}$$\n\nThe return equals the profit margin times the turnover. The first is how much of each 1 yuan of sales you keep; the second is how many yuan of sales 1 yuan of capital supports in a year. When you multiply them, sales cancel out. A supermarket keeps only 3 yuan of every 100 it sells, and each yuan of capital supports 5 yuan of sales a year, so the return is 15%. A jewelry shop keeps 10 yuan of every 100 it sells, but each yuan of capital supports only 1.2 yuan of sales a year, so the return is 12%. If the jewelry shop keeps its sales the same and cuts the capital tied up by half, its turnover rises to 2.4, and its return rises to 24%.\n\n### It only counts as earning if it beats what the money could earn elsewhere\n\nOnce you have a return, whether it is good depends on how much the money could earn if it weren't in the business. If the print shop's loan costs 6% a year, each 1 yuan tied up could save 0.06 yuan of interest by paying down the loan. In the business it earns 0.15 yuan, 0.09 yuan more. For a business that returns only 5%, the money would do better paying down the loan. A business with a high return has one more advantage: as long as it has places to invest, the 300,000 yuan it earns can be put back in and earn about 15% too. So it doesn't need to ask outsiders for more money, and the business still grows fast.",
+  "origin": "Return on invested capital comes from management accounting and corporate finance; no one person proposed it at one time. In 1914, Donaldson Brown at DuPont used return on investment to analyze the business, linking the profit margin to capital turnover. The method was later used to manage General Motors. The modern calculation divides after-tax operating profit by the capital the operations tie up.",
+  "limits": "This yardstick sees most clearly in businesses whose money is mostly tied up in equipment, stock and money owed by customers. In the few years after research spending goes in, while a project is still ramping up, profit hasn't grown yet, and the ratio comes out low. Banks and insurers do business with money; money itself is what they sell, so the item \"capital tied up\" doesn't fit them. If all research is booked as that year's expense, it isn't counted as capital; old equipment depreciated down to almost nothing hardly takes up any money on the books either. Both make the capital tied up look smaller and push the return on paper up, and using it to compare two companies then gives the wrong answer."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When comparing two expansion plans, look at how much more profit each 1 yuan tied up in equipment and stock leaves you each year, and go with the plan that returns more."
+   },
+   {
+    "use": "design",
+    "text": "When setting targets for the management team, count the capital tied up too, so the team can't grow profit just by piling up stock and paying for goods in advance."
+   },
+   {
+    "use": "explain",
+    "text": "Two companies in the same industry make about the same profit, yet their share prices are far apart: one has to put most of what it earns back into equipment every year, and the other doesn't."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "The cloud bill and the server room",
+    "text": "You're comparing two plans for a data services company. Building its own server room would tie up 1 million yuan on average and bring 200,000 yuan a year in after-tax operating profit. Renting cloud services would tie up 400,000 yuan on average and bring 120,000 yuan in profit after the cloud bill. You put the two sets of numbers side by side: profit falls from 200,000 to 120,000, but the return rises from 20% to 30%. You put the cloud plan in your proposal."
+   },
+   {
+    "field": "Personal life",
+    "title": "A parking space deposit",
+    "text": "You're looking at two parking spaces in your housing complex. They're the same in every way, and the deposit is paid back in full at the end. One needs a 2,000-yuan deposit; the other needs a 12,000-yuan deposit but charges 1,000 yuan less rent a year. The extra 10,000 yuan of deposit brings back 1,000 yuan a year, which is like 10%. You check the bank's deposit rate for the same period before deciding which to take."
+   },
+   {
+    "field": "Manufacturing",
+    "title": "No more six months of fabric in stock",
+    "text": "You run a clothing factory with 6 million yuan of operating capital tied up on average, most of it in fabric; each quarter you used to stock up enough fabric for six months. After you switch to buying in batches as orders come in, the money tied up falls to 2 million yuan, and after-tax operating profit stays the same at 900,000 yuan a year. The return rises from 15% to 45%. You put the 4 million yuan you freed up into a new sewing line."
+   }
+  ],
+  "ask": [
+   "To earn this money, how much capital was tied up on average over the year in equipment, stock and money customers owe? Look up the start-of-year and end-of-year figures on the balance sheet.",
+   "Did the return rise because each sale keeps more, or because the same capital supports more sales?",
+   "How much of this high return comes from shrinking the bottom number? Check how research, depreciation and write-downs are booked."
+  ],
+  "with": [
+   {
+    "id": "diminishing-returns",
+    "sees": "Both of your car washes have a 30% return on invested capital, and the bank urges you to open a third right away. Return on invested capital describes the two you already have, and high is high. Diminishing returns looks at the third: in the same area it will take customers from the first two, so the added profit divided by the added money may be far below 30%. First ask whether the new one will be in the same area or a different one."
+   },
+   {
+    "id": "moat",
+    "sees": "A company has kept its return on invested capital at 25% for ten years straight, and no rivals have come in. Return on invested capital only tells you it earns a lot; a moat answers why rivals can't get in. First count how many rivals came in and then left over the past ten years, and then decide how many years ahead to project that 25%."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're looking at a company's books: equipment, stock and money customers owe add up to 250 million yuan; suppliers let it owe them 50 million yuan for goods; and it has another 300 million yuan of idle cash. This year's after-tax operating profit is 40 million yuan, not counting interest earned on the cash.",
+    "question": "What is the yearly return on this company's operating capital?",
+    "explain": "The bottom number should hold only the money the operations really tie up and that the company puts up itself: equipment, stock and money customers owe, minus what it owes suppliers. Idle cash plays no part in the operations, so it stays out of the bottom number.",
+    "options": [
+     {
+      "text": "16%, using the 250 million yuan of equipment, stock and money customers owe as the bottom number.",
+      "correct": false,
+      "feedback": "The 50 million yuan suppliers let it owe doesn't come out of the company's own pocket. Leaving it in makes the bottom number too big."
+     },
+     {
+      "text": "About 8%, because the bottom number should include the money the operations tie up plus all the idle cash, 500 million yuan in all.",
+      "correct": false,
+      "feedback": "Idle cash plays no part in the operations. Putting it in the bottom number waters down how efficient the operations look."
+     },
+     {
+      "text": "About 7%, adding all 250 million yuan of operating assets and the 300 million of cash, 550 million yuan in all.",
+      "correct": false,
+      "feedback": "This bottom number neither subtracts what it owes suppliers nor leaves out the cash that plays no part in the operations."
+     },
+     {
+      "text": "20%, with equipment, stock and money customers owe, minus what it owes suppliers, 200 million yuan in all, as the bottom number.",
+      "correct": true,
+      "feedback": "The operations tie up 250 million yuan; the company doesn't put up the 50 million it owes suppliers, so the net amount tied up is 200 million. 40 million divided by 200 million is 20%."
+     }
+    ]
+   },
+   {
+    "stem": "You read a company's annual report: on average it ties up 200 million yuan of operating capital, its after-tax operating profit is 50 million yuan a year, and its shares are currently worth 3 billion yuan in all. You plan to buy 300,000 yuan of its shares.",
+    "question": "Which view of your yearly return after you buy is right?",
+    "explain": "50 million divided by 200 million measures how efficiently the company uses its operating capital. You pay a market price that values the company at 3 billion yuan, and your return as a shareholder depends on what you pay, the dividends and what you later sell for.",
+    "options": [
+     {
+      "text": "The 25% describes how efficiently the company uses its operating capital; your return also depends on the price you pay, the dividends and the price you sell at.",
+      "correct": true,
+      "feedback": "The company's operating efficiency and a shareholder's investment return are two different numbers. What you pay is the market price of the shares."
+     },
+     {
+      "text": "If you hold long enough, the effect of the price you paid fades away and your return gradually gets close to 25%.",
+      "correct": false,
+      "feedback": "Time doesn't erase the cost of paying too much, and not all the profit can necessarily be reinvested at 25%."
+     },
+     {
+      "text": "Dividing 50 million yuan by 3 billion yuan, you're sure to earn about 1.7% a year.",
+      "correct": false,
+      "feedback": "Operating profit isn't the same as dividends, and the share price will move, so 1.7% isn't a certain return on your shares."
+     },
+     {
+      "text": "You'll earn a steady 25% a year, so the 300,000 yuan will earn 75,000 yuan a year.",
+      "correct": false,
+      "feedback": "The 25% goes with the 200 million yuan the company ties up, not with the price you pay."
+     }
+    ]
+   },
+   {
+    "stem": "Two parts factories, A and B, are exactly the same in size and operations. Each ties up 100 million yuan of operating capital, and each earns 15 million yuan a year in after-tax operating profit, not counting interest. A's 100 million comes entirely from its shareholders; B borrowed 60 million from a bank, pays 3.6 million yuan a year in interest, and the remaining 40 million came from its shareholders.",
+    "question": "Comparing the two factories' return on operating capital, which statement is right?",
+    "explain": "Return on operating capital measures the operations themselves. Whose money pays for them doesn't change the top or bottom number. Borrowing only affects the interest and how much the shareholders get.",
+    "options": [
+     {
+      "text": "B is higher: it put up only 40 million yuan of its own, so it earns more.",
+      "correct": false,
+      "feedback": "Dividing by the shareholders' own 40 million measures the return on the shareholders' money, not the return on operating capital."
+     },
+     {
+      "text": "They're the same, both 15%. Borrowing only changes who puts up the money and how much interest is paid.",
+      "correct": true,
+      "feedback": "The top number is 15 million yuan for both, and the bottom number is 100 million for both. The operations themselves are no different."
+     },
+     {
+      "text": "A is higher: B pays 3.6 million yuan in interest a year, so it keeps less profit than A.",
+      "correct": false,
+      "feedback": "Interest is a cost of financing, not part of operating profit, so it doesn't go into the top number of this ratio."
+     },
+     {
+      "text": "They can't be compared, because the two were paid for in different ways.",
+      "correct": false,
+      "feedback": "Both factories' operating capital and operating profit are given, so the return on operating capital can be worked out directly."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Same 20,000 profit: more put in, lower return",
+  "caption": "Both friends earn 20,000 yuan a year. Drag to change the money put in and see what each 1 yuan brings back a year: double it, and the return halves.",
+  "x": {
+   "label": "Money put in (10,000 yuan)",
+   "min": 5,
+   "max": 30
+  },
+  "y": {
+   "label": "Yearly return per 1 yuan",
+   "unit": "%",
+   "min": 0,
+   "max": 50
+  },
+  "params": [
+   {
+    "id": "c",
+    "label": "Money put in",
+    "min": 5,
+    "max": 30,
+    "step": 1,
+    "value": 20,
+    "unit": "0,000 yuan"
+   }
+  ],
+  "series": [
+   {
+    "name": "Earns 20,000 a year",
+    "expr": "200/x",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "x": "c"
+   },
+   {
+    "x": 5,
+    "y": 40,
+    "text": "Van"
+   },
+   {
+    "x": 20,
+    "y": 10,
+    "text": "Shop"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Back per 1 yuan",
+    "expr": "200/c",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "To match van (10k)",
+    "expr": "0.4*c-2",
+    "unit": "",
+    "digits": 1
+   }
+  ]
+ }
+}

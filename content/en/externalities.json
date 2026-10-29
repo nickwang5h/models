@@ -1,0 +1,202 @@
+{
+ "id": "externalities",
+ "name": "Externalities",
+ "en": "外部性",
+ "discipline": "economics",
+ "one_line": "When the fallout lands on others and costs you nothing, you don't count it.",
+ "story": "London's Great Smog, December 5 to 9: coal smoke can't clear, officials count about four thousand dead, and the Clean Air Act passes in 1956",
+ "shallow": {
+  "scene": "From December 5, 1952, a layer of still, cold air sat over London, and for days there was no wind. Every household in the city burned coal for heat, and so did the power stations and factories. The smoke couldn't get away; it mixed with the fog and stayed pressed down until the 9th. You could barely see, and hospitals took in more and more patients struggling to breathe. The official count at the time was about four thousand deaths; later studies estimated far more. In 1956 the British Parliament passed the Clean Air Act, which set up smokeless zones where burning fuels that give off smoke was banned.",
+  "plain": "You grill skewers on your balcony, and each time you do, the enjoyment you get is worth 40 yuan. The smoke drifts into the window where your neighbor dries laundry, and washing it all again costs 60 yuan. Those 60 yuan fall outside your books, and that's a typical externality: you make the decision, but part of the consequences go to someone else. On your books you come out 40 ahead every time, so you keep grilling; for the two households together, each time loses 20 yuan."
+ },
+ "deep": {
+  "mechanism": "### When other people's losses stay off the books, more gets done than is worth it\n\nHow many blasts a quarry sets off each day is decided by its own books. Suppose the first blast makes a net 500 yuan, and each blast after that makes 100 less, so the five blasts make 500, 400, 300, 200 and 100 in turn. Each blast costs the village at the foot of the hill another 250 yuan in repairs to cracked walls and roof tiles. Every blast makes money, so the quarry sets off five.\n\nCount the village's losses as well. The third blast makes 300, more than 250; the fourth makes 200, less than 250, so stopping at the third is best. If the village's loss per blast falls to 150, four blasts are worth it; if it rises to 350, only two. Yet on the quarry's own books, the answer is always five.\n\n### When the benefits land on others, less gets done than is worth it\n\nYou get your child a flu shot. Your child gets sick less, and the other children in the class catch less from yours, but nobody pays you a cent for that benefit. All you weigh is the price of the shot, the time spent waiting in line, and how much less your own child suffers, and if it feels like too much bother, you skip it. Even if the benefit of the whole class getting sick less is much bigger, it never shows up on your books. If someone pays enough to offset that bother, more people get the shot.\n\n### Move other people's books into the decision-maker's, and the decision changes\n\nCharge the quarry 250 yuan per blast, and its books line up with the village's: the third blast makes 300 and pays 250, so it still goes ahead; the fourth makes 200 and pays 250, so the quarry stops on its own.",
+  "origin": "Alfred Marshall discussed external economies in his 1890 *Principles of Economics*. In his 1920 *The Economics of Welfare*, Arthur Pigou systematically compared private returns with social returns, that is, your own books against the books that count other people too, and argued for using taxes and subsidies to bring the two into line.",
+  "limits": "Externalities are clearest with things like smoke, noise and infectious disease: the consequences land on people who weren't part of the deal, and nobody pays for them. Consequences the person bears themselves don't count: a smoker harms his own lungs, and it's secondhand smoke that's the externality. A shop next door cutting prices and taking your customers doesn't count either, since the money you lose ends up in the customers' pockets. When the harm to others can't be pinned down, any charge becomes a price picked out of thin air."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "A river gets harder and harder to use, because every factory upstream counts only its own cost of discharging waste water, and the cost of cleaning the water downstream never appears on anyone's books."
+   },
+   {
+    "use": "design",
+    "text": "Decide who a subsidy is for: it should go to people who do something that benefits others and get nothing back for it themselves, not to everyone."
+   },
+   {
+    "use": "predict",
+    "text": "Estimate how much rents along a new subway line will rise once it opens: landlords never paid a cent toward building the line, yet the whole increase goes into their pockets."
+   }
+  ],
+  "examples": [
+   {
+    "field": "City traffic",
+    "title": "A ticket into the city",
+    "text": "In 1975 Singapore marked off a restricted zone in the city center, and cars driving into it during the morning rush had to buy an area license first. The congestion each car caused by coming into town used to be shared by everyone on the road; now the driver of that car paid for it first. Fewer cars entered the zone, and the roads cleared up."
+   },
+   {
+    "field": "Technology",
+    "title": "Upkeep nobody paid for",
+    "text": "OpenSSL is a free encryption library used by huge numbers of websites, yet very few people maintained it. In April 2014, when the bug known as Heartbleed came to light, companies discovered they had been getting the benefit of upkeep that nobody paid for. That same month, the Linux Foundation led the founding of the Core Infrastructure Initiative, with several large companies putting up money to fund projects like this."
+   },
+   {
+    "field": "Personal life",
+    "title": "Shade in the alley",
+    "text": "You live in a courtyard house at the mouth of a hutong, one of Beijing's old alleys. You planted the row of parasol trees along your courtyard wall, and watering and pruning them is your family's job alone, but in summer everyone in the alley walks in their shade. You plan to cut down two of them to make room to park a car. When the old man across the way hears about it, he goes door to door collecting \"tree money,\" brings it to you, and asks you to keep them."
+   }
+  ],
+  "ask": [
+   "Which people who had no part in this does it land on? Go and count them, and check whether they've been paid or have paid anything for it.",
+   "Counting other people's gains and losses, is doing it one more time still worth it? Take a sheet of paper and work out only what each extra time adds.",
+   "How many people are affected, and can they be found? If they're few and easy to name, go and talk to them first; if they're many and scattered, then look at charges or rules."
+  ],
+  "with": [
+   {
+    "id": "transaction-costs",
+    "sees": "There's one paper mill upstream and two fish farmers downstream, and they know each other. Externalities suggest charging the mill a pollution fee; transaction costs see that the three of them could settle how much gets discharged by sitting down and talking once, which costs far less than building a monitoring station and paying people to enforce it. Only when it's twenty thousand residents downstream, who can never all be gathered and can't negotiate, is it time for charges and rules."
+   },
+   {
+    "id": "second-order-thinking",
+    "sees": "You're weighing a charge on trucks entering the city. Externalities say charge them: the congestion and exhaust each truck causes go unpaid. Second-order thinking says hold off on setting the price: freight companies will move their trips into the city to late at night, or move their warehouses outside the charging line, and the noise and exhaust just move somewhere else. First count how many roads get around the line: if there's only one way in, charge; if there are a dozen or more, draw the line wider first."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Fish farmers downstream lose some income every year to waste water from a dye factory. The factory has three cleanup options, each stricter than the last. Going to level one costs 200,000 yuan a year and cuts the fish farmers' losses by 800,000. Going from level one to level two costs another 500,000 and cuts their losses by another 600,000. Going from level two to level three costs another 700,000 and cuts their losses by another 300,000. These figures include all relevant costs and benefits.",
+    "question": "Counting everyone's books together, which level should the cleanup go to?",
+    "explain": "Going up one level at a time, it's still worth it as long as the extra money spent is less than the extra loss avoided. Level two spends 500,000 more and avoids 600,000 more, so it's worth it; level three spends 700,000 more and avoids only 300,000 more, so it isn't.",
+    "options": [
+     {
+      "text": "Level three; pollution losses only count as dealt with once they're as small as possible.",
+      "correct": false,
+      "feedback": "Level three spends 700,000 more to avoid only 300,000 more, a net loss of 400,000 a year. Cutting pollution as far as possible isn't worth it."
+     },
+     {
+      "text": "Level two; up to here, the extra money spent is still less than the extra loss avoided.",
+      "correct": true,
+      "feedback": "For each of the first two levels, the extra money spent is less than the extra loss avoided; level three isn't, so stop at level two."
+     },
+     {
+      "text": "None; the fish farmers' losses aren't the factory's business.",
+      "correct": false,
+      "feedback": "Level one costs only 200,000 and avoids 800,000 in losses. Doing nothing throws that difference away."
+     },
+     {
+      "text": "Level one; going higher is spending money to chase small losses.",
+      "correct": false,
+      "feedback": "Level two spends 500,000 more but avoids 600,000 more in losses. Stopping at level one throws away that 100,000."
+     }
+    ]
+   },
+   {
+    "stem": "A farmer in a village is deciding whether to plant a row of windbreak trees along the edge of his field. It costs 120,000 yuan a year, and his own land yields 80,000 more because of it; each of his three neighbors next to him also gets 30,000 more, without paying anything. These figures include all relevant costs and benefits. The farmer decides by his own books alone.",
+    "question": "Without a subsidy, what happens?",
+    "explain": "On the farmer's own books it's 80,000 in income against 120,000 in cost, a loss of 40,000 a year, so he won't plant. Counting the three neighbors' 90,000, a row of windbreak trees earns 50,000 more a year in total, and that benefit is simply missed.",
+    "options": [
+     {
+      "text": "He doesn't plant, and a chance to earn 50,000 more a year in total is missed.",
+      "correct": true,
+      "feedback": "He'd lose 40,000 himself, so he doesn't plant; the neighbors' 90,000 never reaches his books, so nobody earns the 50,000 in total."
+     },
+     {
+      "text": "He doesn't plant, and if he did, it would lose 40,000 a year in total anyway.",
+      "correct": false,
+      "feedback": "The 40,000 loss is only his household's figure. The three neighbors' 90,000 is also a gain from the trees, so in total it earns more."
+     },
+     {
+      "text": "He plants, since the windbreak earns 50,000 more a year in total.",
+      "correct": false,
+      "feedback": "He himself loses 40,000 a year, and the neighbors' 90,000 never reaches his books, so he won't plant."
+     },
+     {
+      "text": "He plants, since the neighbors' 90,000 gain will eventually let him break even.",
+      "correct": false,
+      "feedback": "The neighbors don't pay, so the 90,000 never reaches him, and his books show a loss all along."
+     }
+    ]
+   },
+   {
+    "stem": "A brick kiln makes 300 yuan more for each firing. Ash from the kiln falls on the village downstream, and each firing costs the villagers 200 yuan more in cleaning and doctor's visits. The county wants to help the villagers and decides to give the whole village one lump-sum payment a year. The payment has nothing to do with how many firings there are, and the kiln isn't charged anything.",
+    "question": "Once the payment is given out, which statement is correct?",
+    "explain": "The payment is a transfer that has nothing to do with how many firings there are. The kiln's books for each firing haven't changed: it still makes 300 yuan and doesn't pay for the 200 yuan of damage. Not one firing's worth of ash is gone; the villagers have just received some money.",
+    "options": [
+     {
+      "text": "Seeing the village has a payment, the kiln will fire more, since someone is covering the damage anyway.",
+      "correct": false,
+      "feedback": "The kiln's books, 300 yuan per firing, haven't changed, so the payment gives it no new reason to fire more."
+     },
+     {
+      "text": "With the payment, the villagers' losses from the ash are covered, so the kiln will fire a bit less.",
+      "correct": false,
+      "feedback": "The payment goes to the villagers and doesn't touch the kiln's books, so the kiln has no reason to fire less."
+     },
+     {
+      "text": "The kiln still fires by its books of 300 yuan per firing, and the damage from the ash is not reduced at all.",
+      "correct": true,
+      "feedback": "The payment doesn't depend on the number of firings, so each extra firing still nets the kiln 300 yuan, and the ash keeps falling."
+     },
+     {
+      "text": "The payment means the ash no longer harms the villagers, so the losses drop to zero.",
+      "correct": false,
+      "feedback": "The ash keeps falling, and the villagers still spend money on cleaning and doctor's visits; they just have the payment to use."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Quarry alone: five blasts. With the village: three",
+  "caption": "Slope: the quarry's gain from each extra blast. Flat line: the village's repairs per blast. Only blasts above the flat line are worth it; drag the village's loss.",
+  "x": {
+   "label": "Blast number",
+   "min": 1,
+   "max": 5,
+   "step": 1
+  },
+  "y": {
+   "label": "Money for this blast",
+   "unit": " yuan",
+   "min": 0,
+   "max": 600
+  },
+  "params": [
+   {
+    "id": "d",
+    "label": "Village loss",
+    "min": 50,
+    "max": 550,
+    "step": 50,
+    "value": 250,
+    "unit": " yuan"
+   }
+  ],
+  "series": [
+   {
+    "name": "Quarry gains",
+    "expr": "600 - 100*x",
+    "tone": "accent",
+    "dots": true
+   },
+   {
+    "name": "Village repairs",
+    "expr": "d",
+    "tone": "warn",
+    "dashed": true
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Quarry fires",
+    "expr": "5",
+    "unit": " blasts"
+   },
+   {
+    "label": "With the village",
+    "expr": "clamp(floor((600 - d)/100), 0, 5)",
+    "unit": " blasts"
+   }
+  ]
+ }
+}

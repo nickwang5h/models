@@ -1,0 +1,202 @@
+{
+ "id": "lollapalooza",
+ "name": "Lollapalooza Effect",
+ "en": "Lollapalooza 效应",
+ "discipline": "psychology",
+ "one_line": "When several pulls on the mind push the same way, people do extreme things.",
+ "story": "Around this time Tupperware leaves the stores to sell at home parties; Munger's 1995 Harvard talk lists the Tupperware party as several mental tendencies pushing together",
+ "shallow": {
+  "scene": "Tupperware is an American company that sells plastic food-storage boxes. For a long time its boxes were sold mainly not in stores but in other people's living rooms. The psychologist Robert Cialdini took apart one of these Tupperware parties in his book *Influence*.\n\nImagine you've been invited to one too. The person who invited you is your friend, and she's holding the party in her own home. First everyone plays games, and everyone gets a small prize. Next the guests take turns saying how they use these boxes at home and what's good about them. Finally, one after another, people place orders. By this point you like your friend, you've just accepted her prize, you've said nice things about the boxes in front of everyone, and you're watching the people around you get out their money one by one. With several forces squeezed into the same living room, it's hard to leave empty-handed.\n\nIn 1995 Charlie Munger gave a talk at Harvard on the psychology of human misjudgment, and the very first example he gave was the Tupperware party. He said the company had made billions of dollars with these few tricks. His point was this: when several mental tendencies push a person in the same direction, their combined power to change behavior is far greater than any one of them working alone.",
+  "plain": "At a dinner you'd planned to have just one drink. Your boss raises his glass first, and the whole table drains theirs in one go. Earlier you'd also lifted your glass and said, \"Tonight I'll keep up with all of you,\" so turning down a drink now means taking back your own words. Each of these three things blocks one of your reasons for saying no: your boss's face, the eyes of the whole table, and what you yourself said. With one reason still left, you could turn the drink down. Only when the last one is blocked do you flip all at once from one drink to five.\n\nMunger called this kind of scene the Lollapalooza effect. Onlookers would just say you care too much about saving face. What you should really count is how many forces were pushing you at the same time."
+ },
+ "deep": {
+  "mechanism": "### Your reasons to refuse get blocked one by one, and behavior flips only at the last one\nImagine that at that Tupperware party you have four reasons not to buy: whether this person can be trusted, what others will think, whether you owe her anything, and how awkward it would be to back out now. Each force blocks one reason. With one blocked, you still have three ways to say no; with three blocked, you still have one. The moment all four are blocked, you flip at once from not buying to placing an order. The other way round, as long as one reason is left, say someone next to you mutters \"I don't buy it,\" you stay where you are.\n\n### A force that comes first makes the later forces stronger\nBack to the dinner. You said \"I'll keep up with all of you\" first. On its own, that sentence would only make refusing a drink a bit embarrassing. But refusing after the whole table has drained their glasses means going back on your word in front of everyone. The words you said first make the later urging harder to refuse.",
+  "origin": "Charlie Munger put forward this idea in his 1995 talk at Harvard, \"The Psychology of Human Misjudgment,\" and expanded on it in later revised versions. Lollapalooza is American slang for something unusually remarkable or unexpected. The effect is Munger's own summary, supported mainly by the cases and anecdotes he told; no study has given a general figure for how many times stronger several forces become when they combine.",
+  "limits": "The model is most useful when authority, peers, rewards and an earlier commitment are all present at once and the result is unusually extreme. An extreme result alone doesn't prove that several mental forces added up. If a buying frenzy was caused by a system error or an order from above, follow those causes first. Another mistake is to stick a psychological label on every detail after the fact and stop once the story hangs together, without asking whether these forces were really there at the time and whether they came in the right order."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When planning a charity sale, count which forces will be at work at the same time: people who know each other, free gifts, amounts announced out loud. Pick the ones you want to keep and switch off the ones you don't."
+   },
+   {
+    "use": "predict",
+    "text": "To estimate whether a buying rush will get out of hand, first count how many forces are present at once and whether they point the same way, then look at which is strongest."
+   },
+   {
+    "use": "explore",
+    "text": "When looking into something a group got wrong together, look for the earlier step that was overlooked: which yes made the later refusals harder."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Sales",
+    "title": "Saturday at the car dealer",
+    "text": "You go to look at cars on a Saturday. The salesperson pours you a coffee, comes along on the test drive, and when you get back hands you a \"letter of intent, no charge,\" which you sign. A manager walks past and says someone put down a deposit on this model today, there's only one left, and today's price won't hold until tomorrow. You'd planned to go home and think it over for three days. Instead you pay a deposit in the showroom, and only when you get home do you remember you never asked a second dealer."
+   },
+   {
+    "field": "Personal life",
+    "title": "A neighborhood running group",
+    "text": "You want to get into the habit of running after work. You've tried three times and stopped in the second week each time. The fourth time you join a neighborhood running group. It meets every Tuesday and Saturday, a coach sets the training plan, and you write publicly in the group chat, \"I'll run eight times this month.\" When you're tired after work and want to skip, you have to face the partners you arranged to meet, the coach's plan and that line in the chat all at once. Three months later you're still running."
+   },
+   {
+    "field": "Research",
+    "title": "The fourth set of data at the lab meeting",
+    "text": "A professor is convinced a new method works, and three PhD students in a row show beautiful results at lab meetings. The fourth student's data don't match. He thinks of how the first three have already put their names on the draft paper and how the professor has just written the method into a grant application, so he marks the sets that don't match as instrument noise and deletes them. When the paper goes out for review, those sets of data appear in none of the figures."
+   }
+  ],
+  "ask": [
+   "How many forces are pushing me right now, and which of my reasons for refusing does each one block?",
+   "Did these forces each turn up on their own, or were they arranged by the same person or the same interest?",
+   "Which yes have I already given that makes the next step feel like something I have to do?"
+  ],
+  "with": [
+   {
+    "id": "diversity-prediction",
+    "sees": "A dozen or so people in your department score a new supplier, and you want to decide by the average score. The diversity prediction theorem says the average beats individuals only when each person judges independently, from their own information. What the Lollapalooza effect sees is that these scores are often pushed to one side by the same manager's opening remarks, the same presentation and the first high score given, so the disagreement shrinks while the error grows together. If everyone wrote down their judgment alone beforehand, trust the average; if people scored in turn and could see each other's scores, treat the whole department as one force, not a dozen pieces of evidence."
+   },
+   {
+    "id": "commitment-consistency",
+    "sees": "You want to talk a friend out of putting more money into a project that's losing money. Commitment and consistency sees only that he has already invested, and suggests giving him a way to back down without being forced to admit he was wrong to your face. The Lollapalooza effect also sees that he's being pushed at the same time by the profits shown off in a group chat and by the project leader's reputation, and a way to back down alone won't hold him back. If the only reason holding him is what he's put in, a way to back down is enough; if there are several reasons, take apart the easiest one first."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A university club holds a recruiting event: older students welcome newcomers with smiles, everyone gets a small souvenir, and first they fill in an \"I'm interested\" sign-up form on the spot. The club holds several of these in one term, all arranged the same way. Afterward, most of these new students are willing to put in eight hours a week over the next month, and the club keeps far more of them than in earlier years. Someone says this is the result of several factors working at once.",
+    "question": "Which of these observations best supports that explanation?",
+    "explain": "The claim that several forces work as a relay has to be tested by removing one link while keeping everything else the same, and seeing whether the result changes. The other three are either just the students' own accounts, involve only one force, or point to some other cause.",
+    "options": [
+     {
+      "text": "At a few events with only the souvenir missing, or only the sign-up form missing, and everything else the same, far fewer students stayed.",
+      "correct": true,
+      "feedback": "Remove any one link and fewer stay. That shows no single force was holding it up alone; several were pushing together."
+     },
+     {
+      "text": "The more older students there were at an event, the more new students stayed, and the two moved almost in step.",
+      "correct": false,
+      "feedback": "This involves only one force, liking, and says nothing about how several forces combine to push."
+     },
+     {
+      "text": "In a survey, most new students said they stayed because they were interested in the club's subject itself, and gave detailed reasons.",
+      "correct": false,
+      "feedback": "Reasons people give for themselves are easy to make up after the fact, and they can't tell apart how much each force did."
+     },
+     {
+      "text": "New students with few classes and free time stayed more than those with full timetables, and the gap showed at every event.",
+      "correct": false,
+      "feedback": "This points to whether the students had time, which is a different explanation and has nothing to do with several mental forces."
+     }
+    ]
+   },
+   {
+    "stem": "An online-course platform's ads use three things at once: a recommendation video from a well-known teacher, a line on the page saying \"2,300 people signed up this week,\" and a 99-yuan deposit paid up front. But the deposit can be fully refunded with one click within seven days. When the seven days are up, most people ask for a refund. A colleague says, \"We used all three; people should have stayed.\"",
+    "question": "With all three in place, why did most people still get refunds?",
+    "explain": "A deposit can lock people in because once they've paid, they have to find reasons for it and don't want to lose it for nothing. With a full one-click refund, paying the deposit was just a casual try that never became a burden later on, so the push didn't carry through.",
+    "options": [
+     {
+      "text": "The teacher's recommendation and the sign-up numbers had no effect at all on these people; the only thing that really mattered was price.",
+      "correct": false,
+      "feedback": "Nothing in the question suggests that. They may well have got people to pay the deposit; it's just that nothing carried on from there."
+     },
+     {
+      "text": "The three things pointed in different directions and canceled each other out, so none of them really moved users.",
+      "correct": false,
+      "feedback": "They all pushed people toward signing up; they didn't cancel each other out."
+     },
+     {
+      "text": "The sign-up number on the page was probably fake; once users noticed, they stopped believing it, so it lost its effect.",
+      "correct": false,
+      "feedback": "Nothing in the question suggests the number was faked, and you can't add a cause out of thin air."
+     },
+     {
+      "text": "The full refund made the deposit a test that could be taken back, not a commitment that locked people in, so the chain broke at the first step.",
+      "correct": true,
+      "feedback": "An earlier investment that costs nothing can't push later choices, so the other forces never got the chance to join in."
+     }
+    ]
+   },
+   {
+    "stem": "Your grandfather, in his seventies, is invited to a health talk. Everyone gets a bag of eggs at the door, the \"professor\" on stage sounds very convincing, the old people sitting nearby are pulling out money to buy health supplements one after another, and on the way in your grandfather signed a \"trial registration\" form in front of everyone. This afternoon he's planning to go back with money. You want him to think it over again.",
+    "question": "Which of these does more to break up the relay of forces?",
+    "explain": "The eggs, the professor, the people sitting nearby and the registration are links in a relay. Arranging to pay the next day instead, and making clear that signing up doesn't mean having to buy, both moves him away from the pressure in the room and frees him from the tie created by signing up earlier.",
+    "options": [
+     {
+      "text": "Get him to return the bag of eggs, so he owes them no favor and doesn't need to go back.",
+      "correct": false,
+      "feedback": "Returning the eggs gets rid of only one force. The people nearby and the earlier registration still push him forward."
+     },
+     {
+      "text": "Help him put off paying until tomorrow, and explain that the registration form doesn't bind him and he can drop it at any time.",
+      "correct": true,
+      "feedback": "Putting it off lets the pressure of the room fade, and explaining that the form doesn't bind him frees him from the tie of the yes he gave earlier."
+     },
+     {
+      "text": "Find negative news stories about this supplement, show them to him, and urge him not to go to that talk again.",
+      "correct": false,
+      "feedback": "This deals with only one piece of information. The favor, the people nearby and the registration are still pushing him."
+     },
+     {
+      "text": "Go to the talk with him and challenge the \"professor\" in front of the whole room of old people.",
+      "correct": false,
+      "feedback": "Contradicting an authority in front of everyone would embarrass your grandfather more, and the pressure from the people around him would only grow."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Reasons blocked one by one; the last makes it five",
+  "caption": "After two forces you're still at one drink, with fewer reasons to say no. The third blocks the last: one jumps to five. One voice for you midway, and you stay put.",
+  "nodes": [
+   {
+    "id": "s",
+    "label": "Meant just one",
+    "sub": "3 ways to say no"
+   },
+   {
+    "id": "a",
+    "label": "Boss toasts",
+    "sub": "2 ways left"
+   },
+   {
+    "id": "b",
+    "label": "Table drinks up",
+    "sub": "1 way left"
+   },
+   {
+    "id": "c",
+    "label": "Said I'd keep up",
+    "sub": "None left",
+    "tone": "accent"
+   },
+   {
+    "id": "d",
+    "label": "Five drinks",
+    "sub": "Only now it flips",
+    "tone": "warn"
+   }
+  ],
+  "edges": [
+   {
+    "from": "s",
+    "to": "a"
+   },
+   {
+    "from": "a",
+    "to": "b"
+   },
+   {
+    "from": "b",
+    "to": "c"
+   },
+   {
+    "from": "c",
+    "to": "d",
+    "tone": "warn"
+   }
+  ]
+ }
+}

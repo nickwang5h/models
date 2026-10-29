@@ -1,0 +1,215 @@
+{
+ "id": "limits-to-growth",
+ "name": "Limits to Growth",
+ "en": "增长的极限",
+ "discipline": "systems",
+ "one_line": "What holds up growth has a ceiling, growth slows near it, and overshooting damages the base itself.",
+ "story": "The Soviet Union diverts rivers to water cotton fields, the Aral Sea dries to about a tenth of its size, and salt from the lakebed blows back onto the cotton",
+ "shallow": {
+  "scene": "From the 1960s, the Soviet Union built huge irrigation works in Central Asia, taking water from the Amu Darya and Syr Darya rivers to water cotton fields. These two rivers were exactly the Aral Sea's two sources of water. Cotton harvests rose, but less water flowed into the Aral Sea every year. The lake kept shrinking, and by 2007 it was only about a tenth of its 1960 size. The dried-out lakebed was covered in salt, and strong winds blew the salt into the fields around it; wherever the salt landed, crops were ruined. The worst-hit fields had to be flooded with water again and again to wash the salt out. The cotton drank the lake dry, and the salt from the lakebed came back to damage the cotton fields.",
+  "plain": "Suppose you keep a tank of fish, and the filter can only handle the waste of 20 fish a day. With 10 fish the water is clear; with 20, the filter just keeps up. The tank still looks roomy, so you put in 5 more. The filter can't handle the extra waste, the water slowly turns cloudy, and the fish die one by one. By the end of the month there are only 12 fish left in the tank, 8 fewer than before you added any.\n\nHow many fish you can keep depends on the filter, not on how big the tank is. Once the fish go past what the filter can support, the extra ones are not just wasted; they cost you fish. That is the limit to growth."
+ },
+ "deep": {
+  "mechanism": "### Each extra fish uses up some of the spare room, but the water doesn't show it\n\nThe filter can handle 20 fish a day. With 10 fish, there is room to spare for 10 more; with 19, room for only 1. But the water is just as clear at 10 fish as at 19, and the fish are just as lively, so nothing warns you that the spare room is nearly used up. That's why people often find out where the limit is only by running into it.\n\n### When the thing holding it up changes, the limit moves with it\n\nHow many fish you can keep is decided by the filter, not by the size of the tank. Switch to a filter that can handle 30 fish, and 25 fish are perfectly fine. If the filter sponge clogs and you don't clean it, the filter can handle only 15 fish a day, and even the 20 that were doing fine are now too many. The grass on a pasture, the staff in a shop, your sleep at night are all \"filters\" in other places: when they change, the size they can support changes too.\n\n### Past the limit, the dirt that builds up pulls the limit down\n\nWith 25 fish, the waste of 5 fish a day can't be dealt with. On day one, 5 units build up; by day two it adds up to 10, and it keeps building until the fish can't stand it and start to die. Dead fish rot in the water, adding more dirt. After the fish fall back below 20, the little spare capacity the filter has left first has to go into clearing the dirt that has built up. Until that dirt is cleared, the water stays cloudy, the tank can't support 20 fish, and fish keep dying. By the time the water clears, there are only 12 fish left: you put in 5 extra, and in the end you lost 8.",
+  "origin": "In 1971, Forrester at MIT built a model of the world using system dynamics. In 1972, commissioned by the Club of Rome, Donella and Dennis Meadows and their colleagues built World3 on top of that model, simulating population, industry, food, resources and pollution, and published *The Limits to Growth*. The book gave several scenarios, not predictions. In 1990, Senge included \"limits to growth\" in *The Fifth Discipline* as one of his system archetypes, structures that show up again and again in all kinds of systems.",
+  "limits": "This model is most useful for things where, as the scale grows, resources get tight, people get crowded and quality can't be kept up. If whatever holds up growth can be bought in along with the scale, for example one more server means one more server's worth of computing power, then the spare room grows with the scale and the model has nothing to say. The limit itself can also be pushed back. In 1798, Malthus predicted that population would be held back by food, but he didn't foresee that farming technology would raise food output, and the limit turned out to be much further away than he thought."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "A hiking trail becomes popular by word of mouth. As more and more visitors come, the plants get trampled bare, the campsites have long lines, and the old regulars stop coming. This model makes clear why."
+   },
+   {
+    "use": "design",
+    "text": "Plan the pace at which a new housing development fills up: hand over homes in batches, and wait for places at the school and health clinic to catch up with each batch before releasing the next."
+   },
+   {
+    "use": "predict",
+    "text": "A food delivery platform uses subsidies to double its orders while the number of riders stays the same. You can expect delivery times and bad reviews to go up first, and orders to fall after them."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "Opening stores faster than customers came",
+    "text": "In 2008, Starbucks announced it would close about 600 underperforming company-run stores in the US, and about 70% of them had opened after fiscal 2006. New stores crowded the list of closures. Customer numbers didn't grow along with the stores, but rent and wages went up for every single one, and the pace of expansion ended up dragging profits down."
+   },
+   {
+    "field": "Investing",
+    "title": "Money squeezes out the returns",
+    "text": "You run a fund that buys only small-company stocks. While it has little money, every buy order can be filled at the price you expect. Results are good, money pours in, and big buy orders push the share price up first, then push it down again when you sell. You are still picking the same kind of stocks, but trading costs eat up the returns. As the fund keeps taking in more money, its yearly returns get thinner year after year."
+   },
+   {
+    "field": "Personal life",
+    "title": "Late nights buy you rework",
+    "text": "You take on a rush design job and use two hours each evening on it too, and for the first few days the work speeds up noticeably. After several late nights in a row, you start missing the client's requirements during the day, and then have to redo work at night. The longer the hours, the slower the work gets delivered. Only when you give your evenings back to sleep does your efficiency the next day return."
+   }
+  ],
+  "ask": [
+   "What is the thing holding this up: water, staff, customers or sleep? Is what was replenished over the past year enough to cover what gets used up this year?",
+   "How much more of it does each extra unit of scale use up? Go through the books or the staff schedule and see whether that number keeps getting bigger.",
+   "Before things slowed down, did I push harder? After I pushed, was that thing growing or shrinking?"
+  ],
+  "with": [
+   {
+    "id": "economies-of-scale",
+    "sees": "You run a small workshop making handmade leather goods, and orders have doubled. Should you go from one production line to three? Economies of scale sees the fixed cost of molds and equipment spread over more pieces, so the cost per piece falls: add the lines. Limits to growth asks which of these gets tight as output rises: the supply of leather, the number of skilled workers, or the people doing quality checks. If any one of them is nearly out of spare room, top that one up first, then add lines."
+   },
+   {
+    "id": "bottlenecks",
+    "sees": "A new factory turns out only 800 pieces a day. Bottleneck analysis points to the slowest step on the assembly line; widen it, and output goes up at once. When output doubles again, the next step to get tight is the one limits to growth asks you to find first: before the line doubles, order the backup machines for that step."
+   },
+   {
+    "id": "time-delays",
+    "sees": "You raise the places on an online course from 200 to 800. Good reviews in the first month don't prove there is enough spare room, because feedback on satisfaction won't arrive until next term. Time delays is about feedback arriving late; limits to growth tells you to count the teaching assistants and the hours for answering questions directly, rather than waiting for bad reviews to bring the news."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "The three of you make an interview podcast with 1 episode a week. To grab more listeners, you switch to 3 episodes a week, with the same three people still booking guests and editing the audio. Downloads rise for the first three weeks. From the sixth week, guest quality drops, audio mistakes increase, and the share of people who listen to a whole episode falls along with the number of subscribers.",
+    "question": "What most likely caused the later fall in downloads?",
+    "explain": "The extra episodes used up all the time for booking guests and editing, the quality of each episode got squeezed, and listeners left because of it. To get growth back, you first need more production capacity, or to cut back to as many episodes as the team can handle.",
+    "options": [
+     {
+      "text": "3 episodes a week feels too frequent to listeners; moving release days to the weekend would fix it.",
+      "correct": false,
+      "feedback": "Moving the days doesn't add any production time, so the shortfall in guests and editing is still there."
+     },
+     {
+      "text": "The rise in the first three weeks raised listeners' expectations, and now no content could live up to them.",
+      "correct": false,
+      "feedback": "There's no way to check a change in listeners' expectations. Weaker guests and more mistakes are changes in the content that are right in front of you."
+     },
+     {
+      "text": "Interview shows have gone out of fashion, and every show like this is losing listeners.",
+      "correct": false,
+      "feedback": "Nothing in the question suggests similar shows are falling at the same time; the change came after you added episodes."
+     },
+     {
+      "text": "The extra episodes used up all the time for booking and editing, quality dropped, and listeners were driven away.",
+      "correct": true,
+      "feedback": "After adding episodes, the three people's time was full, and the drop in quality lines up with the fall in completion rate and subscribers."
+     }
+    ]
+   },
+   {
+    "stem": "A night market on a pedestrian street had 40 stalls and about 3,000 visitors on weekends. When the stalls went up to 55, total takings were 12% higher than before. When they went up to 70, visitors were about 3,300, the aisles were so crowded it was hard to walk, the average time each person spent browsing shrank from 50 minutes to 30, and total takings were only 5% higher than at the start. The local street office plans to approve another 20 stalls.",
+    "question": "After another 20 stalls are approved, what is the whole street's weekend takings more likely to do?",
+    "explain": "Going up to 70 stalls, the new stalls made the aisles crowded, shoppers stayed for less time, and total takings were already lower than at 55. More stalls will squeeze the aisles further, so the total will very likely fall more. What would work is to widen the aisles and spread the crowds out first, and only then talk about more stalls.",
+    "options": [
+     {
+      "text": "Lower than now: the aisles will be more crowded, and people will stay for less time.",
+      "correct": true,
+      "feedback": "More stalls already bring in very few extra visitors, while the crowding makes each person stay for less time, and this chain will keep going."
+     },
+     {
+      "text": "Higher than now: the more stalls, the more choice customers have.",
+      "correct": false,
+      "feedback": "Going from 55 to 70 stalls, there were more stalls but the total fell. More choice didn't bring more spending."
+     },
+     {
+      "text": "About the same as now: the new stalls will just take a share of the existing business.",
+      "correct": false,
+      "feedback": "The total has already dropped back from +12% at 55 stalls to +5%. The trend is downward, and more stalls will only push it further down; it won't stay where it is."
+     },
+     {
+      "text": "It will rise with the extra visitors; the shorter time people stay is only temporary.",
+      "correct": false,
+      "feedback": "Time spent has been shrinking all along as stalls were added, with no sign of recovering."
+     }
+    ]
+   },
+   {
+    "stem": "A car wash on a street corner has washed a steady 600 cars a month for two years, with the same equipment and staff. Since March this year, the road in front has been closed for construction, and washes have dropped to about 380 a month; the construction sign says the work will end at the end of the year. The other two car washes on the same street have lost about the same share of customers.",
+    "question": "What is the most likely cause of the drop in car washes?",
+    "explain": "Washes were steady for two years, the equipment and staff didn't change, and the business never grew first; and all three dropped at the same time. That points to a shared outside cause: the road closure that keeps cars from getting in. The cause is out front, and more equipment or more staff can't touch it.",
+    "options": [
+     {
+      "text": "The other two car washes on the street cut their prices and took the customers.",
+      "correct": false,
+      "feedback": "Nothing in the question mentions any price change, and all three dropping by the same share points to a shared cause."
+     },
+     {
+      "text": "Car washes grew too fast, the equipment and staff were stretched too thin, and customers were driven away by the growth itself.",
+      "correct": false,
+      "feedback": "In the question, washes haven't grown for two years and the equipment and staff haven't changed; there's no sign of any growth first."
+     },
+     {
+      "text": "The road closure keeps cars from reaching the door, so all three lost customers at once; it has nothing to do with the shop's own size.",
+      "correct": true,
+      "feedback": "Three car washes on the same street dropped at the same time and by the same share. The only shared change is the road closure, so this isn't a problem of scale."
+     },
+     {
+      "text": "600 cars a month is the most this street can support; go past it and customers drift away.",
+      "correct": false,
+      "feedback": "Washes have stayed at around 600 for two years and never went past any limit, while the timing of the drop matches the road closure exactly."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Add 5 fish and only 12 are left by month's end",
+  "caption": "Drag to change how many fish go in the tank. Under 20 the line stays flat; past 20, dirt keeps building up, and by month's end more fish die than you added.",
+  "x": {
+   "label": "Day"
+  },
+  "y": {
+   "label": "Fish in the tank",
+   "unit": " fish",
+   "min": 0,
+   "max": 30
+  },
+  "params": [
+   {
+    "id": "m",
+    "label": "Fish put in",
+    "min": 10,
+    "max": 30,
+    "step": 1,
+    "value": 25,
+    "unit": " fish"
+   }
+  ],
+  "model": {
+   "steps": 30,
+   "init": {
+    "f": "m",
+    "w": 0
+   },
+   "next": {
+    "f": "f - min(f, 0.03*max(0, w-10))",
+    "w": "max(0, w + f - 20 + 0.7*min(f, 0.03*max(0, w-10)))"
+   }
+  },
+  "series": [
+   {
+    "name": "Fish in the tank",
+    "expr": "f",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "y": 20,
+    "text": "Filter handles only 20"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Left at month's end",
+    "expr": "f",
+    "unit": " fish",
+    "digits": 0
+   },
+   {
+    "label": "Died this month",
+    "expr": "m-f",
+    "unit": " fish",
+    "digits": 0
+   }
+  ]
+ }
+}

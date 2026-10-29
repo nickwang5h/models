@@ -1,0 +1,216 @@
+{
+ "id": "avoid-ruin",
+ "name": "Avoiding Ruin",
+ "en": "避免毁灭",
+ "discipline": "investing",
+ "one_line": "However much you can win, guard first against the one loss that knocks you out.",
+ "story": "Nick Leeson, trading Nikkei futures in Singapore for Barings Bank, hides losses in account 88888; they reach about 827 million pounds, more than all the bank's capital, and Barings goes bust",
+ "shallow": {
+  "scene": "In early 1995 Nick Leeson was trading Nikkei index futures in Singapore for Barings Bank. He booked his losses to an account numbered 88888 and did not report them to head office. After the Kobe earthquake in January the Nikkei fell, and he kept buying, betting the market would soon bounce back. It never turned. By the end of February the losses were about 827 million pounds, more than all the capital of a bank founded in 1762. Barings was declared bankrupt, and in March the Dutch group ING bought it for 1 pound.",
+  "plain": "A friend asks you to go into business together: a 70% chance of doubling your money, a 30% chance of losing all of it. Look at one round on its own. Seven times in ten you get back twice your money, three times in ten you get back nothing, so on average you end up with 1.4 times as much. That's a good deal.\n\nBut if you put all your savings in every round, one losing round leaves you with nothing. To get through five rounds you have to win all five, and the chance of that is only $0.7^5\\approx17\\%$. The other 80-odd percent of people are knocked out in some round, and however good the later chances are, they don't get to take them. Avoiding ruin doesn't first ask how much you make on average. It asks whether this loss would take away your chance to play the next round."
+ },
+ "deep": {
+  "mechanism": "### Bet less, and you're still at the table after a few losses\n\nTake the same business, and cut the share you put in each round from all of it to half. Lose one round and you still have half your money; lose five in a row and you have one thirty-second left. You are still at the table, and you still have chances to win it back. Cut the share to a tenth, and after five losses in a row you still have nearly 60%.\n\n### You can be out without losing all your money\n\nSay you run a testing lab. The clients are still there and you haven't lost a single order, but once your license is revoked, you can't take a single job from that day on. It's the same for a doctor: patients are still lining up, but once the license is revoked, the doctor can't see one more that same day. In both cases the books are nowhere near zero, yet the person is already out.\n\n### A small chance repeated many times isn't small\n\nIf each time you do something the chance of being knocked out is $p$, then the chance you are still in after doing it $n$ times is:\n\n$$(1-p)^n$$\n\nTo still be in, you have to escape every single time. Each time, your chance of escaping is 1 minus the chance of being knocked out, so you multiply that once for each time you do it. If $p$ is 1%, doing it ten times knocks you out with a chance of about 10%; doing it a hundred times, $1-0.99^{100}\\approx63\\%$.",
+  "origin": "The gambler's ruin problem works out how likely you are to lose everything first if you keep gambling. It entered mathematics in the mid-17th century: Pascal raised problems of this kind in letters to Fermat. Christiaan Huygens's 1657 *On Reasoning in Games of Chance* also ends with exercises on it, and Jacob Bernoulli later gave the solutions.",
+  "limits": "Avoiding ruin matters most when what you're staking is something like your home, your health, or money other people trusted you with, things where losing means there's no next time. For losses you can earn back, like spending a few hundred yuan to try out a side job, just weigh what you gain against what you lose. If you treat losing face or being turned down once as being knocked out too, you won't dare try anything new."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "Set yourself rules for driving: if you're tired, have been drinking, or it's pouring rain, any one of these means you don't drive, however late you are."
+   },
+   {
+    "use": "design",
+    "text": "Set rules for your household's money: a year of living costs goes in an account of its own, and no investment is allowed to touch it."
+   },
+   {
+    "use": "predict",
+    "text": "Estimate the risk of something you do once a week with a 2% chance each time of knocking you out: after a year the total risk is about 65%, far more than 2%."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Outdoors",
+    "title": "Turn back at 1 p.m.",
+    "text": "You and two friends are climbing a snow mountain, and before setting off you agree: at 1 p.m., however far you are from the top, you all turn back. That day at one o'clock you are still forty minutes from the summit, and the clouds are starting to close in. The three of you turn around and head down, and reach camp before dark."
+   },
+   {
+    "field": "Investing",
+    "title": "50,000 to practice with",
+    "text": "You have 500,000 in savings and want to try buying stocks. You use only 50,000 and leave the other 450,000 in fixed-term deposits as before. That year the market crashes and the 50,000 shrinks by 40%. You've lost 20,000, which is 4% of your savings, and next year's living costs and rent are not affected."
+   },
+   {
+    "field": "Technology",
+    "title": "Restore it once before you start",
+    "text": "You're in charge of tech at a three-person company, and your clients' order data sits on just one server. On Friday night you're switching systems. First you copy the whole database to another machine and actually restore it once in a test environment. The first restore is missing a table, so you add it and restore again. Now the data reads correctly, and only in the early hours of Saturday do you start the switch."
+   }
+  ],
+  "ask": [
+   "What is the worst this could cost me? Of my home, health, reputation, and money others trusted me with, which could I not get back if I lost it?",
+   "How many times a year will I do this? Counting all of them, what share of the time will I end up knocked out?",
+   "If the worst happened tomorrow, could I still go on to the next thing?"
+  ],
+  "with": [
+   {
+    "id": "expected-value",
+    "sees": "Your twenty-person company is offered a big order: if it works, profits triple; if it fails, the company goes under. Suppose the chance of success is 60%. Expected value weighs both outcomes, finds you come out ahead, and says take it. Avoiding ruin looks only at the losing side: lose once and the company is gone, so it says don't take it, or first shrink the losing side to something the company can survive. When you can start over after a loss, go by expected value; when a loss knocks you out, first pass the avoiding-ruin test, then use expected value to compare the options that are left."
+   },
+   {
+    "id": "kelly-criterion",
+    "sees": "You bet at a card table over the long run with a small edge. The Kelly criterion gives the share of your money to bet that grows it fastest: it rises fast when you're lucky and drops deep when you're not. Avoiding ruin adds something outside that share: a sum that never goes on the table no matter what, and when you're down to only that sum, you stop. If all your money is spare, bet the Kelly share; if it includes rent and school fees, bet less than the Kelly share."
+   },
+   {
+    "id": "premortem",
+    "sees": "Before setting off, everyone assumes the project has already failed and writes down why. The premortem turns up all kinds of failure; avoiding ruin picks out the few that would knock the team out, marks them in red, and plugs those first, and the team sets off carrying the other risks with it."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A retired high-school teacher has 800,000. Her monthly pension covers everyday spending. The money for medical care and old age has to come from 500,000 of it, and the other 300,000 is spare. A friend tells her about a project: suppose it has an 80% chance of making 40% in three years and a 20% chance of losing everything.",
+    "question": "At most, how much should she put into this project?",
+    "explain": "The 500,000 is her floor for medical care and old age; if she loses it, she can't replace it. If she loses all of the 300,000 in spare money, she still has her pension and her money for medical care, and the failure stops at this project.",
+    "options": [
+     {
+      "text": "300,000, touching only the spare money.",
+      "correct": true,
+      "feedback": "Losing all the spare money doesn't touch her medical care or old age, so the failure stops at this project, while whatever she gains is real."
+     },
+     {
+      "text": "800,000. The expected return is highest, so putting it all in makes the most.",
+      "correct": false,
+      "feedback": "Putting it all in stakes the 500,000 for medical care and old age as well. The 20% chance of failure would take that money away, and she has no second pot to replace it."
+     },
+     {
+      "text": "500,000, keeping 300,000 in reserve.",
+      "correct": false,
+      "feedback": "That 500,000 is exactly her money for medical care and old age. If she loses it, there's no other money to take its place."
+     },
+     {
+      "text": "Nothing. An 80% chance doesn't mean a sure profit.",
+      "correct": false,
+      "feedback": "Losing all of the 300,000 wouldn't touch her floor. By not investing she gives up a chance she can afford to take."
+     }
+    ]
+   },
+   {
+    "stem": "You run a small factory making outdoor lights, with 2 million in cash on the books. A 1.5 million loan comes due in three months, and a big customer's 1.2 million payment won't arrive for four months. Now a new order comes in. You'd have to pay 1 million for materials up front, and the margin is high.",
+    "question": "Before taking the order, what should you find out first?",
+    "explain": "After paying the 1 million up front, you have 1 million left on the books. In three months you must repay 1.5 million, and the customer's money arrives a month later than that. However high the margin, if you can't repay the loan on the day it's due, the creditors take over the factory first, and it never gets the chance to make that money.",
+    "options": [
+     {
+      "text": "Whether the materials can be bought in batches and paid to the supplier in several installments.",
+      "correct": false,
+      "feedback": "Buying in batches only delays paying up front. It doesn't answer whether there's enough money to repay on the due date."
+     },
+     {
+      "text": "How much higher this order's margin is than your current orders', and how much more you'd make in a year.",
+      "correct": false,
+      "feedback": "The margin tells you how much you'd make. It doesn't answer whether there's enough money to repay on the due date."
+     },
+     {
+      "text": "Whether, after paying up front, the cash on the books on the due date will cover the loan.",
+      "correct": true,
+      "feedback": "Profit on paper won't repay the loan for you. The cash on hand on the due date decides whether the factory can stay open."
+     },
+     {
+      "text": "Whether the big customer has paid on time before, and whether it will pay late again this time.",
+      "correct": false,
+      "feedback": "When the customer pays is only one link. Whether there's enough cash on the books on the day the loan is due decides whether the factory survives."
+     }
+    ]
+   },
+   {
+    "stem": "You're a freelance photographer with four things to decide, and for each one someone is urging you to go ahead.",
+    "question": "Which one would be hardest to try again if it went wrong?",
+    "explain": "A joint guarantee makes you the backstop for someone else's debt, and you don't set the amount. If the company can't pay, you have to make it up from your own money, and if you can't, you won't be able to take on any more work either. At worst, each of the other three costs you money you can save up again, or less income, or wasted time, and you can still take the next job as usual.",
+    "options": [
+     {
+      "text": "Take a wedding shoot at 30% below your usual rate.",
+      "correct": false,
+      "feedback": "At worst you make less on this job, and you can still take the next one as usual."
+     },
+     {
+      "text": "Spend 20% of your savings on a new full-frame camera.",
+      "correct": false,
+      "feedback": "The 20% of savings is spent, but you keep taking shoots; what you lose is money you can save up again."
+     },
+     {
+      "text": "Spend six hours a week running a short-video account for six months.",
+      "correct": false,
+      "feedback": "At worst the six hours are wasted; if the account stops, your life goes on as before."
+     },
+     {
+      "text": "Sign a joint guarantee on a loan to a friend's company.",
+      "correct": true,
+      "feedback": "If your friend's company can't pay, the bank comes to you for the full amount. The sum is decided by someone else's business, and you have no room to start over."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "30% out each round leaves under 20% after five",
+  "caption": "All in every round, 70/30 between doubling and knockout. Drag to 1% a round, 100 rounds: about 63% knocked out in all.",
+  "x": {
+   "label": "Rounds"
+  },
+  "y": {
+   "label": "People not yet out",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "Out per round",
+    "min": 1,
+    "max": 50,
+    "step": 1,
+    "value": 30,
+    "unit": "%"
+   },
+   {
+    "id": "t",
+    "label": "Rounds",
+    "min": 1,
+    "max": 100,
+    "step": 1,
+    "value": 5
+   }
+  ],
+  "model": {
+   "steps": "t",
+   "init": {
+    "s": 100
+   },
+   "next": {
+    "s": "s*(1-p/100)"
+   }
+  },
+  "series": [
+   {
+    "name": "Still at the table",
+    "expr": "s",
+    "tone": "accent",
+    "dots": "small"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Still at the table",
+    "expr": "s",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "Knocked out in all",
+    "expr": "100-s",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

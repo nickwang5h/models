@@ -1,0 +1,182 @@
+{
+ "id": "median-vs-mean",
+ "name": "Median vs Mean",
+ "en": "中位数与平均数",
+ "discipline": "math",
+ "one_line": "A few extreme values pull the mean away, but the median shows the one in the middle.",
+ "story": "Gould is diagnosed with mesothelioma, finds the median survival is eight months, and goes on to write \"The Median Isn't the Message\"",
+ "shallow": {
+  "scene": "In July 1982 the Harvard biologist Stephen Jay Gould was diagnosed with abdominal mesothelioma. Once he could walk again after surgery, he went to the Countway Library of Medicine in Boston to look up the research. He read that the median survival was eight months, and sat by the shelves for fifteen minutes.\n\nThen he worked it out. Eight months only meant that half of patients didn't live that long, and the other half lived longer, some of them for several years. Lay out how long patients lived from shortest to longest, and there is a long tail trailing behind. He was young, his cancer was found early, and he could get the best treatment, so he was likely to land on the tail side.\n\nHe went on to live another twenty years.",
+  "plain": "A small team of five earns, from lowest to highest, 5,000, 6,000, 7,000, 8,000 and 24,000 yuan a month. The finance office asks: how much pay goes out next month? Add the five numbers and you get 50,000 yuan; split evenly among five people, that's 10,000 each, and that is the mean. A new colleague asks: what does a typical person here earn? The third person, right in the middle, earns 7,000 yuan, and this median is the answer. Tell the newcomer \"everyone averages 10,000\" and they'll guess too high, because four of the five earn less than 10,000."
+ },
+ "deep": {
+  "mechanism": "### The mean keeps the total; the median keeps the rank\n\nThe mean is the sum divided by the count, and everyone's money goes into it. If the person earning 24,000 gets a 50,000 raise, the sum grows by 50,000 and the mean grows by 10,000, though the other four didn't get a cent more. The median only looks at who is in the middle: however big the raise for the person on 24,000, the third person is still on 7,000. The other way round, if the third person goes from 7,000 to 9,000, they move to fourth place, the 8,000 that used to be fourth becomes the median, and the mean only goes up by 400.\n\n### Pick the one that fits the question\n\nIf you ask \"how much is it all together,\" the mean times the count gives back the total, and the median can't: 7,000 times 5 is only 35,000, because it has thrown away how big the values at both ends are. If you ask \"pick anyone at random, where are they likely to be,\" the median answers directly: half the people are above it and half below. If you ask \"how many people are over a certain line,\" neither number answers; you have to count. On this team, one person earns more than 10,000 a month, one fifth of them.",
+  "origin": "The arithmetic mean had long been the usual way to calculate. Francis Galton used the word \"median\" in 1881, and in 1883, in *Inquiries into Human Faculty and Its Development*, he explained how to take the middle value in order. In 1985 Gould published \"The Median Isn't the Message,\" which is about this very experience of his.",
+  "limits": "When you're asking about an ordinary person's situation and the data has a few very large values, the median is the steadiest. When the data falls into two clusters far apart, neither number works. If half the rents are 1,000 and half are 9,000, the mean is 5,000; the median, the average of the two households right in the middle, is also 5,000, and not one household is anywhere near it. The common fault lies with whoever reports the number: they pick the one that looks good, for instance reporting pay as \"an average of 10,000,\" and readers then take it to be the median."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "communicate",
+    "text": "If a job page says \"half our people earn more than X a month,\" applicants know which side they'll probably land on. If it only says \"an average of X,\" they have to guess how many very high values are pulling it up."
+   },
+   {
+    "use": "explore",
+    "text": "When the two numbers are far apart, take out the largest item and work them out again, to see which items are holding the gap open."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Society",
+    "title": "Two answers about household wealth",
+    "text": "The Federal Reserve's Survey of Consumer Finances, released in 2023, showed that in 2022 the mean net worth of American households was 1,063,700 dollars and the median was 192,900 dollars. To estimate the total wealth of all households in the country, multiply the mean by the number of households and you have it; to say roughly how much an ordinary family next door has, 192,900 dollars is the answer."
+   },
+   {
+    "field": "Technology",
+    "title": "One slow request",
+    "text": "You maintain a search service, and five requests take 1, 1, 1, 1 and 16 seconds. When a user asks \"how long do I usually have to wait,\" you answer with the median, 1 second. When the data center wants to check how many seconds in total these five requests kept the server busy, you multiply the mean, 4 seconds, by 5 and get 20 seconds, 16 of which are that one slow request."
+   },
+   {
+    "field": "Personal life",
+    "title": "A year of electricity bills",
+    "text": "Over 12 months, your household's electricity bill is 100 yuan for 9 months, and 400 yuan for the other 3, when the heating is on. If you want to know what an ordinary month costs, the answer is 100 yuan; for how much to save for the whole year, multiply the mean, 175 yuan, by 12, which is 2,100 yuan. If you save 100 yuan times 12, you'll be 900 yuan short at the end of the year."
+   }
+  ],
+  "ask": [
+   "Does my question need the total, or the one in the middle?",
+   "Which way was the \"average\" in this report worked out, what is the other number, and how far apart are the two?",
+   "Is what I care about really how many are over a certain line?"
+  ],
+  "with": [
+   {
+    "id": "expected-value",
+    "sees": "Someone invites you to put in 100 yuan a time: nine times in ten you lose the 100, one time in ten you win 2,000. The expected value is a gain of 110 yuan a time, so you should play. But for a single play, the most common result is losing 100, and the median is also a loss of 100. Someone who can play many rounds and can afford the losses should look at the expected value, and their total will come close to it. Someone who plays only once or twice with little money should look at the median first: most likely, they lose."
+   },
+   {
+    "id": "framing-effect",
+    "sees": "The company announces that \"staff pay rose 8% on average,\" but your raise was only 2%. Ask for the median. If it is 2%, most people are like you, and big raises for executives pulled the mean up; if the median is also close to 8%, then it's you who got a small raise. This is the framing effect: in the same announcement, which number gets reported changes the reader's impression of \"how much everyone got.\""
+   }
+  ],
+  "questions": [
+   {
+    "stem": "The student union has to approve the total monthly activity budget for 8 clubs next term. Last term, the clubs' actual monthly spending (yuan) was 50, 50, 60, 60, 70, 80, 90 and 1,340; the highest was a show put on jointly by several clubs. Next term the number of clubs and their activity plans are the same as last term.",
+    "question": "To estimate total monthly spending, which number should you use?",
+    "explain": "You want the total, so every item has to be kept: the sum is 1,800 yuan, and the mean, 225 yuan, times 8 gives it back. The median, 65 yuan, only stands for the club in the middle, and the money for the show isn't in it.",
+    "options": [
+     {
+      "text": "Take the highest, 1,340 yuan, times 8: about 10,720 yuan a month.",
+      "correct": false,
+      "feedback": "That assumes every club spends as much as the show, which is far from what was actually spent last term; it isn't an estimate of total spending."
+     },
+     {
+      "text": "Take the one right in the middle, 65 yuan, times 8: about 520 yuan a month.",
+      "correct": false,
+      "feedback": "65 yuan stands for the club in the middle. The show's 1,340 yuan is ignored, and the estimate comes out 1,280 yuan below the actual figure."
+     },
+     {
+      "text": "Add up the eight and divide by 8 to get 225 yuan, then times 8: 1,800 yuan a month.",
+      "correct": true,
+      "feedback": "The eight items add up to exactly 1,800 yuan. The mean times the count gives back the total, and the money for the show is included."
+     },
+     {
+      "text": "Drop the highest; the other seven average about 66 yuan, times 8 is about 530 yuan.",
+      "correct": false,
+      "feedback": "The show goes ahead next term too, so you can't act as if it doesn't exist. Drop it and you underestimate the total by a big chunk."
+     }
+    ]
+   },
+   {
+    "stem": "The 7 rented apartments in a building have monthly rents (yuan) of 2,800, 3,000, 3,200, 3,400, 3,600, 3,800 and 15,000; the most expensive is a top-floor duplex with a terrace. You want to know roughly what level of rent a tenant pays if you ask any one of them at random.",
+    "question": "Which number should you look at?",
+    "explain": "The question is about the level for any one household, so look at the fourth apartment, right in the middle: 3,400 yuan, with three below it and three above. The mean, 4,970 yuan, is pulled up by the top-floor duplex, and six of the seven households pay less than it.",
+    "options": [
+     {
+      "text": "Halfway between the lowest and highest rents: 8,900 yuan.",
+      "correct": false,
+      "feedback": "This number only looks at the two ends, and no household is anywhere near it."
+     },
+     {
+      "text": "The one in the middle after sorting: 3,400 yuan.",
+      "correct": true,
+      "feedback": "Three are below it and three above. Ask any household and their rent is most likely somewhere near this level."
+     },
+     {
+      "text": "The total of the seven rents: 34,800 yuan.",
+      "correct": false,
+      "feedback": "The total is the whole building's rent for a month, not what one household pays."
+     },
+     {
+      "text": "Add up the seven rents and divide by 7: about 4,970 yuan.",
+      "correct": false,
+      "feedback": "Six of the seven households pay less than this number; the top-floor duplex has pulled it up."
+     }
+    ]
+   },
+   {
+    "stem": "The last 12 times you picked up medicine at the pharmacy, you queued for 5 minutes 9 times and for 25 minutes 3 times. Today your lunch break leaves only 15 minutes for queuing, and you want to know how likely it is that you won't make it.",
+    "question": "How should you read these 12 records?",
+    "explain": "The question is how many are over a line, so count them directly: 3 of the 12 times were over 15 minutes, a quarter. The middle value of 5 minutes and the mean of 10 minutes are both under 15, but both hide that quarter.",
+    "options": [
+     {
+      "text": "Look at the longest, 25 minutes. It's over 15 minutes, so today you certainly won't make it.",
+      "correct": false,
+      "feedback": "9 of the 12 times took only 5 minutes. You can't conclude you won't make it just from the longest one."
+     },
+     {
+      "text": "Look at the middle queuing time, 5 minutes. It's well under 15 minutes, so you can relax.",
+      "correct": false,
+      "feedback": "The middle value of 5 minutes only says it's quick most of the time. The quarter of the time you queue for 25 minutes is exactly when you won't make it."
+     },
+     {
+      "text": "Look at the mean queuing time, 10 minutes. It's under 15 minutes, so there's enough time.",
+      "correct": false,
+      "feedback": "10 minutes is the mean of these 12 times, but not one of them actually took 10 minutes: it was either 5 or 25."
+     },
+     {
+      "text": "Count the times the queue took over 15 minutes: 3, a quarter.",
+      "correct": true,
+      "feedback": "The question is how likely you are not to make it, so count the times over 15 minutes, and the share is plain to see."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "type": "hbar",
+  "title": "Of five people, four earn less than the mean",
+  "caption": "The top earner's 24,000 yuan pulls the mean up to 10,000. The third person, right in the middle, earns 7,000, and that is what people \"typically earn.\"",
+  "categories": [
+   "Person 1",
+   "Person 2",
+   "Person 3: median",
+   "Person 4",
+   "Mean",
+   "Person 5"
+  ],
+  "y": {
+   "min": 0
+  },
+  "series": [
+   {
+    "name": "Monthly pay (yuan)",
+    "values": [
+     5000,
+     6000,
+     7000,
+     8000,
+     10000,
+     24000
+    ],
+    "tones": [
+     "ink",
+     "ink",
+     "accent",
+     "ink",
+     "warn",
+     "ink"
+    ]
+   }
+  ]
+ }
+}

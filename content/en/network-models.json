@@ -1,0 +1,218 @@
+{
+ "id": "network-models",
+ "name": "Network Models",
+ "en": "网络模型",
+ "discipline": "systems",
+ "one_line": "How far news travels depends on how people are linked, not how many you know.",
+ "story": "Milgram's small-world letters: Midwesterners pass a folder through acquaintances to a Boston stockbroker, and the chains that arrive have only five or six people in between (Psychology Today, that May)",
+ "shallow": {
+  "scene": "You chat with a stranger at a dinner and find out he knows one of your college classmates, and you both say, \"Small world.\" The social psychologist Stanley Milgram wanted to know just how small this \"small\" really is.\n\nIn the mid-1960s he asked a group of ordinary people in the American Midwest to get a folder to a stockbroker they had never met, in a suburb of Boston. The rule was that they couldn't mail it to him directly. They could only pass it to an acquaintance they knew on a first-name basis and ask that person to pass it on by the same rule. Most of the chains broke off partway. But in the ones that arrived, there were only five or six people between the starting point and the stockbroker.",
+  "plain": "Suppose you want to find a doctor at a hospital in another city to look at some scans for you. Asking all your colleagues gets you nowhere: the people your colleagues know are mostly colleagues too, so however much you ask, you're still going round inside the company. But your college roommate happens to live in that city, and he has a friend who's a doctor at that hospital. You ask your roommate, your roommate asks his friend, and two steps get you there. And this line isn't just for you: if a colleague wants to reach someone in that city, they can ask you to ask, and it's only one more step.\n\nNetwork models draw people as dots and acquaintance as lines, and look at how the lines connect. When people's acquaintances also know each other, circles cluster tightly and news goes round and round inside them. A long-distance line like the roommate is a shortcut shared by everyone near either end, and with a few of them in a network, the number of steps between any two people drops sharply. The dot with the most lines is called a hub. When two groups are connected only through one person, that person is called a bridge. If a hub or a bridge goes away, news can no longer get through."
+ },
+ "deep": {
+  "mechanism": "### A few long lines bring the circles close\n\nIf everyone knows $k$ people and nobody's acquaintances overlap, then in $n$ steps you reach about $k^n$ people: everyone you reached at the last step brings $k$ new faces each, so every extra step multiplies by the number of acquaintances. If everyone knows 30 people, two steps reach 900 and three steps reach 27,000. The network has 30 times as many people, yet it takes only one more step. But once acquaintances cluster, a friend's friends are mostly your own friends too, and the first few steps keep going round inside the circle.\n\nPut a thousand people in a ring, each knowing only the 5 people on either side. Each step moves at most 5 seats. The person opposite is 500 seats away, so it takes 100 steps, and 50 on average. Yet the circles are very tight: pick any two of a person's 10 acquaintances, and about two-thirds of the time they know each other.\n\nA long line is like that roommate in another city. If it connects A and B, far apart on the ring, then the dozens of people around A who want to reach the people around B can all use it instead, saving dozens of steps at once. Add 10 long lines at random on a computer, only two in a thousand of all 5,000 lines, and the average number of steps drops to about 20, while the share of acquaintances who know each other hardly moves. Add 50, and it's about 9 steps on average. Try several different random additions, and the results all land around here.\n\n### New dots link to popular dots, so a few dots keep growing\n\nIn a network with random links, every dot's number of lines stays close to the average, without much difference. Real networks, though, often have a few dots with far more lines than average. The way Barabási and Albert pictured them growing is that the chance a new dot links to a given old dot is proportional to the number of lines the old dot already has. An old dot with 100 lines is 100 times as likely to be picked as one with just 1, so the dots with many lines keep snowballing.\n\nThis unevenness also leads to an odd result: pick anyone at random, and their friends most likely have more friends than they do. People with many lines sit at the other end of more lines, so when you follow lines to find friends, you're more likely to land on them.\n\n### Only removing a hub or a bridge breaks the network\n\nIn a network with uneven numbers of lines, most dots have only a handful. If a few dots fail at random, they're most likely these small dots, and the other dots still connect. But if the one that fails happens to be a hub, a large patch of dots attached to it lose contact all at once. When two groups are connected only through one person, that person is a bridge: if he leaves, there's not a single path left between the two groups.",
+  "origin": "In 1959 Erdős and Rényi published papers on graphs whose links are entirely random. In 1998 Watts and Strogatz showed in *Nature* that tight circles and short distances can exist together, and in 1999 Barabási and Albert proposed preferential attachment in *Science*. Milgram's conclusion is not very solid: most of his chains never arrived, and in 2002 Judith Kleinfeld found that the results of another round had never been published. In 2011 researchers at Facebook and the University of Milan worked through the friendships of all of Facebook's roughly 720 million active users at the time: any two people were only 4.74 steps apart on average. The world really is small.",
+  "limits": "Network models are most useful for questions that depend only on who is linked to whom, such as spreading, searching and staying connected. Real links are strong or weak, run in one direction or both, and come and go over time; treat them all as the same thickness and your conclusions can be far off. Seeing a long tail, where a few dots have far more lines than average, and declaring that it grew by preferential attachment is also a misreading: other ways of growing produce long tails too."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When a new member joins a group, besides introducing a few big names, also introduce them to two or three people who are new as well. A newcomer linked only to big names drops out of the group once the big names get busy; newcomers who know each other form a small circle of their own and stay connected without relying on any one person."
+   },
+   {
+    "use": "predict",
+    "text": "To estimate whether throttling traffic will bring down a whole network of services, first count how many downstream services each of the most-called services is linked to."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Public health",
+    "title": "Friends as flu lookouts",
+    "text": "In the fall of 2009, H1N1 flu was spreading at Harvard. Nicholas Christakis and James Fowler picked 319 undergraduates at random and asked each to name friends; the 425 people named made up the friend group. The named friends knew more people on average than the people who named them, and were closer to the center of the network. According to diagnosis records, the outbreak reached the friend group about two weeks earlier than the random group. Without drawing the whole network, by watching the friend group you could see the outbreak coming ahead of time."
+   },
+   {
+    "field": "Communications",
+    "title": "A network that still works after bombing",
+    "text": "In the early 1960s, Paul Baran at the RAND Corporation was asked to design a communications network that could still carry calls after a nuclear attack. In a network where every line is switched through one center, bomb the center and everything goes dead. He simulated on a computer a net-like structure with no center, where each node was linked by three or more lines: destroy half the nodes at random, and the rest were still mostly connected. On that basis he argued for building the network like a fishing net, and in 1964 he wrote it up as *On Distributed Communications*, which later became one of the references for the ARPANET."
+   },
+   {
+    "field": "Biology",
+    "title": "Knock out a hub protein and the yeast dies",
+    "text": "In 2001, Barabási's research group drew 1,870 of yeast's proteins as dots and 2,240 known pairs of interactions as lines. Over 90% of the proteins had fewer than five lines, and knocking out one of them on its own killed the yeast only about 21% of the time. Fewer than 1% of the proteins had more than fifteen lines, and knocking out one of those killed it about 62% of the time. Without testing each one, you can look at how many lines a protein has in the network and estimate whether the yeast can do without it: the ones with many lines are about three times as likely to be essential for life."
+   }
+  ],
+  "ask": [
+   "Take the list and count: how many contacts does each person have, and how many times the average is the biggest?",
+   "Is there anyone on the list who can only be reached through one particular person?",
+   "How did newcomers get to know their first few people? Go and ask a few who joined recently."
+  ],
+  "with": [
+   {
+    "id": "network-effects",
+    "sees": "In an online content community, a few big accounts are linked to the great majority of readers. Network effects say each extra reader makes what existing readers have more useful, so the budget should be spread on bringing in new readers. Network models look at whom the new reader is linked to: linking to a dot at the edge and linking to a big account are worth very different amounts to existing readers. With the same budget, one counts heads and the other first asks where the lines connect. When readers come from scattered places and the big accounts don't matter much, count heads; when readers mostly arrive through those few accounts, first see clearly whom those accounts link to."
+   },
+   {
+    "id": "power-law",
+    "sees": "You get a chart of follower counts with a long head. A power law looks at the shape: from how much is left each time the count doubles, you can estimate what share of the total the head takes, and watch the biggest few first. Network models ask how this tail grew. From the current state alone, you can't tell whether newcomers pick people by popularity or by interest, and under those two ways of growing, the head goes in different directions from here. To estimate what share the head takes now, look at the power law; to know whether the head will get bigger, first find out how newcomers choose."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You pick one person from each of two networks. A has 6 acquaintances, and of the 15 pairs among them, 9 know each other. B also has 6 acquaintances, and of the 15 pairs, only 3 know each other. The two networks have the same total number of people.",
+    "question": "What conclusion can you draw directly from these numbers?",
+    "explain": "The share of acquaintances who know each other is 9/15 for A and 3/15 for B, so A's circle is more tightly clustered. How many steps it takes to reach everyone else in the network depends on whether there are lines crossing between circles, which these numbers don't show.",
+    "options": [
+     {
+      "text": "A's circle of acquaintances is denser than B's, so A's average number of steps to everyone else must also be longer.",
+      "correct": false,
+      "feedback": "A dense circle doesn't decide how long the path is; steps to elsewhere depend on whether there are lines crossing between circles, which isn't given here."
+     },
+     {
+      "text": "The two have the same number of acquaintances, so they're equally clustered.",
+      "correct": false,
+      "feedback": "The number of acquaintances only counts how many lines each person has; clustering looks at whether the acquaintances have lines to each other. They're different things."
+     },
+     {
+      "text": "A higher share of A's acquaintances know each other, so A's circle is more tightly clustered.",
+      "correct": true,
+      "feedback": "9/15 against 3/15: A's share who know each other is much higher, so A's circle is more tightly clustered."
+     },
+     {
+      "text": "B's acquaintances have few links with each other, so B's circle is more tightly clustered than A's.",
+      "correct": false,
+      "feedback": "Clustering looks at the share of acquaintances who know each other. B's is only 3/15, lower than A's 9/15, so B's circle is looser."
+     }
+    ]
+   },
+   {
+    "stem": "In a group of six, A is friends with the other five, and those five don't know each other. Each person first counts how many friends they have, then works out how many friends each of their friends has, and takes the average.",
+    "question": "How many of these 6 people find that their friends have more friends on average than they do?",
+    "explain": "A has 5 friends, and each of them has only 1 friend (A), an average of 1, which is not more than A. The other 5 each have only A as a friend, and A has 5 friends, more than their own 1. So the answer is 5.",
+    "options": [
+     {
+      "text": "0 people",
+      "correct": false,
+      "feedback": "The other 5 each have only 1 friend, while their friend A has 5."
+     },
+     {
+      "text": "1 person",
+      "correct": false,
+      "feedback": "A's friends each have only 1 friend, fewer than A. The one with more friends is A, the friend of the other 5."
+     },
+     {
+      "text": "6 people",
+      "correct": false,
+      "feedback": "Each of A's 5 friends has only A as a friend, an average of 1, which doesn't exceed A's 5."
+     },
+     {
+      "text": "5 people",
+      "correct": true,
+      "feedback": "The only friend of each of the other 5 is A, and A has 5 friends, more than their own 1."
+     }
+    ]
+   },
+   {
+    "stem": "In a social network, each person knows 20 people on average, and whether two people know each other is completely random. The number of people grows from 10,000 to 10 million, 1,000 times as many.",
+    "question": "Roughly how many steps does the average distance between any two people go up by? (The question is how much it goes up, not the total.)",
+    "explain": "Each extra step multiplies the number of people you can reach by 20: 2 steps reach 400 people, 3 steps reach 8,000. To multiply the number you can reach by 1,000 takes only a little over 2 more steps.",
+    "options": [
+     {
+      "text": "Up by about 2 steps",
+      "correct": true,
+      "feedback": "Each step multiplies by 20, so 2 steps multiply by 400, and a little more gets to 1,000 times. So about 2 steps."
+     },
+     {
+      "text": "Up by about 7 steps",
+      "correct": false,
+      "feedback": "7 steps would mean each step multiplies by only about 2.7. Here each extra step multiplies by 20, so it doesn't take 7."
+     },
+     {
+      "text": "Up to 1,000 times what it was",
+      "correct": false,
+      "feedback": "The number of people grows 1,000 times, but distance doesn't grow in step with it: each extra step multiplies the people you reach by 20."
+     },
+     {
+      "text": "Up by less than half a step",
+      "correct": false,
+      "feedback": "The number you can reach has to be multiplied by 1,000. Each step multiplies by 20, and two steps only by 400, so less than half a step is nowhere near enough."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Colleagues keep you in; a far roommate: 2 steps",
+  "caption": "Colleagues mostly know colleagues: two steps on, you're still in the firm. The roommate is a far line: two steps. Asking via you adds one: everyone nearby can use it.",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "You",
+    "layer": 0
+   },
+   {
+    "id": "b",
+    "label": "Colleagues",
+    "sub": "Mostly know colleagues",
+    "tone": "muted",
+    "layer": 1
+   },
+   {
+    "id": "c",
+    "label": "College roommate",
+    "sub": "Lives in that city",
+    "tone": "accent",
+    "layer": 1
+   },
+   {
+    "id": "d",
+    "label": "Still in the firm",
+    "sub": "Asked around, no way out",
+    "tone": "warn",
+    "layer": 2
+   },
+   {
+    "id": "e",
+    "label": "Hospital doctor",
+    "sub": "Roommate's friend",
+    "tone": "accent",
+    "layer": 2
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b",
+    "label": "Step 1",
+    "tone": "muted"
+   },
+   {
+    "from": "b",
+    "to": "d",
+    "label": "Step 2",
+    "tone": "muted"
+   },
+   {
+    "from": "a",
+    "to": "c",
+    "label": "Step 1",
+    "tone": "accent"
+   },
+   {
+    "from": "c",
+    "to": "e",
+    "label": "Step 2",
+    "tone": "accent"
+   },
+   {
+    "from": "b",
+    "to": "a",
+    "label": "Ask via you",
+    "tone": "accent",
+    "dashed": true
+   }
+  ]
+ }
+}

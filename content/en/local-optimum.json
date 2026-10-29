@@ -1,0 +1,221 @@
+{
+ "id": "local-optimum",
+ "name": "Adaptation and Local Optima",
+ "en": "局部最优",
+ "discipline": "biology",
+ "one_line": "If you only ever step uphill, you get stuck on the nearest small hill.",
+ "story": "Weinreich's team reports in Science on five mutations in the resistance enzyme TEM: of 120 orders, only 18 make resistance stronger at every step",
+ "shallow": {
+  "scene": "People solving a Rubik's Cube often have to scramble a face they've already finished before they can go on. Bacterial evolution won't take a single step back. Each new mutation has to leave the bacterium more drug-resistant than before; otherwise, the bacteria carrying that mutation are all killed as soon as the drug is used, and the mutation disappears with them.\n\nIn 2006, Daniel Weinreich's team at Harvard experimented with an enzyme in bacteria that breaks down antibiotics. The enzyme needs all five of a set of mutations to stand up to one powerful antibiotic. Counting every possible order in which the five could arrive, there are 120 orders. The team built every in-between version along each order, measured how drug-resistant each one was, and then checked the orders one by one: along this order, is every step more resistant than the one before?\n\nOnly 18 orders passed. In the other 102, somewhere along the way there was always a step that stayed put or got worse; evolution that will only go uphill gets stuck at that step.",
+  "plain": "You're climbing a hill in the fog with one rule: every step has to be higher than the last. After a while you reach the top of a 30-meter mound. It slopes down in front and behind, so you have to stop. Ahead of you there is actually an 80-meter mountain, but to get there you'd have to go down twenty meters first and cross the valley, and the rule doesn't allow that. Where you've stopped is called a local optimum: nowhere nearby is higher, but somewhere farther away is. Adaptation in living things keeps the same rule: only changes that leave more offspring right away get kept."
+ },
+ "deep": {
+  "mechanism": "### Change one thing at a time and the good combination is out of reach\n\nSay there are two places in the genes, each with two possible states, and we score each combination by its fitness, that is, how good it is at leaving offspring. The original combination scores 10. Change only the first place and it drops to 9; change only the second and it drops to 8; change both and it rises to 15. If only one place changes at a time and only improvements are kept, the population stays at 10, because on both roads to 15 the first step is a step down. If both places could change at once, it would reach 15 in one step, and the peak it can climb to would be a different one.\n\n### The deeper the dip in between, the harder it is to last until the next step\n\nAn individual that changes the first place first drops to 9, only a little worse than before. With luck it can still leave offspring and hold on until the change in the second place shows up. If that in-between step dropped it to 2, the individual would be weeded out almost at once and would never live to see the second change.\n\nBiologists draw these hills and valleys as a picture called a fitness landscape. Each combination of genes is a position on the map, its fitness is the height there, and the combinations one mutation away are right next to it. If each place in the genes worked on its own, the benefits could be collected one place at a time, the map would have just one mountain, and going up and up would always reach the top.\n\nBut genes affect each other, and the same mutation can have opposite results in different combinations: in the opening example, the second place scores 8 when changed alone and 15 when changed together with the first. So the map sprouts several mountains, and which peak you end up on depends on where you start.\n\n### Wiring already laid can't be flipped over\n\nNatural selection only looks at how many more offspring this generation leaves, not at what happens several generations later. In the eyes of vertebrates, the nerve wiring runs in front of the retina and then passes back out through it, and where it passes through there is a blind spot. In an octopus the nerve wiring runs behind the retina, and there is no blind spot. To move the vertebrate wiring to the back, evolution would have to pass through a whole series of eyes that see worse. Individuals with those eyes wouldn't leave more offspring, so that road is closed. That is why the vertebrate eye can only be changed bit by bit on the wiring it already has, and the blind spot is still there today.",
+  "origin": "The fitness landscape picture was put forward by the evolutionary geneticist Sewall Wright at the International Congress of Genetics in 1932. In 1987, Stuart Kauffman and Simon Levin used a mathematical model to show that the more the genes are tied to one another, the more small peaks the landscape has, and the more easily a population that only goes uphill stops halfway.",
+  "limits": "Local optima explain one kind of standstill best: every change is small and the yardstick stays the same, like a production line that only fine-tunes its settings year after year. When the environment changes, the whole mountain moves, and the old top is no longer the top. Populations of living things can also cross valleys through genetic drift and recombination, so how long they stay stuck depends on the population itself. Seeing results level off and declaring you're stuck at a local optimum, without checking how big the last few adjustments actually were, is a misuse of this model."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "For ten years, every version of a piece of software only added features and never removed an old menu. Users didn't complain at any upgrade, yet the interface got harder and harder to use: every step was a small improvement, and no step was willing to make people uncomfortable first."
+   },
+   {
+    "use": "design",
+    "text": "When setting the rules for judging a new plan, leave a trial period in which this quarter's results don't count, and write down when it will be reviewed and what result means stopping."
+   },
+   {
+    "use": "predict",
+    "text": "Look at a team's rules for approving projects and you can predict which kinds of plans will be blocked: under rules that only look at this quarter's results, plans that need investment first and pay back later are the first to go."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "A new mold blocked by quarterly reviews",
+    "text": "You run a phone-case production line, and your bonus depends only on this quarter's yield of good parts. Switching to a new mold means stopping the line to set it up first; the yield will drop for a few months, and only after that might it beat the old mold. In every quarter's plan review, the new mold is rejected because this quarter's numbers look bad, and the old mold goes on getting its settings fine-tuned."
+   },
+   {
+    "field": "Technology",
+    "title": "One training run per random start",
+    "text": "Late in training, a model's loss has stalled on a plateau. Adjusting the learning rate and adding more training rounds don't bring it down any further. The engineers swap the starting parameters for three different sets of random numbers and train once with each. One of them settles at a clearly lower loss, and the team keeps it."
+   },
+   {
+    "field": "Personal life",
+    "title": "A new way of breathing slows you down first",
+    "text": "A swimmer who breathes by lifting his head in freestyle can hardly get faster by speeding up his arm strokes any more. Switching to turning his head to the side to breathe throws off his rhythm at first, and every time he's timed over the full distance he's slower. His coach has him practice it in sections first and time the full distance again after two weeks, so that he doesn't give up the first time he gets slower."
+   }
+  ],
+  "ask": [
+   "Which result decides whether a plan stays, and does it measure the thing I really want to improve?",
+   "When I say \"this is already the best,\" how big a range of changes does that cover, and how many starting points have I tried from?",
+   "Are there two changes that only help when done together, and each make things worse when done alone?"
+  ],
+  "with": [
+   {
+    "id": "optionality",
+    "sees": "A company wants to replace its whole internal system. The old and new systems' interfaces don't work with each other, so switching only half leaves both sides hard to use. Local optima say a change like this can't be split up and has to be switched over as a whole; optionality says every step should be small and reversible, never staking everything at once. Look at whether each part still works on its own once it's split up. If it does, go step by step; if it doesn't, first run a whole-system pilot that can be rolled back, then decide on the full switch."
+   },
+   {
+    "id": "natural-selection",
+    "sees": "Within one population, natural selection explains how a helpful variant spreads generation after generation. Local optima add its boundary: the spread only follows directions that are better right now, and a higher mountain may stay forever out of reach because one step in between is worse."
+   },
+   {
+    "id": "explore-exploit",
+    "sees": "Should the research budget go to ten small improvements or be staked on two big directions? Explore vs exploit says keep a share to try new routes. Local optima add that a new route has to change enough at once; otherwise it is only a different foothold on the same mountain. When improvements near the top have shown nothing for several quarters in a row, put that share of the budget into one big change, all at once."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A customer service manager sets a rule: only one process change at a time, tried for a week; if average handling time goes up, it's withdrawn. Stopping the handing-off of tickets would make new staff slower at hard problems; adding specialist training would take up that week's time for taking tickets. A small-group trial found that with both changes in place and the training finished, handling time fell by 15% and the resolution rate went up too.",
+    "question": "If the old rule for improvements stays in place, what is the most likely result?",
+    "explain": "What decides whether a plan stays is this week's handling time, and only one change is allowed at a time, so a plan that is slower in between only lives for one week. The combination of the two pays off, but every step on the way to it fails the screening.",
+    "options": [
+     {
+      "text": "The current process can keep improving; the company doesn't need to change the rule for now and will gradually get the benefit of the combination too.",
+      "correct": false,
+      "feedback": "Small improvements to the old process won't loosen the screening, and the two withdrawn changes will never be brought together."
+     },
+     {
+      "text": "The two changes will be withdrawn one after the other; the company keeps improving the current process but will struggle to adopt the better combination.",
+      "correct": true,
+      "feedback": "The old rule allows only single changes and drops any plan that is slower that week. The combination pays off, but the steps in between can't pass the screening."
+     },
+     {
+      "text": "Each change slows handling when done alone, which shows the combination's gain comes mainly from the extra investment.",
+      "correct": false,
+      "feedback": "They get slower when split up precisely because the two only help when they work together. Their results when split up can't overturn the result of the combined trial."
+     },
+     {
+      "text": "Do the specialist training first and then stop handing off tickets, and the two changes can be kept one by one under the old rule.",
+      "correct": false,
+      "feedback": "The training itself takes up that week's time for taking tickets, so handling time still goes up and it is still withdrawn."
+     }
+    ]
+   },
+   {
+    "stem": "You run an online shop. For a whole year you've fine-tuned just one thing on a product page each month, such as the title, the main image or the button wording, and kept only the version with a higher conversion rate. For the past few months the conversion rate hasn't gone up. You suspect you're stuck: the current page may not be the best, but you don't know whether a higher position exists.",
+    "question": "To judge whether you're stuck on a small hilltop, which of these is the most direct evidence?",
+    "explain": "A standstill only shows there's nothing better nearby; it can't show there's nothing better farther off. To prove there is higher ground, you have to actually find it: a page that does better, from a combined change or from a different starting point.",
+    "options": [
+     {
+      "text": "Another online shop's total visitor numbers went down this year.",
+      "correct": false,
+      "feedback": "Another shop's visitor numbers have nothing to do with whether there's a better design near this page."
+     },
+     {
+      "text": "A colleague in operations says people are less keen on changing pages lately than they were last year.",
+      "correct": false,
+      "feedback": "Keenness doesn't show that a better combination of page elements exists."
+     },
+     {
+      "text": "In a trial week, a new page with the main image, title and layout all changed at once converts better than the current version.",
+      "correct": true,
+      "feedback": "That is exactly a higher position that fine-tuning can't reach, which shows the current page is only the best nearby."
+     },
+     {
+      "text": "In these months, fine-tuning the title, main image and button wording each on its own has not raised the conversion rate again.",
+      "correct": false,
+      "feedback": "That only proves you can't move from where you are. It says nothing about whether there is higher ground farther away."
+     }
+    ]
+   },
+   {
+    "stem": "A store's staff rota is made by a program. It first makes a random rota, then swaps only two people's shifts at a time, keeping the swap whenever the total score goes up. The program has stopped, because no swap between two people gives a higher score. The engineer has rerun it five times and gotten the same result every time, but she knows the score could still be higher, and suspects a good rota needs three people's shifts moved at once.",
+    "question": "Which approach is most likely to get the program to find a higher-scoring rota?",
+    "explain": "The program stopped because no two-person swap can raise the score. Only by making each change bigger, and including moving three people at once in the search, can it get past positions that two-person swaps can't reach.",
+    "options": [
+     {
+      "text": "Cut the penalty for working consecutive shifts in the scoring function by half.",
+      "correct": false,
+      "feedback": "That changes the scoring, not the range of the search, and the rota you get afterwards isn't necessarily any more sensible."
+     },
+     {
+      "text": "Keep swapping only two people at a time, run the program a few more times, and take the highest score.",
+      "correct": false,
+      "feedback": "Neither the rule nor the starting point has changed, and the result is the same every time; more runs just repeat it."
+     },
+     {
+      "text": "Raise the number of iterations to ten times the original, with all other rules the same.",
+      "correct": false,
+      "feedback": "The program stopped because there is no better swap. No number of extra iterations will produce a new swap."
+     },
+     {
+      "text": "Widen the change allowed at one time from swapping two people to rotating three at once, and search again.",
+      "correct": true,
+      "feedback": "With a bigger range of changes, rotas that couldn't be reached in one step before come into the search."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Go down 20 m first to reach the 80 m mountain",
+  "caption": "Gray is the ground past the mound; the dark line, the highest you've been. Willing to drop under 20 m, you stay on the 30 m mound; at 20 m the line climbs to 80.",
+  "x": {
+   "label": "Steps forward"
+  },
+  "y": {
+   "label": "Height",
+   "unit": " m",
+   "min": 0,
+   "max": 90
+  },
+  "params": [
+   {
+    "id": "t",
+    "label": "Willing to drop",
+    "min": 0,
+    "max": 30,
+    "step": 5,
+    "value": 10,
+    "unit": " m"
+   }
+  ],
+  "model": {
+   "steps": 18,
+   "init": {
+    "p": 0,
+    "b": 12,
+    "z": 0
+   },
+   "next": {
+    "p": "p+(z<1)*((10+20*exp(-pow((p-2)/2,2))+70*exp(-pow((p-17)/3,2)))>=(b-t))",
+    "b": "(z<1)*((10+20*exp(-pow((p-2)/2,2))+70*exp(-pow((p-17)/3,2)))>=(b-t)) ? max(b,10+20*exp(-pow((p-2)/2,2))+70*exp(-pow((p-17)/3,2))) : b",
+    "z": "(z<1)*((10+20*exp(-pow((p-2)/2,2))+70*exp(-pow((p-17)/3,2)))>=(b-t)) ? 0 : 1"
+   }
+  },
+  "series": [
+   {
+    "name": "Ground height",
+    "expr": "10+20*exp(-pow((k-3)/2,2))+70*exp(-pow((k-18)/3,2))",
+    "tone": "muted",
+    "fill": true
+   },
+   {
+    "name": "Highest so far",
+    "expr": "b",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "y": 30,
+    "text": "Mound top, 30 m"
+   },
+   {
+    "y": 80,
+    "text": "Mountain top, 80 m"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Highest reached",
+    "expr": "b",
+    "unit": " m",
+    "digits": 0
+   }
+  ]
+ }
+}

@@ -1,0 +1,199 @@
+{
+ "id": "technical-debt",
+ "name": "Technical Debt",
+ "en": "技术债",
+ "discipline": "computing",
+ "one_line": "A shortcut you take today charges interest on every change you make later.",
+ "story": "On August 1, Knight Capital reuses an old switch, and a server that missed an update wakes code retired in 2003, losing over 460 million dollars in about 45 minutes",
+ "shallow": {
+  "scene": "To save effort during a renovation, you leave the old wiring in place and just cap off the ends, and nothing seems wrong. But one day an electrician replacing a switch connects the wrong wire, and the old stretch of wire inside the wall suddenly goes live.\n\nOn August 1, 2012, a piece of old program like that woke up in the trading system of Knight Capital, a US trading firm. It had been retired in 2003 but never deleted, and a new feature written later reused its old on-switch. A few days earlier, the technical staff had updated the software on eight servers, missed one, and nobody double-checked.\n\nWhen the US stock market opened, the switch was turned on. Seven servers started running the new feature, but the server that missed the update still had the old program, so the old program woke up. It was supposed to stop once enough of its orders had been filled, but that check had been broken long before, in a later change, so it sent orders to the market without a moment's pause. The system was shut down only after about 45 minutes, by which time the firm had lost more than 460 million dollars. Over the years, every change to this system had needed someone to remember that old program and that switch. This time nobody did, and the interest that had built up was paid all at once.",
+  "plain": "After dinner you're tired, so you leave the frying pan soaking instead of washing it, saving 10 minutes. The next day, to fry an egg, you first have to scrape off a layer of grease, which takes 5 extra minutes; by evening the grease is harder, and washing the pan takes 20 minutes. Technical debt in software works the same way: you take a shortcut to launch on time, and after that every change has to go the long way round, and the longer it piles up, the harder it is to clean up. In 1992 Ward Cunningham compared this to borrowing: the work a shortcut saves is borrowed money, each detour is interest, and a thorough cleanup is paying back the principal."
+ },
+ "deep": {
+  "mechanism": "### Work you owe charges interest every time you make a change\n\nTo launch on time, you scatter the same customer data across three tables, saving 4 days of organizing. From then on, every time one item of customer data changes, all three tables have to be checked against each other, which takes an extra half day. If it changes only 2 times a year, the interest is just 1 day, far less than the 4 days saved, and leaving the debt is fine. If it changes once a week, 8 half days make 4 days: after 8 weeks the savings are used up, and every change after that is a net loss.\n\n### The more that's built on top, the bigger the principal\n\nThe longer the debt is owed, the more reports pull data from the messy customer tables. They all have to be changed during the cleanup, with care taken not to miss any, so a thorough cleanup grows from 4 days to 6. Checking and fixing errors fill up all the time, so the team has to rush progress with more temporary patches, and new debt keeps being left behind.\n\n### Before you borrow, write down how you'll pay it back\n\nWhen delivering early wins you orders, cash or key feedback, a limited debt is worth taking on. When you borrow, note down what you left undone, who will pay it back, and what signal means it's time to act. Pay back first the spot that changes most often and breaks most often; that's where the interest is highest.",
+  "origin": "In 1992 Ward Cunningham wrote an experience report about developing WyCash, a portfolio management system. He compared shipping a first version and then revising the code once you understand more to borrowing money, and the extra work of always working around old code to interest. So debt doesn't only come from rushing on purpose: code written as well as it could be at the time also becomes debt once understanding deepens later. The source is a report on development practice, not a controlled experiment.",
+  "limits": "The metaphor is most useful when a system has to live for several years and the same spot has to be changed again and again. A one-off script that is thrown away after it runs has no later changes, so it has no interest. Calling all the ugly code a predecessor wrote technical debt is a different use of the term: ugly code that nobody touches again doesn't owe anyone anything."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "See why the same feature that took two days last year now drags on for two weeks: the shortcut taken back then has piled up interest with every change since."
+   },
+   {
+    "use": "communicate",
+    "text": "Make clear to a boss who doesn't write code why new features should pause for two weeks: those two weeks pay back the principal, and without that, the interest keeps being paid every month."
+   },
+   {
+    "use": "predict",
+    "text": "When scheduling a new feature, if it touches that old piece of unpaid debt, first add time for the detours and the checking."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business operations",
+    "title": "Old crew scheduling slows the recovery",
+    "text": "In late December 2022, winter storms threw Southwest Airlines' flights into disorder. The company's crew-scheduling technology and processes couldn't keep up with so many changes so fast, so schedulers switched to handling them by hand, recovery was slower still, and in the end more than 16,700 flights were canceled. The pilots' union had already warned that the scheduling technology was out of date."
+   },
+   {
+    "field": "Investing",
+    "title": "The rent covered up the leak",
+    "text": "You bought an old apartment to rent out, and the roof leaks. To protect that year's cash flow, you only repainted inside and kept collecting rent. In the second year water had soaked into the wall and damaged it; replacing it means three months with no rent, and the whole wall has to be redone."
+   },
+   {
+    "field": "Personal learning",
+    "title": "Memorizing question types to pass the exam",
+    "text": "When you studied statistics, you only memorized the question types in the chapter on conditional probability, and you still passed the exam. Half a year later you read a medical checkup report: it's the same calculation of the chance of having a disease, but asked a different way, and you can't do it. You have to go back and relearn that chapter, and from then on, every time you meet a probability question, you have to check your notes first."
+   }
+  ],
+  "ask": [
+   "What did this shortcut save today, and what specific piece of work does it leave for later?",
+   "Look through the commit history: how many times has this code been changed in the past six months, and how much extra time did the old way of writing it cost each time?",
+   "Are the orders or feedback that early delivery bought worth this principal plus interest?"
+  ],
+  "with": [
+   {
+    "id": "chestertons-fence",
+    "sees": "You take over a system that has been running for ten years. In it is an old switch that nobody knows how to use and nobody dares touch. Technical debt says every change has to work around it, so it should be cleaned up; Chesterton's fence says don't pull it out until you understand why it's there. Both have a point. First spend half a day going through the commit history and asking longtime colleagues, to find out whether anyone still uses it. If you confirm no one does, delete it along with its code; if you can't find out, add monitoring and a note, and keep it for now."
+   },
+   {
+    "id": "incentives",
+    "sees": "A team's bonuses depend only on how many features go live each quarter, and other people end up maintaining them. The people who borrow get the bonus, the people who pay the interest get nothing, and the unpaid debt can only keep piling up. Some teams have started counting production failures and time spent on changes in the reviews of whoever was responsible."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You lead a four-person team that maintains the back office of a neighborhood group-buying app, where neighbors pool their orders. Two pieces of old code were left from rushed work back then, and this quarter there's only time for one person to clean up one of them. Over the next 26 weeks, the order-pooling rules module is expected to be changed 52 times, each costing 1 extra hour because of the old code; the finance reconciliation module is expected to be changed 6 times, each costing 3 extra hours. Cleaning up the order-pooling rules takes 3 working days (24 hours); cleaning up reconciliation takes 2 working days (16 hours).",
+    "question": "Cleaning up only one, how do you save the most total hours over these 26 weeks (counting the cleanup itself)?",
+    "explain": "The order-pooling rules save 52 hours of interest; minus the 24 hours of cleanup, that's a net saving of 28 hours. Reconciliation saves 18 hours of interest; minus 16 hours, that's a net saving of only 2 hours. The cleanup itself takes hours too, so compare the net figures.",
+    "options": [
+     {
+      "text": "Clean up reconciliation: at 3 extra hours each time, it's the heavier of the two per change.",
+      "correct": false,
+      "feedback": "6 times 3 hours is only 18 hours, less than half of the order-pooling rules."
+     },
+     {
+      "text": "Clean up reconciliation: it takes only 2 days, so it pays off fastest.",
+      "correct": false,
+      "feedback": "Cleaning up reconciliation takes 16 hours and wins back only 18 hours of interest, close to breaking even."
+     },
+     {
+      "text": "Clean up the order-pooling rules: they change most often, so they add up to the most extra hours.",
+      "correct": true,
+      "feedback": "It saves the most interest, and even after subtracting the hours for the cleanup itself, the net saving is still the bigger of the two."
+     },
+     {
+      "text": "Leave both for now, and deal with one once it breaks.",
+      "correct": false,
+      "feedback": "Without a cleanup you save not a single hour. The interest is paid with every change; it doesn't wait for a breakdown to start counting."
+     }
+    ]
+   },
+   {
+    "stem": "You want to buy a small shop that prints wedding invitations. To save on upgrading equipment, the seller has always used an old fixture that can only be positioned by hand, so every switch to a new design takes 2 extra hours of machine setup. In the past the shop took only big orders of a single design and switched designs only twice a month. You plan to take small orders of many designs instead, expect to switch designs 20 times a month, and will replace the old fixture after one more year, at a cost of 30,000 yuan. Labor and lost machine time during setup together cost 100 yuan an hour.",
+    "question": "In the first year, how much will this old fixture cost you in total?",
+    "explain": "Keeping the old fixture saved the upgrade cost back then, but left the setup time to every order after. Once the number of design switches changes, the interest has to be worked out again on the new number: 20 switches times 2 hours times 12 months is 480 hours, which comes to 48,000 yuan, plus the 30,000 yuan for the replacement at the end of the year.",
+    "options": [
+     {
+      "text": "30,000 yuan",
+      "correct": false,
+      "feedback": "This counts only the principal for the replacement and leaves out the extra setup hours on every design switch."
+     },
+     {
+      "text": "34,800 yuan",
+      "correct": false,
+      "feedback": "This is the setup cost at the old rate of 2 switches a month, plus the replacement. Once you take small orders of many designs, the switches go up sharply, and the old number badly underestimates them."
+     },
+     {
+      "text": "48,000 yuan",
+      "correct": false,
+      "feedback": "This counts only the setup interest and leaves out the 30,000 yuan replacement at the end of the year."
+     },
+     {
+      "text": "78,000 yuan",
+      "correct": true,
+      "feedback": "A year of setup is 480 hours, or 48,000 yuan, plus 30,000 yuan for the replacement: 78,000 yuan in all."
+     }
+    ]
+   },
+   {
+    "stem": "You are the product lead of a three-person team. On Friday morning a pilot customer wants to see a working demo, and they've said that if they don't see it on Friday, they'll go elsewhere. The only way to make it is to hard-code the customer's pricing rules straight into the code, saving 3 days; building a configurable version would push the demo to next week. If the pilot succeeds, a dozen or more customers will follow, each with different rules.",
+    "question": "What's best for the team to do now?",
+    "explain": "Hard-coding keeps this customer, so this debt is worth taking on; but with a dozen or more customers each having different rules, the interest will rise fast. Only if you write down, when you borrow, what is owed, who will pay it back and when they'll start, will it not drag on forever.",
+    "options": [
+     {
+      "text": "Hard-code it for Friday's demo, note down what was hard-coded and who will change it, and finish the change before signing the second customer.",
+      "correct": true,
+      "feedback": "This keeps the customer in front of you and also gives the debt a person and a time for paying it back, so someone will act before the interest climbs."
+     },
+     {
+      "text": "Hard-code it for Friday's demo, and hard-code the other modules the same way for now, since you're already in debt anyway.",
+      "correct": false,
+      "feedback": "Every extra hard-coded spot adds to the principal to pay back later and to the interest paid each time. Owing one debt doesn't mean you should take on more."
+     },
+     {
+      "text": "Hard-code it for Friday's demo, and change it whenever there's free time.",
+      "correct": false,
+      "feedback": "You've borrowed without anyone or any time set to pay it back. Once the pilot succeeds, new customers' demands will pile on, and the days without free time will go on and on."
+     },
+     {
+      "text": "Build the configurable version and push the demo to next week, to avoid rework later.",
+      "correct": false,
+      "feedback": "The customer said they'd leave if they didn't see it on Friday, so pushing it back means losing this pilot."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Weekly changes eat the 4 days saved in 8 weeks",
+  "caption": "Customer data in 3 tables saved 4 days; each change now costs an extra half day. Drag to 2 changes a year: 1 day of interest a year, so the debt can wait.",
+  "x": {
+   "label": "Weeks",
+   "min": 0,
+   "max": 52
+  },
+  "y": {
+   "label": "Extra days, total",
+   "min": 0
+  },
+  "params": [
+   {
+    "id": "f",
+    "label": "Changes a year",
+    "min": 2,
+    "max": 52,
+    "step": 2,
+    "value": 52
+   }
+  ],
+  "series": [
+   {
+    "name": "Interest so far",
+    "expr": "0.5*f*x/52",
+    "tone": "warn"
+   }
+  ],
+  "marks": [
+   {
+    "y": 4,
+    "text": "4 days saved at first"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Weeks to use it up",
+    "expr": "4/(0.5*f/52)",
+    "unit": " wks",
+    "digits": 0
+   },
+   {
+    "label": "Extra per year",
+    "expr": "0.5*f",
+    "unit": " days",
+    "digits": 0
+   }
+  ]
+ }
+}

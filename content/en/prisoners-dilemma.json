@@ -1,0 +1,190 @@
+{
+ "id": "prisoners-dilemma",
+ "name": "Prisoner's Dilemma",
+ "en": "囚徒困境",
+ "discipline": "games",
+ "one_line": "Everyone picks what's best for themselves, and everyone ends up worse off.",
+ "story": "Nixon signs a law banning cigarette ads on TV and radio, in force from 1971, and the tobacco companies all pull out of both at once",
+ "shallow": {
+  "scene": "In 1970, President Nixon signed a law banning cigarette advertising on American television and radio, in force from 1971. Until then, Philip Morris and the other tobacco companies had kept competing to buy ads: if a rival advertised and you didn't, you feared losing customers; if a rival stopped and you kept going, you could take its customers. So no company's managers could stop on their own. The ban made all the tobacco companies pull out of both channels at the same time, and the money they had been spending to compete on television and radio went away with it.",
+  "plain": "You sell jianbing, a Chinese savory crepe, at a food market, and the stall next to you sells them too. Both of you charge 10 yuan, and each of you makes 60 yuan a day. You cut your price to 8 yuan, customers flock to you, and you make 90 yuan while your neighbor makes only 20. Your neighbor cuts too, and now you each make 40.\n\nThe hard part is that every step makes sense on its own. If the other side doesn't cut, cutting earns you 30 more; if the other side has cut, not cutting leaves you 20, while cutting too still leaves you 40. That is how the two stalls slide together into something worse for both than where they started. Whoever goes back up to 10 yuan first is left with only 20, so the price can't go back either."
+ },
+ "deep": {
+  "mechanism": "### Whatever the other side picks, breaking away pays more\n\nYou and a colleague are writing a report together. Each of you can either do your part properly or slack off and hand in the minimum. In each cell, the first number is what you get and the second is what your colleague gets:\n\n| Your choice | Colleague tries | Colleague slacks |\n| --- | --- | --- |\n| Try | 3, 3 | 0, 5 |\n| Slack | 5, 0 | 1, 1 |\n\nWhen your colleague tries, slacking gets you 5, more than the 3 for trying; when your colleague slacks, slacking gets you 1, more than the 0 for trying. Your colleague does the same sums, so both of you slack and each gets 1, when both trying would have given each of you 3.\n\n### Cut the payoff for taking advantage alone, and the dilemma loosens\n\nLower the 5 that a lone slacker gets to 2. When your colleague tries, slacking gets you only 2, less than the 3 for trying, so you try; when your colleague slacks, slacking gets you 1, still more than the 0 for trying. The table now has two results that hold steady: both try and each gets 3; both slack and each gets 1. Holding steady means that once you land there, neither of you wants to switch on your own.\n\nNow whether you try or slack depends only on whether you believe your colleague will try: if you do, you try. So at this point a promise, or putting in a proper effort first once, can bring the two of you to \"both try.\" Before the payoff was cut, the same promise got you nothing, because whatever your colleague did, slacking paid you more.",
+  "origin": "In 1950, Merrill Flood and Melvin Dresher at the RAND Corporation designed this payoff structure and had two colleagues play it 100 rounds in a row to see what they would choose. Albert Tucker then explained it with a story of two suspects questioned separately, which is where the name comes from.",
+  "limits": "The prisoner's dilemma fits best when each side decides on its own, neither can bind the other beforehand, and the payoff mostly depends on the account right in front of them. Price wars and ad wars are like this. When the same people deal with each other over many rounds, breaking away today brings revenge tomorrow, and the account changes. Calling every competition and conflict a prisoner's dilemma is a misreading. When two teams go after the same player, one side's win is the other's loss, and there is no cell where \"both cooperating is better.\" That is zero-sum, not a dilemma."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Two small shops share a rented storeroom, and each wants to pile a bit more stock in the aisle. When both do, nobody can get to the shelves. Marking zones by shelf and painting lines on the floor works better than putting up a notice asking everyone to make room."
+   },
+   {
+    "use": "explain",
+    "text": "Every car in a housing complex edges half a space further into the road, and then nobody can get through. The reason is this account: if the others don't edge out, edging out makes it easier for you to get in and out; if all the others have, not edging out makes it hard even to get in and out."
+   },
+   {
+    "use": "act",
+    "text": "Before you cut prices first in a price war, work out how much profit you'll have left once the other side cuts too."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Global environment",
+    "title": "The Montreal Protocol",
+    "text": "Refitting refrigeration equipment and production lines costs each country its own money, while a healthier ozone layer benefits everyone, so every country has a reason to wait for others to move first. The Montreal Protocol, signed in September 1987, changed that account: countries that signed would not import these substances from countries that hadn't, so staying out meant being shut out of the trade. In 1990 it also set up a Multilateral Fund to pay developing countries the extra cost of refitting. Not cutting alone no longer paid, and those who cut first had help with the cost. In 2009 it became the first treaty ratified by every member state of the United Nations."
+   },
+   {
+    "field": "Business",
+    "title": "The ride-hailing subsidy war",
+    "text": "From early 2014, Didi and Kuaidi, two Chinese taxi-hailing apps, were both paying subsidies to riders and drivers alike. Whichever stopped first risked losing riders and drivers to the one still paying, so neither dared to stop first. After more than a year of burning money, the two announced a merger in February 2015."
+   },
+   {
+    "field": "Technology",
+    "title": "Everyone marks it urgent",
+    "text": "Two teams share a test cluster, and any job can be marked \"urgent.\" If you mark yours and the other team doesn't, you jump the queue; if they mark theirs and you don't, you go to the back. In the end every job from both teams is marked urgent, and the queue order is the same as if nobody had marked anything. The only difference is a screen full of red on the submission page."
+   }
+  ],
+  "ask": [
+   "In the four-cell table, does breaking away pay me more whatever the other side chooses?",
+   "When the other side breaks away, can I see it on the spot?",
+   "Is there a specific rule that would make taking advantage alone no longer pay?"
+  ],
+  "with": [
+   {
+    "id": "repeated-games",
+    "sees": "This month your supplier could cut corners on quality, and nobody would check on the spot. Counting only this order, cutting corners pays more: that is what the prisoner's dilemma warns you of. But the contract runs for three years, and if he cuts corners today he loses the business tomorrow. Repeated games warn you of exactly the opposite: he will keep his word. First find out whether you'll be doing business again, then decide which side to guard against."
+   },
+   {
+    "id": "mechanism-design",
+    "sees": "You want two subcontractors to report honestly how long their work will take. The prisoner's dilemma tells you that calling on them to be honest is useless; each will always do better by misreporting. Mechanism design works backward from the result you want: change payment to go by the verified time, and misreporting no longer gains them anything."
+   },
+   {
+    "id": "tragedy-of-commons",
+    "sees": "Ten households share one well. Each draws a few extra buckets, and the well is soon nearly dry. The tragedy of the commons is the prisoner's dilemma widened from two people to ten: for each person, using a little more always pays, and the ten households together end up with a dry well."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Before the final, two equally matched cyclists issue a joint statement promising not to use banned drugs. Both know that if both stay clean, each has an even chance of winning; if only one uses drugs, the user almost certainly wins; if both use drugs, each still has an even chance, and both carry the risk of health damage. There is no outside testing before the race.",
+    "question": "After the statement, both still secretly use drugs. What is the most reasonable explanation?",
+    "explain": "The statement was only words; it did not change the payoffs. If the other keeps the promise, using drugs almost guarantees a win; if the other breaks it, not using drugs means losing. In both cases using drugs pays more.",
+    "options": [
+     {
+      "text": "Whether or not the other keeps the promise, using drugs pays more, and the statement didn't change that account.",
+      "correct": true,
+      "feedback": "If the other is clean, using drugs almost guarantees a win; if the other uses drugs, not using them means losing. The statement can't change what you get in either case."
+     },
+     {
+      "text": "The pressure of the race was too much, and both made a mistake.",
+      "correct": false,
+      "feedback": "Both worked out from the payoffs that using drugs paid more. That is a choice made after doing the sums, not a mistake."
+     },
+     {
+      "text": "Both were dishonest to begin with, and the statement was fake from the start.",
+      "correct": false,
+      "feedback": "Nothing in the question says anything about character. Swap in two people of excellent character, and as long as the payoffs stay the same, the sums come out the same way."
+     },
+     {
+      "text": "With both on drugs, the chance of winning didn't change, so using drugs brought no gain, and both acted out of panic.",
+      "correct": false,
+      "feedback": "If the other uses drugs and you don't, you lose your chance of winning. Using drugs has a gain; it isn't panic."
+     }
+    ]
+   },
+   {
+    "stem": "Two exhibitors have had stands at the same trade show for ten years in a row. By unspoken agreement, they have never undercut each other to win customers. The organizer announces that this year is the last; from next year the show is canceled. Both exhibitors know this.",
+    "question": "What is most likely to happen at this last show?",
+    "explain": "With no next show, undercutting today won't bring revenge next year, so the gain from undercutting no longer has a cost. Working back, the only reason left to hold prices is the one-time account, and in a one-time account undercutting pays more.",
+    "options": [
+     {
+      "text": "Both realize it's the last show and hold their prices even more than in past years.",
+      "correct": false,
+      "feedback": "Undercutting at the last show won't bring revenge, so there's no reason to hold prices more than in past years."
+     },
+     {
+      "text": "Ten years of understanding keep both holding prices as before.",
+      "correct": false,
+      "feedback": "The understanding rested on meeting again next year. With no meeting next year, the reason to hold prices is gone."
+     },
+     {
+      "text": "At least one starts undercutting to win customers, because there's no next show at which to take revenge.",
+      "correct": true,
+      "feedback": "After the last show they won't meet again, so undercutting won't be punished, and this round's account goes back to the one-time kind."
+     },
+     {
+      "text": "The last show is no different from past years; neither side's account has changed.",
+      "correct": false,
+      "feedback": "The account has changed: in past years undercutting would be punished the next year, and at the last show it won't."
+     }
+    ]
+   },
+   {
+    "stem": "Two bookshops in the same city each decide whether to open an extra half day on Sunday. Four shop owners give four estimates of the payoffs, in units of 10,000 yuan, in this order: you open extra alone, neither opens extra, both open extra, you don't open extra but the other does.",
+    "question": "Under which estimate does opening extra pay more whatever the other does, while both opening extra is worse than neither doing so?",
+    "explain": "Two things must hold at once: when the other doesn't open extra, opening extra gets more than not opening; when the other does open extra, opening extra also gets more than not opening. And both opening extra must get less than neither opening extra.",
+    "options": [
+     {
+      "text": "7, 8, 3, 0",
+      "correct": false,
+      "feedback": "When the other doesn't open extra, opening extra gets you 7, less than the 8 when neither opens, so not opening pays more."
+     },
+     {
+      "text": "10, 8, 3, 0",
+      "correct": true,
+      "feedback": "When the other doesn't open extra, opening extra gets 10, more than 8; when the other does, opening extra gets 3, more than 0; and both opening extra gets each 3, less than the 8 when neither does."
+     },
+     {
+      "text": "10, 8, 0, 3",
+      "correct": false,
+      "feedback": "When the other opens extra, not opening gets you 3, more than the 0 for opening, so it isn't true that you should open extra whatever happens."
+     },
+     {
+      "text": "10, 3, 8, 0",
+      "correct": false,
+      "feedback": "Both opening extra gets each 8, more than the 3 when neither does, so they don't end up worse off together."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Cut the lone slacker's gain, and trust pays",
+  "x": {
+   "label": "Your trust that colleague tries",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "y": {
+   "label": "Your average score",
+   "min": 0,
+   "max": 5
+  },
+  "params": [
+   {
+    "id": "t",
+    "label": "Slack alone gets",
+    "min": 1,
+    "max": 5,
+    "step": 1,
+    "value": 5
+   }
+  ],
+  "series": [
+   {
+    "name": "You try",
+    "expr": "3*x/100",
+    "tone": "accent"
+   },
+   {
+    "name": "You slack",
+    "expr": "t*x/100 + (1 - x/100)",
+    "tone": "warn"
+   }
+  ],
+  "caption": "At 5, \"You slack\" lies above \"You try\" all the way: slack, trust or not. Drag to 2 and they cross at 50%: trust your colleague over half, and trying pays more."
+ }
+}

@@ -1,0 +1,228 @@
+{
+ "id": "hotelling-competition",
+ "name": "Spatial Competition (Hotelling)",
+ "en": "空间竞争（霍特林）",
+ "discipline": "economics",
+ "one_line": "Two shops chasing the same customers end up crowded together in the middle.",
+ "story": "Blair rewrites Clause IV of Labour's constitution, the common-ownership clause, at a special party conference and moves toward the center; in 1997 Labour wins by a landslide",
+ "shallow": {
+  "scene": "When a street has two convenience stores, they're often not one at each end but side by side at the same crossing. Parties competing for votes crowd together in the same way. Britain's Labour Party had always stood on the left. Clause IV of its constitution called for bringing the means of production into common ownership, and this had been its banner for decades; its rival, the Conservative Party, stood just right of center. From 1979 on, Labour lost four general elections in a row.\n\nIn 1994 Tony Blair became Labour's leader. The very next year he called a special party conference and replaced Clause IV with new wording that accepted markets and private business. In the 1997 general election, Labour won a majority of the seats in the House of Commons, ending eighteen straight years of Conservative government.\n\nBlair's move was a step toward the middle. Labour's old supporters on the left had no nearer big party to vote for, so they weren't going anywhere; the voters in the middle who used to vote Conservative were now within his reach.",
+  "plain": "Two ice cream sellers competing for a beach one kilometer long are spatial competition at its simplest. The tourists are spread evenly along it, the prices are the same, and people buy from whoever is nearer. With each seller standing a quarter of the way in from either end, each gets half the customers.\n\nThe line between their patches is the point halfway between them. So if A moves 100 meters toward the middle, the halfway point moves 50 meters toward B, and those 50 meters B loses go to A. B moves toward the middle too, and step by step the two end up back to back in the very middle. They still split the customers in half, but the tourists walk twice as far as before. Hotelling worked out this result in 1929; in 1957 Downs swapped the beach for an election and the sellers for political parties."
+ },
+ "deep": {
+  "mechanism": "### Take a step toward your rival, and you lose no customers and gain ground\n\nWhen a seller moves toward the middle, the tourists behind him are still closest to him, so he doesn't lose a single one, and part of the stretch in between becomes his. As long as he hasn't reached his rival, every step pays. The other way around, when the rival stands in the very middle, a seller who retreats to one side keeps only a short stretch of that side; he's better off standing right next to the rival. Once the two stand together, whoever takes a step to the side hands ground to the other, so neither moves.\n\n### What to chase is the middle person, not the average position\n\nWhen tourists aren't spread evenly, the two compete for the spot where the person in the middle of the crowd is. Look at it with voters instead. Five voters stand at 1, 2, 3, 4 and 10 on a left-to-right scale, so the average position is 4. A stands at 3, where the middle voter is, and B stands at 4. The dividing line is at 3.5, so the three voters at 1, 2 and 3 vote for A, and B loses. Moving toward 10 doesn't win B a single extra vote, because 10 was voting for him already.\n\n### Once a third one comes in, there's no position that holds\n\nWhen two sellers stand side by side in the very middle, a third one can set up right next to them, just a little to one side, and almost all of that side's half goes to him. The two in the middle can only split the other half, a quarter each, and immediately want to jump to the outside. With three sellers, there's no way of standing where none of them wants to move again.",
+  "origin": "In 1929 Hotelling published Stability in Competition in The Economic Journal, using two sellers on one street to ask why products of the same kind keep becoming more alike. In 1957, in An Economic Theory of Democracy, Downs swapped the sellers for political parties and the customers for voters. In 1979 d'Aspremont and others redid the maths and found that when sellers can also change their prices, Hotelling's original conclusion, \"the two crowd into the very middle,\" doesn't hold.",
+  "limits": "The model is closest to reality when prices are fixed, customers care only about distance, and there are only two sellers: two convenience store chains with the same prices nationwide, or a general election under a two-party system. If sellers can change their prices, standing close together leads to a price war, so the two move apart instead. When voters each hold views on several issues, a single left-right line can't capture them. Using it to declare what a party's platform will be next year is also a mistake: it only tells you which way the pull goes."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "Predict which way candidates will shift what they say before an election under a two-party system: look at where the rival stands, then at where the middle voter stands."
+   },
+   {
+    "use": "design",
+    "text": "When a tourist site assigns spots for cold-drink stalls, leaving the stallholders to choose probably means they all crowd into the busiest spot, and tourists at both ends have to walk further. Fix spread-out spots first, then hand them out by drawing lots."
+   },
+   {
+    "use": "explain",
+    "text": "Several small shops of the same kind on one street end up with menus that look more and more alike: when customers care only about being close and cheap, nobody dares stray too far from what most people like."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "Gas stations by the exit",
+    "text": "Just off a highway exit, several gas stations are often right next to each other. Each wants to hold the spot where the traffic most naturally comes off, and none is willing to open further away and leave the cars nearest the exit to its neighbor."
+   },
+   {
+    "field": "Politics",
+    "title": "After winning the nomination",
+    "text": "In the party primaries, American presidential candidates often speak to the party's most active members; once they win the nomination, they shift what they say toward the middle, because now they're competing for all voters. Supporters in the party see this and feel the candidate has changed, but he's courting a different set of people."
+   },
+   {
+    "field": "Media",
+    "title": "Shows in the same time slot",
+    "text": "Two TV channels air shows in the same 8 p.m. slot. If both show the kind of drama with the highest ratings, each gets half the viewers, and that's still a better deal than one of them showing a niche genre: however loyal niche viewers are, there are few of them. Viewers who like documentaries have no channel to watch in that slot."
+   }
+  ],
+  "ask": [
+   "Do customers care only about distance, or also about price and taste?",
+   "How many people are in the middle, and if both sellers end up far from them, will they just not come at all?",
+   "How many rivals are there, and can their positions change at any time?"
+  ],
+  "with": [
+   {
+    "id": "strategy-tradeoffs",
+    "sees": "A new barbershop opens next to yours and copies the services you do most. If customers care only about being close and cheap, then because the middle is where most customers are, you're right to move toward your rival and bring your services closer to his. But if some people will pay more for a different kind of skill, strategy as trade-offs says to pick one kind of customer and give up another, so the rival can't copy you. The two give opposite advice; which one applies depends on whether your customers have some other reason to choose you."
+   },
+   {
+    "id": "nash-equilibrium",
+    "sees": "When the two stand side by side in the very middle, whoever moves away on his own loses out, so neither moves. This is a stable situation, but customers have to walk further than before. A Nash equilibrium only asks whether anyone wants to change on their own, not whether the whole is better off, and spatial competition is one example of it in choosing where to set up."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A street is divided into 12 blocks. Residents live evenly along it and shop wherever is nearest. Two convenience stores have prices fixed by head office: one is in block 3, the other in block 9. The one nearer the start of the street wants more customers and plans to move.",
+    "question": "Where is the best place to move to?",
+    "explain": "The prices are the same and residents shop wherever is nearest, so the dividing line falls halfway between the two stores. Each step this store takes toward its rival moves the line half a step toward the rival, while the residents behind it are still closest to it. Moving all the way to sit right next to the rival gets it the most blocks.",
+    "options": [
+     {
+      "text": "To block 6, halfway between the two stores.",
+      "correct": false,
+      "feedback": "Stopping at block 6 leaves residents in blocks 7 and 8 closer to the rival; moving on to block 8 gains another block."
+     },
+     {
+      "text": "To block 8, right next to the rival.",
+      "correct": true,
+      "feedback": "Residents in blocks 1 to 8 are all closer to this store. It loses none of its old customers and gains the stretch in between."
+     },
+     {
+      "text": "Stay put and open longer hours.",
+      "correct": false,
+      "feedback": "In this question residents choose only by distance; longer hours don't move the dividing line, and the store gains not an inch."
+     },
+     {
+      "text": "To block 1, holding the very start of the street.",
+      "correct": false,
+      "feedback": "The residents behind it were already closest to this store; moving away only pulls the dividing line back toward itself."
+     }
+    ]
+   },
+   {
+    "stem": "Five coworkers are chipping in for a year-end party. In their heads, the budget per person they have in mind is 15, 20, 35, 45 and 135 yuan. They'll vote between proposals, and each person votes for whichever proposal is closer to their own number. The two people making proposals can change their numbers at any time, chasing each other back and forth.",
+    "question": "Which number, once proposed, can't be beaten whatever the other side proposes?",
+    "explain": "35 is the person in the middle of the five. A lower proposal can get at most two votes, 15 and 20; a higher one at most two votes, 45 and 135; and 35 holds on to three. 50 is the average, and someone proposing 49 would take everyone below 50.",
+    "options": [
+     {
+      "text": "15 yuan.",
+      "correct": false,
+      "feedback": "If someone proposes 20, 15 yuan keeps only the vote of the person at 15; the other four are closer to 20."
+     },
+     {
+      "text": "135 yuan.",
+      "correct": false,
+      "feedback": "Only the person with the highest number is closest to 135 yuan; proposing 100 takes the other four."
+     },
+     {
+      "text": "50 yuan.",
+      "correct": false,
+      "feedback": "50 is the average of the five numbers. Proposing 49 gets the four people at 15, 20, 35 and 45, beating it 4 to 1."
+     },
+     {
+      "text": "35 yuan.",
+      "correct": true,
+      "feedback": "Any other number gets at most two votes; 35 yuan holds on to three."
+     }
+    ]
+   },
+   {
+    "stem": "On a riverside path one kilometer long, people walk along evenly spread out and buy drinks wherever is nearest. Two drink stalls with the same prices both stand in the very middle of the path, each getting half the customers. Now a third stallholder is coming in.",
+    "question": "Where should he set up to get the most customers?",
+    "explain": "Set up just off the very middle, and he gets the people on nearly half the path on his side, while the two crowded in the middle can only split the other half.",
+    "options": [
+     {
+      "text": "In the very middle too, so the three split it evenly.",
+      "correct": false,
+      "feedback": "With all three crowded in one spot, each gets only a third; moving off a little would get him more."
+     },
+     {
+      "text": "At the very start of the path.",
+      "correct": false,
+      "feedback": "At the very start he gets only a short stretch near that end; everyone else is closer to the two in the middle."
+     },
+     {
+      "text": "Right next to the other two, just a little to either side.",
+      "correct": true,
+      "feedback": "He takes nearly half the path on his side, and the two others split the other half, so he gets the most."
+     },
+     {
+      "text": "A quarter of the way along the path.",
+      "correct": false,
+      "feedback": "A quarter of the way along gets him only a little over 30% of the whole path, less than setting up next to the middle."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Move 100 m toward your rival, gain 50 m",
+  "caption": "Drag A toward the middle and A's customers keep growing. With both in the middle, each still gets half, but the average walk goes from 125 m to 250 m.",
+  "x": {
+   "label": "A 1 km beach",
+   "unit": " m",
+   "min": 0,
+   "max": 1000,
+   "step": 5
+  },
+  "y": {
+   "label": "Walk to nearest seller",
+   "unit": " m",
+   "min": 0,
+   "max": 500
+  },
+  "params": [
+   {
+    "id": "a",
+    "label": "A's position",
+    "min": 0,
+    "max": 1000,
+    "step": 50,
+    "value": 250,
+    "unit": " m"
+   },
+   {
+    "id": "b",
+    "label": "B's position",
+    "min": 0,
+    "max": 1000,
+    "step": 50,
+    "value": 750,
+    "unit": " m"
+   }
+  ],
+  "series": [
+   {
+    "name": "",
+    "expr": "min(abs(x-a),abs(x-b))",
+    "tone": "accent",
+    "fill": true
+   }
+  ],
+  "marks": [
+   {
+    "x": "a",
+    "text": "A"
+   },
+   {
+    "x": "b",
+    "text": "B"
+   },
+   {
+    "x": "(a+b)/2",
+    "text": "Boundary"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "A's customers",
+    "expr": "a<b ? (a+b)/20 : (a>b ? 100-(a+b)/20 : 50)",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "B's customers",
+    "expr": "a<b ? 100-(a+b)/20 : (a>b ? (a+b)/20 : 50)",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "Average walk",
+    "expr": "(min(a,b)^2/2 + ((max(a,b)-min(a,b))/2)^2 + (1000-max(a,b))^2/2)/1000",
+    "unit": " m",
+    "digits": 0
+   }
+  ]
+ }
+}

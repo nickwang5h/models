@@ -1,0 +1,206 @@
+{
+ "id": "conways-law",
+ "name": "Conway's Law",
+ "en": "康威定律",
+ "discipline": "society",
+ "one_line": "However the teams split up the work, the system they build takes the same shape.",
+ "story": "Amazon breaks its one big website program into services and reorganizes its developers into small independent teams",
+ "shallow": {
+  "scene": "In 1998, Amazon's shopping website was still one big program. Search, the shopping cart, payment: the code for every feature was joined together, and all the development teams maintained it together. It was like several cooks sharing one pot, where whatever anyone adds to the pot changes everyone else's dish. So before every update went out, the teams first had to sit down and go over who had changed what; if one team hadn't finished its changes, the others could only wait.\n\nLater the company split its developers into small groups, each responsible for just one thing and making its own decisions. The program was split up along with them into many small independent programs, called \"services,\" one for each group. Services connected to each other only through ways of handing things over that had been agreed in advance, so the groups no longer needed meetings to coordinate, and each group could release its own updates.\n\nHowever the people were grouped, that's how the program was divided.",
+  "plain": "You and a colleague each write half of an annual report, the first half and the second, and check each other's drafts only by email. When the halves are put together, the seams show. You wrote \"users\" and the other wrote \"customers\"; the technical terms are explained twice, once at the start of each half; the data in chapter three is counted two different ways. If you two sat across a desk from each other and checked each chapter together as soon as it was done, most of these seams wouldn't be there.\n\nIn 1967, Conway saw the same thing in software design: however the designers communicate, that's the shape the system takes. This observation later came to be called Conway's law. In software, a seam becomes an \"interface\": the agreed format in which two pieces of a program hand things over, such as what an order number looks like when it's passed along. Once an interface is set, the programs on both sides are written to follow it, and changing it means changing both together, which costs far more than changing some words."
+ },
+ "deep": {
+  "mechanism": "### An interface first has to be worked out between people\n\nTwo teams build ordering and payment separately. How the order number is passed, what happens when a payment fails, who starts a refund: each of these needs someone on both sides to agree. But the people on the two teams don't normally see each other, so they can only wait for a planning meeting. So each team first finishes the parts it can decide on its own, and the hard problems all get left at the handover.\n\n### The costlier it is to talk, the more the design splits into separate parts\n\nSuppose that within a team, a question across the desk gets a data field changed the same day, while across teams, changing the same field means filing a request ticket and waiting two weeks for its turn. Within one team, having two features share one table is the easiest way, and a change to the table can be agreed the same day. If sharing means crossing teams, every change means a two-week wait, so designers stop thinking about sharing; each team marks off modules it maintains itself and leaves only a narrow interface. Cut the wait across teams from two weeks to one day, and more things get shared again.\n\nWhat counts is who actually talks things over with whom and who can make the call, not the boxes on the org chart. People in two departments who design together every day make things that are tightly connected; two groups in the same department who never talk things over make features that are cut off from each other.\n\n### If you want a different system, first change how those few people negotiate\n\nFirst draw the process the user goes through, and find the people who must make decisions together. For example, to make ordering and refunds join up from end to end, have the people in charge of both ends sit down together to agree on the data and how to handle errors, and give them the power to change the interface. This practice of deciding the system first and then arranging the teams to match it is called the \"inverse Conway maneuver.\"",
+  "origin": "Melvin Conway put forward this observation in 1967, and it was published in April 1968 in the magazine *Datamation* under the title \"How Do Committees Invent?\" He recorded an example: a group of five people wrote one compiler, and the finished product was split into five processing stages; a group of three wrote another, and it was split into three. Brooks later called it Conway's law in *The Mythical Man-Month*.",
+  "limits": "Conway's law governs software and processes that many people work on together, where there are still design choices to make. When one person designs alone, there's no communication to copy; the load-bearing structure of a bridge is decided by mechanics, and the organization doesn't get a say. Treating it as a prescription for how things should be split up is also wrong: it only says what shape the structure will grow into, not whether that shape is good."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "When a company's website and app keep showing two prices for the same promotion, look through the release process on each side and see whether the prices come from the same table or two groups each fill in their own."
+   },
+   {
+    "use": "design",
+    "text": "Before reorganizing teams, first draw the whole process a user goes through, then form small groups by the stages of that process, not by the existing job functions."
+   },
+   {
+    "use": "predict",
+    "text": "If an outsourced team communicates with you only through weekly reports, you can predict that the module it delivers will be neat and self-contained inside, and that the problems when you test everything together will cluster at the interfaces between modules."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Public services",
+    "title": "One hospital visit, three processes",
+    "text": "You take your father to the hospital for tests. Registration is on the first floor of the outpatient building, the lab hands out a separate appointment slip, and the imaging department has you phone to confirm a time yourself. The three departments each designed their own process, nobody agreed on how referral information gets passed along, and you copy out his medical record number yourself at every step. Later the hospital had people from the three departments map out the path for \"one complete visit\" together. The record number is now filled in only once, and the three appointment slips have become one."
+   },
+   {
+    "field": "Personal life",
+    "title": "Three accounts that don't add up",
+    "text": "You share an apartment with two roommates. Utilities, internet and groceries are each tracked by one person in a spreadsheet they set up. Some sheets split costs per person, some per room, and dates are written three different ways. At the end of the month you spend a whole evening lining the three sheets up, and in the end 37 yuan still doesn't match."
+   },
+   {
+    "field": "Property management",
+    "title": "The \"Notes\" on the repair request",
+    "text": "You manage the property for a residential complex. The repair app that residents use and the job-dispatch app on the repair workers' phones come from two different vendors, and people from the two sides have never had a meeting together. When a resident picks \"Leak, urgent\" in the app, all that reaches the dispatch app is the word \"Notes.\" The worker can't see what it says and first goes to change a light bulb that was ahead in the queue. You get the contact people from both vendors together and go through, item by item, how the notes field gets passed along, and only then does the full \"Leak, urgent\" show up on the work order."
+   }
+  ],
+  "ask": [
+   "At which handovers do users fill in the same details again or have to wait? How do the people in charge of the two ends normally talk things over?",
+   "Are the system's current divisions drawn along what users need, or along each team's area of responsibility?",
+   "For two features to work closely together, who has to decide jointly on the data, the interface and how errors are handled? Do they have the power to change the interface?"
+  ],
+  "with": [
+   {
+    "id": "abstraction",
+    "sees": "The interface between two teams breaks every few days. The fix from abstraction and modularity is to define the interface more strictly and write it down as a stable contract, so the two sides don't disturb each other. Conway's law sees the interface breaking because the people on the two sides haven't come to an agreement; its fix is the opposite: have the people on both teams design together, and some interfaces may even go away. If the two teams are meant to evolve independently anyway and the interface is already stable, strengthen the contract; if changing one field takes endless back-and-forth, get the people together first."
+   },
+   {
+    "id": "transaction-costs",
+    "sees": "On whether to give two features to the same team, Conway's law says merge them into one team and the seam will disappear. Transaction costs point to the other side: the bigger the team, the more its own internal coordination costs, and past a certain size, two teams each minding their own work and connecting through a contract is actually cheaper. Look at how many person-days one negotiation between the two teams takes, then at how much extra internal meeting time a merged team would need."
+   },
+   {
+    "id": "path-dependence",
+    "sees": "To change a system's structure, Conway's law suggests first changing the teams and how they negotiate. Path dependence warns that the old interfaces and old data are already facts on the ground; even when the new team sits together, they will pull it back to the old divisions. So while reorganizing the teams, also set out a timetable for migration, and replace the old interfaces one by one."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "At a game company, you're in charge of connecting friend invites with ranked matchmaking. The social team decides the invite status, the competitive team decides the conditions for entering a match, and the two teams communicate only through monthly request tickets. In testing, a friend has accepted an invite but can't enter the match because their rank changed. The manager puts both teams under the same director, but the request tickets and approval rights stay as they were.",
+    "question": "Which of these is most likely to happen next?",
+    "explain": "Invites and matchmaking need joint decisions on the entry conditions and on what to do when those conditions change. If the communication channels and decision rights stay as they were, the system is likely to keep splitting along the two teams' areas of responsibility.",
+    "options": [
+     {
+      "text": "Each team adds its own error messages, players follow the messages, and the conflict between invites and entry goes away.",
+      "correct": false,
+      "feedback": "The messages hand the handover problem to the players; the rules at the two ends still don't line up."
+     },
+     {
+      "text": "The two teams put their features in the same codebase, the rules line up as the code is brought together, and entry conflicts drop.",
+      "correct": false,
+      "feedback": "With the code in one place, the rules are still decided by the two teams separately, and the conflict just moves into the same codebase."
+     },
+     {
+      "text": "With a shared boss, the two teams' rules line up bit by bit through their separate approvals, and entry conflicts drop as a result.",
+      "correct": false,
+      "feedback": "The two teams still communicate through the old request tickets and approve things separately; nobody decides the rules jointly."
+     },
+     {
+      "text": "The two teams still decide the rules separately, problems keep getting stuck at the handover, and players will still run into entry conflicts.",
+      "correct": true,
+      "feedback": "Neither how the two teams negotiate nor who can change the rules has changed, so the seam between invites and entry is likely to stay."
+     }
+    ]
+   },
+   {
+    "stem": "An insurance group has bought an elder-care services company and announced a single membership product within six months. Buying insurance and applying for a place in a care home currently use different customer records and accounts. Management has set up a joint business unit, and investors want to know whether this integration can really end up as one product.",
+    "question": "Which investigation would answer this question directly?",
+    "explain": "A single membership needs both sides to agree jointly on customer identity, how records flow and how errors are handled. A way of working together that lets these decisions be carried out will write the integration into the product; if each side pushes ahead on its own, two processes are likely to remain.",
+    "options": [
+     {
+      "text": "Check both sides' development budgets, to confirm there's enough money to upgrade both systems at once.",
+      "correct": false,
+      "feedback": "However big the budget, each side may upgrade on its own, and the account handover stays just where it was."
+     },
+     {
+      "text": "Trace how the single account is being designed, to confirm who jointly decides the rules for records and pushes the changes at both ends.",
+      "correct": true,
+      "feedback": "This shows whether the negotiation the integration needs is happening, and whether its decisions can be carried out. Joint design and the power to change both ends bear directly on whether the accounts can be joined up."
+     },
+     {
+      "text": "Compare both sides' development progress, to confirm each side's features can launch within six months.",
+      "correct": false,
+      "feedback": "Both ends can launch on time and still not connect; shared identity and the flow of records need someone to design them jointly."
+     },
+     {
+      "text": "Look at the new unit's reporting lines, to confirm whether the heads of both ends report to the same executive.",
+      "correct": false,
+      "feedback": "Reporting to the same executive only shows that disagreements can be passed up; it doesn't show whether anyone jointly sets the rules for records and can change both ends."
+     }
+    ]
+   },
+   {
+    "stem": "A city has bought an earthquake monitoring platform whose design is already fixed. Following a fixed national protocol, the platform is split into three stages, collection, verification and early warning, and the city has no right to change it. The city's monitoring center happens to have three matching sections as well. On this basis, a news report claims that communication between the sections is difficult, and that this is why the platform was cut into three parts.",
+    "question": "How should you judge the report's claim?",
+    "explain": "A communication structure constrains the system designs an organization still gets to choose. What was bought here is a fixed platform whose structure is set by an outside protocol; how the local sections negotiate mainly affects the handovers while it's running.",
+    "options": [
+     {
+      "text": "The sections match the platform's stages one to one, so the report has found evidence that communication difficulties shaped the structure.",
+      "correct": false,
+      "feedback": "The structure here was fixed by an outside protocol before the purchase, so the match says nothing about the role of local communication."
+     },
+     {
+      "text": "If the three sections designed the handovers together, the platform's fixed stages would gradually merge into one.",
+      "correct": false,
+      "feedback": "What the sections can change is how the platform is used and handed over, not the fixed stages the protocol sets."
+     },
+     {
+      "text": "The platform's split has a clear outside cause, and the report mistook the match with the sections for the cause of the structure.",
+      "correct": true,
+      "feedback": "The platform's design was fixed before it was bought, and its three stages are set by a fixed protocol. The local sections didn't choose this structure, so the report's explanation is applied in the wrong place."
+     },
+     {
+      "text": "The platform and the sections divide the work so alike that the report should say instead that the platform decided how the sections were set up.",
+      "correct": false,
+      "feedback": "Nothing says when or why the sections were set up, so the reverse cause has no basis either."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Two weeks per change, and the system splits up",
+  "caption": "However designers communicate, that's the shape the system takes. Cut the wait across teams from two weeks to one day, and more gets shared again.",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "Ask a teammate"
+   },
+   {
+    "id": "a1",
+    "label": "Fixed the same day"
+   },
+   {
+    "id": "a2",
+    "label": "Share one table",
+    "sub": "Both features use it",
+    "tone": "accent"
+   },
+   {
+    "id": "b",
+    "label": "Cross-team request"
+   },
+   {
+    "id": "b1",
+    "label": "Two-week wait"
+   },
+   {
+    "id": "b2",
+    "label": "Separate modules",
+    "sub": "One narrow interface",
+    "tone": "warn"
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "a1"
+   },
+   {
+    "from": "a1",
+    "to": "a2"
+   },
+   {
+    "from": "b",
+    "to": "b1"
+   },
+   {
+    "from": "b1",
+    "to": "b2"
+   }
+  ]
+ }
+}

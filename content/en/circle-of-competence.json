@@ -1,0 +1,190 @@
+{
+ "id": "circle-of-competence",
+ "name": "Circle of Competence",
+ "en": "能力圈",
+ "discipline": "thinking",
+ "one_line": "Bet big only on what you truly understand, and know where that ends.",
+ "story": "At the Sun Valley gathering in July, Buffett explains why he stays away from tech stocks, pointing to the car and airline industries",
+ "shallow": {
+  "scene": "In July 1999, with internet stocks red-hot, business leaders gathered in Sun Valley, Idaho, and leaders of the tech industry were there too. Buffett spoke there about why he stayed away from tech stocks. He granted that technology would change people's lives, but said he couldn't tell which companies would still be making money ten years later. He gave the car and airline industries as examples: both had changed the world, yet investors in them had generally not made money.\n\nSo he didn't buy tech stocks. What he had checked against results for decades was whether businesses like insurance and soft drinks would still be making money ten years on; in the column for tech companies, he had not one result to check against.",
+  "plain": "For several years you've been fixing your neighbors' bicycles in your apartment complex: flat tires, slipped chains and new brake cables, each more than a hundred times. One day a neighbor wheels over an electric bike and says it won't charge. The wheels and brakes you understand at a glance; the battery pack you have never once opened. The circle of competence that Buffett and his partner Charlie Munger often talked about has its edge drawn right between the wheels and the battery pack. For wheels and brakes, you have the results of more than a hundred repairs to back you; the battery pack only looks familiar. So you wheel the bike back and tell your neighbor to take it to the brand's repair shop."
+ },
+ "deep": {
+  "mechanism": "### A judgment inside the circle is one you have checked against results\n\nYou've grown apples for twenty years. Every year before the harvest you estimate the yield, then weigh the crop afterward and check the estimate, and all twenty times you were within 10%. Estimating apple yields is inside your circle. The next county asks you to estimate a pear orchard, and you have never once estimated pears. You estimate it the way you would apples, and after weighing, you're 30% off.\n\n### The circle is drawn judgment by judgment, not trade by trade\n\nSame apple orchard. In twenty years you've never been badly wrong about the yield, but every spring when you guess the autumn buying price, you've been right only twice in ten years. Both are about apples, but estimating the yield is inside the circle, while guessing the price, wrong eight times out of ten, is outside it.\n\n### A small circle is fine; it's only useful if you can say where its edge is\n\nWhen people from the next county ask how to prune pear trees, you say you don't know and send them to the county's farm adviser; when they ask why apples drop from the tree too early, you can give three causes and how to check for each. Because you say first what you don't know, others know which of your words they can rely on. The circle can also grow. You mark off a small patch of a pear orchard, estimate first and weigh afterward every year, and once your error comes down to within 10% after a few years, estimating pear yields has joined your circle.",
+  "origin": "The circle of competence is a phrase Buffett and Munger used again and again when talking about investing, and it's hard to say when it first appeared. In his 1996 letter to Berkshire Hathaway shareholders, Buffett wrote that the size of the circle is not very important; knowing its boundaries, however, is vital.",
+  "limits": "Judgments whose results can be checked the same year, such as estimating yields, quoting prices or fixing cars, give plenty of chances to check, and the circle is easiest to draw clearly. When the result takes ten years to show, the circle is hard to draw accurately. A circle can also go out of date: once the rules of an industry change, twenty years of records can't cover the new conditions. Treating a title as a circle is a misuse: a famous doctor who is a master of heart surgery makes the call on a relative's property investment. All he has ever checked against results is surgery; what he is relying on is his reputation."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When someone asks you to vouch for something or make the call, first count how many times you've checked this kind of judgment against results, then say whether it will work."
+   },
+   {
+    "use": "design",
+    "text": "When handing out work to a team, decide who takes sole charge of which part by whether they have checked their judgments against results in that part, not by job title."
+   },
+   {
+    "use": "explain",
+    "text": "An analyst's forecasts are usually accurate in the industries he has written reviews of afterward, and not in other industries. Sort his forecast record by industry, and you can see where his circle ends."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Sports",
+    "title": "A new craft is checked from scratch",
+    "text": "In 1994 Michael Jordan left basketball to play baseball, and the Chicago White Sox put him on the Birmingham Barons, a Double-A minor-league team. His fitness and training habits came with him, but judging the path of a pitch and timing a swing were a different craft, and that summer his batting average was only .202. He then went on to practice at-bat by at-bat in a fall league, and his batting average rose to .252. In the baseball column, he had to build up from zero, one checked at-bat at a time."
+   },
+   {
+    "field": "Technology",
+    "title": "Take on only the half you've checked",
+    "text": "You've written business back-end code for six years, and changing table structures and adjusting APIs are routine for you. This week your manager asks you to lead a live database migration, and you have never done one. You reply: you'll do the table and API changes; for the switchover and the rollback, please let a colleague who has done three migrations make the calls, and you'll stand by and write down each step. When the migration is done, your record book has a column for migrations for the first time."
+   },
+   {
+    "field": "Personal life",
+    "title": "What you've watched and what you've done",
+    "text": "You've watched a home-renovation influencer's videos for three years and feel you know all about rewiring and replumbing. When the tradesman arrives and asks how the outlet circuits should be split and whether the kitchen needs its own wiring, you can't answer a single question. In a notebook you make two columns: \"things I've watched\" and \"things I've done and checked against results.\""
+   }
+  ],
+  "ask": [
+   "How many times have I checked this judgment against results myself? Where is the record: estimates written down beforehand, or a review sheet afterward?",
+   "Which condition in this situation is different from the cases I've checked?",
+   "Who has a record of checking results on this? Is the record about the same kind of judgment?"
+  ],
+  "with": [
+   {
+    "id": "sunk-cost",
+    "sees": "You've done newspaper layout for ten years, and there are fewer pages each year. The circle of competence says to make future judgments within the range you've checked, as far as you can, and that after changing trades the circle has to be measured again. Sunk cost says the ten years are already spent and shouldn't be your reason to stay; look only at how much work this trade still has over the next three years. First see how much of the craft you can take with you: judging a page, training people, meeting deadlines still hold up in magazines or in designing e-commerce pages. Only your skill with the layout software can't come along, so don't count that part as your circle."
+   },
+   {
+    "id": "survivorship-bias",
+    "sees": "Someone on your social media feed is showing off a successful switch to a new field, saying ten years of experience did it, and you want to follow. The circle of competence asks about you: how many of the judgments in this have you checked against results? Survivorship bias asks about them: how many people made the same switch and never showed up in a post like this one? If you can't answer either question, don't follow yet."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You've taught children to swim for eight years. At the end of every course, you check your students' pass rate, so you've always had a clear sense of your teaching judgment. A friend asks you to design the course for his adult diving club, including the part about diving to thirty meters, saying you've taught swimming so long that it'll be no problem.",
+    "question": "How should this course be put together?",
+    "explain": "Eight years of records back your judgments about teaching pace and correcting technique. The decompression and emergency procedures for diving to thirty meters you have never once checked against results, and if something goes wrong, it can't be undone. That part should be decided by someone qualified to teach deep diving.",
+    "options": [
+     {
+      "text": "First take a small class through the diving part as a trial, and adjust based on how the students respond.",
+      "correct": false,
+      "feedback": "Students' responses can't reveal the safety risks in decompression and emergencies. Once something goes wrong, there's no learning by trial and error, so this can't be a trial run."
+     },
+     {
+      "text": "You decide the pace and technique correction, and leave the diving to a deep-diving instructor.",
+      "correct": true,
+      "feedback": "Your records cover the first half. The diving part has never been checked, and a mistake there can't be undone, so hand it to someone qualified."
+     },
+     {
+      "text": "Turn it all down: you're not a diving instructor, so don't touch any of it.",
+      "correct": false,
+      "feedback": "For correcting technique and setting the pace, you have eight years of results to check against. Turning it all down throws away the half you have evidence for."
+     },
+     {
+      "text": "Design all of it yourself: eight years of teaching swimming is experience enough.",
+      "correct": false,
+      "feedback": "What you've checked in teaching swimming is teaching in shallow water. Decompression and emergencies below thirty meters aren't part of it, and one wrong step costs a life."
+     }
+    ]
+   },
+   {
+    "stem": "You've run freight forwarding on one shipping route for twelve years. For every shipment you've written down the quoted days to arrival and the actual days, and you've never been more than two days off. From this year, the shipping line has moved the whole route to a different sea route, adding ten-odd days to the voyage. Customers still come to you to ask when their goods will arrive.",
+    "question": "What should you tell them?",
+    "explain": "Your record was built by checking on the old voyage; on the new sea route you haven't checked even once. What to do is keep a separate record of the first few shipments on the new route, and narrow your margin of error as each one is checked.",
+    "options": [
+     {
+      "text": "Add ten-odd days to the old figure and use that for the new route.",
+      "correct": false,
+      "feedback": "The days you'd quote this way include no checked figures at all for port waiting times and weather delays on the new sea route."
+     },
+     {
+      "text": "Quote as before: twelve years of error records are enough to back your judgment.",
+      "correct": false,
+      "feedback": "The record was built on the old voyage. On the new sea route there isn't yet a single shipment's result to check against."
+     },
+     {
+      "text": "Quote a wider range at first, and check the first few shipments one by one.",
+      "correct": true,
+      "feedback": "The record under the new conditions starts from zero. Quote wide for the first few shipments and check each one, and the circle will grow again to cover the new route."
+     },
+     {
+      "text": "Stop quoting arrival times and send customers straight to the shipping line.",
+      "correct": false,
+      "feedback": "Your judgments in the old records about loading, customs clearance and transfers are still useful. Handing over the whole thing throws away the part you have checked."
+     }
+    ]
+   },
+   {
+    "stem": "Your family has some spare money and wants someone to help look after it. A neighbor has traded stocks for twenty years and can talk about the market at length, but can't name a single year when his judgment was borne out by what happened later. Your cousin has traded for five years. Before every purchase she writes down her reasons and how much she expects it to rise, and at the end of the year she checks them one by one: for 70% of her purchases, the price moved the way she expected.",
+    "question": "Whose advice should you take on this money?",
+    "explain": "Twenty years of experience come with not one result that can be checked. Your cousin has checked her record item by item for five years, and was right most of the time; a record like that is real evidence that a judgment can be relied on.",
+    "options": [
+     {
+      "text": "Your cousin's: she has checked every purchase against the result, and was right most of the time.",
+      "correct": true,
+      "feedback": "Your cousin's expectations and the results are laid side by side, item by item, and 70% were right; the neighbor has only years, without a single result that can be checked."
+     },
+     {
+      "text": "Neither: nobody's word on stocks counts for anything.",
+      "correct": false,
+      "feedback": "Your cousin's record can be checked item by item, so that part of her judgment has evidence behind it. Ignoring both throws away what can be checked."
+     },
+     {
+      "text": "The neighbor's: he's traded for twenty years and lived through more markets.",
+      "correct": false,
+      "feedback": "Many years doesn't mean checked results. In the neighbor's twenty years there isn't a single result that can be checked."
+     },
+     {
+      "text": "Take half the advice from each and give each half the money.",
+      "correct": false,
+      "feedback": "The neighbor's half has no record of checked results at all. Splitting it evenly puts half the money on a judgment with no evidence behind it."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "grid",
+  "title": "One farmer: yield inside the circle, price outside",
+  "caption": "The circle is drawn judgment by judgment: apple yields checked against results twenty times; the buying price and the pear orchard have no such record.",
+  "rowLabel": "Judgment",
+  "colLabel": "In the record book",
+  "rows": [
+   "Apple yield",
+   "Apple price",
+   "Pear yield"
+  ],
+  "cols": [
+   "Times checked",
+   "Result"
+  ],
+  "cells": [
+   [
+    {
+     "text": "20 times",
+     "tone": "accent"
+    },
+    {
+     "text": "All within 10%",
+     "tone": "accent"
+    }
+   ],
+   [
+    "10 times",
+    {
+     "text": "Right only 2",
+     "tone": "warn"
+    }
+   ],
+   [
+    "0 times",
+    {
+     "text": "30% off",
+     "tone": "warn"
+    }
+   ]
+  ]
+ }
+}

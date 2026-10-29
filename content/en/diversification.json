@@ -1,0 +1,203 @@
+{
+ "id": "diversification",
+ "name": "Diversification and Correlation",
+ "en": "分散与相关性",
+ "discipline": "investing",
+ "one_line": "Mixing things that don't move together keeps you steady, but in a crash they often fall together.",
+ "story": "In the first week of August, US quant stock funds all lost money at once, and Khandani and Lo guessed one fund's sell-off had dragged down peers with similar holdings",
+ "shallow": {
+  "scene": "Suppose you've picked three funds with three different names and think your money is spread out. Then you look at what they hold, and it's all the same few big-company stocks; when those fall, all three fall together. In the week starting August 6, 2007, a group of American stock funds that took spreading out far more seriously also came to grief over overlapping holdings, losing money together several days in a row. These funds picked stocks with computer models. Each fund bought hundreds of stocks it expected to do well, and at the same time borrowed hundreds of stocks it expected to do badly and sold them first, planning to buy them back after they fell and return them. This is called short selling. When the market rose, the stocks they had bought made money and the ones they had sold short lost; when the market fell, the reverse. The two sides offset each other, so the market's rises and falls hardly touched them. But their models were alike, and the stocks they picked overlapped heavily.\n\nLater, researchers at MIT used data from that time to work out a likely explanation. One fund, in a hurry to get out, sold its whole batch of favored stocks at once and bought back its whole batch of borrowed stocks at once. That pushed the favored stocks down and the disfavored ones up. Funds with similar holdings saw the stocks they owned falling and the stocks they had to buy back and return rising, so they lost on both sides at once. Some funds couldn't hold on and had to get out too, which pushed prices once more in the same direction.\n\nHundreds of positions that normally went their own ways turned, that week, into a single position, all falling together.",
+  "plain": "You sell cold drinks in a park in summer. On a sunny day you make 600; when it rains you make nothing. Set up a second stall selling umbrellas, and it makes 300 on a rainy day. One stall's bad day is exactly the other's good day, so money comes in every day. But if the second stall also sells cold drinks, just at the other end of the park, then when the rain comes both shut down together, and rainy days still leave you empty-handed. Whether spreading out helps depends on whether the incomes rise and fall in step; this is called correlation."
+ },
+ "deep": {
+  "mechanism": "### The less in step the ups and downs, the smaller the portfolio's swings\n\nFour assets each swing by 20% a year, and you hold equal amounts of each. If no two of them have anything to do with each other (a correlation of 0), the portfolio's swing drops to 10%. With a correlation of 0.5, it drops only to about 15.8%. If they rise and fall exactly together (a correlation of 1), it's still 20%, and four assets are no better than one.\n\n### However many assets you hold, you can't get rid of the shared part\n\nEach asset's ups and downs can be split into two parts. One is shared by all of them and moves with the same events; the other belongs to that asset alone. The parts of their own go every which way, so with enough assets they cancel each other out. The shared part all goes the same way, and it stays however many assets you add.\n\n$$\\sigma_p^2=\\sigma^2\\left[\\rho+\\frac{1-\\rho}{n}\\right]$$\n\n$\\sigma$ and $\\sigma_p$ are the swings of a single asset and of the portfolio, $n$ is the number of assets, and $\\rho$ is the correlation between any two of them. In other words, the portfolio's swing squared equals a single asset's swing squared times the number in the square brackets. The $\\rho$ in the brackets is the shared part, and it doesn't depend on the number of assets. $(1-\\rho)/n$ is the part each asset has alone; it is divided by the number of assets, so it shrinks as you add more.\n\nPut in a correlation of 0.5. With 4 assets, the brackets hold 0.5 plus 0.125, and the portfolio swing is about 15.8%. With 25 assets, it's 0.5 plus 0.02, about 14.4%. With infinitely many assets, only the 0.5 is left, and the portfolio swing is about 14.1%. That is the dashed line in the figure.\n\n### In a sell-off, correlations rise on their own\n\nWhen investors are short of cash, they sell what they can sell, not what they expect to fall. When everyone needs money at the same time, assets that normally go their own ways are pushed down together by the same wave of sell orders. Four assets with a normal correlation of 0.2 give a portfolio swing of about 12.6%. In a sell-off the correlation rises to 0.8, and the same portfolio swings about 18.4%. That is what happened to the funds in that week of 2007: the shared part suddenly went from small to large.",
+  "origin": "Harry Markowitz, who won the Nobel Prize in economics in 1990, published \"Portfolio Selection\" in *The Journal of Finance* in 1952. He moved the focus from single securities to the portfolio as a whole, using returns, variances and covariances to show that a portfolio's risk depends on how its holdings move together.",
+  "limits": "Spreading out works best when each risk has its own source; when all of them rest on the same condition, adding more doesn't help. Correlations are mostly measured in calm years, and in the weeks of a sell-off they often jump, so the protection you counted on from normal times doesn't show up. If you only count how many funds you bought and how many industries you're spread across, without asking what each sum of money earns from and what could drag them all down together, diversification is just a number. Spreading out also doesn't raise the expected return, and the extra fees paid just to add more holdings eat into the return."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When choosing insurance for your family, check whether your home insurance and car insurance both hang on the same rainstorm: the car is parked in an underground garage, and the house is in the same low-lying area."
+   },
+   {
+    "use": "predict",
+    "text": "To estimate how a portfolio that looks well spread out will do in a week of heavy losses, don't look at its normal correlations. Look at whether its holdings would all be sold together when people are forced to raise cash."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Personal life",
+    "title": "Salary and savings riding on one industry",
+    "text": "You work at a software company. Company stock makes up most of your savings, and you put the rest into two technology funds. The year the industry shrinks, the company lays people off, its share price plunges, and the funds fall too: your job and your savings shrink in the same month. After that, you put new savings into government bonds and a small flat you rent out, whose income has nothing to do with technology."
+   },
+   {
+    "field": "Farming",
+    "title": "Three fields drinking from one canal",
+    "text": "You grow wheat, sorghum and soybeans on fields in three different places, but all three are watered from the same canal. One dry summer the canal stops flowing, and all three fields yield less at the same time. The next year you dig a well next to one of the fields, and switch another to millet, which holds up in drought."
+   },
+   {
+    "field": "Technology",
+    "title": "Three income streams, one featured spot",
+    "text": "Your app has three sources of income: ads, memberships and in-app purchases. They look well spread out, but all three rely on the same app store's featured spot to bring in new users. The month the store changes how it picks what to feature, all three fall by 40% together. You start finding new users yourself, outside the store."
+   }
+  ],
+  "ask": [
+   "In the worst week, what single event would push these all down together?",
+   "Trace their money, customers or raw materials back to the source: is it the same place?",
+   "The low co-movement I'm seeing: which years was it measured in? Did those years include a moment when everyone was rushing to raise cash?"
+  ],
+  "with": [
+   {
+    "id": "circle-of-competence",
+    "sees": "You've worked in your own industry for twenty years, and a friend urges you to spread your savings over seven or eight industries you don't know. The circle of competence takes the opposite view: money in a few places you understand is safer than money scattered where you don't. If what worries you most is a shared shock you didn't see coming, spread out first; if what worries you most is not understanding the business, narrow down first."
+   },
+   {
+    "id": "redundancy",
+    "sees": "You have an emergency fund. Redundancy says to keep a spare share and put the two shares in two different banks, so if one bank's system has a problem, you can still take money out of the other. Diversification asks whether the two shares could go wrong on the same day. Money in two banks generally won't become impossible to withdraw on the same day, but if both are in deposits, they shrink together in a year of high inflation. If you only want to guard against being unable to withdraw, two banks are enough; if you also want to guard against losing buying power, switch one share into a different kind of asset."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You manage some spare funds for a community co-op, split half and half between two arrangements, A and B. Both swing by 10 percentage points a year, and always in opposite directions: in a year when A earns a few points more, B earns exactly a few points less.",
+    "question": "What is the yearly swing of the funds taken together?",
+    "explain": "The two are equal in size, swing by the same amount and always move in opposite directions, so each year's ups and downs cancel exactly, and the combined swing is 0.",
+    "options": [
+     {
+      "text": "About 7 percentage points.",
+      "correct": false,
+      "feedback": "Around 7 is the result when the two have nothing to do with each other. Here they always swing in opposite directions, so they cancel more completely."
+     },
+     {
+      "text": "0: each year's ups and downs cancel exactly.",
+      "correct": true,
+      "feedback": "Whatever one earns extra, the other earns exactly that much less, so held half and half, the combined return is the same every year."
+     },
+     {
+      "text": "10 percentage points: the two swing by the same amount, so together nothing changes.",
+      "correct": false,
+      "feedback": "Two equal swings stay the same when combined only if they move fully in the same direction; here they always go opposite ways."
+     },
+     {
+      "text": "5 percentage points: each is half the holding, so each brings half the swing.",
+      "correct": false,
+      "feedback": "Swings can't simply be added up by the share each is held in. The two swing in opposite directions, so together the swing is far smaller than this."
+     }
+    ]
+   },
+   {
+    "stem": "You have some capital and first planned to put it all into a bicycle repair shop, with an average monthly profit of 20,000 that swings up and down by about 6,000. Now you change the plan: half goes into the repair shop and half into a used bookstore of similar size in the next town, each averaging 10,000 a month with a swing of about 3,000. In most months the two do well or badly together, but not always in step: sometimes the repair shop is busy while the bookstore is flat, and sometimes the other way round.",
+    "question": "Taken together, how does the monthly swing in profit, as a share of average profit, compare with putting everything into the repair shop?",
+    "explain": "With everything in the repair shop, the swing is 6,000, which is 30% of the average profit. If the two businesses moved fully in step every month, together they would still swing by 6,000, the same share. As long as some months are out of step, the combined swing is less than 6,000, which is below 30%.",
+    "options": [
+     {
+      "text": "The same, because in most months the two move the same way.",
+      "correct": false,
+      "feedback": "The share stays the same only if the two move in step every single month; with some months out of step, the combined swing is less than 6,000."
+     },
+     {
+      "text": "It only gets smaller if the bookstore makes money in the months the repair shop loses.",
+      "correct": false,
+      "feedback": "One doesn't have to rise exactly when the other falls. As long as they aren't in step every month, the share gets smaller."
+     },
+     {
+      "text": "Larger: doing well and badly together, the two amplify each other.",
+      "correct": false,
+      "feedback": "Even fully in step, the swing is only 3,000 plus 3,000, which is 6,000, still 30%. It can't go above that."
+     },
+     {
+      "text": "Smaller: in the out-of-step months, one shop's low is cushioned by the other.",
+      "correct": true,
+      "feedback": "With a correlation below 1, the combined swing is less than 6,000, below 30% of average profit. It doesn't need one shop to make money whenever the other loses."
+     }
+    ]
+   },
+   {
+    "stem": "In a small town, half the residents work at the same university, and the rest run shops or rent out rooms whose customers are almost all students and staff. The town government wants residents' incomes to rise and fall less along with the university.",
+    "question": "Of the four options below, which is the only one that really weakens this link?",
+    "explain": "The town's incomes are all tied to the university's size and budget. Adding a factory that sells mainly to customers elsewhere brings demand from outside, and only that gives an income that doesn't move in step. The other three make the town lean even more on students and staff.",
+    "options": [
+     {
+      "text": "Bring in a factory that mainly supplies customers elsewhere and hires local people.",
+      "correct": true,
+      "feedback": "The factory's orders come from elsewhere and don't rise and fall with the university's enrollment and budget, so the town gains an income that doesn't move in step."
+     },
+     {
+      "text": "Ask the university to hire more staff.",
+      "correct": false,
+      "feedback": "This ties even more residents' jobs to the university, so the link gets stronger."
+     },
+     {
+      "text": "Open ten more cafés and print shops for students and staff.",
+      "correct": false,
+      "feedback": "The new shops' customers are still students and staff. If the university cuts back, the ten new shops are hit along with the old ones."
+     },
+     {
+      "text": "Build a batch of student flats to rent out.",
+      "correct": false,
+      "feedback": "The tenants are students, so this income also follows the size of the university's enrollment."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "The shared swing stays however many you hold",
+  "caption": "Each swings 20% a year, held equally. Drag the correlation: at 0, more is calmer; at 0.5, 4 give 15.8%, 25 give 14.4%, and no number gets below the dashed 14.1%.",
+  "x": {
+   "label": "Number held",
+   "min": 1,
+   "max": 25,
+   "step": 1
+  },
+  "y": {
+   "label": "Portfolio swing a year",
+   "unit": "%",
+   "min": 0,
+   "max": 20
+  },
+  "params": [
+   {
+    "id": "r",
+    "label": "Correlation",
+    "min": 0,
+    "max": 1,
+    "step": 0.1,
+    "value": 0.5
+   }
+  ],
+  "series": [
+   {
+    "name": "Portfolio swing",
+    "expr": "20*sqrt(r+(1-r)/x)",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "y": "20*sqrt(r)"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Hold 4",
+    "expr": "20*sqrt(r+(1-r)/4)",
+    "unit": "%",
+    "digits": 1
+   },
+   {
+    "label": "Hold 25",
+    "expr": "20*sqrt(r+(1-r)/25)",
+    "unit": "%",
+    "digits": 1
+   },
+   {
+    "label": "Floor",
+    "expr": "20*sqrt(r)",
+    "unit": "%",
+    "digits": 1
+   }
+  ]
+ }
+}

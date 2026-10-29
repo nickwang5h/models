@@ -1,0 +1,239 @@
+{
+ "id": "unit-economics",
+ "name": "Unit Economics",
+ "en": "单位经济",
+ "discipline": "business",
+ "one_line": "First check that one sale makes money, then decide whether to grow.",
+ "story": "MoviePass offers a movie a day for $9.95 a month, and pays theaters the full ticket price for every visit",
+ "shallow": {
+  "scene": "On August 15, 2017, MoviePass, led by its chief executive Mitch Lowe, announced a plan: for 9.95 dollars a month, you could see one movie every day. Subscribers paid the monthly fee only once, but MoviePass had to pay the theater the full ticket price for every visit. Suppose a ticket cost 10 dollars: if a subscriber saw two movies in a month, the company was out 10.05 dollars. The more subscribers it had and the more often they went, the bigger the hole. In August 2018 the company cut the plan back to three movies a month.",
+  "plain": "You run a stall at a weekend market selling pour-over coffee. A cup sells for 20 yuan; beans, cup and milk cost 8 yuan, so each cup leaves you 12 yuan. The stall fee is 2,400 yuan a month, so after 200 cups you've covered it, and every cup after that is pure profit. This is how unit economics starts: pick one unit and look only at how much money it leaves you. Give 30% off to win customers, and the price becomes 14 yuan: each cup leaves only 6 yuan, and covering the fee takes 400 cups. If the price drops further, below the 8-yuan cost, you lose money on every cup, and the busier the stall, the more you lose."
+ },
+ "deep": {
+  "mechanism": "### What each order leaves must take refunds and delivery into account\n\nAt a food-delivery shop, the customer pays 38 yuan per order. Ingredients and packaging cost 20 yuan, delivery and the platform's commission 14 yuan, and refunds cost another 1 yuan per order on average. With all that taken off, each order leaves just 3 yuan. If the platform raises its commission by 4 yuan, each order loses 1 yuan.\n\n### Volume only magnifies whether each order is a plus or a minus\n\nSay each order leaves $m$ yuan, the shop takes $n$ orders a month, and fixed costs are $F$ yuan a month. Add up the money from every order and subtract the fixed costs, and you have what the shop makes each month:\n\n$$mn-F$$\n\nThe number of orders $n$ multiplies only the $m$ from each order. If $m$ is positive, every extra order earns one more share; if $m$ is negative, every extra order loses one more share, while the fixed costs stay at just one share. Suppose this shop's fixed costs are 6,000 yuan a month. When each order leaves 3 yuan, $3\\times2000-6000=0$, so it breaks even at 2,000 orders. Once each order loses 1 yuan, 2,000 orders lose 8,000 yuan, and 6,000 orders lose 12,000 yuan.\n\nSo the owner first has to negotiate the commission, adjust the price and cut ingredient costs to make each order's $m$ positive, and only then think about taking more orders.\n\n### Count a customer from the day you win them to the day they leave\n\nThe same sums can be done per customer. In a subscription business, winning a customer costs 150 yuan, and each month after that they leave you 30 yuan, so it takes five full months to earn the cost back. How long customers stay decides whether the sums come out positive or negative. If they stay only three months on average, they leave just 90 yuan, and each one you win loses you 60 yuan: the more you spend on ads, the more you lose. If they stay eight months on average, they leave 240 yuan, and each one you win earns you 90 yuan.",
+  "origin": "Unit economics comes from management accounting's contribution margin (the revenue from each item minus its variable costs) and break-even analysis; no single person is credited with it. In the 20th century companies were already using it to decide how much to make and how much to sell. In the 2010s the investor David Skok wrote about software subscription businesses and spread this set of measures: customer acquisition cost, customer lifetime value (the money one customer leaves you from arriving to leaving) and payback period. It rests on customer accounts and records of how long customers stay, not on any classic experiment.",
+  "limits": "Unit economics suits subscriptions, food delivery and online shops best, because both revenue and costs can be assigned to each order and each customer. Basic research and caring for your family can't have their returns turned into income per time, and forcing the sums will bend the goal out of shape. Customer lifetime value has to have the costs of delivering and of winning customers taken off; use raw revenue in its place, and the sums are all wrong."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When pricing a service, first work back from the variable costs each order must cover to the lowest price you can charge, then work out how many orders it takes to spread out the fixed costs."
+   },
+   {
+    "use": "explain",
+    "text": "A company's orders double every year, yet its losses get deeper year after year: each order was negative to begin with, and growth just multiplies the negative number."
+   },
+   {
+    "use": "predict",
+    "text": "Estimate when a new store will pay back: multiply orders per month by what each order leaves, and compare it with the fit-out and the deposit."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Investing",
+    "title": "Doing the sums per member",
+    "text": "People who analyze Costco take one member for one year as the unit, rather than staring only at the gross margin on a single product. In fiscal 2023, Costco's membership fee revenue was 4.58 billion dollars. They put the membership fee together with what the member's shopping over the year contributes, take off the cost of serving that member, and ask how much one extra member leaves."
+   },
+   {
+    "field": "Technology",
+    "title": "Failed retries cost money too",
+    "text": "You built an image-processing tool that charges 2 yuan for each image it processes successfully, and each call to an upstream service costs 0.6 yuan. It takes four tries on average to succeed, so the calls alone cost 2.4 yuan per image, and you lose 0.4 yuan on every image you deliver. When monthly volume grows tenfold, the bill for retries grows tenfold too."
+   },
+   {
+    "field": "Personal life",
+    "title": "How much bringing lunch saves",
+    "text": "Each takeout meal costs you 25 yuan. After you switch to bringing your own, the ingredients cost 18 yuan and utilities and supplies 4 yuan, so you save 3 yuan a meal. You also spent 90 yuan on an insulated lunch box, so it takes 30 meals to pay it back. A few meals' worth of leftovers got thrown out, and the day it pays back moves back by that many meals."
+   }
+  ],
+  "ask": [
+   "Is the unit I keep adding one order, one customer, or one successful delivery? Are revenue and costs counted in the same unit?",
+   "What new costs does one more order bring? Refunds, after-sales service, waste and failed retries: in which books can I find them?",
+   "How long did the most recent batch of customers actually pay for? Get their numbers and look at them alongside the cost of winning them."
+  ],
+  "with": [
+   {
+    "id": "economies-of-scale",
+    "sees": "A food-delivery platform pays a 4-yuan subsidy on every order and gets a surge in orders in return. Economies of scale say that once volume rises, delivery routes get denser and buying prices fall, so costs will come down, and today's losses are an investment. Unit economics says the orders the subsidy buys won't thin out that 4 yuan by themselves, unless each order's own costs are falling. Check whether delivery cost and ingredient prices per order fall as volume grows: if what's falling is the per-order numbers, keep expanding; if it's only the fixed costs being spread thinner, stop the subsidy first."
+   },
+   {
+    "id": "time-delays",
+    "sees": "A subscription company wins a new batch of customers every month. The per-unit sums show that each customer eventually makes money, but every batch is a net cash outflow for the first few months. Unit economics concludes it's worth spending more; time delays conclude the cash may run out first. First work out how many batches of customers the cash on hand can carry, then decide how many to win each month."
+   },
+   {
+    "id": "goodharts-law",
+    "sees": "By Goodhart's law, once the number of orders becomes the target people are judged on, salespeople will trade discounts and free gifts for orders. Use unit economics to score each order, and you can see whether every order in this batch is losing money; the order count alone can't show that."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You run a pickup point for a neighborhood group-buying service. After goods, waste and delivery, each order leaves 5 yuan. You handle 3,000 orders a month with fixed costs of 10,000 yuan, for a monthly profit of 5,000 yuan. The team wants to grow to 6,000 orders a month, but that means renting another warehouse, which raises fixed costs to 22,000 yuan. What each order leaves stays the same.",
+    "question": "Once orders double, how much more is the monthly profit than now?",
+    "explain": "The extra 3,000 orders leave 15,000 yuan, and the new warehouse adds 12,000 yuan in fixed costs, so profit goes up by only 3,000 yuan. Most of what this expansion brings in is eaten by the new costs.",
+    "options": [
+     {
+      "text": "No more: the new warehouse's cost exactly cancels out what the new orders bring in.",
+      "correct": false,
+      "feedback": "What the new orders bring in is 3,000 yuan more than the new costs, so they don't cancel out completely."
+     },
+     {
+      "text": "3,000 yuan more.",
+      "correct": true,
+      "feedback": "The new orders bring in 15,000 yuan; take off the extra 12,000 yuan in fixed costs, and 3,000 yuan is left."
+     },
+     {
+      "text": "15,000 yuan more: every extra order leaves 5 yuan.",
+      "correct": false,
+      "feedback": "The extra orders leave 15,000 yuan, but the new warehouse costs 12,000 yuan more, and that has to come off first."
+     },
+     {
+      "text": "5,000 yuan more: orders double, so profit doubles.",
+      "correct": false,
+      "feedback": "Profit is the total that each order brings in minus fixed costs. Fixed costs went up, so profit doesn't double along with orders."
+     }
+    ]
+   },
+   {
+    "stem": "You run a home-cleaning platform. You charge customers 150 yuan per job, pay the cleaner 120 yuan, and spend 10 yuan on insurance and customer service. You do 2,000 jobs a month, with fixed costs of 30,000 yuan, for a monthly profit of 10,000 yuan. To win more business, the platform raises the cleaners' share to 135 yuan, and jobs rise to 4,000 a month as a result; fixed costs stay the same.",
+    "question": "After the change, what is the platform's overall result each month?",
+    "explain": "Each job now leaves only 5 yuan, so 4,000 jobs bring in 20,000 yuan in all, not enough to cover 30,000 yuan of fixed costs. The number of jobs doubled, and the platform went from profit to loss.",
+    "options": [
+     {
+      "text": "A profit of 20,000 yuan: jobs doubled, so profit doubled.",
+      "correct": false,
+      "feedback": "After the cleaners' share went up, what each job leaves fell from 20 yuan to 5, so profit doesn't double with jobs."
+     },
+     {
+      "text": "Exactly break-even, neither making nor losing money.",
+      "correct": false,
+      "feedback": "4,000 jobs leave 20,000 yuan, fixed costs are 30,000 yuan, and that's 10,000 short."
+     },
+     {
+      "text": "A profit of 10,000 yuan: the extra jobs make up for earning less on each one.",
+      "correct": false,
+      "feedback": "4,000 jobs times 5 yuan is only 20,000 yuan, not enough to cover 30,000 yuan of fixed costs."
+     },
+     {
+      "text": "A loss of 10,000 yuan.",
+      "correct": true,
+      "feedback": "Each job leaves 5 yuan, 4,000 jobs make 20,000 yuan, and subtracting 30,000 yuan of fixed costs gives a loss of 10,000 yuan."
+     }
+    ]
+   },
+   {
+    "stem": "You run an online language-class platform. After teacher fees and platform costs, each student leaves 15 yuan a month, and winning a student costs 180 yuan. Long-standing students pay for 20 months on average. The company's two most recent batches of new students have all left, after paying for only 5 months on average. The company plans to double its ad budget and win new students through the same channel.",
+    "question": "After the extra spending, roughly what happens with each extra new student it wins?",
+    "explain": "New students leave 75 yuan on average, which doesn't cover the 180-yuan cost of winning them. The 20 months of the long-standing students come from a different group of people and can't be taken as how new customers from this channel behave.",
+    "options": [
+     {
+      "text": "A loss of about 165 yuan.",
+      "correct": false,
+      "feedback": "That only counts the 15 yuan from the first month; the new students actually paid for 5 months."
+     },
+     {
+      "text": "A gain of about 120 yuan.",
+      "correct": false,
+      "feedback": "That takes the 300 yuan from the long-standing students' 20 months and subtracts 180 yuan. The people this channel brought in recently didn't pay for nearly that long."
+     },
+     {
+      "text": "A loss of about 105 yuan.",
+      "correct": true,
+      "feedback": "The last two batches of new students paid for 5 months on average, leaving 75 yuan; take off the 180-yuan cost of winning them, and that's a loss of 105 yuan."
+     },
+     {
+      "text": "Roughly break-even.",
+      "correct": false,
+      "feedback": "There's a 105-yuan gap between 75 yuan and 180 yuan; that's not break-even."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "title": "Lose 1 yuan an order, and more orders lose more",
+  "caption": "Delivery shop, fixed costs 6,000 yuan a month. At 3 yuan an order, 2,000 orders break even; after a 4-yuan commission rise each loses 1, and 6,000 lose 12,000.",
+  "x": {
+   "label": "Orders per month",
+   "min": 0,
+   "max": 6000,
+   "ticks": [
+    {
+     "at": 0,
+     "label": "0"
+    },
+    {
+     "at": 2000,
+     "label": "2,000"
+    },
+    {
+     "at": 4000,
+     "label": "4,000"
+    },
+    {
+     "at": 6000,
+     "label": "6,000"
+    }
+   ]
+  },
+  "y": {
+   "label": "Made per month",
+   "unit": " yuan",
+   "format": "en"
+  },
+  "series": [
+   {
+    "name": "3 yuan per order",
+    "points": [
+     [
+      0,
+      -6000
+     ],
+     [
+      2000,
+      0
+     ],
+     [
+      4000,
+      6000
+     ],
+     [
+      6000,
+      12000
+     ]
+    ],
+    "tone": "accent",
+    "dots": "small"
+   },
+   {
+    "name": "−1 yuan per order",
+    "points": [
+     [
+      0,
+      -6000
+     ],
+     [
+      2000,
+      -8000
+     ],
+     [
+      4000,
+      -10000
+     ],
+     [
+      6000,
+      -12000
+     ]
+    ],
+    "tone": "warn",
+    "dots": "small"
+   }
+  ],
+  "marks": [
+   {
+    "y": 0,
+    "text": "Break even"
+   }
+  ]
+ }
+}

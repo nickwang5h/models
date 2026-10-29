@@ -1,0 +1,212 @@
+{
+ "id": "lindy-effect",
+ "name": "Lindy Effect",
+ "en": "林迪效应",
+ "discipline": "society",
+ "one_line": "The longer a book has lasted, the longer it is likely to keep lasting.",
+ "story": "On June 12, Queen Elizabeth II attends the opening of Shakespeare's Globe, the rebuilt theater in London",
+ "shallow": {
+  "scene": "*Jing Ye Si* (Quiet Night Thoughts), a short poem by Li Bai that Chinese children learn by heart in primary school, was written more than a thousand years ago, and children today still learn it; the online songs that played on every street last year, nobody sings this year. Shakespeare's plays show this in more detail.\n\nIn 1599, the theater company he belonged to built the Globe Theatre on the south bank of the Thames in London. That wooden theater is long gone. In 1997 a new one was built nearby in the style of the original, and on opening, what was on stage was still Shakespeare. Over four hundred years, audiences' language, clothes and pastimes changed again and again, and the theater had to be built anew, yet someone has always been performing Shakespeare's plays.",
+  "plain": "On the menu of a little restaurant at the end of the lane, red-braised pork has been listed for thirty years, and last month a dish that's trending online was added. Asked which one will still be there next year, you'd bet on the red-braised pork. The reason is simple: over thirty years the diners have changed, the cooks have changed, and popular tastes have shifted several times. Each of those changes could have got the pork struck off, but it stayed every time; the trendy dish hasn't been through a single one yet. This instinct of betting on age is called the Lindy effect: for things that can keep being handed on, like books, crafts and recipes, how long something has already lasted is a clue to how much longer it will last."
+ },
+ "deep": {
+  "mechanism": "### The longer they last, the more durable ones are left on the list\n\nSuppose a hundred new books go on sale at the same time. Half are short-lived: each year 20% of them are taken off the shelves, and they sell for about 5 years on average. The other half are long-lived: only 2% are taken off each year, and they sell for 50 years on average. On the day they go on sale, nobody can tell which book is which kind. Pick one at random, and with even odds of either kind, you'd expect it to sell for twenty-seven or twenty-eight years.\n\nTen years later, only five short-lived books are left and forty long-lived ones remain, so nearly nine in ten of the books still around are long-lived. Pick one at random now, and you'd expect it to sell for another 45 years: the rates of removal haven't changed, so five books each sell another 5 years and forty each sell another 50, which averages out to 45. Not a page of any book has changed; what has changed is our judgment of it. These ten years have filtered out the short-lived batch.\n\n### Even the durable ones vary, so the expected years keep rising\n\nWith only two kinds of book, once the short-lived ones are all filtered out, the expectation stops at 50 years. Real books come in more than two kinds: among the ones that last, some will sell for a hundred years and some for a thousand. A book that has lasted fifty years has already ruled out the ones that sell for only a few decades; one that has lasted two hundred years has also ruled out those that sell for only a hundred-odd years. Each stretch it survives filters out another layer of shorter-lived ones, and the average lifespan of what's left goes up with it. So the number of years it's expected to keep lasting rises along with the years it has already lasted.\n\n### The share that lasts as long again decides how much old things gain\n\nIn mathematics, the Pareto distribution is often used to describe this layer-by-layer filtering. Its feature is this: among things that have lasted $t$ years, those that last as long again, to $2t$ years, are always the same share $q$, whether $t$ is ten years or a hundred. Then let $\\alpha$ stand for how fast long-lived things become rare: each time $q$ halves, $\\alpha$ goes up by 1. From this it works out that something that has existed for $t$ years can on average expect to exist for another $L$ years:\n\n$$L=\\frac{t}{\\alpha-1},\\qquad q=2^{-\\alpha}$$\n\nWhen $q$ is a quarter, $\\alpha=2$ and $L=t$: something that has lasted ten years is expected to last another ten, and something that has lasted fifty years another fifty. When $q$ drops to an eighth, $\\alpha=3$, and something that has lasted fifty years is expected to last only another twenty-five.\n\nA quarter doesn't sound like much, but of those that reach $2t$, another quarter reach $4t$. Spread out, the extra years lived by the few long-lived ones exactly make up for the years lost by the many that leave early. The higher $q$ is, the more long-lived ones there are and the bigger the advantage of old things; for a kind of thing where most quickly stop being used, like pop songs nobody sings any more, $q$ is low.",
+  "origin": "The name comes from Albert Goldman's 1964 article \"Lindy's Law,\" taken from what comedians said about how long careers last as they talked at Lindy's, a deli in New York. In 1982 Mandelbrot gave it a mathematical form in *The Fractal Geometry of Nature*, and in 2012 Taleb extended it to books and technologies in *Antifragile*. The Lindy effect rests on observation and lifespan statistics; there is no accepted decisive experiment.",
+  "limits": "It suits best things that can be copied and handed on, like books, crafts and customs. Human bodies and machine parts break down more easily as they age, so using age to estimate their remaining life gets it backward. Some institutions keep their users only by force or because switching away costs too much; however many years they have lasted, that only shows the users can't get out, not that the institution is good."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "Estimate whether two books of the same kind will still be read in ten years: one has been reprinted for sixty years and one came out only last year, and the first is far more likely to still be around in ten years."
+   },
+   {
+    "use": "act",
+    "text": "When going through old procedures to decide which to keep, keep for now the ones that have been in use for twenty years and are still used every day. Find out why they have lasted, then decide whether to touch them."
+   },
+   {
+    "use": "explain",
+    "text": "Plays, algorithms and etiquette from centuries ago are still in use today: each generation weeds out a batch, and what's left is the batch that was chosen again and again."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "Picking a data tool worth learning",
+    "text": "You've just switched careers into data analysis and can learn only one tool in depth in the next three months. In 1974, Chamberlin and Boyce at IBM published the design of a query language that later grew into SQL. Since then database products have been replaced generation after generation, and SQL has been in use the whole time. You put it on your learning list first, then go through job sites and count how many times it shows up in the requirements for the jobs you want."
+   },
+   {
+    "field": "Personal life",
+    "title": "Choosing a lifelong hobby for a child",
+    "text": "You want your child to learn a board game they can play into old age. Go (*weiqi*) has more than two thousand years of history; dynasties, technologies and pastimes have changed countless times, and people still play it. You take your child to try a Go lesson, and at the same time check whether a Go club nearby has a class for their age; if the child can't sit still, you'll try something else."
+   },
+   {
+    "field": "Investing",
+    "title": "Old businesses make the shortlist first",
+    "text": "Going through a list of stocks, you see a laundry-soap maker that has been in business for fifty years and another company that only listed last year. You put the fifty-year-old firm on the shortlist first, then look into how it got through several recessions and changes in how goods reach shoppers, and whether demand held up each time. After that, you work out from its cash flow and the purchase price whether the investment is worth it."
+   }
+  ],
+  "ask": [
+   "Of the things that came out in the same batch, what share is left now? Go through the rankings or directories from that year and count.",
+   "Are the things I'm comparing all things that don't wear out and can be copied and handed on?",
+   "Is what I really need to judge whether it will last, or whether it is good and worth the price?"
+  ],
+  "with": [
+   {
+    "id": "half-life",
+    "sees": "You manage a membership list and need to estimate how many will be left next year. If the share who leave each month is the same for new and old members, then by half-life, old members are no steadier than new ones. If the longer people have been members the less they leave, then by the Lindy effect you should allow more room for old members. First split the last two years' list into groups by how long people have been members, and count the share in each group who leave each month: if the groups are about the same, use half-life; if longer members leave less, use the Lindy effect."
+   },
+   {
+    "id": "survivorship-bias",
+    "sees": "You want to start a magazine. Looking at three that have run for forty years, you find they all stick to long articles and few ads. The Lindy effect says this approach has survived forty years of weeding out and is worth learning from. Survivorship bias says there may be a whole batch of long-article, few-ad magazines among those that closed, so you first need to find the closed ones to compare. Go to the library and look up the list of closed magazines and see what share of them used this approach. Only if it's clearly less common among the closed ones than among the long-running ones does it count as helping magazines survive."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Your family has two things that have been in use for forty years: a fridge your parents bought when they married, and a pickling recipe handed down from your grandmother. The family has followed the recipe for forty years and has copied it out for several relatives.",
+    "question": "Going only on \"it has been in use for forty years,\" which one can you expect to \"last a long time yet\"?",
+    "explain": "Age can serve as a clue only if the thing doesn't wear out with use and can be copied and handed on. Each time the recipe is copied there's one more fresh copy, while the fridge's parts wear a little every day, and the older it gets the more easily it breaks.",
+    "options": [
+     {
+      "text": "The fridge: forty years without breaking shows it's well made, so it can last another forty.",
+      "correct": false,
+      "feedback": "A fridge wears out, and its parts break more easily as they age. Forty years only shows it has been used a long time, not that it can keep going a long time."
+     },
+     {
+      "text": "The recipe: it is handed on by people following it and copying it for others, so it can be expected to keep being handed on for a long time.",
+      "correct": true,
+      "feedback": "A recipe doesn't wear out, and each time it's handed on there's one more copy. Someone following it all through forty years is a clue that it will keep being handed on."
+     },
+     {
+      "text": "Both: the longer something has been in use, the longer it can be expected to stay in use.",
+      "correct": false,
+      "feedback": "That holds only for things that don't wear out and can be copied. A fridge breaks more easily as it ages, so using age to estimate its life gets it backward."
+     },
+     {
+      "text": "Neither: how many years something has been used tells you nothing about how long it can still be used.",
+      "correct": false,
+      "feedback": "For things that can be handed on, like a recipe, how long it has already been handed on is exactly the clue. It gives you a degree of confidence, not a guarantee."
+     }
+    ]
+   },
+   {
+    "stem": "In one place, the traditional tailoring trade is more than a hundred years old, and the trade association says on that basis that it \"won't disappear for decades yet.\" But over the past five years, orders across the city have fallen by 20% a year, almost nobody signs up as an apprentice, and garment factories' made-to-measure services now cost the same as the tailors.",
+    "question": "How should you view the association's claim?",
+    "explain": "Its hundred-plus years of survival were built up under the old conditions. Equal prices and no new apprentices show that the conditions doing the weeding out have changed, so to estimate the road ahead, look mainly at these new signs.",
+    "options": [
+     {
+      "text": "A hundred-plus years of survival is evidence from the old conditions; equal prices and no new apprentices show conditions have changed, so look mainly at these new signs.",
+      "correct": true,
+      "feedback": "Age is evidence of surviving under the old rules. Once the rules change, what matters are the signs under the new rules."
+     },
+     {
+      "text": "Age is evidence in itself; wait another ten years and decide on the basis of longer order data.",
+      "correct": false,
+      "feedback": "Waiting ten years to look sets aside the signs right in front of you: equal prices and no new apprentices already show that the conditions doing the weeding out have changed."
+     },
+     {
+      "text": "A hundred-plus years of history is the strongest evidence, and the drop over the past five years is just a passing dip.",
+      "correct": false,
+      "feedback": "Orders falling 20% every year for five years and no new apprentices are not a passing dip. By this reasoning, you'd never need to look at any new sign."
+     },
+     {
+      "text": "Look only at orders: at 20% fewer a year, the trade will be gone in a few years, and the hundred-plus years of history don't need to be considered.",
+      "correct": false,
+      "feedback": "Throwing out a hundred years of history entirely is wrong. It is still a piece of evidence; it just can't be used on its own to reach a conclusion any more."
+     }
+    ]
+   },
+   {
+    "stem": "A university library holds two academic books published in 1950. Book A has been reprinted by a publisher every ten years and has been cited by later papers year after year. Book B has been borrowed only three times since it came in; the library hasn't thrown it out, but only because nobody has thought to clear it. A librarian wants to judge whether anyone will still read these two books in thirty years.",
+    "question": "How useful is the fact that each has \"always been in the library\"?",
+    "explain": "Book A's survival came with people choosing it again and again; book B simply wasn't cleared out. What counts as evidence is people choosing it along the way, not just sitting on a shelf.",
+    "options": [
+     {
+      "text": "Useless for both: whether a book gets read depends only on its content.",
+      "correct": false,
+      "feedback": "Whether the content is good you can only know by reading it, while whether people have kept choosing a book over seventy years is a record you can look up directly."
+     },
+     {
+      "text": "Equally strong for both: both were published more than seventy years ago and have survived a long time.",
+      "correct": false,
+      "feedback": "Almost nobody used book B in its seventy-plus years. The years are the same, but the weight of the evidence is far apart."
+     },
+     {
+      "text": "Strong evidence for book A; for book B it shows nothing, since B just wasn't cleared out.",
+      "correct": true,
+      "feedback": "Every reprint and every citation of book A is someone choosing it. Book B was borrowed only three times in seventy-plus years, and staying in the library isn't being chosen."
+     },
+     {
+      "text": "Stronger for book B: it was kept without reprints and with few citations, which shows it has value of its own.",
+      "correct": false,
+      "feedback": "The library kept book B because nobody thought to clear it, not because anyone judged it valuable."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Time weeds out short-lived books; the rest last",
+  "caption": "100 new books: half lose 20% a year, half 2%. Drag the years: short-lived ones go first; the long-lived share and expected years left rise, leveling off near 50.",
+  "x": {
+   "label": "Years passed",
+   "min": 0,
+   "max": 50
+  },
+  "y": {
+   "label": "Books still on sale",
+   "unit": "",
+   "min": 0,
+   "max": 50
+  },
+  "params": [
+   {
+    "id": "t",
+    "label": "Years passed",
+    "min": 0,
+    "max": 50,
+    "step": 1,
+    "value": 10,
+    "unit": " yrs"
+   }
+  ],
+  "series": [
+   {
+    "name": "Long-lived",
+    "expr": "50*0.98^x",
+    "tone": "accent"
+   },
+   {
+    "name": "Short-lived",
+    "expr": "50*0.8^x",
+    "tone": "muted"
+   }
+  ],
+  "marks": [
+   {
+    "x": "t"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Long-lived share",
+    "expr": "100*0.98^t/(0.98^t+0.8^t)",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "Avg. years left",
+    "expr": "(50*0.98^t+5*0.8^t)/(0.98^t+0.8^t)",
+    "unit": " yrs",
+    "digits": 0
+   },
+   {
+    "label": "Still on sale",
+    "expr": "50*0.98^t+50*0.8^t",
+    "unit": " books",
+    "digits": 0
+   }
+  ]
+ }
+}

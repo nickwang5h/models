@@ -1,0 +1,176 @@
+{
+ "id": "survivorship-bias",
+ "name": "Survivorship Bias",
+ "en": "幸存者偏差",
+ "discipline": "math",
+ "one_line": "You mostly see what made it through, and the failures vanished long ago.",
+ "story": "Around 45 BC, in Cicero's On the Nature of the Gods, Diagoras is shown the votive paintings of shipwreck survivors on Samothrace: the drowned could hang none",
+ "shallow": {
+  "scene": "Around 45 BC, the Roman writer Cicero told a story in *On the Nature of the Gods*. Diagoras, a man famous for not believing in the gods, came to the island of Samothrace. A friend pointed to the many votive paintings in the temple and asked him: these all show people who made a vow to the gods and were saved from shipwreck, so do you still say the gods take no interest in human affairs? Diagoras answered: the people who made a vow and drowned anyway had no chance to hang up a painting.",
+  "plain": "You go through a box of old enamel mugs at a flea market stall. Every one is solid and none has rusted through, and you can't help saying they really made things well back then. That remark hides survivorship bias: the ones that leaked or chipped were thrown out long ago, so the mugs that lasted long enough to reach the stall were the solid ones to begin with. Suppose 10,000 mugs left the factory back then and only 50 are on the stall today. You are praising those 50; the 9,950 that were thrown away are not in your count."
+ },
+ "deep": {
+  "mechanism": "### Whichever kind of people stay, the numbers lean that way\n\nSuppose 1,000 people start learning with a language app, and 400 of them end up able to hold a conversation easily. Three months in, 100 are still using it: 80 of the 400 who learned, and only 20 of the 600 who didn't. Ask those 100, and you get 80%; the true share for everyone is 40%.\n\n### The less staying has to do with the result, the smaller the bias\n\nNow let the people who didn't learn leave more slowly too: the number of them who stay rises from 20 to 120. Of the 200 still using the app, 80 can still hold a conversation, and the share falls back to 40%, because both groups kept one in five. If people quit only because they moved house, which has nothing to do with whether they learned, about 40 of the 100 who stay can hold a conversation, and again there is no bias. The sample is just small, so the share you get from asking will bounce up and down.\n\n### The people who left have no record, so you can only estimate a range\n\nAll you know is that 80 of the 100 who stayed can hold a conversation. If none of the 900 who left learned, then 80 of all 1,000 can hold a conversation, which is 8%; if all of them learned, it is 980, which is 98%.",
+  "origin": "No single person came up with it. Cicero's votive paintings are the oldest telling of it, and Francis Bacon told it again in 1620 in *Novum Organum*. During the Second World War, Abraham Wald, at the Statistical Research Group at Columbia University, used the planes that came back to estimate the chance of surviving a hit in each part of the plane. \"Put armor where there are fewest bullet holes\" is a later popular simplification. In 1992 Brown and colleagues brought the idea into the study of fund performance.",
+  "limits": "If the people who left are not much different from the ones who stayed, the sample you have is fine to use as it is. If you can't find the people who left, count them all as good and then all as bad, and report only a range. It is also wrong to read about the bias and decide that what successful people did must be useless: a list of successful people just can't prove that it works."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Explain why the old buildings left in a city all look more finely made than the new ones: most of the roughly built ones from back then have already been torn down."
+   },
+   {
+    "use": "act",
+    "text": "When you see \"student success stories\" or a \"top reviews\" list, first ask for the full list of everyone who started, then decide how far to believe it."
+   },
+   {
+    "use": "design",
+    "text": "When you follow up with users, send the survey to the people who have already canceled, not only to the ones who are still active."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Investing",
+    "title": "Backtesting only today's index members",
+    "text": "You want to know how a stock-picking rule did over the past twenty years, so you take the companies in the index today and work backward. Companies that were dropped from the index or delisted along the way are not on your list, and the backtest returns look much better. You find the list of members for each year as it was at the time and redo the sums, and the numbers come out noticeably lower."
+   },
+   {
+    "field": "Medicine",
+    "title": "Analyzing only those who finished",
+    "text": "You read a trial report on a weight-loss drug: the people who completed the six-month course lost 8 kilograms on average. Reading on, you find that nearly 30% dropped out partway because of nausea and tiredness, and the report did not count them. You write to the doctor who ran the trial and ask what happened to the weight of the people who dropped out."
+   },
+   {
+    "field": "Startups",
+    "title": "Ten habits of successful founders",
+    "text": "A book interviews thirty founders, and every one of them mentions \"putting all their savings on the line.\" You turn to the list of interviewees at the back, and all thirty companies are still open. In the margin you write, \"Nobody from the ones that closed came to talk,\" put the book back on the shelf, and invest only part of your savings."
+   }
+  ],
+  "ask": [
+   "How many people did the list in my hands start from? Where is the list from the start?",
+   "Could the people who left (canceled accounts, closed businesses, dropouts) differ from the ones who stayed on the very thing I care about?",
+   "When I can't find the people who left, does my conclusion still hold if I count them all as the best case and then all as the worst?"
+  ],
+  "with": [
+   {
+    "id": "lindy-effect",
+    "sees": "A rule has gone around running circles for decades: don't raise your weekly mileage by more than 10%. The Lindy effect says that a rule generations of runners have used for decades, and still use, is worth following. Survivorship bias says that the people who followed it, got injured anyway and quit running don't stay in the running club to talk about it. Everything you hear comes from people who weren't injured, so those voices can't tell you how well the rule works. Is there a full injury record for people who trained by this rule? If there is, look at the record; if not, follow the rule for now, and note the week you start to feel pain."
+   },
+   {
+    "id": "regression-to-mean",
+    "sees": "Three stores have come last for two quarters in a row, and you are deciding whether to close them. Regression to the mean says that luck is mixed into coming last, so they will probably climb back next quarter; don't rush to close them. But if you back that up with \"I went through the head office's old records, and the stores that came last all recovered,\" those records include only stores that weren't closed. The ones that never recovered dropped out of them long ago. To use the old records, count every store that ever came last, including the closed ones, and see how many climbed back."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A city half marathon is giving souvenir shirts only to finishers this year. Past years' finisher lists have the shirt size each person gave when they signed up; the size records for people who dropped out have been deleted. The organizers plan to order this year's shirts by the size mix of past finishers.",
+    "question": "Before ordering, should they first recover the sizes of past years' dropouts?",
+    "explain": "The shirts go only to finishers, so the group to estimate is exactly the people on the list. The list contains only the people who stayed, and for this question that is the right sample. Adding the dropouts back would make them order too many.",
+    "options": [
+     {
+      "text": "No, the shirts go only to finishers, and the people on the list are the group they are ordering for.",
+      "correct": true,
+      "feedback": "The group to estimate and the people on the list are the same group, so the sample doesn't need to be traced back to the larger group at the start."
+     },
+     {
+      "text": "Yes, dropouts may finish next year, and adding them is the only way to estimate next year's number of dropouts.",
+      "correct": false,
+      "feedback": "The number of dropouts has nothing to do with how many shirts to order. All they need to estimate is the size mix of the finishers."
+     },
+     {
+      "text": "No, as long as past lists are long enough, the bias will go away on its own.",
+      "correct": false,
+      "feedback": "More people only reduce random swings. The reason not to add anyone is that the group to estimate is the finishers in the first place."
+     },
+     {
+      "text": "Yes, dropouts were runners at the start too, and without them the size mix will be off.",
+      "correct": false,
+      "feedback": "This year's shirts don't go to dropouts. Count their sizes in the mix, and the shirts ordered will drift away from the people who will actually get them."
+     }
+    ]
+   },
+   {
+    "stem": "An e-bike maker spot-checks three-year-old bikes that are still in use. Their batteries hold, on average, 85% of their capacity when new. It is known that owners whose batteries lose capacity fast tend to replace their bikes sooner.",
+    "question": "For all the batteries sold in the same batch three years ago, what is the average share of capacity kept after three years likely to be?",
+    "explain": "The batteries that lost capacity fast left the pool of bikes being checked earlier, so the ones left in the sample lean toward the good ones. The average for the whole batch will be lower than the spot check shows.",
+    "options": [
+     {
+      "text": "Above 85%: owners who replace their bikes mostly want a newer model, which has little to do with the battery.",
+      "correct": false,
+      "feedback": "The question already says batteries that lose capacity fast get replaced sooner, so replacing the bike is tied to how good the battery is."
+     },
+     {
+      "text": "Below 85%: the batteries that lost capacity fast have already been replaced, and every one checked is one that held up.",
+      "correct": true,
+      "feedback": "The ones that dropped out are the fast-fading ones, so the sample kept the good end, and the average for everyone is lower."
+     },
+     {
+      "text": "There's no way to tell: people replace bikes for too many reasons to say which way it goes.",
+      "correct": false,
+      "feedback": "The question tells you that replacing the bike goes with fast fading, so you can tell which way it goes."
+     },
+     {
+      "text": "About 85%: the check covered the same batch of batteries, so the data stands for the batch.",
+      "correct": false,
+      "feedback": "Being the same batch only means they were alike when they left the factory. The check covered bikes still in use after three years, which have already been filtered once."
+     }
+    ]
+   },
+   {
+    "stem": "People learning to code love a particular Q&A forum, and those who learn it mostly stop coming once they find a job. You look through questions from users who signed up at least two years ago and feel that after two years of learning they are still asking basic questions.",
+    "question": "Compared with the people you looked at, what is the average skill two years on of everyone who ever signed up to the forum likely to be?",
+    "explain": "The people who learned well left once they found jobs, so those still posting two years later are the slow-progress end. The sample leans toward the weaker side, and the average for everyone is higher than what you saw.",
+    "options": [
+     {
+      "text": "Lower: the old users at least stuck with it, and the others probably learned even less.",
+      "correct": false,
+      "feedback": "The ones who stuck around are exactly the ones who haven't graduated; the ones who learned well have already left. You have the direction backward."
+     },
+     {
+      "text": "Can't tell: everyone leaves the forum for different reasons, so there's no saying which way it goes.",
+      "correct": false,
+      "feedback": "The question tells you that leaving goes with learning, so you can tell which way it goes."
+     },
+     {
+      "text": "Higher: the people who learned well have left the forum, and those who remain lean toward slow progress.",
+      "correct": true,
+      "feedback": "The ones who left are the good end, so the sample is biased, and everyone together is better than what you saw."
+     },
+     {
+      "text": "About the same: among people who signed up at the same time, the spread of skill doesn't change because of posting.",
+      "correct": false,
+      "feedback": "The question says people who learn it mostly stop coming, so posting is tied to skill, and the spread has already been filtered."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "type": "hbar",
+  "title": "Ask current users: 80%. Everyone: 40%",
+  "caption": "1,000 start learning and 400 learn. Of the 100 still using it three months later, 80 learned. Most who didn't learn left, so you can't ask them.",
+  "categories": [
+   "100 still using it",
+   "1,000 who started"
+  ],
+  "y": {
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "series": [
+   {
+    "name": "Can converse",
+    "values": [
+     80,
+     40
+    ],
+    "tones": [
+     "warn",
+     "ink"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,206 @@
+{
+ "id": "winners-curse",
+ "name": "Winner's Curse",
+ "en": "赢家诅咒",
+ "discipline": "games",
+ "one_line": "When everyone bids on something hard to value, the most hopeful guess usually wins.",
+ "story": "Bazerman and Samuelson have MBA students at Boston University bid on jars of coins; the winners pay 10.01 dollars on average for a jar worth 8 dollars",
+ "shallow": {
+  "scene": "In their classes at Boston University, Max Bazerman and William Samuelson had MBA students estimate the worth of a jar of coins or paper clips, then each hand in a sealed bid. The highest bidder bought the jar and received its contents in cash. Each jar was actually worth 8 dollars. On average, the students' estimates came to less than 8 dollars, yet the winning bids in each group averaged 10.01 dollars, so the winners lost about 2 dollars. The two published these results in 1983.",
+  "plain": "You and four friends each go and look at the same used car separately. Each of you bids whatever you think it's worth, and the highest bid takes it. Of the five estimates, some are too low and some too high, and on average they're exactly right. But the one who takes the car is precisely the one who guessed highest: say he guessed 130,000, then he has to pay 130,000 for a car that isn't worth that much. The winner's curse doesn't need anyone to be foolish: everyone guesses fairly, and the bidding picks out the one whose mistake was highest."
+ },
+ "deep": {
+  "mechanism": "### The more rivals, the further the winner's estimate runs high\n\nSuppose a batch of goods is truly worth 1 million, each bidder's estimate misses the true value at random by up to 200,000 either way, and each bids exactly their estimate. With four bidders, the highest estimate is on average 120,000 above the true value; with nine bidders, 160,000 above. No bidder leans either way, but with more people, someone is bound to guess high by chance, and he is exactly the one who wins.\n\n### The less accurate the estimates, the more you have to shave off\n\nStill with nine bidders, if each estimate misses by no more than 100,000, the highest estimate is on average only 80,000 too high. Inspect the goods, check the income, and halve the range of error, and the inflated part of the winner's estimate, and how much you need to shave off your bid, are both halved too.\n\n### Winning is itself a piece of news\n\nIf you put in the highest bid, everyone else's estimate was lower than yours. When everyone's information is equally reliable and this many bidders came in below you, it's more likely you guessed high. Before bidding, ask: if this bid really does win, how much are the goods still worth? Take that corrected number, subtract the profit you want to make, and bid that.",
+  "origin": "In 1971, the petroleum engineers Ed Capen, Bob Clapp and Bill Campbell published a paper on bidding for oil and gas leases in the US Gulf of Mexico: the companies that won tended to earn less than they had expected beforehand. In 1983, Bazerman and Samuelson confirmed the effect with classroom auctions of jars whose true value was known in advance.",
+  "limits": "The winner's curse is most useful when a thing is worth the same to everyone and everyone's information has errors, such as the reserves in an oil field or the true cost of a construction contract. If you're buying an instrument you'll play yourself, only you can say what it's worth: other people bidding lower doesn't mean you guessed too high. Blaming the winner's curse every time you overpay is another mistake: losses from building accidents or sudden market shifts have nothing to do with how the bidding picked the winner."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "In an auction with a dozen or more bidders, the winner most likely pays more than the goods are really worth. You can estimate how much more before the bidding starts, and then decide whether this one is worth taking part in."
+   },
+   {
+    "use": "design",
+    "text": "A seller who wants to get more money can send the survey report to all the bidders before the auction: when everyone's errors are smaller, they don't have to keep shaving their bids to guard against the winner's curse."
+   },
+   {
+    "use": "act",
+    "text": "Before bidding on a project everyone wants, first pin down the one fact that affects the price most, such as the reserves, the cost or the resale price. The more of it you pin down, the less you need to shave off your bid."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Investing",
+    "title": "The bank they fought to win",
+    "text": "In 2007, a group of banks led by the Royal Bank of Scotland beat Barclays to buy the Dutch bank ABN AMRO for about 71.1 billion euros. A later investigation by the British regulator criticized the buyers for not checking the deal thoroughly enough. The assets the takeover brought in were then heavily written down, and in 2008 the Royal Bank of Scotland took money from the government."
+   },
+   {
+    "field": "Personal life",
+    "title": "The roof missed in a bidding war",
+    "text": "You and several other buyers all want to buy an old house to renovate and sell on. You only looked at the walls and estimated repairs at 50,000, so you bid 100,000 more than anyone else and won. After the handover you look properly: the roof leaks, and repairs will cost 200,000. What let you put in the highest bid was the cost you missed."
+   },
+   {
+    "field": "Publishing",
+    "title": "The advance for a first-time author",
+    "text": "You're an editor at a publisher. Five publishers are bidding at the same time for a new author's book; everyone has read the sample chapters, and each has to estimate sales on its own. Your sales estimate is the most hopeful, so your advance is the highest too, and you win the book. Once it's out, sales are only half what you estimated, and the advance never earns back."
+   }
+  ],
+  "ask": [
+   "Can I bid the most because I have facts others don't, or because my estimate is more hopeful than theirs?",
+   "Is this thing worth the same to me as to the other buyers, or do I have a use for it that they don't?",
+   "Before I bid, which fact would shrink my error the most, and can I go and find it out?"
+  ],
+  "with": [
+   {
+    "id": "first-mover",
+    "sees": "A city newly opening to ride-hailing is auctioning licenses. First-mover advantage says whoever gets in first can grab the riders and drivers, so it's worth bidding high; the winner's curse says that if you bid the most, you're probably also the most hopeful about this city. Where they differ is whether the advantage of getting in first can be checked: if it can, count it in your bid; if it rests only on hopeful forecasts, bid the number after shaving."
+   },
+   {
+    "id": "adverse-selection",
+    "sees": "At an auction of used machine tools, the seller knows the machines inside out, while the buyers have each only taken a quick look. The seller being willing to put a machine up for auction is one clue, and adverse selection has you ask: why this particular machine? You winning is another clue, and the winner's curse has you ask: why would nobody else pay this price? Both clues point to the same thing: bid below your estimate."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "At an energy company, you run the yearly bidding for offshore oil and gas blocks. The survey data each company buys is similar, each can only estimate the reserves from it, and their ranges of error are about the same. In past years 4 companies bid, and your approach was to shave 10% off your estimate before bidding. This year 12 companies are bidding, and each one's range of error is the same as in past years.",
+    "question": "How should you adjust this year's bid?",
+    "explain": "A block's reserves are the same number for everyone, but each company's estimate has errors. With the bidders going from 4 to 12, the highest estimate will be further from the true value, so the old share you shaved off is no longer enough.",
+    "options": [
+     {
+      "text": "Shave off more, because with more bidders, the estimate that wins the block is more likely to be too high.",
+      "correct": true,
+      "feedback": "With more bidders, the highest estimate is on average further too high, so the share you shave off has to grow with it, or you can first make the survey more detailed to shrink the error."
+     },
+     {
+      "text": "Shave off a bit less, because with more rivals you won't get the block without bidding high.",
+      "correct": false,
+      "feedback": "Whoever wins by bidding higher is more likely the company that guessed highest, so shaving off less means losing more."
+     },
+     {
+      "text": "Stop bidding, because as long as there's competition, winning always loses money.",
+      "correct": false,
+      "feedback": "Companies that shave off enough and check more carefully still make a profit; losing money isn't certain."
+     },
+     {
+      "text": "Still shave off 10%, because each company's range of error hasn't changed.",
+      "correct": false,
+      "feedback": "What gets picked out is the highest estimate. With bidders going from 4 to 12, that estimate will be further too high, so even with each company's error unchanged, you need to shave off more."
+     }
+    ]
+   },
+   {
+    "stem": "For two years running, the renovation firm you run has won more than twenty jobs by putting in the lowest bid. The firms competing are about equally skilled at the work, and they can only estimate costs by going to measure up the home. You notice that the actual profit on the jobs you win has always been lower than you expected when bidding, and the rival firms that didn't win say their cost estimates were mostly higher.",
+    "question": "Why is the profit on the jobs it wins always lower than expected?",
+    "explain": "Each firm's cost estimates have errors, and the lowest bid tends to pick out the firm that estimated the cost lowest. What this firm wins is exactly the set of jobs where it left out the most.",
+    "options": [
+     {
+      "text": "The more jobs a firm does, the higher every job's cost becomes.",
+      "correct": false,
+      "feedback": "Nothing in the question suggests costs rise with scale; the problem is which jobs it wins, not how many it does."
+     },
+     {
+      "text": "Once the rivals learned its bids, they deliberately pushed down their own true costs.",
+      "correct": false,
+      "feedback": "Nothing in the question suggests the rivals changed their costs; all they said was that their own cost estimates were higher."
+     },
+     {
+      "text": "The firm is worse at the work than its rivals, so its actual costs are higher.",
+      "correct": false,
+      "feedback": "The question says the firms are about equally skilled; the difference lies in how they estimate costs, not in the work itself."
+     },
+     {
+      "text": "What it wins are mostly the jobs where it estimated the cost lowest and left out the most.",
+      "correct": true,
+      "feedback": "The lowest bid picks out whoever estimated the cost lowest. The part they underestimated can't be made up during the work, so the profit shrinks."
+     }
+    ]
+   },
+   {
+    "stem": "You're getting ready to bid on a batch of used equipment to sell on, and each bidder can only inspect part of it. You estimate the batch will sell on for 1.2 million. Then you think it over: if your bid is high enough to win, it means everyone else's estimate was lower than yours, and on average the batch looks more like it's worth only 1.05 million. You want this deal to make at least 80,000.",
+    "question": "What is the most you can bid (total price)?",
+    "explain": "Your bid winning is itself a sign that what the others saw was gloomier than what you saw. First correct the estimate from 1.2 million to 1.05 million, then subtract the 80,000 you want to make at least: the highest total is 970,000.",
+    "options": [
+     {
+      "text": "1.12 million: the original 1.2 million estimate minus 80,000 profit.",
+      "correct": false,
+      "feedback": "This step leaves out the news that you won. 1.2 million is your estimate before winning; bid on it, and if you win you're more likely to have overpaid."
+     },
+     {
+      "text": "1.05 million: bid the corrected estimate, with no room for profit.",
+      "correct": false,
+      "feedback": "The deal has to make at least 80,000; a bid of 1.05 million leaves not a cent of profit."
+     },
+     {
+      "text": "970,000: first correct to 1.05 million, then subtract the 80,000 you want to make at least.",
+      "correct": true,
+      "feedback": "The corrected estimate is 1.05 million; minus 80,000 profit, the highest total is 970,000."
+     },
+     {
+      "text": "1.2 million: bid whatever your estimate is and worry about it after winning.",
+      "correct": false,
+      "feedback": "Bid your full estimate, and if you win it takes luck not to lose money; and winning is exactly the sign that you may have guessed high."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "More bidders, the higher the winner's guess",
+  "caption": "Worth 1 million; each guess misses at random by up to 200,000. 4 bidders: the winner is 120,000 high on average; 9: 160,000. Drag the error: halve it, halve that.",
+  "x": {
+   "label": "Number of bidders",
+   "min": 1,
+   "max": 20,
+   "step": 1
+  },
+  "y": {
+   "label": "Winner over by (× 10k)",
+   "min": 0
+  },
+  "params": [
+   {
+    "id": "w",
+    "label": "Error range",
+    "min": 5,
+    "max": 40,
+    "step": 5,
+    "value": 20,
+    "unit": "0k"
+   }
+  ],
+  "series": [
+   {
+    "name": "Winner over by",
+    "expr": "w*(x-1)/(x+1)",
+    "tone": "accent",
+    "dots": "small"
+   }
+  ],
+  "marks": [
+   {
+    "x": 4,
+    "text": "4 bidders"
+   },
+   {
+    "x": 9,
+    "text": "9 bidders"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Over by, 4 bidders",
+    "expr": "w*3/5",
+    "unit": "0k",
+    "digits": 0
+   },
+   {
+    "label": "Over by, 9 bidders",
+    "expr": "w*0.8",
+    "unit": "0k",
+    "digits": 0
+   }
+  ]
+ }
+}

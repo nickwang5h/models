@@ -1,0 +1,223 @@
+{
+ "id": "mr-market",
+ "name": "Mr. Market",
+ "en": "市场先生",
+ "discipline": "investing",
+ "one_line": "Every day the market quotes you a price you can ignore, or take when it acts foolishly.",
+ "story": "On October 16, Buffett's New York Times piece \"Buy American. I Am.\" says his personal account, until now all US Treasuries, is switching to US stocks in the panic",
+ "shallow": {
+  "scene": "Lehman Brothers went bankrupt in September 2008, and in October the stock market plunged again and again. On October 16, The New York Times ran an article by Warren Buffett. He said the money in his personal account (not counting Berkshire) had been entirely in US government bonds, and he was now switching it into US stocks. He wrote that he didn't know whether stocks would be higher or lower a month or a year from now, but he had a simple rule: be fearful when others are greedy, and greedy when others are fearful. And right now fear was everywhere. He began buying.",
+  "plain": "Suppose you and a partner each own half of a car repair shop. Every morning he comes and names a price: he is willing to buy your half at that price, and also willing to sell you his half at it. He is the Mr. Market that Benjamin Graham wrote about, and a share price is his quote. You've done your own sums: a half is worth 1 million yuan. On Monday he's gloomy and quotes 400,000, so you buy his half. On Tuesday he's elated and quotes 1.6 million, so you sell him your half. His quotes differed by a factor of four, and the 1 million in your head never changed once."
+ },
+ "deep": {
+  "mechanism": "### The further the quote is from your value, the better the deal\n\nKeep a half worth 1 million. If he quotes 900,000, you save only 100,000, and your own estimate could easily be off by that much, so trading or not is fine either way. If he quotes 500,000, you save half. Even if your sums are a bit off, it's a good deal, and you should take it at once. If he quotes 1 million, neither buying nor selling gains you anything, and you don't need to do a thing all day.\n\n### Your value moves only with what happens in the shop\n\nLater the shop's biggest customer, a company with a fleet of vehicles, ends its contract, and yearly profit drops by 30%. You cut your value from 1 million to 700,000. After that, when he quotes 800,000, which is above 700,000, you sell your half. On another day, with the books and the customers unchanged, his quote drops from 1 million to 450,000. The shop hasn't changed, so you still compare against 700,000, and you buy his half.\n\n### His quote is often about himself\n\nIn a week when he has a loan to repay and needs cash fast, he quotes low. When he has just got a bonus and is afraid of missing out, he quotes high. The shop hasn't changed; what changed is his situation. The week he's repaying the loan, he quotes 550,000, and with your value at 700,000 you buy his half.",
+  "origin": "In 1949, in *The Intelligent Investor*, Graham used a partner who names a price every day to show how investors should treat the rises and falls of share prices. In 1987 Buffett retold the parable in his letter to Berkshire Hathaway shareholders, using it to show how to make use of the market's daily quotes.",
+  "limits": "You can ignore the quote only if the shop itself stays the same however the quote jumps around. Companies that raise money on the strength of their share price are an exception: when the price falls, the funding dries up, the business suffers, and the quote ends up changing the company itself. Calling every fall other people's panic, and treating not selling as conviction, is using Mr. Market as a shield for yourself. A fall may also mean your value was wrong."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When you have a value you worked out yourself, whether today's quote is worth trading at depends only on how far it is from that value."
+   },
+   {
+    "use": "explain",
+    "text": "A company can put out not a single new announcement, yet its share price still swings by 20% in a week: the trading price carries people who urgently need cash and people afraid of missing out."
+   },
+   {
+    "use": "communicate",
+    "text": "Explain to your family why you didn't sell when your account shrank: you were comparing against your own value, not today's quote."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Career",
+    "title": "The headhunter's offer",
+    "text": "You're a backend engineer with six years' experience, and headhunters call every quarter with offers ranging from 300,000 to 450,000 yuan a year. You keep a table of the pay actually agreed for jobs at your level, along with the project experience you have. Calls offering 300,000 you hang up on straight away. One company, racing to hire before its product launch, offers 450,000; you check the contract and who you'd report to, find no problems, and accept."
+   },
+   {
+    "field": "Collecting",
+    "title": "The old camera a video made popular",
+    "text": "You collect old film cameras and own three secondhand ones of the same model. After a video goes viral, the going price for that model rises from 1,500 yuan to 4,000 yuan each, and the forums are full of posts from people wanting to buy. You only shoot with one yourself, so you keep the one in the best condition and sell the other two to buyers, 8,000 yuan in all."
+   },
+   {
+    "field": "Investing",
+    "title": "The gas stock that fell",
+    "text": "You own shares in a city gas company that pays a dividend of 1.2 yuan a share every year, and its number of customers grows year after year. It is dropped from a major stock index, the funds that track that index all sell in the same week, and the price falls from 24 yuan to 16. The annual report shows no change at all. You look through the dividend announcements and the gas usage figures, then buy more with spare money you won't need to touch for three years."
+   }
+  ],
+  "ask": [
+   "The last time I changed my value, what specific fact was it because of?",
+   "Behind this quote, has something in the books changed, or does the person quoting have troubles of their own?",
+   "If the exchange closed tomorrow for a year, would I still be willing to hold this at this value?"
+  ],
+  "with": [
+   {
+    "id": "social-proof",
+    "sees": "Everyone in your social feed is buying one stock, and social proof advises following along so you aren't left out. Mr. Market advises the opposite: everyone buying only shows that the quote has been pushed up. First compare it with your own value, and if your value hasn't moved, don't move either."
+   },
+   {
+    "id": "bayesian-updating",
+    "sees": "A small company's shares fall 20% in a day. Mr. Market says don't move yet, because the quote may just be other people's mood. Bayesian updating says the size of the fall is itself a piece of evidence, especially when the people selling may have learned something before you did. Which one is right depends on whether you can check the company's news yourself: if you can, go and check first; if you can't, take the fall as a signal to lower your value."
+   },
+   {
+    "id": "circle-of-competence",
+    "sees": "If you can't work out what a company is worth, Mr. Market gives you nothing to compare against, and every quote feels like a choice you're being pushed to make. First make sure the company is inside your circle of competence, then make use of the quotes."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You own shares in a company that ships medicines in cold storage, and your own value for it is 40 yuan a share. The whole market falls, and it drops to 25 yuan, though the company's orders and books are the same as before. But in six months you have to make the down payment on a home, and that money can only come from this stock. There is no other source.",
+    "question": "How should you treat the 25-yuan quote now?",
+    "explain": "The company hasn't changed, so there's no reason to move the 40-yuan value. But money you must take out in six months can't wait for the price to get back to 40. Where that part of the money sits should be decided by when you need it.",
+    "options": [
+     {
+      "text": "Buy more on the dip at once, put the down payment in too, and take it out when the price gets back to 40.",
+      "correct": false,
+      "feedback": "The down payment is due in six months. Putting it in as well is betting money you can't afford to lose on the quote recovering."
+     },
+     {
+      "text": "First move the part you need for the down payment into assets that share prices don't affect, and treat the rest according to your value.",
+      "correct": true,
+      "feedback": "When you need the money is already fixed, so that part can't ride on the quote recovering. The rest isn't needed soon and can still be compared with your value."
+     },
+     {
+      "text": "Falling to 25 shows your value was too high; lower it to 25, then decide.",
+      "correct": false,
+      "feedback": "Orders and books haven't changed, so the fall itself is no reason to change your value. The value should move when the business changes."
+     },
+     {
+      "text": "The value is still 40, so keep holding and sell when the price gets back to the value.",
+      "correct": false,
+      "feedback": "The down payment is due in six months, the price may not get back to 40 before then, and the cost of waiting falls on you."
+     }
+    ]
+   },
+   {
+    "stem": "Over a week, the shares you own in an online education company rise from 50 to 54 yuan, and your friends keep telling you to buy more while it's hot. Your value for it is 50 yuan, and you know that figure could be off by 10 to 20%. The company made no new announcements this week, and its business numbers are the same as last week's.",
+    "question": "Faced with a 54-yuan quote, which of these actions has good grounds?",
+    "explain": "54 yuan is only 8% away from your value, inside the error of your own estimate, so trading gains you no clear advantage. With no new facts, the value doesn't move, and you don't need to give this quote an answer today.",
+    "options": [
+     {
+      "text": "Buy more along with everyone, because your friends' judgments added together are more accurate than yours alone.",
+      "correct": false,
+      "feedback": "Your friends buying more is part of the quote, not a new fact. The company's numbers haven't changed at all."
+     },
+     {
+      "text": "Raise your value to 54 yuan, so that the current price is reasonable.",
+      "correct": false,
+      "feedback": "A value changes when results and cash flow change; a rising price can't change it by itself."
+     },
+     {
+      "text": "Sell everything above the value right away, and quit while you're ahead.",
+      "correct": false,
+      "feedback": "The amount above the value is within the error of your estimate, so you can't be sure it's really expensive."
+     },
+     {
+      "text": "Do nothing and keep holding; wait until the facts of the business change or the price moves further from your value.",
+      "correct": true,
+      "feedback": "The quote is only 8% above your value, within your estimate's error, so trading gains you nothing. Results haven't changed, so there's no reason to change the value either."
+     }
+    ]
+   },
+   {
+    "stem": "You own shares in a mold-making factory, and your own value for it is 30 yuan a share. A company in the same industry makes a cash takeover offer: it will buy all the shares at 45 yuan each, and shareholders can choose whether to accept. Nothing about the factory's business has changed.",
+    "question": "How should you treat this 45-yuan quote?",
+    "explain": "The quote is half as much again as your value, and the business hasn't changed, so the trade gives you a clear advantage. A value changes with facts about the business; the other side being willing to pay more doesn't change it.",
+    "options": [
+     {
+      "text": "Accept the offer and sell at 45 yuan.",
+      "correct": true,
+      "feedback": "The quote is far above your own value, so selling to him gets you more money than the shares are worth."
+     },
+     {
+      "text": "Turn it down and wait for the next, higher offer.",
+      "correct": false,
+      "feedback": "Nothing in the question suggests a higher offer is coming. You would be betting a gain already in hand on a future you have no clue about."
+     },
+     {
+      "text": "Raise your value to 45 yuan, so that the quote is reasonable.",
+      "correct": false,
+      "feedback": "The business hasn't changed, so the value has no reason to move. A high quote is no grounds for changing it."
+     },
+     {
+      "text": "The company is doing well, so don't sell at any price.",
+      "correct": false,
+      "feedback": "Your value is 30 yuan, and a buyer at 45 is willing to pay 15 more. Not selling means giving up that difference."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "title": "His quotes varied fourfold; your value never moved",
+  "caption": "Your partner names a price daily and will buy or sell at it. Monday he quotes 400,000 and you buy his half; Tuesday, 1.6 million, and you sell him yours.",
+  "x": {
+   "min": 0.6,
+   "max": 5.4,
+   "ticks": [
+    {
+     "at": 1,
+     "label": "Mon"
+    },
+    {
+     "at": 2,
+     "label": "Tue"
+    },
+    {
+     "at": 3,
+     "label": "Wed"
+    },
+    {
+     "at": 4,
+     "label": "Thu"
+    },
+    {
+     "at": 5,
+     "label": "Fri"
+    }
+   ]
+  },
+  "y": {
+   "label": "His quote (10,000 yuan)",
+   "min": 0,
+   "max": 180
+  },
+  "series": [
+   {
+    "name": "",
+    "points": [
+     [
+      1,
+      40
+     ],
+     [
+      2,
+      160
+     ],
+     [
+      3,
+      100
+     ],
+     [
+      4,
+      50
+     ],
+     [
+      5,
+      90
+     ]
+    ],
+    "tone": "ink",
+    "dots": true
+   }
+  ],
+  "marks": [
+   {
+    "y": 100,
+    "text": "Your value"
+   }
+  ]
+ }
+}

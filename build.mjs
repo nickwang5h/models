@@ -5,6 +5,8 @@ import { join } from 'node:path';
 import { cardPage, homePage, listData, reviewPage, validate } from './src/render.mjs';
 import { subscribePage } from './src/today.mjs';
 import { dailyPick, utcDate } from './src/daily.mjs';
+import { checkTranslation } from './src/translation.mjs';
+import { existsSync } from 'node:fs';
 
 const CONTENT = process.env.MODELS_CONTENT ?? 'content';
 const DIST = 'dist';
@@ -45,3 +47,52 @@ await writeFile(join(DIST, 'subscribe.html'), subscribePage(total));
 await writeFile(join(DIST, 'ids.json'), JSON.stringify(order));
 await writeFile(join(DIST, 'questions.json'), JSON.stringify(Object.fromEntries(order.map((id) => [id, { name: cards[id].name, en: cards[id].en, discipline: cards[id].discipline, one_line: cards[id].one_line, questions: cards[id].use.questions }]))));
 console.log(`构建 ${total} 张卡、${index.disciplines.length} 个学科到 ${DIST}/`);
+
+// English under /en: content/en/<id>.json (the same cards, translated, each with its story line in `story`) and
+// content/en/index.json (the disciplines' names). Every card must be there and match its original (src/translation.mjs);
+// MODELS_EN_PARTIAL=1 builds a preview with the Chinese card standing in for any not yet translated.
+const EN = join(CONTENT, 'en');
+if (existsSync(join(EN, 'index.json'))) {
+  const overlay = JSON.parse(await readFile(join(EN, 'index.json'), 'utf8'));
+  const partial = process.env.MODELS_EN_PARTIAL === '1';
+  const en = {};
+  const problems = [];
+  let stand = 0;
+  for (const id of order) {
+    const file = join(EN, `${id}.json`);
+    if (!existsSync(file)) {
+      if (partial) { en[id] = { ...cards[id], en: cards[id].name }; stand++; continue; }
+      problems.push(`${id}: no English card`);
+      continue;
+    }
+    let card = null;
+    let found = [];
+    try { card = JSON.parse(await readFile(file, 'utf8')); found = checkTranslation(cards[id], card).problems; } catch (error) { found = [`${id}: ${error.message}`]; }
+    if (found.length && partial) { console.warn(`(preview) ${id} stays Chinese: ${found[0]}`); en[id] = { ...cards[id], en: cards[id].name }; stand++; continue; }
+    en[id] = card;
+    problems.push(...found);
+  }
+  const enIndex = {
+    disciplines: index.disciplines.map((d) => ({ ...d, ...overlay.disciplines.find((o) => o.id === d.id) })),
+    cards: index.cards.map((e) => ({ ...e, name: en[e.id]?.name, en: en[e.id]?.en, one_line: en[e.id]?.one_line, story: en[e.id]?.story ?? overlay.cards?.[e.id]?.story ?? (partial ? e.story : '') })),
+  };
+  if (!partial) for (const e of enIndex.cards) if (!e.story && index.cards.find((c) => c.id === e.id).story) problems.push(`${e.id}: no English story line in content/en/index.json`);
+  problems.push(...validate(enIndex, en));
+  if (problems.length) {
+    console.error(problems.join('\n'));
+    process.exit(1);
+  }
+  const OUT = join(DIST, 'en');
+  for (const dir of ['m', 'd', 'fig']) await mkdir(join(OUT, dir), { recursive: true });
+  const enList = listData(enIndex, en, 'en');
+  const zhEntry = Object.fromEntries(index.cards.map((e) => [e.id, e]));
+  for (const id of order) await writeFile(join(OUT, 'm', `${id}.html`), cardPage(en[id], { cards: en, index: enIndex, lang: 'en', zh: { card: cards[id], entry: zhEntry[id] } }));
+  for (const id of order) if (en[id].figure) await writeFile(join(OUT, 'fig', `${id}.json`), JSON.stringify(en[id].figure));
+  const enFigure = en[today.id].figure ?? null;
+  for (const d of enIndex.disciplines) await writeFile(join(OUT, 'd', `${d.id}.html`), homePage(enIndex, enList, { discipline: d.id, today, figure: enFigure, lang: 'en' }));
+  await writeFile(join(OUT, 'index.html'), homePage(enIndex, enList, { today, figure: enFigure, lang: 'en' }));
+  await writeFile(join(OUT, 'random.html'), homePage(enIndex, enList, { today, figure: enFigure, random: true, lang: 'en' }));
+  await writeFile(join(OUT, 'review.html'), reviewPage(total, enIndex.disciplines, 'en'));
+  await writeFile(join(OUT, 'questions.json'), JSON.stringify(Object.fromEntries(order.map((id) => [id, { name: en[id].name, en: en[id].en, discipline: en[id].discipline, one_line: en[id].one_line, questions: en[id].use.questions }]))));
+  console.log(`English: ${total - stand} cards${stand ? ` (${stand} still in Chinese)` : ''} to ${OUT}/`);
+}

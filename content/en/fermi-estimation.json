@@ -1,0 +1,216 @@
+{
+ "id": "fermi-estimation",
+ "name": "Fermi Estimation",
+ "en": "费米估算",
+ "discipline": "math",
+ "one_line": "Break a big number you can't guess into small ones you can, then multiply.",
+ "story": "At the Trinity nuclear test, Fermi drops scraps of paper and estimates a blast of about 10,000 tons of TNT",
+ "shallow": {
+  "scene": "On July 16, 1945, the Trinity nuclear test took place in the New Mexico desert. The physicist Fermi was at a camp about ten miles from the blast. Before and after the shock wave arrived, he dropped scraps of paper from about six feet up: the stronger the blast, the further the scraps would be blown. They landed about two and a half meters away, and from that he estimated that the blast was equal to 10,000 tons of TNT. The account survives in the notes he wrote on the spot at the time.",
+  "plain": "You want to know how many rolls of toilet paper an apartment building with 100 households uses in a year. Guess it straight off, and you have no idea. Break it down first: say 3 people per household, so 300 people in the building; one roll per person per week, and 52 weeks in a year. Multiply it out, and the building uses about 16,000 rolls a year. That kind of order of magnitude is what Fermi estimation is after: is it ten-thousand-something or a million? It doesn't need to be right down to the last roll."
+ },
+ "deep": {
+  "mechanism": "### Once it's broken down, each step only needs the right order of magnitude\n\nGuess straight off how many piano tuners there are in a city, and you might be off by dozens of times. Break it into four steps, and you have a rough idea for each. Say the city has 1 million households and 1% have a piano, which makes 10,000 pianos. Each piano is tuned once a year, and one tuner can do 500 tunings a year, so it takes 20 tuners: $1000000\\times0.01\\times1\\div500=20$. This trade has dozens of people in the city, not thousands.\n\n### Errors multiply, and they also cancel\n\nThe answer is the factors, such as the number of households and the share who own a piano, multiplied together. If a factor is off by some multiple, that multiple goes straight into the answer:\n\n$$2^5=32,\\qquad 2^3\\times\\left(\\frac{1}{2}\\right)^2=2$$\n\nIf all five factors are twice too high, the result is 32 times too high. If three are twice too high and two are half too low, the result is off by only two times, because the overestimates and underestimates cancel each other out.\n\n### The factor you're least sure of decides how much the answer swings\n\nBack to those 20 tuners: if the share of households with a piano were 2%, the answer would double to 40. If the number of households were 10% too high, the answer would only go to 22. You can look up the number of households, but the share who own a piano is the hardest to pin down, so start by asking a few piano shops and finding a survey.",
+  "origin": "It's named after the physicist Enrico Fermi, who was famous for estimating orders of magnitude from very few clues. Fermi estimation is a kind of method; it doesn't come from a paper in any particular year. At the Trinity test he estimated 10,000 tons; later measurements put it at around 20,000 tons, off by a factor of two but still the same order of magnitude. How many piano tuners a city has is a classic teaching problem that spread later.",
+  "limits": "When a decision only needs to know whether it's dozens or thousands, Fermi estimation can rule out options not worth a closer look in a few minutes. Drug doses, how much load a structure can carry, and settling a contract need exact figures, and a rough estimate won't help. When you can't guess even the order of magnitude of one factor, breaking it down is no use. The Drake equation estimates the number of civilizations in the Milky Way, but nobody has ever measured the share of planets where life arises; fill in a big or a small number, and the results differ by several orders of magnitude. However neatly that string of multiplications is written, it's only the opinion of whoever filled in the numbers."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "reason",
+    "text": "Someone says a city sends 5 million parcels a day. Run through three numbers, the number of residents, how many parcels each person sends a week, and the seven days in a week, and in a few minutes you know whether the figure is absurd."
+   },
+   {
+    "use": "act",
+    "text": "Before you get a renovation quote, work it out yourself: the floor area times a rough price per square meter for labor and materials. If the quote is twice that, you have reason to ask about it line by line."
+   },
+   {
+    "use": "predict",
+    "text": "Before hiring, use the number of customers, how many times each customer asks for help a year, and how long each request takes, to estimate how many hours customer service has to handle a year, then see how many people that needs."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "How long to keep the logs",
+    "text": "You're in charge of the logs for a service. It gets about 20 million requests a day, each log entry is about 500 bytes, so that's 10 GB a day; keeping 30 days takes about 300 GB. You take this number to the operations team and ask whether one ordinary hard drive is enough or whether you need to request a storage node."
+   },
+   {
+    "field": "Personal life",
+    "title": "A group buy in the neighborhood chat",
+    "text": "Your neighborhood group chat has 400 people, and you want to organize a group buy of fruit. You estimate 15% will sign up, each household ordering one box, so about 60 boxes. Sixty boxes won't fit in a private car, so you go and ask a delivery firm about a small van."
+   },
+   {
+    "field": "Business",
+    "title": "Is a study room worth opening?",
+    "text": "You want to open a paid study room next to a university. Say there are 20,000 students nearby and 5% are willing to pay, about 1,000 people; at peak times only a fifth are there at once, so about 200 seats. You take this number to look at two shop spaces, and you give up on the one with room for only 80 desks."
+   }
+  ],
+  "ask": [
+   "What is the number I want to estimate, written down with its unit and time span?",
+   "For each factor in the total, where can I find a rough value: which yearbook, which dashboard, which person who has worked in this line?",
+   "Which factor am I least sure of, and who could give me a range for it?"
+  ],
+  "with": [
+   {
+    "id": "margin-of-safety",
+    "sees": "For a new project, you estimate selling 10,000 orders a year, with break-even at 8,000. Fermi estimation says the middle value is over the line, so it's worth doing. Margin of safety sees that every factor is only a guess, and the real number could be anywhere from 3,000 to 30,000 orders, so you shouldn't bet on 10,000. If you can wind it up after a loss and mistakes are cheap, go ahead on the estimate; if you're staking all your savings and can't back out, go by margin of safety and only bet at a level where you wouldn't lose even if the estimate were three times lower."
+   },
+   {
+    "id": "base-rate",
+    "sees": "You estimate the first-year membership of a new neighborhood gym on the corner, multiplying your way from the local population, the share willing to sign up, and the share still members at year's end, and you get 900 people. Base rate first asks how many members similar new gyms actually have, and what you find is mostly 250 to 400. When the two answers are three times apart, real data from similar gyms is firmer than shares you made up yourself, so use it first to cap the estimate; only when you can't find any similar gyms does the estimate step in."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're ordering drinking water for an in-person event, 500 ml a bottle. The organizers expect 300 to 500 people to come, each drinking 1 to 2 bottles during the event. The storeroom has 200 bottles now.",
+    "question": "Are these 200 bottles enough?",
+    "explain": "Take the low end of both the number of people and how much each drinks, and you still need 300 bottles, already more than the 200 in the storeroom; however wide the range, that conclusion doesn't change.",
+    "options": [
+     {
+      "text": "Yes: if they run out, someone can just go and buy more.",
+      "correct": false,
+      "feedback": "That's a fix after the fact; the question asks whether 200 bottles are enough as they are, and the low end of 300 bottles already says no."
+     },
+     {
+      "text": "Can't tell: the range from 300 to 1,000 is too wide, so you have to wait for the exact numbers to judge.",
+      "correct": false,
+      "feedback": "A wide range affects how many to order, not whether there are enough: even the lowest case is over 200."
+     },
+     {
+      "text": "No: even at the low end of both the number of people and how much they drink, it takes 300 bottles.",
+      "correct": true,
+      "feedback": "With both factors at the low end it still takes 300 bottles, more than the storeroom holds, so the conclusion doesn't depend on more exact numbers."
+     },
+     {
+      "text": "Yes: fewer people usually come than expected, and not everyone drinks a whole bottle.",
+      "correct": false,
+      "feedback": "Nothing suggests fewer people will come than the low end expected; 300 people, 1 bottle each, is already the lowest case the question gives."
+     }
+    ]
+   },
+   {
+    "stem": "You take the national average of 4 books bought per person a year and multiply by this city's 500,000 people to get 2 million books. Then, at the 5% share you expect a new online bookstore to get, you estimate first-year sales of 100,000 books. The store is promoted only to university students, and the city has about 80,000 students.",
+    "question": "Which step of this estimate should be fixed first?",
+    "explain": "The value of each factor has to refer to the same group of people. The bookstore's customers are the 80,000 students, so both the population and the books bought per person have to be the figures for this group.",
+    "options": [
+     {
+      "text": "Double the final result and treat it as a cautious upper limit.",
+      "correct": false,
+      "feedback": "Doubling the result doesn't answer who these people are; the population base is still 500,000."
+     },
+     {
+      "text": "Look up the books bought per person in three more cities and use the average instead of 4.",
+      "correct": false,
+      "feedback": "The average of three cities is still a figure for all residents, which doesn't match the 80,000 students this store serves."
+     },
+     {
+      "text": "Raise the share from 5% to 10% to make up for students buying more.",
+      "correct": false,
+      "feedback": "Changing the share still multiplies on the same wrong population, and most of those 500,000 people aren't this store's customers."
+     },
+     {
+      "text": "Replace the population with the 80,000 students, and the books bought per person with what students buy.",
+      "correct": true,
+      "feedback": "Students are the bookstore's customers. With 80,000 as the population and students' book buying as the rate, the factors refer to the same group."
+     }
+    ]
+   },
+   {
+    "stem": "You estimate a city's daily subway ridership, working it out two ways. From the top down: population times trips per person per day, times the share taken by subway, about 200,000 trips. From the bottom up: number of stations times daily riders per station, about 2 million trips.",
+    "question": "The two results are ten times apart. What do you do next?",
+    "explain": "Both ways measure the same quantity, so being ten times apart means at least one factor is off by an order of magnitude. Only by comparing them item by item can you find which one it is and correct it.",
+    "options": [
+     {
+      "text": "Compare the factors in the two ways item by item, find the one that's off by an order of magnitude, and work it out again.",
+      "correct": true,
+      "feedback": "Ten times apart means some factor is off by an order of magnitude, and you can only find it by checking each factor's value and meaning."
+     },
+     {
+      "text": "Take the larger figure, 2 million, since too many is better than too few.",
+      "correct": false,
+      "feedback": "Larger isn't the same as more correct. The wrong factor is still there; you've just chosen to ignore it."
+     },
+     {
+      "text": "Take the average of the two, about 1.1 million trips, as the final estimate.",
+      "correct": false,
+      "feedback": "Averaging smooths over the difference without finding where it comes from; 1.1 million doesn't match either way's result."
+     },
+     {
+      "text": "Work it out a third way and take the middle of the three results.",
+      "correct": false,
+      "feedback": "A third number is just one more vote. The factor that's ten times off still hasn't been found, and the middle one could be exactly the wrong one."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Four easy guesses, about 16,000 rolls a year",
+  "caption": "Each number only has to be roughly right. Multiplied out, it's over 10,000 rolls, not a million, and that's enough.",
+  "nodes": [
+   {
+    "id": "h",
+    "label": "100 homes",
+    "layer": 0
+   },
+   {
+    "id": "p",
+    "label": "3 per home",
+    "layer": 0
+   },
+   {
+    "id": "w",
+    "label": "1 roll a week",
+    "layer": 0
+   },
+   {
+    "id": "y",
+    "label": "52 weeks a year",
+    "layer": 0
+   },
+   {
+    "id": "people",
+    "label": "300 people"
+   },
+   {
+    "id": "per",
+    "label": "52 rolls each"
+   },
+   {
+    "id": "total",
+    "label": "About 16,000 rolls",
+    "sub": "300 × 52",
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "h",
+    "to": "people"
+   },
+   {
+    "from": "p",
+    "to": "people"
+   },
+   {
+    "from": "w",
+    "to": "per"
+   },
+   {
+    "from": "y",
+    "to": "per"
+   },
+   {
+    "from": "people",
+    "to": "total"
+   },
+   {
+    "from": "per",
+    "to": "total"
+   }
+  ]
+ }
+}

@@ -1,0 +1,192 @@
+{
+ "id": "fundamental-attribution",
+ "name": "Fundamental Attribution Error",
+ "en": "基本归因错误",
+ "discipline": "psychology",
+ "one_line": "When others slip up, we blame their character and forget what they were facing.",
+ "story": "Lee Ross and colleagues' quiz experiment: questioners picked at random are rated more knowledgeable",
+ "shallow": {
+  "scene": "In 1977 Lee Ross and his colleagues at Stanford University split students at random into questioners and contestants. Each questioner made up ten hard questions from a field they knew well and put them to a contestant on the spot, and the contestant couldn't answer many. Afterward, though, the contestants felt the questioners knew more than they did, forgetting that every question came from the other person's strong subject. Another group of onlookers watched two research assistants act out the quiz again. They knew the roles had been assigned by drawing lots, yet their ratings still favored the questioner.",
+  "plain": "You're driving when a car cuts sharply into your lane and nearly clips you, and you decide at once that the driver has no manners. At the next intersection, you see that car turn into the hospital's emergency entrance. When he cut in, you couldn't see why he was in a hurry, so you put it all down to him. Social psychology calls this the fundamental attribution error: when you look at other people, you see only the person and leave the situation out of the count."
+ },
+ "deep": {
+  "mechanism": "### The person is in front of you; the situation stays out of sight\n\nA colleague interrupts someone in a meeting, and all you see is the interruption. The urgent message he just got and the fact that the meeting has only two minutes left are nowhere in your view. \"He's rude\" is a ready-made explanation, while finding out his situation takes effort, so when you're busy you stop at \"rude.\"\n\n### Blaming the person even when you know the situation wasn't up to them\n\nIn 1967 Jones and Harris had students read an essay about Castro and infer the writer's true attitude. If the writer had been assigned a side, the essay couldn't really show what they thought. Yet when the students were told this outright, their inferences were only somewhat weaker than when the writer had chosen the side: people who wrote essays in favor were still seen as leaning toward Castro.\n\n### Check for a mistake before talking about intent\n\nAn important email wasn't sent to you. \"The sender is shutting me out\" and \"the system left my name off\" both make sense. The first means showing that he knew the consequences and did it on purpose. The second only means finding the step at which the email didn't go out, which is much easier to check, so check it first. The old saying called Hanlon's razor asks for exactly this order: what carelessness can explain, don't count as malice yet.",
+  "origin": "Fritz Heider discussed how people explain behavior systematically in 1958. Jones and Harris ran the Castro essay experiment in 1967. Ross named the \"fundamental attribution error\" in 1977 and published the quiz experiment the same year. Hanlon's razor is a saying; it appeared in 1980 in *Murphy's Law Book Two*, compiled by Bloch. Blaming circumstances more when looking at yourself and character more when looking at others is called the actor–observer asymmetry; Malle's 2006 meta-analysis found no evidence that it holds generally and steadily.",
+  "limits": "When someone else assigned the roles and tasks, the situation most needs to be counted first. When there is evidence of falsified records, clear threats or deliberate concealment, judge it as malice on that evidence, and don't go on inventing mistakes for the other person. Another way to overdo it is to demand that anyone who had a difficulty be let off: finding out the causes and holding people responsible can be done at the same time."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "When reviewing a delay, first lay out what information the person had and which steps were weighing on them, then talk about their own responsibility."
+   },
+   {
+    "use": "communicate",
+    "text": "When writing a performance review for someone on your team, instead of \"procrastinates,\" write \"both drafts were three days late, and waiting for the requirements to be confirmed took three days,\" so they have something to change."
+   },
+   {
+    "use": "act",
+    "text": "When you get an email with a sharp tone, first write down two constraints the sender might be facing, then decide whether and how to reply."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "The night shift that changed the wrong config",
+    "text": "You're the head of operations. Early on Tuesday morning a production config was changed by mistake and the service was down for forty minutes, and your first reaction is that the colleague was careless. In the review you pull up the operation logs. In the release tool, the production environment is listed first and selected by default, there's no second confirmation on submit, and that night was his second night shift in a row. You change the default to the test environment, add a confirmation pop-up, and write a limit on back-to-back night shifts into the schedule."
+   },
+   {
+    "field": "Medicine",
+    "title": "The bottle he couldn't open",
+    "text": "You're a community nurse. An elderly man on your list keeps missing his blood pressure pills, and your colleagues say he won't cooperate. You visit his home and see that the bottle has a safety cap you have to press down to twist open, and his knuckles are swollen; he simply can't open it. You switch him to an ordinary cap, and when you check back a week later, every day's pills in the pill box have been taken."
+   },
+   {
+    "field": "Personal life",
+    "title": "The landlord's \"this week\"",
+    "text": "Your landlord promised to fix the water heater. You've called three times, and each time he says \"this week,\" so you decide he's stalling. The fourth time you ask differently: you message him to ask whether he's short of a part, and whether you should send him a photo of the model number. He replies quickly: the part has to be shipped in from another city, and he'd been too embarrassed to say so. You send him the photo of the model number and ask when the part will arrive."
+   }
+  ],
+  "ask": [
+   "What behavior did I actually see, and which judgments about character did I add myself?",
+   "What could he choose at the time, and what was holding him back?",
+   "If I had done this, what background would I fill in for myself?"
+  ],
+  "with": [
+   {
+    "id": "bayesian-updating",
+    "sees": "A coworker hands work in late for the third time, and you have to decide whether to keep trusting him. The fundamental attribution error has you first check whether all three got stuck at the same step, such as all waiting on the same person's approval. Bayesian updating says the three records are evidence, and your trust should be revised down. To tell which applies, look at where the delays happened. If they got stuck in the same place, the situation is the main cause; if there's a new reason every time, lower your trust."
+   },
+   {
+    "id": "self-serving-bias",
+    "sees": "At a project review, you say your delay came from the client changing the requirements three times, and that your coworker's delay came from his not planning his time well. The fundamental attribution error reminds you to ask about his situation first too. Self-serving bias reminds you that when it's your own turn, the situation is the reason most easily stretched too far. Only by testing both sides against the same records do you avoid leaning either way."
+   },
+   {
+    "id": "incentives",
+    "sees": "Someone keeps pushing the hard jobs onto others. Seeing it as \"lazy\" puts the behavior straight down to character. First check what he gains and what he loses by taking the job, and you can often see a reason for pushing it off. Incentives uncover one part of the situation."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You handle scheduling at your company. An engineer on the team almost never spoke in Group A's weekly meetings, where the group leader always cut in when he was halfway through. Three months later he moved to Group B, whose leader lets everyone finish. Within two weeks he had put forward four proposals in the weekly meeting.",
+    "question": "Which judgment about his earlier silence has more to back it?",
+    "explain": "The same person's behavior changed as soon as his surroundings did, so the change lies in the surroundings. Putting the silence down to character leaves out the interrupting that kept happening in Group A's meetings.",
+    "options": [
+     {
+      "text": "Group A's meetings kept interrupting him, and part of the silence came from that.",
+      "correct": true,
+      "feedback": "The same person speaks up once he's somewhere he isn't interrupted, which shows that at least part of the silence came from the way Group A ran its meetings."
+     },
+     {
+      "text": "He wasn't capable enough in Group A, and only performed normally once the pressure was lower in Group B.",
+      "correct": false,
+      "feedback": "Nothing on record shows he lacked ability; the four proposals he made in Group B show that what changed was the surroundings."
+     },
+     {
+      "text": "The people in Group B are friendlier, so he was willing to speak.",
+      "correct": false,
+      "feedback": "The question only says Group B's leader lets everyone finish. Nowhere does it say the people in Group B are friendlier."
+     },
+     {
+      "text": "He's introverted, and in Group B he just happened to hit topics that were easy to talk about.",
+      "correct": false,
+      "feedback": "The same person put forward four proposals as soon as he was in Group B. Being introverted can't explain that change, and nothing points to lucky topics."
+     }
+    ]
+   },
+   {
+    "stem": "A box of fresh groceries you ordered was left beside the trash room downstairs, and by the time you got it, it had thawed. You decide the courier was deliberately cutting corners. The courier leaves a message on the delivery platform saying the building's entrance door wouldn't open all day, and that he called you but nobody answered.",
+    "question": "To work out who is responsible for this box, what is most useful to check first?",
+    "explain": "Two parts of the courier's account can be checked: whether the door could be opened that day, and whether he made the call. Only after checking can you talk about whether it was a fault, a slip or corner-cutting.",
+    "options": [
+     {
+      "text": "His daily number of deliveries and his income, to judge whether he was rushing.",
+      "correct": false,
+      "feedback": "Deliveries and income show whether he was busy. They can't tell you what actually happened with this delivery."
+     },
+     {
+      "text": "Just claim compensation under the platform's rules and stop looking into the cause.",
+      "correct": false,
+      "feedback": "Compensation only covers the loss of this box. Nobody looks into the door that wouldn't open or the call that didn't get through, so it will happen again."
+     },
+     {
+      "text": "The entrance door's fault record for that day, and his call log.",
+      "correct": true,
+      "feedback": "These two check his account directly: whether the door could be opened that day, and whether he called. Without them, calling it deliberate or careless has no basis."
+     },
+     {
+      "text": "How many complaints this courier has had in the past three months.",
+      "correct": false,
+      "feedback": "Past complaints can't tell you whether, for this delivery, he could get into the building or whether he called."
+     }
+    ]
+   },
+   {
+    "stem": "You're in charge of sales reviews. This quarter two salespeople's results differ by a factor of three. A was assigned to the old part of town, where the customers are established; B was assigned to a newly developed district, where the housing has only just been handed over to buyers. Someone proposes rating B as \"not trying hard.\"",
+    "question": "Before passing that judgment, what is the best-founded thing to check first?",
+    "explain": "A threefold gap in results could come from the two people, or from the two areas. The results of other salespeople in the same area show directly how much the area itself drags results down.",
+    "options": [
+     {
+      "text": "A's customer satisfaction scores and share of repeat customers this quarter.",
+      "correct": false,
+      "feedback": "A's satisfaction scores answer how well A did; they say nothing about how hard B's area is."
+     },
+     {
+      "text": "This quarter's results for the other salespeople in the new district.",
+      "correct": true,
+      "feedback": "If everyone in that area is low, the area is dragging results down. Only if B alone is low does it come down to the individual."
+     },
+     {
+      "text": "What B studied at university and which school B graduated from.",
+      "correct": false,
+      "feedback": "There's no checkable link between B's major and this quarter's results, so checking it can't separate the person from the area."
+     },
+     {
+      "text": "The average results of all the company's salespeople last year.",
+      "correct": false,
+      "feedback": "A company-wide average mixes all sorts of areas; it can't say how hard the new district itself is."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "You see the driver at once, the ER a block later",
+  "caption": "\"No manners\" comes on the spot; what rushed him is out of sight. When others slip up, check the situation before judging character.",
+  "nodes": [
+   {
+    "id": "cut",
+    "label": "Cut off sharply",
+    "sub": "Nearly clipped"
+   },
+   {
+    "id": "rude",
+    "label": "Rude driver",
+    "sub": "Judged on the spot",
+    "tone": "warn"
+   },
+   {
+    "id": "er",
+    "label": "Rushing to the ER",
+    "sub": "Seen a block later",
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "cut",
+    "to": "rude",
+    "label": "At a glance",
+    "tone": "warn"
+   },
+   {
+    "from": "cut",
+    "to": "er",
+    "label": "Look again",
+    "dashed": true,
+    "tone": "accent"
+   }
+  ]
+ }
+}

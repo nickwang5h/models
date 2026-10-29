@@ -1,0 +1,209 @@
+{
+ "id": "braess-paradox",
+ "name": "Braess's Paradox",
+ "en": "布雷斯悖论",
+ "discipline": "systems",
+ "one_line": "Build one more shortcut, and everyone may end up slower.",
+ "story": "New York closes 42nd Street for Earth Day, and The New York Times reports traffic flowed better instead of jamming",
+ "shallow": {
+  "scene": "April 22, 1990, was Earth Day. To hold events, New York City temporarily closed 42nd Street in Manhattan to cars. It was a main route for drivers crossing Manhattan, and people expected the streets around it to jam solid.\n\nInstead, traffic didn't grind to a halt, and by some reports it even moved a little better than usual. Gina Kolata, a reporter at *The New York Times*, then wrote a story about this surprise. 42nd Street may have acted like a shortcut, drawing cars from every direction to the same set of intersections; once it was closed, the cars spread out over other streets, and traffic moved better.",
+  "plain": "You drive to work every day, and there are two routes. The north route first crosses a bridge that gets slower the more cars are on it, then takes an expressway that always takes 12 minutes. The south route is the other way around: the expressway first, then a tunnel that also gets slower as it fills up. With everyone picking the faster route, things settle at half and half: the bridge and the tunnel each carry only half the cars and take 5 minutes each, so everyone's trip is 17 minutes.\n\nThen a shortcut that takes almost no time is built between the end of the bridge and the start of the tunnel. Bridge, shortcut, tunnel takes only 5 plus 5 equals 10 minutes, so everyone switches to it. But now the bridge and the tunnel both carry all the cars and take 10 minutes each, so everyone's trip becomes 20 minutes. Going back alone to an old route would take 10 plus 12 equals 22 minutes, so nobody goes back. With more road, everyone is slower. In 1968 the German mathematician Braess worked out the same thing on a road network, and the effect is named after him."
+ },
+ "deep": {
+  "mechanism": "### Everyone takes the shortcut, and each trip goes from 65 minutes to 80\n\nSuppose 4,000 cars an hour drive from A to D, by the routes A→B→D and A→C→D. A→B and C→D get congested: they take $t(x)=x/100$ minutes, where $x$ is the number of cars per hour, which means 1 minute for every 100 cars. The other two stretches always take 45 minutes. With half the cars on each route, each congested stretch carries 2,000 cars and takes 20 minutes, so each trip is 20 + 45 = 65 minutes.\n\nNow build a one-way road B→C that takes almost no time. With traffic still split half and half, A→B→C→D takes only 20 + 20 = 40 minutes, so everyone switches to it. Both congested stretches fill with all 4,000 cars, and each trip takes 40 + 40 = 80 minutes.\n\nThis is how the shortcut does harm. Before, each car hit only one congested stretch; on the shortcut it hits two, and both of them now carry all 4,000 cars. At this point, going back alone to an old route would take 40 + 45 = 85 minutes, so nobody goes back. This state, where nobody wants to change route on their own, is called user equilibrium.\n\n### With few cars the shortcut helps; with many it gets in the way\n\nCut the traffic to 2,000 cars: without the shortcut each trip is 10 + 45 = 55 minutes; with it, 20 + 20 = 40 minutes, 15 minutes saved. At 3,000 cars both cases take 60 minutes, exactly even. Add more cars than that, and the shortcut starts slowing everyone down.\n\n**Drivers compare only their own trips and don't count the waiting they add for others.** Each extra car on the shortcut makes everyone on the two congested stretches wait a little longer. So closing the shortcut sends traffic back to half and half; charging a toll on the shortcut can also make it less attractive.",
+  "origin": "Braess's paradox comes from the study of traffic networks and operations research. In 1968 the German mathematician Dietrich Braess published \"On a Paradox of Traffic Planning,\" which used a mathematical road network to prove that when drivers each choose their own routes, a new road can make everyone slower. The 1990 closing of 42nd Street in New York is often given as an example, but the reports at the time didn't measure traffic, so they can't confirm that the paradox really happened. In 2009, a route-choice experiment by Rapoport and colleagues tested the effect under controlled conditions.",
+  "limits": "Braess's paradox is most common in city road networks at morning rush hour, where stretches of road get slower as they fill up and each driver picks a route by their own navigation app. When a stretch always takes the same time, an extra road won't add congestion. When a dispatcher assigns all the trips, the way a company hands out jobs, a new road that doesn't pay off just sits idle, and total travel time won't get worse. When a new ring road jams up again half a year after it opens, commentators often call it Braess's paradox. But there the new road drew in more new cars, so demand grew; in Braess's paradox the number of cars stays the same, and only the way traffic is split changes."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "When planning a link road between two main roads, recount the cars on every road assuming all drivers switch to the link, and compare that with how traffic splits now, instead of estimating the gain from today's traffic."
+   },
+   {
+    "use": "explain",
+    "text": "A newly opened internal passage makes everyone slower at peak times because two fast stretches that used to be separate now fill up with the same people, not because anything is wrong with the passage itself."
+   },
+   {
+    "use": "design",
+    "text": "When setting a toll for a new link road, first work out each person's travel time after everyone switches. If it's longer than without the road, the toll should persuade some cars back to the old routes, until the average travel time is no longer than without the road."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Urban transport",
+    "title": "The overpass came down, and traffic sped up",
+    "text": "In 2003 Lee Myung-bak, the mayor of Seoul, ordered the removal of a 5.6-kilometer elevated road built over the Cheonggyecheon stream. The stream underneath was dug out again and opened to the public in September 2005. Many people feared the city center would jam solid. After the road came down, the number of cars entering the city center fell by only 2.3%, and somewhat more people took buses and the subway, yet traffic in the city moved faster than before."
+   },
+   {
+    "field": "Behavioral experiments",
+    "title": "The longer they played, the more they crowded the shortcut",
+    "text": "In 2009 Rapoport and colleagues had volunteers choose routes on a computer road network, round after round; the shorter their travel time, the more they were paid. One group's network had an extra stretch of road added, and the other group's didn't. The longer they played, the more the group with the new stretch settled on the equilibrium routes worked out on paper: everyone switched to the shortcut, yet they were paid a good deal less than the group without the new stretch."
+   },
+   {
+    "field": "Networks",
+    "title": "A direct link went in, and delays went up",
+    "text": "In a company's internal network, there are two paths between two data centers. Each includes a leased line that can get congested and a link with a fixed delay. Routing software picks paths automatically by live delay, and traffic was split half and half. The operations team installed a direct low-delay link that joined the congestible part of one path to the congestible part of the other. The software measured the joined path, found it shortest, and switched all traffic to it, and both leased lines filled up at once. That evening the average delay was higher than before the link went live. The team shut the direct link off, and the delay came back down."
+   }
+  ],
+  "ask": [
+   "After a new passage opens, look at the navigation or ticket-gate records: how has the number of people on each route changed, and have they crowded onto the same stretches?",
+   "Is the gain I estimated worked out from the old traffic, or from the traffic after everyone switches routes?",
+   "At times with similar numbers of passengers and trains, take turns opening and closing it for a week: does the average travel time get longer or shorter?"
+  ],
+  "with": [
+   {
+    "id": "redundancy",
+    "sees": "There's only one bridge, and if it fails even once, the whole city grinds to a halt. Redundancy says to build a backup road; Braess's paradox says a new road that is open in normal times may make everyone slower at rush hour. The two pieces of advice are exact opposites. If the cost of one failure is too big to accept, build it, and put limits or a toll on the backup road; if everyday congestion is the main loss, first recount assuming everyone switches, then decide."
+   },
+   {
+    "id": "nash-equilibrium",
+    "sees": "At rush hour everyone knows the shortcut is jammed, but going back to the old route alone is slower, so nobody moves. To ask \"why does nobody go back,\" look at Nash equilibrium; to ask \"should this road be built,\" come back to Braess's paradox."
+   },
+   {
+    "id": "externalities",
+    "sees": "City hall wants to know how high to set the toll. On the two congested stretches, for every extra minute you spend there yourself, you make everyone else wait one more minute in total; externalities says that minute is what the toll should make up for. The worked example from Braess's paradox shows that without this charge, even a new road may be built for nothing."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A software company has to run 600 test jobs an hour. Every job is compiled first and then goes through a security check. The fast compile pool and the fast check pool each take the number of jobs per hour divided by 20, in minutes; ordinary compiling and ordinary checking each take a fixed 35 minutes. At first the only choices were \"fast compile + ordinary check\" or \"ordinary compile + fast check,\" and the jobs split half and half. Now the company opens up \"fast compile + fast check,\" and each team picks whichever combination takes the least time. The total number of jobs stays the same.",
+    "question": "Once the teams have adjusted, how long does each job take on average?",
+    "explain": "The new combination makes each job use both shared pools, pulling loads that used to be separate onto the same pools. Each job goes from 50 minutes to 60, but any single team that switched away would be slower, so the choices settle on this worse split.",
+    "options": [
+     {
+      "text": "They spread across the three combinations, gradually falling to 45 minutes.",
+      "correct": false,
+      "feedback": "Even with every job crowded into the fast pools, each pool takes only 30 minutes, still faster than the 35 minutes of an ordinary step, so jobs will keep flowing to the new combination."
+     },
+     {
+      "text": "They stay split half and half as before, at 50 minutes.",
+      "correct": false,
+      "feedback": "Under the old split, switching to the new combination takes only 15 + 15 = 30 minutes, so teams are sure to switch; the old split can't hold."
+     },
+     {
+      "text": "They crowd onto the new combination, then go back to the old ones, returning to 50 minutes.",
+      "correct": false,
+      "feedback": "At that point switching to an old combination takes 30 + 35 = 65 minutes, slower than the 60 minutes of staying on the new one, so nobody goes back."
+     },
+     {
+      "text": "They all crowd onto the new combination, rising to 60 minutes.",
+      "correct": true,
+      "feedback": "With all 600 jobs in the two fast pools, each pool takes 600/20 = 30 minutes, 60 minutes in all. A team switching alone to an old combination would need 65 minutes, so nobody wants to."
+     }
+    ]
+   },
+   {
+    "stem": "A fund processes a fixed number of trades each day through two clearing paths. The time each stage takes rises with the number of trades. The fund plans to add a channel linking the two paths. All trades are assigned by a single system, which works out the total time from the actual load and finds the minimum; it can also leave the new channel completely unused. The old paths, staff and fees all stay the same, and the new channel has no extra upkeep cost.",
+    "question": "After the new channel is added, what happens to the smallest total time the system can achieve?",
+    "explain": "The key is who decides how the traffic is split. Here the system directly finds what is fastest overall and can leave the new channel idle, so the mechanism by which individuals picking their own routes slow everyone down isn't there.",
+    "options": [
+     {
+      "text": "It won't go up: the old way of assigning trades can still be used.",
+      "correct": true,
+      "feedback": "At the very least the system can assign trades as before, so the smallest total time can only stay the same or fall."
+     },
+     {
+      "text": "It may go up: the new channel will draw trades onto shared stages.",
+      "correct": false,
+      "feedback": "Where trades go is decided by the system, not picked by each trade; the system can choose not to send any trades to the new channel."
+     },
+     {
+      "text": "It stays the same: the total number of trades and the old paths haven't changed.",
+      "correct": false,
+      "feedback": "The old plan can still be used, so it won't get worse; but the new channel may also help the system find a better split, so it won't necessarily stay the same."
+     },
+     {
+      "text": "It is sure to fall: there are more paths to choose from.",
+      "correct": false,
+      "feedback": "The new channel may also be no use at all. More choices only guarantee it won't get worse, not that it will get better."
+     }
+    ]
+   },
+   {
+    "stem": "A city opens a new transfer passage in its subway, and passengers are free to choose their lines again. On popular lines at rush hour, people often have to wait for two or three trains before they can get on. After the passage opened, a publicity campaign also brought in more passengers: daily ridership rose by 30%, and the average commute time went up. The only figures available are total daily ridership and average commute time, and the operator wants to judge whether the new passage changed people's route choices and ended up slowing everyone down.",
+    "question": "Which step would best test the operator's explanation?",
+    "explain": "The slowdown after the opening may come from more passengers, or from people changing routes, and the two existing figures mix the two together. To test it, you need to see, at similar levels of demand, how the passage changes people's route choices, and whether that change makes things slower overall.",
+    "options": [
+     {
+      "text": "Compare the average commute time before and after the opening, and see whether the extra minutes are stable.",
+      "correct": false,
+      "feedback": "Ridership also rose by 30% over this time, so a before-and-after comparison can't tell whether more passengers or changed routes caused it."
+     },
+     {
+      "text": "At times with similar ridership and train schedules, take turns opening and closing the passage, and compare the routes people choose and their commute times.",
+      "correct": true,
+      "feedback": "When demand and schedules are the same, any difference between open and closed can only come from the passage; the route records also show whether people crowded onto the same bottlenecks."
+     },
+     {
+      "text": "Measure how much walking time the passage itself saves, and multiply by the number of passengers.",
+      "correct": false,
+      "feedback": "Once passengers change lines, their waiting times change too; adding up only the walking time saved leaves that part out."
+     },
+     {
+      "text": "Count how many people use the new passage each day, and see whether it carries enough of the traffic.",
+      "correct": false,
+      "feedback": "A busy passage only shows it's popular; a popular connection can also draw people onto the same bottlenecks."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "A shortcut turns a 65-minute trip into 80",
+  "caption": "At 4,000 cars an hour. The lines cross at 3,000: with fewer cars the shortcut helps, with more everyone is slower. Drag the cars to see each network's minutes.",
+  "x": {
+   "label": "Cars per hour, A to D",
+   "min": 1000,
+   "max": 4500
+  },
+  "y": {
+   "label": "Time per trip",
+   "unit": " min",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "cars",
+    "label": "Cars per hour",
+    "min": 1000,
+    "max": 4500,
+    "step": 500,
+    "value": 4000
+   }
+  ],
+  "series": [
+   {
+    "name": "With shortcut",
+    "expr": "x/50",
+    "tone": "warn"
+   },
+   {
+    "name": "No shortcut",
+    "expr": "45 + x/200",
+    "tone": "ink"
+   }
+  ],
+  "marks": [
+   {
+    "x": "cars"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "No shortcut",
+    "expr": "45 + cars/200",
+    "unit": " minutes",
+    "digits": 0
+   },
+   {
+    "label": "With shortcut",
+    "expr": "cars/50",
+    "unit": " minutes",
+    "digits": 0
+   }
+  ]
+ }
+}

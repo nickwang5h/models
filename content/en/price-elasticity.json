@@ -1,0 +1,234 @@
+{
+ "id": "price-elasticity",
+ "name": "Price Elasticity",
+ "en": "价格弹性",
+ "discipline": "economics",
+ "one_line": "Whether raising your price brings in more money depends on how many buyers walk away.",
+ "story": "Netflix splits streaming from DVDs, keeping both goes from 9.99 to 15.98 dollars a month, and it loses about 800,000 US subscribers in the third quarter",
+ "shallow": {
+  "scene": "In 2011 Netflix split up its plan, which had cost 9.99 dollars a month and covered both streaming and DVDs by mail. Subscribers who wanted to keep both now had to pay 15.98 dollars a month, about 60% more. As soon as the news came out, people online were furious. In the third quarter of that year, Netflix's US subscribers fell by about 800,000, net.\n\nThat sounds like a lot. But Netflix had about 24 million subscribers in the US, so roughly one in thirty left. The price went up by 60%, and the number of people fell by only about 3%.\n\nWhether a price rise brings in more money comes down to comparing exactly these two numbers.",
+  "plain": "Suppose you run a stall at the gate of a housing estate, selling salt and strawberries, and you raise the price of both by a quarter. Salt goes from 2 yuan a bag to 2.5, you still sell 50 bags a day, and your takings go from 100 yuan to 125. Strawberries go from 20 yuan a box to 25, sales drop from 40 boxes a day to 20, and your takings fall from 800 yuan to 500. People use salt every day, so they buy it even at fifty cents more; nobody needs strawberries, and if they seem too expensive, people buy a bag of oranges instead.\n\nDivide the percentage that sales fell by the percentage that the price rose, and you get what economists call price elasticity. Salt sales didn't fall, so its elasticity is 0. Strawberries rose 25% and sales fell 50%, so their elasticity is 2. With elasticity below 1, raising the price brings in more money; above 1, raising it brings in less."
+ },
+ "deep": {
+  "mechanism": "### Takings rise only if sales fall more slowly than the price rises\n\nSuppose you make handmade leather wallets. At 300 yuan each you sell 100 a month, so you take in 30,000 yuan. Now you raise the price to 330, a rise of 10%. Takings are price times sales. Call the price rise $x$ and the drop in sales $y$; a 10% rise is 0.1. The price becomes $1+x$ times what it was and sales become $1-y$ times, so the new takings are this multiple of the old:\n\n$$(1+x)(1-y)=1+x-y-xy$$\n\nThe last term, $xy$, is two small numbers multiplied together. With a 10% rise and a 10% drop it is only 0.01, so leave it aside for now. What's left, $1+x-y$, says this: if sales fall by less than the price rises, takings go up; if they fall by more, takings go down. Elasticity is $y$ divided by $x$. If $y$ is smaller than $x$, elasticity is below 1 and takings rise; if it's above 1, takings fall.\n\nPlug in the wallets. Sell 5 fewer, and sales drop 5%: elasticity is 0.5 and takings are $330\\times95=31350$ yuan, more than before. Sell 15 fewer, and elasticity is 1.5: takings are $330\\times85=28050$ yuan, less than before.\n\n### The easier it is for buyers to walk away, the more sales fall\n\nIn the month of the price rise, your regular customers couldn't be bothered to switch, and you sold only 5 fewer. A few months later, a small online shop appears selling similar wallets for just 280 yuan each, and your monthly sales slide all the way to 80, down 20%. The same price rise now has an elasticity of 2 instead of 0.5, because buyers have somewhere else to go.\n\n### Takings can fall while profit rises\n\nThe leather and labor for each wallet come to 200 yuan. Before the price rise you made 100 yuan on each, a profit of 10,000 yuan a month. At 330 yuan and 85 sold, takings fall to 28,050 yuan. But you make 130 yuan on each, so the profit is 11,050 yuan, which is more. The 15 wallets you didn't sell brought in less money, but they also saved 200 yuan of cost each. If sales fall to 77, profit comes back to about 10,000 yuan; if they fall to 70, it's only 9,100.",
+  "origin": "Alfred Marshall introduced the elasticity of demand, that is, price elasticity, in his *Principles of Economics* in 1890. By turning changes in both sales and price into percentages and comparing those, you can put a bottle of water and a car side by side.",
+  "limits": "Price elasticity is measured accurately in markets where buyers can choose freely and prices are out in the open. For prices adjusted only once a year, such as contract prices and membership fees, it takes a long time before you can see how buyers react. For goods sold on status and quality, a price rise is itself a good signal, and the number of buyers may rise instead of fall, so the rule \"elasticity below 1 means more money\" doesn't hold. An elasticity measured on one product and one group of buyers will also be wrong if you carry it over to other products or buyers."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Nobody notices a 3-yuan box of matches going up to 4, but when monthly rent goes up by 10%, people start looking at other flats. The bigger the share of your spending something takes, the more you care when its price rises."
+   },
+   {
+    "use": "design",
+    "text": "When pricing a subscription product, show two price levels at the same time to two batches of new users and compare the share who buy at each. That's where you read this product's current elasticity from."
+   },
+   {
+    "use": "predict",
+    "text": "Estimate how many subscribers you'll lose when the renewal price goes up 5% next month: use the share of each kind of subscriber who canceled after last year's price change as a guide, and work out long-term and new subscribers separately."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Personal life",
+    "title": "The top electricity tier",
+    "text": "Your household's electricity use has reached the third and highest tier, where each kWh costs more. In the first month you only turn the air conditioner up by one degree, and your use hardly changes. The next summer the air conditioner breaks, you pick a more efficient inverter model, and that summer you use a good chunk less electricity than the year before."
+   },
+   {
+    "field": "Business",
+    "title": "Cutting the price of a holiday gift box",
+    "text": "Before the Mid-Autumn Festival, a holiday when people give boxes of mooncakes and other gifts, you cut the price of one gift box from 200 yuan to 160, a cut of 20%. When you count up after the holiday, you'd sold 500 boxes before and 550 this time, only 10% more. You work out that your takings fell from 100,000 yuan to 88,000."
+   },
+   {
+    "field": "Public policy",
+    "title": "A soda tax changes buying",
+    "text": "In 2014 Mexico taxed sugary drinks at 1 peso per liter. Researchers led by Colchero analyzed the purchase records of urban households and estimated that purchases that year were 6% lower than predicted without the tax, with bigger drops among poorer households."
+   }
+  ],
+  "ask": [
+   "Last time the price changed, how much did the price people actually paid change? Did only the sticker price move, or did discounts and bundles change too?",
+   "Where did the buyers who left go? Ask a few of them, or look at competitors' sales over that period.",
+   "What percentage was the rise? Two yuan more on something that costs 6 is a different matter from two yuan more on something that costs 600."
+  ],
+  "with": [
+   {
+    "id": "experience-curve",
+    "sees": "You sell a newly launched industrial sensor. Your big customers' production lines are already designed around it, and switching models means stopping production, so price elasticity says a price rise will barely cost you any sales. The experience curve looks at the other end: the more you've made in total, the lower the cost of each unit. Cut your price now to win volume, and in two years your costs will be well below your rivals'; raise it and hold down how much you ship, and you move down that cost line slowly. If rivals can't catch up within two years, raise the price; if they can, build volume first."
+   },
+   {
+    "id": "price-discrimination",
+    "sees": "For the same budgeting app, students are sensitive to price and office workers aren't. When you can post only one price, you have to compare how many people each price level will lose you. When you can check who's who and charge separately, price discrimination lets you set the student price and the worker price each on its own."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A commuter ferry route raises its fare from 20 yuan to 22. At the same time, one boat goes in for repairs, the daily capacity drops from 1,500 passengers to 1,200, and the number actually carried also drops from 1,500 to 1,200. During the repairs every sailing is full, and some people at the pier still can't get on. A news report says the 10% fare rise cut passenger numbers by 20%.",
+    "question": "Does this claim hold up?",
+    "explain": "Fewer sales can mean buyers don't want to buy, or the seller can't supply. Here the number carried is capped by capacity, so it can't measure how passengers react to the fare rise. To judge the fare's effect, you'd need to look at how many buy when capacity isn't limited.",
+    "options": [
+     {
+      "text": "Passenger numbers fell by twice as much as the fare rose, which shows passengers are very sensitive to the rise.",
+      "correct": false,
+      "feedback": "The 20% is how much the number of people the boats can hold went down, not how much less passengers chose to buy. Dividing it by 10% gives a ratio that measures capacity."
+     },
+     {
+      "text": "Total daily fares have already fallen; put the fare back down and passenger numbers will recover to 1,500.",
+      "correct": false,
+      "feedback": "The boats are full and people still can't get on. Even with the old fare, daily capacity is still 1,200, so passenger numbers can't recover."
+     },
+     {
+      "text": "Commuters can hardly give up traveling, so it's safe to infer that the fare rise has little effect.",
+      "correct": false,
+      "feedback": "Passengers can switch to other transport or travel at other times. Being a commuter route doesn't by itself show how small the effect is."
+     },
+     {
+      "text": "Passenger numbers are capped by capacity, so this record can't measure how many people the rise put off.",
+      "correct": true,
+      "feedback": "The boats are full every day and people still can't get on. Of the 20% fewer carried, the record can't separate how many didn't want to go from how many couldn't get on."
+     }
+    ]
+   },
+   {
+    "stem": "You raise the price of an online course from 199 yuan to 249. Before the rise you sold 100 a month; after it, monthly takings are 4% lower. Each sale costs about 60 yuan in teaching-assistant grading and the platform's cut, and your business partner wants to reverse the price rise.",
+    "question": "Before reversing it, what should you do first?",
+    "explain": "Lower takings don't mean lower profit: each sale you lost would have cost 60 yuan too. After the rise you sell about 77, making 189 yuan on each, about 14,500 in all; before it, you sold 100 at 139 yuan each, 13,900 in all. The profit actually went up.",
+    "options": [
+     {
+      "text": "Takings have already fallen, so profit must have fallen too; there's no need to work out anything else.",
+      "correct": false,
+      "feedback": "With fewer sales you also pay the 60 yuan per sale fewer times. Takings can fall while profit rises; you have to do the sums to know."
+     },
+     {
+      "text": "Work out the total profit before and after the rise: each sale's price minus 60 yuan, times the number sold.",
+      "correct": true,
+      "feedback": "The profit on each sale rose from 139 yuan to 189, and the sales you lost saved 60 yuan of cost each. Total profit is about 600 yuan higher, so reversing the rise would lose you money."
+     },
+     {
+      "text": "Look at the website's traffic before and after the rise; if traffic fell, the rise should be reversed.",
+      "correct": false,
+      "feedback": "Traffic only tells you how many people came to look, not how much buyers paid or how much you make on each sale. It has nothing to do with profit."
+     },
+     {
+      "text": "Look at competitors' course prices; if they haven't raised theirs, you should reverse yours.",
+      "correct": false,
+      "feedback": "Competitors' prices don't tell you how buyers of your course react, and they can't tell you whether you make more or less after your own rise."
+     }
+    ]
+   },
+   {
+    "stem": "You raise the price of a membership service by 10% and measure that sales fell only 4%, a ratio of 0.4. Your boss concludes that since the ratio is below 1, doubling the price will surely raise takings too.",
+    "question": "Is your boss right?",
+    "explain": "The ratio was measured around a small price rise. When the price doubles, buyers are in a different situation, so the old ratio can't be applied directly; it has to be measured again.",
+    "options": [
+     {
+      "text": "No. The ratio is only accurate around a small rise; doubling the price needs a new measurement.",
+      "correct": true,
+      "feedback": "After the price doubles, buyers are in a different situation, and the 0.4 measured at a 10% rise can't simply be carried over."
+     },
+     {
+      "text": "Yes. A ratio below 1 means takings will grow however much the price goes up.",
+      "correct": false,
+      "feedback": "Below 1 holds only for the small rise it was measured at. With a bigger rise the ratio changes, and so does the conclusion."
+     },
+     {
+      "text": "No. A ratio measured on a single product can't be used; you need to look up the industry average first.",
+      "correct": false,
+      "feedback": "The ratio measured on your own product near its current price is the closest to your own buyers. An industry average would be less accurate."
+     },
+     {
+      "text": "Yes. Doubling the price will only cut sales by 40%, so takings will still rise.",
+      "correct": false,
+      "feedback": "How far sales fall depends on how big the rise is. A 10% rise losing 4% doesn't mean doubling the price loses only 40%."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Easier to walk away, more takings fall",
+  "caption": "Starts at strawberries: up 25%, elasticity 2, sales halved. Drag elasticity to 0 for salt: takings go up. At 1, takings fall, profit rises (cost: half the old price).",
+  "x": {
+   "label": "Price rise",
+   "unit": "%",
+   "min": 0,
+   "max": 40
+  },
+  "y": {
+   "label": "Up or down vs. before",
+   "unit": "%",
+   "min": -100,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "Price rise",
+    "min": 0,
+    "max": 40,
+    "step": 5,
+    "value": 25,
+    "unit": "%"
+   },
+   {
+    "id": "s",
+    "label": "Elasticity",
+    "min": 0,
+    "max": 3,
+    "step": 0.25,
+    "value": 2
+   },
+   {
+    "id": "c",
+    "label": "Cost / old price",
+    "min": 0,
+    "max": 50,
+    "step": 10,
+    "value": 50,
+    "unit": "%"
+   }
+  ],
+  "series": [
+   {
+    "name": "Takings",
+    "expr": "(1+x/100)*max(0,1-s*x/100)*100-100",
+    "tone": "ink"
+   },
+   {
+    "name": "Profit",
+    "expr": "((1+x/100-c/100)*max(0,1-s*x/100)/(1-c/100)-1)*100",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "x": "p"
+   },
+   {
+    "y": 0,
+    "text": "Same as before"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Sales change",
+    "expr": "max(0,1-s*p/100)*100-100",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "Takings change",
+    "expr": "(1+p/100)*max(0,1-s*p/100)*100-100",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "Profit change",
+    "expr": "((1+p/100-c/100)*max(0,1-s*p/100)/(1-c/100)-1)*100",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

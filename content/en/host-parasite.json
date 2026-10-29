@@ -1,0 +1,212 @@
+{
+ "id": "host-parasite",
+ "name": "Host and Parasite",
+ "en": "宿主与寄生",
+ "discipline": "biology",
+ "one_line": "A parasite that takes too much kills its host and goes down with it.",
+ "story": "Australia releases the myxoma virus to kill off rabbits, and the virus then evolves to be less deadly",
+ "shallow": {
+  "scene": "Someone with a fever so bad they can't get up lies at home and passes the cold to no one; someone with just a stuffy nose goes to work as usual and gives it to the whole office. With rabbits, this shows up even more clearly.\n\nIn 1950, to hold down its exploding wild rabbit population, Australia released the myxoma virus into the rabbits. At first more than 99% of the rabbits that caught it died. The virologist Frank Fenner and others followed it for years and found that the strains (different lines of the same virus) that killed rabbits slowly actually spread further: the more days a rabbit stayed alive, the more times mosquitoes bit it and carried the virus to other rabbits. The strains common in the wild were gradually replaced by the ones that killed more slowly.\n\nA virus that kills too fast cuts off its own way of being passed on.",
+  "plain": "Suppose you go to stay at a friend's place. If on the first day you eat the fridge empty and play music loudly in the middle of the night, you'll be shown the door the next day and get only one day's food. A guest who eats with restraint can stay a month and ends up eating far more in total. But if you're so polite you only have a bowl of rice porridge at each meal, however long you stay, you don't get much to eat. What you get in total equals how much you take each day times how many days you can stay. But the more you take each day, the fewer days you can stay, so the best deal is somewhere in the middle.\n\nThe side that lives off another without giving back is called the parasite, and the side that feeds it is called the host. The virus in the rabbits is doing exactly this sum: the harder the virus multiplies inside a rabbit, the more of it mosquitoes carry off each day, but the faster the rabbit dies."
+ },
+ "deep": {
+  "mechanism": "### What the worms take is the part the host can't make back\n\nHookworms suck blood in the gut. With few worms, the blood a person makes each day can cover the loss; with many, they take more than the body can make back, and a child becomes anemic, grows slowly and can't stay alert in class. If it gets worse still and the person falls ill, the worms in the gut lose their supply too.\n\n### Each extra day the host lives is one more chance for the parasite\n\nFirst look only at how many days the rabbit lasts. Suppose that each day the virus has a chance $p$ of being carried by a mosquito to a new rabbit, and the rabbit lasts $D$ days. The chance $P$ that the virus gets passed on at least once is:\n\n$$P=1-(1-p)^D$$\n\n$(1-p)^D$ is the chance that it isn't passed on on any of the $D$ days in a row; subtract it from 1 and you get $P$. Set $p$ at one in ten. Strain A kills a rabbit in three days: $1-0.9^3\\approx 0.27$, about 27%. Strain B keeps the rabbit going for fourteen days: about 77%. Strain C keeps it going for twenty days: about 88%. The longer the rabbit lasts, the better the virus's chance of being passed on.\n\n### The harder it hits, the more it spreads each day, but the faster the host dies\n\nBut $p$ isn't fixed. The harder a strain multiplies inside the rabbit, the more virus a mosquito picks up with each bite, so $p$ goes up, but the rabbit lasts less time. Suppose A's chance is about 25% a day: over three days that comes to about 58%. B's is about 10% a day: over fourteen days, 77%. C multiplies less, leaving only about 6% a day: over twenty days, about 71%, which is actually worse than B.\n\nThe strain that spreads furthest becomes more and more common among the rabbits, so the parasite ends up at a middle setting like B: it spreads a fair amount each day, and the host lasts long enough. The harm therefore comes down, but not to zero, because a strain that goes as easy as C ends up spreading less than B; and hookworms still leave children anemic.\n\n### When the next host is easy to find, the parasite has no reason to go easy\n\nGoing a bit easier pays only because the parasite needs this host alive to be passed on. In 1991 the evolutionary biologist Paul Ewald compared the various gut bacteria that infect people and found that the ones spread through water caused more severe disease: the patient is stuck in bed, and the bacteria still flow through dirty water to the next person. The same goes for people: if someone can find a new person to support them every day, wearing out the one in front of them costs them little.",
+  "origin": "This model comes from parasitology and evolutionary biology, and no single person proposed it. From the 1950s, the work by Fenner and others following the myxoma virus in Australia's rabbits provided the classic evidence. In 1982 Roy Anderson and Robert May used mathematical models to study how hosts and parasites evolve together, showing that how much harm a parasite does is limited by the conditions for spreading.",
+  "limits": "It applies only when you can point to all three: ongoing attachment, one side gaining, and concrete harm; for example, someone dipping into an emergency fund for a long time. Two situations look similar but don't fit: a supplier that helps a customer raise output, where both sides gain; and a caregiver who chooses to carry an extra load, which comes from their relationship with and responsibility toward the other person. Calling a person a \"parasite\" is also a misuse: this model is for spelling out who lost what, not for labeling people."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Explain why a franchise chain that raises its cut from franchisees year after year first sees its stores change hands more and more often, and later can't even attract new stores."
+   },
+   {
+    "use": "act",
+    "text": "When setting a revenue-sharing contract, first work out how much the other side has left on each order after your cut. If it drops below zero, they'll quit sooner or later, and that's when you should bring your share back down."
+   },
+   {
+    "use": "predict",
+    "text": "Predict which suppliers a big supermarket will lose first within a year or two after it stretches payment terms from 60 days to 180: the small factories with the least cash."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "A worm drags down its own hosts",
+    "text": "In November 1988, Robert Morris, a graduate student at Cornell University in the US, released a worm program. It infected networked Unix computers again and again, so many copies could be running on the same machine, eating up all the processor time and memory, and many machines slowed to the point of being unusable. To get rid of it, administrators cut their machines off the network, and the worm had fewer paths to travel."
+   },
+   {
+    "field": "Business",
+    "title": "The commission eats the craftsman",
+    "text": "You open a shop on an online marketplace selling handmade ceramic cups. Each cup sells for 100 yuan, and materials, kiln fees and your working hours come to 80 yuan. The platform takes a 10-yuan commission, and you make 10 yuan a cup; the platform raises the commission to 25 yuan, and you lose 5 yuan a cup. First you stop making new designs, then you fire fewer and fewer pieces in the kiln, and in the end you close the shop. The platform has one less shop selling handmade cups, and the repeat customers who came for yours stop coming too."
+   },
+   {
+    "field": "Personal life",
+    "title": "Free Wi-Fi until the password changes",
+    "text": "In the old apartment complex where you live, the neighbor's Wi-Fi has no password, and you use it every night to download big files. His videos stutter worse and worse; he looks into it and puts a password on the router. The next night you open your computer and find you can't connect anymore."
+   }
+  ],
+  "ask": [
+   "Who keeps providing the resources? What do they lose because of it: money, time, or other people's trust in them?",
+   "Of the extra I'm getting now, how much is drawing on the other side's reserves rather than what they newly produce each day?",
+   "How many more rounds can the other side's reserves last? Look at whether their margin has been getting thicker or thinner over the last two years."
+  ],
+  "with": [
+   {
+    "id": "mutualism",
+    "sees": "A small factory uses 80% of its capacity to supply one big customer. Mutualism sees steady orders and two sides that have learned to work together, and argues for tying in further and upgrading together. Host and parasite goes through the factory's books, sees prices pushed below cost and equipment not replaced in three years, and argues for shrinking that customer's share or first renegotiating the price. The two views give opposite advice about the same orders. Put how far this customer has pushed prices down over these years next to the factory's gross margin, and you can tell which one to trust."
+   },
+   {
+    "id": "tragedy-of-commons",
+    "sees": "The fish in the village lake are getting scarcer. Tragedy of the commons, following Ostrom, has the households that use the lake set their own rules and take turns patrolling. Host and parasite looks at whose living is tied to this lake: an outside boat that fishes only one season has no reason to leave fish to breed for next year; only the people who have lived off the lake for generations do. If many households live by the lake and see each other every day, manage it together the commons way; if most of the people using the lake are outsiders passing through, first limit fishing rights to those who live there, then talk about rules."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "For three years in a row, a group has taken almost all of the money its paper mill earns, leaving only enough to keep it running. The mill's income statement has shown a profit every one of those years, and the books look good.",
+    "question": "To find out how much of this paper mill's foundation is left, what should you look at first?",
+    "explain": "What's being taken is the reserve the paper mill needs to keep itself going. A profit shows that it can still run. Whether its equipment is aging and its technology falling behind depends on whether money is being spent on repairs, upgrades and research.",
+    "options": [
+     {
+      "text": "How much the dividends in the group's annual report have grown over the three years.",
+      "correct": false,
+      "feedback": "The growth in dividends is exactly the part being taken away; it tells you nothing about the mill's own condition."
+     },
+     {
+      "text": "Whether spending on repairs, upgrades and research is enough to make up for the wear on the equipment.",
+      "correct": true,
+      "feedback": "Wear on equipment goes on all the time. If this spending falls short of the wear for a long time, the foundation is getting thinner."
+     },
+     {
+      "text": "Whether the number of staff has gone up in these three years, and how many positions are unfilled.",
+      "correct": false,
+      "feedback": "Headcount shows size; it doesn't show whether the machines and technology can hold up."
+     },
+     {
+      "text": "Whether this year's net profit is still positive, and how much it rose or fell from last year.",
+      "correct": false,
+      "feedback": "A profit only shows the mill is still making money this year. What's being taken is long-term money like repairs and upgrades, and this figure doesn't show that."
+     }
+    ]
+   },
+   {
+    "stem": "In peak tourist season, a vendor at the entrance to a scenic spot sells bottled water at three times the usual price. Plenty of tourists turn around and leave, and the vendor isn't worried: new tourists come every day, and most of them will only ever come once in their lives. In the same city, the vendors at a neighborhood market don't dare do this.",
+    "question": "Why can the vendor at the scenic spot price like this when the market vendors can't?",
+    "explain": "A market vendor's income depends on the same familiar customers buying day after day, so overcharging them cuts off their own livelihood. The scenic-spot vendor faces an endless stream of tourists. Losing a few of them doesn't touch tomorrow's income, so the harm never comes back to bite.",
+    "options": [
+     {
+      "text": "The tourists are new people every day, so overcharging one doesn't hurt the vendor's future business.",
+      "correct": true,
+      "feedback": "Tourists don't come back, so the cost of losing each one he overcharges never lands on him."
+     },
+     {
+      "text": "Vendors at scenic spots are just greedier by nature than market vendors and like taking advantage.",
+      "correct": false,
+      "feedback": "This puts it down to character; move them to the market and their behavior would change too. The question asks about the difference in their situations."
+     },
+     {
+      "text": "The scenic-spot vendor's costs are much higher than the market's, and raising prices is the only way to cover them.",
+      "correct": false,
+      "feedback": "How high the costs are doesn't explain why he isn't worried about tourists never coming back."
+     },
+     {
+      "text": "Tourists don't know local prices, so they can't tell they're being overcharged and just have to accept it.",
+      "correct": false,
+      "feedback": "The tourists can see the price; plenty of them in the question turned around and left. What's different is that the vendor doesn't need these tourists to come back."
+     }
+    ]
+   },
+   {
+    "stem": "Every month the R&D department borrows three experienced staff from customer service to do product testing. This has gone on for a year; the hours are never paid back, and customer service's call targets haven't been lowered at all. By the end of the year, the number of people quitting customer service has doubled and the new hires can't fill in yet. When R&D comes to borrow people again, customer service has no experienced staff to send.",
+    "question": "For R&D to be able to keep borrowing experienced staff from now on, which one thing most needs to change?",
+    "explain": "The experienced staff R&D borrows are a reserve that customer service built up year after year. With hours not paid back and targets not lowered, customer service only gives and never gets anything back. Once the reserve is drained, R&D's own source dries up too. Only if the borrowing helps customer service replace the staff it loses is the source kept going.",
+    "options": [
+     {
+      "text": "Borrow customer service's new hires instead, and leave the experienced staff for customer service's own use.",
+      "correct": false,
+      "feedback": "New hires can't do the testing, and customer service would still be only giving and getting nothing back, so its reserve would keep getting thinner."
+     },
+     {
+      "text": "Before each loan of staff, hold a rally explaining how important product testing is to the whole company.",
+      "correct": false,
+      "feedback": "Explaining why it matters doesn't give customer service one more person; none of the hours taken away come back."
+     },
+     {
+      "text": "While people can still be borrowed, borrow enough for the whole year in one go.",
+      "correct": false,
+      "feedback": "Borrowing it all at once only drains customer service faster, and next year there will be no one left to borrow."
+     },
+     {
+      "text": "Pay customer service back for the hours borrowed, and lower its call targets to match.",
+      "correct": true,
+      "feedback": "Paying for the hours and lowering the targets gives customer service the money and the time to replace staff, so there will always be experienced people."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Kill too fast or too slow, and a virus won't go far",
+  "caption": "Counting days alone, longer is better (dashed). Milder strains spread less each day, so the total rises, then falls, peaking at ten-odd days. Drag to see each.",
+  "x": {
+   "label": "Days rabbit lasts (deadlier = fewer)",
+   "min": 1,
+   "max": 40
+  },
+  "y": {
+   "label": "Chance of reaching a new rabbit",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "d",
+    "label": "Days rabbit lasts",
+    "min": 1,
+    "max": 40,
+    "step": 1,
+    "value": 14,
+    "unit": " days"
+   }
+  ],
+  "series": [
+   {
+    "name": "Days alone",
+    "expr": "100*(1-0.9^x)",
+    "tone": "muted",
+    "dashed": true
+   },
+   {
+    "name": "With daily spread",
+    "expr": "100*(1-(1-0.32*exp(-x/12))^x)",
+    "tone": "accent"
+   },
+   {
+    "name": "Chance per day",
+    "expr": "32*exp(-x/12)",
+    "tone": "ink"
+   }
+  ],
+  "marks": [
+   {
+    "x": "d"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Chance per day",
+    "expr": "32*exp(-d/12)",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "Total chance",
+    "expr": "100*(1-(1-0.32*exp(-d/12))^d)",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

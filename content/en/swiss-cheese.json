@@ -1,0 +1,226 @@
+{
+ "id": "swiss-cheese",
+ "name": "Swiss Cheese Model",
+ "en": "瑞士奶酪模型",
+ "discipline": "systems",
+ "one_line": "Every safeguard has holes, and accidents happen when the holes line up.",
+ "story": "On March 6 the ferry Herald of Free Enterprise leaves Zeebrugge with its bow doors open and capsizes, killing 193; Sheen's formal inquiry reports that July and traces the blame up to company management",
+ "shallow": {
+  "scene": "On the evening of March 6, 1987, the British ferry *Herald of Free Enterprise* set out from the Belgian port of Zeebrugge for Dover in England. As it left port, the big doors at the bow, which cars drive in and out through, were still open. A few minutes later, seawater poured in over the bow onto the car deck, the ship capsized, and 193 people died.\n\nThe British judge Sheen led the formal inquiry, which reached its conclusions in July that year. It found that under the division of duties someone was supposed to close the bow doors, but they weren't closed, and no second person checked; nor could anyone on the bridge see whether the doors were shut. The report didn't stop at that one door. It traced the matter all the way up to company management: one open door could lead to disaster only because the several checkpoints that should have stopped it were all empty at the same time.",
+  "plain": "Your mortgage payment is taken automatically from your salary account each month. This month your pay came two days late, and the account was 300 short. The text reminding you of the payment was filed into your phone's spam folder. You were away on business that week and never once opened your banking app. And the payment date fell on a holiday, so the bank didn't call. Normally, if just one of these four had worked, you would have topped up the account. This time all four went wrong at once, and a late payment went on your credit record.\n\nSafety engineers use the Swiss cheese model to explain accidents like this. Each line of defense is a slice of cheese with holes in it. Stack several slices and hold them up to a light, and the light can't get through, because the holes in one slice are blocked by the solid parts of the next. Only when the holes in several slices happen to line up does the light get through, and the accident happens."
+ },
+ "deep": {
+  "mechanism": "### Each slice's holes are open only part of the time\n\nPicture a workshop with four lines of defense, each of which leaks 20% of the time: the inspector is on a day off, the alarm is down for maintenance, a broken door card hasn't been replaced. For a hazard to get through, all four have to be leaking at once. Call the chances that each line is leaking $p_1,p_2,\\dots,p_n$. If whether one line leaks doesn't affect the others, the chance of getting through is\n\n$$p_1\\times p_2\\times\\cdots\\times p_n$$\n\nOf the times the first line is leaking, the second is also leaking only a share $p_2$ of the time, and so on, so you multiply line by line. Halve the leaking time of any one line, and the chance of getting through halves too.\n\nWith four lines each leaking 20%, the chance of getting through is $0.2^4=0.16\\%$, about one in six hundred. Push each one down to 10%, and the chance is $0.1^4$, one in ten thousand, just a sixteenth of what it was.\n\n### One upstream decision can widen the holes in several slices at once\n\nHoles come from two sources. One is people on the front line making a mistake or skipping a step on the spot; these holes come fast and go fast. The other is hidden upstream, created by decisions about things like staffing schedules, budgets and choice of equipment. Normally you can't see these, and the psychologist Reason called them latent conditions. Back to the workshop: the company cuts the night-shift double-check post, and the leaking time of three lines rises together from 20% to 50%. The chance of getting through becomes $0.5\\times0.5\\times0.5\\times0.2=2.5\\%$, about sixteen times what it was.\n\n### A review follows the path the hazard took, backward\n\nChase only the last person who acted, and you've patched only one hole in one slice. The workshop's review form has a column for each of the four lines: what the hole was, how long it was open, and whose decision kept it open. In three of the columns, the last question points to cutting the night-shift double-check post, and that is what needs changing.",
+  "origin": "The British psychologist James Reason published *Human Error* in 1990. He treated an accident as several layers of defense being breached one after another, and he told on-the-spot slips apart from latent conditions hidden in management decisions. In 1997 he published *Managing the Risks of Organizational Accidents*, and in 2000 he published \"Human Error: Models and Management\" in the *BMJ*, the British Medical Journal. Through these, the idea spread into engineering and medicine. Accounts differ on who first drew the picture of cheese slices.",
+  "limits": "It is best for reviewing systems with several checks by people and equipment, where an accident is costly: aviation, medicine and chemical plants, for example. The multiplication has a condition: the lines of defense have nothing to do with each other. But with more lines, the people at each checkpoint easily start counting on others. During sign-off, everyone thinks someone further along will look closely, so several holes grow together. Then the lines are no longer independent, and the multiplication comes out too low; adding one more line may even make the whole thing looser.\n\nThe picture of cheese slices is still, but the holes move over time: open at night, open in the busy season, closed again in the daytime. After the fact, you can find holes in every slice. Patching all of them without telling which matter more is the same as missing the ones that count."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "When reviewing an accident that shut down a line, set out the state of every line of defense that night in a row, and see which slices were leaking at the same time."
+   },
+   {
+    "use": "design",
+    "text": "When planning maintenance at a chemical plant, don't let the maintenance shutdowns of several lines of defense fall on the same night."
+   },
+   {
+    "use": "explore",
+    "text": "Draw your team's lines of defense, ask of each slice when it is open, and find the gaps nobody has thought of."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "The checkout price drops to zero",
+    "text": "Your online shop changed a discount rule, and three hours after it went live, a batch of products had a checkout price of 0 yuan. In code review, your colleague looked only at the few lines that changed. The automated tests used the old price list. The gradual rollout sent only 1% of traffic to the change, and it ran in the early morning. Monitoring watched only for errors, not order amounts. You changed the tests to read the latest price list, moved gradual rollouts to the daytime, and added a monitoring alert for \"checkout price below cost.\" On the next discount change, the first batch of rollout orders set off the alert, and the change was pulled on the spot."
+   },
+   {
+    "field": "Home",
+    "title": "The medicine bottle on the low cabinet",
+    "text": "Your child is two, and the cold medicine sits on a low cabinet in the living room. Once, the child-safety cap wasn't screwed on tight, the cabinet had no lock, and you happened to be in the kitchen on the phone. When the child got hold of the bottle, you turned and saw it before the cap came loose. You moved the medicine into a high cabinet with a lock, screw the cap tight right after every dose, and bring the child into view before taking a call."
+   },
+   {
+    "field": "Education",
+    "title": "A three-day hole at the end of term",
+    "text": "You work in a school's academic office. While grades were being entered at the end of term, a student's 86 was typed in as 68. The transcript went out, and he lost his eligibility for a scholarship. Normally a second teacher spot-checks the original exam paper behind every grade, but in the three rushed days at the end of term, the spot checks stopped. The system only checked that a score was between 0 and 100. The notice board posted only rankings, not scores. You moved the spot checks to just before grades are released, away from the rush, and required two people to each enter the grades once, with the system flagging any mismatch."
+   }
+  ],
+  "ask": [
+   "On the night it happened, what state was each line of defense in? Go through the staffing schedules, maintenance records and alarm logs.",
+   "How many of these holes came from the same upstream decision? Look up the budget approvals and the notices of staffing changes.",
+   "In the last similar accident, had the same hole opened before?"
+  ],
+  "with": [
+   {
+    "id": "redundancy",
+    "sees": "At a care home, an elderly resident gets out of bed at night and falls. The budget is only enough for one thing: install a backup circuit for the call bells, or find out why several layers of protection all failed to stop the fall that night. Redundancy argues for a separate backup circuit, so the bells won't all fail together. The Swiss cheese model turns up something else: the bed rail wasn't raised; rounds were two hours apart because the night shift was one person short; and the bell pull was hanging on the bedside table, out of reach. None of the three holes was in the circuit. If the call bell itself keeps breaking down, back it up first; if the bell works fine and things still go wrong, go and find the holes first."
+   },
+   {
+    "id": "five-whys",
+    "sees": "The elevator in your apartment complex has trapped people again. Five whys asks down one chain: the door sensor is dirty because the maintenance contract is paid by the quarter; switch to monthly maintenance, and that link is fixed. The Swiss cheese model keeps counting: the alarm button for trapped passengers didn't sound either, the building management office has nobody on duty at night, and the emergency phone number posted is the old one. Fixing only the maintenance fixes only one slice. For small faults that keep coming back, following one chain to the end is enough; where a single incident has serious consequences, first count how many slices were breached."
+   },
+   {
+    "id": "hindsight-bias",
+    "sees": "At the review meeting, faced with the several holes laid out in front of them, everyone says \"someone should have caught this one long ago.\" The Swiss cheese model asks you to list the holes one by one. Hindsight bias warns that once you know the outcome, every hole looks obvious, though the people there that night may not have been able to see it. When listing the holes, ask one more question beside each column: who had what information that night, and could they see it? For any hole where you can't answer, the fix lies in information and prompts, not in blame."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're the quality manager at a cookie factory. A batch of cookies containing peanuts was packed in packaging labeled \"nut-free,\" and a customer found it. The investigation shows: the recipe change wasn't passed on to the packing line; the cleaning record for the line changeover went unsigned that day; the outgoing sample check looks only at appearance and weight; and the worker sealing the cases goes only by the labels on the cases. The boss says: discipline the case sealer, and that's the end of it.",
+    "question": "To make this kind of thing happen less often, what should be done first?",
+    "explain": "The accident happened only because four gaps were open at the same time. Replace the last person who acted, and the other three stay open. You need to find out, one by one, why they were open, and change the upstream practices that created them.",
+    "options": [
+     {
+      "text": "Hold a food-safety training session for the whole factory and tell everyone to be more careful.",
+      "correct": false,
+      "feedback": "The training doesn't touch any specific gap; next time the recipe change still won't reach the packing line."
+     },
+     {
+      "text": "Find out one by one why all four gaps were open at once, and change the practices behind them.",
+      "correct": true,
+      "feedback": "Each of the four gaps came about in its own way. Only by changing things where they came from can you stop several of them lining up next time."
+     },
+     {
+      "text": "Discipline the case sealer and announce it to the whole factory as a warning.",
+      "correct": false,
+      "feedback": "Discipline is aimed only at the last person who acted. The recipe, cleaning and sample-check gaps stay open, and next time someone else will end up in the same spot."
+     },
+     {
+      "text": "Require the case sealer from now on to open every case and check what's inside.",
+      "correct": false,
+      "feedback": "This piles more onto the last post. Gaps like recipe changes not reaching the packing line and sample checks not testing ingredients are still open."
+     }
+    ]
+   },
+   {
+    "stem": "A construction site has 6 records of near-falls in a year, and each time the worker's safety harness caught them. Over the same period, several floors had sections of edge guardrail missing, covers over floor openings were moved aside, and the pre-shift safety briefing was read out once and signed. The project manager says, \"The safety harness is a very reliable line, which shows our safety management is fine.\"",
+    "question": "How should these near-miss records be read?",
+    "explain": "Every near miss ended up at the last line, which shows that the guardrails, covers and briefings in front of it were already leaking. The day the last line leaks too, there will be an accident.",
+    "options": [
+     {
+      "text": "Nobody got hurt, which shows the risk on site is low, so there's no need to keep counting near misses.",
+      "correct": false,
+      "feedback": "Nobody got hurt because the last line held. The risk hasn't fallen at all, and without counting you can't see how many lines in front of it have already leaked."
+     },
+     {
+      "text": "The near misses all came from workers' own carelessness, so give each worker involved a talking-to.",
+      "correct": false,
+      "feedback": "Missing guardrails and moved covers are conditions on the site; talking to workers can't change them."
+     },
+     {
+      "text": "Since the harnesses are reliable, put the budget into better harnesses and hold off on guardrails and covers.",
+      "correct": false,
+      "feedback": "Take away the lines in front, and the last line carries even more. The day it fails, there's nothing behind it to catch anyone."
+     },
+     {
+      "text": "The earlier lines had been leaking for a long time, and every time it was the last line that caught the fall.",
+      "correct": true,
+      "feedback": "Every near miss landed on the last line, which shows the lines in front of it weren't working."
+     }
+    ]
+   },
+   {
+    "stem": "A company's money transfers need four manual approvals. Last month a payment went to a supplier's old account, which the supplier had already replaced, and all four people clicked approve. Afterward all four said, \"I thought someone further along would look closely.\" The approval screen shows only the amount and the payee's name, not whether the payee's account number has changed.",
+    "question": "Which of these closes this gap most directly?",
+    "explain": "The four people saw the same form and missed the same thing. The gap is closed only when every line is made to look at that thing.",
+    "options": [
+     {
+      "text": "The screen flags whether the account number has changed, and nobody can approve without confirming it.",
+      "correct": true,
+      "feedback": "This puts the item in front of everyone, and nobody can get past it without confirming, so no one is counting on the people further along any more."
+     },
+     {
+      "text": "Fine each of the four approvers, so future approvers look closely.",
+      "correct": false,
+      "feedback": "A fine doesn't change what the screen shows; the next approvers face the same form."
+     },
+     {
+      "text": "Add a fifth approval, with the department director as the final check.",
+      "correct": false,
+      "feedback": "The director sees the same form. The screen doesn't show whether the account changed, so he can't see it either."
+     },
+     {
+      "text": "Require everyone to handwrite \"checked carefully\" on the form before signing.",
+      "correct": false,
+      "feedback": "Handwritten words don't put the account change in front of anyone; the people signing still can't see that thing."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "More lines cut risk; one upstream call lifts it back",
+  "caption": "Across: lines stacked, each leaking part of the time. Drag \"Leak per line\": the curve falls by multiplying. Then drag \"Leak after cut\": how much likelier all four leak.",
+  "x": {
+   "label": "Lines of defense",
+   "min": 1,
+   "max": 6
+  },
+  "y": {
+   "label": "Chance all are breached",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "q",
+    "label": "Leak per line",
+    "min": 5,
+    "max": 40,
+    "step": 5,
+    "value": 20,
+    "unit": "%"
+   },
+   {
+    "id": "u",
+    "label": "Leak after cut",
+    "min": 20,
+    "max": 80,
+    "step": 10,
+    "value": 50,
+    "unit": "%"
+   }
+  ],
+  "series": [
+   {
+    "name": "Each leaks alone",
+    "expr": "100*pow(q/100, x)",
+    "tone": "ink"
+   },
+   {
+    "name": "After the post cut",
+    "expr": "100*pow(max(u,q)/100, min(x,3))*pow(q/100, max(x-3,0))",
+    "tone": "warn"
+   }
+  ],
+  "marks": [
+   {
+    "x": 4,
+    "text": "Four lines"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "All 4 leak",
+    "expr": "100*pow(q/100, 4)",
+    "unit": "%",
+    "digits": 2
+   },
+   {
+    "label": "All 4, after cut",
+    "expr": "100*pow(max(u,q)/100, 3)*q/100",
+    "unit": "%",
+    "digits": 2
+   },
+   {
+    "label": "Times as likely",
+    "expr": "pow(max(u,q)/q, 3)",
+    "unit": "×",
+    "digits": 0
+   }
+  ]
+ }
+}

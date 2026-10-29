@@ -1,0 +1,222 @@
+{
+ "id": "diminishing-returns",
+ "name": "Diminishing Returns",
+ "en": "边际收益递减",
+ "discipline": "economics",
+ "one_line": "Each extra bit of the same effort gets you a little less than the last.",
+ "story": "Rothamsted's Broadbalk wheat trial on fertilizer begins, and its 1968–2016 data show the yield gain from nitrogen slowly flattening out",
+ "shallow": {
+  "scene": "Anyone who has grown flowers probably knows this: give a pot a little fertilizer, and the flowers clearly bloom better. Give it twice as much, though, and you don't get twice the flowers. Wheat farmers care about the same question: if you double the fertilizer, does the harvest double too?\n\nAt Rothamsted in England there is a wheat field that has been answering this question for more than 180 years. In 1843, John Bennet Lawes and Joseph Henry Gilbert divided the field into strips, gave each strip a different fertilizer, and recorded the harvest every year. The experiment is still being grown today.\n\nLater researchers lined up the harvests by how much nitrogen each strip got, and what they saw was a curve that slowly flattens out. The first few doses of nitrogen made yields rise fast; the further along, the slower they rose. The fertilizer was still going in, the same amount at each step, but the extra wheat it brought in got smaller with every step.",
+  "plain": "You read through a résumé from start to finish and catch 12 typos and clumsy sentences. You read it again and catch only 5; a third time, 2. Each read takes the same time, and your eyes are just as good. You catch fewer because the easy ones were caught first, and the ones left are fewer and better hidden. Each extra unit of the same effort brings a smaller gain than the one before: that is diminishing returns. Over the three reads the total caught is still going up, only more and more slowly."
+ },
+ "deep": {
+  "mechanism": "### The easy part gets done first, so each later unit gets you less\n\nSuppose the résumé hides 20 errors in all, and every time you read it you catch 60% of the ones still left and miss 40%. The first read catches 12, leaving 8. The second catches 60% of those 8, about 5, leaving a little over 3. The third catches about 2. As a formula, the number newly caught on read $k$ is:\n\n$$\\Delta_k = 20\\times 0.6\\times 0.4^{k-1}$$\n\n20 is the number of errors at the start, 0.6 is the share caught each read, and 0.4 is the share missed each read. In other words, each read newly catches only 40% of what the read before it did: the effort hasn't changed, but there are fewer errors to catch. Over three reads the running total is about 12, 17 and 19. It is still going up, just more and more slowly.\n\n### The one thing that wasn't added holds back the new hands\n\nReturns also shrink for another reason: the work hasn't got harder, but something that wasn't added along with everything else has filled up. A small noodle shop has only one stove. Suppose one person turns out 20 bowls an hour, two people 35 bowls, three people 45, and four people 50. Everyone is equally skilled, yet each extra person adds only 15, 10, then 5 bowls. The missing bowls are stuck at the stove. The second person keeps prep and cooking flowing into each other, but there is still just the one stove; the third person starts spending part of the time standing at the stove waiting for a spot.\n\n### The size of the fixed thing decides where the curve flattens\n\nSwap in a small stove that can turn out at most 30 bowls an hour, and look at the same staff again: the first person turns out 20 bowls, the second can add only 10, and the third can't add a single bowl. Swap back to the original stove, and a fourth person still adds 5 bowls. The bigger the stove, the more people have to be added before output flattens out; the smaller the stove, the sooner you hit the ceiling, already with the second person.",
+  "origin": "In 1767 the French economist Turgot, writing about investment in farming, already described how the return on extra investment first rises and then falls. In the 19th century, David Ricardo and others used this rule to explain land rent. Rothamsted's long-running fertilizer experiment became the classic example of how input and output are related.",
+  "limits": "Farmland, a stove, a server: places where one thing is fixed and you keep adding only another kind of input are exactly where it explains things clearly. When people are first being added, the first few units can actually make each gain bigger, because only with more people can the work be split up. Learning and research often take a while to show results, so no results from the first few tries doesn't count as diminishing. Stopping as soon as you see the gains shrink is also a misreading: as long as the extra unit still brings back more than it costs, keep adding."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "If you add a sum to your ad budget on the same channel every week, line up the gross profit each new sum brings in. From the first sum that brings back less gross profit than it cost, or less than it would on another channel, start moving the money away."
+   },
+   {
+    "use": "design",
+    "text": "When planning revision for final exams, first estimate how many points one more hour would add in each subject, and put the time into the subjects where it adds the most instead of splitting it evenly."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Work",
+    "title": "Overtime doesn't buy equal output",
+    "text": "In 2014, the Stanford economist John Pencavel analyzed records of British munitions workers during the First World War and found that once working hours were stretched past a certain point, output grew more and more slowly. By his estimate, working 70 hours a week produced very little more than working 56. The extra 14 hours bought almost no extra finished goods."
+   },
+   {
+    "field": "Technology",
+    "title": "More processors, less and less gain",
+    "text": "A task in front of you takes 60 minutes. 30 of those minutes can be split evenly across several processors; the other 30 have to be done step by step in order. Under ideal conditions with no communication overhead, two processors take 45 minutes, three take 40, and four take 37.5. With each processor added, the time saved drops from 15 minutes to 5, then to 2.5."
+   },
+   {
+    "field": "Personal life",
+    "title": "The third cup of coffee",
+    "text": "You rely on coffee to get through afternoon meetings every day. After the first cup, the two o'clock sleepiness goes away. The second cup just about keeps your eyes open. What the third cup brings is mostly jitters. You swap the third cup for a ten-minute walk, note in your phone how you feel at four o'clock, and compare after a week."
+   }
+  ],
+  "ask": [
+   "What exactly is the same unit I add each time? Lined up, how does each new result change?",
+   "What hasn't been added along with it, and is now holding back the new input?",
+   "If the next unit of input brings back only about this much, am I still willing to pay that price?"
+  ],
+  "with": [
+   {
+    "id": "economies-of-scale",
+    "sees": "Every extra dose of nitrogen you put on a field adds less to the harvest than the one before; when several households in a village join their fields into one and buy a combine harvester together, the machinery cost per mu (a Chinese unit of land) actually falls. The first tells you not to keep forcing more onto the same field. The second is economies of scale, which tells you to join the land up and do it bigger. Which applies depends on whether you're adding one kind of input or scaling up the whole set together."
+   },
+   {
+    "id": "marginal-thinking",
+    "sees": "A coffee stall opens one more hour each day, and the extra customers it brings in keep getting fewer. Diminishing returns only tells you they are getting fewer. Whether the next hour is worth opening takes marginal thinking: compare the extra income from that hour with the extra electricity and wages."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "During a sale, you add staff to your online shop's warehouse. There are plenty of orders, the warehouse has only one shipping-label printer, and the goods and packing process stay the same. With one skilled worker per shift, 80 orders go out; with two, 140; with three, 180. The new workers are equally skilled, and the third worker often has to queue for shipping labels.",
+    "question": "If you add just one more worker, what do you expect?",
+    "explain": "Each time you add an equally skilled worker, the extra orders fall, from 60 to 40. The fixed label-printing capacity explains why adding more people may do even less; even as the extra orders shrink, the total can still grow.",
+    "options": [
+     {
+      "text": "Each shift may get another 60 orders, which can be estimated from the current workers' average output.",
+      "correct": false,
+      "feedback": "The fourth worker will also run into the queue at the label printer, so the extra orders won't still be 60."
+     },
+     {
+      "text": "The extra orders per shift may be more than 60, because four people can split the work more finely.",
+      "correct": false,
+      "feedback": "The limit right now is waiting for labels, and there's no sign that more splitting of the work can get past the printer's capacity."
+     },
+     {
+      "text": "The extra orders per shift may be fewer than 40, because waiting for labels will hold back the extra hands.",
+      "correct": true,
+      "feedback": "The extra orders have already fallen from 60 to 40, and the label printer already has workers waiting. If you only add people, that limit will keep shrinking the next worker's extra output."
+     },
+     {
+      "text": "Total orders per shift may fall below 180, because new workers drag down output per person.",
+      "correct": false,
+      "feedback": "Lower output per person is not the same as lower total output; a new worker may still get some extra orders done."
+     }
+    ]
+   },
+   {
+    "stem": "An investment manager running a university endowment adds 1 million yuan in stocks in each of three years in a row. The three sums buy clean energy, consumer and bank stocks, each held for one year, and the profits are 200,000, 100,000 and 30,000 yuan in turn. Market conditions and the prices paid were very different across the three years. From this, the manager concludes that if he adds another 1 million yuan, the profit will be smaller still.",
+    "question": "How would you judge this manager's reasoning?",
+    "explain": "These three sums were not put into the same system under steady conditions. The shrinking profit could come from changes in the assets, the prices or the market. Equal sums and a falling number alone are not enough to conclude that the next sum will earn less.",
+    "options": [
+     {
+      "text": "The evidence still isn't enough: the investments and the market changed, so it can't be put down to adding money.",
+      "correct": true,
+      "feedback": "Equal amounts meet only one condition for comparison. The three investments faced different assets and markets, so they can't show that adding money is itself what made the extra profit shrink."
+     },
+     {
+      "text": "The prediction should be reversed: profits have fallen three times in a row, so the next sum is more likely to grow again.",
+      "correct": false,
+      "feedback": "A fall doesn't prove a rebound either; the next sum depends on the price paid and how the asset does."
+     },
+     {
+      "text": "The comparison method is wrong: switch to rates of return, and you can tell whether the next sum will earn less.",
+      "correct": false,
+      "feedback": "Switch to rates of return, and the differences in what was bought and in the market are still there."
+     },
+     {
+      "text": "The evidence is already enough: equal sums earned less three times running, so the trend can be extended.",
+      "correct": false,
+      "feedback": "What was bought, the prices and the market all changed, so the fall can't be put down to adding money."
+     }
+    ]
+   },
+   {
+    "stem": "The software team you lead has only one test environment. Each time you add an equally skilled tester, the extra bugs found each week are 30, then 20, then 12. The next week, the team sets up a second test environment and adds one more equally skilled tester at the same time, and that week the extra bugs found climb back to 25.",
+    "question": "Why did the number of extra bugs found go back up?",
+    "explain": "The first three drops happened because the testers were crowded onto one environment. The second environment loosened that limit. Conditions are no longer the same as before, so the old diminishing curve can't simply be extended.",
+    "options": [
+     {
+      "text": "The fourth tester is more skilled than the first three, so they found more.",
+      "correct": false,
+      "feedback": "The question says the new tester is equally skilled, so skill hasn't changed."
+     },
+     {
+      "text": "The first three drops were just chance; adding people doesn't make each gain smaller in the first place.",
+      "correct": false,
+      "feedback": "Three drops in a row, with the testers all queuing for the same environment, don't look like chance."
+     },
+     {
+      "text": "The first three built up experience, and the new person learned faster by following them.",
+      "correct": false,
+      "feedback": "Nothing in the question points to anyone learning from the others. What changed is that there is one more environment."
+     },
+     {
+      "text": "The supporting condition that limited extra staff changed, so the earlier diminishing curve no longer applies.",
+      "correct": true,
+      "feedback": "New testers used to queue for the environment. Now there is a second one, and extra people have room to make a difference again."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Same care each read, fewer new errors each time",
+  "caption": "Say there are 20 errors. Drag the share of those left each read catches: a sharp eye gets more at first, then drops faster. Either way, each read finds fewer.",
+  "x": {
+   "label": "Read number"
+  },
+  "y": {
+   "label": "Errors caught",
+   "unit": "",
+   "min": 0,
+   "max": 20
+  },
+  "params": [
+   {
+    "id": "c",
+    "label": "Caught per read",
+    "min": 20,
+    "max": 90,
+    "step": 10,
+    "value": 60,
+    "unit": "%"
+   }
+  ],
+  "model": {
+   "steps": 5,
+   "init": {
+    "left": 20,
+    "found": 0,
+    "total": 0
+   },
+   "next": {
+    "left": "left - left*c/100",
+    "found": "left*c/100",
+    "total": "total + left*c/100"
+   }
+  },
+  "series": [
+   {
+    "name": "Total caught",
+    "expr": "total",
+    "tone": "ink"
+   },
+   {
+    "name": "New this read",
+    "expr": "found",
+    "tone": "accent",
+    "dots": true,
+    "from": 1
+   }
+  ],
+  "marks": [
+   {
+    "y": 20,
+    "text": "20 errors in all"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "First read",
+    "expr": "20*c/100",
+    "unit": " errors",
+    "digits": 0
+   },
+   {
+    "label": "New, 2nd read",
+    "expr": "20*c/100*(1-c/100)",
+    "unit": " errors",
+    "digits": 0
+   },
+   {
+    "label": "New, 3rd read",
+    "expr": "20*c/100*(1-c/100)^2",
+    "unit": " errors",
+    "digits": 0
+   }
+  ]
+ }
+}

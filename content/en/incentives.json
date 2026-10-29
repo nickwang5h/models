@@ -1,0 +1,192 @@
+{
+ "id": "incentives",
+ "name": "Incentives",
+ "en": "激励",
+ "discipline": "economics",
+ "one_line": "People do more of whatever a system rewards, whatever the system was meant for.",
+ "story": "FedEx night-shift sorters paid by the hour kept running late, until paying them by the shift fixed it, as Munger told it in his Harvard talk \"The Psychology of Human Misjudgment\"",
+ "shallow": {
+  "scene": "Every night, FedEx's packages had to be sorted at one central hub and loaded onto planes, but the night shift kept running late. The night workers were paid by the hour: every extra hour it dragged on meant an extra hour's pay. The company tried lecturing them and tried threatening them, and neither worked. Then someone thought of paying by the shift instead: once the planes were loaded, the workers could go home, and dragging it out earned them nothing more. That worked. Charlie Munger told this story in 1995 when he gave his talk \"The Psychology of Human Misjudgment\" at Harvard, and said he had underestimated the power of incentives all his life.",
+  "plain": "You pay someone 50 yuan an hour to clean the six windows in your home. He takes four hours, 200 yuan in all. Switch to 30 yuan a window, 180 for all six, and he's done in two and a half hours, with water marks still left in the corners of the frames. Same person, same job: change how the pay is worked out, and both his speed and his care change with it. Paid by the hour, cleaning slowly earns more; paid by the window, only cleaning fast pays off. What you want is clean windows, but what he gets paid for is time or the number of windows. Whatever the rule rewards is where he puts his effort."
+ },
+ "deep": {
+  "mechanism": "### The bigger and more believable the reward, the harder people try\n\nBack to the windows: at 30 yuan a window, he cleans fast; raise it to 45, and he takes on a few more households. But however high the rate, he has to believe the money will actually reach him. Paid on the spot that day, 30 yuan makes him work harder than 60 yuan you say you'll give him at the end of the year if you feel like it. Fines are the same: a fine that's on the books but never enforced is one nobody takes seriously.\n\n### People do more of whatever they're paid for\n\nPaid by the window, a window counts as one whether or not it has water marks, so the corners get skipped. Change the rule to \"a window only counts once the owner has checked it,\" and he'll go back and clean the corners on his own.\n\n### People care about different things\n\nMoney is only one kind of reward; a promotion, recognition, or being watched less all count too. Offer the same weekend overtime pay, and someone rushing to make rent will take it that day, while someone who values their weekends will shake their head.",
+  "origin": "Incentives are an idea that took shape slowly in economics, with no single person who proposed it. In 1776, Adam Smith discussed in *The Wealth of Nations* how self-interest drives exchange. Later, labor economics put it to the test: when the way people are paid changes, does the way they work change too? Edward Lazear's study of piece-rate pay at the auto glass company Safelite, published in 2000, is one of the classic pieces of evidence.",
+  "limits": "Piece rates, commissions and pay per order work best when the workers decide for themselves how the job gets done and the results can be counted. When the tools or the decisions aren't in the workers' hands, more money doesn't help: on an assembly line, the machine speed is fixed, so however much the workers want to do more, they can't go faster. Some things people do out of goodwill, and turning the motive into money can drive them away instead. In an experiment from Sweden published in 2008, people who came in for a blood donor health check were paid 50 kronor, and almost half as many women came."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "A parcel depot wants its couriers to get packages into customers' hands. It changes the measure from \"packages delivered that day\" to \"packages the customer confirmed receiving,\" and fewer packages get tossed into a parcel locker just to be done with them."
+   },
+   {
+    "use": "predict",
+    "text": "When a shopping site raises its cash-back for good reviews from 5 yuan to 20, you can expect more five-star reviews next month, but no matching drop in the return rate."
+   },
+   {
+    "use": "explain",
+    "text": "When more delivery riders run red lights at a crossing, look at how the delivery app deducts for late orders: the money taken off for one late order is a more real cost to them than the fine for running a red light."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "Install more, earn more",
+    "text": "In the 1990s, the American auto glass company Safelite switched its installers from hourly pay to pay per piece. Lazear's study found that output per worker rose by about 44%, with part of that coming from existing workers installing more and part from changes in who worked there."
+   },
+   {
+    "field": "Investing",
+    "title": "The commission behind the advice",
+    "text": "You ask an adviser to pick one of two funds. Both fit your risk requirements, but one pays the adviser a much higher sales commission. Before the adviser has said a word, that difference has already given them one more reason to sell it. You ask them to write down how much commission each of the two products pays them, then explain again why they'd pick one."
+   },
+   {
+    "field": "Personal life",
+    "title": "Miss a run, pay the group",
+    "text": "You decided on your own to run every day, and two weeks later you'd stopped. Then you and three friends made a deal: whoever misses a day sends each of the others 20 yuan in the group chat that night. In the first week, someone missed once, and the money was sent that night. After that, none of the four missed again."
+   }
+  ],
+  "ask": [
+   "What does the other person get for doing this, and what do they lose by not doing it?",
+   "Of these rewards and penalties, which ones does the other person really care about and also believe will actually happen?",
+   "Under the current rules, what is the least-effort way to get the reward or avoid the penalty?"
+  ],
+  "with": [
+   {
+    "id": "social-capital",
+    "sees": "A new colleague joins, and the old hands have to take time to show them the ropes. Most people are willing to help because of the favors colleagues owe one another, which is social capital. If the company pays a 200-yuan bonus each time someone trains a newcomer, some will train more and more carefully, while others will feel that goodwill has become a transaction and won't do it without the bonus. If the company wants newcomers up to speed quickly, before paying bonuses it should look at whether this team usually runs on goodwill or on performance reviews."
+   },
+   {
+    "id": "goodharts-law",
+    "sees": "This is Goodhart's law in action. A department wants its customers to be satisfied, so it pays bonuses based on follow-up call ratings. Once the bonus is tied to the rating, staff work out how to push the rating up: they pick easygoing customers for the follow-up calls and remind customers to give full marks. The bonus really does make people work harder; it's just that the effort drifts further and further from \"satisfied customers.\" A quarter later, the ratings have kept rising, but repeat purchases haven't risen with them."
+   },
+   {
+    "id": "principal-agent",
+    "sees": "You hire someone to manage your rental flat for you. That's a principal-agent relationship, and their interests differ from yours. Give them a bigger commission the shorter the flat sits empty, and they'll work harder to find tenants, but they may also cut the rent to sign a lease sooner. How to work out the commission depends on whether you care more about the flat being rented or about the rent."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A call center works out its agents' bonuses from the number of calls they answer per hour; call length and whether the problem got solved don't count. A month after the new rule starts, the average call drops from 6 minutes to 3, and repeat calls about the same problems rise noticeably.",
+    "question": "Why are the agents handling calls this way?",
+    "explain": "The bonus is tied only to calls answered, so cutting each call short is the least-effort way to get paid. The repeat calls that come from unsolved problems don't affect their bonus.",
+    "options": [
+     {
+      "text": "Shorter calls raise the number answered per hour, and that's exactly what the bonus is based on.",
+      "correct": true,
+      "feedback": "The shorter each call, the more get answered in an hour, and the higher the bonus; whether the problem was solved doesn't go into the bonus."
+     },
+     {
+      "text": "Customers have become impatient and say things more briefly.",
+      "correct": false,
+      "feedback": "Nothing in the question points to customers changing; what changed was the bonus rule. The shorter calls come from the agents' side."
+     },
+     {
+      "text": "The agents aren't trained enough and solve problems more slowly than before, so there are more repeat calls.",
+      "correct": false,
+      "feedback": "The calls got shorter, not slower; the repeat calls come from hanging up before the problem was solved."
+     },
+     {
+      "text": "The new rule had no effect; the agents always wanted to end calls as quickly as possible.",
+      "correct": false,
+      "feedback": "Calls only dropped from 6 minutes to 3 after the new rule; the change came after the rule."
+     }
+    ]
+   },
+   {
+    "stem": "A company tells its staff that the year-end bonus is \"paid at the general manager's discretion, depending on how the company is doing.\" In three years it has been paid only once, and the amount was never announced. Staff performance has stayed about the same. The general manager wants the year-end bonus to actually drive performance.",
+    "question": "What should the general manager change first?",
+    "explain": "When staff don't know how to earn it and don't believe it will be paid, the bonus has little pull on what they do day to day. Writing down how it works and paying it on time is what connects the bonus to what they do.",
+    "options": [
+     {
+      "text": "Give staff more training to improve their ability to hit their targets.",
+      "correct": false,
+      "feedback": "Nothing in the question says staff lack ability; the problem is that there's no believable link between the bonus and what they do."
+     },
+     {
+      "text": "Write down what performance earns how much, and pay it on time.",
+      "correct": true,
+      "feedback": "Once staff know what they have to achieve to get how much, and see the money arrive, the bonus will change what they do."
+     },
+     {
+      "text": "Stress at the annual party that the company values performance, and ask everyone to try harder.",
+      "correct": false,
+      "feedback": "Saying it out loud doesn't change what you get for doing what; the bonus rules are still invisible."
+     },
+     {
+      "text": "Double the total bonus, still paid at the general manager's discretion.",
+      "correct": false,
+      "feedback": "There's still no rule for whether it's paid or how much, so staff still don't know what to do to get it."
+     }
+    ]
+   },
+   {
+    "stem": "A warehouse wants its stock clerks to report promptly when an item on the shelves is about to run out. Right now, whoever reports it gets grilled on the spot by the supervisor: \"Why are you only noticing this now?\" If a clerk keeps quiet and an order later can't be picked, the clerk usually just gets one complaint. The supervisor is weighing a few changes.",
+    "question": "Which change would most directly increase prompt reports?",
+    "explain": "Right now reporting costs more than staying quiet. Only by making sure the person who reports isn't grilled, and even gets a small reward, does the change alter what happens on each of the two paths.",
+    "options": [
+     {
+      "text": "If it turns out someone didn't report in time, dock that day's bonus.",
+      "correct": false,
+      "feedback": "It's hard to pin down who noticed the shortage first, and punishing only those who didn't report still leaves those who do report facing the grilling."
+     },
+     {
+      "text": "Remind everyone at each team meeting that prompt reports matter to the warehouse.",
+      "correct": false,
+      "feedback": "A reminder doesn't change what happens when someone reports, so the clerk still gets grilled."
+     },
+     {
+      "text": "Whoever reports gets a 20-yuan bonus that shift, and blame waits until the cause is looked into afterward.",
+      "correct": true,
+      "feedback": "Reporting no longer brings blame and even earns a bonus, so staying quiet becomes the worse deal."
+     },
+     {
+      "text": "Pick a \"Most Hardworking Stock Clerk\" each month and post it at the warehouse door.",
+      "correct": false,
+      "feedback": "\"Hardworking\" is a broad standard. Whoever reports a shortage still gets grilled, and someone who keeps quiet could still be picked."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "grid",
+  "title": "Whatever you pay for is where he tries hard",
+  "caption": "Same person, same six windows. Paid for time, he takes 4 hours. Per window, he rushes and skips corners. If a window counts only once checked, he redoes them.",
+  "rowLabel": "Pay",
+  "colLabel": "Same six windows",
+  "rows": [
+   "50 yuan/hour",
+   "30 yuan/window",
+   "Counts if checked"
+  ],
+  "cols": [
+   "Rewards",
+   "How he cleans"
+  ],
+  "cells": [
+   [
+    "Time",
+    {
+     "text": "Takes 4 hours",
+     "sub": "Gets 200 yuan"
+    }
+   ],
+   [
+    "Window count",
+    {
+     "text": "Done in 2.5 hours",
+     "sub": "180 yuan, marks in corners",
+     "tone": "warn"
+    }
+   ],
+   [
+    "Cleanness",
+    {
+     "text": "Redoes corners",
+     "tone": "accent"
+    }
+   ]
+  ]
+ }
+}

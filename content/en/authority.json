@@ -1,0 +1,186 @@
+{
+ "id": "authority",
+ "name": "Authority Bias",
+ "en": "权威",
+ "discipline": "psychology",
+ "one_line": "When someone with authority speaks, people easily hand over their own judgment.",
+ "story": "Milgram's obedience experiment at Yale: 26 of 40 people press all the way to 450 volts",
+ "shallow": {
+  "scene": "In 1961, in a lab at Yale University, a researcher in a lab coat told a volunteer: each time the student in the next room gets a question wrong, press the switch for the next higher voltage. When the voltage reached 300 volts, there was banging on the wall from next door; after that, the student stopped answering. The volunteer was nervous and asked whether to stop, and the researcher urged him again and again to go on. The result the psychologist Stanley Milgram recorded was that 26 of 40 people pressed all the way to 450 volts. The student was really an actor, and no shock was ever given.",
+  "plain": "At a junction in your neighborhood, a man in a high-visibility vest waves his arm and says, \"This way's closed, go around.\" You can see the road ahead is clear, but that vest makes him seem more believable than your own eyes. You don't check again; you turn around and take a ten-minute detour. Whether the road should be taken, and whose fault the consequences are, has been handed over to the person giving the order along with it."
+ },
+ "deep": {
+  "mechanism": "### An order saves you a judgment\n\nThe student next door is banging on the wall, yet the researcher says to go on. If you do as you're told, you don't have to judge for yourself whether to stop. Obedience has two sources: an expert makes you believe he knows something you don't, and a superior makes you feel that orders are there to be carried out. In labs and hospitals, the person giving orders is often both. Then, to object, you also have to bear the pressure of interrupting what's going on and questioning the other person's standing.\n\n### Hand over the responsibility, and self-restraint loosens\n\nOnce people see themselves as just carrying out orders, the question in their mind changes from \"is this right?\" to \"did I do what I was told?\" Milgram later called this frame of mind the \"agentic state\": feeling that you are only acting for someone else, and the consequences are for the person giving the orders to answer for.\n\n### The farther the order and the closer the pain, the fewer go all the way\n\nMilgram himself tried different setups. In the original setup, over 60% went all the way. When the researcher left the room and gave orders by phone, it fell to about 20%. With the volunteer and the student in the same room, it fell to 40%. When the volunteer had to press the student's hand onto a shock plate himself, only 30% were left. The farther away the person giving orders and the closer the student's pain, the harder it was for the order to override judgment.",
+  "origin": "Milgram began the obedience experiments at Yale in 1961 and published the classic report in 1963. In 1974 he published *Obedience to Authority*, putting forward the \"agentic state\" as the explanation. Cialdini's *Influence* in 1984 listed authority as one of the principles that lead people to comply. The agentic state is only Milgram's explanation; whether volunteers believed the researcher's reassurances also played a part. And 65% (26 of 40 people) is the share under that particular setup, not the obedience rate of people in general.",
+  "limits": "When the authority's expertise fits the question, the advice is backed by evidence and mistakes can be corrected, listening to authority is both easier and more accurate; at an emergency scene, someone giving unified orders is all the more needed. The trouble is using a title to overrule other people's views. The opposite, deciding you know better than every expert, is just as much trouble."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Staff can plainly see the numbers don't add up, yet nobody speaks at the weekly meeting, because whoever speaks first has to bear the pressure of interrupting the boss."
+   },
+   {
+    "use": "design",
+    "text": "When designing the checklist process for an operating room, give even the most junior person the right to call a stop, so evidence that can't be held back has a way out."
+   },
+   {
+    "use": "act",
+    "text": "When you hear \"Just do it; I'll take responsibility,\" first say out loud the fact that conflicts with the order, then decide whether to go ahead."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Medicine",
+    "title": "Orders over the phone",
+    "text": "In 1966, Hofling and his colleagues ran an experiment in a US hospital. A researcher posing as a doctor phoned nurses and told them to give a patient 20 milligrams of a drug, while the bottle said the maximum dose was 10 milligrams. Of 22 nurses, 21 started to do it; the researchers stopped them before the drug was given."
+   },
+   {
+    "field": "Technology",
+    "title": "Silence before launch",
+    "text": "The night before a product launch, the engineer on duty finds that payment tests charge customers twice, but the technical director says to launch as planned. The engineer deletes the \"suggest we pause\" note he'd written and logs the failed test as a to-do item. The next day, customer service gets complaints about double charges."
+   },
+   {
+    "field": "Investing",
+    "title": "Buying more because the mentor said so",
+    "text": "The mentor of an online course tells students to put half of their account into one stock, without showing any new business figures. One student had set himself a limit: no single stock more than a tenth of the account. He does as told, the stock then falls 20%, and his account loses 10% as a result."
+   }
+  ],
+  "ask": [
+   "If I strip away the other person's title and position and look only at the evidence in front of me, would I still make the same decision?",
+   "On this specific matter, what expertise does the other person have that I can check?",
+   "Which fact in front of me conflicts with this order, and have I said it out loud?"
+  ],
+  "with": [
+   {
+    "id": "circle-of-competence",
+    "sees": "You have to choose an option for your father's heart surgery. Circle of competence says that since you don't understand heart surgery, you should hand the professional judgment to the doctor; authority warns you not to stop asking just because he's wearing a white coat. The two give opposite advice on whether to ask one more question. Check whether what the doctor says has evidence behind it and whether he can explain why. If he can, he's inside his circle of competence, so listen to him; if all that's left is \"trust me,\" find another doctor."
+   },
+   {
+    "id": "checklists",
+    "sees": "In flight, the captain says, \"We can skip this check,\" and the copilot thinks that's wrong. Authority pushes the copilot toward silence. A checklist writes every item as a line that must be read out loud regardless of rank, so when the copilot speaks up, he's following procedure, not questioning the captain."
+   },
+   {
+    "id": "principal-agent",
+    "sees": "The director gives the order, you carry it out, and the customer bears the consequences. The principal-agent problem looks at how the three parties' interests are out of line; authority looks at why you stopped asking. The fixes are in different places: for the first, adjust contracts and oversight; for the second, give the person carrying out orders a channel to call a stop."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A food factory is about to ship a batch of frozen food. The quality inspector finds that the temperature log before transport was above the allowed limit for two hours straight. The factory manager says, \"The customer is pressing us, ship it first; if anything goes wrong, I'll take responsibility.\" The driver is waiting to be cleared.",
+    "question": "What should the quality inspector do next?",
+    "explain": "The manager's position and his \"I'll take responsibility\" can easily make the inspector swap \"is the food safe?\" for \"did I do as I was told?\" Only pausing and getting an independent check gives the over-temperature record its say in the decision again.",
+    "options": [
+     {
+      "text": "Record the over-temperature and clear the shipment, leaving the manager to handle what follows",
+      "correct": false,
+      "feedback": "The manager taking responsibility hasn't made this batch any safer; the record you leave only proves the goods were shipped."
+     },
+     {
+      "text": "Hold the shipment and have someone independent check the effect of the over-temperature",
+      "correct": true,
+      "feedback": "The over-temperature record directly conflicts with the order to ship. Stopping to check first lets the safety evidence decide whether the goods can go."
+     },
+     {
+      "text": "Ship first and step up spot checks on arrival, telling the customer if anything is wrong",
+      "correct": false,
+      "feedback": "Shipping first hands the risk to the customer, and recalling the goods once a problem shows up is much harder."
+     },
+     {
+      "text": "Ask the manager to sign the release form, then ship as he decides",
+      "correct": false,
+      "feedback": "A signature can show who agreed to ship, not that the food is fine."
+     }
+    ]
+   },
+   {
+    "stem": "You're about to buy a company's bonds. Last month a rating agency still gave it the top credit rating, but this week the company announced that it failed to pay an interest payment on time. Your account manager says, \"The rating team knows more than we do; if they haven't downgraded it, the problem can't be big.\"",
+    "question": "How should you decide whether to buy these bonds?",
+    "explain": "The account manager used the rating team's expert standing in place of checking a new fact, the missed interest payment. Only by finding out why the interest was missed and what the repayment plans are can you tell whether the old rating can still be trusted.",
+    "options": [
+     {
+      "text": "First find out why the interest was missed, and check the company's current cash and repayment plans",
+      "correct": true,
+      "feedback": "The missed payment is a new fact and needs checking directly. Only once you know the cause and the repayment plans can you tell what has changed in the company's credit."
+     },
+     {
+      "text": "Compare other agencies' ratings, and if most still rate it high, buy as planned",
+      "correct": false,
+      "feedback": "Putting together several ratings that haven't been updated yet still skirts around this missed payment."
+     },
+     {
+      "text": "Treat it as a short-term glitch and wait for a rating agency to downgrade it before changing your view",
+      "correct": false,
+      "feedback": "Nobody has yet found out why the payment process failed, and waiting for a downgrade only leaves your judgment trailing behind the facts."
+     },
+     {
+      "text": "Stick with last month's rating; rating teams usually have more inside information",
+      "correct": false,
+      "feedback": "Last month's rating can't answer why the interest was missed this week, however much information the rating team has."
+     }
+    ]
+   },
+   {
+    "stem": "Partway up a mountain, a thunderstorm is closing in. The certified guide has seen the latest weather warning, points at the map and tells everyone to leave the ridge and descend along a route that has already been scouted. You can hear thunder and see the clouds darkening fast.",
+    "question": "What should you do now?",
+    "explain": "The guide's expertise fits the situation, and the order to descend is backed by the warning and the clouds in front of you. Following unified orders now is using your own judgment. Report any new danger you see, so the orders can adjust as things change.",
+    "options": [
+     {
+      "text": "Ask everyone to pick their own descent route first, then decide whether to move together",
+      "correct": false,
+      "feedback": "Everyone picking their own route slows the retreat, and with the storm closing in, the group gets harder to coordinate."
+     },
+     {
+      "text": "Stay on the ridge and wait for the whole group to vote before deciding whether to descend",
+      "correct": false,
+      "feedback": "The ridge is exactly where a thunderstorm is most dangerous, and every minute lost waiting for a vote adds to the risk."
+     },
+     {
+      "text": "First ask the guide to show their certificate and record, and set off only once they check out",
+      "correct": false,
+      "feedback": "The thunder is already rolling. Checking credentials now wastes time and doesn't answer whether descending is right."
+     },
+     {
+      "text": "Follow the guide down the scouted route, and report any new danger you see along the way",
+      "correct": true,
+      "feedback": "The evidence and the order point the same way, so follow; reporting new dangers lets the guide adjust plans at any time."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "type": "hbar",
+  "title": "Order farther, pain closer: fewer go all the way",
+  "caption": "Milgram tried several setups and counted how many pressed all the way to 450 volts. With the researcher urging them on in person, it was 26 of 40.",
+  "categories": [
+   "Researcher in room",
+   "Orders by phone",
+   "Same room as student",
+   "Hand onto shock plate"
+  ],
+  "y": {
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "series": [
+   {
+    "name": "Went to 450 volts",
+    "values": [
+     65,
+     20,
+     40,
+     30
+    ],
+    "tones": [
+     "warn",
+     "ink",
+     "ink",
+     "ink"
+    ]
+   }
+  ]
+ }
+}

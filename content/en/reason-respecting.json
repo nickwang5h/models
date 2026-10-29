@@ -1,0 +1,189 @@
+{
+ "id": "reason-respecting",
+ "name": "Reason-Respecting Tendency",
+ "en": "给出理由",
+ "discipline": "psychology",
+ "one_line": "Add \"because\" when you ask a favor, and people say yes more, even to an empty reason.",
+ "story": "In Langer and colleagues' copier line-cutting experiment at the CUNY Graduate Center, \"because I have to make copies\" got almost the same yes rate as a real reason (93% vs. 94%)",
+ "shallow": {
+  "scene": "In 1978 the psychologist Ellen Langer and her colleagues ran an experiment at a copy machine in the Graduate Center of the City University of New York. The experimenter went up to someone who was making copies and asked to use the machine first, for just a few pages. When he gave no reason, 60% of people let him go first. When he said \"because I'm in a rush,\" 94% agreed. When he said \"because I have to make copies,\" 93% agreed. But standing in front of a copier, anyone could see he wanted to make copies. That sentence gave no reason at all.",
+  "plain": "You're at your desk fixing a spreadsheet when a coworker walks over, mug in hand: \"Could you take a look at this sheet for me, because I'd like you to take a look?\" That \"because\" says nothing new. Yet as long as a request is followed by \"because,\" even if the rest of the sentence says nothing, people tend to nod. You say \"Sure\" and take the sheet, with the one you were working on still unsaved."
+ },
+ "deep": {
+  "mechanism": "### For a small request, empty words still won a yes\n\nFor just a few pages, 60% agreed when no reason was given. With \"because I have to make copies,\" agreement rose to 93%, only one percentage point below the 94% for \"because I'm in a rush.\" \"Because I have to make copies\" just repeated the request, yet it brought in 33 more percentage points of agreement.\n\n### In a familiar routine, people don't listen closely to the second half\n\nThe original experiment didn't directly measure what people were thinking. Langer and her colleagues' explanation fits the results: in familiar situations people act out of habit and don't think it through. Someone makes a request and gives a reason, so you step aside, without listening closely to what the reason actually says.\n\n### Make the request bigger, and people stop to hear the second half\n\nWhen the number of pages went up, giving no reason and saying \"because I have to make copies\" both got only 24% agreement. \"Because I'm in a rush\" got 42%, though in the original paper's statistical tests this difference counted only as a trend. Letting someone copy a few pages first costs a minute or two, so going along with the usual routine does you no harm, and there's no need to think. Letting someone copy a big stack first means a long wait for you, so people stop and weigh it: is this reason worth my waiting? The second half of \"because I have to make copies\" has nothing in it, so it didn't win over a single extra person.",
+  "origin": "In 1978 Ellen Langer, Arthur Blank and Benzion Chanowitz published the copier experiment in the *Journal of Personality and Social Psychology*. They wanted to find out how much people agree to a request because of what the reason says, and how much just because of the word \"because.\" Charlie Munger later put this kind of effect on his list of the psychology of human misjudgment. In 1985 Valerie Folkes partly repeated and extended the study: reasons the person asking could control, like \"I don't want to wait,\" got less cooperation than reasons they couldn't help, like \"I feel really sick.\"",
+  "limits": "The empty \"because\" was seen to work for small requests made face to face that are over in a few seconds. Reasons written down in black and white, where people have time to go back and reread them, were outside the experiment. Nor did the experiment test what happens when the same person is asked again and again with the same empty words. The 33 extra percentage points for an empty \"because\" were seen only in this one 1978 experiment: when Folkes later redid the copier setup, she did not reproduce it. The two studies agree on just one thing: what a reason says changes whether people say yes."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Make clear why a fundraising letter can't just say \"because we need help\": readers who are being asked for money will look at what the second half of the sentence holds."
+   },
+   {
+    "use": "design",
+    "text": "Rewrite the notes field on an expense claim form: don't allow entries like \"needed for business\" that just restate the item, and ask for the client's or project's name instead."
+   },
+   {
+    "use": "act",
+    "text": "Before answering someone's request, say the half after \"because\" over in your head, and listen for whether it tells you anything new."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Security",
+    "title": "The box at the badge door",
+    "text": "You're in charge of entry to an office building. Suppose that during a drill, a tester carrying a cardboard box walks up to the badge door and says to an employee who is badging in, \"Could you hold the door for me, because I need to get in?\" Seven out of ten hold the door. It takes a few seconds, and nobody asks who he is. Instead of writing a longer reminder, you set one rule: everyone badges in only with their own card and doesn't hold the door for anyone, so employees don't have to make a judgment on the spot in those few seconds."
+   },
+   {
+    "field": "Education",
+    "title": "Two raised hands",
+    "text": "You teach at a secondary school. During class a student raises a hand: \"Can I go to the bathroom, because I want to go?\" You nod; it's a matter of seconds, nothing to think about. After class he comes back: \"Can I hand in my homework two days late, because I want to hand it in two days late?\" This time you stop and ask: when will you hand it in, and why do you need the extra time? The same empty \"because\" stops working once the request gets bigger."
+   },
+   {
+    "field": "Community",
+    "title": "The sign-up for the ditch",
+    "text": "In your community garden's group chat, you're looking for people to help clear fallen leaves. The first version says: \"Please come and help on Saturday, because we're short of hands.\" Only a handful of names go on the sign-up list. You rewrite it: \"Saturday morning, the drainage ditch by the north gate is blocked with leaves. When it rains, the vegetable beds on the lowest level will flood. We need people with rakes to clear the ditch.\" The sign-up list quickly fills a whole screen."
+   }
+  ],
+  "ask": [
+   "Of the small things I casually agreed to this week, which ones did I never ask the reason for?",
+   "Looking back through my messages, the last time a \"because…\" talked me into something I regretted, what kind of request was it?",
+   "After which kinds of request do I tend to tack on a \"because\"? When I do, does the other person react differently?"
+  ],
+  "with": [
+   {
+    "id": "commitment-consistency",
+    "sees": "You want to ask the neighbor who just moved in downstairs to let you use his parking space for a month. Reason-respecting says one line like \"parking's been hard lately\" won't hold up; you need to say which weeks, and why you can't find another space. Commitment and consistency says borrow it for one night first: once he has said yes, asking for the month is easier. One puts the effort into the reason, the other into breaking the ask into steps. If you're only asking this once, give the full reason; if you'll be dealing with him often, borrow it for a night first."
+   },
+   {
+    "id": "bounded-rationality",
+    "sees": "Every day the group chat gets dozens of messages saying \"Sorry to trouble you, could you help with this, because…\" Bounded rationality tells you that checking each one is itself more than you can afford: set a line that's good enough, and let through whatever clears it. Reason-respecting fills in where to draw that line. People you deal with often who have never caused trouble can skip the second half and still get through; someone coming to you for the first time should be made to say the second half first."
+   },
+   {
+    "id": "falsifiability",
+    "sees": "The organizer of a group-buying chat says, \"You must order before 10 tonight, because the price is going up.\" Falsifiability asks what evidence could show the price isn't going up. A deadline written on the seller's page is the kind of claim that can be proved wrong; \"it's going up soon\" can't be proved wrong by anything. Reason-respecting only points out that the sentence is using \"because\" to hold a place; falsifiability gives you the next question to ask."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Volunteers at a campus secondhand book stall want to ask passing students to help carry a box of books into the storeroom, a one-minute job. They want to find out whether students are more willing to help because of what the reason says, or because of the word \"because\" itself.",
+    "question": "Which ways of asking should they compare the yes rates of?",
+    "explain": "To separate the content from the wording, you need one version that has \"because\" but no content, compared side by side with a real reason and with no reason at all.",
+    "options": [
+     {
+      "text": "Compare a one-minute book carry with an afternoon of carrying, and see which works better",
+      "correct": false,
+      "feedback": "This compares the size of the request. It can't tell whether students were moved by the content or by the wording."
+     },
+     {
+      "text": "Three versions: no reason, a \"because\" that just repeats the request, and a real reason",
+      "correct": true,
+      "feedback": "With all three side by side, the empty version takes out the content and the real reason puts it back, so each difference can be pinned on its cause."
+     },
+     {
+      "text": "Compare only a version with a reason and one without, with the reason as specific as possible",
+      "correct": false,
+      "feedback": "In the difference this finds, the content and the word \"because\" are mixed together and can't be pulled apart."
+     },
+     {
+      "text": "Compare only the yes rates for male and female students, to see who likes hearing reasons more",
+      "correct": false,
+      "feedback": "A difference between men and women can't answer whether the content of the reason matters."
+     }
+    ]
+   },
+   {
+    "stem": "The same sentence, \"Mind if I go first, because I need to use it?\", is said once at the time clock where people line up every day, and once in an equipment room where it's just the two of you and the other person is fiddling with an instrument that's rarely used.",
+    "question": "Where is the other person more likely to step aside without thinking?",
+    "explain": "In a situation people go through every day, they step aside out of habit; an unfamiliar situation has no ready-made habit, so people think a bit more.",
+    "options": [
+     {
+      "text": "In the equipment room with just the two of you",
+      "correct": false,
+      "feedback": "An unfamiliar situation has no ready-made habit to follow, so people think a bit more and are less likely to just step aside."
+     },
+     {
+      "text": "About the same in both; same words, same result",
+      "correct": false,
+      "feedback": "The words are the same but the situations aren't, and how much people fall back on habit differs, so the results won't be the same."
+     },
+     {
+      "text": "At the time clock where people line up every day",
+      "correct": true,
+      "feedback": "In a situation they go through every day, people step aside out of habit and don't think about the second half."
+     },
+     {
+      "text": "Neither; nobody falls for empty words",
+      "correct": false,
+      "feedback": "In familiar situations words like these still get people to step aside, so saying neither place works doesn't fit the results."
+     }
+    ]
+   },
+   {
+    "stem": "Your landlord messages you: \"Please transfer a 3,000 yuan deposit first, because we need to do your residence registration.\" You really do need to do the residence registration.",
+    "question": "What do you do next?",
+    "explain": "The residence registration is real, but it doesn't explain why these 3,000 yuan have to be paid first. Get the reason connected to that action first, then decide whether to transfer the money.",
+    "options": [
+     {
+      "text": "Transfer it first; the registration has to be done, so the money is probably connected to it",
+      "correct": false,
+      "feedback": "The second half of the sentence doesn't point to the action of paying 3,000 yuan first. Transferring the money means not checking."
+     },
+     {
+      "text": "Refuse; landlords who ask for a deposit first are never trustworthy",
+      "correct": false,
+      "feedback": "A blanket refusal also turns down charges that can be explained, and never checks whether this sentence holds up."
+     },
+     {
+      "text": "Ask the other person to send the property deed, and transfer once you've confirmed he's the landlord",
+      "correct": false,
+      "feedback": "The deed only answers whether he's the landlord, not why this money has to be paid first."
+     },
+     {
+      "text": "Ask the other person to explain why registration requires these 3,000 yuan up front",
+      "correct": true,
+      "feedback": "This step tests whether the words after \"because\" can support the demand to pay first."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "type": "bar",
+  "title": "Small ask: an empty \"because\" wins 33 points more",
+  "caption": "For a few pages, \"to make copies\" works almost as well as a real reason. For many pages it does nothing; only \"in a rush\" still helps.",
+  "categories": [
+   "No reason",
+   "To make copies",
+   "In a rush"
+  ],
+  "y": {
+   "label": "Let him go first",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "series": [
+   {
+    "name": "A few pages",
+    "values": [
+     60,
+     93,
+     94
+    ],
+    "tone": "accent"
+   },
+   {
+    "name": "Many pages",
+    "values": [
+     24,
+     24,
+     42
+    ],
+    "tone": "muted"
+   }
+  ]
+ }
+}

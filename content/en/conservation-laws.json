@@ -1,0 +1,212 @@
+{
+ "id": "conservation-laws",
+ "name": "Conservation Laws",
+ "en": "守恒定律",
+ "discipline": "physics",
+ "one_line": "Some things never just vanish; if some is missing, it went somewhere else.",
+ "story": "Joule lets falling weights turn a paddle wheel that stirs water, and measures how much heat a given amount of work makes",
+ "shallow": {
+  "scene": "When your hands are cold in winter, rub them hard for a while and your palms warm up. There's no fire in the room; the heat comes from the effort you put in. In 1845 the Englishman James Joule measured this: he let a weight on a cord sink slowly, and the cord turned a paddle wheel that stirred water in a container. The water really did get warmer, but only by a tiny amount, so small that it took a very sensitive thermometer to read it.\n\nHe measured, again and again, how far the weight fell and how much the water's temperature rose, and every time he got the same ratio: for so much fall of the weight, a matching amount of heat appeared in the water. The energy the weight lost as it fell was not lost; it turned, to the last bit, into heat in the water.",
+  "plain": "In the morning your wallet has 500 yuan; by evening only 380 is left. The missing 120 yuan didn't evaporate: lunch was 45, a taxi 60, and the other 15 yuan you lent to a coworker. Conservation laws in physics deal with the same kind of thing: energy, momentum and electric charge, like the money in your wallet, can only change by coming in or going out.\n\nThese books are easiest to see when a car hits a parked car of the same weight and the two lock together. Momentum is mass times speed: after the crash, the mass moving together is twice as big, so the speed is only half, and not a bit of momentum is lost. But the energy of the car's motion drops by a large chunk. The missing part didn't disappear; it became the bending of the car bodies and heat."
+ },
+ "deep": {
+  "mechanism": "### In a crash, the momentum books balance; the kinetic-energy books don't\n\nThe harder and longer a force pushes, the more an object's momentum changes. When two cars collide, the force each pushes on the other is the same size, and they push for the same length of time, so however much momentum one gains, the other loses exactly that much, and the total stays the same. A car of mass $m_1$ moving at speed $v_1$ hits a stationary car of mass $m_2$, and the speed $v$ after they lock together satisfies\n\n$$m_1v_1=(m_1+m_2)\\,v$$\n\nIn other words, if the mass moving together becomes several times bigger, the speed drops to that fraction.\n\nYou drive a 1,500 kg car at 20 meters per second into a stationary car of the same weight. Before the crash the momentum is 1500×20 = 30,000 kg·m per second. After the crash the mass has doubled, so the speed can only be 10 meters per second, and the momentum is still 30,000.\n\nThe energy of a car's motion is called kinetic energy and equals $\\tfrac12mv^2$, but it falls from 300,000 joules to 150,000: the mass doubles, while the speed halves and, squared, leaves only a quarter, so multiplied together only half is left. The missing 150,000 joules turned into bent car bodies and heat. Make the other car 4,500 kg, and the speed after the crash drops to 5 meters per second; the momentum is still 30,000, but the kinetic energy left is only 75,000 joules.\n\n### Draw the line around the cup alone, and the books won't balance\n\nA 300-gram cup of tea at 80°C cools to 20°C, a drop of 60 degrees. Each gram of water gives off 4.18 joules for each degree it cools, so this cup gives off 300×60×4.18, about 75,000 joules. If you draw your line around the cup alone, this heat only shows going out, with nowhere for it to go; bring the table top and the air inside the line too, and the books balance.\n\n### When the books don't match, look first for an exit you can't see\n\nIn 1930 Pauli noticed that when an atomic nucleus gives off an electron (beta decay), the electron always carries away somewhat less energy than the nucleus loses. He didn't give up on conservation of energy. Instead he proposed that another, invisible particle carried away the difference. This particle was later named the neutrino, and was detected in 1956.",
+  "origin": "Lavoisier set out the conservation of mass systematically in his 1789 *Elementary Treatise on Chemistry*. In the 1840s Mayer, Joule and Helmholtz each arrived at the conservation of energy on their own, and Joule's paddle-wheel experiment was published in 1850. In 1918 Noether proved that every continuous symmetry corresponds to a conserved quantity.",
+  "limits": "For energy, mass, charge and momentum, as long as you bring everything coming in and going out inside the line, the books match entry by entry, which makes them the most reliable things to check your sums with. Conservation laws deal only with totals, not with speed: knowing that the heat from hot tea went into the air still doesn't tell you how many minutes it takes to go cold. Applying them to things that have no fixed amount is a mistake, for example deciding that a company's profits or a class's knowledge are also fixed totals, so that if you get more I must get less. In nuclear reactions mass can turn into energy, so the two have to be counted together."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "reason",
+    "text": "To find the least electricity it takes to boil a kettle of water, you don't need to care what shape the kettle is: however much heat the water takes in as it warms, the heating element has to supply at least that much."
+   },
+   {
+    "use": "explain",
+    "text": "After switching to double-glazed windows, the winter heating bill went down: heat is always leaking out of the house, and when the windows leak less, less heat has to be made up."
+   },
+   {
+    "use": "design",
+    "text": "When designing regenerative braking for an electric car, first write down where each share of the kinetic energy ends up: in the battery, as heat in the brake pads, or in wind resistance. Only the first share can be recovered."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Medicine",
+    "title": "The fluid balance chart",
+    "text": "Every shift, the night nurse in an ICU fills in a fluid balance chart: IV fluids, drinks and tube feeding go in the \"in\" column; urine, drainage and vomit go in the \"out\" column. Suppose a patient took in 2,400 milliliters in a day and put out 1,900; the chart then shows an extra 500 milliliters. The doctor's next question is where those 500 milliliters are: sweating and breathing carry some away, and for the rest, look at whether the legs are swollen and whether the patient's weight has gone up."
+   },
+   {
+    "field": "History of science",
+    "title": "Perpetual motion turned away at the door",
+    "text": "In 1775 the French Royal Academy of Sciences announced that it would no longer examine designs for perpetual motion machines. The reason: such machines could not be built, and reviewing them one by one was a waste of effort. At that time, it would still be more than sixty years before the conservation of energy was clearly written down."
+   },
+   {
+    "field": "Personal life",
+    "title": "A power bank that can't manage three charges",
+    "text": "You buy a power bank rated at 10,000 mAh. Taking your phone battery as 4,000 mAh, you expect two and a half charges. But the rated capacity is counted at the cell's 3.7 volts, about 37 watt-hours; the phone battery is counted at 3.85 volts, about 15 watt-hours. Another 10% or so is lost in the conversion, so only a little over 30 watt-hours can get into the phone, just over two charges."
+   }
+  ],
+  "ask": [
+   "Can the quantity I'm watching change only by coming in or going out? Is there any entry that would make it appear or vanish out of nowhere?",
+   "Inside the line I've drawn, which exits have I missed, such as waste, heat loss, or use that has no meter?",
+   "How far off are the books? Is the gap big enough to suspect there's a place it went that I haven't drawn inside the line?"
+  ],
+  "with": [
+   {
+    "id": "entropy",
+    "sees": "A foundry's flue gives off exhaust gas at 90°C, and the plant manager wants to recover it. Conservation tells him: not a bit of this heat is lost; it's all in the exhaust. Entropy tells him: the total heat hasn't shrunk, but once it has spread out to somewhere cooler, the part that can be put to work is already small. Heat at 90°C is worth using to preheat the water coming into the plant or to heat the workshop; to use it for generating electricity, he first has to work out whether the recovery equipment would pay for itself."
+   },
+   {
+    "id": "zero-sum",
+    "sees": "Two factories next to each other draw water from the same river, and in the dry season only so much flows past each day. Conservation sees that every extra ton the upstream factory pumps is a ton less for the one downstream; the total is sealed. Zero-sum versus positive-sum sees that if the two build a reservoir together, water stored in the wet season can be kept for the dry season, and the water they can use over the whole year goes up. If you're looking only at this one week of the dry season, do the sums by conservation and divide up the shares; if you're looking at the whole year, first talk about building the reservoir together."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You put an iron nail weighing 100.0 grams on the windowsill, and a month later it is covered in red rust. You weigh it before wiping off the loose flakes of rust, and it reads 103.2 grams.",
+    "question": "What are the extra 3.2 grams most likely to be?",
+    "explain": "Rust is a new substance made when iron combines with something else; the added mass comes from the outside substance it took in.",
+    "options": [
+     {
+      "text": "The scale got damp and went wrong; the extra weight has nothing to do with the nail.",
+      "correct": false,
+      "feedback": "3.2 grams is a thirtieth of 100 grams, far bigger than the scale's error, and the flakes of rust themselves are stuck to the nail."
+     },
+     {
+      "text": "The nail absorbed heat from the air, and the scale weighed the mass of that heat.",
+      "correct": false,
+      "feedback": "Heat turned into mass is far too small for a scale to read; it can't account for 3.2 grams."
+     },
+     {
+      "text": "The iron combined with oxygen from the air to form rust, and what was added is the mass of the oxygen.",
+      "correct": true,
+      "feedback": "The extra in the rust is exactly the oxygen and water vapor that the iron combined with."
+     },
+     {
+      "text": "The iron made new iron atoms as it rusted, so it got heavier.",
+      "correct": false,
+      "feedback": "Chemical reactions don't make iron atoms; the number of iron atoms and their mass haven't changed."
+     }
+    ]
+   },
+   {
+    "stem": "Last month a housing complex's main water meter ran 5,000 tons, while the meters of all the homes added up to 4,600 tons. The property manager says water can't vanish into thin air, not a drop of it, so the missing 400 tons must be somewhere.",
+    "question": "To find these 400 tons, what should be done first?",
+    "explain": "The total amount of water can't vanish. The gap can only come from some exit after the main meter and before the home meters, or from the home meters themselves reading low. What you're looking for is an exit, not someone to blame.",
+    "options": [
+     {
+      "text": "Put meters on each section, along the main pipe, the branch pipes to each building, and on to each home, and find which section the gap falls in.",
+      "correct": true,
+      "feedback": "Metering section by section shows where the gap is; leaks, garden watering and cleaning water will all show up in the matching section."
+     },
+     {
+      "text": "Decide that the main meter reads too high, and just replace it.",
+      "correct": false,
+      "feedback": "No evidence points to the main meter. Replacing it doesn't explain the gap, and it may leave the real exit where it is."
+     },
+     {
+      "text": "Split the 400 tons evenly by number of homes and add it to each home's bill.",
+      "correct": false,
+      "feedback": "Splitting it just wipes out the gap; you still don't know where the water went, and residents who didn't use more water end up paying more."
+     },
+     {
+      "text": "Decide that water in the pipes naturally evaporates, so the gap needn't be chased.",
+      "correct": false,
+      "feedback": "400 tons of water won't evaporate from closed pipes; this is using an exit that doesn't exist to close the case."
+     }
+    ]
+   },
+   {
+    "stem": "At an ice rink, you (60 kg) and a child (40 kg) stand still facing each other. You push off each other, and the child slides away at 3 meters per second.",
+    "question": "How fast do you slide the other way?",
+    "explain": "Before the push both of you are still, so the total momentum is 0, and after the push it is still 0. So the two of you have momentum of equal size in opposite directions: 40×3 = 60×v, v = 2 meters per second.",
+    "options": [
+     {
+      "text": "4.5 meters per second, even faster than the child.",
+      "correct": false,
+      "feedback": "This multiplies by the weight ratio the wrong way round. When the heavier person gets the same momentum, the speed can only be smaller."
+     },
+     {
+      "text": "You don't move, because you're much heavier than the child.",
+      "correct": false,
+      "feedback": "In a push the forces go both ways: you feel an equally strong push back, so you are bound to slide away."
+     },
+     {
+      "text": "3 meters per second, as fast as the child.",
+      "correct": false,
+      "feedback": "The same push doesn't mean the same speed. You're heavier, so the same amount of momentum gives you a smaller speed."
+     },
+     {
+      "text": "2 meters per second, in the opposite direction to the child.",
+      "correct": true,
+      "feedback": "The child carries off 40×3 = 120 of momentum; you carry off the same 120 in the opposite direction, and dividing by 60 kg gives 2."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Heavier car: same momentum, more energy lost",
+  "caption": "Your 1,500 kg car hits a still car at 20 m/s; they lock together. Drag its weight: momentum stays at 100%; part of the energy turns into bending and heat.",
+  "x": {
+   "label": "Other car's weight (kg)",
+   "min": 500,
+   "max": 4500
+  },
+  "y": {
+   "label": "Left after, % of before",
+   "unit": "%",
+   "min": 0,
+   "max": 120
+  },
+  "params": [
+   {
+    "id": "m",
+    "label": "Other car's weight",
+    "min": 500,
+    "max": 4500,
+    "step": 500,
+    "value": 1500,
+    "unit": " kg"
+   }
+  ],
+  "series": [
+   {
+    "name": "Momentum after",
+    "expr": "100",
+    "tone": "accent"
+   },
+   {
+    "name": "Kinetic energy after",
+    "expr": "1500/(1500+x)*100",
+    "tone": "warn"
+   }
+  ],
+  "marks": [
+   {
+    "x": "m"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Speed after",
+    "expr": "30000/(1500+m)",
+    "unit": " m/s",
+    "digits": 1
+   },
+   {
+    "label": "Energy left",
+    "expr": "45000/(1500+m)",
+    "unit": " × 10⁴ J",
+    "digits": 1
+   },
+   {
+    "label": "Bending, heat",
+    "expr": "30-45000/(1500+m)",
+    "unit": " × 10⁴ J",
+    "digits": 1
+   }
+  ]
+ }
+}

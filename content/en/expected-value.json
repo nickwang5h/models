@@ -1,0 +1,212 @@
+{
+ "id": "expected-value",
+ "name": "Expected Value",
+ "en": "期望值",
+ "discipline": "math",
+ "one_line": "Multiply each outcome by its chance and add them up to see a choice's average worth.",
+ "story": "In the 49th Super Bowl, the Seahawks choose to pass from the one-yard line and Butler intercepts",
+ "shallow": {
+  "scene": "In the Super Bowl of February 2015, the biggest American football game of the year, there was only half a minute left. The Seattle Seahawks were 4 points behind, and the ball was just one yard from the other team's goal line, less than a meter. Carrying the ball over that line is called a touchdown and is worth 6 points; one more touchdown and the Seahawks would win the title. Everyone expected them to hand the ball to their strongest player and have him charge straight in with it, which is called a run.\n\nInstead the coach called a pass: throw the ball to a teammate near the goal line. A New England Patriots defender cut in and caught it, and that ended the game. The next day's commentary asked almost only one question: why didn't they run?\n\nIn fact, lay out the chances at that moment and the sums are clear. From that spot, a run scored a touchdown about 54% of the time, a pass about 50%, and a pass was intercepted only about 2% of the time. There was still time left for three plays. Chaining the chances over three plays, passing first and running first both gave nearly a 90% chance of winning the title, less than two percentage points apart. That pass wasn't a mistake in the sums; it just fell into the 2% that gets intercepted.",
+  "plain": "There are two jobs for the weekend. One pays a fixed 200 yuan. The other depends on the weather: 500 yuan if it's sunny, nothing if it rains, with an even chance of each. Working out the expected value is straightforward: multiply each outcome by its chance and add them all up, 0.5×500 + 0.5×0, which comes to 250. If you could work many weekends, the weather job would pay 250 yuan a week on average, more than the fixed 200.\n\nBut you're only working this one weekend, and what you get is not 250. It's 500 or 0. So expected value can compare how much the two jobs are worth, but it can't predict what you'll get this one weekend."
+ },
+ "deep": {
+  "mechanism": "### Over many tries, luck cancels out and the total gets close to the average\n\nWork the weather job for just one weekend, and you get 500 or 0, both far from 250. Work it for ten weekends, and there will be about five sunny ones and five rainy ones, around 2,500 yuan in all. Extra sunny weekends and extra rainy ones cancel each other out, and the longer you work, the closer the total gets to 250 times the number of weeks. So the average predicts what many tries add up to, not this one.\n\nThe many tries don't have to be the same thing. Over a lifetime you make hundreds or thousands of choices you can afford to lose: whether to buy insurance, how much stock to order, which job to take. Pick the higher average every time, and a loss here is canceled by a gain somewhere else, so in total you come out with the most. So even when something happens only once, as long as you can afford to lose, still choose by the average. Only when you can't afford to lose does it need separate thought.\n\n### Every outcome goes into the sum, including the bad ones\n\nIf each outcome gives you $x$ with chance $p$, the average is\n\n$$E=p_1x_1+p_2x_2+\\dots$$\n\nMultiply each outcome by its own chance, then add them all up. Over many tries, each outcome turns up in about a share $p$ of them, so the total you get divided by the number of tries is this sum. Outcomes can be negative: a 50% chance of making 100 yuan and a 50% chance of losing 60 gives $0.5\\times100+0.5\\times(-60)=20$, an average gain of 20 yuan.\n\nEach $x$ must first have its costs taken out and be put over the same stretch of time before you multiply. The chances of all the outcomes must add up to 1. If they don't, you have left one out. The one left out is often the worst, which makes the average look unrealistically good.\n\n### The sum is done before you act, and the final score doesn't change it\n\nBack to the Seahawks' pass. In American football a team gets four tries to move the ball forward, called downs. It was second down, and the Seahawks had 26 seconds and one timeout left. If a pass isn't caught, the clock stops by itself; if a run doesn't score, the clock keeps going, and they would have to use their last timeout. If they ran first, after the timeout there would be only enough time for two more downs, and one of those would have to be a pass to stop the clock. So whether they passed first or ran first, the Seahawks had two runs and one pass; the only difference was which down the pass came on.\n\nOver the previous five seasons, across the whole league, runs from the one-yard line scored about 54% of the time and passes about 50%. Over the past ten seasons, of 270 passes thrown on second down from the one-yard line, only 5 were intercepted, about 2%. Multiply out the three downs for each order:\n\n| Order | How it's worked out | Chance of a touchdown |\n|---|---|---|\n| Pass first, then run twice | 0.50 + 0.48 × (1 − 0.46 × 0.46) | about 88% |\n| Run, then pass, then run | 0.54 + 0.46 × (0.50 + 0.48 × 0.54) | about 89% |\n\nRead the first row like this: the pass has an even chance of scoring outright. The share where it neither scores nor is intercepted is 1 − 0.50 − 0.02 = 0.48, and in that case they still get two runs. Each run has a 1 − 0.54 = 0.46 chance of failing, and both runs fail only 0.46×0.46 of the time. The two orders are less than two percentage points apart. The only extra risk in passing first is that 2% chance of an interception, after which the last two downs never happen. The Seahawks' pass fell right into that 2%.\n\nA choice only ever lands on one outcome, but the other outcomes were just as possible at the time. So when you look back, go back to the sums made before acting: check item by item how the chances were estimated, whether anything was left out, and whether all the costs were counted. Don't go by the final score.",
+  "origin": "Expected value comes from the early days of probability theory, and it started as a way to split stakes. In 1654 Pascal and Fermat wrote letters to each other about how to divide the prize when a game of chance is stopped halfway. Their answer was to split it by each player's chance of winning from that point on. In 1657 Christiaan Huygens organized these methods into *On Reasoning in Games of Chance*, one of the earliest works of probability theory.",
+  "limits": "When the options can be measured with the same ruler, such as money or time, and you can afford to lose on every outcome, the average is the best ruler. Choices where one try could knock you out of the game are not among them, and no average, however high, is a reason to take them. When the chances themselves are guesses, precision after the decimal point is just decoration. People who take the average as a guarantee for this one try will say the sums were wrong when they lose."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When choosing between a fixed salary and one with commission, estimate a chance for each level of sales, work out how much you'd take home on average in a year, then compare it with the fixed figure."
+   },
+   {
+    "use": "design",
+    "text": "When you design a staff raffle, first work out how much each ticket pays out on average, so the prize pool doesn't go over budget."
+   },
+   {
+    "use": "explain",
+    "text": "A shop hands out money-off coupons, but only two or three people in ten use them, so each coupon costs far less than its face value on average, and that's how the coupons don't lose money."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "Is a load test worth it before release?",
+    "text": "You lead the back end, and a release with big changes goes out on Thursday. Suppose that without a load test there is a 10% chance it crashes after launch, and each crash costs 500,000 yuan: 50,000 on average. A load test costs 20,000 yuan and can push the chance of a crash down to 2%, leaving an average loss of only 10,000. The two together come to 30,000, which is 20,000 less than skipping the test. You schedule the load test for Wednesday."
+   },
+   {
+    "field": "Business",
+    "title": "Ordering extra roses before Valentine's Day",
+    "text": "You run a flower shop and, before Valentine's Day, are thinking of ordering 200 extra roses. Suppose there's a 60% chance they all sell, at a profit of 8 yuan a stem; and a 40% chance only half sell, with 8 yuan profit on each one sold and a loss of 5 yuan on each one left over. If they all sell, you make 1,600 yuan more. If only half sell, 100 stems make 800 yuan and 100 stems lose 500, a net gain of 300. The average is 0.6×1600 + 0.4×300, which is 1,080 yuan. You order the extra 200."
+   },
+   {
+    "field": "Personal life",
+    "title": "Screen insurance for your phone",
+    "text": "You buy a new phone for 4,000 yuan, and the salesperson recommends screen insurance at 360 yuan a year. You look back at your own record: in the past five years you've cracked a screen once, and a new screen costs 800 yuan. Counting that as a 20% chance a year, going without insurance costs 0.2×800 on average, which is 160 yuan a year, 200 less than the premium. The chance would have to be as high as 45% for the two to break even, and your record is nowhere near that; you can also afford to lose 800 yuan. You don't buy it."
+   }
+  ],
+  "ask": [
+   "How many outcomes does this choice have? Write them down: do the chances add up to 1?",
+   "Where did each chance come from: records I've looked at, a price quote, or my own feeling?",
+   "Have the costs been taken out of every item? Do they cover the same stretch of time?"
+  ],
+  "with": [
+   {
+    "id": "avoid-ruin",
+    "sees": "An investment has a 90% chance of doubling and a 10% chance of losing everything, and the average looks good. Expected value says buy. Avoiding ruin looks at the 10%: lose, and there is never a next time, so however high the average, you can only bet what you can afford to lose. When the amount is so small that losing it doesn't matter, listen to expected value; when one try could wipe you out, first get past avoiding ruin."
+   },
+   {
+    "id": "kelly-criterion",
+    "sees": "With a bet that is in your favor, expected value says every extra yuan you stake adds a little to your average gain, so the more you stake the better. The Kelly criterion works out how your money grows over repeated bets: stake more than a certain share, and in the long run you end up with less and less. If you bet only once and can afford to lose, staking everything is fine; if you'll bet many times in a row, use the share the Kelly criterion works out."
+   },
+   {
+    "id": "opportunity-cost",
+    "sees": "A project nets 2 million yuan on average, so expected value gives a positive number. Opportunity cost asks: put the same money and people somewhere else, and how much would they make on average? If they could make 3 million elsewhere, doing this project is a net loss of 1 million, and even with a positive number it shouldn't be done."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You've saved 100,000 yuan, everything you have, and next month you need it for the down payment on a home. If you can't pay it, you lose the home. A friend recommends a one-month scheme: a 70% chance of doubling your money and a 30% chance of losing all of it.",
+    "question": "How should you look at this investment?",
+    "explain": "0.7×200,000 plus 0.3×0 is an average of 140,000 yuan, more than 100,000. But this money is invested only once, and it's the down payment. The 30% chance of losing it all would cost you the home, and no average, however high, can win that back.",
+    "options": [
+     {
+      "text": "Invest: on average you get back 140,000 yuan, more than you put in.",
+      "correct": false,
+      "feedback": "The average is right, but this money is invested only once. If it lands in the 30% where you lose everything, the down payment is gone, and the average can't make up for that."
+     },
+     {
+      "text": "Don't invest: the average is high, but a 30% chance of losing it all means no down payment, and you can't afford that loss.",
+      "correct": true,
+      "feedback": "When one try could knock you out, no average, however high, is a reason. This money should be kept for the down payment."
+     },
+     {
+      "text": "Invest: there's a 70% chance of making money, so winning is more likely than losing.",
+      "correct": false,
+      "feedback": "This only compares the size of the chances and leaves out what losing means: the 30% where you lose everything would cost you the home."
+     },
+     {
+      "text": "Don't invest: on average you only get back 70,000 yuan, less than you put in.",
+      "correct": false,
+      "feedback": "That's a miscalculation: 0.7×200,000 plus 0.3×0 is 140,000 yuan. The reason not to invest isn't the average; it's that you can't afford to lose."
+     }
+    ]
+   },
+   {
+    "stem": "You're going to run a stall for a day at one of two places. Place A charges 100 yuan rent; on a sunny day (60% chance) sales are 600 yuan, on a rainy day (40% chance) 200 yuan. Place B charges no rent, and sales are 380 yuan whatever the weather. Sales are income, and rent is taken out separately. You care only about average net income.",
+    "question": "Which place should you go to?",
+    "explain": "Place A's average sales are 0.6×600 plus 0.4×200, which is 440 yuan; take off 100 yuan rent and the net is 340. Place B nets 380 yuan, 40 more.",
+    "options": [
+     {
+      "text": "Place A: its average sales of 440 yuan are higher than B's 380.",
+      "correct": false,
+      "feedback": "440 is sales; Place A's 100 yuan rent hasn't been taken out yet."
+     },
+     {
+      "text": "Either one: at Place A the good and bad days cancel out on average.",
+      "correct": false,
+      "feedback": "The sums don't come out equal: Place A nets 340 yuan, Place B 380."
+     },
+     {
+      "text": "Place A: sales on a sunny day are 600 yuan, much higher than at B.",
+      "correct": false,
+      "feedback": "Sunny days are only 60% of the chance, and rainy days bring only 200 yuan. Looking only at the 600 leaves out the other weather and the rent."
+     },
+     {
+      "text": "Place B: after rent, Place A nets 340 yuan on average, less than B's 380.",
+      "correct": true,
+      "feedback": "The 440 yuan of average sales leaves only 340 after rent, 40 less than Place B."
+     }
+    ]
+   },
+   {
+    "stem": "A dispatcher at a logistics company has to decide whether to stop deliveries tomorrow. From the weather forecast and past years' records, he estimates about a 10% chance that heavy snow will close the roads. Stopping for a day loses orders worth 80,000 yuan; running as usual and getting caught by closed roads costs about 300,000 yuan in delays and compensation. He decides to run as usual. The next day the roads really do close, and the company loses 300,000 yuan. His boss says he made the wrong call.",
+    "question": "Looking only at the sums before he acted, how should the dispatcher's decision be judged?",
+    "explain": "Running as usual: a 10% chance of losing 300,000 yuan, 30,000 on average. Stopping: a sure loss of 80,000. The sums before acting said running cost less; the bad result is the 10% coming true. What deserves a review is whether that 10% was estimated well, not this one result.",
+    "options": [
+     {
+      "text": "Not wrong: running costs 30,000 yuan on average, less than the 80,000 for stopping, and this time it hit the 10%.",
+      "correct": true,
+      "feedback": "0.1×300,000 is 30,000 yuan, less than the 80,000 for stopping. The bad result landed in a box that was already on the table."
+     },
+     {
+      "text": "Wrong: this time it lost 300,000 yuan, 220,000 more than stopping would have.",
+      "correct": false,
+      "feedback": "That's grading by the result. Before acting, closed roads had only a 10% chance, and at that point the sums said running cost less."
+     },
+     {
+      "text": "Wrong: if there's any chance the roads will close, deliveries should stop.",
+      "correct": false,
+      "feedback": "By that standard, every day snow is possible would mean stopping, and the sure losses in orders would add up to far more than the occasional delay."
+     },
+     {
+      "text": "Can't be judged: weather forecasts aren't accurate anyway.",
+      "correct": false,
+      "feedback": "The forecast being inexact is exactly why the sums are done with a 10% chance. Once you have the chance and the losses, the sums can be worked out."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Past a 40% chance of sun, the weather job wins",
+  "caption": "Across is the chance of sun; where the lines cross, the better job switches. Drag the sunny-day pay and the crossing point moves left or right.",
+  "x": {
+   "label": "Chance of sun",
+   "min": 0,
+   "max": 100,
+   "unit": "%"
+  },
+  "y": {
+   "label": "Average per weekend (yuan)",
+   "min": 0
+  },
+  "params": [
+   {
+    "id": "w",
+    "label": "Sunny-day pay",
+    "min": 200,
+    "max": 1000,
+    "step": 50,
+    "value": 500,
+    "unit": " yuan"
+   }
+  ],
+  "series": [
+   {
+    "name": "Weather job",
+    "expr": "w*x/100",
+    "tone": "accent"
+   },
+   {
+    "name": "Fixed job",
+    "expr": "200",
+    "tone": "ink",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "x": "20000/w",
+    "y": 200,
+    "text": "Break even"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "At 50% sun",
+    "expr": "w*0.5",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "Break even at",
+    "expr": "min(100, 20000/w)",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

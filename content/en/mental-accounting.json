@@ -1,0 +1,198 @@
+{
+ "id": "mental-accounting",
+ "name": "Mental Accounting",
+ "en": "心理账户",
+ "discipline": "psychology",
+ "one_line": "The same hundred yuan gets spent differently depending on where it came from and what it's for.",
+ "story": "Before he was famous, Dustin Hoffman kept his money in separate jars; when the food jar ran dry he borrowed from Gene Hackman and left the other jars alone (an anecdote retold by Thaler)",
+ "shallow": {
+  "scene": "The economist Richard Thaler has retold an anecdote. Before he was famous, Dustin Hoffman was short of money and asked the actor Gene Hackman for a loan. Hackman came to Hoffman's home and saw several jars in the kitchen, each holding money set aside for one cost: rent, utilities and so on. He asked why Hoffman needed to borrow when he had money. Hoffman pointed to the empty food jar and said the money for food had run out. He had not touched a single bill in the other jars.",
+  "plain": "Each month you split your money into a few accounts in your head: 1,500 yuan for food, 300 yuan for fun. At the end of the month the fun account has only 20 yuan left. A friend asks you to an escape room that costs 80 yuan, and you turn it down with \"I'm over this month.\" The same week, the food account still has 300 yuan, and thinking \"it's food money anyway,\" you order two expensive takeout meals you would normally never allow yourself.\n\nThis is how mental accounting saves you effort: each account only asks whether its own budget is enough, never where all your money should go. Moving 80 yuan out of the food money to see your friend would have made you happier, but it never occurred to you that this money could be moved."
+ },
+ "deep": {
+  "mechanism": "### Separate accounts save thinking, and they also build a wall against yourself\n\nWith all your money in one pile, every purchase means thinking it all through: is the rent covered, what else is due next month. Split into a few accounts, each small decision looks at one small number: how much is left for fun. That saves thinking. The walls between accounts also hold back the part of you that can't stop spending: leave the savings account alone, and the savings build up. The cost comes from the same wall. Money that should move doesn't: food money is left over and spent carelessly, while something you want to do falls through for want of a few dozen yuan.\n\n### What you call incoming money decides whether you'll spend it\n\nTake the same 2,000 yuan. If you set it aside from your salary, you hesitate for three days over a pair of headphones; if it comes from a tax refund, you buy them that day. Salary counts as money to live on; a refund feels like money you found. The amount didn't change. Only the account it went into did.\n\n### How you pay is an account too\n\nIn a shop, you take out a credit card for a 300-yuan down jacket and pay without a second thought. If you had to count out three 100-yuan notes from your wallet instead, you would hang it back on the rack. When you pay by card, not one note leaves your wallet and the bill only comes next month, so the swipe doesn't feel like spending.\n\n### The period you settle over decides what gets compared with what\n\nKeep a separate account for one trip and it cost 2,400 yuan, which feels expensive. Put it in a year's spending of 60,000 yuan and it is only 4%. Stretch the period from one trip to a year, and the same 2,400 yuan goes from \"too expensive\" to \"not bad.\"",
+  "origin": "In 1980 Thaler put forward the idea in a paper about consumer choice. In 1985 he set it out in full, and in 1999 he summed it up again. In 2017 he won the Nobel Prize in economics for his contributions to behavioral economics.",
+  "limits": "Separate accounts work best for guarding rent, school fees and savings from the part of you that can't stop spending. For a big decision like quitting a job to start a business, people mostly add their accounts together and do the sums as a whole, and then mental accounting doesn't explain much. Treating every split account as a flaw, and tearing down even the savings rules you set on purpose, is a mistake of a different kind."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When you design how customers pay, have them buy \"tokens\" first and then spend them. Spending tokens hurts less than paying cash each time, so customers more easily spend a bit extra."
+   },
+   {
+    "use": "act",
+    "text": "When you want to save, give the money a specific use and date, such as \"braces in two years.\" It is less likely to get spent on a whim than money labeled only \"savings.\""
+   }
+  ],
+  "examples": [
+   {
+    "field": "Public policy",
+    "title": "Heating money bought heating",
+    "text": "Every winter the British government gives households with older people a Winter Fuel Payment. The money goes straight into their accounts, and they can spend it on anything. A study by Beatty, Blow, Crossley and O'Dea, published in the Journal of Public Economics in 2014, found that these households spent on average 47% of the payment on heating fuel; if they had treated it as ordinary cash, they would have been expected to spend only 3%. All the government did was give the money a name, and households put it in their \"heating\" account."
+   },
+   {
+    "field": "Spending",
+    "title": "Gas got cheaper, so they bought pricier gas",
+    "text": "In 2013 Hastings and Shapiro published a study in the Quarterly Journal of Economics. When gas prices fell sharply in the fall of 2008, the share of American households buying mid-grade and premium gasoline went up, by more than the money saved could explain on its own. The authors' reading: the money saved on gas stayed in the \"gas money\" account and was spent on more expensive gas, instead of being added to the household's income."
+   },
+   {
+    "field": "Family",
+    "title": "The New Year money can't be touched",
+    "text": "Your 10-year-old has saved 2,000 yuan of Lunar New Year money, the cash relatives give children in red envelopes, and you have always said that money is for saving. Your child wants a 300-yuan building set. You say the New Year money can't be touched, then turn around and pay the 300 yuan out of your own spending money. The child gets the set, and the New Year account hasn't dropped by a cent."
+   }
+  ],
+  "ask": [
+   "How many accounts do I have right now? When do I let myself touch the money in each one?",
+   "If this decision were paid for out of a different account, would I still make it?",
+   "If I add all the accounts together and work out my total assets and total debts, does this decision still hold up?"
+  ],
+  "with": [
+   {
+    "id": "opportunity-cost",
+    "sees": "You put 800 yuan a month into a \"trip next year\" account, and after five months you have 4,000 yuan. Then an online course you want to take goes half price, and in two months it goes back to full price. Mental accounting tells you to guard the account: the money got saved precisely because it isn't touched on a whim. Opportunity cost tells you to ask whether this 4,000 yuan buys more as a course than as a trip. When the goal is clear and you're afraid you'll spend carelessly, keep the accounts separate; when a use comes up that has a deadline and a clearly higher payoff, push the trip back a little."
+   },
+   {
+    "id": "present-bias",
+    "sees": "You want to save an extra 1,500 yuan a month, and at the end of each month you find the money is already gone. Present bias makes the end-of-month you see only this meal, this order. Separate accounts put a wall in its way: the 1,500 yuan moves to another account on payday, out of reach of the end-of-month you, so it never enters that month's sums."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You have 30,000 yuan in savings, labeled \"down payment,\" earning 2% a year. You also owe 20,000 yuan in installments at 16% a year, and paying them off early costs no fee. You've never touched the savings, because touching them would feel like breaking the plan to buy a home.",
+    "question": "Which of these saves money and also keeps the down-payment plan?",
+    "explain": "A year of interest on the installments is 3,200 yuan; the savings earn only 400 yuan a year. Pay off the installments with the savings, then keep paying the old installment amount into the down payment. The plan isn't broken; the 20,000 yuan just comes back by a different route.",
+    "options": [
+     {
+      "text": "Pay off the installments with the savings, and think about the down payment again in two years",
+      "correct": false,
+      "feedback": "This saves money but puts off the plan to buy a home, so the down payment isn't kept."
+     },
+     {
+      "text": "Leave the savings alone, keep paying the installments, and keep the down-payment account at 30,000 yuan",
+      "correct": false,
+      "feedback": "You throw away 3,200 yuan a year in installment interest to get 400 yuan of savings interest. Guarding the account this way loses money."
+     },
+     {
+      "text": "Move the savings into a higher-yield investment and use the returns to pay the installments",
+      "correct": false,
+      "feedback": "It would have to earn 16% just to match the installment interest. Returns like that aren't steady, and all the risk falls on the down payment."
+     },
+     {
+      "text": "Pay off the installments with the savings, then each month put the old installment amount into the down payment",
+      "correct": true,
+      "feedback": "You save 3,200 yuan in interest, and the monthly deposits bring the down payment back up to its goal. Both sides are taken care of."
+     }
+    ]
+   },
+   {
+    "stem": "In the same week, you and your roommate each end up with an extra 2,000 yuan. Yours is overtime pay added to this month's salary; your roommate's is a lottery win. You're both saving for a new computer, and you both have your eye on a 1,500-yuan concert.",
+    "question": "Who is more likely to buy a concert ticket that same week?",
+    "explain": "The two sums are the same size but have different names. Money from salary goes into the \"living\" account, and you weigh it before spending it; lottery money goes into the \"free money\" account, and spending it doesn't hurt.",
+    "options": [
+     {
+      "text": "You, because you worked hard for the overtime pay and feel more entitled to spend it",
+      "correct": false,
+      "feedback": "It's the other way round: earned money goes into the living account, and that is the money people are most reluctant to spend."
+     },
+     {
+      "text": "Your roommate, because the lottery money is booked in the \"free money\" account",
+      "correct": true,
+      "feedback": "The same 2,000 yuan, booked as free money, doesn't have to be weighed against rent or the new computer, so spending it doesn't hurt."
+     },
+     {
+      "text": "Both equally: it's the same amount, so it only depends on whether the concert is worth it",
+      "correct": false,
+      "feedback": "The amounts really are the same, but the two sums went into different accounts, and each has a different test to pass."
+     },
+     {
+      "text": "Neither, because both are saving for a new computer",
+      "correct": false,
+      "feedback": "The computer account hasn't changed, but the lottery money most likely wasn't booked into it, so your roommate doesn't feel it's being touched."
+     }
+    ]
+   },
+   {
+    "stem": "You keep 60,000 yuan in a checking account, about six months of your spending, and also have 30,000 yuan in a long-term fund that moves up or down by up to 20% in a year. A friend says money doesn't have names, keeping an emergency fund in checking is a waste, and you should move it all into the fund. Neither of your jobs is secure.",
+    "question": "Which view of your friend's advice has a sound basis?",
+    "explain": "An emergency fund is there so that when something happens you can get it right away and it hasn't shrunk. Moved into the fund, it might have to be sold at a low point when you need it. That is the practical reason for keeping it as an account of its own.",
+    "options": [
+     {
+      "text": "Do it: money doesn't have names, and separate accounts are just fooling yourself.",
+      "correct": false,
+      "feedback": "This money is there in case you lose your job. Apart from its name, it differs from the fund in being available at any time and in whether the amount holds steady."
+     },
+     {
+      "text": "Keep it in checking: this money is called the emergency fund, and the name can't change.",
+      "correct": false,
+      "feedback": "This puts the reason in the name, and like your friend's \"money doesn't have names,\" it never gets to what the money is for."
+     },
+     {
+      "text": "Keep it in checking: in an emergency you need to get it right away, and the amount can't shrink.",
+      "correct": true,
+      "feedback": "An emergency fund has to be there whenever you need it, at a steady amount. This reason comes from what it's for, not from its name."
+     },
+     {
+      "text": "Do it: the fund moves by less than 20% a year, so you can't lose much.",
+      "correct": false,
+      "feedback": "A 20% drop on 60,000 yuan is 12,000 yuan. If an emergency forces you to sell at a low point, that loss becomes real."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Takeout from food money; a friend dropped over 60",
+  "caption": "At month-end one account has money left, one is short. Moving 80 from food to the escape room would make you happier, but you never think of that dashed line.",
+  "nodes": [
+   {
+    "id": "f",
+    "label": "Food account",
+    "sub": "300 left at month-end",
+    "layer": 0
+   },
+   {
+    "id": "e",
+    "label": "Fun account",
+    "sub": "Only 20 left",
+    "layer": 0
+   },
+   {
+    "id": "t",
+    "label": "Two pricey takeouts",
+    "sub": "Normally a no",
+    "tone": "muted",
+    "layer": 1
+   },
+   {
+    "id": "r",
+    "label": "Friend's escape room",
+    "sub": "80 yuan, turned down",
+    "tone": "warn",
+    "layer": 1
+   }
+  ],
+  "edges": [
+   {
+    "from": "f",
+    "to": "t",
+    "label": "It's food money"
+   },
+   {
+    "from": "e",
+    "to": "r",
+    "label": "60 short, no",
+    "tone": "warn"
+   },
+   {
+    "from": "f",
+    "to": "r",
+    "label": "Move 80, done",
+    "dashed": true,
+    "tone": "accent"
+   }
+  ]
+ }
+}

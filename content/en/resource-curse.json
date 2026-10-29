@@ -1,0 +1,228 @@
+{
+ "id": "resource-curse",
+ "name": "Resource Curse",
+ "en": "资源诅咒",
+ "discipline": "society",
+ "one_line": "When money comes too easily, nobody builds other skills or asks where it went.",
+ "story": "Pérez takes office as Venezuela's president and rides soaring oil prices to push a \"Great Venezuela\" expansion and borrow abroad; on February 18, 1983, the government orders a halt to foreign-exchange trading (\"Black Friday\")",
+ "shallow": {
+  "scene": "Plenty of people have heard of a family like this: their old home is torn down for redevelopment and they suddenly receive a large sum in compensation. A few years later the money is spent, and no one in the family has learned any other way to make a living. A country can go the same way.\n\nIn the 1970s oil prices soared, and the government of Venezuela, a major oil producer, suddenly had a great deal of extra oil money. It built large projects, expanded state companies and borrowed abroad, and promised to spend more and more. In 1983 oil prices fell and income dropped sharply, but the foreign debts still had to be repaid. Afraid the local currency would lose value, the wealthy rushed to change their money into dollars and move it abroad, and the country had fewer and fewer dollars left. On Friday, February 18, the government had to announce that the bolívar, the national currency, could no longer be freely exchanged for dollars at the old price. The bolívar lost much of its value at once, and people there still call that day \"Black Friday.\"\n\nIn the years of high oil prices, Venezuela spent its oil money but didn't build up any way to earn money beyond oil.",
+  "plain": "Imagine a village that leases its land to a factory, and the village as a whole collects a large rent every year without lifting a finger. In the past, building a road meant collecting money from every household, and the people who paid would ask where every bit of it went. Now the money comes out of the rent, no one pays from their own pocket, and so no one looks at the books anymore. Young people collect a monthly dividend and no longer need to go out and learn a trade, and the village's bamboo-weaving workshop can't find workers. The year the factory moves away, the accounts are empty, and few people are left who know any other way to make a living.\n\nA country sitting on oil fields and mines can go down the same road: money comes too easily, the people in charge of it don't have to answer to anyone, and other skills wither. This is called the resource curse."
+ },
+ "deep": {
+  "mechanism": "### When money doesn't come from taxpayers, officials don't have to answer to taxpayers\n\nCollecting taxes takes people's cooperation. People who pay taxes ask where the money went, and they put on pressure through votes, protests or by under-reporting their income, so the government has to open its books in exchange for their going on paying.\n\nWhen income comes from a few oil wells, ordinary people no longer hold the bargaining chip of \"not paying taxes,\" so no one can force the government to open its books. With no one checking the books, the people who control how the money is handed out find it pays better to give the oil money to their own people than to do the hard work of building a broad tax base. Businesses see that money follows connections, so they too turn to fighting over mining rights, contracts and subsidies instead of making new products. As a result, year after year there are fewer people asking where the money is spent, and fewer people willing to create new wealth.\n\n### Resource money spent at home pushes up costs for every other industry\n\nForeign currency earned from selling resources is changed into the local currency and spent at home, which pushes up wages, rents and the prices of local services. Exporters sell their goods at world prices but pay their costs at high local prices; talent and capital also flow into the resource industry. With large amounts of foreign currency pouring in to be changed into the local currency, the local currency also rises in value, so exports look more expensive to foreign buyers. The profits of other export industries are squeezed thin, and economists call this squeeze Dutch disease.\n\n### The more you depend on it, the bigger the hole one drop leaves\n\nSuppose a government takes in and spends 10 billion yuan a year, with 8 billion from oil and 2 billion from everything else. If oil income halves, 4 billion is gone, leaving only 6 billion for the year, 4 billion less than it spends. With the same spending, if oil made up only 30%, that is 3 billion, halving it would lose only 1.5 billion. Borrowing to fill that 4-billion gap makes the next year's bills heavier.",
+  "origin": "Richard Auty set out this idea systematically in his 1993 book *Sustaining Development in Mineral Economies: The Resource Curse Thesis*. A 1995 cross-country study by Sachs and Warner found that the larger a country's resource exports were as a share of GDP in 1971, the slower it grew from 1971 to 1989. The term \"Dutch disease\" comes from *The Economist* in 1977, which used it for the decline of Dutch manufacturing after the Groningen gas field was discovered in 1959.",
+  "limits": "The model fits best when resource income makes up most of government revenue and exports, and no one publicly checks the accounts. In economies where resource income is a small part, and taxes and exports were varied to begin with, it does almost nothing. Seeing that a country is rich in resources and declaring that it is bound to decline is mistaking a correlation for fate."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "To estimate what a mining town will look like in ten years, first check whether tax revenue and the number of businesses outside mining are rising or falling; how much ore it produces matters less."
+   },
+   {
+    "use": "design",
+    "text": "When you design how a cooperative shares out its earnings, first write down who can check the books and who has the power to replace the people handling the money, then talk about how much to pay out each year."
+   },
+   {
+    "use": "explore",
+    "text": "Look up a region's business directory from twenty years ago, compare it with today's, and count how many new lines of business have grown up outside the resource industry."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Public finance",
+    "title": "Where the phosphate fund went",
+    "text": "Nauru lived on exporting phosphate, and in the second half of the 20th century its income per person was for a time among the highest in the world. The trust fund that managed the phosphate earnings invested them and lost heavily; one of its bets was on a musical in London. By the 2000s the government was getting by on loans and foreign aid."
+   },
+   {
+    "field": "Business",
+    "title": "Funding nobody checks",
+    "text": "You run a research institute inside a corporate group. Headquarters gives it a fixed sum every year, it charges no customer anything, and nobody inside checks the accounts. With the money left over at the end of the year, your team starts three showcase projects that reviewers love to see, and the testing improvements customers asked for are pushed to next year."
+   },
+   {
+    "field": "Education",
+    "title": "Students hired away by the mine",
+    "text": "You teach mechanics at a county vocational school. In recent years the mine has been hiring without asking for diplomas, and second-year students drop out batch after batch to work there. The graduating year has shrunk from two classes to half a class, and the school decides to close its CNC machining program."
+   }
+  ],
+  "ask": [
+   "Can the people who put in this money, or who benefit from it, check where it goes? Can they replace the people who hand it out?",
+   "Once this money comes in, which trades, teams or skills find it harder, not easier, to get people and budget?",
+   "By how much does this income rise or fall at most in a year? When it hits bottom, which spending stops first?"
+  ],
+  "with": [
+   {
+    "id": "comparative-advantage",
+    "sees": "A small country gets more out of mining copper than out of making anything else. Should you put more labor and capital into the mines? Comparative advantage says yes: copper is what it does relatively best, and by exporting more copper and importing other goods, the whole country produces more. The resource curse looks at what happens once the mining area has grown: other industries can't keep their workers, and when the copper price turns, there is no second leg to stand on. How widely the copper price swings, and whether anyone outside the mines is still building other skills, decide which way to go."
+   },
+   {
+    "id": "rent-seeking",
+    "sees": "A batch of drilling permits for a new oil area is about to be issued. Rent-seeking looks at how the permits are handed out: by internal approval or by open auction, and how much bidders spend on lobbying. The resource curse asks one step further: once the permits are out, whose pocket the drilling income goes into, and whether it is spent or saved. Ask both questions; an open auction is no substitute for rules on saving the money."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "After a nearby gas field starts producing, wages and factory rents keep rising in the small town where your wood-flooring factory stands, and gas-field contractors lure away several of your skilled workers with high pay. You sell your flooring overseas at world-market prices, with contracts priced in dollars and fixed for a year; your overseas competitors' costs haven't changed.",
+    "question": "When you renew your contracts next year, what is most likely to happen to your profit?",
+    "explain": "The gas field's money is spent locally and pushes up local wages and rents, while your selling price is held down by competitors abroad. With costs rising and prices stuck, your profit is squeezed thin from both sides.",
+    "options": [
+     {
+      "text": "The gas field brings local demand, and sales at home can make up for the higher costs.",
+      "correct": false,
+      "feedback": "Nothing in the question suggests more orders at home; the flooring is an export sold at world prices."
+     },
+     {
+      "text": "The contract prices haven't changed, so profit will stay where it was.",
+      "correct": false,
+      "feedback": "Unchanged prices only mean the income side is unchanged; the rise in wages and rent still goes into your costs."
+     },
+     {
+      "text": "Profit gets thinner: the selling price is held down by world prices, while costs rise with local prices.",
+      "correct": true,
+      "feedback": "Your overseas competitors' costs haven't risen and yours have, and you can't raise your prices to match, so your profit is caught in between."
+     },
+     {
+      "text": "Raise the dollar price, and the extra costs pass on to buyers.",
+      "correct": false,
+      "feedback": "Your overseas competitors' costs haven't risen, so buyers can go elsewhere; raising prices will only lose orders."
+     }
+    ]
+   },
+   {
+    "stem": "Seventy percent of a county's government revenue comes from profits handed over by the county-owned coal mine. A few years ago the county scrapped several small taxes, and officials are judged on how many projects they get started. In recent years shops have been moving away one after another; no one complains to the county, and no one asks where the coal mine's profits went. The year coal prices fell, the county couldn't pay part of its wages.",
+    "question": "The county wants its budget to stop swinging with the price of coal. Which change goes straight at the cause?",
+    "explain": "When a government's finances rest on one mine and the people spending the money don't have to answer to anyone, spending climbs to the peak along with the coal price. Setting in advance what share can be spent each year and saving the rest puts some distance between the budget and the coal price.",
+    "options": [
+     {
+      "text": "Open another coal mine and double the profits handed over.",
+      "correct": false,
+      "feedback": "One more mine makes the finances depend even more on coal, so the gap is bigger the next time coal prices fall."
+     },
+     {
+      "text": "Charge the coal mine an extra special tax to fill the wage gap.",
+      "correct": false,
+      "feedback": "The money still comes from coal and the spending promises haven't changed, so the gap shows up again the next time coal prices fall."
+     },
+     {
+      "text": "Give the number of projects started more weight in officials' reviews, and use more projects to draw shops back.",
+      "correct": false,
+      "feedback": "Judging officials on projects started is exactly why they chase new projects; giving it more weight will put even more money into projects."
+     },
+     {
+      "text": "Put the handed-over profits into each year's budget at a share set in advance, and put the rest into a fund.",
+      "correct": true,
+      "feedback": "A rule decides how much can be spent each year. The extra when coal prices are high is saved, so there is still money to use when they are low."
+     }
+    ]
+   },
+   {
+    "stem": "In Country B, natural gas's share of total exports rose from 30% to 60% over five years. Over the same period, gas output, gas prices and the country's gas income stayed the same; frost hit the coffee plantations, and coffee exports fell by more than half. On that basis, a report says natural gas is crushing the country's other industries.",
+    "question": "Going by this information, does the evidence support the report's conclusion, and how should you see it?",
+    "explain": "A share can rise for two reasons: the top of the fraction gets bigger, or the bottom gets smaller. Here the gas figures didn't move; the shrinking coffee trade pulled total exports down. To say gas crushed other industries, you would need other evidence, such as costs being pushed up or talent being drawn away.",
+    "options": [
+     {
+      "text": "Gas's share doubled, which shows it is squeezing other industries.",
+      "correct": false,
+      "feedback": "The share doubled because total exports shrank; gas output, prices and income didn't change."
+     },
+     {
+      "text": "The rise in share can be explained by coffee shrinking; there isn't yet evidence that gas is crushing other industries.",
+      "correct": true,
+      "feedback": "The change in share came from the bottom of the fraction, so the report's explanation has no evidence behind it."
+     },
+     {
+      "text": "Coffee exports fell sharply, which shows gas didn't lift other industries, so the report's conclusion holds.",
+      "correct": false,
+      "feedback": "Not lifting other industries is not the same as harming them, and the information gives frost as the reason coffee fell."
+     },
+     {
+      "text": "Gas income didn't rise, which shows the economy's structure hasn't changed, so growth expectations needn't be adjusted.",
+      "correct": false,
+      "feedback": "Coffee exports falling by half has already changed the structure, and growth expectations may need adjusting because of it."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Easy money: books unchecked, trades unlearned",
+  "caption": "Accountability fades: no one pays in, so no one asks where it goes. Skills fade: dividends suffice, so no one learns a trade. When the factory leaves, both fail.",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "Rent rolls in",
+    "sub": "Big sum yearly",
+    "tone": "accent",
+    "layer": 0
+   },
+   {
+    "id": "b",
+    "label": "Rent pays roads",
+    "sub": "No one chips in",
+    "layer": 1
+   },
+   {
+    "id": "d",
+    "label": "Youth get paid",
+    "sub": "No trade learned",
+    "layer": 1
+   },
+   {
+    "id": "c",
+    "label": "Books unchecked",
+    "sub": "No one asks",
+    "tone": "warn",
+    "layer": 2
+   },
+   {
+    "id": "e",
+    "label": "Workshop empty",
+    "sub": "Trades wither",
+    "tone": "warn",
+    "layer": 2
+   },
+   {
+    "id": "f",
+    "label": "Factory leaves",
+    "sub": "Broke, no skills",
+    "tone": "warn",
+    "layer": 3
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b"
+   },
+   {
+    "from": "a",
+    "to": "d",
+    "label": "Payouts"
+   },
+   {
+    "from": "b",
+    "to": "c",
+    "label": "Free cash"
+   },
+   {
+    "from": "d",
+    "to": "e"
+   },
+   {
+    "from": "c",
+    "to": "f",
+    "label": "Spent",
+    "tone": "warn"
+   },
+   {
+    "from": "e",
+    "to": "f",
+    "label": "No way out",
+    "tone": "warn"
+   }
+  ]
+ }
+}

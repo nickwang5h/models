@@ -1,0 +1,209 @@
+{
+ "id": "law-of-large-numbers",
+ "name": "Law of Large Numbers",
+ "en": "大数定律与小样本",
+ "discipline": "math",
+ "one_line": "With few tries any lopsided ratio can show up, and only many tries steady it.",
+ "story": "Interned in German-occupied Denmark, Kerrich tosses a coin 10,000 times: four heads in the first ten, 5,067 heads in all (50.67%)",
+ "shallow": {
+  "scene": "From 1940, the South African mathematician John Kerrich was held in an internment camp in German-occupied Denmark. He began tossing a coin and recording each toss. In the first ten tosses, heads came up only four times, a share of 40%. He did not announce that the coin favored tails; he kept tossing. By 10,000 tosses, heads had come up 5,067 times, 50.67%.",
+  "plain": "Suppose a player makes 70% of his free throws. In one game he makes one of four, only 25%, and nobody says he has got worse. Over a season of 600 free throws, his rate will land within a few points of 70%. The law of large numbers and the trouble with small samples are two sides of the same thing: with many tries the share holds steady; with few tries any extreme share can turn up. So when you see a percentage, first ask how many tries it was worked out from."
+ },
+ "deep": {
+  "mechanism": "### With few tries, one surprise can rewrite the share\n\nToss a coin ten times, and one extra head moves the share by ten percentage points; toss it 10,000 times, and it moves only 0.01 points. If something's true rate is $p$ and you try it $n$ times, the share you work out is typically off from $p$ by about\n\n$$\\sqrt{\\frac{p(1-p)}{n}}$$\n\n$n$ sits under the square root, so you need four times as many tries to halve the error.\n\nWhy the square root? First look at how far the number of heads is from half. With one toss, it is always half a head over or half a head under. With two tosses, if both go the same way the gap doubles; if one goes each way they cancel exactly. The four cases are equally likely, and on average the square of the gap is twice what it is for one toss, not four times. Each extra toss adds one more share to the square, so after $n$ tosses the square is $n$ times as big, and the gap itself only $\\sqrt{n}$ times.\n\nBut the number of tosses is $n$ times as big. Divide one by the other, and the error in the share shrinks to $1/\\sqrt{n}$. Toss a fair coin a hundred times: $\\sqrt{0.25/100}=0.05$, an error of about five percentage points. Toss it 10,000 times, and it is off by only half a point.\n\n### The share settles, but nothing is making up the difference\n\nKerrich was one head short in his first ten tosses. If the next 990 tosses came out exactly half and half, there would be 4+495=499 heads, and the share over 1,000 tosses would be 49.9%. Nobody paid back the missing head; it was just diluted by all the tosses that came after.\n\n### The rarer the thing you're measuring, the more tries you need\n\nMeasure something with a 1% chance and try it a hundred times, and the typical swing is about one percentage point, as big as the 1% itself, so you can't tell 1% from 2% at all. Only at 10,000 tries does the swing fall to 0.1 points, and the two can be told apart.",
+  "origin": "Jacob Bernoulli's *Ars Conjectandi* (*The Art of Conjecturing*), published in 1713, proved that the share of successes in independent repeated trials approaches a fixed probability. In 1837 Poisson called this result \"the law of large numbers.\" Kerrich's coin tossing was only a demonstration; what guarantees the result is the mathematical proof.",
+  "limits": "Counting tries tells you most when the repeats are independent and the rules don't change: tossing coins, rolling dice, a big batch of insurance policies that have nothing to do with each other. A thousand clicks from one person are not independent of each other, and they are not a thousand customers. If the rules changed when a site was redesigned and the records from before and after are mixed together, what you estimate is a blend of the two periods. If the sample is skewed, no number of tries will wash that out. In 1936 the American magazine *The Literary Digest* got back about 2.4 million survey forms and still called the presidential election wrong. The reason was that both its mailing list and the people who wrote back were different from voters as a whole."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When an online shop's weekly report shows the conversion rate falling from 3% to 2%, first check how many visitors there were this week. With only two hundred, a drop that size is within normal swings, and there's no need to rush to change the page."
+   },
+   {
+    "use": "design",
+    "text": "Set rules for collecting survey responses: count only one per account and one per household, so that one person submitting ten times doesn't pose as ten samples."
+   },
+   {
+    "use": "communicate",
+    "text": "When you report a conclusion from a small sample to your boss, write \"so many out of so many\" next to the percentage, so they can see how easily the number could swing."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Finance",
+    "title": "Premiums set by the overall rate",
+    "text": "You work as an actuary at a car insurance company. Look at one driver alone, and nobody can say whether they'll make a claim next year. Put a million policies together, and the share that make a claim lands in about the same place every year, so premiums are set by that share. If the same pool had only fifty policies, the share would be different every year, and the company could only gamble once a year."
+   },
+   {
+    "field": "Public health",
+    "title": "A trial with hundreds of thousands of children",
+    "text": "In 1954 the United States ran a large trial of the Salk polio vaccine, and the part with a randomized placebo comparison involved about 400,000 children. Not everyone gets polio. If each group had only a few dozen children, one case more or less would shift the rate of illness by a large amount. In records of hundreds of thousands of children, a few chance cases count for much less in the rate, and only then could the gap between the two groups be seen as the vaccine's doing."
+   },
+   {
+    "field": "Sports",
+    "title": "Batting .500 in the first week",
+    "text": "In the first week of the season, a player gets four hits in eight at-bats. That is a .500 batting average, top of the league. By the end of the season, after more than 500 at-bats, nobody's average is still at .500."
+   }
+  ],
+  "ask": [
+   "How many observations was this share worked out from? How much would one more success or failure move it?",
+   "Are these observations independent of each other? Have repeated records of the same person or the same event been counted as new samples?",
+   "Does the sample cover what I'm trying to judge? Or did it only collect the group that was easiest to collect?"
+  ],
+  "with": [
+   {
+    "id": "explore-exploit",
+    "sees": "A website is running two versions of a button at once. The law of large numbers wants you to let both run to a few thousand visitors before comparing. Explore and exploit works out that every visitor you send to the version that is clearly behind costs you an order, so traffic should tilt toward the one in the lead. If the gap between the versions is small and you won't miss the one you drop, test a while longer; if the gap is big and you're losing money every day, move the traffic over early."
+   },
+   {
+    "id": "survivorship-bias",
+    "sees": "A satisfaction survey with a few thousand responses is big enough. Survivorship bias asks who these people are: only customers who haven't canceled would fill it in. First ask how the sample came about, then count how big it is."
+   },
+   {
+    "id": "regression-to-mean",
+    "sees": "A new salesperson signs three deals in his first month, the most on the team. Chance accounts for most of those three deals, and next month he probably won't be on top. That is what regression to the mean goes on to predict. Don't hand out bonuses by first-month ranking."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You are looking at a monthly ranking of return rates for 40 community pharmacies across the province. In fact, every pharmacy's true return rate is 5%; the only difference is monthly sales. The smallest shop has about twenty orders a month, the biggest around two thousand.",
+    "question": "What kind of pharmacy is most likely to be at the top and at the bottom of the ranking?",
+    "explain": "The true return rate is the same everywhere, so differences in rank come only from the number of orders. The fewer orders, the more easily a few returns push the share very high or very low; the big shops' shares all crowd around 5%.",
+    "options": [
+     {
+      "text": "The few with the smallest sales: few orders make their shares swing the widest, so they fill both ends.",
+      "correct": true,
+      "feedback": "With about twenty orders, two extra returns move the share by ten percentage points, so both the highest and the lowest land on small shops."
+     },
+     {
+      "text": "The biggest shop at one end and the smallest at the other.",
+      "correct": false,
+      "feedback": "The big shops' shares stay near 5%, crowded in the middle of the ranking, nowhere near the top or the bottom."
+     },
+     {
+      "text": "The few with the biggest sales: more orders and better management, so they fill both ends.",
+      "correct": false,
+      "feedback": "In the question every shop's true return rate is the same, so management makes no difference; more orders only bring the share closer to 5%."
+     },
+     {
+      "text": "Shops of every size are spread at random; sales and rank are unrelated.",
+      "correct": false,
+      "feedback": "Rank is related to sales, just not by moving the average: the smaller the sales, the more likely a shop ends up at one of the two ends."
+     }
+    ]
+   },
+   {
+    "stem": "At a fund manager's roadshow, he shows 600 trades made by a strategy, 72% of them profitable. The trades are bunched after 6 central bank interest-rate announcements. Each time he bought about 100 stocks at once, and the stocks bought at the same time mostly rose and fell together.",
+    "question": "These 600 records come closest to how many independent trials?",
+    "explain": "Stocks bought after the same announcement rise and fall together, so each announcement counts as only one roll of luck. Behind the 600 records there are only about 6 independent trials. The 72% looks like a share worked out from 6 tries, not from 600.",
+    "options": [
+     {
+      "text": "600",
+      "correct": false,
+      "feedback": "600 is the number of records. Stocks bought after the same announcement are tied to each other, so each trade can't count as one trial."
+     },
+     {
+      "text": "About 6",
+      "correct": true,
+      "feedback": "The roughly 100 stocks bought after each announcement rise and fall together, so together they count as one trial, and 6 announcements make 6 trials."
+     },
+     {
+      "text": "100",
+      "correct": false,
+      "feedback": "100 is how many stocks were bought each time. Stocks bought at the same time rise and fall together, so the number of stocks is not the number of trials."
+     },
+     {
+      "text": "432",
+      "correct": false,
+      "feedback": "432 is 600 times 72%, the number of profitable trades. It has nothing to do with the number of independent trials."
+     }
+    ]
+   },
+   {
+    "stem": "You're playing a board game with friends, using a standard six-sided die. You've rolled twelve times in a row without a single six, and a friend says, \"A six is due now.\"",
+    "question": "What is your chance of rolling a six next?",
+    "explain": "A die has no memory; every roll starts fresh. The twelve misses will slowly be diluted by the rolls that come after, without the next roll having to make up for them.",
+    "options": [
+     {
+      "text": "Less than one in six: this die is just having a bad day.",
+      "correct": false,
+      "feedback": "Every face of a standard die has the same chance. A run of misses is just a coincidence that often happens in twelve rolls."
+     },
+     {
+      "text": "More than one in six: the die owes you a six, and it has to pay it back.",
+      "correct": false,
+      "feedback": "A die keeps no accounts. The first twelve rolls have not changed the conditions for the next one."
+     },
+     {
+      "text": "Hard to say: you'd have to roll a few hundred more times to know whether the die is fair.",
+      "correct": false,
+      "feedback": "The question says it's a standard die, so the rules are known; there's no need to guess the chance from a record."
+     },
+     {
+      "text": "Still one in six: twelve misses haven't changed the next roll.",
+      "correct": true,
+      "feedback": "Every roll has a one-in-six chance of a six, whatever came before."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "The more free throws, the closer to 70%",
+  "caption": "Six equally good players shoot a season each. Early on, any share turns up; after a few hundred throws, the six lines crowd together. Tap \"Reroll\" for a new set.",
+  "x": {
+   "label": "Free throws"
+  },
+  "y": {
+   "label": "Running hit rate",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "shots",
+    "label": "Free throws",
+    "min": 20,
+    "max": 600,
+    "step": 20,
+    "value": 600
+   },
+   {
+    "id": "p",
+    "label": "True hit rate",
+    "min": 10,
+    "max": 90,
+    "step": 5,
+    "value": 70,
+    "unit": "%"
+   }
+  ],
+  "runs": 6,
+  "model": {
+   "steps": "shots",
+   "init": {
+    "h": 0
+   },
+   "next": {
+    "h": "h + flip(p/100)"
+   }
+  },
+  "series": [
+   {
+    "name": "",
+    "expr": "h/k*100",
+    "tone": "accent",
+    "from": 1
+   }
+  ],
+  "marks": [
+   {
+    "y": "p",
+    "text": "True hit rate"
+   }
+  ]
+ }
+}

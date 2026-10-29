@@ -1,0 +1,193 @@
+{
+ "id": "nash-equilibrium",
+ "name": "Nash Equilibrium",
+ "en": "纳什均衡",
+ "discipline": "games",
+ "one_line": "When nobody can do better by changing their move alone, things stay where they are.",
+ "story": "On Sweden's Dagen H (H Day), September 3, all traffic switches from the left side of the road to the right at once, and the day before nobody dared switch first",
+ "shallow": {
+  "scene": "September 3, 1967 was a Sunday, and every car in Sweden switched together from driving on the left to driving on the right. In the early hours, the cars on the roads first came to a stop and the drivers moved them to the other side; only at five in the morning were they allowed back on the move. The day before, nobody dared go right first: with every street driving on the left, a single car on the right would run head-on into the whole stream of traffic. On this day it was the other way around, and whoever kept left would run head-on into the traffic.",
+  "plain": "You and a partner are playing badminton doubles, and the shuttle drops between you. You shout \"Mine!\" and go for it, your partner backs off, you get it back, and you win 1 point. You go and he backs off: that is a Nash equilibrium. As long as the other one stays put, neither of you does better by changing your mind alone. If you switch to backing off, the shuttle hits the floor; if he switches to going for it, you crash into each other. The other way round, with him going and you backing off, holds up just as well. If you both go for it, you crash into each other; if you both back off, the shuttle hits the floor. Either way it's 0 points, and either one of you could switch alone and get 1 point, so neither of these can last."
+ },
+ "deep": {
+  "mechanism": "### Things only stay put if, with the other side not moving, nobody gains by switching alone\n\nTo judge whether a pair of moves is stable, ask just one question: if the other side doesn't move, can I gain by switching? That is how the four badminton outcomes were checked, and it works the same with money. Suppose two phone-repair shops each choose every month between \"house calls\" and \"in-store.\" The table shows monthly profit in units of 10,000 yuan, Shop A's before the comma and Shop B's after:\n\n| A's choice | B: house calls | B: in-store |\n| --- | --- | --- |\n| A: house calls | 5, 5 | 8, 4 |\n| A: in-store | 3, 6 | 4, 4 |\n\nCheck the four cells one by one:\n\n- Both make house calls (5, 5): if A switches to in-store, A gets only 3; if B switches to in-store, B gets only 4. Both are less than 5, so nobody wants to switch, and this cell is stable.\n- A makes house calls, B works in-store (8, 4): if B switches to house calls, B goes from 4 to 5, so B will switch.\n- A works in-store, B makes house calls (3, 6): if A switches to house calls, A goes from 3 to 5, so A will switch.\n- Both work in-store (4, 4): if A switches to house calls, A goes from 4 to 8, so A will switch.\n\n### Change one number, and the stable cell changes too\n\nSuppose everything else stays the same, but when both make house calls A earns only 2, not 5. With B still making house calls, A can earn 3 by switching to in-store, more than 2, so A will switch, and the both-make-house-calls cell is no longer stable. Now check A in-store, B house calls (3, 6). If A switches back to house calls, A gets only 2, less than 3; if B switches to in-store, B gets only 4, less than 6. Neither wants to move, so this cell has become the stable one.\n\n### Choosing at random can be stable too\n\nA shopping platform runs spot checks on sellers who place fake orders to boost their sales numbers. A fake order earns 5, and getting caught means a fine of 20. Suppose the platform checks 20% of orders at random. Then 80% of fake orders aren't caught, an average gain of 5×80% = 4, and 20% are caught, an average fine of 20×20% = 4. The two cancel out, so faking orders earns 0 on average. A seller does just as well faking orders as not, so has no reason to change, and that is what stable means.\n\nOn the platform's side, if it checks fewer than 20%, faking orders pays and sellers all rush to do it; if it checks more than 20%, no seller fakes orders and the money spent on the extra checks is wasted. So the platform stays at 20%. If the fine goes up to 45, it only needs to check 10%: 5×90% = 4.5 and 45×10% = 4.5, which again cancel out to 0.",
+  "origin": "John Nash published \"Equilibrium Points in n-Person Games\" in 1950 and \"Non-Cooperative Games\" in 1951. He proved that when the number of players and the number of strategies they can choose from are both finite, there is always at least one equilibrium, as long as choosing at random is allowed. In 1994 he shared the Nobel Prize in Economics with two other scholars.",
+  "limits": "Nash equilibrium fits best where everyone decides at the same time and nobody can bind anyone else in advance. When there is more than one equilibrium, the definition can't pick which one; in Sweden, driving on the left and driving on the right were both stable. It is a mistake to read an equilibrium as best for everyone or as fairest. All it guarantees is that nobody gains by changing alone."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "A shared office wants people to turn off the meeting-room lights when they're done. First list what one person gains and pays by leaving the lights on when nobody else does; the rules should make \"turn the lights off on the way out\" something nobody wants to deviate from."
+   },
+   {
+    "use": "explain",
+    "text": "Two gas stations facing each other across a road always charge the same price. If one raises its price by 0.1 yuan on its own, every car drives to the other one; if it cuts its price by 0.1 yuan on its own, it just earns less for nothing. So neither moves."
+   },
+   {
+    "use": "predict",
+    "text": "To predict how a competitor will respond to your new price, treat your price as fixed and ask, step by step, which move would pay better for them if they made it alone. The moves that don't pay can be ruled out."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Sports",
+    "title": "Serve left or serve right",
+    "text": "In 2001 Mark Walker and John Wooders published a paper in the *American Economic Review* that used Wimbledon serve records to test whether the share of serves professional players aimed left and right made their chance of winning the point the same on both sides. It came out roughly the same, in line with what a mixed equilibrium, where players choose at random in set proportions, predicts."
+   },
+   {
+    "field": "Technology",
+    "title": "The shared note-taking app",
+    "text": "In your project group of five, some people take notes in app A and some in app B. When everyone is on A, links, templates and history can all be shared back and forth; the same holds when everyone is on B. If you alone switch to B, other people's links won't open and your notes sit there on their own. Nobody in the group switches alone, and whether A or B became the whole group's default came down to how many people installed which one first in the first week."
+   },
+   {
+    "field": "Work",
+    "title": "The inspector can only write five tickets",
+    "text": "Parking isn't allowed inside the yellow lines at the gate of your office park. The fine is 200 yuan, but the inspector can only write five tickets a day. When fifty cars are parked on the lines at the gate, your chance of getting a ticket is one in ten, an average fine of 20 yuan each time, and you decide that beats walking an extra ten minutes, so you park there too. When the area inside the yellow lines is empty, anyone who parks there is sure to get a ticket, and nobody wants to be the first. Both situations can hold, and the office park ended up in the fifty-car cell. Later a camera was put up at the gate and every car on the lines gets a ticket. Your chance of a fine no longer depends on whether other people park there, so the \"everyone parks\" cell can no longer hold."
+   }
+  ],
+  "ask": [
+   "Whose choices does my payoff depend on? If none of them move, what more could I get by switching?",
+   "If nobody is happy with how things stand now, is there another cell that's better, and where nobody would want to deviate once we got there?",
+   "Which number in the table, if it changed, would move the stable cell? How sure am I of that number?"
+  ],
+  "with": [
+   {
+    "id": "repeated-games",
+    "sees": "You're negotiating next year's contract with a supplier. If this is a one-off deal, breaking your word is the stable move both sides can find: protect yourself first. If you deal with each other year after year, then in a repeated game keeping your word also becomes a stable move, and keeping it first doesn't leave you worse off. First be clear whether it's a one-off deal or a long relationship, then choose."
+   },
+   {
+    "id": "schelling-point",
+    "sees": "You and a colleague lose each other in a big mall. Both phones are dead, and you've agreed that whoever gets there first waits. Going to the main entrance on the first floor and going to the service desk are both equilibria: wherever you go, the other person finds you by going to the same place. Nash equilibrium can't tell you which one to go to. A Schelling point looks at whether there's one place you'd both think of, such as the service desk you both noticed when you came in."
+   },
+   {
+    "id": "mechanism-design",
+    "sees": "A company wants each department to report its budget honestly. First use Nash equilibrium to check the current system: if the other departments report honestly, can any department get more by padding its numbers? If so, the current system doesn't hold up. Mechanism design starts from the outcome you want and writes a set of rules under which honest reporting is something nobody wants to deviate from."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You and a friend play a coin game. Each of you, hidden from the other, shows the heads or tails side of a coin. If the sides match, your friend pays you 1 yuan; if they don't, you pay your friend 1 yuan. After many rounds, your friend shows heads a steady 60% of the time, with no sign of changing.",
+    "question": "From now on, how should you play each round to earn the most on average?",
+    "explain": "When your friend's mix isn't fifty-fifty, there is a way of playing that does better for you alone. If you show heads every time, you earn 0.2 yuan a round on average. Only if your friend is exactly fifty-fifty does everything you could show average out to 0.",
+    "options": [
+     {
+      "text": "Show tails every time.",
+      "correct": false,
+      "feedback": "Your friend shows heads 60% of the time, so if you show tails only 40% of rounds match, and you lose 0.2 yuan a round on average."
+     },
+     {
+      "text": "Show heads 60% of the time and tails 40%, following your friend's mix.",
+      "correct": false,
+      "feedback": "Matching rounds come to 52%, so you earn only 0.04 yuan a round on average, less than by showing heads every time."
+     },
+     {
+      "text": "Show heads half the time and tails half the time, at random.",
+      "correct": false,
+      "feedback": "That averages 0 a round, 0.2 yuan less than showing heads every time."
+     },
+     {
+      "text": "Show heads every time.",
+      "correct": true,
+      "feedback": "Your friend shows heads 60% of the time, so 60% of your rounds match, and you earn 0.2 yuan a round on average."
+     }
+    ]
+   },
+   {
+    "stem": "As the concert starts, the people in the front rows stand up, and the rows behind follow one after another. Before one song is over, the whole crowd is standing to watch. Nobody sees any better than when everyone was sitting, and it's more tiring. The host announces over the speakers that everyone should sit down. Some people really do sit down, but then they can't see the stage, and after a while they stand up again.",
+    "question": "Why do the people who sat down stand up again?",
+    "explain": "When everyone else is standing, one person who sits down alone has a blocked view, worse than standing. A whole crowd standing is worse than a whole crowd sitting, yet nobody can make things better by sitting down on their own.",
+    "options": [
+     {
+      "text": "Standing makes him happier; he wants to cheer with the people next to him.",
+      "correct": false,
+      "feedback": "Nothing in the question points to that. He stands back up because he can't see the stage after sitting down."
+     },
+     {
+      "text": "The people around him are still standing, so if he alone sits down he sees nothing; standing is better.",
+      "correct": true,
+      "feedback": "What everyone else is doing hasn't changed. Switching to sitting on his own only makes him worse off, so he goes back to standing."
+     },
+     {
+      "text": "With the whole crowd standing, everyone sees better than when everyone sits.",
+      "correct": false,
+      "feedback": "The question says the whole crowd standing sees no better than when everyone sat. This says the opposite."
+     },
+     {
+      "text": "The people who sat down didn't hear the announcement clearly, so they stood back up.",
+      "correct": false,
+      "feedback": "In the question he heard the announcement and really did sit down. He stood up because he couldn't see once he was seated."
+     }
+    ]
+   },
+   {
+    "stem": "Two barbershops in a small town have both opened on Sundays for years. Someone says this arrangement has settled and neither will change it. You want the piece of information that most directly supports this claim.",
+    "question": "Which of these most directly supports the claim?",
+    "explain": "What matters is whether, with the other shop not changing, one shop would do better by changing alone. One shop tried closing on Sundays, its customers went across the street, and it reopened a month later. That is exactly the result of one such change made alone.",
+    "options": [
+     {
+      "text": "Last year one shop tried closing on Sundays. Its customers went across the street, and it reopened a month later.",
+      "correct": true,
+      "feedback": "The other shop didn't change. This one alone switched to closing on Sundays, its customers went across the street, and a month later it switched back. That is a test of \"changing alone doesn't pay.\""
+     },
+     {
+      "text": "Neither shop has seen a clear drop in Sunday customers over the years.",
+      "correct": false,
+      "feedback": "Steady customer numbers only show that there is still Sunday business. They say nothing about what happens if one shop closes alone."
+     },
+     {
+      "text": "Another barbershop in town also opens on Sundays and has never changed.",
+      "correct": false,
+      "feedback": "What a third shop does has nothing to do with what happens when one of these two changes alone."
+     },
+     {
+      "text": "Both owners say opening on Sundays is hard work and tiring.",
+      "correct": false,
+      "feedback": "The hard work shows that opening on Sundays has a cost. It proves nothing about whether either would rather close on its own."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "grid",
+  "title": "Cells where switching alone loses stay put",
+  "caption": "The shuttle drops between you. Red cells: one of you can switch alone and get it, so they don't last. Highlighted cells: switching alone loses the point, so they stay.",
+  "rowLabel": "You",
+  "colLabel": "Partner",
+  "rows": [
+   "Go for it",
+   "Back off"
+  ],
+  "cols": [
+   "Go for it",
+   "Back off"
+  ],
+  "cells": [
+   [
+    {
+     "text": "0, 0 you crash",
+     "sub": "Either backing off gets it",
+     "tone": "warn"
+    },
+    {
+     "text": "1, 1 got it",
+     "sub": "Switching alone loses 1",
+     "tone": "accent"
+    }
+   ],
+   [
+    {
+     "text": "1, 1 got it",
+     "sub": "Switching alone loses 1",
+     "tone": "accent"
+    },
+    {
+     "text": "0, 0 hits floor",
+     "sub": "Either going for it gets it",
+     "tone": "warn"
+    }
+   ]
+  ]
+ }
+}

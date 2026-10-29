@@ -203,12 +203,19 @@ function samples(pts, gap = 4) {
 }
 
 const trim0 = (s) => (s.includes('.') ? s.replace(/\.?0+$/, '') : s);
-// `format` 'cn' writes 万 and 亿; otherwise the number with as many decimals as the tick step needs, and the unit.
+// `format` 'cn' writes 万 and 亿, 'en' writes k, M and B; otherwise the number with as many decimals as the tick step
+// needs, and the unit.
 export function formatNumber(v, { unit = '', format = '', step = 0 } = {}) {
   if (format === 'cn') {
     const a = Math.abs(v);
     if (a >= 1e8) return `${trim0((v / 1e8).toFixed(a >= 1e9 ? 0 : 1))} 亿${unit}`;
     if (a >= 1e4) return `${trim0((v / 1e4).toFixed(a >= 1e6 ? 0 : a >= 1e5 ? 1 : 2))} 万${unit}`;
+  }
+  if (format === 'en') {
+    const a = Math.abs(v);
+    if (a >= 1e9) return `${trim0((v / 1e9).toFixed(a >= 1e10 ? 0 : 1))}B${unit}`;
+    if (a >= 1e6) return `${trim0((v / 1e6).toFixed(a >= 1e7 ? 0 : 1))}M${unit}`;
+    if (a >= 1e4) return `${trim0((v / 1e3).toFixed(a >= 1e5 ? 0 : 1))}k${unit}`;
   }
   const digits = step ? Math.max(0, Math.min(4, -Math.floor(Math.log10(step) + 1e-9))) : Math.abs(v) >= 100 ? 0 : Math.abs(v) >= 10 ? 1 : 2;
   const s = trim0(v.toFixed(step ? digits + (String(step).includes('.5') || String(step).includes('.25') ? 1 : 0) : digits));
@@ -748,7 +755,8 @@ export function figureSvg(spec, { size = 'wide', values, seed = 1 } = {}) {
 
 // The figure block for a card page or the home page. `live` adds the demo's sliders (the card page); without it a demo
 // is drawn at its starting values.
-export function figureHtml(spec, { live = false, id = '' } = {}) {
+// `lang` names the demo's two buttons; the figure's own words come with the card.
+export function figureHtml(spec, { live = false, id = '', lang = 'zh' } = {}) {
   const both = `<div class="fw">${figureSvg(spec, { size: 'wide' })}</div><div class="fn">${figureSvg(spec, { size: 'narrow' })}</div>`;
   const head = spec.title ? `<figcaption class="fh">${escape(spec.title)}</figcaption>` : '';
   const cap = spec.caption ? `<p class="fcap">${escape(spec.caption)}</p>` : '';
@@ -759,13 +767,14 @@ export function figureHtml(spec, { live = false, id = '' } = {}) {
   const ctl = `<div class="ctl">${(spec.params ?? []).map((p) => `<label><span class="lv">${escape(p.label)}<output data-o="${escape(p.id)}">${escape(formatNumber(p.value, { unit: p.unit ?? '', step: p.step ?? 1 }))}</output></span>`
     + `<input data-i="${escape(p.id)}" type="range" min="${p.min}" max="${p.max}" step="${p.step ?? 1}" value="${p.value}"></label>`).join('')}`
     + (readouts.length ? `<div class="rd">${readouts.map((r, n) => `<div><span>${escape(r.label)}</span><b data-r="${n}">${escape(r.value)}</b></div>`).join('')}</div>` : '')
-    + `<div class="btns">${random ? '<button class="again" type="button">重抽</button>' : ''}<button class="reset" type="button" hidden>还原</button></div></div>`;
+    + `<div class="btns">${random ? `<button class="again" type="button">${lang === 'en' ? 'Reroll' : '重抽'}</button>` : ''}<button class="reset" type="button" hidden>${lang === 'en' ? 'Reset' : '还原'}</button></div></div>`;
   return `<figure class="fig fig-demo" data-fig="${escape(id)}">${head}<div class="fb fdemo">${ctl}<div class="fv">${both}</div></div>${cap}`
     + `<script type="application/json" data-spec>${JSON.stringify(spec).replace(/</g, '\\u003c')}</script></figure>`;
 }
 
 // ---------- the schema ----------
-const short = (s, n) => typeof s === 'string' && s.trim() !== '' && [...s].length <= n;
+// Limits are in Chinese characters; Latin text is measured by width (textWidth), so an English label gets the same room.
+const short = (s, n) => typeof s === 'string' && s.trim() !== '' && textWidth(s, 1) <= n + 1e-9;
 // Problems with a card's figure, as sentences for the build's error list; empty when it draws.
 export function figureProblems(spec) {
   const out = [];

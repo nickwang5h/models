@@ -1,0 +1,227 @@
+{
+ "id": "resonance",
+ "name": "Resonance",
+ "en": "共振",
+ "discipline": "physics",
+ "one_line": "Push in time with something's own rhythm, and a tiny push makes a huge swing.",
+ "story": "Soldiers marching in step across the Broughton Suspension Bridge near Manchester bring it down",
+ "shallow": {
+  "scene": "Walk with a full bowl of soup, and if your steps happen to match the beat of the soup sloshing back and forth, it sloshes higher with each step until it spills. On April 12, 1831, the same thing happened on the Broughton Suspension Bridge near Manchester, England, except the soup was a bridge and the person carrying it was a company of soldiers.\n\nThey marched across in step, dozens of feet landing on the same beat, and that beat matched the bridge deck's own rise and fall, so the deck rose and fell more and more. One of the bolts holding the suspension chains already had a flaw. It couldn't take being pulled back and forth like this, and it snapped. One side of the deck fell into the river, and many soldiers ended up in the water.\n\nAfterward the army made a rule that troops crossing a bridge must break step. When everyone keeps their own pace, the push of their feet doesn't line up with the bridge's beat, and the rise and fall can't build up.",
+  "plain": "A child is on a swing, and one trip there and back takes 3 seconds (assume). Every 3 seconds, just as it swings back to you, you give it a push. Each push adds to the momentum of the last trip, and in a few trips the swing goes higher than your raised hand. That's resonance. Push every 2 seconds instead, and only one push in three catches it as it comes back; the other two land mid-swing, and one of those even pushes against it. With the same effort, the swing just sways a little."
+ },
+ "deep": {
+  "mechanism": "### Each push a little late, and after a few pushes it goes from helping to undoing\n\nPress down on the water in a bathtub once, and it surges back and forth between the two ends, one trip taking about 4 seconds (assume). Press every 4 seconds, just as the water comes back to your end, and the wave grows higher and higher. Press every 4.4 seconds instead, and each press falls another 0.4 seconds behind the water's beat. By the fifth press it's 2 seconds late in all, exactly half a trip, so this press pushes against the water coming back and flattens the wave. Only by the tenth press, 4 seconds late in all, does it line up again.\n\n### The less energy each trip loses, the higher the wave grows, and the fussier it is about the beat\n\nThe wave stops growing when the energy pushed in equals the energy carried off by the water hitting the walls and churning. Suppose the drag is proportional to how fast the water moves. Pressing on the beat, the wave settles where the drag balances the push. Halve the drag, and the water has to surge twice as fast to balance the push, so the wave settles at twice its old height. Float a foam board in the tub, the drag goes up, and the same rhythm pushes up a much smaller wave.\n\nLow drag has another side. The water stores the energy from dozens of earlier presses, so if the beat is even slightly off, the small errors over those dozens of presses add up, until the earliest and the latest presses are half a trip apart and cancel each other out. Water with high drag holds on only to the energy from the last few presses, so a beat that's a little off doesn't matter much; the wave just never gets high.\n\n### Make the water shallower, and the system's own beat changes\n\nLower the water to a quarter of its depth, and one trip there and back doubles to 8 seconds. Pressing every 4 seconds as before now means pressing every half trip: one press helps, the next undoes it, and the surface hardly makes a wave.",
+  "origin": "Resonance was worked out bit by bit in mechanics and acoustics; there's no single inventor. Lord Rayleigh's The Theory of Sound, published in 1877–1878, set out free vibration and forced vibration systematically; resonance is the case where the beat of the outside force matches the object's own beat. In 1938, Rabi and his colleagues used molecular beams to measure the magnetic resonance of atomic nuclei, and the MRI scans in hospitals grew out of this line of work.",
+  "limits": "Resonance only makes sense for systems with a fixed beat of their own, like bridges, strings, buildings and circuits. If a big swing shakes bolts loose or bends the structure out of shape, the beat itself changes, and the pushing that used to line up falls out of step. Calling it resonance when a stock price rises and everyone is optimistic is a mistake: it can't say what beat the price has of its own, or who is pushing it on that beat."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Set the speed range for a wind turbine: each turn of the blades gives the tower a push, so first measure the tower's own sway beat, then keep the usual running speeds away from it."
+   },
+   {
+    "use": "explain",
+    "text": "Explain why singing one particular note at a thin wine glass can break it: the beat of that note equals the glass wall's own back-and-forth beat, so each trip gets another push."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Personal life",
+    "title": "Singing in the shower",
+    "text": "You're singing in the bathroom, and on one particular note your voice suddenly booms; a little higher or lower and it fades again. The smooth walls all around bounce the sound back and forth, so this small space has a few pitches it favors. When your voice lands on one of them, the sound waves bouncing back stack exactly on the new ones you're singing, strengthening them again and again. Sing the same note in a big living room, and the boom is gone."
+   },
+   {
+    "field": "Technology",
+    "title": "The dial finds a station",
+    "text": "On an old radio, the tuning dial turns a circuit made of a coil and a capacitor, changing the circuit's own beat of oscillating back and forth. Many stations are in the air at once, and each station's radio waves push the circuit at their own frequency. When the dial reaches a certain spot, that station's beat matches the circuit's, the signal builds up round after round, and the sound rises out of the hiss; turn the dial a tiny bit further and it sinks back into the hiss."
+   },
+   {
+    "field": "Cities and buildings",
+    "title": "Buildings of about ten floors fell the most",
+    "text": "On September 19, 1985, a major earthquake struck off Mexico's west coast, and Mexico City, hundreds of kilometers away, was badly hit. The city is built on the soft soil of an old lake bed, and the soft soil amplified a slow part of the shaking in the earthquake waves, with one trip back and forth taking about two seconds. Buildings of around ten floors have their own back-and-forth beat close to that number, and they collapsed the most; lower or taller buildings were damaged much less."
+   }
+  ],
+  "ask": [
+   "After it's knocked once, how long does it take to sway there and back? Tap it once, record it on your phone and count.",
+   "How often does the thing pushing it come along: the turning speed, the pace of footsteps, the gaps in traffic? Is that interval close to the time it takes to sway once?",
+   "Once the swaying gets big, which can I change: the beat (add weight, change the speed, stagger the timing) or the drag?"
+  ],
+  "with": [
+   {
+    "id": "time-delays",
+    "sees": "A hardware store's orders spike every eight weeks, and the owner suspects something is pushing it on a fixed beat. Resonance has you look outside the store for something pushing on a cycle, like the start of the school year or promotion seasons, and if you find one, stagger the promotions. Time delays looks at the store's own rules: goods arrive two weeks after ordering, the owner orders heavily when stock runs low, and by the time the goods arrive he's ordered too much. With no outside push at all, these rules make the system sway on their own. If orders still run on an eight-week cycle after the promotions are staggered, shorten the delivery time and count the goods already on the way when ordering."
+   },
+   {
+    "id": "feedback-loops",
+    "sees": "The speakers in an auditorium suddenly let out a piercing squeal at a fixed pitch. Resonance's view: the room and the speakers are especially sensitive to this note, so turn down that one frequency on the equalizer and the squeal goes away. Feedback loops' view: the root is the loop from the speakers into the microphone and back through the amplifier. Once its gain passes the limit, whichever frequency passes first squeals; turn that one down and the next one pops up. So first move the microphone behind the speakers and turn the overall volume down, and use the equalizer only for the final touches."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A gym is on the second floor. When someone steps on the floor, it vibrates back and forth at 2 times a second. The office downstairs hums and shakes every time there's an aerobics class. The class music runs at 120 beats a minute, and everyone jumps once on each beat. The instructor switches to music at 150 beats a minute, with the same number of people jumping just as hard.",
+    "question": "After the music changes, what is the shaking in the office downstairs most likely to do?",
+    "explain": "After the change, the beat of the jumps moves away from the floor's own beat. Each jump no longer adds to the momentum of the last, so the shaking can't build up.",
+    "options": [
+     {
+      "text": "Stay about the same: the number of people and how hard they jump haven't changed, so the floor gets the same push.",
+      "correct": false,
+      "feedback": "How the floor responds depends not only on how hard it's pushed but on whether the beat matches; change the beat and the size of the shaking changes too."
+     },
+     {
+      "text": "Drop at first, but build back up to the old strength if the class goes on long enough.",
+      "correct": false,
+      "feedback": "Once the beats are out of step, however long the class goes on, the shaking settles at a much smaller size and never builds up to what it was."
+     },
+     {
+      "text": "Drop noticeably, because the beat of the jumps has moved away from the floor's own beat.",
+      "correct": true,
+      "feedback": "The jumps and the floor are out of step, so each jump no longer adds to the momentum of the last, and the shaking naturally gets smaller."
+     },
+     {
+      "text": "Get worse: the beat is faster, so there are more steps in the same time.",
+      "correct": false,
+      "feedback": "A faster beat doesn't mean more builds up. Each jump has to add to the floor's momentum for it to build; once the beat moves away from the floor's own beat, it builds up less."
+     }
+    ]
+   },
+   {
+    "stem": "A lab has two covers of the same shape, one of thin sheet metal and one of thick rubber. Each one's own back-and-forth beat falls within the speed range of a fan. Tap them once, and the metal cover rings for a long time before it stops, while the rubber one goes \"thud\" and is silent. The fan's speed is swept slowly from low to high, and each turn gives the covers the same push.",
+    "question": "Once the speed moves away from a cover's own setting, which cover's hum drops off faster?",
+    "explain": "The metal cover loses little energy, so energy stays stored in it for a long time, and it can only be pushed in when the beat lines up almost exactly. Move the speed slightly off, and the response clearly falls back.",
+    "options": [
+     {
+      "text": "The rubber cover: soft things are easier to throw off.",
+      "correct": false,
+      "feedback": "The rubber cover loses a lot of energy and isn't fussy about the beat. When the speed is a little off, its hum drops off slowly; it's just never as loud as the metal cover."
+     },
+     {
+      "text": "Neither drops off: as long as the speed is within the fan's range, they keep responding.",
+      "correct": false,
+      "feedback": "Once the speed leaves a cover's own setting, the beat of the push no longer matches it and the response drops off; they just drop off at different rates."
+     },
+     {
+      "text": "Both equally fast, since they get the same push.",
+      "correct": false,
+      "feedback": "The two covers lose energy at different rates, so their response drops off at different rates as the speed changes; the same push doesn't make them alike."
+     },
+     {
+      "text": "The metal cover: it only rings hard when the beat is almost exactly right.",
+      "correct": true,
+      "feedback": "The metal cover loses little energy, so it's very fussy about the beat, and once the speed is off its hum clearly falls back."
+     }
+    ]
+   },
+   {
+    "stem": "You're driving, and the steering wheel shakes worst at 100 km/h; at 80 and 120 km/h it's smooth. The mechanic says the front wheels weren't balanced, so each turn of a wheel gives the steering a jolt.",
+    "question": "Why has the steering wheel stopped shaking at 120 km/h?",
+    "explain": "As the car speeds up, each turn of the wheel jolts harder, but the beat of the jolts is now faster than the steering system's own beat. It's being pushed too fast to keep up.",
+    "options": [
+     {
+      "text": "The beat of the jolts is faster than the steering system's own beat, and it can't keep up.",
+      "correct": true,
+      "feedback": "The beat of the jolts has passed the steering system's beat, so each jolt no longer adds to the momentum of the last, and the shaking falls back."
+     },
+     {
+      "text": "At high speed the road feels smoother, so the wheels hit fewer bumps.",
+      "correct": false,
+      "feedback": "The shaking comes from the wheels being out of balance, not from bumps in the road."
+     },
+     {
+      "text": "The tires heat up at high speed, and the imbalance goes away by itself.",
+      "correct": false,
+      "feedback": "Heat doesn't put back the missing balance weight, and nothing in the question suggests it does."
+     },
+     {
+      "text": "At higher speed, the jolt from the wheels gets weaker.",
+      "correct": false,
+      "feedback": "The faster the car goes, the harder an unbalanced wheel jolts with each turn, not the other way around."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "In step, each swing goes higher than the last",
+  "caption": "A swing takes 3 seconds (assumed). Push every 3 seconds and it climbs; drag to 2 and some pushes land mid-swing, some against it, and it barely sways.",
+  "x": {
+   "label": "Seconds",
+   "ticks": [
+    {
+     "at": 0,
+     "label": "0"
+    },
+    {
+     "at": 120,
+     "label": "6"
+    },
+    {
+     "at": 240,
+     "label": "12"
+    },
+    {
+     "at": 360,
+     "label": "18"
+    },
+    {
+     "at": 480,
+     "label": "24"
+    },
+    {
+     "at": 600,
+     "label": "30"
+    },
+    {
+     "at": 720,
+     "label": "36"
+    }
+   ]
+  },
+  "y": {
+   "min": -5,
+   "max": 5
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "Push interval",
+    "min": 1.5,
+    "max": 4.5,
+    "step": 0.1,
+    "value": 3,
+    "unit": " s"
+   }
+  ],
+  "model": {
+   "steps": 720,
+   "init": {
+    "u": 0,
+    "v": 0,
+    "c": "p",
+    "m": 0
+   },
+   "next": {
+    "v": "v + (-(2*pi/3)^2*u - 0.15*v)*0.05 + (c >= p - 0.000001)*(2*pi/3)*1.05",
+    "u": "u + (v + (-(2*pi/3)^2*u - 0.15*v)*0.05 + (c >= p - 0.000001)*(2*pi/3)*1.05)*0.05",
+    "c": "c >= p - 0.000001 ? 0.05 : c + 0.05",
+    "m": "max(m, abs(u))"
+   }
+  },
+  "series": [
+   {
+    "name": "Swing",
+    "expr": "u",
+    "tone": "accent"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Peak vs one push",
+    "expr": "m",
+    "unit": "x",
+    "digits": 1
+   }
+  ]
+ }
+}

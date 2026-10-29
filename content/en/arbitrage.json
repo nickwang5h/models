@@ -1,0 +1,222 @@
+{
+ "id": "arbitrage",
+ "name": "Arbitrage",
+ "en": "套利",
+ "discipline": "economics",
+ "one_line": "When something sells cheaper in one place, people buy there and sell elsewhere until the gap closes.",
+ "story": "Mobile coverage spreads along the Kerala coast, and fishermen phone for prices at sea before picking a beach to land at (Jensen, Quarterly Journal of Economics, 2007)",
+ "shallow": {
+  "scene": "From 1997, mobile phone coverage spread stretch by stretch along the coast of Kerala, in India. Before that, fishermen coming back from sea could only take a gamble: pick a beach to land at, without knowing what prices were like at the other beaches that day. So at some beaches fish piled up unsold, while buyers at a nearby beach waited for boats that never came. Once there was coverage, fishermen phoned from the sea to ask about prices first, then decided which beach to land at. A study published in 2007 by the economist Robert Jensen found that after the phones spread, the gaps in fish prices between beaches shrank sharply, and the fish thrown away unsold almost disappeared.",
+  "plain": "At a used-book stall by your school's east gate, you see a textbook selling for 20 yuan, while in the second-hand group chat by the west gate the same edition is listed at 35 yuan. You buy it and resell it, and make 15 yuan a book. What you're doing is arbitrage: moving the same thing from where it's cheap to where it's dear and selling it there. But others soon start trading books too. With more people buying at the east gate, the stall owner raises the price to 25 yuan; with more copies arriving at the west gate, the listings drop to 30 yuan. The gap shrinks to 5 yuan, and each trip carrying books costs you 4 yuan, so the 1 yuan left isn't worth another run."
+ },
+ "deep": {
+  "mechanism": "### The more people move goods, the thinner the gap\n\nApples sell for 2 yuan a kilogram where they're grown and 6 yuan at the wholesale market in the provincial capital, and freight works out to 1 yuan a kilogram. The first few trucks make 3 yuan a kilogram after costs, and soon there are many more of them. With more apples in the city, the price there falls; with more people buying where the apples are grown, the price there rises. Once the city price has fallen to 4.5 yuan and the growing-area price has risen to 3.5, the gap is only 1 yuan, just enough to cover freight. One more truck would lose money, so nobody adds one.\n\n### The cost of moving goods is the floor under the gap\n\nIf freight is 3 yuan a kilogram, the gap can be pushed down to 3 yuan at most; at 5 yuan, the 4-yuan difference between the growing area and the city won't draw a single truck. The trouble of finding out prices elsewhere counts as a cost of moving goods too. Before the Kerala fishermen had phones, that trouble was so great that nobody would go to another beach to sell; phones cut it to almost nothing. Whoever moves goods most cheaply gets the money in the gap. If a rival gets costs down to 0.6 yuan, the gap is pushed down to 0.6 yuan, and a fleet whose costs are 1 yuan loses 0.4 yuan a kilogram and has to stop.\n\n### The gap is only locked in when both sides trade at once\n\nThe safest arbitrage is to sell the same thing where it's dear at the very moment you buy it where it's cheap. The difference is in your pocket on the spot, and wherever prices go afterward has nothing to do with you. If you've bought only one side and are waiting for the price on the other side to rise, that isn't arbitrage but a bet: while you wait, the gap may widen first, and what you're holding may fall. Hauling apples takes a day on the road, and used books have to wait for a buyer; both include a stretch of waiting like this, and the risk carried during that wait counts as a cost of moving goods too.",
+  "origin": "Economists often reason with arbitrage: when prices stray from some relation, buying low and selling high pulls them back. In 1923, in *A Tract on Monetary Reform*, John Maynard Keynes used arbitrage to derive the relation between forward exchange rates and the gap between two countries' interest rates. In 1958, Franco Modigliani and Merton Miller used it to argue that a company's value doesn't depend on how much of it is financed by debt. In 1973, Fischer Black and Myron Scholes priced options with the same line of thinking. In 1976, Stephen Ross proposed arbitrage pricing theory.",
+  "limits": "A price gap holds up least when the same thing can be traded at any moment in both places and moving it is cheap: foreign exchange rates, gold prices, the shares of one company on two stock exchanges. When two things are only similar and not the same, such as two companies in the same industry, the gap may not close and can keep widening, because one company's shares can't stand in for the other's. Counting it as profit just because something is cheaper elsewhere is another mistake: if your money is tied up in goods for weeks before it comes back, and you leave those weeks' risk out, there's little of the difference left by the time it reaches you."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "When a new direct freight line opens between two cities and cuts freight in half, you can predict that the price gap for the same goods in the two places will shrink to around the new freight cost."
+   },
+   {
+    "use": "explain",
+    "text": "Different banks' dollar exchange rates sit almost exactly together because they all follow the quotes on the interbank market: the moment a gap appears there, trading desks eat it up within seconds."
+   },
+   {
+    "use": "act",
+    "text": "When you have a batch of goods to sell, first check what the same item sold for on several platforms over the past week. If the gap is narrowing, sell early."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Investing",
+    "title": "Fund shares cheaper than the basket of stocks",
+    "text": "An ETF is trading somewhat below the total price of the basket of stocks it holds. Brokers allowed to create and redeem units with the fund company buy the ETF, sell the matching basket of stocks at the same time, and then redeem the ETF units for the whole basket of stocks to settle. Their buying pushes up the ETF's price, their selling pushes down the stocks' prices, and the two sides come together."
+   },
+   {
+    "field": "Medicine",
+    "title": "Drugs shipped out of cheaper countries",
+    "text": "Within the European Union, the same drug sells at different prices in different member states, and wholesalers can legally buy it in countries where it's cheap and ship it to countries where it's dear to sell. To keep the drugs in low-price countries from being shipped away, drug companies cap how much each wholesaler is supplied."
+   },
+   {
+    "field": "Personal life",
+    "title": "A ticket scalper's margin",
+    "text": "You manage to get a concert ticket with a face value of 580 yuan, and on a resale platform tickets for the same show and the same section are listed from 1,500 yuan (the prices are made up). You list your ticket. Within an hour a dozen or more listings for the same section appear, and the lowest price slides all the way down to 1,100 yuan. You sell your ticket at 1,100."
+   }
+  ],
+  "ask": [
+   "Given the gap between these two places, how much money and how many days does it take to move the goods all the way?",
+   "Is what I can buy and sell at any moment the same thing, or just two things that look alike?",
+   "If the gap doubled from here, could my money hold out?"
+  ],
+  "with": [
+   {
+    "id": "price-discrimination",
+    "sees": "Your software charges 5 dollars a month in country A, in line with local incomes, and 20 dollars in country B (made-up figures). Price discrimination lets you set a separate price for each country; arbitrage is watching this crack: users in country A hand their accounts to friends in country B, and people in B turn to buying the cheap accounts. If accounts can change hands, the two prices can't hold, so you lower country B's price to within country A's price plus the trouble of passing an account on, and resellers have nothing left to gain."
+   },
+   {
+    "id": "avoid-ruin",
+    "sees": "By arbitrage's arithmetic, if the gap widens from 3 yuan to 5, you'll make more on the day it closes, so it looks like you should add to your position. Avoiding ruin asks whether you can last until that day. If you can't, the wider gap is what knocks you out, so size your position for the worst day, not for the day the gap closes."
+   },
+   {
+    "id": "liquidity",
+    "sees": "A little-traded convertible bond is 3% cheaper than the shares it can be converted into (made-up figures). Arbitrage says buy the bond, convert it into shares, and sell the shares at the same time, and the difference is yours. Liquidity sees that this bond trades only a few dozen lots a day: as soon as you buy, you push the price up yourself, and on the selling side you can't borrow the shares. If a day's trading on the order book covers your position, go ahead; if it doesn't, the 3% is only a number on a screen."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're watching a stock that is listed on two exchanges, A and B, at the same time. Right now exchange A quotes 50.00 yuan and exchange B quotes 50.40 yuan. Your account can buy or sell on both exchanges at any time, and the fees on both sides add up to 0.10 yuan a share.",
+    "question": "To lock in this gap safely, how should you place your orders?",
+    "explain": "Buy on the cheap side and sell on the dear side at the same moment, and the gap of 0.40 yuan a share is locked in on the spot. After fees, 0.30 yuan is left, and however the stock moves on either exchange afterward has nothing to do with you.",
+    "options": [
+     {
+      "text": "Buy only on exchange A, and sell once the two prices come together.",
+      "correct": false,
+      "feedback": "There's no guarantee the prices will come together, and both exchanges could fall together. The gain or loss on this one side isn't locked in."
+     },
+     {
+      "text": "Buy on exchange B and at the same time sell the same number of shares on exchange A.",
+      "correct": false,
+      "feedback": "Buying dear and selling cheap is the wrong way round: you lose 0.40 yuan a share to start with, plus fees."
+     },
+     {
+      "text": "Buy on exchange A and at the same time sell the same number of shares on exchange B.",
+      "correct": true,
+      "feedback": "The buying price and the selling price are set at the same moment. The gap of 0.40 yuan a share, minus 0.10 yuan in fees, nets 0.30 yuan."
+     },
+     {
+      "text": "Buy the same number of shares on both A and B, and sell them together once the gap disappears.",
+      "correct": false,
+      "feedback": "Both sides are purchases, so the gap shrinking brings no gain or loss; whether you win or lose depends entirely on the share price moving on its own."
+     }
+    ]
+   },
+   {
+    "stem": "In a mountain valley, traders buy honey from beekeepers at 20 yuan a jin (half a kilogram); in the city beyond the mountains, the same honey sells for 45 yuan a jin. Freight from the valley to the city is 3 yuan a jin. The only way in and out of the valley is one ferry, which can carry at most 200 jin a day. Several years have gone by, and the gap between the two places hasn't changed.",
+    "question": "Why has the gap never been smoothed out?",
+    "explain": "The gap is much wider than the freight, so what's missing isn't the reason to move goods but the amount that can be moved. The ferry can carry only 200 jin a day; once that's full, however wide the gap, no more goods can be moved out.",
+    "options": [
+     {
+      "text": "The valley produces too much honey, so the price there stays pinned at 20 yuan.",
+      "correct": false,
+      "feedback": "Producing a lot would only push the valley's price lower. It doesn't explain why the honey shipped out hasn't narrowed the gap."
+     },
+     {
+      "text": "The ferry has a daily weight limit, so there's a ceiling on how much can be shipped out.",
+      "correct": true,
+      "feedback": "At most 200 jin of honey reaches the city each day, far less than it would take to smooth out the gap, so the gap just stays there."
+     },
+     {
+      "text": "City people don't trust honey from the valley, so they won't pay a high price for it.",
+      "correct": false,
+      "feedback": "The question says it's the same honey, and the city's 45-yuan price is real; sales happen at it."
+     },
+     {
+      "text": "Freight of 3 yuan a jin is too high; it eats up the profit on each trip, so nobody wants to make the run.",
+      "correct": false,
+      "feedback": "The gap is 25 yuan. Take off 3 yuan of freight and there's still 22 yuan a jin left."
+     }
+    ]
+   },
+   {
+    "stem": "A financial adviser tells you: \"The bank loan has a fixed annual interest rate of 3%, and this investment product advertises an annual return of 6%. Borrow to buy it, and you're sure to make three points in a year, with no risk at all.\"",
+    "question": "What's missing from this calculation?",
+    "explain": "The loan's 3% is fixed in the contract, and you'll definitely have to pay it in a year. The investment's 6% is only an advertised number; when it matures it may come in under 3%, or even lose some of your money. With one side locked in and the other not, it isn't a sure profit.",
+    "options": [
+     {
+      "text": "The 6% is only an advertised number, and at maturity it may not even earn 3%.",
+      "correct": true,
+      "feedback": "The loan interest has to be paid no matter what, but nobody guarantees the investment's return, so the gap isn't in your pocket."
+     },
+     {
+      "text": "The two rates are too far apart, so one of the numbers must be false.",
+      "correct": false,
+      "feedback": "A large difference between rates doesn't by itself mean anything is faked; different things simply have different returns."
+     },
+     {
+      "text": "A loan is only risky if it runs longer than a year; a one-year loan has no risk.",
+      "correct": false,
+      "feedback": "The risk lies in whether the return is certain. However long or short the term, the chance that the return at maturity falls short of expectations is still there."
+     },
+     {
+      "text": "The loan rate will be raised within the year, so the real cost will be more than 3%.",
+      "correct": false,
+      "feedback": "The question says the annual rate is fixed, so it won't change within the year."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "More trucks squeeze the gap down to the freight",
+  "caption": "City apples fall, growing-area ones rise, and the gap stops at 1 yuan/kg freight. Drag the freight: the gap stops at that level; above 4 yuan, no truck runs.",
+  "x": {
+   "label": "Truckloads sent out"
+  },
+  "y": {
+   "label": "Price per kg",
+   "unit": " yuan",
+   "min": 0,
+   "max": 7
+  },
+  "params": [
+   {
+    "id": "c",
+    "label": "Freight",
+    "min": 0.2,
+    "max": 5,
+    "step": 0.2,
+    "value": 1,
+    "unit": " yuan"
+   }
+  ],
+  "model": {
+   "steps": 12,
+   "init": {
+    "s": 6,
+    "o": 2
+   },
+   "next": {
+    "s": "s - 0.2*max(s - o - c, 0)",
+    "o": "o + 0.2*max(s - o - c, 0)"
+   }
+  },
+  "series": [
+   {
+    "name": "City wholesale",
+    "expr": "s",
+    "tone": "accent",
+    "dots": "small"
+   },
+   {
+    "name": "Growing-area price",
+    "expr": "o",
+    "tone": "ink",
+    "dots": "small"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "City",
+    "expr": "s",
+    "unit": " yuan",
+    "digits": 1
+   },
+   {
+    "label": "Growing area",
+    "expr": "o",
+    "unit": " yuan",
+    "digits": 1
+   },
+   {
+    "label": "Gap left",
+    "expr": "s - o",
+    "unit": " yuan",
+    "digits": 1
+   }
+  ]
+ }
+}

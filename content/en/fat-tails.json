@@ -1,0 +1,224 @@
+{
+ "id": "fat-tails",
+ "name": "Normal vs Fat-Tailed Distributions",
+ "en": "正态与肥尾",
+ "discipline": "math",
+ "one_line": "Extremes happen far more often than the bell curve says, so everyday averages make risk look small.",
+ "story": "On Black Monday, October 19, the Dow falls 22.6% in a single day",
+ "shallow": {
+  "scene": "On October 19, 1987, once the New York Stock Exchange opened, sell orders kept pushing prices down. By the close, the Dow Jones Industrial Average had fallen 22.6% in one day, its biggest one-day drop ever. On an ordinary day, a move of one or two percent up or down counted as a big one; in the daily records of the years before, there was not a single day that would have made anyone think it could fall this far. People who held almost nothing but stocks lost more than a fifth of their money in one day.",
+  "plain": "You've kept a record of water-leak losses at a warehouse for a hundred months. For the first ninety-nine months the loss was around 10 yuan, off by a yuan or two either way. In the hundredth month a pipe burst, and the loss was 1,010 yuan. The hundred months add up to 2,000 yuan, and half of it comes from that one month. When a few extreme values make up a big chunk of the total, the numbers are said to have a \"fat tail\"; a normal distribution, like the one for height, has no such tail. If you use the average and the ups and downs of the first ninety-nine months to make an estimate, the month the pipe burst looks almost impossible."
+ },
+ "deep": {
+  "mechanism": "### Tails are fat when a quantity has no ceiling and keeps building on itself\n\nHeight is held in check by the skeleton. The tallest of a hundred people is only a little over 10% above the average and can't make up half of the total. Losses have no such ceiling. Once a pipe bursts, the soaked goods, the days the work stops and the money paid to customers pile up layer on layer, and each layer grows with the size of the one before. Share prices work the same way: one day's fall sets off stop-loss orders, and sell orders bring out more sell orders. When you meet a new quantity, ask two things first. Is there a ceiling set by the body or by how the thing is made? And when something goes wrong in one place, does it drag other places down with it? If there is no ceiling and things go wrong together, treat it as fat-tailed.\n\n### The size of the worst entry decides what share of the total it is\n\nBack to the warehouse: the first ninety-nine months add up to 990 yuan. If the worst month is $w$ yuan, its share of the total is\n\n$$\\frac{w}{990+w}$$\n\nThe bigger $w$ is, the less the 990 yuan in the bottom of the fraction matters, and the closer the share gets to 1. Set the worst month at 110 yuan and the total is 1,100, so it is only a tenth. Set it at 1,010 and the total is 2,000, so it is half. Set it at 10,010 and it is more than nine tenths, and the first ninety-nine months are just background.\n\n### A standard deviation from a calm record makes extremes look impossible\n\nThe standard deviation is how far a usual month is from the average. The standard deviation worked out from the first ninety-nine months is only a yuan or two; the month the pipe burst is a thousand yuan above the average, hundreds of times the standard deviation.\n\nThe stock market can be worked out the same way. If daily moves followed a normal distribution, days six or more standard deviations from the average would make up about two in a billion days, or about once in 500 million trading days. At 250 trading days a year, you would wait about two million years.\n\nYet that day in 1987, measured against the moves before it, was far more than six standard deviations; and in the history of the stock market, days more than six standard deviations out have turned up again and again. The shorter and calmer the record, the smaller the standard deviation it gives, and the more impossible the extremes look. So when you set the size of a position or build up a reserve, write a loss bigger than the largest in history into the plan, and see how much would be left in the account.",
+  "origin": "The mathematical form of the normal distribution comes from Abraham de Moivre's approximation of the binomial distribution in 1733, and in 1809 Carl Friedrich Gauss used it to handle measurement errors. In 1896 Vilfredo Pareto found that the high-income end of the income distribution is thick and long. In 1963 Benoit Mandelbrot studied cotton prices and found that big rises and falls were far more frequent than the normal model predicted. In 2007 Nassim Nicholas Taleb's *The Black Swan* brought the problem to general readers.",
+  "limits": "Height, body temperature and the size of machined parts are held in check by physics or by how they're made, and the average and standard deviation are enough. They stop being enough when losses can grow together across connected systems, as when one disaster sets off a huge number of insurance claims at once. A fat tail also doesn't mean the average or the standard deviation must fail to exist; some fat-tailed distributions have both. Taking five calm years of records as proof that \"nothing big will happen\" is a mistake: not having met a big event doesn't mean the losses have a ceiling."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When setting a reserve or the size of a position, ask \"how big can the worst single event be, and how much is left in the account\" instead of \"how much do we lose on average.\""
+   },
+   {
+    "use": "explore",
+    "text": "When you're handed an attractive average performance, look for the months the record doesn't contain: how large this quantity can get when something really goes wrong."
+   },
+   {
+    "use": "communicate",
+    "text": "Show a partner why an average can mislead: line up the total from largest to smallest and point out what share the largest single item makes up."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Disasters and insurance",
+    "title": "A reserve built on the average",
+    "text": "On March 11, 2011, the Tohoku earthquake in Japan set off a tsunami. Homes, factories and ports along the coast were damaged at the same time, and businesses also lost output while they were shut. Say you're an actuary at an insurance company. Over the last ten years, claims each year fell in the same range, so you built the reserve on their average. Money put aside that way covers only a small part of the policies hit in a single disaster. You switch to working out how much would be paid if one disaster set off every coastal policy at once, and fill the gap by that figure."
+   },
+   {
+    "field": "Technology",
+    "title": "Servers sized to a year's peak",
+    "text": "You're setting up servers for a ticketing website. For the past year, the busiest moment of each day brought about 200 requests a second; you planned for 300, a 50% margin, and nothing went wrong all year. Then a singer announced an extra show, and in the minute tickets went on sale, 6,000 requests a second poured in. The site was down for two hours. A calm year's record had no day like that, and a margin based on it was only one and a half times the usual. You switch to asking how many people could come at most for one hot ticket sale, build a queue page in advance, and keep requests beyond what the site can handle outside the door."
+   },
+   {
+    "field": "Personal life",
+    "title": "When to leave for a flight",
+    "text": "You commute 20 times a week. Nineteen trips take 30 minutes each, and once a road closure made it 150 minutes, an average of 36 minutes. If you plan when to leave for an airport flight on 36 minutes, the day you hit that one trip, you miss the flight. You change your departure time to leave enough room for the worst trip, and look up an alternative route before you go."
+   }
+  ],
+  "ask": [
+   "Does this quantity have a hard ceiling, the way height does?",
+   "What share of the total do the three largest items in the record each make up, and what is the average once you take them out?",
+   "How long is this record, and has a real shock ever appeared in it?"
+  ],
+  "with": [
+   {
+    "id": "expected-value",
+    "sees": "A deal brings in a small, steady sum every month, but once in a while it costs you several years of savings. Its expected value comes out positive, so by that reckoning you should take it. The tail asks whether you could pay that one loss. If you can, go by the expected value; if you can't, don't touch it however high the expected value is, and first see whether the worst case can be made smaller."
+   },
+   {
+    "id": "central-limit-theorem",
+    "sees": "A small lender makes a thousand loans that have nothing to do with each other. The average bad-debt rate will land firmly inside a bell curve, which is exactly the ground the central limit theorem covers. If the thousand loans are all in the same industry, one industry crisis can make them default at the same time. Added up, they are no longer a thousand small independent numbers, and the bell curve's guarantee is gone."
+   },
+   {
+    "id": "tight-coupling",
+    "sees": "When one node fails, whether the loss spreads along the connections decides how long the tail is. Tight coupling looks at how the failure travels; fat tails look at how much more it has cost once it has finished spreading. Cut the connections and both shrink."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're setting up a risk reserve for a fish farmer. Over the past eight years, losses to fish disease were between 20,000 and 40,000 yuan a year, an average of 30,000. The farmer thinks a reserve of 60,000 yuan, twice the average loss, is enough. All of this farmer's fish are in the same pond, and the pond has a single water pump.",
+    "question": "To tell whether the reserve is enough, which number do you work out first?",
+    "explain": "In eight years the whole pond never went wrong at once, so the average contains no such year. If the pump stops for a few hours and the whole pond runs short of oxygen, the loss is the value of every fish in it, far more than in past years. Work out that number first, then see how much of it 60,000 yuan covers.",
+    "options": [
+     {
+      "text": "Use the standard deviation of the eight years' losses to work out a range, and set the reserve at the top of it.",
+      "correct": false,
+      "feedback": "There was no whole-pond accident in eight years, so the standard deviation only reflects small swings in fish disease. The top of the range is still far below the loss from a whole-pond accident."
+     },
+     {
+      "text": "Estimate the loss from the whole pond running short of oxygen once, then see how far short the reserve is.",
+      "correct": true,
+      "feedback": "With all the fish in one pond, a single accident can decide the whole year's loss. Only by estimating that number first can you tell whether the reserve is enough or far short."
+     },
+     {
+      "text": "Record fish-disease losses for a few more years, and set the reserve once there is more data.",
+      "correct": false,
+      "feedback": "There was no whole-pond accident in eight years, and a few more years may well stay calm too. The reserve you set would still leave out that one event."
+     },
+     {
+      "text": "Multiply the average loss by three as the new reserve target, so it can take even one accident.",
+      "correct": false,
+      "feedback": "Three times doesn't correspond to any actual accident. The loss from a whole-pond accident could be many times that."
+     }
+    ]
+   },
+   {
+    "stem": "A trader reports on his strategy: for the past thirty-six months it made a small profit every month, the monthly returns barely moved, and by the average and the standard deviation the return-to-risk ratio looks excellent. The strategy collects small fees every month for taking on other people's payouts when prices swing sharply. He suggests you double your investment.",
+    "question": "What do these thirty-six months of records show?",
+    "explain": "The steady small income each month and the one big payout when things turn extreme come from the same source. Thirty-six calm months only show that an extreme month hasn't come yet; they can't tell you how much the worst month would lose. Before doubling, you need to know that number.",
+    "options": [
+     {
+      "text": "Monthly swings this small show the strategy's risk is low, so you can put in more.",
+      "correct": false,
+      "feedback": "The swings are small only because no extreme month has come. When one does, all the small income before it may be lost in one go."
+     },
+     {
+      "text": "A return-to-risk ratio this high shows his judgment is better than the market average.",
+      "correct": false,
+      "feedback": "This shape of return looks good during calm periods by its very nature; it doesn't prove good judgment."
+     },
+     {
+      "text": "Thirty-six months is long enough to extend this standard deviation and work out the worst month.",
+      "correct": false,
+      "feedback": "There wasn't a single shock in the thirty-six months, so the worst case worked out from them is only the limit in calm times, not the limit of what this strategy can lose."
+     },
+     {
+      "text": "The record has no extreme months, so before adding more, estimate how much the worst one would lose.",
+      "correct": true,
+      "feedback": "The kind of month missing from the record is exactly the kind in which this strategy loses the most. Estimate how big it is first, then decide how much to put in."
+     }
+    ]
+   },
+   {
+    "stem": "You're ordering work uniforms for the purchasing department of a clothing factory. The factory has 2,000 adult male workers, and you have the heights measured when they were hired. You plan to use the average and the standard deviation of height to set how many of each size to order. The purchasing manager worries that if someone especially tall turns up, the sizes won't be enough.",
+    "question": "Setting sizes this way, how should you see the manager's worry?",
+    "explain": "Among 2,000 people there will be a few who are especially tall, but both how many there are and how tall they are fall within what the bell curve predicts, so ordering a few of the largest size in proportion is enough. Height never produces a person dozens of times the usual value. What really needs checking is whether the data came from these 2,000 people.",
+    "options": [
+     {
+      "text": "No need to worry: the average and standard deviation are enough, so set the proportions by them.",
+      "correct": true,
+      "feedback": "Height has a physical ceiling, and the data for the 2,000 people were actually measured. Extreme individuals won't rewrite the whole picture, so setting proportions by the average and standard deviation is fine."
+     },
+     {
+      "text": "First extend the record for a few years, because short-term data doesn't show extreme heights.",
+      "correct": false,
+      "feedback": "The ceiling on height is set by the structure of the body. However long the record, no number far beyond the usual will turn up."
+     },
+     {
+      "text": "Be careful: height may have a long tail too, like losses, so order extra of the largest size.",
+      "correct": false,
+      "feedback": "Height has no extremes dozens of times the usual value. Extra largest sizes would only sit in the storeroom."
+     },
+     {
+      "text": "Record the tallest few people separately, because one person could make up half the total.",
+      "correct": false,
+      "feedback": "Uniforms are counted per person, and the tallest person can't make up half the total."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Same hundred entries, very different biggest share",
+  "caption": "Both start at 100%. Height soon hugs the floor: the tallest is only 1% of the hundred's total. Leaks jump at each new record. Slide right for a fatter tail.",
+  "x": {
+   "label": "Entries"
+  },
+  "y": {
+   "label": "Largest's share of total",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "Left at 2× size",
+    "min": 15,
+    "max": 50,
+    "step": 5,
+    "value": 40,
+    "unit": "%"
+   }
+  ],
+  "model": {
+   "steps": 100,
+   "init": {
+    "h": 170,
+    "t": 0,
+    "g": 0,
+    "d": 10,
+    "s": 0,
+    "m": 0
+   },
+   "next": {
+    "h": "170+7*randn()",
+    "t": "t+h",
+    "g": "max(g,h)",
+    "d": "8*(1-rand())^(-1/log2(100/p))",
+    "s": "s+d",
+    "m": "max(m,d)"
+   }
+  },
+  "series": [
+   {
+    "name": "Leak losses",
+    "expr": "m/s*100",
+    "from": 1,
+    "tone": "accent"
+   },
+   {
+    "name": "Height",
+    "expr": "g/t*100",
+    "from": 1,
+    "tone": "muted"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Largest leak's share",
+    "expr": "m/s*100",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "Tallest's share",
+    "expr": "g/t*100",
+    "unit": "%",
+    "digits": 1
+   }
+  ]
+ }
+}

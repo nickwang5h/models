@@ -1,0 +1,201 @@
+{
+ "id": "incentive-bias",
+ "name": "Incentive-Caused Bias",
+ "en": "激励偏差",
+ "discipline": "psychology",
+ "one_line": "Self-interest changes not just what people do but what they truly believe.",
+ "story": "In Babcock and Loewenstein's negotiation experiment, the plaintiff group and the defendant group each estimate the court's award in their own side's favor",
+ "shallow": {
+  "scene": "Most sports fans know this feeling: the same call is unfair when it goes against your team and the right call when it goes against the other side. A negotiation experiment published in 1995 put this lean into a setting where there was money at stake.\n\nStudents were first told whether they would play the plaintiff or the defendant. Then they read the same case file on a traffic accident and estimated how much compensation the judge would award, with a cash bonus for estimating accurately. The bonus depended only on accuracy, so nudging the estimate toward your own side would only cost you money.\n\nYet the plaintiffs' average estimate was still higher than the defendants'. Asked what compensation would be fair, each side's answers also leaned its own way. If people still lean when leaning costs them part of the bonus, the lean isn't just in what they say. It is in what they actually believe.",
+  "plain": "You go to a furniture store to buy a mattress, with a budget of 6,000 yuan. A salesperson takes you to one that costs 9,000 and says it supports your spine and will last fifteen years, which works out to less than two yuan a night. He earns a commission on the sale price, and this one pays him 150 yuan more than the 6,000-yuan one (an imagined number).\n\nThose 150 yuan push his judgment toward the expensive one, and that is incentive-caused bias. When he reads the specs and estimates how many years it will last, he leans toward the 9,000-yuan one every time, without noticing it himself. You ask the question another way: \"If the commission were the same on both, which one would you buy?\" He thinks for a while and says the 6,000-yuan one is actually good enough to sleep on."
+ },
+ "deep": {
+  "mechanism": "### Convince yourself first, and recommending it doesn't feel wrong\n\nKnowingly pushing a mattress that doesn't suit the customer would make the salesperson uncomfortable. If he first decides that the 9,000-yuan one really is better, he gets the 150 yuan and doesn't have to feel bad. So as he reads the product description, his mind first picks the reading that puts him at ease, and this step is done before he notices it. The students in the opening experiment show this even more clearly. Nobody asked them to persuade anyone, and a biased estimate cost them bonus money, yet after reading the file, the figure in their heads still moved toward their own side.\n\n### Material that can be read two ways is the easiest to pull off course\n\n\"Less than two yuan a night\" rests on two estimates: how many years it will last, and whether it still counts as usable before it sags. Each estimate can be taken high or low within a reasonable range. The salesperson takes the end that favors the 9,000-yuan mattress every time, and every step makes sense.\n\nAt fifteen years, 9,000 yuan is spread over about 5,500 nights, about 1.6 yuan a night. At ten years, it's spread over only about 3,650 nights, and each night costs about 2.5 yuan. By contrast, the size on the spec sheet, 1.8 meters, can be read only one way; there's no high or low end to take.\n\n### Someone who truly believes is more persuasive, and harder to check himself\n\nThe salesperson believes it himself. There's no guilt in his voice, and you can't hear anything off. When he looks back to check himself, he uses the same high-or-low estimates, and they pass again. \"If the commission were the same on both, which one would you buy?\" works because it takes the commission out of the question, so the way he reads the material goes back to being the same as anyone else's.",
+  "origin": "In his 1995 talk at Harvard, \"The Psychology of Human Misjudgment,\" Charlie Munger listed bias caused by incentives as an item of its own, and the name \"incentive-caused bias\" caught on because of him. Research in psychology on \"motivated reasoning\" goes back further; in 1990 Ziva Kunda wrote a review of it. The opening experiment is a classic piece of evidence in this line of research, not where it was first discovered.",
+  "limits": "The pull of self-interest is strongest when a commissioned adviser, or a manager scoring their own project, reads through a pile of estimates and descriptions. On the other hand, throwing out everything someone says as soon as you hear they earn a commission is a different mistake, because the recommendations they get right go out with the rest. What to do is find someone else with no stake and have them check the specs and estimates again."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When setting quarterly targets for the sales team, hand the \"expected sales\" forecast to a data analyst who earns no commission and leave the salespeople to follow up on deals. Then the forecast has one less source pulling it upward."
+   },
+   {
+    "use": "predict",
+    "text": "When a sales agent at a new housing development says \"prices in this area are sure to rise within three years,\" you can predict that he'll explain away bad news, like changes to the city plan or a flood of new housing nearby, far more loosely than you would."
+   },
+   {
+    "use": "explain",
+    "text": "In the yearly talk about raises, the employee feels their contribution is undervalued and the boss feels they're paying plenty, and both are reading the same performance record."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "Market size before the pitch",
+    "text": "You founded a company that makes smart pet collars and own 70% of it. Before your fundraising pitch, you need to estimate the size of the market. You find three reports: two give big numbers and one gives a small one. You put only the first two into your slides, saying the third counted only households in cities. An investor asks you to hand over the material you left out. Going through it, you realize you never seriously looked for figures on how many collars get returned. You add the third report and the return figures to the appendix."
+   },
+   {
+    "field": "Personal life",
+    "title": "Five reasons for a new phone",
+    "text": "You want a new phone, though the old one still works. In one go you list five good things about the new one: better photos, a battery that lasts through the evening, a bigger screen. A family member asks how many good things about the old phone you listed. You think for a long time and can't name a single one. You sit down and list five for the old phone as well, and decide to keep using it until the end of the year."
+   },
+   {
+    "field": "Economics",
+    "title": "An agent selling their own house",
+    "text": "Data on home sales in the Chicago area (published by the economists Steven Levitt and Chad Syverson in 2008) show that when real estate agents sell their own homes, they keep them on the market longer than when they sell for clients, and get a higher price. Selling for a client, a slightly higher price earns the agent only a tiny bit more commission, while a quicker sale saves the agent time; selling their own home, all the extra money is theirs. When a client hears \"at this price you should sell,\" the agent's own time is part of that sum."
+   }
+  ],
+  "ask": [
+   "Go and see how the other person is paid: which conclusion is their money tied to?",
+   "List the evidence for and against in two columns, and count which column I question harder.",
+   "Find someone whose pay doesn't depend on this conclusion and have them look at the same raw material. Would they reach the same conclusion?"
+  ],
+  "with": [
+   {
+    "id": "incentives",
+    "sees": "You run a headhunting firm and want your consultants to push harder. The incentives answer is to add a fee paid when a candidate starts the job, so they hunt harder. Incentive-caused bias sees the other side. The more the fee is paid only on the start date, the more consultants read a candidate's weak points as small problems, the less reliable the people they send to clients become, and the fewer orders clients place. A headhunting firm with many repeat clients should hold the fee back until the probation period is over; one whose clients hire once and are gone can simply add the fee."
+   },
+   {
+    "id": "principal-agent",
+    "sees": "You hire someone to manage a sum of money. The principal-agent fix is to have him put his own money in too, so he gains and loses as you do and your interests line up. Incentive-caused bias warns that for the few stocks he holds himself, he'll read the financial reports more leniently and treat every piece of bad news as temporary. So keep holdings apart from the rules for buying: write the rules first, and have someone else who holds none of the stocks check every buy and sell."
+   },
+   {
+    "id": "self-serving-bias",
+    "sees": "A project lost money, and there's a review meeting. Self-serving bias looks at what comes after: credit yourself for gains, blame the market for losses. Incentive-caused bias looks at what came before: whoever made the forecast when the project was up for approval was hoping all along that it would be approved. A review meeting should first dig out who wrote the forecast at approval and what it was based on, and only then hear how everyone explains the result."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Before buying a secondhand apartment, you hire a home inspector. He charges by the visit, 800 yuan each time, whether or not the sale goes through. Most of his clients are sent to him by a few real estate agencies nearby. His report says the water stain in the corner of the bathroom wall is an old mark and doesn't affect use.",
+    "question": "Which item in this report most needs checking by someone else?",
+    "explain": "Charging by the visit looks unconnected to the sale, but if the agencies stop sending him clients, he loses his next job. That stake lands where judgment is needed, not on figures that are measured.",
+    "options": [
+     {
+      "text": "The inspection date and floor area he wrote down, which can be checked at once",
+      "correct": false,
+      "feedback": "The date and area can be checked on the spot, so self-interest has no room to work here."
+     },
+     {
+      "text": "Nothing needs checking; he charges by the visit, and whether the sale goes through doesn't affect this job",
+      "correct": false,
+      "feedback": "Repeat business is in his interest too. If the agencies stop sending clients, he loses his next job, so you can't say he has no stake."
+     },
+     {
+      "text": "His judgment that the stain is an old mark: he relies on the agencies for repeat business, so he has a reason to read it lightly",
+      "correct": true,
+      "feedback": "Whether it's an old mark or a fresh leak has to be judged by reading the traces, and reading them lightly helps his repeat business. Get someone without that tie to look again."
+     },
+     {
+      "text": "Throw the whole report out and inspect again; he deals with the agencies, so it's probably made up",
+      "correct": false,
+      "feedback": "Self-interest changes how he reads things. There's no evidence he's making up figures, and throwing it all out wastes the parts you could use."
+     }
+    ]
+   },
+   {
+    "stem": "The head of a research team at a drug company gets a year-end bonus that depends on whether a new drug passes internal review. The trial results come in: the measure set in advance as the main goal missed its target, and a secondary measure hit its target. He builds his report around the secondary measure and tells colleagues, \"Setting the main measure the way we did was a mistake on our part.\" He says it without any guilt at all.",
+    "question": "Why does he think this way?",
+    "explain": "The review affects his bonus. After seeing the results, his view of which measure really matters shifted in the direction that helps him. This is belief being pulled off course, not made-up data.",
+    "options": [
+     {
+      "text": "His bonus hangs on passing review, and only after seeing the results did he decide the secondary measure matters more.",
+      "correct": true,
+      "feedback": "The secondary measure was raised up only after he saw the results. The bonus gave him a reason to raise it, and he truly finds the reason sound."
+     },
+     {
+      "text": "He knows the drug doesn't work and made up the data showing the secondary measure hit its target.",
+      "correct": false,
+      "feedback": "In the question the secondary measure really did hit its target. What he changed was how he rates it, not the data."
+     },
+     {
+      "text": "He doesn't know enough statistics to tell a main measure from a secondary one.",
+      "correct": false,
+      "feedback": "In the question he knows the difference between the two kinds of measure and remembers how they were set. What he lacks isn't knowledge."
+     },
+     {
+      "text": "The secondary measure was always a better sign of whether the drug works; it was just set wrong at the start.",
+      "correct": false,
+      "feedback": "If it had been more important all along, it would have been set as the main measure at the start. It became important only after the results came out."
+     }
+    ]
+   },
+   {
+    "stem": "Two companies are negotiating an acquisition. The valuer hired by the buyer puts the target company at 80 million; the valuer hired by the seller puts it at 120 million. Both looked at the same financial statements, each picked different comparable companies and a different way of calculating profit, both say their number is reasonable, and neither thinks they're taking sides.",
+    "question": "Which of these would most directly narrow the gap between the two valuations?",
+    "explain": "The gap comes from methods and comparable companies picked afterwards to suit each side. If both sides agree on the method and the comparable companies before any number is worked out, and then each does its own sums, there's less room to lean.",
+    "options": [
+     {
+      "text": "Each side hires a more senior valuer to check its own valuation.",
+      "correct": false,
+      "feedback": "When each side hires its own person, the checker is on that side too, and the freedom to pick a method is no smaller."
+     },
+     {
+      "text": "Take the midpoint of the two numbers, stop arguing and close the deal.",
+      "correct": false,
+      "feedback": "Taking the midpoint corrects nobody, and next time each side will just give a more extreme number."
+     },
+     {
+      "text": "Both sides reveal their bottom-line prices and see whether the ranges overlap.",
+      "correct": false,
+      "feedback": "Revealing bottom lines is about offers. The step of working out the valuation still lets each side take what suits it."
+     },
+     {
+      "text": "Before working out any number, the two sides agree on the method and the comparable companies together.",
+      "correct": true,
+      "feedback": "With the method and comparable companies fixed before anyone sees a result, there's less room to adjust afterwards, and the two numbers naturally move closer."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "150 yuan more commission tilts every estimate",
+  "caption": "Every step makes sense, he doesn't notice, and his self-check passes. Ask \"Same commission on both: which would you buy?\" and he says the 6,000 one will do.",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "150 yuan more",
+    "sub": "On the 9,000 one"
+   },
+   {
+    "id": "b",
+    "label": "Years set high",
+    "sub": "Fifteen years"
+   },
+   {
+    "id": "c",
+    "label": "<2 yuan a night"
+   },
+   {
+    "id": "d",
+    "label": "Truly backs 9,000",
+    "sub": "No guilt at all",
+    "tone": "warn"
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b"
+   },
+   {
+    "from": "b",
+    "to": "c"
+   },
+   {
+    "from": "c",
+    "to": "d"
+   },
+   {
+    "from": "d",
+    "to": "b",
+    "label": "Check OK",
+    "dashed": true,
+    "tone": "muted"
+   }
+  ]
+ }
+}

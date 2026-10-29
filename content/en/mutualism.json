@@ -1,0 +1,206 @@
+{
+ "id": "mutualism",
+ "name": "Mutualism",
+ "en": "互利共生",
+ "discipline": "biology",
+ "one_line": "A partnership lasts when each fills the other's gap and both get more than they give.",
+ "story": "Toyota and GM form a joint venture, NUMMI (New United Motor Manufacturing), in a closed GM plant in Fremont, California",
+ "shallow": {
+  "scene": "In 1984 a General Motors plant in Fremont, California, which had already closed, opened its doors again. Toyota and GM set up a joint venture there called New United Motor Manufacturing. Toyota wanted to find out whether its way of making cars would work in America; GM wanted to learn, first-hand, this way of raising quality and cutting waste. GM put in the plant and its local know-how, and Toyota brought its whole production system. The two companies built cars together on the same line, and each learned skills that would have been hard to work out alone.\n\nIn 2009 GM went through bankruptcy and restructuring and pulled out of the venture. Toyota did the sums and found that keeping the plant going on its own didn't pay; at the end of March 2010, the plant stopped production.\n\nOnce one side's sums changed, the exchange fell apart.",
+  "plain": "Two people sharing an apartment can have mutualism too. You can't cook, and your roommate can't fix things. He makes dinner three times a week: it costs him an extra hour and a half and saves you three hours. Faucets, cabinet doors and the internet cable are yours to fix: it costs you an extra hour and saves him the hassle of getting someone in and waiting around a whole afternoon. Both of you come out ahead compared with each looking after yourself. If he moves to a dorm with a dining hall, the exchange has to be worked out again."
+ },
+ "deep": {
+  "mechanism": "### One side's strength is exactly the other side's gap\n\nIn a lichen, a fungus weaves an outer casing that wraps around and helps hold water and take in minerals; algae or cyanobacteria use light to make organic matter and share it with the fungus. Neither could easily live on bare rock alone. Together, they can survive on rock and on tree bark.\n\n### Each side compares with its other options\n\nYou run a car repair shop and order parts regularly from a nearby parts dealer. This earns you 800 yuan more a month, but costs you 500 yuan more (paying for goods in advance, picking up at a fixed place), so on balance you net 300 yuan. The other option is to buy from the wholesale parts market, which would net you 200 yuan a month. The regular orders bring in 100 yuan more than that, so you stay. If a new seller opens in the wholesale market and buying there now nets 300 yuan, that extra 100 is gone; if it rises to 400, you turn around and go to the wholesale market.\n\n### Cheating has a cost, so nobody gives less and takes more\n\nCleaner fish peck parasites off client fish, and now and then they also take a bite of the client's mucus. A client fish that gets bitten swims off, chases the cleaner, or switches to another cleaner fish, and so the cleaner loses its future meals. Business works the same way: tie inspection on delivery, payment and contract renewal together, so that if something isn't delivered, the next payment isn't made.",
+  "origin": "Mutualism comes from ecology and evolutionary biology. In 1867 the Swiss botanist Schwendener proposed that a lichen is made up of a fungus and a partner that photosynthesizes. In 1876 the Belgian zoologist van Beneden used the word mutualism for relationships between species in which both sides benefit. Later, lichens became a classic subject of study; researchers who watched cleaner fish and ran experiments found that the two sides in a mutualism also have conflicting interests.",
+  "limits": "The model works best when two sides trade over a long time and each has other options; a one-off deal has no future, so just working out that one deal is enough. If the other side starts charging more, or a cheaper partner comes along, the original exchange can become a burden. In biology, \"symbiosis\" also includes parasitism, where one side gains and the other is harmed. So seeing two species living together and calling it mutualism is a misreading."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Make clear why coral turns white when the water warms: at high temperatures the algae living in the coral do it more harm than the nutrients they supply are worth, and the coral expels them."
+   },
+   {
+    "use": "act",
+    "text": "When a supplier suddenly demands payment in advance, first check whether he has gained a buyer offering more: his options have changed, so negotiate the terms again from the start."
+   },
+   {
+    "use": "explore",
+    "text": "First write down what you lack, then look for the kind of partner whose gap is exactly what you're good at, and try trading."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "Sponsorship and priority",
+    "text": "You maintain an open-source library that several companies' services depend on. The companies give you a sponsorship each month and send engineers to submit fixes; you set priorities by how they use it, and let their tests run first before each release. One of them stopped its sponsorship, and the issues it raised moved to the back of the queue."
+   },
+   {
+    "field": "Farming",
+    "title": "Beehives in the orchard",
+    "text": "Before the trees flower, the orchard owner asks a beekeeper to set beehives between the rows of trees. The bees gather nectar among the blossoms and pollinate the fruit trees along the way, and the beekeeper takes the honey. On the days the orchard has to be sprayed, the owner gives a day's notice, and the beekeeper moves the hives somewhere far away."
+   },
+   {
+    "field": "Personal life",
+    "title": "A portfolio for photos",
+    "text": "You are a graphic designer, and your friend is a photographer. You made him a portfolio website, he shot a set of photos of your work, and neither of you paid. Six months later he had so much work that he had to raise his prices, and the two of you switched to charging each other half price."
+   }
+  ],
+  "ask": [
+   "What does the other side actually get from this partnership? Go through the most recent settlement and list what he got, and what extra he put in for it.",
+   "What could he get elsewhere? Ask which other quotes he has in hand.",
+   "When someone delivers less, how would I find out? Once I find out, what can I do about it?"
+  ],
+  "with": [
+   {
+    "id": "comparative-advantage",
+    "sees": "On your team, the senior engineer is faster than the new hire at everything. Comparative advantage says she should still keep the work where she is most worth it and hand the rest to the new hire, and both do better than working separately. Mutualism asks a different question: is the work the new hire gets better than what he'd get on another team? If not, give him a raise or different work, and only then talk about how sensible the split is."
+   },
+   {
+    "id": "switching-costs",
+    "sees": "A supplier has stayed with you for years, and you want to know whether this is mutualism. Switching costs say he may just find it too much trouble to change; mutualism wants you to look at his books. First assume the contract could be ended at any time: would he still want to stay? If yes, it's mutualism. If not, what you should do is change the terms, quickly, until he would."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You run an online shop selling handmade leather goods. Every month you send your leather supplier a list of what you'll need next month; he holds stock for you and gives you 10% off. For the past three months you've often changed the list at short notice mid-month, and the supplier has had to rush in stock several times. His costs have gone up, and he's started to complain. You both want to keep working together.",
+    "question": "What change would keep the supplier willing to hold stock for you?",
+    "explain": "The supplier holds stock because he can trust the list. Tie the discount to how far ahead the list comes and how much it changes, and price last-minute changes separately: changing the list at will then has a cost, and what the supplier puts in gets something back.",
+    "options": [
+     {
+      "text": "The discount depends on how many days ahead the list comes and how much it changes, and last-minute changes are charged at a separate price.",
+      "correct": true,
+      "feedback": "Whoever keeps to the deal keeps the discount, whoever changes things at will pays the difference, and the supplier's costs get a matching return."
+     },
+     {
+      "text": "The discount stays the same, and each month he sends you a sheet of his rush-delivery costs so you can see how much trouble you've caused.",
+      "correct": false,
+      "feedback": "The cost sheet only lets you see the problem; changing the list doesn't affect your discount, so you have no reason to change."
+     },
+     {
+      "text": "Change the 10% off to 5% off, so he makes a bit more, in return for holding stock.",
+      "correct": false,
+      "feedback": "The extra five points aren't tied to anything you deliver. You'll go on changing the list at short notice, and his rush costs will still be there."
+     },
+     {
+      "text": "Go over the total profit from the partnership for the past year, and as long as it's positive, keep things as they are.",
+      "correct": false,
+      "feedback": "A positive total only shows the partnership was worth it in the past; it can't tell you whether he'll keep taking on these extra costs from now on."
+     }
+    ]
+   },
+   {
+    "stem": "You've grown soybeans for years. Rhizobia bacteria in the soybean roots turn nitrogen from the air into a form the plant can take up, and the plant supplies them with sugar made by photosynthesis. This year you put a lot of nitrogen fertilizer on the field, and there's already enough nitrogen in the soil.",
+    "question": "What is most likely to happen next to what the plant puts into this partnership?",
+    "explain": "The plant traded sugar for nitrogen because it was short of nitrogen. The fertilizer filled that gap, so the trade no longer pays for the plant, and it will put less into feeding the root nodules.",
+    "options": [
+     {
+      "text": "No change: the rhizobia are still fixing nitrogen, the plant only gets more nitrogen, and it has no reason to change what it puts in.",
+      "correct": false,
+      "feedback": "The extra nitrogen is no use to the plant any more; whether it keeps paying has nothing to do with how much nitrogen the rhizobia fix."
+     },
+     {
+      "text": "No change: the two have worked together for years, and the plant won't change its ways over one season of fertilizer.",
+      "correct": false,
+      "feedback": "A plant has no loyalty from years of working together; it only looks at whether the trade is still worth it right now."
+     },
+     {
+      "text": "Less: there's enough nitrogen in the soil, so it no longer pays to keep feeding the rhizobia with sugar.",
+      "correct": true,
+      "feedback": "The gap has been filled from another source, and the plant can get nitrogen elsewhere, so the sums for this trade have changed."
+     },
+     {
+      "text": "More: the fertilizer makes the soil richer, so the plant has more sugar to share with the rhizobia.",
+      "correct": false,
+      "feedback": "What the fertilizer changes is whether the plant is short of nitrogen; with no gap, the plant has no reason to give more sugar in exchange."
+     }
+    ]
+   },
+   {
+    "stem": "A packaging factory and a candy factory have worked together for a long time: the candy factory places a fixed order every month, and the packaging factory gives it priority in production. Counting what each makes after costs, over and above what it would make with another partner, the candy factory makes about 30,000 yuan more a month and the packaging factory about 10,000 yuan more. The packaging factory's owner thinks the gap is too big and proposes that each should get 20,000 yuan, or he won't renew the contract.",
+    "question": "Which view of this proposal makes sense?",
+    "explain": "Whether a partnership holds depends on whether each side does better than with its own other options; it doesn't need the two sides' extra gains to be equal. An even split isn't a condition for renewing; what needs checking is whether the packaging factory's other options have got better.",
+    "options": [
+     {
+      "text": "They should split it evenly: the two sides' extra gains are unequal, so the partnership will fall apart sooner or later.",
+      "correct": false,
+      "feedback": "Unequal extra gains don't break up a partnership; as long as each side still does better than its other options, there's reason to go on."
+     },
+     {
+      "text": "No need to split evenly: each side still does better than with another partner, so there's reason to go on; what needs checking is whether the packaging factory's other options have got better.",
+      "correct": true,
+      "feedback": "Both sides' sums are positive, and the numbers don't need to match; only if the packaging factory finds a better option will the sums change."
+     },
+     {
+      "text": "It needn't be split evenly, but if the candy factory orders more, the packaging factory's gain will overtake the candy factory's.",
+      "correct": false,
+      "feedback": "Order size has no such fixed link to who gains more or by how much, and it isn't a condition for renewing either."
+     },
+     {
+      "text": "They should split it evenly: the packaging factory gaining less shows it is getting a raw deal in this partnership.",
+      "correct": false,
+      "feedback": "The extra 10,000 yuan a month is what it makes over and above its other options; that's no raw deal."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Leave once the other option beats what you net",
+  "caption": "Green: net from the dealer, 800 extra minus extra cost. Gray: net from the market. Leave once gray passes green; drag to see higher cost bring that sooner.",
+  "x": {
+   "label": "Market nets (yuan/month)",
+   "min": 0,
+   "max": 500
+  },
+  "y": {
+   "label": "Net per month (yuan)",
+   "min": 0,
+   "max": 600
+  },
+  "params": [
+   {
+    "id": "c",
+    "label": "Extra cost",
+    "min": 300,
+    "max": 700,
+    "step": 100,
+    "value": 500,
+    "unit": " yuan"
+   }
+  ],
+  "series": [
+   {
+    "name": "Stay with dealer",
+    "expr": "800-c",
+    "tone": "accent"
+   },
+   {
+    "name": "Go to the market",
+    "expr": "x",
+    "tone": "muted"
+   }
+  ],
+  "marks": [
+   {
+    "x": 200,
+    "text": "Now 200 yuan"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Margin left now",
+    "expr": "800-c-200",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "Leave at",
+    "expr": "800-c",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

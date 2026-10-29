@@ -1,0 +1,461 @@
+{
+ "id": "central-limit-theorem",
+ "name": "Central Limit Theorem",
+ "en": "中心极限定理",
+ "discipline": "math",
+ "one_line": "Add up lots of small, separate influences, and the result usually looks like a bell curve.",
+ "story": "On February 9, Galton lectures on \"Typical Laws of Heredity\" at the Royal Institution in London and shows his quincunx: small shot falls through rows of pins and piles up in a bell shape in the slots at the bottom",
+ "shallow": {
+  "scene": "In February 1877, Francis Galton stood a board of pins on the lecture table at the Royal Institution in London. Small lead shot was poured in, one pellet after another, from above the pins and had to fall through row after staggered row of them. Each time a pellet hit a pin it went left or right at random, and in the end it dropped into one of the slots side by side at the bottom. The pellets piled up in the slots layer by layer, high in the middle and low at the sides, and the more were poured in, the clearer the bell shape became.",
+  "plain": "Roll one die, and each number from one to six comes up one time in six; drawn as a chart, it's a flat line. Add two dice together, and it's no longer flat: there's only one way to roll a total of 2, but six ways to roll 7, so 7 comes up most often. Add up ten dice, and there's only one way each to roll a total of 10 or 60, but more combinations than you could count that land around 35. The shape is already high in the middle and thin at both ends.\n\nThat is what the central limit theorem says: add together many small influences that don't depend on each other, and the spread of the total moves toward a bell shape. It doesn't matter whether each single influence is flat, lopsided, or has only two sides, like heads and tails."
+ },
+ "deep": {
+  "mechanism": "### An extreme total needs every influence to lean the same way at once\n\nTo add up to a very large total, every influence has to happen to come out high. To add up to a middling total, it's enough for some to come out high and some low, canceling each other out, and there are far more combinations like that. So totals mostly land in the middle and seldom at the ends, and that's where the bell shape comes from.\n\n### The error of an average shrinks with the square root of the sample size\n\nSuppose each time a scale weighs something, its error has a standard deviation of $s$, say 4 grams. Weigh $n$ times and take the average, and the standard deviation of the average is\n\n$$\\frac{s}{\\sqrt{n}}$$\n\nYou have to weigh four times as often just to halve the error. The reason is that errors can be positive or negative. The standard deviation is the square root of the average squared error, so look at the squares first. Say each weighing is either $s$ too heavy or $s$ too light, and weigh twice. When both go the same way, the errors add to $2s$, and the square is $4s^2$; when they go opposite ways, they cancel to 0. Each case happens half the time, so the average square is $2s^2$, only twice that of one weighing. Weigh $n$ times and it's $n$ times as much; take the square root and the sum of the errors is $s\\sqrt{n}$, and divide by $n$ to leave $s/\\sqrt{n}$.\n\nPut in $s=4$ grams: weighing 4 times gives 2 grams, 16 times gives 1 gram, 100 times gives 0.4 grams. To halve it again from 0.4 grams to 0.2 grams, you have to weigh 400 times.\n\n### The total gets wider as you add, but more slowly than the count\n\nThe error shrinks because taking the average divides by $n$. Look at the total itself, and its width actually grows, only it grows with the square root, as $s\\sqrt{n}$: the total of 100 independent influences is 10 times as wide as a single one, not 100 times.",
+  "origin": "In 1733, Abraham de Moivre found that when a coin is tossed many times, the number of heads can be approximated by a bell curve. In 1810, Pierre-Simon Laplace extended the result to totals of all kinds of independent influences. In 1920, George Pólya first called it the \"central limit theorem,\" in the title of a paper.",
+  "limits": "The bell shape fits best for quantities built up from many small independent influences, such as measurement errors or total exam scores. When a single item can make up most of the total, no bell appears: add up the wealth of a few thousand people, and one very rich person makes up most of it, so the spread stays lopsided. The influences also have to be independent of each other, so that their deviations can cancel out. In 1992, when Hurricane Andrew hit Florida, the same storm pushed tens of thousands of small insurance policies into paying out at the same time, and several insurers went bankrupt as a result."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "Estimate the range a total will land in, such as a week's total customers or the total weight of a shipment: measure the average and the spread of a single one, and you can work out the center and width of the total, then give a range based on the bell shape."
+   },
+   {
+    "use": "design",
+    "text": "Set a sampling plan for quality checks: first say how much error you can accept, then work backward to how many items to sample from each batch, instead of picking a round number off the top of your head."
+   },
+   {
+    "use": "explain",
+    "text": "The heights of adults of the same sex, or the measurement errors of one instrument, mostly form a bell shape because a great many small influences are adding up behind them; you don't need to look for a separate cause for each person."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Education",
+    "title": "A test taken by pure guessing",
+    "text": "You're setting a test of 50 multiple-choice questions with four options each, and you want the pass mark where someone who just guesses can't reach it. The chance of guessing each one right is a quarter, so a guesser gets 12.5 right on average, with a standard deviation of about 3, and the scores spread out around the average in a bell. About one guesser in a hundred gets 20 or more right, and about one in ten thousand gets 25 or more. You set the pass mark at 25."
+   },
+   {
+    "field": "Society",
+    "title": "A poll of a thousand people",
+    "text": "Before an election you run a phone poll for a newspaper and interview 1,000 people: candidate A has 51%, candidate B 49%. The sample gives a margin of error of about 3 percentage points either way. That number depends only on how many people you sampled, not on how many people live in the country, so it would be the same in a small town. The two are only two points apart, inside the margin of error, so you write the headline \"Neck and Neck.\""
+   },
+   {
+    "field": "Manufacturing",
+    "title": "An alarm line for weighing whole cases",
+    "text": "You're a quality inspector at a drinks factory. The filling line puts a nominal 500 milliliters in each bottle; suppose the fill of a single bottle has a standard deviation of about 3 milliliters. A case holds 25 bottles, and the fill of a whole case has a standard deviation of about 15 milliliters, 5 times that of one bottle, not 25 times. You set the alarm line for weighing whole cases at 30 milliliters either way, and whenever a case crosses it, you stop the line and check the filling heads."
+   }
+  ],
+  "ask": [
+   "Is this number added up from many small influences, or held up by a few big items? Go through the raw records and see what share of the total the biggest item makes up.",
+   "Are these influences independent of each other? Check whether they're being pushed up and down together by the same thing.",
+   "How many truly independent data points are in the sample? Repeat entries from the same person or the same household should be merged and counted as one."
+  ],
+  "with": [
+   {
+    "id": "fat-tails",
+    "sees": "You need to estimate a coastal city's storm damage claims over the next ten years. Averaging the historical years and drawing error bars from a bell shape is the central limit theorem's way; fat tails see that a few huge storms make up most of the claims, so however narrow the error bars, they shouldn't be trusted. For quantities like these claims, where one item can swallow the total, keep a few extreme scenarios in view first; only small claims of even size are fit to work out with a bell shape."
+   },
+   {
+    "id": "lognormal",
+    "sees": "The same pile of small random influences takes a different shape when added than when multiplied. A stock's daily rises and falls, added up day by day, come out roughly bell-shaped; but its total return over twenty or thirty years is the daily changes multiplied together, and it trails a long tail to the right. For quantities that are added, use the bell shape directly; for quantities that are multiplied, look at them as a lognormal distribution: take the logarithm first, then apply the bell shape."
+   },
+   {
+    "id": "law-of-large-numbers",
+    "sees": "You've collected a batch of satisfaction surveys. The law of large numbers says the more you collect, the closer the average score gets to the true level, and urges you to keep collecting; the central limit theorem adds how far off you still are: it can give a margin of error, and how many surveys will be enough can be worked out in advance."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A lab measures the moisture content of a sample. The random errors in each reading are independent of each other; suppose their standard deviation is 0.8 percentage points. You now measure 9 times and take the average, and you want to cut that average's error in half.",
+    "question": "At least how many measurements will you need in total?",
+    "explain": "The error of the average shrinks in proportion to the square root of the number of measurements. To halve the error, the number has to become 4 times as big: 9 becomes 36. That's the total number of measurements, not how many more.",
+    "options": [
+     {
+      "text": "36",
+      "correct": true,
+      "feedback": "The square root goes from 3 to 6, which halves the error exactly."
+     },
+     {
+      "text": "72",
+      "correct": false,
+      "feedback": "The question asks for the least number needed. 36 already halves the error, so 72 is twice as many as you need."
+     },
+     {
+      "text": "18",
+      "correct": false,
+      "feedback": "Doubling the number only brings the error down to about 70% of what it was, still far from half."
+     },
+     {
+      "text": "27",
+      "correct": false,
+      "feedback": "Tripling the number only brings the error down to about 58% of what it was, not yet half."
+     }
+    ]
+   },
+   {
+    "stem": "A food delivery rider's delivery time per order is very lopsided: most orders take about 20 minutes, and once in a while one drags out to 80 minutes. Each order is independent of the others. For two years you record the average delivery time of his 250 orders each month, and draw a histogram of those averages.",
+    "question": "Roughly what shape is the histogram?",
+    "explain": "However lopsided the time for single orders, the average of a few hundred orders gathers into a bell shape around the overall average, much narrower than the spread of single orders.",
+    "options": [
+     {
+      "text": "Two peaks, one near 20 minutes and one near 80 minutes.",
+      "correct": false,
+      "feedback": "An 80-minute order happens only once in a while. Out of 250 orders a month, such orders are very few, so the average won't land near 80 minutes."
+     },
+     {
+      "text": "Like the time for single orders, trailing a long tail to the right.",
+      "correct": false,
+      "feedback": "The long tail belongs to the spread of single orders. Averaging 250 orders a month lets the other orders cancel out the extreme one, and most of the long tail disappears."
+     },
+     {
+      "text": "A flat line, with every average showing up about equally often.",
+      "correct": false,
+      "feedback": "Months whose average is close to the overall average are far more common, and months far from it are rare, so they don't show up equally often."
+     },
+     {
+      "text": "A bell shape around the overall average, much narrower than the spread of single orders.",
+      "correct": true,
+      "feedback": "Most months' averages are close to the overall average, and the farther away, the fewer months there are."
+     }
+    ]
+   },
+   {
+    "stem": "At a parcel station, the weighing error for each parcel is independent of the others, and each has a standard deviation of 2 grams. You put 49 parcels together and weigh them as one total.",
+    "question": "About how big is the error (standard deviation) of that total weight?",
+    "explain": "When independent errors add up, the width grows with the square root of their number: 2 grams times 7 is about 14 grams. Multiplying straight by 49 overestimates it, and keeping the error unchanged underestimates it.",
+    "options": [
+     {
+      "text": "About 2 grams",
+      "correct": false,
+      "feedback": "Every parcel's error is in the total, and the more parcels, the wider the total; it doesn't stay at the level of a single parcel."
+     },
+     {
+      "text": "About 0.3 grams",
+      "correct": false,
+      "feedback": "This treats the total weight as an average. It's the error of an average that gets divided by the square root; for a total you multiply."
+     },
+     {
+      "text": "About 14 grams",
+      "correct": true,
+      "feedback": "The square root of 49 is 7, and 2 grams times 7 is 14 grams."
+     },
+     {
+      "text": "About 98 grams",
+      "correct": false,
+      "feedback": "This takes the error as 49 times that of one parcel. Independent errors partly cancel out, so it only grows with the square root."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "title": "More dice, and the total looks more like a bell",
+  "caption": "Across: total ÷ number of dice, to compare shapes. One die is flat, two make a peak; ten are thick in the middle, thin at the ends, one way each to total 10 or 60.",
+  "x": {
+   "label": "Average per die",
+   "min": 1,
+   "max": 6
+  },
+  "y": {
+   "label": "Chance (top = 100)",
+   "min": 0,
+   "max": 100
+  },
+  "series": [
+   {
+    "name": "One die",
+    "points": [
+     [
+      1,
+      100
+     ],
+     [
+      2,
+      100
+     ],
+     [
+      3,
+      100
+     ],
+     [
+      4,
+      100
+     ],
+     [
+      5,
+      100
+     ],
+     [
+      6,
+      100
+     ]
+    ],
+    "tone": "muted",
+    "dots": "small"
+   },
+   {
+    "name": "Two dice",
+    "points": [
+     [
+      1,
+      16.7
+     ],
+     [
+      1.5,
+      33.3
+     ],
+     [
+      2,
+      50
+     ],
+     [
+      2.5,
+      66.7
+     ],
+     [
+      3,
+      83.3
+     ],
+     [
+      3.5,
+      100
+     ],
+     [
+      4,
+      83.3
+     ],
+     [
+      4.5,
+      66.7
+     ],
+     [
+      5,
+      50
+     ],
+     [
+      5.5,
+      33.3
+     ],
+     [
+      6,
+      16.7
+     ]
+    ],
+    "tone": "ink",
+    "dots": "small"
+   },
+   {
+    "name": "Ten dice",
+    "points": [
+     [
+      1,
+      0
+     ],
+     [
+      1.1,
+      0
+     ],
+     [
+      1.2,
+      0
+     ],
+     [
+      1.3,
+      0
+     ],
+     [
+      1.4,
+      0
+     ],
+     [
+      1.5,
+      0
+     ],
+     [
+      1.6,
+      0.1
+     ],
+     [
+      1.7,
+      0.3
+     ],
+     [
+      1.8,
+      0.5
+     ],
+     [
+      1.9,
+      1.1
+     ],
+     [
+      2,
+      1.9
+     ],
+     [
+      2.1,
+      3.4
+     ],
+     [
+      2.2,
+      5.5
+     ],
+     [
+      2.3,
+      8.7
+     ],
+     [
+      2.4,
+      13.1
+     ],
+     [
+      2.5,
+      18.9
+     ],
+     [
+      2.6,
+      26.2
+     ],
+     [
+      2.7,
+      34.9
+     ],
+     [
+      2.8,
+      44.9
+     ],
+     [
+      2.9,
+      55.7
+     ],
+     [
+      3,
+      66.7
+     ],
+     [
+      3.1,
+      77.2
+     ],
+     [
+      3.2,
+      86.5
+     ],
+     [
+      3.3,
+      93.8
+     ],
+     [
+      3.4,
+      98.4
+     ],
+     [
+      3.5,
+      100
+     ],
+     [
+      3.6,
+      98.4
+     ],
+     [
+      3.7,
+      93.8
+     ],
+     [
+      3.8,
+      86.5
+     ],
+     [
+      3.9,
+      77.2
+     ],
+     [
+      4,
+      66.7
+     ],
+     [
+      4.1,
+      55.7
+     ],
+     [
+      4.2,
+      44.9
+     ],
+     [
+      4.3,
+      34.9
+     ],
+     [
+      4.4,
+      26.2
+     ],
+     [
+      4.5,
+      18.9
+     ],
+     [
+      4.6,
+      13.1
+     ],
+     [
+      4.7,
+      8.7
+     ],
+     [
+      4.8,
+      5.5
+     ],
+     [
+      4.9,
+      3.4
+     ],
+     [
+      5,
+      1.9
+     ],
+     [
+      5.1,
+      1.1
+     ],
+     [
+      5.2,
+      0.5
+     ],
+     [
+      5.3,
+      0.3
+     ],
+     [
+      5.4,
+      0.1
+     ],
+     [
+      5.5,
+      0
+     ],
+     [
+      5.6,
+      0
+     ],
+     [
+      5.7,
+      0
+     ],
+     [
+      5.8,
+      0
+     ],
+     [
+      5.9,
+      0
+     ],
+     [
+      6,
+      0
+     ]
+    ],
+    "tone": "accent"
+   }
+  ]
+ }
+}

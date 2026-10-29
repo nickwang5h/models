@@ -1,0 +1,211 @@
+{
+ "id": "leverage",
+ "name": "Leverage",
+ "en": "杠杆",
+ "discipline": "physics",
+ "one_line": "A small input moves a much bigger result, and mistakes get multiplied right along with it.",
+ "story": "Gutenberg's workshop in Mainz prints the Gutenberg Bible with movable type",
+ "shallow": {
+  "scene": "Make one typo in a group message, and dozens of people all get the same mistake in the same place. With anything you set up once and send out in many copies, one error becomes an error everywhere; it was already like this in printing workshops more than five hundred years ago.\n\nAround 1455, Johannes Gutenberg's workshop in Mainz, Germany, printed the Bible. Before that, a book had to be copied out by hand, word by word, by a scribe. Gutenberg's workers set metal type into a frame, inked it, and pressed it onto paper with a printing press. One page of set type could print the same page many times over; when it was done, the type was taken apart and set for the next page. By the usual account, about 180 copies of this Bible were printed.\n\nNearly two hundred years later, in London in 1631, the royal printers reprinted the Bible and left out one \"not\" in the Ten Commandments, so \"Thou shalt not commit adultery\" became \"Thou shalt commit adultery.\" The printers were fined 300 pounds, and most of the copies were recalled and burned. When a scribe miscopies a word, one book is wrong; when a typesetter gets a word wrong, every copy printed is wrong.",
+  "plain": "Push a door with your hand at the handle end, and it opens with a light push. Push the same door a hand's width from the hinges, and it takes several times the effort, while your hand moves only a short way. The farther your hand is from the hinges, the less force it needs, but the farther it has to travel; force times distance always comes to the same number. That's leverage: between the force you put in and the thing you move sits a multiple, and the force you save is paid back by moving farther. Moving the pivot closer to a stone slab when you pry it up is the same sum.\n\nGutenberg's movable type is another kind of leverage. Setting a page of type is much slower than copying a page, but once it's set it can print hundreds of copies. Between one input and the result there is again a multiple, and the cost is paid up front. Neither kind of leverage multiplies only the good: a mistake in what you put in is multiplied by the same multiple, so one wrongly set word puts the same error in hundreds of copies. When people talk about \"adding leverage,\" they usually mean borrowing to magnify gains and losses; that's what the Financial Leverage card covers."
+ },
+ "deep": {
+  "mechanism": "### The farther your hand from the pivot, the less force it needs\n\nA crowbar is a stiff bar that turns around a pivot. The bar adds no strength of its own, so \"force times distance moved\" has to be equal at both ends. Take a crowbar 2 meters long with the pivot placed 20 centimeters from the slab. The end you hold is then 1.8 meters from the pivot, 9 times as far as the slab end. When the bar turns, both ends turn through the same angle, and the end farther from the pivot sweeps a longer arc, so your hand moves 9 times as far as the slab. For force times distance to be equal, the force at your hand needs to be only a ninth of the slab's weight. Written with each end's distance from the pivot:\n\n$$F_1L_1=F_2L_2$$\n\nThat is, the force at your hand $F_1$ times your hand's distance from the pivot $L_1$ equals the slab's weight $F_2$ times the slab's distance from the pivot $L_2$. A slab of about 900 newtons can be pried up by pressing with 100 newtons: $100\\times1.8=900\\times0.2$. Push the pivot in to 10 centimeters, and your end is 1.9 meters from the pivot, 19 times as far as the slab end, and the force needed drops to about 47 newtons.\n\n### The force you save is paid back in how far your hand pushes down\n\nWith the pivot at 20 centimeters, your end goes down 9 centimeters for the slab to rise 1 centimeter. To lift the slab 10 centimeters, your hand has to push down 90 centimeters. Move the pivot to 10 centimeters, and your hand has to push down 1.9 meters. You can't do that in one go, so you pry once, put a block under it, and pry again. Both setups balance: at your end, 100 newtons times 0.9 meters is 90 newton-meters, and 47 newtons times 1.9 meters is about 89 newton-meters; at the slab end, 900 newtons times 0.1 meters is also 90 newton-meters.\n\n### Set up once, use many times, and the multiple is in the number of uses\n\nA crowbar multiplies the size of one push; a printing plate or a program multiplies the number of times one input gets used. Both put a multiple between input and result, so a mistake in the input is multiplied by the same amount.\n\nOn a crowbar, press 20 newtons more and the slab end gets 180 newtons more; it's the same with a wrench on a bolt, where a little extra effort at your hand is enough at the bolt to snap it. On a printing plate, one wrong letter becomes hundreds. Using something over and over has a cost too, but it's paid up front: setting a page of type or writing a program takes much longer than copying a page or doing a job once, and it only pays off if it's used enough times.\n\nThe same goes for a finished program, a recorded explanation, or a ready-made template: each time it's used, that first input works once more, and any mistake in it shows up once more too.",
+  "origin": "The lever is one of humanity's earliest machines. In the 3rd century BC, Archimedes derived the proportion that balances a lever geometrically in *On the Equilibrium of Planes*. The saying \"Give me a place to stand, and I will move the Earth\" comes from later writers retelling it, not from his own works.",
+  "limits": "The bar has to be stiff enough, the pivot steady, and your hand able to push down that far; without any one of these, it doesn't matter how far your hand is from the pivot, nothing moves. Things you set up once and use many times have their conditions too: the more a template, program or explanation gets reused, the more it needs trying out on a small scale first. Roll it out everywhere without trying it, and any mistake in it reaches everyone at once."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Explain why, on a steelyard, the old hand-held scale, a counterweight of half a jin (a jin is half a kilo) can weigh goods of several dozen jin: the counterweight hangs far from the lifting cord and the goods hang close to it, and the multiple between the two distances is the scale's range."
+   },
+   {
+    "use": "design",
+    "text": "Give a batch job that runs automatically every night a \"stop on error\" switch, and a limit of one small batch on the first night, so the number of times it repeats has a ceiling before anyone has seen an error."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Mechanics",
+    "title": "A steel pipe loosens a nut",
+    "text": "You're changing a tire by the road. A wheel nut is rusted on, the wrench handle is only 30 centimeters long, and however hard you press it won't move. You find a pipe a meter long, slide it over the wrench handle, and grip the end of the pipe. With the same effort, the turning force on the nut is a little over three times what it was, and the nut comes loose. When you put the new tire on, you don't take the pipe off and you use the same effort, and this time the bolt snaps off in its hole. You have to call a tow truck."
+   },
+   {
+    "field": "Software",
+    "title": "One file pushed to every computer",
+    "text": "On July 19, 2024, the cybersecurity company CrowdStrike pushed a faulty configuration file to its Falcon security software. The file went out automatically to Windows computers running the software around the world. Microsoft estimated that about 8.5 million of them immediately crashed to a blue screen and kept restarting; flights were grounded, and hospital and bank systems were hit too. To fix it, technicians had to boot each machine into safe mode, one at a time, and delete the file."
+   },
+   {
+    "field": "Family",
+    "title": "Large-print instructions by the tablet",
+    "text": "You write your parents, both in their seventies, a page of large-print instructions on how to start a video call, one line per step, and stick it next to the tablet. After that, whenever they want to see the grandchildren who live in another city, they just look at the page, and you no longer have to talk them through it line by line over the phone. Later the tablet's system updates and a button moves. Step three on the paper is still the old one; they follow it, search for ten minutes, and call you."
+   }
+  ],
+  "ask": [
+   "In how many places will this input be reused? If there's a mistake hidden in it, when is the earliest I'll see it?",
+   "Once it's scaled up, which steps will I no longer have looked at with my own eyes?",
+   "Can a small group of people, or a small part of the process, use it first? If something goes wrong, is there a ready switch that stops it right away?"
+  ],
+  "with": [
+   {
+    "id": "avoid-ruin",
+    "sees": "You've written a script that can switch the account settings of all two thousand customers to a new format in one night. Leverage sees that the script was written to be used in bulk, so running it all in one night is the best value; avoiding ruin sees that if the wrong settings can't be undone, even a small share going wrong is more than you can bear, so try it on twenty accounts first. If the change can be undone with one click, run the whole batch; if it can't, start with a small one."
+   },
+   {
+    "id": "checklists",
+    "sees": "You're in charge of rolling out a new medication-checking procedure to twelve wards in a hospital. Leverage sees that if one step in the procedure is vague, all twelve wards will repeat it every day. Checklists see that nobody can count on every nurse remembering everything every time, so the few steps most easily missed are written on a checklist and ticked off one by one at every shift change, without relying on memory."
+   },
+   {
+    "id": "economies-of-scale",
+    "sees": "Print five thousand copies of a manual, and the typesetting cost is shared across all five thousand, so each copy costs less: that's what economies of scale see. Leverage looks at the same thing and sees that one typo in the typesetting will appear five thousand times."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Every week you explain to new interns how to use the expense system, and each time takes 30 minutes. You're thinking of spending 3 hours writing, recording and editing a video explanation that new people can watch on their own from now on.",
+    "question": "In which of these cases is recording the video worst value?",
+    "explain": "Recording a video pays 3 hours of work up front, all at once, and earns it back by being watched many times later. If it's watched only a few times, or the content soon goes out of date, that up-front input never pays back, and an out-of-date video also teaches the wrong steps to everyone who watches it.",
+    "options": [
+     {
+      "text": "New interns arrive every month, and the expense system hasn't changed in three years.",
+      "correct": false,
+      "feedback": "Many people watch it and the content doesn't go out of date, so the 3 hours are quickly earned back from the explanations you don't have to give. This is the best-value case."
+     },
+     {
+      "text": "The interns are spread across three cities, and every in-person session means a business trip.",
+      "correct": false,
+      "feedback": "Each explanation now costs more, so recording once up front pays back even sooner."
+     },
+     {
+      "text": "New people tend to watch it on their own first and then come with questions.",
+      "correct": false,
+      "feedback": "That means the video gets used more fully and you only answer what's left, so recording is even better value."
+     },
+     {
+      "text": "Only two interns are coming this year, and the system switches to a new version next month.",
+      "correct": true,
+      "feedback": "Explaining in person twice takes only 1 hour, and recording takes 3. And once the version changes, the steps in the video are wrong, so whoever watches it does it wrong."
+     }
+    ]
+   },
+   {
+    "stem": "You manage prices for an online shop. There are two ways to change a price. One is to open a single product's page and change it by hand; the other is to change the \"store-wide discount rule\" in the back end, where one rule is applied automatically to 600 products in the shop. With either way, your chance of typing a wrong number is about the same.",
+    "question": "Which change should first take effect on one or two products, and be rolled out only after it's checked?",
+    "explain": "The discount rule puts a multiple of 600 between one thing you type and the 600 products, so one wrong entry means 600 products selling at the wrong price at the same time. You want to see the mistake on a small scale first, before orders multiply it.",
+    "options": [
+     {
+      "text": "Changing the store-wide discount rule, because one mistake shows up on 600 products at once.",
+      "correct": true,
+      "feedback": "The chance of a typo is the same, but the consequences differ by hundreds of times. Have the rule cover only one or two products first, and widen it once it looks right."
+     },
+     {
+      "text": "Changing a single product by hand, because doing it by hand makes slips more likely.",
+      "correct": false,
+      "feedback": "The question says the chance of a typo is about the same either way, and a mistake made by hand affects only one product."
+     },
+     {
+      "text": "Both are the same, since the chance of typing a wrong number is the same.",
+      "correct": false,
+      "feedback": "The chance of a mistake is the same, but the number of products affected by one differs 600 times."
+     },
+     {
+      "text": "Neither needs testing; if you find a mistake, just change it back.",
+      "correct": false,
+      "feedback": "Between the rule taking effect and you noticing, 600 products are selling at the wrong price, and the orders placed before you change it back can't be taken back."
+     }
+    ]
+   },
+   {
+    "stem": "You're cutting a thick branch with long-handled loppers. Push the branch deeper into the blades, toward the hinge, and the force your hands need is cut exactly in half. Each time it's the same branch to cut through, and the blades have to close by the same width.",
+    "question": "With the branch pushed deeper, what changes along with it?",
+    "explain": "Work equals force times distance. The work done at the blades hasn't changed, so the force your hands save has to be made up by the extra distance your hands close.",
+    "options": [
+     {
+      "text": "The branch itself becomes easier to cut than before.",
+      "correct": false,
+      "feedback": "The branch is just as thick and hard. What changes is the ratio between the lever arms at your hands and at the blades."
+     },
+     {
+      "text": "Nothing changes; your hands just save half the force for free.",
+      "correct": false,
+      "feedback": "With half the force, your hands have to close the handles over a longer distance. The saved force doesn't come for free."
+     },
+     {
+      "text": "The distance the handles have to close becomes about twice as long.",
+      "correct": true,
+      "feedback": "With half the force at your hands, the same work has to come from twice the distance."
+     },
+     {
+      "text": "The work your hands do is cut in half.",
+      "correct": false,
+      "feedback": "The branch still has to be cut through, so the work done at the blades hasn't changed. Your hands use less force over a longer distance, and multiplied together it's the same as before."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Force saved at the hand is paid back in distance",
+  "caption": "Prying up a 900-newton slab by 10 cm. Drag \"Fulcrum to slab\": hand force falls as push distance rises, and the two multiplied always make 90 N·m.",
+  "x": {
+   "label": "Fulcrum to slab (cm)",
+   "min": 10,
+   "max": 60
+  },
+  "y": {
+   "label": "Force (N) / distance (cm)",
+   "min": 0,
+   "max": 400
+  },
+  "params": [
+   {
+    "id": "d",
+    "label": "Fulcrum to slab",
+    "min": 10,
+    "max": 60,
+    "step": 5,
+    "value": 20,
+    "unit": " cm"
+   }
+  ],
+  "series": [
+   {
+    "name": "Hand force (N)",
+    "expr": "900*x/(200-x)",
+    "tone": "accent"
+   },
+   {
+    "name": "Push distance (cm)",
+    "expr": "10*(200-x)/x",
+    "tone": "ink"
+   }
+  ],
+  "marks": [
+   {
+    "x": "d"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Force needed",
+    "expr": "900*d/(200-d)",
+    "unit": " N",
+    "digits": 0
+   },
+   {
+    "label": "Distance to push",
+    "expr": "10*(200-d)/d",
+    "unit": " cm",
+    "digits": 0
+   },
+   {
+    "label": "Force × distance",
+    "expr": "(900*d/(200-d))*(10*(200-d)/d)/100",
+    "unit": " N·m",
+    "digits": 0
+   }
+  ]
+ }
+}

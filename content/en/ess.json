@@ -1,0 +1,206 @@
+{
+ "id": "ess",
+ "name": "Evolutionarily Stable Strategy",
+ "en": "演化稳定策略",
+ "discipline": "biology",
+ "one_line": "A habit lasts when the few who do something else can't get ahead.",
+ "story": "Fisher's The Genetical Theory of Natural Selection counts grandchildren to explain why the sex ratio stays near one to one",
+ "shallow": {
+  "scene": "In a maternity ward, roughly half the babies born are boys and half are girls. That looks obvious, but it is actually a puzzle. In many animals one male can get many females pregnant, so far fewer males are needed. Why are they still born half and half?\n\nIn 1930, the British geneticist Ronald Fisher gave the answer in *The Genetical Theory of Natural Selection*. He noticed that whether a pair of parents has sons or daughters, they have the same number of children; the difference only shows up in the next generation, so what you have to compare is the number of grandchildren. Every child has exactly one father and one mother. So however many children the next generation has, all the males together and all the females together each get that many.\n\nWhen males are scarce, the same number of children is shared among fewer males, so each male has more offspring on average, and parents who have more sons get more grandchildren. When males are plentiful, it's the other way round, and parents who have more daughters come out ahead. Whichever way the ratio leans, having the other sex pays off, so the ratio keeps getting pulled back to half. At half, sons and daughters bring the same number of grandchildren, and nobody can get ahead by switching how they have children.",
+  "plain": "In a meeting, everyone raises a hand and speaks in turn. Then one or two people start cutting in. Everyone else gives way, so the people who cut in speak as soon as they open their mouths and skip the wait. Others see this and start cutting in too. Once half the room is cutting in, several people often start talking at once, and nobody gets a sentence finished; the few still politely raising their hands get picked by the chair right away. When few cut in, cutting in pays; when many do, raising your hand pays. So the number of people cutting in is pushed from both ends and settles at a certain share. At that share, cutting in and raising your hand give the same chance to be heard.\n\nAn evolutionarily stable strategy judges whether a situation is stable in the same way. First let one way of doing things become common in a group, then add a few people who do something different, and see whether they get more or less than the majority. If they get less, the situation holds; if they get more, more and more people will switch, and the situation changes. Biologists call those who fight all the way \"hawks\" and those who back down from a fight \"doves\": the people cutting in are hawks, and the hand-raisers are doves."
+ },
+ "deep": {
+  "mechanism": "### The more hawks there are, the faster a hawk's payoff falls compared with a dove's\n\nTwo individuals compete for a resource worth 4, and each has only two ways to act. A hawk fights all the way; a dove backs down whenever it meets a hawk. In the meeting, those cutting in are hawks and those waiting with their hands up are doves. Suppose both sides are equally strong, and a fight costs 10. The table shows what your side gets on average:\n\n| Your way | Meets a hawk | Meets a dove |\n| --- | --- | --- |\n| Hawk | -3 | 4 |\n| Dove | 0 | 2 |\n\nWhen two hawks meet, the winner gets 4 and the loser pays 10. Each has an even chance, so the average is (4-10)/2=-3. When two doves meet, they split it and each gets 2.\n\nWith random pairing, let the share of hawks be $p$. A hawk has a chance $p$ of meeting a hawk and getting -3, and otherwise meets a dove and gets 4. Weighting by the chance of each meeting, the average is $-3p+4(1-p)=4-7p$. A dove gets 0 when it meets a hawk and 2 when it meets a dove, an average of $2(1-p)=2-2p$. When hawks are 30%, a hawk gets 1.9 and a dove 1.4, so being a hawk pays and hawks increase. When hawks are 50%, a hawk gets 0.5 and a dove 1, so hawks decrease.\n\n### A situation holds only if those who switch lose out among the majority\n\nWhen people who switch first appear, they are few, and almost everyone they meet is from the majority. So the first test compares this: when they meet the majority, do they get less than the majority gets when meeting each other? If they get less, they can't hold on, and the situation holds.\n\nIf both sides get the same in the first test, those who switch don't lose out, so their numbers slowly drift up, and they meet each other more often too. Then comes the second test: the majority must get more when meeting them than they get when meeting each other. If it passes this test, the more people switch, the worse they do, and they are pushed back down.\n\n### Neither pure way holds; what holds is 40% hawks\n\nA group of all doves fails the first test. A few hawks get 4 when they meet doves, while doves meeting doves get only 2, so hawks quickly increase. A group of all hawks fails too. A few doves get 0 when they meet hawks, which is more than the -3 hawks get meeting each other, so doves increase.\n\nWhat holds is 40% hawks and 60% doves. For the share to stop moving, being a hawk and being a dove must pay the same. Set $4-7p=2-2p$, and you get $p=0.4$; at that point both hawks and doves get 1.2. A few extra hawks, and being a hawk loses out; a few too few, and being a dove loses out, so the share keeps getting pulled back to 40%. At this share, nobody who switches alone gets more, and if many switch, they're the ones who lose out, so both tests are passed. So what holds steady can also be a share, and Fisher's half males and half females is exactly such a share.\n\nThe 40% comes from the ratio of the resource's value to the cost of fighting. Write the value as $V$ and the cost as $C$. When the cost of fighting is bigger than the value of the resource, the share of hawks at which both sides get the same is:\n\n$$p=\\frac{V}{C}$$\n\nIn other words, the more the prize is worth, the more hawks; the more a fight hurts, the fewer hawks. Here $V=4$ and $C=10$, which gives exactly 40%; raise the cost to 20, and hawks fall to 20%.",
+  "origin": "The evolutionarily stable strategy comes from evolutionary biology. John Maynard Smith defined it publicly in 1972 in *On Evolution*, and stated that the idea owed something to George Price. In 1973 the two wrote \"The Logic of Animal Conflict\" together; the hawk-dove game, which later became the best-known version, was simplified from the fighting strategies in that paper. Why the sex ratio is close to one to one, Fisher had already worked out in 1930.",
+  "limits": "This way of judging works best when ways of acting that pay more bring more offspring or more imitators. In a small group of only a few dozen individuals, luck pushes the share away from the theoretical value. Reading \"evolutionarily stable\" as \"best for everyone\" is a mistake: at the stable share of 40% hawks, each individual gets only 1.2 on average, while if everyone backed down, each would get 2."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When setting the character stats in a multiplayer game, first check whether players can get ahead by switching to another character. If they can, soon after launch that one character is the only one anyone plays."
+   },
+   {
+    "use": "act",
+    "text": "Everyone in your line of work quotes by the hour, and you want to quote by the deliverable instead. First count whether you win more or fewer of the next few jobs; if fewer, it isn't your turn yet to lead the way with this kind of quote."
+   },
+   {
+    "use": "predict",
+    "text": "To predict whether a discounting tactic will spread among competitors, look at a neighborhood where shops already discount, and check whether the few shops that don't discount are the ones losing customers."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Animal behavior",
+    "title": "Sticklebacks split between two ends",
+    "text": "In 1979, the biologist Manfred Milinski put six three-spined sticklebacks in a tank and dropped food in at both ends, twice as fast at one end as at the other. The fish quickly split four to two, and each fish ate at about the same rate at either end. This split holds: if a fish swims to the other end, that end has one more mouth to feed, the fish gets less to eat, and it swims back."
+   },
+   {
+    "field": "Traffic",
+    "title": "Sweden switches to driving on the right",
+    "text": "Swedes used to drive on the left, while every neighboring country drove on the right, and more than 90% of the cars had the steering wheel on the left. In a 1955 national referendum, 83% still wanted to keep left. When everyone keeps left, a driver who switches to the right on his own crashes head-on, so keeping left held. Parliament finally set the whole country to switch at 5 a.m. on September 3, 1967: to replace a way of doing things that holds, everyone has to switch at the same moment."
+   },
+   {
+    "field": "Investing",
+    "title": "The price gap gets arbitraged away",
+    "text": "You watch the price gap for the same bond in two markets: 0.5 yuan per unit. You buy low and sell high and make money, and others in the trade soon do the same. Buying pushes up the price in the cheap market and selling pushes down the price in the dear one, until the gap shrinks to 0.1 yuan, below the 0.2-yuan cost of holding the money. Now the people still doing the trade lose money, and the few who switched to holding cash come out ahead."
+   }
+  ],
+  "ask": [
+   "How does a way of acting that pays more spread: through offspring, apprentices, or imitation? Who is learning from whom?",
+   "Pick a way of doing things that is already common, and count how much less the few who do it differently get when meeting the majority, compared with the majority meeting each other.",
+   "Who started this way of doing things? Did those first few people end up getting more, or less?"
+  ],
+  "with": [
+   {
+    "id": "local-optimum",
+    "sees": "A team has used the same release process for years. Everyone finds it slow, but nobody changes it. Local optimum urges you to jump out and try a brand-new process, even if things get worse at first. An evolutionarily stable strategy checks something first: if you switch alone, do you lose out when you work with colleagues still using the old process? If you do, don't go it alone. If one person can make the change alone, go and try it; if it only works with others joining in, first get a small group to switch together."
+   },
+   {
+    "id": "mechanism-design",
+    "sees": "When new rules for reporting working hours come out, mechanism design is in charge of writing the rules so that reporting honestly pays for everyone. An evolutionarily stable strategy is in charge of checking after the rules are in use: when most people report honestly, do the few who game the rules get more? If the check fails, go back to the rules and change the rewards and penalties."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Members of a mushroom-picking co-op either hand in everything they pick to the shared basket (Give) or quietly keep half (Keep). The weekly scores are as follows (the numbers are made up; yours, then the other person's way): Give with Give 6, Keep with Give 6, Give with Keep 2, Keep with Keep 3. Ways that score higher get copied by more members. At first everyone gave, then a few keepers slipped in.",
+    "question": "What will happen to these few keepers next?",
+    "explain": "A keeper meeting a giver gets the same as givers meeting each other, so this step doesn't separate them. You then have to compare keepers meeting each other with givers meeting keepers.",
+    "options": [
+     {
+      "text": "Giving has the highest total score, so everyone giving will last.",
+      "correct": false,
+      "feedback": "The total score doesn't decide what gets copied; what gets copied depends on what each person gets. Keepers get no less than givers, so keepers will increase."
+     },
+     {
+      "text": "Keepers gradually increase and in the end replace giving.",
+      "correct": true,
+      "feedback": "When meeting givers, both get 6. Once keepers increase, Keep with Keep gets 3 while Give with Keep gets only 2, so keeping always gets more, until giving is replaced."
+     },
+     {
+      "text": "Keeping and giving get the same, so the two ways live side by side for a long time.",
+      "correct": false,
+      "feedback": "This only compares the box for meeting givers. Keepers meeting each other get 3, givers meeting keepers get only 2, and that's where the gap is."
+     },
+     {
+      "text": "Keepers rise to about half, then stop when the two ways get the same.",
+      "correct": false,
+      "feedback": "Keep with Keep at 3 is higher than Give with Keep at 2, so whatever share keepers make up, their average is higher than givers'. There is no share where the two are equal."
+     }
+    ]
+   },
+   {
+    "stem": "An island has only one ferry, and it runs only on Thursdays. For years the island's stallholders have held their market on Thursdays. The mayor says, \"In all these years nobody has changed the day, which shows that a Thursday market has stood up to tests from other days and is the way to make the most money.\"",
+    "question": "Where does this reasoning go wrong?",
+    "explain": "On other days there is no ferry at all, so the stallholders have no other choice. A Thursday market has never been compared with any other way of doing things.",
+    "options": [
+     {
+      "text": "There's no ferry on other days, so the day can't be changed, and there's been no comparison.",
+      "correct": true,
+      "feedback": "The Thursday market is set by the ferry timetable. Whether other days would earn more or less has never been put to the test."
+     },
+     {
+      "text": "It hasn't been long enough; we need to watch for a few more years before drawing a conclusion.",
+      "correct": false,
+      "feedback": "More years won't help. The ferry only runs on Thursdays, so changing the day is never an option."
+     },
+     {
+      "text": "There are too many stallholders on Thursdays, which shows Thursday's earnings are actually low.",
+      "correct": false,
+      "feedback": "Nothing in the question hints that earnings are low. The stallholders are all there on Thursdays because only Thursdays have a ferry."
+     },
+     {
+      "text": "The stallholders are just copying each other, and copying doesn't count as comparing earnings.",
+      "correct": false,
+      "feedback": "Ways that earn more getting copied is exactly how earnings push a way of acting to spread. What's missing here is other days to choose from."
+     }
+    ]
+   },
+   {
+    "stem": "Your workplace runs a commuter bus in two runs, early and late; a run that gets too few riders is cut. Each ride pays off as follows (the numbers are made up; bigger is better): if everyone takes the early run, each gets 4; if everyone takes the late run, each gets 3; if you're out of step with the majority, you get 1. Right now 30% of colleagues take the late run and 70% the early run. At this point, early riders get 3.1 on average and late riders 1.6. Colleagues copy whoever gets more.",
+    "question": "Over the next few months, how will the share of riders on the two runs move?",
+    "explain": "The early run pays more, so more people will copy it. Each person who moves to the early run raises the early run's average and lowers the late run's, so the trend keeps going the same way.",
+    "options": [
+     {
+      "text": "The share stops at 30%, and each run keeps its part.",
+      "correct": false,
+      "feedback": "3.1 is well above 1.6. More people will copy the better-paying early run, so the share starts moving."
+     },
+     {
+      "text": "The share taking the late run climbs back up toward 60%.",
+      "correct": false,
+      "feedback": "30% is on the other side of the 60% dividing line. The early run pays more, so the share moves further and further from 60%."
+     },
+     {
+      "text": "The two runs' payoffs gradually even out, and each gets half.",
+      "correct": false,
+      "feedback": "Each bit of shift to the early run raises its payoff and lowers the late run's, so the gap widens instead of evening out."
+     },
+     {
+      "text": "The share taking the early run keeps rising until everyone takes the early run.",
+      "correct": true,
+      "feedback": "The early run always pays more, the late run keeps losing riders, and in the end everyone moves to the early run."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "The costlier the fight, the fewer hawks at rest",
+  "caption": "Hawks cut in, doves raise hands; the prize is worth 4. Where the lines cross, both get the same and the hawk share stops. Drag the fight cost to move it.",
+  "x": {
+   "label": "Share of hawks",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "y": {
+   "label": "Average payoff",
+   "min": -8,
+   "max": 5
+  },
+  "params": [
+   {
+    "id": "c",
+    "label": "Fight cost",
+    "min": 6,
+    "max": 20,
+    "step": 1,
+    "value": 10
+   }
+  ],
+  "series": [
+   {
+    "name": "Hawk",
+    "expr": "4-(x/100)*(c+4)/2",
+    "tone": "accent"
+   },
+   {
+    "name": "Dove",
+    "expr": "2-2*x/100",
+    "tone": "ink"
+   }
+  ],
+  "marks": [
+   {
+    "x": "400/c",
+    "y": "2-8/c",
+    "text": "Equal"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Hawk share at rest",
+    "expr": "400/c",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "Each gets, at rest",
+    "expr": "2-8/c",
+    "digits": 1
+   }
+  ]
+ }
+}

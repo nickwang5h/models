@@ -1,0 +1,201 @@
+{
+ "id": "equilibrium",
+ "name": "Equilibrium",
+ "en": "均衡",
+ "discipline": "physics",
+ "one_line": "When the forces cancel, things stay put, and a push shows whether they come back.",
+ "story": "The Leaning Tower of Pisa closes, Burland's team removes soil from under its north side, and it reopens in 2001",
+ "shallow": {
+  "scene": "Almost every tourist who visits Pisa stands in front of the Leaning Tower, holds out a hand, and takes a photo of themselves \"holding it up.\" The people who really held it up were a group of engineers. For centuries the tower had been leaning south, and the more it leaned, the more dangerous it got. The more it tilted, the more its weight pressed on the lower south side; the more that pressed, the further the soft soil under the south side sank; and the further it sank, the more the tower tilted. If this went on, the angle would one day pass a certain limit, and the tower would fall.\n\nIn 1990 Italy closed the tower. The British engineer John Burland helped draw up the plan to repair it: take small amounts of soil from under the foundations on the higher north side, so that the north side would slowly sink. Soil removal began in 1999, the tilt gradually got smaller, and the tower reopened in 2001.\n\nThe engineers never meant to make the tower stand straight. They only wanted the angle further from that limit, so that if something pushed it, it could still settle back on its own.",
+  "plain": "A glass marble placed in the bottom of a bowl stays still. Turn the bowl over and set the marble carefully on top of the dome, and it can stay put there too. In both places the marble doesn't move because gravity is cancelled by the push of the bowl holding it up; in physics, both count as equilibrium. Nudge it with a fingertip and the difference shows. The marble in the bowl rolls back and forth a few times and settles in the middle again; the marble on the dome rolls off the table at the first push and never comes back.\n\nA cabinet at home has both kinds of equilibrium in one. Tip up one side a little and let go, and it thuds back into place, like the marble in the bowl. Tip it too far, past a certain angle, and it is like the marble on the dome: it goes all the way over. Whether an equilibrium is stable depends on what grows once things move away from it: the pull back, or the push further out."
+ },
+ "deep": {
+  "mechanism": "### Tip it past the bottom edge, and the same gravity knocks it over\n\nA cabinet standing on the floor doesn't move because gravity and the push of the floor cancel out. Tip up one side, and the cabinet turns on the bottom edge of the other side. As long as its center of gravity is still on the inner side of that edge, gravity will pull it back into place when you let go; at that point it is the marble in the bowl. As soon as the center of gravity crosses over the edge, the same gravity starts pulling it toward falling over, and it becomes the marble on the dome.\n\n### The higher the center of gravity, the smaller the angle you can tip it\n\nHow far it can be tipped depends on just two numbers: half the width of the base, $b$, and the height of the center of gravity above the floor, $h$. From the bottom edge to the center of gravity is $b$ across and $h$ up. The cabinet reaches its limit when the center of gravity is directly above the bottom edge, and that largest angle $\\theta$ satisfies:\n\n$$\\tan\\theta=\\frac{b}{h}$$\n\nIn other words, the smaller $b/h$, the smaller the angle it can be tipped. Suppose three cabinets all have a base 40 cm wide, so $b=20$. A low cabinet has its center of gravity 20 cm off the floor, a ratio of 1, so if you let go anywhere within 45° it falls back. A bookcase has it at 40 cm, a ratio of 0.5, leaving only about 27°. A full, tall wardrobe has it at 80 cm, a ratio of 0.25, leaving only about 14°.\n\n### It stops where the two effects are equal\n\nThe temperature in a room also settles where two effects are equal. Put an electric heater with a fixed output of 1,500 watts in a room, with 0 degrees outside. Suppose that for every degree the room is warmer than outside, it loses another 100 watts of heat.\n\nAt 10 degrees inside, the room loses 1,000 watts, less than the heater gives, so the temperature rises. At 20 degrees it loses 2,000 watts, more than the heater gives, so the temperature falls. When the room is 15 degrees warmer than outside, it loses exactly 1,500 watts, so the temperature settles at 15 degrees. If it drops to minus 5 degrees outside, the room still ends up 15 degrees warmer than outside, and settles at 10 degrees.",
+  "origin": "The study of equilibrium goes back to the statics of ancient Greece and has no single founder. In 1687 Newton published his laws of motion, which tie the total force to the change in motion; in 1788 Lagrange treated equilibrium problems systematically in *Analytical Mechanics*. In chemistry, Guldberg and Waage put forward the law of mass action in 1864, which explained how a reaction going in both directions reaches equilibrium.",
+  "limits": "This way of looking at things is most reliable in systems where you can see clearly how things act on each other and the rules don't change while you're watching: a reservoir, an animal population or a market whose rules haven't changed in years. Once the rules change, where it settles and whether it is stable both have to be worked out again. Years of calm don't mean a system is solid; they only show that nobody pushed it in those years. Stable doesn't mean good either: an inefficient arrangement can be held in place by everyone's behavior just as well."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Set prices for the parking lot at a tourist site: raise the price when more than 80% of spaces are taken, and lower it when fewer than 50% are. When there are too many cars or too few, there is a force pulling it back each way."
+   },
+   {
+    "use": "predict",
+    "text": "Estimate where the water upstream will settle after a dam is built across a river downstream. The dam raises one end; the higher the water, the more spills over, and it stops where the overflow equals the water flowing in."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Nature",
+    "title": "Where a glacier's end stays",
+    "text": "The end of a glacier in a mountain valley can stay in the same spot for years, because the snow and ice that fall upstream each year match the ice that melts downstream each year. When summers get warmer and more melts, the end retreats uphill, and it stops only when the amount melting again equals the amount being added."
+   },
+   {
+    "field": "Personal life",
+    "title": "A broom on your palm",
+    "text": "You balance a broom upright on your palm and watch the top: when it leans left, your hand chases left; when it leans right, your hand chases right. The broom stays up only because your hand never stops following it. Close your eyes, or let your hand lag half a beat, and the broom falls to the floor."
+   },
+   {
+    "field": "Finance",
+    "title": "Holding the line until evening",
+    "text": "In 1992 the European Exchange Rate Mechanism, which Britain had joined, required the pound not to fall below a set floor against the German mark, and the Bank of England bought pounds to hold that line. On September 16 the selling in the market grew more and more fierce. That day Britain first raised interest rates from 10% to 12%, then announced a rise to 15%, and that evening announced it was leaving the mechanism."
+   }
+  ],
+  "ask": [
+   "When this number stays put, which two opposite effects are cancelling out? Which of them only holds up because something keeps being put in?",
+   "When it is a little too high or a little too low, which effect grows each time? Which report would I check, or whom would I ask, to see it?",
+   "Which effect am I going to change? Once I change it, how will the other one respond, and which side will the new resting point land on?"
+  ],
+  "with": [
+   {
+    "id": "resonance",
+    "sees": "A pedestrian suspension bridge is steady with ordinary foot traffic: when footsteps make it sway, it swings back. Equilibrium judges from this that it is safe. Resonance watches something else: when people's steps fall into the same rhythm as the bridge's own sway, each step adds to the last swing. When there are few people on the bridge, walking out of step, trust equilibrium; when a group is marching in step, have them break step to cross first."
+   },
+   {
+    "id": "nash-equilibrium",
+    "sees": "A show lets out, there are two exits, and everyone heads for the one that looks emptier. Nash equilibrium asks: with people spread as they are now, would anyone get out faster by switching exits on their own? If not, it is a Nash equilibrium. The stability of an equilibrium asks: if twenty extra people happen to surge left, what happens next? If some people switch right when it gets crowded, the spread gets pulled back; if people just follow the crowd, the left gets fuller and fuller. In the first case people sort themselves back; in the second, someone with a megaphone has to split the crowd."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "The deer herd on a small island has stayed at about 200 for years. When there are more than 200 deer, the grass runs short and more die than are born each year; when there are fewer than 200, the grass grows well and more are born than die each year. After a heavy snowstorm only 150 are left. After that the weather is normal and nobody hunts them.",
+    "question": "What is the herd most likely to do over the next few years?",
+    "explain": "With fewer than 200 deer, more are born than die each year; with more than 200, the reverse. When the number is low it gets pushed back to around 200, and when it is high it gets pressed back down too.",
+    "options": [
+     {
+      "text": "Climb back year by year, moving toward 200.",
+      "correct": true,
+      "feedback": "At 150 there is a net gain each year, so the number keeps rising and only slows down near 200."
+     },
+     {
+      "text": "Keep falling: with fewer deer, fewer can breed.",
+      "correct": false,
+      "feedback": "The question says that with fewer than 200, the grass grows well and more are born than die, so there is no reason for a decline."
+     },
+     {
+      "text": "Climb back and go past 200, because the grass has had time to recover.",
+      "correct": false,
+      "feedback": "As soon as it passes 200 the grass runs short and more die than are born, which presses the number back down."
+     },
+     {
+      "text": "Stay around 150: the snowstorm has made that the new normal.",
+      "correct": false,
+      "feedback": "With fewer than 200, more are born than die each year, so the number can't stay at 150."
+     }
+    ]
+   },
+   {
+    "stem": "Your pasture has fed about 500 cattle for years. Suppose that if the grass is eaten down below 3 cm, its roots die and the topsoil washes away in the rain. With 500 cattle, the grass gets down to 5 cm at its shortest; with 700, it would be eaten down to 2 cm in one season. You plan to keep 700 for one season and then cut back to 500.",
+    "question": "After you cut back to 500, what is your pasture most likely to do?",
+    "explain": "Once the roots are dead, fewer cattle doesn't help, because there is nothing left to grow new grass from, and the topsoil has already washed away. Getting back to 500 cattle only puts the number back where it was; the conditions for grass to grow are gone.",
+    "options": [
+     {
+      "text": "Recover fully, since the herd is back to the original 500.",
+      "correct": false,
+      "feedback": "The number of cattle is back to 500, but the roots haven't come back, so there is nothing for the grass to grow from."
+     },
+     {
+      "text": "Grow thicker than before: a season of grazing encourages new shoots.",
+      "correct": false,
+      "feedback": "In the question, eating it down to 2 cm is already below 3 cm, so the roots die and no extra shoots will grow."
+     },
+     {
+      "text": "Not grow back: 700 cattle have already eaten through the 3 cm line.",
+      "correct": true,
+      "feedback": "Eaten down to 2 cm, the roots are dead and the topsoil has washed away. Fewer cattle can't make dead roots grow again."
+     },
+     {
+      "text": "Recover by half: some of the roots will always stay in the ground.",
+      "correct": false,
+      "feedback": "Eaten down to 2 cm in one season, the whole pasture is below the 3 cm line. There is nothing to suggest half the roots survive."
+     }
+    ]
+   },
+   {
+    "stem": "A sealed glass bottle half full of water sits on a windowsill, and the water level hasn't changed for days. Your friend says: the water level hasn't moved, which shows that no water molecules have escaped from the surface and none have fallen back into the water.",
+    "question": "Is that right?",
+    "explain": "The water level depends only on the difference between the molecules escaping and those falling back. If the two are equal, the level doesn't move. Water molecules are moving in both directions all the time.",
+    "options": [
+     {
+      "text": "Yes. The level hasn't moved, so no water molecules are going in or out.",
+      "correct": false,
+      "feedback": "Water molecules keep leaving the surface and coming back to it. The level stays put because the two directions are equal."
+     },
+     {
+      "text": "Yes. The molecules in the water have each settled into place, so the level no longer changes.",
+      "correct": false,
+      "feedback": "The molecules in liquid water are always moving. A steady level doesn't mean the molecules are still."
+     },
+     {
+      "text": "No. Water molecules only escape, and the level doesn't drop because the sealed top blocks the way out.",
+      "correct": false,
+      "feedback": "Water molecules also keep falling back from the air in the bottle into the water; otherwise the water in the bottle would keep getting less."
+     },
+     {
+      "text": "No. Molecules keep escaping and keep falling back, and the two are equal.",
+      "correct": true,
+      "feedback": "Only because those escaping equal those falling back does the level stay the same. Neither direction has stopped; they just cancel out."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Higher center, fewer degrees before it tips",
+  "caption": "Base 40 cm wide; x is the tip angle. Above zero, the center is inside the edge and it falls back; below zero, it tips over. Drag the height to see where it crosses.",
+  "x": {
+   "label": "Tip angle",
+   "unit": "°",
+   "min": 0,
+   "max": 60
+  },
+  "y": {
+   "label": "cm of center inside the edge",
+   "min": -80,
+   "max": 25
+  },
+  "params": [
+   {
+    "id": "h",
+    "label": "Center height",
+    "min": 10,
+    "max": 100,
+    "step": 10,
+    "value": 40,
+    "unit": " cm"
+   }
+  ],
+  "series": [
+   {
+    "name": "Your cabinet",
+    "expr": "20*cos(x*pi/180) - h*sin(x*pi/180)",
+    "tone": "accent"
+   },
+   {
+    "name": "Low cabinet",
+    "expr": "20*cos(x*pi/180) - 20*sin(x*pi/180)",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "y": 0,
+    "text": "Below this it tips"
+   },
+   {
+    "x": "360/pi*((20/(h+sqrt(h^2+400))) - (20/(h+sqrt(h^2+400)))^3/3 + (20/(h+sqrt(h^2+400)))^5/5 - (20/(h+sqrt(h^2+400)))^7/7)"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Max safe tip angle",
+    "expr": "360/pi*((20/(h+sqrt(h^2+400))) - (20/(h+sqrt(h^2+400)))^3/3 + (20/(h+sqrt(h^2+400)))^5/5 - (20/(h+sqrt(h^2+400)))^7/7)",
+    "unit": "°",
+    "digits": 0
+   }
+  ]
+ }
+}

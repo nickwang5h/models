@@ -1,0 +1,220 @@
+{
+ "id": "base-rate",
+ "name": "Base Rate",
+ "en": "基础比率",
+ "discipline": "math",
+ "one_line": "Before judging a case, first ask how common this outcome is among cases like it.",
+ "story": "In the Sally Clark trial, Meadow testifies to odds of 1 in 73 million; in 2001 the Royal Statistical Society points out the sum is wrong",
+ "shallow": {
+  "scene": "When a screening test for a rare disease comes back positive on a checkup report, people's first reaction is fright. Few stop to think first: this disease is rare to begin with, so how many of the positives are false alarms? The same oversight once sent a mother to prison.\n\nThe British lawyer Sally Clark lost both her sons as babies, and she was charged with murdering them. At her trial in 1999, the pediatrician Roy Meadow testified that the chance of a family like hers having two sudden infant deaths in a row was 1 in 73 million. Clark was found guilty.\n\nThe number itself was worked out wrong. Meadow simply multiplied the chance of one sudden death by itself, as if the two children's risks had nothing to do with each other. But the two children had the same genes and grew up in the same home, so their risks were linked. The bigger mistake was that nobody compared this number with anything. The children were already dead, so the question for the jury was not how rare this was, but which explanation was rarer, sudden death or murder. A mother killing two babies one after the other is extremely rare too. The statistician Ray Hill estimated that two sudden deaths were several times more common than two murders. In 2003 the Court of Appeal overturned the conviction.\n\nHowever rare an event is, you have to set it side by side with how rare the other explanation is. Report the tiny number for only one side, and listeners will assume the other side is more likely.",
+  "plain": "In the middle of the night, a car alarm in the parking lot starts wailing, and almost nobody gets up to look. The alarm isn't bad: if someone really is breaking into the car, it will most likely go off. But a night when the car really is broken into doesn't come even once a year, while nights when a cat jumps on the hood, thunder rolls, or a big truck drives past are too many to count. The quiet nights are a huge crowd, and if just a small share of them set off the alarm, that's enough to drown out the one or two real break-ins. So of ten times it goes off, nine are false alarms.\n\nThis is the base rate: how often a given outcome happens among things of the same kind. It is where judgment starts. The lower the starting point, the less you can trust the same signal. Fixing fridges works the same way. Suppose a repairman has a tester that sounds an alarm for 90% of fridges that leak refrigerant, and falsely alarms on 10% of fridges that don't. The fewer of the fridges brought in actually leak, the more likely the ones that set off the alarm are false alarms."
+ },
+ "deep": {
+  "mechanism": "### Whether to trust an alarm depends on how big the crowd producing false alarms is\n\nThe fridges that set off the alarm fall into two groups: those that really leak and set it off, and those that don't leak but set it off anyway. The size of the first group follows the starting share of leaking fridges. The second group comes out of the fridges that don't leak, so the more non-leaking fridges there are, the more false alarms. Use the same tester again, alarming on 90% of leaking fridges and falsely on 10% of the rest:\n\n- 20 of 100 fridges leak: 18 of the leaking ones set off the alarm, and 8 of the 80 that don't leak set it off falsely. Of the 26 alarms, about 70% are real leaks.\n- 2 of 100 fridges leak: about 2 of the leaking ones set off the alarm, and about 10 of the 98 that don't leak set it off falsely. Of the roughly 12 alarms, only about one in six is a real leak.\n\nWrite the share of leaking fridges as $p$ (20 fridges means 0.2). Among the fridges that set off the alarm, the share that really leak is\n\n$$\\frac{0.9p}{0.9p+0.1(1-p)}$$\n\nThe top is the fridges that leak and set off the alarm; the bottom is all the fridges that set it off. When $p$ falls from 0.2 to 0.02, the top shrinks to a tenth, while the false alarms in the bottom, $0.1(1-p)$, only go from 0.08 to 0.098. **Same tester, same alarm: lower the starting point, and how far you can trust it falls from about 70% to about one in six.**\n\nNow an extreme case. If leaking and non-leaking fridges both set off the alarm half the time, then among the fridges that alarm, the share that really leak is the same as before, and the alarm tells you nothing. A moving startup pitch is an alarm like that: good teams and ordinary teams both give moving pitches, so after hearing one you shouldn't shift your original estimate at all.\n\n### Two sudden deaths must be set beside two murders\n\nIn the Clark case, \"two babies dying one after the other\" was the alarm, and sudden death and murder were the two possible causes. Meadow reported only how rare one side, sudden death, was. The starting point to look at was this: among families where two babies died one after the other, what share were sudden deaths, and what share were murders? The 1 in 73 million only means something when it is set beside how rare two murders are.\n\n### Count the starting point from the right group\n\nTo work out the starting rate of leaks among fridges that aren't cooling, counting all household appliances casts the net too wide. Counting only fridges with a confirmed leak misses the ones that weren't cooling because of some other fault. When you draw the line around \"the same kind,\" use only what you know at the moment of judging, such as \"wasn't cooling when it came in,\" and count both the ones that got fixed and the ones that didn't.\n\nPredicting your own work goes the same way. You break a task down and estimate delivery in three weeks, but the median time for twenty similar features is six weeks (say). Six weeks is the starting point. To move it back to three, you need evidence that this one really is different from those twenty. Enthusiasm and a detailed plan don't count: they can't stop rework, staff changes or waiting for approvals, and those are already counted in the six weeks.",
+  "origin": "The base rate comes from probability and statistics and has no single originator. In 1973 Daniel Kahneman and Amos Tversky, in *On the Psychology of Prediction*, studied how people ignore it. In the classic engineer-and-lawyer experiment, people read a short description of someone and guessed whether that person was an engineer or a lawyer. When the proportions of the two jobs in the sample were swapped, their guesses barely changed: they went only by whom the description sounded like. Later, Bent Flyvbjerg used the actual outcomes of similar projects to forecast new ones, which he called reference class forecasting.",
+  "limits": "Whether a past rate can be used depends on whether the key conditions have changed between the old cases and the new one, such as whether it's the same production process or the same set of rules. Once the rules change, the old rate of violations says nothing about this year; you need records under the new rules, and if there aren't any, admit you aren't sure. A founder who wants to prove a project is safe picks only successful peers as the base, which naturally pushes the starting point up: he has the answer first, then chooses the group to fit it."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When you get a text saying \"Congratulations, you've won! Click the link to claim it,\" first think about what share of texts like this come with a real prize, then decide whether to click."
+   },
+   {
+    "use": "explain",
+    "text": "Startup teams who give especially moving pitches on stage often do only so-so once they get the money: that kind of pitch is just as common among good teams as among ordinary ones, so it can't tell the two apart."
+   },
+   {
+    "use": "explore",
+    "text": "When you're handed an unfamiliar number, such as a clinic saying its dental implants succeed 95% of the time, first look up the average for similar clinics; only then do you know whether that is high or low."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Investing",
+    "title": "First look at the win rate for the type",
+    "text": "S&P Dow Jones Indices' SPIVA report showed that in 2023, 60% of actively managed US large-cap funds did worse than the S&P 500 index. A fund manager tells a brilliant stock-picking story. An investor first finds the records for funds of the same category over the same holding period and counts what share of them beat the index, and only then looks into this manager's strategy and fees."
+   },
+   {
+    "field": "Projects",
+    "title": "Ask about similar teams before estimating time",
+    "text": "In the early 1970s, Kahneman was helping write a school curriculum in Israel. The group had worked for about a year, and each member guessed it would take about two more. He asked the curriculum expert Seymour Fox how similar teams had ended up in the past. Fox said about 40% never finished, and those that did took another seven to ten years from the same stage, and this team was no better than they had been. The group went ahead with its original plan anyway, and took another eight years to finish."
+   },
+   {
+    "field": "Personal life",
+    "title": "Judge the commute on weekdays",
+    "text": "The agent took a would-be renter along the commute on a Sunday afternoon, and it took only 25 minutes. The renter then looked up the morning rush-hour records for this route over the last 20 weekdays: on 6 of them it took more than an hour. He used that ratio to compare several apartments, and counted the long commute, once or twice a week on average, as part of the cost of renting."
+   }
+  ],
+  "ask": [
+   "Set aside the vivid details of this one case for now: among things of the same kind, how often does this outcome happen?",
+   "Is the group I picked like this case in its stage, its setting and how it was selected? Does the base include the ones that failed or dropped out?",
+   "Is this detail just as common across all the possible outcomes? If it is, it shouldn't change my judgment."
+  ],
+  "with": [
+   {
+    "id": "expected-value",
+    "sees": "At your yearly checkup, a screening test for a rare disease comes back positive. Suppose only one or two people in 10,000 have this disease, and the test gives false positives 1% of the time. The base rate says it's most likely a false alarm, so don't panic yet, and there's no need for an invasive test right away. Expected value says this disease is too late to treat once missed, and a recheck is just one more tube of blood, so you should go even if the chance is only a few in a hundred. The two give opposite advice, and the difference lies in how serious the consequences are. If a miss can be put right later, listen to the base rate; if a miss can never be undone and a recheck is cheap, listen to expected value, and do the cheap recheck first."
+   },
+   {
+    "id": "survivorship-bias",
+    "sees": "You're looking at a training course's brochure, which features ten students who got well-paid job offers, and you want to know what your chances would be after taking it. The base rate wants the total number of people who started that round of the course and the number who got offers. Survivorship bias warns you that the people in the brochure were picked, and the failures aren't in the base. Here the two don't clash: one says what to count, the other says where to find the missing numbers. Ask the course organizer for the full list of graduates."
+   },
+   {
+    "id": "bayesian-updating",
+    "sees": "A new pet-grooming shop has opened at the entrance to your apartment complex, with long lines from day one, and you want to judge whether it will last three years. The base rate gives the starting point: what share of new shops like this close within three years. Bayesian updating deals with the evidence after that: how common long lines are among shops that later thrived and among shops that later closed. However many times more common they are in one group, multiply the starting odds by that much. If both kinds of shop had lines when they opened, the line doesn't change the starting point at all."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Your company's security system checks about 10,000 logins a day, and about 20 of them really are stolen accounts. The system flags 90% of stolen logins, and also wrongly flags 10% of normal logins as suspicious. This morning, one of your own logins was flagged as suspicious, and there are no other clues.",
+    "question": "How likely is it that this login really was stolen?",
+    "explain": "Stolen logins are so rare that however accurate the system is, most of its alarms come from normal logins. Work out how many alarms each kind of login produces, and you'll know what this one alarm means.",
+    "options": [
+     {
+      "text": "About 10%: the system wrongly flags 10% of normal logins.",
+      "correct": false,
+      "feedback": "That 10% is how many normal logins get wrongly flagged. What you're asking is the reverse, how many alarms are really stolen logins, and those are two different shares."
+     },
+     {
+      "text": "About 0.2%: that's how rare stolen logins usually are.",
+      "correct": false,
+      "feedback": "0.2% is the starting point before the alarm. The alarm is new evidence: stolen logins get flagged far more often than normal ones, so your estimate should go up."
+     },
+     {
+      "text": "About 2%: the vast majority of alarms come from normal logins.",
+      "correct": true,
+      "feedback": "Out of 10,000 logins, about 18 stolen logins set off the alarm, and so do about 998 normal ones. Stolen logins are only about 2% of all alarms."
+     },
+     {
+      "text": "About 90%: the system catches 90% of stolen logins.",
+      "correct": false,
+      "feedback": "90% is how many stolen logins set off the alarm. It leaves out the huge pile of alarms from normal logins."
+     }
+    ]
+   },
+   {
+    "stem": "On an art investment platform, you see that of the 40 works still being traded, 28 have gone up in price over the past five years. The one you're about to buy is in the same price band, and its artist recently appeared in a popular interview. Five years ago the platform launched 120 works in all; the other 80 have been delisted, and their returns aren't shown.",
+    "question": "Before buying, what should you check most?",
+    "explain": "What you want to estimate is what you'll get once you buy, so the records you compare against should cover every similar work you could have bought at the time. If you look only at what's still on display today, the results of the ones that left the market drop out of sight.",
+    "options": [
+     {
+      "text": "Works by artists who appeared in popular interviews, compared only with those still being traded.",
+      "correct": false,
+      "feedback": "Sorting by the artist's exposure still compares only works that are still being traded, so the delisted results remain invisible."
+     },
+     {
+      "text": "The returns of all works in the same price band launched at the same time, including the delisted ones.",
+      "correct": true,
+      "feedback": "The delisted works were also outcomes investors could have bought back then. Count them in, and the share becomes a real starting point."
+     },
+     {
+      "text": "The share of all artworks of every price band that rose in price; the bigger the sample, the steadier.",
+      "correct": false,
+      "feedback": "Works in different price bands and with different holding periods differ a lot. However big the sample, it can't be compared with this purchase."
+     },
+     {
+      "text": "Start from a 70% chance of a rise, then adjust upward because the artist appeared in a popular interview.",
+      "correct": false,
+      "feedback": "That 70% covers only the 40 works still trading and leaves out the 80 delisted ones, so this starting point is probably too high."
+     }
+    ]
+   },
+   {
+    "stem": "You're about to rent a basement apartment. Over the past ten years, this street flooded in two rainy seasons. This year the city's construction work removed the old drainage pump, and the new drainage system isn't running yet. The landlord says 80% of past rainy seasons had no flooding, so this year will probably be the same.",
+    "question": "How should you estimate this year's flood risk?",
+    "explain": "A past rate can be used only if the key conditions that decide the outcome haven't changed. Here the drainage has changed, and carrying the old rate over would create a false sense of certainty.",
+    "options": [
+     {
+      "text": "The pump is gone, so flip \"80% no flooding\" into \"80% flooding\" and prepare for that.",
+      "correct": false,
+      "feedback": "There is no basis for 80% flooding. Turning \"80% no flooding\" into \"80% flooding\" just turns the number upside down."
+     },
+     {
+      "text": "Ten years of records is long enough, so estimate 20% as usual this year.",
+      "correct": false,
+      "feedback": "All ten years of records were made while the old pump was working; this year's conditions aren't in them."
+     },
+     {
+      "text": "As long as this year's rainfall is close to past years', estimate 20% as usual.",
+      "correct": false,
+      "feedback": "Similar rainfall holds only one condition steady. The removed pump is another, and it is exactly the one that decides flooding."
+     },
+     {
+      "text": "Check the drainage capacity now, then look for records from neighborhoods with similar drainage.",
+      "correct": true,
+      "feedback": "The drainage has changed, so the old records can't give this year's probability. Look for comparable evidence under the new conditions, and if you can't find any, admit the estimate is rough."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Fewer leaks: true alarms shrink, false ones don't",
+  "caption": "Say the tester alarms on 90% of leaking fridges, 10% of the rest. Drag left for fewer leaks: true alarms shrink, false ones barely move, the real share falls.",
+  "x": {
+   "label": "Leaking fridges out of 100",
+   "min": 1,
+   "max": 50
+  },
+  "y": {
+   "label": "Fridges alarming",
+   "min": 0,
+   "max": 50
+  },
+  "params": [
+   {
+    "id": "r",
+    "label": "Leaking, of 100",
+    "min": 1,
+    "max": 50,
+    "step": 1,
+    "value": 20,
+    "unit": " fridges"
+   }
+  ],
+  "series": [
+   {
+    "name": "Leak, alarm",
+    "expr": "0.9*x",
+    "tone": "accent"
+   },
+   {
+    "name": "No leak, alarm",
+    "expr": "0.1*(100-x)",
+    "tone": "warn"
+   }
+  ],
+  "marks": [
+   {
+    "x": "r"
+   },
+   {
+    "x": 10,
+    "y": 9,
+    "text": "True alarms catch up"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Leak, alarm",
+    "expr": "0.9*r",
+    "unit": " fridges",
+    "digits": 1
+   },
+   {
+    "label": "No leak, alarm",
+    "expr": "0.1*(100-r)",
+    "unit": " fridges",
+    "digits": 1
+   },
+   {
+    "label": "Alarms that are real",
+    "expr": "100*0.9*r/(0.9*r+0.1*(100-r))",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

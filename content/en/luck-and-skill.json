@@ -1,0 +1,183 @@
+{
+ "id": "luck-and-skill",
+ "name": "Luck vs Skill",
+ "en": "运气与技能",
+ "discipline": "math",
+ "one_line": "The bigger luck's part, the less one win or loss tells you about skill.",
+ "story": "Players throw women's doubles badminton group matches at the London Olympics, and the Badminton World Federation disqualifies eight of them",
+ "shallow": {
+  "scene": "At the 2012 London Olympics, in a women's doubles badminton group match at Wembley Arena, China's Yu Yang and Wang Xiaoli played a strange game against a South Korean pair. Serves went into the net again and again, returns went out again and again, the crowd booed, and the referee came onto the court to warn them. It turned out that both pairs had already qualified for the next round and wanted to lose so as to get a better draw in the knockout stage. Over the whole affair, the Badminton World Federation disqualified eight players in all.\n\nThe judgment and footwork the four players normally used to win points went, in this match, entirely into keeping their scores down. Being able to lose a match on purpose shows that the score was mostly in the players' hands. If the contest were guessing coin tosses, you couldn't lose even if you wanted to.",
+  "plain": "You and a coworker place bets over lunch: twenty rounds of guessing coin tosses and twenty games of gomoku, a board game where you try to get five stones in a row. At both, you win fourteen. How much of those fourteen wins is skill? To separate luck from skill, first ask one question: could I lose on purpose? At gomoku, yes: just give away a careless move. At coin tosses, no: which side lands up isn't up to you, and even if you try to guess wrong, your chance of guessing right is still half. If you can lose on purpose, it shows that what you do changes your chance of winning. So next lunchtime, you'll most likely win at gomoku again; how many of twenty coin tosses you win will be drawn fresh."
+ },
+ "deep": {
+  "mechanism": "### Most activities have some of both\n\nMost activities depend on both skill and luck. Line up all kinds of activities by how much of the result is decided by what you do. Roulette sits at the luck end: however you bet, the odds are the same. The 100-meter dash depends almost entirely on your legs, with luck left only in the wind and who's in the next lane, so it sits near the other end. Mahjong is in the middle: which tile you discard is up to you, which tiles you draw is not.\n\n### The smaller your edge per game, the more games you need\n\nYou play table tennis against an opponent, and you're 60% likely to win each game. Play just one game, and your chance of winning is 60%; best of three, 65%; best of five, 68%; best of seven, 71%. Each game's luck is drawn fresh: good luck one game, bad luck the next, and over many games they cancel out. Your bit of skill, though, is there every game, and as the games add up it shows.\n\nWinning 60% and losing 40% of games means you win 0.2 games more per game on average, so over $n$ games you're ahead by $0.2n$ games. The swing that luck brings is about $\\sqrt{n}$ games. Good and bad luck partly cancel, so the swing grows only with the square root of the number of games, while skill grows with the number of games itself. So the more games you play, the closer the result gets to who is really better.\n\n### Level out what nobody controls first; the gap that's left is skill\n\nTwo teachers' classes are 10 points apart on average in the final exam. But the higher-scoring class was already 12 points ahead when it started, and finished only 10 ahead, so the teacher of the lower-scoring class actually taught 2 points more. Before comparing skill, level out the conditions nobody decides: starting points, opponents, weather, how sick the patients are. The gap that's still there after leveling is what goes to skill; if the gap vanishes as soon as you level things out, it came from the conditions.\n\n### When everyone gets better, winning depends more on luck\n\nOnce everyone in a field has trained hard, they differ only a little, but each game's luck hasn't shrunk. If the stronger side's chance of winning each game drops from 60% to 55%, even best of seven gives it only 61%. The gap is so small that one accident is enough to turn the result around, and the weaker side still has nearly a 40% chance of taking the title.",
+  "origin": "The mathematics behind separating luck from skill comes from probability and statistics, and no single person proposed it. In his 2012 book *The Success Equation*, the investment researcher Michael Mauboussin lined up all kinds of activities on a line from pure skill to pure luck, and gave the test of whether you can lose on purpose. He also used professional sports to explain the \"paradox of skill\": the closer people are in skill, the more results depend on luck.",
+  "limits": "This way of separating the two works best for activities where conditions are comparable and you can watch again and again. Losing on purpose only tells you whether there is skill; it can't measure what share. And the loss only counts if it comes from playing in the normal way. Pulling out your network cable, or fouling on purpose and being ruled to have lost, works by stepping outside the game, and says nothing about whether the game itself involves skill. Heavy luck doesn't mean no skill either: in bridge, how good each hand is depends on the deal, yet over time experts still score higher than beginners."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When setting sales commissions, first look at how much of a quarter's results were propped up by a big customer happening to place an order. For jobs with a lot of chance in them, pay commission on a year's results, not a quarter's."
+   },
+   {
+    "use": "act",
+    "text": "A friend invites you to go into business with him, and his last deal made money. Ask him: would the same approach still work in a different market, with a different set of customers? If he can explain exactly what he did, keep talking."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Medicine",
+    "title": "The surgeon with double the death rate",
+    "text": "You work in the hospital's quality control office. One surgeon did 40 operations this year and 4 patients died, twice the department average. Two extra deaths out of 40 takes only one or two accidents. You pool his 200 operations from the past five years, and use each patient's risk score before surgery to work out how many deaths there should have been: 11 actual, 10 expected, about the same as the department's other surgeons. You don't stop him from operating; you just put his cases for the next year through the usual review."
+   },
+   {
+    "field": "Fishing",
+    "title": "Comparing catches on the same water",
+    "text": "You own another boat in the same harbor. One captain's catch is 30% bigger than the other boats' in the harbor, and he says it's because he can read the color of the water. You go out on his boat for a season to learn this skill. You write down where, when and how much every haul of the season came from, then find the other boats that cast their nets in the same waters on the same day, and set the numbers side by side. In the same waters on the same day, the captain's catch is about the same as the other boats'. The extra 30% came entirely from the stretch of sea to the north where he often went: a huge school of fish arrived there this year, and every boat that went there filled its nets. He often went there in the three seasons before too, and his catch was the same as the other boats in the harbor. You didn't stay to learn how to read the water."
+   },
+   {
+    "field": "Video games",
+    "title": "Forty games that cost a rank",
+    "text": "You play a card-battle game on your phone, and at the end of the season you drop from Diamond to Platinum. You watch replays of your last forty games and mark the reason for each loss: either your opening hand couldn't make a decent start, or you made a mistake playing your cards. Of twenty-two losses, fifteen came from the opening hand and seven from your own mistakes, and five of those were the same mistake: playing a card early that you should have kept. Before next season, you practice only that one habit."
+   }
+  ],
+  "ask": [
+   "If I set out to do this badly on purpose, could I? If I could, then part of my chance of winning is in my hands.",
+   "Do the results of the top few people in this field differ much over the past few years? Go look at the rankings.",
+   "Of the result in front of me, which parts were my decisions, and which were drawn by other people or by fate?"
+  ],
+  "with": [
+   {
+    "id": "outcome-bias",
+    "sees": "An esports team's coaches are arguing: their top-lane player has lost most of his games over the past three weeks. One side says to ignore wins and losses and go through replays to see whether each decision fit the situation at the time; the other says the wins and losses are the evidence. Outcome bias sides with the first group: judge a decision by the information available when it was made. Luck and skill asks how much randomness there is in a single game, and how many games were played in three weeks. If randomness is small and there were a hundred-plus games, the win-loss record itself is repeatable performance and should be accepted. Only when there were just a few games and a lot of randomness should you go through the decisions game by game."
+   },
+   {
+    "id": "matthew-effect",
+    "sees": "A newcomer painter who just won a big prize gets more exhibition invitations and orders the next year. The Matthew effect sees that the exposure from the prize makes his next painting easier to notice. Luck and skill asks about the first prize itself: with a different set of judges, would he still have won? If so, the prize is a signal of skill; if he'd have lost, everything that rose afterward snowballed from one stroke of luck."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Two groups each play ten games: one group plays xiangqi (Chinese chess), the other Texas hold'em poker. Both end 8 to 2.",
+    "question": "Which score says more about the winner being more skilled?",
+    "explain": "In xiangqi, each game's result is decided almost entirely by the two players' moves, so 8 to 2 over ten games most likely comes from a difference in level. In poker the cards are dealt, so the same score has more luck mixed in. Ten games isn't many either way, but for the group with less chance involved, the same ten games say more.",
+    "options": [
+     {
+      "text": "Xiangqi, because each game's result is decided almost entirely by the moves.",
+      "correct": true,
+      "feedback": "The result depends mainly on the players' moves, so with the same score, skill makes up a bigger part of it."
+     },
+     {
+      "text": "Neither; both scores are eight to two.",
+      "correct": false,
+      "feedback": "The scores are the same, but the mix of luck and skill inside them differs. You can't go by the numbers alone."
+     },
+     {
+      "text": "Poker, because it's harder to win a hand at the card table.",
+      "correct": false,
+      "feedback": "Harder to win doesn't mean more skill. The cards depend on the deal, so the score still has luck mixed in."
+     },
+     {
+      "text": "Neither says anything, because ten games is far too few.",
+      "correct": false,
+      "feedback": "With the same number of games, the group with less chance involved still says more. You can't just say neither tells you anything."
+     }
+    ]
+   },
+   {
+    "stem": "You coach a billiards team, and your players' chance of beating the other side's top player in any one game is only 40%. You get to choose the final's format: a single game, or best of seven.",
+    "question": "To give your team the best chance of winning the title, which should you choose?",
+    "explain": "For the side whose chance per game is under half, the more games there are, the more secure the stronger team's advantage. In a single game you have 40%; in best of seven, only about 29%.",
+    "options": [
+     {
+      "text": "You'll lose either way, because the opponent is stronger overall.",
+      "correct": false,
+      "feedback": "A single game still gives you a 40% chance of winning, so a loss isn't certain, and your chances aren't the same under the two formats."
+     },
+     {
+      "text": "Best of seven, because playing more games lets you slowly catch up.",
+      "correct": false,
+      "feedback": "With only a 40% chance per game, the more games there are, the harder it is for the side behind to catch up; best of seven gives you a smaller chance of the title."
+     },
+     {
+      "text": "A single game, because the fewer the games, the more chance can help you.",
+      "correct": true,
+      "feedback": "With few games, chance plays a big part, and the side with under half the chance per game has its best shot at the title."
+     },
+     {
+      "text": "It makes no difference, because the chance of winning each game is the same either way.",
+      "correct": false,
+      "feedback": "The format decides how much chance can matter, so the chance of winning the title differs between the two formats."
+     }
+    ]
+   },
+   {
+    "stem": "In your classmates' group chat, people send red envelopes, sums of money that members race to grab. The app splits each one into random amounts, and people who grab faster get more of them. At the end of the month, one classmate's total from red envelopes is the highest in the group, and he says that's his skill.",
+    "question": "To judge whether he has any skill, which should you look at?",
+    "explain": "How much each red envelope holds is a random draw; speed only decides how many you grab. Whether he has skill depends on the thing speed controls: where his number of grabbed envelopes ranks in the group.",
+    "options": [
+     {
+      "text": "The average size of all the red envelopes he grabbed.",
+      "correct": false,
+      "feedback": "The amount in each red envelope is split at random by the app, so the average amount reflects the luck of the draw."
+     },
+     {
+      "text": "Exactly how big the biggest red envelope he grabbed was.",
+      "correct": false,
+      "feedback": "The biggest one is just his luckiest draw and has nothing to do with speed."
+     },
+     {
+      "text": "How much more his total is than the second-place classmate's.",
+      "correct": false,
+      "feedback": "The size of every envelope in the total was a random draw, so the gap still has luck mixed in."
+     },
+     {
+      "text": "Where his number of grabbed envelopes ranks in the group.",
+      "correct": true,
+      "feedback": "The number depends on speed, so the ranking directly reflects this one skill."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "type": "bar",
+  "title": "The smaller the edge, the less more games help",
+  "caption": "Same play: more games favor the stronger side more. But once all train up and it's 55 to 45 per game, best of seven still leaves the weaker side nearly 40%.",
+  "categories": [
+   "1 game",
+   "Best of 3",
+   "Best of 5",
+   "Best of 7"
+  ],
+  "y": {
+   "label": "Stronger side's chance to win",
+   "unit": "%",
+   "max": 100
+  },
+  "series": [
+   {
+    "name": "Wins 60% per game",
+    "values": [
+     60,
+     65,
+     68,
+     71
+    ],
+    "tone": "accent"
+   },
+   {
+    "name": "Wins 55% per game",
+    "values": [
+     55,
+     57,
+     59,
+     61
+    ],
+    "tone": "muted"
+   }
+  ]
+ }
+}

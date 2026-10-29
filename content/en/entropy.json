@@ -1,0 +1,200 @@
+{
+ "id": "entropy",
+ "name": "Entropy",
+ "en": "熵",
+ "discipline": "physics",
+ "one_line": "Leave things alone and they only get messier, so staying tidy takes constant effort.",
+ "story": "Maxwell imagines a tiny demon that sorts molecules, and it takes more than a hundred years to work out the price it must pay",
+ "shallow": {
+  "scene": "Drawers, desks, earphone cords: left alone, they only get messier and never tidy themselves up. If you want them tidy, you have to keep spending effort on them. In 1867, in a letter to a friend, James Clerk Maxwell imagined a little creature that seemed able to dodge this rule. A box of gas is split into two halves, both at the same temperature. In the partition there is a small door, kept by a tiny creature that can see every single molecule. It lets fast ones into the right side and slow ones into the left. It doesn't push or pull anything, it only opens and shuts the door, yet the right side gets hotter and hotter and the left side colder and colder. Order seems to grow all by itself.\n\nPeople later called it Maxwell's demon, and argued over it for more than a hundred years. In 1982 Charles Bennett, a physicist at IBM, found the loophole. The demon has to keep records, noting whether each molecule is fast or slow, and when its notebook is full it has to wipe it and start again. A full notebook could be written in any one of millions of ways; once wiped, only one way is left, blank. The ways that are lost can't simply vanish. They can only turn into heat that spreads outside the box, and the extra disorder outside is at least as much as what was saved inside the box.\n\nThe demon, like us, has to spend effort to get things tidy.",
+  "plain": "You open a new deck of cards, and the suits and values are lined up neatly. Shuffle once and it's mixed up, which surprises nobody. Shuffle ten more times, and the chance it goes back to its original order is practically zero. There is only one neat order, and about $8\\times10^{67}$ mixed ones. In fact, any one particular mixed order is just as hard to hit as the new-deck order. But you can't tell these mixed orders apart, so they all count as \"mixed\". The cards have no preference; there are simply far, far more paths to mixed.\n\nPhysicists use entropy to count this. For the same state you can see, the more ways its insides can be arranged, the higher the entropy. So left alone, things always slide toward the side with more arrangements. A hot coffee cooling down works the same way: there are very few ways to share out the heat when it is packed into one cup of coffee, and far more when it is spread through the air of the whole room."
+ },
+ "deep": {
+  "mechanism": "### The more molecules, the smaller the chance they all crowd into one side\n\nA box is split into a left half and a right half, with just 4 molecules inside. Each molecule is either on the left or on the right, so the 4 have $2\\times2\\times2\\times2=16$ arrangements in all, and only 1 of them has all 4 on the left. Look a dozen or so times and you'll catch it once. Raise the number to 100 molecules, and all on the left is down to 1 in 2 to the 100th power, about 1 in $10^{30}$. You could wait from the birth of the universe until today and not see it. A tablespoon of water holds far more molecules than that.\n\n### Entropy records the logarithm of the number of arrangements\n\nBoltzmann's formula is $S=k_{\\mathrm B}\\ln\\Omega$. $\\Omega$ is how many ways the insides can be arranged for the same state you can see; $k_{\\mathrm B}$ is just a constant that turns the answer into physical units. In plain words, the more arrangements, the higher the entropy. With all 4 molecules on the left there is only 1 arrangement, and the log of 1 is 0, so the entropy is zero. With 2 on each side there are 6, so the entropy is higher.\n\nThe logarithm is there so that entropies can be added. Put two boxes of 4 molecules each side by side. Every arrangement of one box can pair with any arrangement of the other, giving 16 times 16, or 256 arrangements. Take the log, $\\ln 256=\\ln 16+\\ln 16$, and it becomes the two boxes' entropies added together. That is why entropy can be worked out piece by piece, like mass.\n\n### When one place gets tidier, another must get messier\n\nAn air conditioner cools a room from 32 degrees Celsius to 24. The molecules in the room move more slowly, they have fewer arrangements, and the entropy goes down. But the compressor is using electricity, and that electricity also ends up as heat, so the outdoor unit gives off more heat than was taken out of the room, by that extra amount. The entropy added outside is more than the entropy lost inside, so the total does not go down.\n\n### An engine has to dump heat into the cold end\n\nTake a portion of heat out of a boiler, and the molecules in the boiler move a little more slowly, so their arrangements drop too. The work this heat becomes only pushes the piston forward as a whole; it adds no new arrangements inside the piston. Total entropy can't go down, so part of the heat has to be put into the cold end, where the rise in arrangements makes up for what the boiler lost. Molecules at the cold end were moving slowly to begin with and have few arrangements, so the same portion of heat raises the arrangements there more than it would at the hot end, and less heat needs to be dumped. So the hotter the hot end and the colder the cold end, the more heat can be turned into work.",
+  "origin": "In 1865 Rudolf Clausius, studying heat engines and the direction heat flows, gave this quantity the name entropy, taking the root from the Greek word for \"transformation\". In 1877 Ludwig Boltzmann tied entropy to the number of microscopic arrangements, and his formula was later carved on his gravestone.",
+  "limits": "Entropy gets it right about which way heat flows, whether a gas will gather itself into one place, and the most work a heat engine can do. But things that are neatly arranged don't always need someone to feed them energy. A salt crystal sealed in a dry jar, with nothing stirring it, stays as it is for centuries. Only things that keep getting stirred up need constant effort to keep in order. Calling a messy office or a company falling apart \"entropy increasing\", without saying what kind of wear and tear is at work, is as empty as just saying \"things got worse\"."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "reason",
+    "text": "Someone claims an engine can turn all the heat its fuel gives off into work. Without looking at the blueprints, you know it's impossible: part of the heat always has to be dumped to the cold side."
+   },
+   {
+    "use": "design",
+    "text": "For winter heating, pick a heat pump over an electric heater. An electric heater turns 1 kWh of electricity into 1 kWh of heat; a heat pump uses that 1 kWh to move heat from outdoors into the house, often delivering two or three kWh of heat. The smaller the gap between inside and outside, the more heat each kWh moves, so the colder it is outside, the harder the heat pump has to work."
+   },
+   {
+    "use": "explain",
+    "text": "Explain why the door of a cold store should be shut straight away. Open it, and heat from outside rushes in by itself, since heat flows toward cold without anyone pushing it. To move it back out, the compressor has to use electricity, and also dump an extra portion of heat made from that electricity."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Water supply",
+    "title": "Desalination's power bill has a floor",
+    "text": "With salt dissolved in seawater, there are far more arrangements with the salt ions scattered everywhere than with them all packed to one side. To separate out fresh water, you have to pay in work to gather them up. Entropy gives the minimum for this work: getting one cubic meter of fresh water out of two cubic meters of seawater takes at least about 1 kWh. Today's reverse-osmosis desalination plants use about 3 to 4 kWh per cubic meter, counting the whole plant. In 2011 the environmental engineers Menachem Elimelech and William Phillip pointed out in *Science* that the core step of reverse osmosis was already close to that minimum. Switching to membranes that let water through faster wouldn't save much; the real savings lay in the steps before and after it."
+   },
+   {
+    "field": "Energy",
+    "title": "The larger half of the heat goes out the cooling tower",
+    "text": "A power plant that burns fuel boils water into high-temperature steam to drive a turbine. Once the steam has pushed the turbine, it has to be condensed, handing its heat to cooling water and the air, and only about 40% of the heat becomes electricity. This larger half of the heat must be dumped. Heat will only flow from hot to cold, and work can only be drawn from it along the way; without a cold end, the machine stops. What engineers can do is make the hot end hotter. The new units at Japan's Isogo power plant heat their steam to 600 degrees Celsius, raising efficiency from about 40% in the old units to about 45%."
+   },
+   {
+    "field": "Medicine",
+    "title": "Why the dialysis fluid keeps flowing",
+    "text": "When someone whose kidneys have failed has hemodialysis, their blood flows along one side of a thin membrane, and dialysis fluid flows the opposite way along the other side. Urea molecules bounce around on both sides. More of them bounce from the crowded blood into the dilute fluid than bounce back, so the blood gets a little cleaner. The machine keeps sending in fresh fluid and draining away the used fluid. If the fluid stood still, the concentrations on the two sides would soon even out, as many molecules would bounce back as across, and the cleaning would stop."
+   }
+  ],
+  "ask": [
+   "For this to happen on its own, is it heading toward more arrangements or fewer?",
+   "To make it go the other way, such as getting tidier or taking heat out of a cold place, where does the extra energy come from, and where does the heat get dumped?",
+   "How big is the temperature gap between the machine's two ends? To get work from heat, the bigger the gap the better; to move heat uphill, the smaller the gap, the less it costs."
+  ],
+  "with": [
+   {
+    "id": "activation-energy",
+    "sees": "A sheet of paper can lie on a desk for decades without catching fire by itself. Burnt to ash and smoke, with the heat it gives off spread through the air, it would have far more arrangements, so entropy says it should go that way sooner or later. Activation energy explains why it never has: a match must first push it over the hump. Entropy points the direction; activation energy decides when it goes."
+   },
+   {
+    "id": "conservation-laws",
+    "sees": "You look at the energy accounts of a car engine. Conservation laws say none of the fuel's energy is lost: all of it is in the work that moves the car and the heat that's given off. Entropy says which share can become work: of the heat taken from the hot end, some must always go into the cold air. Conservation checks that the total adds up; entropy says how much of it is usable."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You keep a tank of tropical fish with a lid on it, and a heater holds the water steady at 26 degrees Celsius. You go away for three days, and on the first day the heater breaks. The room's heating is off as well, and the room stays at 12 degrees Celsius.",
+    "question": "When you come back three days later, what is the water temperature most likely to be?",
+    "explain": "Water at 26 degrees is warmer than its surroundings and keeps losing heat to them. With no heater to make up for it, the temperature keeps falling toward room temperature and stops near it. Heat won't flow back by itself from a 12-degree room into the water and warm it up again.",
+    "options": [
+     {
+      "text": "Above 26 degrees Celsius: the fish's body heat and metabolism will slowly warm the water.",
+      "correct": false,
+      "feedback": "The heat the fish give off is tiny, nowhere near enough to make up for the heat the whole tank loses to the room."
+     },
+     {
+      "text": "Below 12 degrees Celsius: losing heat will make the water colder than the room.",
+      "correct": false,
+      "feedback": "Heat flows out only until the two sides are at the same temperature. Losing heat won't make the water colder than its surroundings."
+     },
+     {
+      "text": "Still close to 26 degrees Celsius: water holds a lot of heat, so it won't change much.",
+      "correct": false,
+      "feedback": "Water's large heat capacity only decides how slowly it cools. With no heat source making up the loss, heat keeps flowing out, and over a few days the water will fall to very close to room temperature."
+     },
+     {
+      "text": "Close to 12 degrees Celsius: heat flows out until the water matches the room, and only then stops.",
+      "correct": true,
+      "feedback": "The tank started out warmer than its surroundings, so heat only flows outward, until the tank and the room are about the same temperature."
+     }
+    ]
+   },
+   {
+    "stem": "There are thirty students in a sealed classroom. One of them says: the air molecules are always moving around at random, so at some moment they might all crowd into one corner, and the people in the other corner wouldn't be able to breathe.",
+    "question": "Why does this never happen in real life?",
+    "explain": "No law forbids it. It's just that the number of gas molecules is so huge that the combinations with all of them in one corner make up almost no share at all next to the evenly spread ones. However long you wait, you won't see it.",
+    "options": [
+     {
+      "text": "Molecules repel one another, which naturally pushes them apart and keeps them evenly spread.",
+      "correct": false,
+      "feedback": "In air at room temperature the forces between molecules are very weak. The air is evenly spread because arrangements like that vastly outnumber the rest."
+     },
+     {
+      "text": "All in one corner is only a tiny handful of the countless arrangements; with so many molecules, it practically never comes up.",
+      "correct": true,
+      "feedback": "The more molecules there are, the closer this arrangement's share of all arrangements gets to zero, so although it is allowed, it never actually happens."
+     },
+     {
+      "text": "The laws of molecular motion forbid them all from moving toward the same side.",
+      "correct": false,
+      "feedback": "The laws don't forbid it. If the collisions happened to work out that way, all of them in one corner would be allowed; such combinations are just pitifully rare."
+     },
+     {
+      "text": "Gravity holds the air down everywhere, so it can't gather in one corner.",
+      "correct": false,
+      "feedback": "Gravity only makes the air slightly denser lower down and thinner higher up. Whether one corner of the room is especially empty is nothing it controls."
+     }
+    ]
+   },
+   {
+    "stem": "In summer, you put a fridge with its door open into a small storeroom with the door and windows shut and well-insulated walls, and plug it in, hoping to cool the room down.",
+    "question": "After a few hours, what will the air temperature in the storeroom do?",
+    "explain": "The room is sealed. The fridge moves heat from one spot to another, and the electricity it uses also ends up as heat, all of which stays in the room. There's nowhere outside the room to dump heat, so the temperature can only go up.",
+    "options": [
+     {
+      "text": "Drop at first, then rise back to where it started once the fridge's cold has run out.",
+      "correct": false,
+      "feedback": "The fridge keeps using electricity and giving off heat; there is no stock of cold to run out. The room won't drop at first. It will just keep getting warmer."
+     },
+     {
+      "text": "Drop gradually: with the fridge door open, the cold air will fill the whole room.",
+      "correct": false,
+      "feedback": "While the fridge cools, the radiator on its back gives off even more heat, so the total heat in the room doesn't go down."
+     },
+     {
+      "text": "Rise gradually: the electricity the compressor uses turns into heat that stays in the room, and the heat has no way out.",
+      "correct": true,
+      "feedback": "A fridge can't destroy heat, only move it, and wherever it moves it to is still in this room. Add the heat from the electricity it uses, and the total heat only goes up."
+     },
+     {
+      "text": "Stay about the same: the fridge's cooling and its heating cancel each other out.",
+      "correct": false,
+      "feedback": "The heat given off is the heat taken out plus the heat made from the electricity used, so the two don't cancel."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "The more molecules, the surer an even split",
+  "caption": "Across: share on the left. Height: arrangements for that split (even = 100). Drag molecules from 4 to 100: the curve becomes a spike, all-left falls to 1 in 10^30.",
+  "x": {
+   "label": "Share on the left",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "y": {
+   "label": "Arrangements (half = 100)",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "m",
+    "label": "Molecules",
+    "min": 4,
+    "max": 100,
+    "step": 4,
+    "value": 20
+   }
+  ],
+  "series": [
+   {
+    "name": "4 molecules",
+    "expr": "100*exp(4*(-clamp(x/100,0.000001,0.999999)*ln(clamp(x/100,0.000001,0.999999))-(1-clamp(x/100,0.000001,0.999999))*ln(1-clamp(x/100,0.000001,0.999999))-ln(2)))",
+    "tone": "muted",
+    "dashed": true
+   },
+   {
+    "name": "Slider's count",
+    "expr": "100*exp(m*(-clamp(x/100,0.000001,0.999999)*ln(clamp(x/100,0.000001,0.999999))-(1-clamp(x/100,0.000001,0.999999))*ln(1-clamp(x/100,0.000001,0.999999))-ln(2)))",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "x": 50,
+    "text": "Half and half"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "All on left: 1 in 10^",
+    "expr": "m*log10(2)",
+    "digits": 0
+   }
+  ]
+ }
+}

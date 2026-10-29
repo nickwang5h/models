@@ -7,6 +7,7 @@ import { act, keyAction } from './keys.mjs';
 import { read as readDisplay, save as saveDisplay } from './display.mjs';
 import { bands, leadHtml, dayLabel, matches } from './list.mjs';
 import { EPOCH, addDays, dailyPick, isDate, recentDates, utcDate } from './daily.mjs';
+import { T, href, pageLang } from './i18n.mjs';
 
 let storage = null;
 try { storage = window.localStorage; } catch { /* no storage: progress stays in this page */ }
@@ -22,7 +23,11 @@ const allIds = async () => ids ?? (ids = await (await fetch('/ids.json')).json()
 // time; wider screens never see any of it. `touch` is a phone in the hand, whose keyboard covers the bottom of the screen.
 const phone = matchMedia('(max-width:720px)');
 const touch = matchMedia('(max-width:720px) and (pointer:coarse)');
-const firstSentence = (text) => (text.match(/^[^。！？]+/) ?? [text])[0];
+// The page's language: Chinese at /, English under /en; links and words follow it.
+const lang = pageLang(document);
+const t = T[lang];
+const at = (path) => href(lang, path);
+const firstSentence = (text) => (lang === 'en' ? (text.match(/^.*?[.!?](?=\s|$)/) ?? [text])[0].replace(/[.!?]$/, '') : (text.match(/^[^。！？]+/) ?? [text])[0]);
 
 // A question: the reader picks until the right option; every pick shows that option's feedback. Only the first pick
 // counts as the answer, so review brings back what was missed. `onDone` runs when the right option is found; a question
@@ -63,7 +68,7 @@ function wire(q, onDone = () => {}, { restore = true } = {}) {
 function chrome() {
   const count = document.querySelector('[data-count]');
   const read = Object.keys(state.read).length;
-  if (count && read) count.innerHTML = `读过 <b>${read}</b>`;
+  if (count && read) count.innerHTML = t.readCount(read);
   for (const toggle of document.querySelectorAll('[data-theme-toggle]')) toggle.addEventListener('click', () => {
     const root = document.documentElement;
     const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
@@ -117,7 +122,7 @@ function findBox(sieve) {
   box.querySelector('input').focus({ preventScroll: true });
 }
 let questions = null;
-const allQuestions = async () => questions ?? (questions = await (await fetch('/questions.json')).json());
+const allQuestions = async () => questions ?? (questions = await (await fetch(at('/questions.json'))).json());
 async function updateDue() {
   const badge = document.querySelector('[data-due]');
   const read = Object.keys(state.read);
@@ -152,7 +157,7 @@ function tips() {
 }
 
 async function goRandom() {
-  location.href = `/m/${pickUnread(state, await allIds())}`;
+  location.href = at(`/m/${pickUnread(state, await allIds())}`);
 }
 
 // Home: today's card for the reader's UTC day, the days before, and the list with search and filters.
@@ -164,12 +169,12 @@ function home(data) {
   const todayId = dailyPick(order, date).id;
   const lead = document.querySelector('[data-lead]');
   // Today's card and the days before carry their date, so a phone shows that day's question inside the card.
-  if (lead && (lead.getAttribute('href') !== `/m/${todayId}?day=${date}` || lead.querySelector('.date b')?.textContent !== dayLabel(date))) {
-    lead.href = `/m/${todayId}?day=${date}`;
-    lead.innerHTML = leadHtml(byId[todayId], date, titles[byId[todayId].discipline]);
+  if (lead && (lead.getAttribute('href') !== at(`/m/${todayId}?day=${date}`) || lead.querySelector('.date b')?.textContent !== dayLabel(date, lang))) {
+    lead.href = at(`/m/${todayId}?day=${date}`);
+    lead.innerHTML = leadHtml(byId[todayId], date, titles[byId[todayId].discipline], '', lang);
     if (byId[todayId].fig) {
-      Promise.all([fetch(`/fig/${todayId}.json`).then((r) => r.json()), import('./figure.mjs')])
-        .then(([spec, { figureHtml }]) => { lead.querySelector('.one')?.insertAdjacentHTML('afterend', figureHtml(spec)); })
+      Promise.all([fetch(at(`/fig/${todayId}.json`)).then((r) => r.json()), import('./figure.mjs')])
+        .then(([spec, { figureHtml }]) => { lead.querySelector('.one')?.insertAdjacentHTML('afterend', figureHtml(spec, { lang })); })
         .catch(() => { /* offline or missing: the card reads fine without its figure */ });
     }
   }
@@ -177,7 +182,7 @@ function home(data) {
   if (past) {
     past.innerHTML = recentDates(date, 4).slice(1).map((d) => {
       const card = byId[dailyPick(order, d).id];
-      return `<a href="/m/${card.id}?day=${d}"><span class="pd">${dayLabel(d)}</span><span class="pname">${escape(card.name)}</span></a>`;
+      return `<a href="${at(`/m/${card.id}?day=${d}`)}"><span class="pd">${dayLabel(d, lang)}</span><span class="pname">${escape(card.name)}</span></a>`;
     }).join('');
   }
 
@@ -198,7 +203,7 @@ function home(data) {
     for (const b of tags.querySelectorAll('button[data-d],button[data-u]')) b.setAttribute('aria-pressed', String(b.dataset.d ? b.dataset.d === discipline : b.dataset.u === use));
     const shown = list.filter(pass);
     ranks.classList.toggle('q', Boolean(q.trim()));
-    ranks.innerHTML = bands(shown, { q, read, today: todayId, short });
+    ranks.innerHTML = bands(shown, { q, read, today: todayId, short, lang });
     tot.innerHTML = shown.length !== list.length ? `<button type="button">${shown.length} / ${list.length} <span aria-hidden="true">×</span></button>` : '';
     // Phones fold the grid of disciplines and uses to what was chosen.
     sieve.classList.toggle('on', Boolean(discipline || use || onlyRead || q.trim()));
@@ -210,7 +215,7 @@ function home(data) {
     if (Math.abs(scrollY - top) > 1) scrollTo({ top });
   };
   // Phones also keep the search words in the address, so coming back from a card finds them where they were.
-  const url = () => history.replaceState(null, '', (discipline ? `/d/${discipline}` : '/') + (phone.matches && q.trim() ? `?q=${encodeURIComponent(q)}` : ''));
+  const url = () => history.replaceState(null, '', at(discipline ? `/d/${discipline}` : '/') + (phone.matches && q.trim() ? `?q=${encodeURIComponent(q)}` : ''));
   tags.addEventListener('click', (event) => {
     const b = event.target.closest('button');
     if (!b) return;
@@ -324,9 +329,9 @@ function card(root) {
   allIds().then((order) => {
     const pick = forDay ? dailyPick(order, asked) : null;
     if (pick?.id === id) {
-      dayLabelEl.textContent = dayLabel(asked); dayLabelEl.hidden = false;
+      dayLabelEl.textContent = dayLabel(asked, lang); dayLabelEl.hidden = false;
       insertDay(asked, ((pick.cycle % qs.length) + qs.length) % qs.length);
-    } else if (dailyPick(order, now).id === id) { dayLabelEl.textContent = dayLabel(now); dayLabelEl.hidden = false; }
+    } else if (dailyPick(order, now).id === id) { dayLabelEl.textContent = dayLabel(now, lang); dayLabelEl.hidden = false; }
   }).catch(() => {});
   function insertDay(date, n) {
     const qid = qs[n].dataset.q;
@@ -334,13 +339,13 @@ function card(root) {
     q.hidden = false;
     const block = document.createElement('section');
     block.className = 'dq'; block.id = 's-day';
-    block.innerHTML = `<p class="when">${dayLabel(date)}</p>`;
+    block.innerHTML = `<p class="when">${dayLabel(date, lang)}</p>`;
     block.append(q);
     root.querySelector('.story').after(block);
     reveals.get(qid).push(wire(q, () => answered(qid)));
     // the outline gets the day too, after the story: its date and one box
     const item = document.createElement('li');
-    item.innerHTML = `<a href="#s-day" data-t="s-day" class="td"><span class="tqd">${dayLabel(date)}</span><span class="tq"><i></i></span></a>`;
+    item.innerHTML = `<a href="#s-day" data-t="s-day" class="td"><span class="tqd">${dayLabel(date, lang)}</span><span class="tq"><i></i></span></a>`;
     toc.querySelector('ol > li').after(item);
     dayBox = { box: item.querySelector('i'), n };
     collect(); follow(); show();
@@ -351,7 +356,7 @@ function card(root) {
   spine.querySelector('[data-back]').addEventListener('click', () => {
     let fromHere = false;
     try { fromHere = Boolean(document.referrer) && new URL(document.referrer).origin === location.origin; } catch { /* no referrer */ }
-    if (fromHere && history.length > 1) history.back(); else location.href = '/';
+    if (fromHere && history.length > 1) history.back(); else location.href = at('/');
   });
   // The outline sheet. Opening it adds a history entry, so the phone's back button closes it without leaving the card;
   // closing it any other way goes back over that entry first, then jumps.
@@ -419,8 +424,8 @@ async function review(box) {
   if (phone.matches) { reviewOne(box, all, queue); return; }
   box.innerHTML = queue.map((qid) => {
     const id = qid.replace(/-\d+$/, '');
-    return questionHtml(all[id].questions[Number(qid.split('-').pop())], qid, { id, name: all[id].name });
-  }).join('') + '<p class="more"><a href="/review">再来一组</a></p>';
+    return questionHtml(all[id].questions[Number(qid.split('-').pop())], qid, { id, name: all[id].name, href: at(`/m/${id}`) });
+  }).join('') + `<p class="more"><a href="${at('/review')}">${t.reviewAgain}</a></p>`;
   // Review asks again even when the last answer was right.
   for (const q of box.querySelectorAll('.q')) wire(q, undefined, { restore: false });
 }
@@ -433,20 +438,20 @@ function reviewOne(box, all, queue) {
   const titles = JSON.parse(document.getElementById('disciplines')?.textContent || '{}');
   const right = [];
   let i = 0;
-  const top = (count) => `<div class="rvtop"><h1>复习</h1>${count}</div><div class="segs" aria-hidden="true">${queue.map((_, n) => `<i class="${n < right.length ? (right[n] ? 'ok' : 'miss') : n === i ? 'cur' : ''}"></i>`).join('')}</div>`;
+  const top = (count) => `<div class="rvtop"><h1>${t.review}</h1>${count}</div><div class="segs" aria-hidden="true">${queue.map((_, n) => `<i class="${n < right.length ? (right[n] ? 'ok' : 'miss') : n === i ? 'cur' : ''}"></i>`).join('')}</div>`;
   const render = () => {
     if (i >= queue.length) {
       const score = right.filter(Boolean).length;
       box.innerHTML = `${top('')}<div class="sum"><p class="big">${score}<small>/ ${queue.length}</small></p><ul>${queue.map((qid, n) => {
         const id = qid.replace(/-\d+$/, '');
-        return `<li><a href="/m/${escape(id)}"><b class="${right[n] ? 'y' : 'n'}">${right[n] ? '✓' : '✗'}</b> <b>${escape(all[id].name)}</b><span>${escape(all[id].one_line)}</span></a></li>`;
-      }).join('')}</ul><a class="again" href="/review">再来一组</a></div>`;
+        return `<li><a href="${at(`/m/${escape(id)}`)}"><b class="${right[n] ? 'y' : 'n'}">${right[n] ? '✓' : '✗'}</b> <b>${escape(all[id].name)}</b><span>${escape(all[id].one_line)}</span></a></li>`;
+      }).join('')}</ul><a class="again" href="${at('/review')}">${t.reviewAgain}</a></div>`;
       return;
     }
     const qid = queue[i];
     const id = qid.replace(/-\d+$/, '');
-    box.innerHTML = `${top(`<small>${i + 1} / ${queue.length}</small>`)}<div class="rvq"><p class="src"><a href="/m/${escape(id)}">${escape(all[id].name)}</a><span>${escape(titles[all[id].discipline] ?? '')}</span></p>`
-      + `${questionHtml(all[id].questions[Number(qid.split('-').pop())], qid)}<button class="rnext" type="button" hidden>${i < queue.length - 1 ? '下一题' : '做完了'}</button></div>`;
+    box.innerHTML = `${top(`<small>${i + 1} / ${queue.length}</small>`)}<div class="rvq"><p class="src"><a href="${at(`/m/${escape(id)}`)}">${escape(all[id].name)}</a><span>${escape(titles[all[id].discipline] ?? '')}</span></p>`
+      + `${questionHtml(all[id].questions[Number(qid.split('-').pop())], qid)}<button class="rnext" type="button" hidden>${i < queue.length - 1 ? t.reviewNext : t.reviewDone}</button></div>`;
     const next = box.querySelector('.rnext');
     wire(box.querySelector('.q'), () => {
       right[i] = Boolean(lastAnswer(qid)?.ok);

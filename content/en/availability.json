@@ -1,0 +1,183 @@
+{
+ "id": "availability",
+ "name": "Availability Heuristic",
+ "en": "可得性",
+ "discipline": "psychology",
+ "one_line": "The easier something is to remember, the more often we think it happens.",
+ "story": "After the 9/11 footage replays again and again, many Americans drive instead of flying, and Gigerenzer uses traffic data to estimate the extra road deaths",
+ "shallow": {
+  "scene": "On September 11, 2001, footage of airliners crashing into the World Trade Center in New York and into the Pentagon was replayed on television again and again. For some time afterward, many Americans stopped flying and drove on long trips instead. The psychologist Gerd Gigerenzer later checked this against traffic data and estimated that it led to a number of extra deaths on the roads. Car crashes happen every day, and none of them was replayed.",
+  "plain": "In one week, the residents' group chat for your housing estate passes around three messages about e-bikes being stolen, and you start to feel that bikes go missing here all the time. Look through the management office's records, and there were 6 in the whole year. The estate has 1,200 households, so that's one a year for every 200 households. In the same year, 40 households locked their keys inside and called a locksmith, and nobody mentioned it in the group. The three forwarded messages stayed in your head; the 40 lockouts left no trace. You were judging how many by how easily examples came to mind, and that is exactly the availability heuristic that Tversky and Kahneman studied."
+ },
+ "deep": {
+  "mechanism": "### What comes to mind easily is taken to be common\n\nAsk English speakers: are there more words that begin with K, or more words with K as the third letter? Many choose the first. Finding words by their first letter is easy, so they take easy to find as plentiful; in fact there are more of the second kind.\n\n### Exposure rewrites memory\n\nTake a single accident. You see the first report, then a second and a third, and it feels more familiar each time, though it is still one accident. Things you hear about again and again, things with vivid images and things that just happened all come to mind more easily. So when you estimate how many accidents of this kind happen in a year, the number you give is often higher than what the records show.\n\n### The more examples you list, the fewer it feels like\n\nIn 1991 Schwarz and colleagues asked participants to recall times they had stood up for themselves: one group listed 6, the other 12. Those listing 12 found it harder and harder as they went on, and when they then rated how assertive they were, their scores came out lower. They had listed more cases, but took \"I can't think of any more\" as evidence that they weren't assertive.",
+  "origin": "Amos Tversky and Daniel Kahneman published a paper in 1973 proposing that people judge how frequent or likely something is by how easily examples come to mind. The letter K experiment comes from this paper. In 1991 the experiment by Schwarz and colleagues went further, showing that how hard recall feels is itself used as a basis for judgment. Gigerenzer's estimate did not measure travelers' memories directly; that people stopped flying because of those images is one explanation.",
+  "limits": "Where you have plenty of experience, the setting is stable and feedback comes quickly, estimating numbers by how fast things come to mind is mostly reliable. An experienced shop assistant knows without checking the books which items people ask for every day. Once your information comes mainly from news reports and forwarded messages, this stops working, because the news picks precisely the rare events, so those are what come to mind first. It can also be misused the other way round. You hear \"none of the few dozen people around me has ever run into this\" and conclude it's rare, but a few dozen people is a very small sample."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Someone who was chased by a dog a month ago keeps feeling the neighborhood is full of stray dogs: the image of that latest time outweighs his sense of the whole year."
+   },
+   {
+    "use": "act",
+    "text": "Before setting a budget for disaster prevention, first make a table of how often each kind of risk has happened, so the money doesn't all flow to whatever went wrong most recently."
+   },
+   {
+    "use": "communicate",
+    "text": "When someone has just heard a frightening story, no amount of probability will get through to them. Put the total numbers in front of them first; only then is it time to talk about proportions."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Tech work",
+    "title": "Outages grab the budget",
+    "text": "You're a tech lead. You remember three service outages that kept the team up all night, and you plan to put the whole of next quarter's improvement budget into the servers. In the same month's tickets there were also twenty input errors, each of which made a customer redo their work. You make one table ranked by how often things happened and another ranked by losses, and the two tables put things in a different order. The budget is split in two."
+   },
+   {
+    "field": "Investing",
+    "title": "Winners fill your memory",
+    "text": "You come across three write-ups about stocks that doubled, and at dinner a friend tells the story again, so it feels like chances to double your money are everywhere. Before placing an order, you look up the full spread of gains and losses for the same kind of stock over the same period. Each winner you'd heard about over and over counts only once, and the ordinary returns that never trended online are in the table too. You cut the amount you buy to half of what you had planned."
+   },
+   {
+    "field": "Personal life",
+    "title": "Takeout and the e-bike",
+    "text": "Your social media feed passes around three news stories in a row about food poisoning from takeout, and you delete the food-delivery app. That same week you ride an e-bike to and from work and go without a helmet on three days out of five, yet not one road accident gets passed around. At the weekend you put the app back and go and buy a helmet."
+   }
+  ],
+  "ask": [
+   "Do I think it's common because I checked how often it happens, or because a few examples jumped out at me?",
+   "Do these examples come from several separate events, or from the same event told over and over?",
+   "Were the examples I have drawn at random from all the cases, or picked by someone else before being handed to me?"
+  ],
+  "with": [
+   {
+    "id": "base-rate",
+    "sees": "A convenience store owner has just had a theft and wants to put cameras over every shelf. He thinks back to that theft first, and the theft is all he can think of; the base rate asks him to look at what share of similar shops in the city have a theft in a year. If the share is low, put cameras at the checkout and the back door first; if it's high, then add them shelf by shelf."
+   },
+   {
+    "id": "avoid-ruin",
+    "sees": "After a typhoon, the town is deciding whether to spend money strengthening the sea wall. Availability gives a warning: right after a disaster, people overrate the chance of another one, and the urge to spend has been pushed up by memory. Avoiding ruin looks at something else. If the sea wall gives way, none of the town's houses can be saved, so however low the probability, you can't wait until the numbers are certain before acting. Set the budget first by whether the consequences could be survived, then adjust it by how often the thing happens."
+   },
+   {
+    "id": "bayesian-updating",
+    "sees": "The same message is forwarded by ten group chats. Should your confidence go up ten times? Availability makes it feel truer each time you hear it; Bayesian updating counts only independent new evidence, and ten messages from the same source count as one."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A department head has recently sat through two detailed reviews of new hires missing deadlines, and feels this year's intake misses deadlines more often than last year's. Last year's intake had reviews too, but he no longer remembers them clearly. The two intakes took on different numbers of tasks, and tasks delivered on time are rarely discussed in meetings.",
+    "question": "To judge whether this year's new hires really miss deadlines more often, which step is most useful?",
+    "explain": "Recent, detailed accounts of delays come to mind more easily, and the head has taken remembering clearly as happening often. Only the number of delays divided by the total number of tasks gives a rate that can be compared.",
+    "options": [
+     {
+      "text": "Sort the records using the same rules for picking which delays get reviewed, and compare the number of delays discussed for each intake.",
+      "correct": false,
+      "feedback": "The two intakes had different total numbers of tasks. Counting only the delays that were discussed leaves out what to divide by, so you can't compare rates."
+     },
+     {
+      "text": "Ask the head to recall each intake's delays separately, and compare how many cases he can list for each.",
+      "correct": false,
+      "feedback": "Recent reviews are easier to recall, so the number of cases follows the bias of memory and can't show the true rate."
+     },
+     {
+      "text": "Among tasks of similar difficulty over equally long periods, compare the share of tasks each intake delivered late.",
+      "correct": true,
+      "feedback": "The number of delays divided by the total number of tasks gives the rate of delay. With similar difficulty and periods, the comparison means something."
+     },
+     {
+      "text": "Find the losses caused by each intake's worst delay, and compare which intake's losses cost more.",
+      "correct": false,
+      "feedback": "The size of the losses answers how big the impact was; the question asks whether delays happen more often."
+     }
+    ]
+   },
+   {
+    "stem": "A listening test: a host reads out 39 names, one after another. 19 are famous men who are household names, and 20 are ordinary women nobody has heard of. When it's over, nobody may look at a record, and each listener is asked to say from memory whether the list had more men or more women.",
+    "question": "How will most listeners most likely answer?",
+    "explain": "Famous names come to mind at once, while ordinary people's names fade quickly, so listeners take the side they can recall as the bigger one. In fact the list has one more woman than men.",
+    "options": [
+     {
+      "text": "More men, because famous names are easier to recall.",
+      "correct": true,
+      "feedback": "Listeners didn't count one by one. Nearly every name they can recall is a famous one, so the answer tilts toward men."
+     },
+     {
+      "text": "More women, because there's actually one more of them on the list.",
+      "correct": false,
+      "feedback": "Listeners didn't count. They go by impression, and the famous names take up the room in that impression."
+     },
+     {
+      "text": "Most can't answer, because nobody can remember 39 names.",
+      "correct": false,
+      "feedback": "Listeners will answer anyway; their answers just follow how easily names come to mind. They won't all give up."
+     },
+     {
+      "text": "About the same, since the numbers differ by only one.",
+      "correct": false,
+      "feedback": "A difference of one person can't be heard. Listeners answer by which side's names are easier to recall, and the two sides carry different weight in their minds."
+     }
+    ]
+   },
+   {
+    "stem": "A video of a crack in a bridge is shared online again and again. Inspectors then confirm that a key structural part has broken, and the bridge can now carry less than its everyday traffic load; they recommend closing it at once. Someone objects: \"People are just scared by the video. This bridge hasn't had an accident in twenty years.\"",
+    "question": "What should be done with the bridge?",
+    "explain": "The public's fear may come from the much-shared video, but the basis here is the inspection, which directly compared the bridge's capacity with the traffic load. Neither the video's popularity nor twenty years without an accident changes the fact that the part has broken.",
+    "options": [
+     {
+      "text": "There have been no accidents in twenty years and the long record is more reliable, so keep traffic flowing as normal.",
+      "correct": false,
+      "feedback": "The part has broken; twenty years of records describe the bridge before it broke."
+     },
+     {
+      "text": "The inspection confirms the bridge can no longer carry enough and traffic loads exceed its capacity, so close it at once.",
+      "correct": true,
+      "feedback": "The inspection directly compared capacity with load, so closing the bridge has a concrete engineering basis."
+     },
+     {
+      "text": "The video keeps being shared more, which shows the chance of an accident is rising, so close it at once.",
+      "correct": false,
+      "feedback": "More sharing raises exposure. The chance of an accident has to be judged from the state of the bridge."
+     },
+     {
+      "text": "The public is panicking and tends to rate the risk too high, so wait for the attention to die down before deciding.",
+      "correct": false,
+      "feedback": "The lack of capacity has been confirmed by inspection, and waiting won't mend the broken part."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "type": "bar",
+  "title": "Shared thefts: 6 a year. Unshared lockouts: 40",
+  "caption": "1,200 households. The three forwarded theft messages stick in your mind; the forty calls to a locksmith leave no trace at all.",
+  "categories": [
+   "E-bike stolen",
+   "Locksmith called"
+  ],
+  "y": {
+   "label": "Times"
+  },
+  "series": [
+   {
+    "name": "Shared this week",
+    "values": [
+     3,
+     0
+    ],
+    "tone": "muted"
+   },
+   {
+    "name": "Happened all year",
+    "values": [
+     6,
+     40
+    ],
+    "tone": "accent"
+   }
+  ]
+ }
+}

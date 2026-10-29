@@ -1,0 +1,254 @@
+{
+ "id": "sir-r0",
+ "name": "SIR Model and R0",
+ "en": "SIR 模型与基本再生数",
+ "discipline": "biology",
+ "one_line": "If each sick person passes it to fewer than one other, the outbreak dies down.",
+ "story": "Flu sweeps a boys' boarding school in northern England in January and February: 512 of 763 pupils end up in bed, as the British Medical Journal reports on March 4",
+ "shallow": {
+  "scene": "When flu spreads through a dorm or an office, it often goes from one person to the next, yet after a while it stops on its own, and some people never catch it at all. In early 1978, a boys' boarding school in England recorded this from start to finish, and the account was published in the *British Medical Journal*.\n\nOne pupil came back from a holiday and was the first to get flu. All 763 boys at the school boarded there, and every day someone wrote down how many were sick in bed. The number rose day after day; at the peak nearly three hundred were in bed at the same time, and then it fell day by day. Over about two weeks, 512 boys were in bed at some point, and 251 never were.\n\nA third of the pupils never got sick, and yet the outbreak ended. The virus had not grown weaker. Most of the classmates each sick boy met had already had it, so each sick boy now passed it on to fewer than one new case.",
+  "plain": "You're the first in a class of thirty to catch a cold. The SIR model sorts the class into three piles: those who haven't had it yet (S), those who are sick now (I), and those who have recovered (R). Each day it watches people move from one pile to the next. Suppose each sick person passes it to three classmates before getting better. In the first few days nobody in the class has had it, one passes it to three, and there are more sick people every day. Once twenty people have recovered, of the three people a newly sick classmate coughs on, two already have antibodies. He can only pass it to one, and the number of sick people stops climbing."
+ },
+ "deep": {
+  "mechanism": "### The three piles only move one way\n\nOne sick person arrives on a campus of a thousand people. Someone who hasn't had it catches it from a sick person and moves from S to I; a sick person who recovers moves to R and doesn't come back. So S only shrinks, R only grows, and I rises first and then falls. The average number of people the first sick person passes it to before recovering is called the basic reproduction number (R0). It is set by how many people a sick person meets each day, the chance of passing it on at each meeting, and how many days a sick person stays infectious, all together.\n\n### The bigger R0, the higher it climbs and the more completely it burns through\n\nWhen R0 is 0.9, each sick person doesn't produce even one new case. Only a dozen or so people get sick in total, and it fizzles out. With R0 at 1.5, about 580 people end up having had it; with R0 at 2, about 800. When R0 is 2, once the people who haven't had it drop to half, only half the people a sick person meets can catch it. 2 times a half is 1, and the number of sick people peaks. After that each sick person passes it to fewer than one, and the number of sick people turns down, but people keep catching it for a while, and in the end about a fifth of people never get it.\n\n### With enough immune people, the disease can't take off\n\nPeople who have recovered and people who have been vaccinated can't catch it, so a sick person has fewer new people to pass it to. The average number of people each sick person passes it to right now is called the effective reproduction number. It equals R0 times the share of people who aren't immune. When the effective reproduction number is below one, the disease can't take off. So the share who aren't immune has to be below one over R0, and the share who are immune has to be above\n\n$$1-\\frac{1}{R_0}$$\n\nThe bigger R0, the smaller the share left for people who aren't immune. For a disease with an R0 of 4, those who aren't immune must be fewer than a quarter; $1-\\frac14=\\frac34$, so more than three quarters must be immune to stop a newly arriving case.",
+  "origin": "In 1927 the Scots William Kermack and Anderson McKendrick published \"A Contribution to the Mathematical Theory of Epidemics\" in a journal of Britain's Royal Society. They split a population into three groups, susceptible, infected and recovered, that is S, I and R, and wrote the rise and fall of the three piles as differential equations. They checked it against data from the plague in Bombay in 1905 and 1906, and also pointed out that an epidemic stops before everyone in the population has been infected.",
+  "limits": "A single short outbreak in a closed group, like a boarding school or a cruise ship, fits the SIR model best: everyone mixes evenly, and people who recover don't catch it again. For diseases where immunity fades, like the common cold, or where people fall into several circles that don't mix, the model goes off. R0 is also not a constant that comes with the virus. It depends on how many people a sick person meets each day, so the same disease gives a different number in a packed city district and in a thinly settled village. Apply one city's R0 to another city and you can be far off."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When setting a vaccination target, first estimate the disease's R0. The bigger R0, the more people need the vaccine; for a disease that spreads as fast as measles, well over nine in ten people have to get it."
+   },
+   {
+    "use": "predict",
+    "text": "Take the case curve from the first few weeks of an outbreak and estimate how many people each sick person passes it to on average. From that you can tell roughly when the number of sick people will peak and how many people will have had it in the end."
+   },
+   {
+    "use": "act",
+    "text": "To decide whether to allow gatherings again, look at whether the effective reproduction number is below one right now. The total count of cases so far can't answer that question."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Public health",
+    "title": "Vaccination falls, measles returns",
+    "text": "In Samoa, the share of children vaccinated against measles fell to around 30% in 2018, and the number of children with no immunity kept building up. In October 2019 measles spread across the islands. There were thousands of cases and more than 80 deaths, most of them small children. In December the government ran an emergency nationwide vaccination drive, and new cases then died away."
+   },
+   {
+    "field": "Technology",
+    "title": "The worm took every server it could",
+    "text": "On July 19, 2001, the Code Red worm scanned the internet for vulnerable servers and infected more than 300,000 of them in a single day. The number of infections first shot up steeply, then grew more slowly: servers that were unpatched and not yet taken over were getting harder and harder to find."
+   },
+   {
+    "field": "Personal life",
+    "title": "The egg message in the neighborhood chat",
+    "text": "In your neighborhood's group chat, someone forwards a message about free eggs. On the first day only five or six people pass it on. By the third day most people in the chat have already seen it, and fewer people pass it on, because whoever they'd send it to has most likely seen it already. By the fifth day nobody forwards it any more, and a dozen or so people in the chat never saw the message at all."
+   }
+  ],
+  "ask": [
+   "In this group of people, what share have neither had it nor been vaccinated? Look at antibody spot checks or vaccination records.",
+   "Given the group as it is now, how many people will one new sick person pass it to on average before getting better? More than one, or fewer?",
+   "When I see fewer new cases, is that because someone has blocked the spread, or because the people who haven't had it are running out?"
+  ],
+  "with": [
+   {
+    "id": "network-models",
+    "sees": "A school has only one batch of vaccine. Who gets it first? The SIR model assumes everyone mixes the same way, so vaccinating anyone raises the immune share a little, and you just spread it out by head count. Network models see that a few people have contact with the whole school, like the captain of the school team or the cafeteria staff. Vaccinate them and far more paths of spread are cut, so they suggest giving it to those few. Same batch of vaccine: one says spread it out, the other says name names. If people with unusually many contacts really exist, naming names saves a lot of vaccine."
+   },
+   {
+    "id": "time-delays",
+    "sees": "Most of the new cases reported today caught it a week ago. The SIR model sees the curve of sick people pass its peak and says the effective reproduction number is below one, so you can reopen. Time delays remind you that new spread after reopening will also take a week to show up in the reports, so by the time you see a rebound, another round of spreading has already happened. One says reopen now, the other says reopen in steps: after each step, wait a week and look at the numbers before taking the next."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A respiratory disease, in a population where nobody is immune, passes from each sick person to 2.5 others on average. In one city, 40% of people have already had it, with lasting immunity, and nobody else has. The city government wants to vaccinate more people so that a newly arriving case can't spread there. The vaccine works fully, and it goes to people who haven't had the disease.",
+    "question": "How many more people have to be vaccinated to be just enough? (Give the answer as a share of the city's whole population.)",
+    "explain": "For the disease not to spread, the immune share of the whole city has to be above 1 minus one over 2.5, which is 60%. There is already 40%, so 20 percentage points are missing, which is 20% of the city's population.",
+    "options": [
+     {
+      "text": "Vaccinate another 20% of the city's population.",
+      "correct": true,
+      "feedback": "The line is 60% in total, 40% are already there, and the missing 20 percentage points are a share of the whole city, so 20% is what needs vaccinating."
+     },
+     {
+      "text": "No more vaccination is needed: 40% of people are already immune, so the disease will die out on its own.",
+      "correct": false,
+      "feedback": "60% of people still haven't had it, so each sick person still passes it to 1.5 people on average. That's more than one, and the outbreak takes off anyway."
+     },
+     {
+      "text": "Vaccinate 60% of the people who haven't had it, about 36% of the city.",
+      "correct": false,
+      "feedback": "The 60% is a share of the whole city, not of the people left who haven't had it; worked out this way, a big extra group gets vaccinated."
+     },
+     {
+      "text": "Vaccinate another 60% of the city's population.",
+      "correct": false,
+      "feedback": "60% is the total immune line for the whole city, and the 40% already immune counts toward it. Vaccinating another 60% would go far past it."
+     }
+    ]
+   },
+   {
+    "stem": "A closed fishing village has 400 people. Nobody has had a certain respiratory disease, and nobody takes any precautions. After a fisherman from outside brings the disease into the village, the number of people sick in bed at the same time rises day by day, reaches its highest on day 9, and then falls day by day.",
+    "question": "Given the village as it is on day 9, how many people will a new sick person pass it to on average before getting better?",
+    "explain": "The number sick in bed at the same time peaks on this day, which means the number of sick people is neither rising nor falling right now: each new sick person produces just one new sick person, about one. Only after that is it fewer than one, and the number goes down.",
+    "options": [
+     {
+      "text": "The same as the village's R0 at the start, because spread is fiercest when the most people are sick.",
+      "correct": false,
+      "feedback": "R0 describes spread when nobody in the village has had it; by day 9 plenty of people have been sick, so the average is already well below R0."
+     },
+     {
+      "text": "Fewer than one, because from day 9 the number starts to fall.",
+      "correct": false,
+      "feedback": "The number falls from day 10 on; day 9 is exactly the turning point, and the average hasn't dropped below one yet."
+     },
+     {
+      "text": "More than one, because the number sick in bed is still at its highest.",
+      "correct": false,
+      "feedback": "A high number only means there are many sick people; how many each one passes it on to is what decides whether the next day goes up or down."
+     },
+     {
+      "text": "About one; the number of sick people is neither rising nor falling.",
+      "correct": true,
+      "feedback": "On the day the number sick in bed peaks, each sick person produces just one new sick person, and only after that does it drop below one."
+     }
+    ]
+   },
+   {
+    "stem": "In one city, each person sick with a certain flu passes it to 1.8 others on average. A new drug cuts the time a sick person is infectious to half of what it was. The number of people each person meets a day and the chance of passing it on at each meeting stay the same, and every sick person in the city takes the drug.",
+    "question": "What will the outbreak in this city do next?",
+    "explain": "The number of people each sick person passes it to shrinks in the same proportion as the days they're infectious: half of 1.8 is 0.9, less than one. Each round has fewer sick people than the last, and the outbreak gradually dies away.",
+    "options": [
+     {
+      "text": "It keeps spreading as before: the drug only makes people get better faster, and the virus itself hasn't changed.",
+      "correct": false,
+      "feedback": "With half as many infectious days, a sick person passes it to half as many people. That the virus hasn't changed doesn't alter this."
+     },
+     {
+      "text": "It slows but keeps spreading, with each sick person passing it to about 1.2 people on average.",
+      "correct": false,
+      "feedback": "The infectious period is halved, and half of 1.8 is 0.9, not 1.2. That's already less than one."
+     },
+     {
+      "text": "It gradually dies away: each sick person passes it to about 0.9 people on average, less than one.",
+      "correct": true,
+      "feedback": "1.8 times a half is 0.9. Each sick person doesn't produce even one new case, so each round has fewer sick people than the last."
+     },
+     {
+      "text": "It spreads faster, because people who get better sooner go back to meeting others sooner.",
+      "correct": false,
+      "feedback": "Once people get better they no longer pass it on, so getting better sooner doesn't infect anyone extra; fewer infectious days means fewer people infected."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "With R0 at 2, cases peak when half haven't had it",
+  "caption": "One sick person arrives on a campus of 1,000. Drag R0: at 1.5 about 580 have had it, at 2 about 800; below 1 it dies out after a dozen or so.",
+  "x": {
+   "label": "Days",
+   "ticks": [
+    {
+     "at": 0,
+     "label": "0"
+    },
+    {
+     "at": 120,
+     "label": "30"
+    },
+    {
+     "at": 240,
+     "label": "60"
+    },
+    {
+     "at": 360,
+     "label": "90"
+    },
+    {
+     "at": 480,
+     "label": "120"
+    },
+    {
+     "at": 600,
+     "label": "150"
+    }
+   ]
+  },
+  "y": {
+   "label": "People",
+   "min": 0,
+   "max": 1000
+  },
+  "params": [
+   {
+    "id": "r",
+    "label": "R0",
+    "min": 0.5,
+    "max": 4,
+    "step": 0.1,
+    "value": 2
+   }
+  ],
+  "model": {
+   "steps": 600,
+   "init": {
+    "s": 999,
+    "i": 1,
+    "m": 1
+   },
+   "next": {
+    "s": "s - r*0.05*s*i/1000",
+    "i": "i + r*0.05*s*i/1000 - 0.05*i",
+    "m": "max(m, i + r*0.05*s*i/1000 - 0.05*i)"
+   }
+  },
+  "series": [
+   {
+    "name": "Never had it",
+    "expr": "s",
+    "tone": "ink"
+   },
+   {
+    "name": "Sick now",
+    "expr": "i",
+    "tone": "accent"
+   },
+   {
+    "name": "Recovered",
+    "expr": "1000-s-i",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "y": "min(1000/r, 1000)",
+    "text": "Cases peak here"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Had it in all",
+    "expr": "1000-s",
+    "unit": " people",
+    "digits": 0
+   },
+   {
+    "label": "Most sick at once",
+    "expr": "m",
+    "unit": " people",
+    "digits": 0
+   },
+   {
+    "label": "Never had it",
+    "expr": "s",
+    "unit": " people",
+    "digits": 0
+   }
+  ]
+ }
+}

@@ -1,0 +1,223 @@
+{
+ "id": "financial-leverage",
+ "name": "Financial Leverage",
+ "en": "财务杠杆",
+ "discipline": "investing",
+ "one_line": "Borrowing makes gains and losses bigger, and can force you out before prices recover.",
+ "story": "Long-Term Capital Management holds over 100 billion dollars of assets on 4.8 billion dollars of capital, and is taken over when the price gaps widen",
+ "shallow": {
+  "scene": "Anyone who has bought a home with a loan knows this: when house prices fall, the first money lost is their own 20% down payment. In 1998 an American fund that traded with borrowed money, Long-Term Capital Management, took this to the extreme. At the end of 1997 it had only 4.8 billion dollars of its own money, but held more than 100 billion dollars of assets: of every dollar, more than 95 cents was borrowed. So if its assets fell 1%, it lost over a billion dollars, more than a fifth of its capital.\n\nIts bet was that the prices of several kinds of bonds would move closer together. In August 1998 Russia announced it would not pay its government debt, money everywhere rushed into the safest bonds, and the prices of these bonds drifted further and further apart instead. Each time the gap widened a little, it lost money, and the banks that lent to it and traded with it demanded more cash as security. The managers still believed prices would come back together, but the cash couldn't keep up.\n\nIn September, 14 financial institutions put up money and took it over, with the Federal Reserve Bank of New York bringing them together, and the original investors were left with just 10% of the shares. With that much borrowed, being right or wrong was no longer the point: before prices turned back, it could no longer pay its bills.",
+  "plain": "You put 200,000 yuan down, borrow 800,000 from the bank, and buy a home worth 1 million yuan; leave interest aside for now. If the price rises 10%, the home is worth 100,000 more. The bank only gets its 800,000 back, so all the extra is yours, and your 200,000 of capital has made half again. If the price falls 10%, the 100,000 lost also all lands on you, and half your capital is gone. Buying assets with borrowed money is using financial leverage: the rise or fall of the asset is magnified onto your small slice of capital.\n\nThe loan contract also decides whether you can wait. Take the same 200,000 yuan of capital, borrow 800,000 from a broker, and buy 1 million yuan of shares. Suppose the broker's rule is that once half your capital is lost, you must put in more money, and if you can't, your shares are sold for you; you have no spare cash.\n\nThe shares fall 20% over six months, then take another six months to climb back to where they started. When the shares are down 10%, they're worth 900,000, and your capital is down to 100,000, exactly half gone, so the shares are sold for you. Six months later the price is back where it began. For someone who didn't borrow, it was just a scare, but your capital is stuck at 100,000. You can be right about how it ends and still be put off the train halfway."
+ },
+ "deep": {
+  "mechanism": "### The more you borrow, the deeper the same fall cuts\n\nYou have 200,000 yuan of capital, and the asset falls 5%. Use only your own money to buy 200,000 of assets, and you lose 10,000, 5% of your capital. Borrow 800,000 to buy 1 million, and you lose 50,000, 25% of your capital. Borrow 1.8 million to buy 2 million, and you lose 100,000, half your capital. Assets divided by capital is the multiplier $L$, and these three are 1×, 5× and 10×. When the asset moves by $r$, your capital moves by $r_E$:\n\n$$r_E=L\\times r$$\n\nIn other words, the rise or fall is worked out on the whole asset, but all of it lands on your capital, which is only $1/L$ of the asset. At 5×, a 5% fall cuts your capital by 25%. If the asset falls by $1/L$, your capital is gone: at 5× that's a 20% fall, at 10× a 10% fall. Interest comes on top: borrow 800,000 at 5% a year and you pay 40,000 a year, even if the asset doesn't rise.\n\n### Losses push the multiplier up by themselves\n\nDebt doesn't shrink when assets do. Take 1 million of assets with 800,000 borrowed. After a 10% fall the assets are worth 900,000, the debt is still 800,000, and your capital is just 100,000, so the multiplier goes from 5× to 9×. Another 10% fall leaves 810,000 of assets and 10,000 of capital: this time it fell only 90,000, yet that ate 90% of the capital that was left.\n\n### The contract decides how long you can wait\n\nWith a long-term fixed-rate loan, as long as you pay the interest on time, nobody comes to collect even if the asset falls; when the price comes back, your capital comes back with it. Loans settled at market prices, like borrowing from a broker, demand more money as soon as the price crosses a line, and if you can't pay, your holdings are sold for you.\n\nThe shares from before, with \"put in more once half is lost,\" were at 5×: the capital falls 5 times as fast as the asset, so a 10% fall in the asset hits the line. The fall that hits the line equals 50% divided by $L$: about 17% at 3×, and only 5% at 10×. Once you've been sold out, however far the price climbs back has nothing to do with you. **Being right about how it ends means nothing unless you can pay the bills along the way.**",
+  "origin": "Doing business with borrowed money is much older than modern finance. In 1958 Franco Modigliani and Merton Miller proved that in an ideal market with no taxes and no bankruptcy costs, a company that borrows more only makes its shareholders bear more risk and demand a higher return; it doesn't make the company worth more. Later research added taxes and bankruptcy costs, which explained why real companies borrow some, but not as much as possible.",
+  "limits": "Borrowing is safest when the debt is long-term and the asset is steady, as with a long-term fixed-rate mortgage. When asset prices jump about every day and the loan can be called in at any time, the higher the multiplier, the smaller your chance of getting through a fall. Concluding that the more you borrow the better, because \"the return on the assets is higher than the interest rate,\" is where the managers of Long-Term Capital Management came to grief. They were probably not wrong that the prices of those bonds would come together in the end; what they didn't count on was how many times they would have to put in more money before that happened."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Around 2008, some American homeowners had put down only 5%. A 10% fall in house prices left the home worth less than they owed the bank, so even if they wanted to sell, they couldn't pay off the loan."
+   },
+   {
+    "use": "predict",
+    "text": "Estimate the price at which an asset bought with borrowed money wipes out your capital: at five times leverage, a 20% fall is enough."
+   },
+   {
+    "use": "act",
+    "text": "Before signing a loan contract, first check at what price it demands more money, then compare interest rates: that price decides whether you get the chance to wait for the market to turn back."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "Interest crowds out investment",
+    "text": "The American toy chain Toys \"R\" Us was bought with borrowed money in 2005 and carried huge debts for years afterward. In the six months to the end of July 2017, interest costs alone came to 229 million dollars, and that September it filed for bankruptcy protection. Online shopping had taken its business and its stores needed refurbishing, but refurbishing cost money and so did the interest, and the debt took the money first."
+   },
+   {
+    "field": "Investing",
+    "title": "The margin line comes first",
+    "text": "You put in 400,000 yuan, borrow 600,000, and buy shares; leave interest aside for now. The broker requires your own money to be at least 25% of the market value of your holdings. When the shares fall to 800,000, your equity is down to 200,000, exactly on the line. If they fall further and you can't put in more money, the broker will sell your shares for you, and you won't get to wait for the rebound."
+   },
+   {
+    "field": "Personal life",
+    "title": "The monthly payment breaks before the price does",
+    "text": "You and your partner earn 20,000 yuan a month, and the mortgage payment is 14,000 a month. One of you loses their job for three months, your savings run out, and although house prices haven't moved at all, the monthly payment forces you either to put the home up for sale or to borrow from family and friends."
+   }
+  ],
+  "ask": [
+   "How far does the asset have to fall before my capital is gone? At what price does the contract make me put in more money or sell?",
+   "If my income stops, a floating interest rate rises or the debt comes due, where will the cash come from?",
+   "Of the high return I'm seeing, how much did the asset earn, and how much is just my capital being smaller?"
+  ],
+  "with": [
+   {
+    "id": "return-on-invested-capital",
+    "sees": "Two similar companies: A has an 18% return on equity, B 10%, and someone argues for investing in A. On return on equity, A is ahead; on return on invested capital, the two companies' assets earn the same, and A's extra comes from borrowing. To pick the better-run company, go by return on invested capital; to judge how big a loss shareholders could take when the market turns bad, go by financial leverage."
+   },
+   {
+    "id": "kelly-criterion",
+    "sees": "For an investment whose odds of winning are clearly good, the arithmetic of financial leverage says the more you borrow, the more you make. The Kelly criterion sets an upper limit: bet more than the best fraction, and long-run growth goes down instead, and overdo it further and you end up losing money. To work out one year's return, look at leverage; to decide whether you can keep betting year after year, go by Kelly."
+   },
+   {
+    "id": "liquidity",
+    "sees": "A company has 10 billion yuan of assets and 8 billion of debt. Its book value is positive, so from a leverage point of view it can hold up. But 3 billion of debt comes due next week and it has only 500 million in cash, so from the point of view of liquidity it already can't pay. At this point stop looking at book value and first find the 2.5 billion in cash for next week."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "Two friends each buy a self-storage facility. A uses 500,000 yuan of his own money and 1.5 million borrowed at 6% a year; B uses 2 million of her own money and borrows nothing. Both facilities return 8% a year on their assets before interest. Ignoring taxes and fees, A's return on his capital is 14%, and B's is 8%.",
+    "question": "What does A's 14% being higher than B's 8% show?",
+    "explain": "A's facility earned 160,000 yuan and paid 90,000 in interest, and the remaining 70,000 is shared over 500,000 of capital. The higher return on capital comes from how it was financed; the two facilities themselves earned exactly the same.",
+    "options": [
+     {
+      "text": "A's lead comes from borrowing, so it doesn't show that A's facility makes more money.",
+      "correct": true,
+      "feedback": "A holds up a 2-million facility with 500,000 of capital, so the same 8% is magnified to 14%; the asset itself isn't ahead."
+     },
+     {
+      "text": "B has no interest to pay yet falls behind, which shows some of B's money is sitting idle.",
+      "correct": false,
+      "feedback": "All of B's 2 million went into the facility. Her return on capital is lower because there's no borrowing to magnify it."
+     },
+     {
+      "text": "A's assets return more than the cost of borrowing, so borrowing even more is a better deal.",
+      "correct": false,
+      "feedback": "Borrowing more also magnifies losses. The question gives no information on whether he could keep paying if income fell, so one year's difference can't show it's \"a better deal.\""
+     },
+     {
+      "text": "A runs his facility more efficiently, and is still ahead after paying interest.",
+      "correct": false,
+      "feedback": "Both facilities return 8% on their assets. This scorecard doesn't prove A runs his better."
+     }
+    ]
+   },
+   {
+    "stem": "A back-end engineer with five years' experience gets into a two-year master's program and plans to quit his job to study. He'll use his savings for two years of living costs and borrow 200,000 yuan for tuition at 4% a year, with principal and interest due in one lump sum after one year. He expects to earn 120,000 more a year after graduating, and has no income while studying. The bank lets him apply to roll the loan over when it's due, but doesn't promise to approve it.",
+    "question": "Before signing, which check does he most need to add?",
+    "explain": "Borrowing to study may raise future income, but debt has its own payment dates. The course ends in two years and the loan is due in one, so the money for that gap has to come from somewhere else.",
+    "options": [
+     {
+      "text": "Compare the pay rise after graduating with the interest, to make sure the raise covers the interest.",
+      "correct": false,
+      "feedback": "The pay rise only starts after graduation, and the 200,000 principal due after one year has to be repaid from somewhere else. A 120,000 raise easily covers 8,000 of interest, but it comes too late for that date."
+     },
+     {
+      "text": "Estimate the total pay rise, to make sure he gets the tuition back within a few years.",
+      "correct": false,
+      "feedback": "How many years it takes to earn the money back only answers whether the course is worth taking. The loan is due before he graduates, and future raises can't pay a bill due in one year."
+     },
+     {
+      "text": "List where the cash for principal and interest will come from in one year, to make sure he can repay even if the rollover is refused.",
+      "correct": true,
+      "feedback": "In one year he has to come up with 208,000 yuan, while the course isn't over yet. That money needs a definite source; he can't count on wages after graduating or on a rollover nobody promised."
+     },
+     {
+      "text": "Look up the rollover records for similar loans, to make sure most applications are approved.",
+      "correct": false,
+      "feedback": "Past approvals are not a promise to him; if he's refused, he still has to repay on time."
+     }
+    ]
+   },
+   {
+    "stem": "A and B each use 200,000 yuan of their own money and borrow 800,000 to buy the same 1 million yuan of bonds. A's loan is a five-year fixed loan, and he only has to pay the interest on time; B's loan is a margin loan from a broker, and if the bonds' market value falls below 900,000, he has to put in more money. Suppose the bonds fall to 880,000 after three months and climb back to 1 million after six. B has no spare cash to put in, and both believe the price will come back.",
+    "question": "When the bonds really do climb back to 1 million, how are the two placed differently?",
+    "explain": "The two have the same multiplier and the same view; the difference is in the contract. A's loan won't be called in because the price falls, while B has to put in more money once the price drops below 900,000. If he can't, he sells at the low, and the climb back has nothing to do with him.",
+    "options": [
+     {
+      "text": "There's no difference: the bonds return to their original price, and both have their 200,000 of capital back.",
+      "correct": false,
+      "feedback": "When the price returns to where it started, capital only comes back if you still hold the bonds; B's contract didn't give him that chance."
+     },
+     {
+      "text": "A loses more, because the interest on a fixed loan has to be paid the whole time.",
+      "correct": false,
+      "feedback": "Both have to pay interest, and A isn't forced to sell when the price falls, so he doesn't lose more because of it."
+     },
+     {
+      "text": "B's multiplier is higher, so he loses more.",
+      "correct": false,
+      "feedback": "Both are at 5×, with exactly the same amount borrowed and the same capital. What's different is the time the contract gives them."
+     },
+     {
+      "text": "B sold at around 880,000 and didn't wait for the recovery; A held on the whole time, and his capital is back to 200,000.",
+      "correct": true,
+      "feedback": "B's contract made him put in more money or sell before the price came back; A's contract let him afford to wait."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "5×: a 10% drop sells you out before the rebound",
+  "caption": "200,000 yuan capital; shares fall 20% over 6 months, back in 6; half lost means top up. Drag the multiplier: from 3×, you're sold out midway. Dashed: no forced sale.",
+  "x": {
+   "label": "Month",
+   "min": 0,
+   "max": 12
+  },
+  "y": {
+   "label": "Capital left",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "m",
+    "label": "Multiplier",
+    "min": 1,
+    "max": 10,
+    "step": 1,
+    "value": 5,
+    "unit": "×"
+   }
+  ],
+  "series": [
+   {
+    "name": "No borrowing",
+    "expr": "100*(1-(6-abs(x-6))/30)",
+    "tone": "ink"
+   },
+   {
+    "name": "No forced sale",
+    "expr": "max(0, 100*(1-m*(6-abs(x-6))/30))",
+    "tone": "muted",
+    "dashed": true
+   },
+   {
+    "name": "Borrowed: capital",
+    "expr": "(m*min(x,6)/30 >= 0.5) ? 50 : 100*(1-m*(6-abs(x-6))/30)",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "y": 50,
+    "text": "Half lost: top up"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Fall that hits line",
+    "expr": "50/m",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "Capital at low",
+    "expr": "max(50, 100-20*m)",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "Capital at 1 year",
+    "expr": "(m >= 2.5) ? 50 : 100",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

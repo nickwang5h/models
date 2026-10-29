@@ -1,0 +1,211 @@
+{
+ "id": "shifting-the-burden",
+ "name": "Shifting the Burden",
+ "en": "转嫁负担",
+ "discipline": "systems",
+ "one_line": "The better a quick fix works, the less we fix the real cause, and the more we need it.",
+ "story": "Anne Sullivan arrives in Tuscumbia to teach Helen Keller, and the family's habit of giving in makes the teaching hard to move forward",
+ "shallow": {
+  "scene": "In March 1887, Anne Sullivan came to Tuscumbia, Alabama, to teach Helen Keller, who was blind and deaf. Whenever Helen threw a tantrum, her family gave in to her, and only then would the house quiet down.\n\nWhen Sullivan tried to teach her to wash her hands and brush her hair, Helen fought hard against it. Her father couldn't bear to see his daughter cry and several times wanted to step in and stop Sullivan. In the end Sullivan persuaded the parents to let her move with Helen into a small cottage nearby, and kept on with the teaching there.\n\nEach time the family gave in, the house got quiet once more, and the tantrum worked once more, so Helen had even less reason to learn to wash her hands and brush her hair herself. Once they moved into the cottage, the family wasn't around, and the easy way out, giving in as soon as she cried, was cut off.",
+  "plain": "Sleep 2 hours less every night for a week, and you owe 14 hours of sleep. You feel sleepy during the day, so you down a cup of coffee and you're alert at once, but the sleep you owe hasn't gone down by a single minute. Pushing down the sleepiness without paying back the sleep you owe is how shifting the burden begins. The better the coffee works, the further you put off going to bed earlier; after a while, without coffee you can't even get through the morning."
+ },
+ "deep": {
+  "mechanism": "### A quick fix works fast, so it gets chosen first\n\nFaced with the same symptom, there are two paths: push the symptom down first, or change the cause that keeps producing it. The first works on the spot; the second takes time, money and practice, and you have to wait. Since both paths stop the discomfort, people naturally choose the one that pays off first.\n\n### The bigger the share the quick fix takes, the less the real fix can move\n\nSuppose you have 20 hours a week to spend on a problem that keeps coming back, and fixing it for good takes 40 hours in all. The time spent on quick fixes also comes out of those 20 hours. If quick fixes take 5 hours, 15 are left, and it's fixed in under three weeks. If they take 10 hours, it takes four weeks. If they take 15 hours, eight weeks. If they take all 20 hours, it never gets fixed.\n\n### Skills fade, and the share climbs on its own\n\nIf the problem isn't fixed for good, it keeps coming back. The people who do the fixing spend all their time on quick fixes, and their skills get rusty; then the experienced hands get moved elsewhere, every flare-up is handled more slowly, and the quick fix's share goes up another notch. To tell whether you're caught in it, look at one thing: if you took away the quick fix, would it now be harder to keep things normal than before you started using it?",
+  "origin": "This model comes from system dynamics. It is one of the \"system archetypes\" (a handful of common cause-and-effect structures), and Peter Senge set it out systematically in *The Fifth Discipline* in 1990. It was recognized as the same cause-and-effect structure turning up again and again across many cases; there is no single founding experiment. Helen Keller's family giving in to her, and Sullivan's teaching, are a common example in systems thinking courses.",
+  "limits": "This model is useful when a quick fix, while handling the emergency, also crowds out the money, time and practice that would fix the cause. Saving a life or restoring a critical service, steadying things first and repairing later, doesn't count as shifting the burden. Rare, highly specialized jobs, like hiring an auditor to check the books each year, can be left to experts for the long term without it counting either, as long as you can understand the audit opinion yourself and follow up on the fixes. Treating any help at all as dependence and pushing people to drop their support at once is using the model wrongly."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "In a department, the same old hand is always the one fighting fires, and newcomers never manage to take over. The reason is that every time he steps in, the newcomers lose one more chance to practice."
+   },
+   {
+    "use": "predict",
+    "text": "With a performance review that only looks at whether things were sorted out that day, you can predict that in six months more people will be fighting fires and fewer will be fixing causes."
+   },
+   {
+    "use": "design",
+    "text": "When designing a process where experts handle things for others, require that after each ticket is resolved, the expert walks a newcomer through it and writes down the steps. Then the quick fix won't quietly take away the chance to practice."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Ecology",
+    "title": "Fighting fires crowds out small fires",
+    "text": "In 1935, the US Forest Service set the goal of putting out every fire by 10 a.m. the next day. In western forests that used to have frequent low-intensity fires, fire was held down for decades, and dead branches and dense young trees built up year after year. The natural process of small fires clearing out fuel was cut off, and the forests came to depend even more on people clearing them and fighting fires."
+   },
+   {
+    "field": "Medicine",
+    "title": "Painkillers crowd out rehab exercises",
+    "text": "You sit a lot and your back hurts. The doctor prescribes painkillers and also tells you to do twenty minutes of back exercises a day. Once you take the pills the pain goes away, so the exercises keep getting put off. The back muscles get used less and less and grow weaker, the back pain comes more often, and the pills go from something you take when it hurts to something you need every day. The painkillers keep you going to work as usual, but under their cover the muscles holding up your back grow weaker."
+   },
+   {
+    "field": "Personal finance",
+    "title": "Borrowing eats up your slack",
+    "text": "You earn 10,000 yuan a month and spend 11,000, and you borrow to cover the gap, so the bills get paid on time. Because of that, you put off cutting your spending, and the new interest eats into your income. Later, even if you cut spending to 10,000, there is still interest to pay: the way you filled the gap at first has made the gap you must close even bigger."
+   }
+  ],
+  "ask": [
+   "What symptom am I pushing down right now, and what is the cause that keeps producing it?",
+   "Once this quick fix works, which training, repair or budget change gets pushed back? Look at the most recent schedule.",
+   "If we took away this help, would we find it harder to manage on our own than before we used it? Ask the people who used to know how to do this whether they still can."
+  ],
+  "with": [
+   {
+    "id": "comparative-advantage",
+    "sees": "A small company outsources its whole website and data work. Comparative advantage says each side should do what it does best, saving money and keeping focus. Shifting the burden sees the day the contract ends: nobody can read the code, and they can't even switch to another firm. If the work will still need your own judgment and sign-off later, keep one person who can understand it, and outsource the rest without worry. Only work you'll never need to check again is truly outsourced."
+   },
+   {
+    "id": "time-delays",
+    "sees": "An operations team handles every alert by restarting the system, and the real fix has been scheduled for next quarter. Time delays put the two payoffs out of step: a restart works on the spot, while the real fix takes a quarter to show any change, and in that gap the schedule keeps filling up with new alerts. Give the real fix a checkpoint you can check by the end of the month, for example having reproduced and located the leak, so it doesn't stay at the bottom of the list forever."
+   },
+   {
+    "id": "incentives",
+    "sees": "A customer service manager's veteran staff take over the hardest complaints from newcomers every month, and the satisfaction reports look great. The manager wants to turn this around with incentives and starts by changing bonuses. But if only the bonuses change, the veterans will still take the cases over out of habit. First require that the hard cases be answered by the newcomer, with the veteran listening in, and then change the bonus to depend on how many cases the newcomers can handle on their own."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A food factory often has packages that aren't properly sealed. The veteran technician can always readjust the machine in time to meet that day's delivery. So the supervisor cancels the operators' training in adjusting the machine and has the veteran take over directly; the operators also gradually forget the checks they used to know how to do. Lately, the veteran has been handling this kind of fault more and more often.",
+    "question": "What will happen to this factory next?",
+    "explain": "The veteran's adjustments pushed down the delivery crisis, and also made the supervisor feel the training could be cancelled. The operators got less practice, and the skills they had faded, so next time the veteran is needed even more.",
+    "options": [
+     {
+      "text": "Add more checks on finished products, so faulty ones won't get out, and the factory will depend less on the veteran.",
+      "correct": false,
+      "feedback": "Checks can only stop faulty products; the faults still happen, and the veteran still has to readjust the machine."
+     },
+     {
+      "text": "The veteran saves the deliveries, the operators lose their practice, and next time they depend on him even more.",
+      "correct": true,
+      "feedback": "Someone solves the fault in front of them, but the ability to handle it alone is falling. The operators' fading check skills are the evidence that the dependence is deepening."
+     },
+     {
+      "text": "After watching the veteran adjust the machine so often, the operators will gradually learn it themselves, even with the training cancelled.",
+      "correct": false,
+      "feedback": "Watching is not the same as doing it yourself. And in the question, the operators are even losing the checks they used to do, with no sign of learning."
+     },
+     {
+      "text": "Stop the veteran from taking over; under delivery pressure the operators will learn to adjust the machine themselves, with no need for training.",
+      "correct": false,
+      "feedback": "Taking away the support doesn't bring back skills that have already faded. Under delivery pressure there will be more faults, not fewer, and someone still has to coach them."
+     }
+    ]
+   },
+   {
+    "stem": "You plan to buy a home next year, and you used to check your asset mix and your spending plan for the next three years every quarter. After you hired an adviser, every time the market fell sharply, the adviser simply gave you a list of what to buy and sell. Your anxiety quickly calmed down, so you dropped the quarterly check. Two years later, you can't say which assets can go toward next year's down payment, and with any market swing you have to wait for the adviser's instructions.",
+    "question": "What would do the most to improve this situation?",
+    "explain": "The buy-and-sell lists eased your anxiety, and they also gradually took over your own judgment of what the money is for. What needs to come back is that judgment; you don't have to fire the adviser.",
+    "options": [
+     {
+      "text": "Switch to an adviser with better past returns, and still let the adviser decide all buying and selling.",
+      "correct": false,
+      "feedback": "Changing advisers doesn't bring back the money planning; you still don't know whether the portfolio fits your own spending needs."
+     },
+     {
+      "text": "Fire the adviser and decide all buying and selling yourself, relearning judgment from real gains and losses.",
+      "correct": false,
+      "feedback": "Taking away all the support at once leaves your faded judgment carrying the risk directly, and may not even train the money planning."
+     },
+     {
+      "text": "Have the adviser get in touch more often, giving new advice right away with every market swing.",
+      "correct": false,
+      "feedback": "Faster advice keeps replacing your own checks, and your judgment doesn't come back."
+     },
+     {
+      "text": "Keep the adviser, bring back the quarterly check, and explain yourself first how each change affects the home purchase.",
+      "correct": true,
+      "feedback": "The adviser keeps supporting you, and you practice judging again. Progress is easy to see: can you check the money for the home on your own?"
+     }
+    ]
+   },
+   {
+    "stem": "A residential complex hires a licensed company every year to inspect its elevators. The property management office has always logged problems, checked the inspection reports and overseen the repairs, and the quality of that work hasn't slipped. Someone says: after years of outsourcing, residents still can't inspect elevators, which shows the complex has lost the ability to solve safety problems on its own.",
+    "question": "What should we make of this claim?",
+    "explain": "The necessary judgment and oversight haven't faded, and outsourcing hasn't crowded out any spending on fixing causes. There's no loop where the more you use it, the more you need it.",
+    "options": [
+     {
+      "text": "Residents not knowing how to inspect isn't a loss of ability. Property management is still overseeing it, so long-term outsourcing holds up.",
+      "correct": true,
+      "feedback": "Rare, highly specialized inspections can be outsourced for the long term, as long as property management can still understand the reports and keep an eye on the repairs."
+     },
+     {
+      "text": "If inspection fees rise year after year, that shows the complex is depending more and more on the outside company.",
+      "correct": false,
+      "feedback": "Rising prices are a budget issue; they don't prove that judgment and oversight have faded."
+     },
+     {
+      "text": "Outsourcing every year shows the complex can't solve things on its own, so it should gradually take the work back and do it itself.",
+      "correct": false,
+      "feedback": "You can't conclude a lack of ability from outsourcing; here, property management's checking and oversight have gone on all along."
+     },
+     {
+      "text": "The outside company having to come every year is itself evidence of dependence, so residents should be trained to inspect it themselves.",
+      "correct": false,
+      "feedback": "Needing experts doesn't mean ability has been weakened; specialized inspection doesn't need to become a resident's skill."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Quick fixes crowd out practice; you need them more",
+  "caption": "Short loop: fix eases symptom, cause stays, it returns. Long loop hurts: each fix takes time and practice from the real fix, skills rust, you lean on fixes more.",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "Problem flares",
+    "sub": "Tired, faults, debt"
+   },
+   {
+    "id": "b",
+    "label": "Quick fix",
+    "sub": "Eases; cause stays",
+    "tone": "accent"
+   },
+   {
+    "id": "d",
+    "label": "Real fix squeezed",
+    "sub": "Time, cash, practice",
+    "tone": "warn"
+   },
+   {
+    "id": "e",
+    "label": "Fixers get rusty",
+    "sub": "Pros gone, few drills",
+    "tone": "warn"
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b"
+   },
+   {
+    "from": "b",
+    "to": "a",
+    "label": "Recurs",
+    "dashed": true
+   },
+   {
+    "from": "b",
+    "to": "d",
+    "tone": "warn"
+   },
+   {
+    "from": "d",
+    "to": "e",
+    "tone": "warn"
+   },
+   {
+    "from": "e",
+    "to": "b",
+    "label": "Hooked",
+    "tone": "warn"
+   }
+  ]
+ }
+}

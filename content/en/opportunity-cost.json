@@ -1,0 +1,196 @@
+{
+ "id": "opportunity-cost",
+ "name": "Opportunity Cost",
+ "en": "机会成本",
+ "discipline": "economics",
+ "one_line": "The real price of a choice is the best thing you gave up for it.",
+ "story": "On April 16, Eisenhower's \"Chance for Peace\" speech: one heavy bomber costs over thirty schools, two power plants or two hospitals",
+ "shallow": {
+  "scene": "On April 16, 1953, President Eisenhower gave a speech in Washington to the American Society of Newspaper Editors. He had been in office only three months, and the Korean War was still going on. He didn't give the total spent on the military. He talked only about what one modern heavy bomber cost: enough for a new brick school in each of more than thirty cities, or two power plants each supplying a town of 60,000 people, or two fully equipped hospitals. A single fighter plane, he said, was paid for with half a million bushels of wheat.",
+  "plain": "You have only two hours on Saturday afternoon, and you choose to sleep. The opportunity cost of that afternoon depends on the better of the two other things you could have done. Taking a proofreading job would earn 300 yuan; going to the gym would cost you 50 yuan. The better one is proofreading. So sleeping gave up 300 yuan: not a cent went out of your account, but those two hours could have brought in that much."
+ },
+ "deep": {
+  "mechanism": "### One resource can only go one place, and the price is what the other place would have paid\n\nYou have one mu of land (about a sixth of an acre). Growing corn on it nets 800 yuan a year; growing soybeans nets 600, with seed and fertilizer already taken out of both. If you grow corn you can't grow soybeans, so the price is the 600 you give up, and corn earns you 200 more. When soybeans' net earnings rise to 1,000 yuan, corn still makes 800, but now its price is 1,000, so it earns 200 less, and you switch to soybeans.\n\n### When a second resource has nowhere else to go, the price is zero\n\nYou rent the mu next door as well, but the buyer can only take one mu's worth of soybeans. More soybeans on the second mu wouldn't sell either, which is the same as leaving it empty, so growing corn there gives up nothing; the price is zero. Once the buyer will take as much as you grow, every mu of corn again means giving up the money from that mu of soybeans.\n\n### Time can't be saved, and a wasted evening never comes back\n\nMoney you don't spend this year is still there next year; two hours you don't use tonight are gone. If you choose to work late, whatever you could have done that evening won't come around again.",
+  "origin": "In 1889 the Austrian economist Friedrich von Wieser argued in *Natural Value* that a cost is the other uses the same resources gave up. In 1932 the British economist Lionel Robbins, in *An Essay on the Nature and Significance of Economic Science*, defined economics as the study of the relationship between ends and scarce means that have alternative uses.",
+  "limits": "Opportunity cost works best when a resource has several places it could go and can only go to one: an afternoon, a plot of land, a sum of cash. Things like time with family and health can't be given the same kind of price as money, and forcing them into an hourly wage gives you crooked sums. First protect the few things you won't trade away, then compare the rest. If a fund rises 30% afterward, you can't look back and count that as the price of having put the money in a fixed deposit: on the day you decided, nobody knew it would rise."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "Before taking on a part-time job, first ask whether the evenings it takes up would otherwise go to studying for an exam or to resting, and compare it with whichever you value most."
+   },
+   {
+    "use": "explain",
+    "text": "Explain why empty lots downtown rarely get low warehouses built on them: an office building or shops would bid far more for the same land, and that bid is the price of the warehouse."
+   },
+   {
+    "use": "design",
+    "text": "When teams propose internal projects, add one line to the form: if these people didn't do this, what would they be doing instead? Then whoever approves it is comparing two concrete things."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Personal life",
+    "title": "The free ticket",
+    "text": "A friend gives you a ticket to a music festival, so it costs you nothing. The festival runs from afternoon until midnight and fills your whole Saturday. That day you were going to go to a class reunion that only happens every six months, or you could have stayed home and caught up on sleep. You look over the reunion's sign-up list, decide to go to the reunion, and pass the ticket on to your roommate."
+   },
+   {
+    "field": "Business",
+    "title": "Three hours of oven time",
+    "text": "A bakery owner has just one oven, which he can use for three hours each morning. Baking bread as usual, those three hours net him 640 yuan. Someone wants to order a wedding cake that would take up all three hours and net him 900 yuan. He works out that taking the order earns 260 yuan more, then looks at the bread orders for the wedding day, moves his regulars' orders to bake the night before, and takes on the wedding cake."
+   },
+   {
+    "field": "Investing",
+    "title": "Two places for spare cash",
+    "text": "You have 300,000 yuan of spare cash. Paying off part of your mortgage early would save you 12,000 yuan in interest a year; a principal-protected investment product would earn you 7,000 a year. You can only pick one, and the 5,000 more that paying off the mortgage gives you is the result of your comparison. You transfer the 300,000 to the bank's repayment account."
+   }
+  ],
+  "ask": [
+   "Where else could this resource go? Go through your calendar, your account balance or your staff schedule, list the options, and pick out the one you value most.",
+   "Is that alternative actually possible right now? Go and find out whether you qualify, whether you have the people, and whether the other side has agreed.",
+   "If this resource isn't used this time, would it just sit idle anyway? For the stretch when it would sit idle, the price is zero."
+  ],
+  "with": [
+   {
+    "id": "redundancy",
+    "sees": "A hospital has a few dozen beds that sit empty all year. By opportunity cost, turning them into outpatient or rehabilitation beds would let it take more patients every day, so leaving them empty is a waste. Seen as redundancy, when an infectious disease breaks out, those empty beds can carry the emergency load, and the money spent keeping them empty buys the ability to handle a crisis. Where beds are usually tight and no sudden emergency has ever happened, listen to opportunity cost; where one incident would bring the whole system to a halt, keep the empty beds."
+   },
+   {
+    "id": "sunk-cost",
+    "sees": "You paid 8,000 yuan for an online course, and only in chapter three did you find the material was out of date. The money can't be refunded. Sunk cost crosses out the 8,000 already paid: it shouldn't affect what you choose next. What carrying on would give up is whatever those two hours a week could otherwise be used for, and that is counted by opportunity cost. The two models hand off to each other here: one crosses out what was already paid, the other counts in what you didn't get."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "The large-format printer in your shop has a free slot of only ten hours on Friday night. Order A would use all ten hours and net 1,500 yuan after materials; order B needs six hours and nets 1,100 yuan; order C needs four hours and nets 700 yuan. All three can be delivered on time, and there are no other differences in what they earn. You want to know the price of taking order A.",
+    "question": "How should the price of taking A be worked out?",
+    "explain": "The printer's ten hours can only be handed out once, but the alternative can be a combination: B and C together take exactly ten hours and net 1,800 yuan, the best replacement possible on the same night. Taking A earns 300 yuan less than that.",
+    "options": [
+     {
+      "text": "1,100 yuan: B earns the most of the orders not chosen.",
+      "correct": false,
+      "feedback": "C and B can both be finished the same night. Counting only B leaves out the four hours C would use."
+     },
+     {
+      "text": "0 yuan: A nets 1,500 yuan and has no extra spending.",
+      "correct": false,
+      "feedback": "A fills all ten hours, so the money that night could otherwise have earned is given up. No extra spending is not the same as no price."
+     },
+     {
+      "text": "1,500 yuan: the money A itself earns is its price.",
+      "correct": false,
+      "feedback": "The 1,500 yuan A earns is what taking the order gets you, not what you give up. What you give up is what another plan for the same night would earn."
+     },
+     {
+      "text": "1,800 yuan: B and C can both be done the same night, and together they are the best alternative.",
+      "correct": true,
+      "feedback": "B and C take six plus four hours, using up the night exactly, and net 1,800 yuan, more than A's 1,500."
+     }
+    ]
+   },
+   {
+    "stem": "In your café, the coffee roaster sits idle every afternoon after two o'clock. No other work is waiting for it, and nobody comes to rent it. You'd like to take a contract roasting job that uses one hour and nets 400 yuan, with electricity, waste and wear on the machine already taken out. You have nothing else planned this afternoon and don't intend to send staff home early.",
+    "question": "What do you give up by taking this job?",
+    "explain": "The machine would have sat idle for this hour anyway. Nobody wants to rent it, and today's free time can't be saved for tomorrow. No better use is pushed out, so the 400 yuan from this job is pure extra.",
+    "options": [
+     {
+      "text": "400 yuan: using the machine always carries a price of the same amount.",
+      "correct": false,
+      "feedback": "The 400 yuan is the income the job brings in. The machine would have been idle, so no other income is pushed out by it."
+     },
+     {
+      "text": "Nothing: the machine would have been idle this hour, and no other use is pushed out.",
+      "correct": true,
+      "feedback": "No better use is taken up, so the price is zero, and the 400 yuan net is all extra."
+     },
+     {
+      "text": "Tomorrow's machine time: an hour used today is one hour less tomorrow.",
+      "correct": false,
+      "feedback": "Tomorrow the machine has a whole day of its own. An idle hour today can't be carried over to tomorrow; used or not, it can't be kept."
+     },
+     {
+      "text": "The going rental rate for the hour: that market rate is there, so it is the price.",
+      "correct": false,
+      "feedback": "In the question nobody is willing to rent it, so the market rate exists only in theory. It isn't an alternative you could actually take right now."
+     }
+    ]
+   },
+   {
+    "stem": "You have two offers: an editor at a publishing house at 140,000 yuan a year, or an assistant at a university research institute at 110,000 yuan a year. The two jobs are similar in location and workload. You also long for a researcher post at another research academy, paying 200,000 yuan a year, but it requires a PhD, which you don't have. You choose the publisher.",
+    "question": "What is the price of choosing the publisher?",
+    "explain": "An alternative has to be possible at the time you decide. The researcher post is closed to you, so it isn't one of the alternatives in this choice. The best option you actually give up is the institute assistant's 110,000 yuan.",
+    "options": [
+     {
+      "text": "110,000 yuan: the institute assistant job is the best alternative you could really take.",
+      "correct": true,
+      "feedback": "Both the publisher and the institute were open to you. You chose the first and gave up the second's 110,000 yuan."
+     },
+     {
+      "text": "310,000 yuan: the salaries of the two jobs not chosen, the institute and the academy, added together.",
+      "correct": false,
+      "feedback": "You can't take the jobs you turned down at the same time, and besides, you can't get the academy job at all, so they can't be added up."
+     },
+     {
+      "text": "200,000 yuan: the researcher post pays the most, so giving it up costs the most.",
+      "correct": false,
+      "feedback": "You don't have a PhD, so you can't take that job right now. It isn't something this choice gives up."
+     },
+     {
+      "text": "30,000 yuan: what the publisher pays above the institute is the result of the choice.",
+      "correct": false,
+      "feedback": "30,000 yuan is how much more choosing the publisher earns. The price is the salary you give up, not the difference between the two."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Sleeping costs the 300-yuan job you turned down",
+  "caption": "The price counts only the best option not chosen: proofreading earns 300 yuan, the gym costs you 50. Nothing left your account; the price is 300 yuan.",
+  "nodes": [
+   {
+    "id": "r",
+    "label": "2 hours, Saturday"
+   },
+   {
+    "id": "a",
+    "label": "Sleep"
+   },
+   {
+    "id": "b",
+    "label": "Proofreading",
+    "sub": "Earns 300 yuan",
+    "tone": "accent"
+   },
+   {
+    "id": "c",
+    "label": "Gym",
+    "sub": "Costs 50 yuan",
+    "tone": "muted"
+   }
+  ],
+  "edges": [
+   {
+    "from": "r",
+    "to": "a",
+    "label": "Chosen"
+   },
+   {
+    "from": "r",
+    "to": "b",
+    "label": "The price",
+    "tone": "accent"
+   },
+   {
+    "from": "r",
+    "to": "c",
+    "label": "Not counted",
+    "tone": "muted",
+    "dashed": true
+   }
+  ]
+ }
+}

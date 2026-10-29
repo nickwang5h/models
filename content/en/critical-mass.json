@@ -1,0 +1,209 @@
+{
+ "id": "critical-mass",
+ "name": "Critical Mass and Phase Transitions",
+ "en": "临界质量与相变",
+ "discipline": "physics",
+ "one_line": "If each round sets off more than one next round it grows; fewer, it dies out.",
+ "story": "On December 2, Fermi's team pulls cadmium control rods out bit by bit in a squash court under the University of Chicago stands, and Chicago Pile-1 first sustains its own chain reaction, running 28 minutes",
+ "shallow": {
+  "scene": "When a neutron smashes a uranium nucleus, it gives off two or three new neutrons. They go on to smash other uranium nuclei, round after round; this is called a chain reaction. But many of the new neutrons fly off, or get soaked up by something else. If, on average, one neutron can't lead to one in the next round, the reaction stops by itself.\n\nOn December 2, 1942, Fermi's team built a reactor out of uranium and graphite in a squash court under the stands of a sports stadium at the University of Chicago. Control rods made of cadmium, a metal that soaks up neutrons, were stuck into the pile. They pulled the control rods out bit by bit, while Fermi watched the instruments and did the sums. When the rods reached the planned position, the reaction no longer needed any push from outside and kept going on its own. The team let it run for 28 minutes, then pushed the control rods back in.\n\nPulling out the rods did not add a single gram of uranium. It only let the cadmium soak up fewer neutrons, so that the average number of next-round neutrons each neutron led to went from just under one to just over one.",
+  "plain": "Anyone who has built a campfire has seen this: with too little wood, the flames lick for a while and go out; add a few more sticks, and suddenly the fire can keep burning by itself, and you can walk away. When a single stick burns, most of its heat escapes into the air and can't light other sticks. Put a few together, and each one heats its neighbors and sets them alight too. If a burning stick lights fewer than one other stick on average, the fire gets lower with each generation and you have to keep adding wood; if it can light more than one, the fire burns brighter and brighter.\n\nThe pile that is just big enough for the fire to keep itself going is what nuclear physics calls the critical mass. The wood goes on one stick at a time, but at one particular stick the fire changes from going out to burning on its own. When conditions change slowly but behavior switches all at once, physics calls the sudden change a phase transition."
+ },
+ "deep": {
+  "mechanism": "### A chain only gets going if each link passes it on to more than one\n\nA hundred people get a message, and on average each forwards it to only 0.8 people: the next round is 80 people, the round after that 64, and within a few rounds the chain breaks. At an average of 1.2, it's 120, then 144, more and more. Neutrons are the same: if one neutron leads to fewer than one in the next generation, the reaction dies out. The dividing line is an average of exactly one.\n\nEven when the average is below one, the message doesn't break off at once. Start with $a$ people, each forwarding to $r$ people on average, and round $n$ has $ar^n$ people. Adding up all the rounds gives\n\n$$a+ar+ar^2+\\cdots=\\frac{a}{1-r}$$\n\nCall the total $S$. All the rounds from the second one on are exactly the whole series multiplied once by $r$, which is $rS$, so $S=a+rS$, and rearranging gives $S=a/(1-r)$. At an average of 0.8, 100, 80, 64… add up to no more than $100\\div0.2=500$ people. The closer the average is to one, the smaller $1-r$ is, and the more people it reaches in total before it dies out.\n\n### The bigger the lump, the fewer neutrons escape, and that is where the threshold comes from\n\nA neutron has to hit a nucleus to set off the next split. A neutron in the middle of a lump is surrounded by uranium and soon hits something; one near the surface can fly outward and leave the lump. The bigger the lump, the smaller the share of it that is surface layer, and the smaller the share of neutrons that escape. At a certain size, the average crosses one.\n\n### Across the line, the system runs in a different way\n\nWhen conditions change a little at a time but behavior changes sharply at some point, physics calls it a phase transition; water freezing at 0°C is the most familiar one. An average crossing one is a phase transition in spreading: going from 0.99 to 1.01 is a tiny step, but the same crowd goes from a message bound to fade out to one that can keep spreading forever. The sudden change in freezing comes from molecules all switching to a new arrangement together. The sudden change in spreading comes from multiplying round after round: a number below one, multiplied by itself again and again, heads toward zero; a number above one has no upper limit; there is no stopping in between.",
+  "origin": "In 1933 Szilard came up with the idea of a nuclear chain reaction. After nuclear fission was discovered, scientists began working out how much material it would take to keep the reaction going. In 1942 Fermi's Chicago Pile-1 made the reaction keep itself going for the first time. On the phase-transition side, in 1869 Andrews found the critical point between liquid and gas in experiments with carbon dioxide: above the critical temperature, no amount of pressure will squeeze the gas into a liquid. What the social sciences later borrowed was the idea that past a threshold, things switch to a different state.",
+  "limits": "It works best for systems where you can count how many next-round cases each round leads to, such as a message, an epidemic, or the number of active people in a group chat. Society has no formula like the one for uranium: the threshold shifts with the people, the rules and the season, and a group that kept itself going last month may not next month. A number that shoots up or crashes overnight may also just be a one-off shock from outside; drawing a line at the steep part after the fact, and assuming things will switch gear at the same place next time, is pushing the idea of a phase transition too far."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When you launch a new community, first put the first batch of people on the same topic at the same time of day, so they run into each other every day, and only then spread outward; however many people you scatter across a whole city, they won't connect to a next round."
+   },
+   {
+    "use": "predict",
+    "text": "To estimate whether a campaign can keep spreading on its own, count how many new people each participant brings in on average; the closer that is to one, the harder the outcome is to call."
+   },
+   {
+    "use": "explain",
+    "text": "In the same city, two neighborhood group chats in similar conditions: one stays lively for years, the other goes quiet in three months. The difference often lies in whether the first batch of people could bring in the next."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Public health",
+    "title": "Measles in Samoa",
+    "text": "Among people with no immunity to measles, each sick person passes it to a dozen or more others on average; to bring the number each sick person passes it to below one, more than 90% of people need to be immune. In Samoa, measles vaccination of babies fell from 74% in 2017 to just over 30% in 2018. In the autumn of 2019 measles spread: 5,707 people were confirmed sick and 83 died, most of them young children. The government shut down the whole country for two days and sent teams door to door to vaccinate. By late December about 94% of the eligible population had been vaccinated, and the outbreak died down by the end of the year."
+   },
+   {
+    "field": "Society",
+    "title": "Nominations that ran out",
+    "text": "In the summer of 2014 the Ice Bucket Challenge spread across social media in the United States: the person taking the challenge poured a bucket of ice water over their own head or gave money to an ALS charity, then named a few people to do it next. That year the ALS Association received about 115 million dollars in donations from it. After autumn came, fewer and fewer of the people named went on to do it, and the challenge gradually stopped."
+   },
+   {
+    "field": "Personal life",
+    "title": "A running group that runs itself",
+    "text": "You get a few neighbors together and agree to run on Saturday mornings. For the first few months it is you rounding people up in the group chat every week. Later people take turns calling the runs, and old members show new ones the route. One week you are away on a work trip, and the group heads out as usual, with someone else posting the route map."
+   }
+  ],
+  "ask": [
+   "Here, how many next-round participants does each participant bring in on average: more than one or fewer?",
+   "Am I counting the total number of people over time, or the people in the same place, in the same stretch of time, who can actually reach each other?",
+   "If I can't pin down where the line is, should I put in enough at once to clearly cross it, or hold back for now?"
+  ],
+  "with": [
+   {
+    "id": "network-effects",
+    "sees": "You start a same-city errand service: should you cover the whole city first, or hold one neighborhood first? Network effects look at how the more users there are in total, the more the service is worth, and urge you to spread out fast. Critical mass watches the people in the same place who can connect, and urges you to get one neighborhood running on its own first, then move outward. Whether each neighborhood's orders bring in the next order tells you more than the total for the whole city."
+   },
+   {
+    "id": "margin-of-safety",
+    "sees": "When you can't pin down where the line is, the two models give opposite advice. When what you are guarding against is a bank run or overheating, margin of safety urges you to stay as far from the line as you can. When you want something to take off, critical mass says putting in enough to get halfway up the hill is the same as putting in nothing: either cross the line in one go or don't start yet. It's the same line: keep plenty of distance from the things you want to avoid, and charge past it in one go for the things you want to get past."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You start an invitation-only beta-testing group and bring in the first 50 members. After that nobody else recruits, and each member can invite only 0.9 friends on average; the same goes for each new member.",
+    "question": "In the end, about how many people will the group have in total, including the first 50?",
+    "explain": "Each round is 0.9 times the round before: 50, 45, 40.5… Each round gets smaller, and they add up to a limit: 50 divided by 0.1, about 500 people. With an average below one, the chain breaks, but the total it gathers before breaking is much bigger than the first round.",
+    "options": [
+     {
+      "text": "About 500 people: each round gets smaller, and they add up to a limit.",
+      "correct": true,
+      "feedback": "Each round is 0.9 times the one before, and the total is 50 divided by 0.1, about 500 people."
+     },
+     {
+      "text": "It will keep growing, since new people come in every round.",
+      "correct": false,
+      "feedback": "Each round brings fewer new people than the last; when the average is below one, the total stops at a finite number."
+     },
+     {
+      "text": "About 95 people: the first two rounds together are the limit.",
+      "correct": false,
+      "feedback": "The third round still has about 40 people and the fourth still has over 30; each round only shrinks slowly, and all of them add up to far more than 95."
+     },
+     {
+      "text": "About 45 people, because only people in the next round count as new.",
+      "correct": false,
+      "feedback": "45 is only the second round. After that come 40, 36… and the people in every round have to be added up."
+     }
+    ]
+   },
+   {
+    "stem": "A forest owner wants to control fires by thinning his trees. In his model, trees are planted on a grid, and a burning tree sets fire to the living neighbors above, below, left and right of it. When trees fill less than about 59% of the squares, fire burns only small local patches; above that, fire can sweep the whole forest. Plot A is 65% trees and plot B is 40%. Both are about to be thinned by 10 percentage points.",
+    "question": "After thinning, on which plot does the way fire spreads change more?",
+    "explain": "A drops from 65% to 55%, crossing from one side of the line to the other, so fire goes from being able to sweep the whole plot to burning only local patches. B drops from 40% to 30% and stays below the line all along; fire there only burned local patches anyway, so not much changes.",
+    "options": [
+     {
+      "text": "The same on both, since both lose 10 percentage points.",
+      "correct": false,
+      "feedback": "The cut is the same size, but A crosses the line and B doesn't; the difference in outcome comes from where the line is."
+     },
+     {
+      "text": "Neither changes, since fire sweeps through only above 59%, and both are below that after thinning.",
+      "correct": false,
+      "feedback": "A started above the line and drops below it after thinning, so fire goes from sweeping through to staying local. That is a change."
+     },
+     {
+      "text": "B, because it has fewer trees to begin with, so each tree cut matters more.",
+      "correct": false,
+      "feedback": "B stays below the line throughout; fire there only burned local patches to begin with, and with fewer trees it still can't spread far."
+     },
+     {
+      "text": "A, because it crosses the line at about 59%.",
+      "correct": true,
+      "feedback": "Going from 65% to 55%, it changes from fire that can sweep the whole plot to fire that only burns local patches. The way it runs has switched."
+     }
+    ]
+   },
+   {
+    "stem": "You run a neighborhood group chat for swapping things people no longer use. To encourage posts, you hand out 20 yuan in small cash gifts in the group every week, and during that time 200 people post each week. After the cash gifts stop, the numbers of people posting over the next three weeks are 120, 72 and 43.",
+    "question": "What do these numbers show best?",
+    "explain": "Each week has only about 60% of the week before. Without the cash gifts, the people posting don't bring in as many people posting; the activity was being held up by the cash.",
+    "options": [
+     {
+      "text": "The number will level off somewhere, because the people left are the ones who really want to post.",
+      "correct": false,
+      "feedback": "In the data every week is about 60% of the last, with no sign of leveling off; this is only a guess."
+     },
+     {
+      "text": "There are still 43 people in the third week, which shows the group can now keep itself going.",
+      "correct": false,
+      "feedback": "43 is how many are left. Each week keeps only 60%, and at that rate it will keep falling."
+     },
+     {
+      "text": "Without the cash gifts, each week keeps only about 60%; the activity was being held up by the cash.",
+      "correct": true,
+      "feedback": "120, 72, 43: each week is about 0.6 times the one before. Without a push from outside, this group can't lead on to the next round."
+     },
+     {
+      "text": "200 people shows the group is big enough, and at that size it won't fall apart.",
+      "correct": false,
+      "feedback": "Being big doesn't mean it can keep going; after the cash gifts stopped, each week kept only 60%, and the group is shrinking."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Under 1 each it dies; over 1 it spreads",
+  "caption": "100 people each forward a message. Drag \"Each passes it to\": at 0.8 the next round is 80, then 64; at 1.2 it is 120, then 144. The dividing line is exactly 1.",
+  "x": {
+   "label": "Round",
+   "ticks": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10
+   ]
+  },
+  "y": {
+   "label": "People reached this round"
+  },
+  "params": [
+   {
+    "id": "m",
+    "label": "Each passes it to",
+    "min": 0.5,
+    "max": 1.5,
+    "step": 0.05,
+    "value": 1.2,
+    "unit": " people"
+   }
+  ],
+  "model": {
+   "steps": 10,
+   "init": {
+    "a": 100
+   },
+   "next": {
+    "a": "a*m"
+   }
+  },
+  "series": [
+   {
+    "name": "People reached",
+    "expr": "a",
+    "tone": "accent",
+    "dots": "small"
+   },
+   {
+    "name": "Exactly 1 each",
+    "expr": "100",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Reached in round 10",
+    "expr": "a",
+    "unit": " people",
+    "digits": 0
+   }
+  ]
+ }
+}

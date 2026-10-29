@@ -1,0 +1,199 @@
+{
+ "id": "schelling-segregation",
+ "name": "Schelling Segregation Model",
+ "en": "谢林隔离模型",
+ "discipline": "society",
+ "one_line": "Each family just wants a few neighbors like itself, and move by move the area splits in two.",
+ "story": "Schelling publishes \"Models of Segregation\"; in 1971 \"Dynamic Models of Segregation\" plays out moves with two kinds of coins on squared paper, and a mild liking for one's own kind still clusters into wide segregation",
+ "shallow": {
+  "scene": "Anyone who has eaten in a Chinese university dining hall has probably seen this: in the first few days of term everyone sits anywhere, and a month later the students from Guangdong in the south and the students from the Northeast have each slowly taken over a few tables. No one made a rule, and no one said they disliked people from elsewhere.\n\nIn 1969 the economist Thomas Schelling published \"Models of Segregation,\" which moved this kind of thing onto a sheet of squared paper like a checkerboard. He laid out equal numbers of dimes and pennies, each standing for a household, mixed together at first. If a coin had too few of its own kind around it, he moved it to the nearest empty square where it would be satisfied.\n\nThe demands he gave the coins were not harsh, nowhere near \"all my neighbors must be my kind.\" Yet as he moved them one after another, the mixed coins still gathered into patches, and most coins ended up with far more of their own kind around them than they had asked for. No one is picky, and together they can still end up sharply divided.",
+  "plain": "You move into a new neighborhood where households that speak two different dialects make up half each. You aren't picky: you're satisfied as long as 30% of the neighbors around you speak your dialect, and only if it's under 30% do you move to an empty home. The Schelling segregation model starts from small demands like this, household by household. When you leave, the street you lived on has one fewer household that speaks your dialect, and for some of your old neighbors the share around them who speak it drops below 30% as a result, so they move too. After round after round of moves, the neighborhood has split into two areas, one for each dialect, and every household has far more than 30% of its neighbors speaking its dialect."
+ },
+ "deep": {
+  "mechanism": "### Each household wants only 30% of its own kind, and after the moves 75% of its neighbors are\n\nCall the share of its own kind that each household requires its \"threshold.\" With the threshold at 30%, after the moves each household has on average about 75% of its own kind around it, more than twice what it asked for. These figures come from a computer simulation, whose rules are in the next paragraph. With a threshold of zero nobody moves, and each household has about 50% of its own kind around it; that is what random mixing looks like. At a threshold of 20%, the end result is about 57%; at 30%, about 75%; at 60%, about 96%. Raising the threshold from 20% to 30% asks for only 10 points more, yet the result jumps by nearly 20 points, because once a batch of people start moving, the chain reaction can't stop.\n\nThe rules of the simulation: a 30×30 grid, two kinds of residents in equal numbers, and 90% of the squares occupied. Each household looks at the eight squares around it; if the share of its own kind is below the threshold, it is unhappy and moves to a random empty square where it would be satisfied. Each threshold was run 5 times and the results averaged.\n\n### One household moves, and people on both the old street and the new one become unhappy\n\nWhen a household moves away, its same-kind neighbors on the old street each lose one of their own kind nearby, so people who were only just satisfied drop below the threshold and have to move too. When the household moves onto a new street, the residents of the other kind there gain one neighbor unlike them, their share of their own kind falls, and they may leave as well. Every move pushes the next batch of people to move, until no one is unhappy; by then, each kind has gathered into blocks.\n\n### Set the threshold too high, and nobody can move\n\nRaise the threshold to 70%, and an empty square with 70% of your own kind around it is also hard to find, because when people live mixed, each household has only about 50% of its own kind nearby. Unhappy people can't find an empty square that would satisfy them, so they have to stay where they are. The computed pattern stops close to random mixing: each household has about 54% of its own kind around it, and five or six hundred households stay in places they're unhappy with.",
+  "origin": "Schelling published \"Models of Segregation\" in 1969 and \"Dynamic Models of Segregation\" in 1971. He wanted to understand how residential segregation in American cities came about. In 1978 he gathered this kind of reasoning in *Micromotives and Macrobehavior*. In 2005 he shared the Nobel Prize in economics with Robert Aumann. What the model proves is that a low threshold is enough to split residents into blocks; it does not prove that any real city split up this way.",
+  "limits": "The model works best when people choose neighbors mainly by \"what share of the people around me are my kind,\" and moving is easy, as with seats, market stalls and online communities. Where housing is locked in place by prices, mortgages and policy, and people can't move even when they want to, it explains only part of the story. Taking the result on the grid to mean that \"real segregation comes from residents' own free choice\" ignores the redlining of mid-20th-century America: banks and federal housing agencies drew lines around neighborhoods based on their racial and ethnic makeup, and restricted loans inside the lines."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "In a residents' survey everyone says \"I don't mind neighbors who are different,\" yet the buildings are clearly split. The sums can show why: each household asks for little, but round after round of moves adds up to enough to split into blocks."
+   },
+   {
+    "use": "design",
+    "text": "When you design a mixed-housing policy, what to watch is that the minority's share in each building doesn't fall below residents' threshold, not just the overall share across the whole complex."
+   },
+   {
+    "use": "explore",
+    "text": "Give a team that chooses its own seats a new rule, such as at least two departments in every row, and see whether blocks still form."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Education",
+    "title": "Free seating splits in two",
+    "text": "You teach a class, and when term starts you let the students choose their own seats. No one says they'll sit only with boys or only with girls; each just wants one or two classmates of the same sex nearby. Two weeks later, the left side of the classroom is full of boys and the right side full of girls, with only a few empty seats in between. You draw up a seating chart by student number and post it at the front of the room."
+   },
+   {
+    "field": "Business",
+    "title": "Desks cluster by department",
+    "text": "In an open-plan office, whoever gets to an empty desk takes it. Engineers want a few colleagues nearby they can ask questions at any time, and so do salespeople; no rule says who sits next to whom. Six months later, the rows of desks have turned into an engineering area and a sales area, and the two engineers who were sitting in the sales area have both changed desks within a month."
+   },
+   {
+    "field": "Personal life",
+    "title": "A party standing in two clumps",
+    "text": "You throw a party for forty people: two groups of your friends, most of whom don't know each other. At first everyone stands spread out. Whenever someone notices that few of the people around them are people they know, they pick up their glass and walk over to the side with more people. An hour later the living room holds two clumps of people with a coffee table between them."
+   }
+  ],
+  "ask": [
+   "Roughly what is each household's minimum threshold: at least what share of its own kind nearby before it doesn't want to move?",
+   "What share does the minority make up in each building or each row of seats? Has it already become so small anywhere that no one wants to stay?",
+   "Compare the current state with random mixing: how many points higher is each household's share of its own kind nearby than it would be at random?"
+  ],
+  "with": [
+   {
+    "id": "incentives",
+    "sees": "An old part of a city wants its two kinds of residents to live mixed together, and one way is a rent cut for new residents from the minority. The incentives view is that the rent cut makes moving in a better deal: the bigger the subsidy, the more people move in, so spread it evenly across the buildings. The segregation model looks at something else: once new residents move in, if the share of their own kind around them is still below their threshold, they will soon leave again, and the rent cut is wasted. The money should first be concentrated on a few buildings until the minority's share there passes the threshold, and only then go to the next batch."
+   },
+   {
+    "id": "emergence",
+    "sees": "Looking at a neighborhood split in two, emergence asks how the overall pattern comes from interactions between individuals. The segregation model adds one concrete number: each household's threshold. Once you know the threshold, you can work out on paper how sharply the whole neighborhood will split."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You manage a new neighborhood where 90% of households are type A and 10% are type B. Every household wants at least 20% of the neighbors around it to be its own type; if not, it moves to the nearest empty home. When people first move in, they're spread at random.",
+    "question": "Which households will be the first to move?",
+    "explain": "The threshold is about the share of one's own kind nearby. Type A neighbors are everywhere: spread at random, about 90% of the neighbors around an A household are A, far above 20%. Around a type B household about 10% are B, mostly below 20%, so they are the first to move.",
+    "options": [
+     {
+      "text": "Type A, because there are more of them, so there must be more unhappy households.",
+      "correct": false,
+      "feedback": "More households doesn't mean more unhappy ones; each type A household already has about 90% of its own kind nearby, well above 20%."
+     },
+     {
+      "text": "Nobody moves, because asking for 20% is so little that no one will be unhappy.",
+      "correct": false,
+      "feedback": "Asking for little only works for households with many of their own kind nearby; type B households have about 10%, already below 20%."
+     },
+     {
+      "text": "Both about the same, because the threshold is the same number for both types.",
+      "correct": false,
+      "feedback": "The threshold is the same, but the share of one's own kind nearby isn't, and that share decides who falls below the threshold first."
+     },
+     {
+      "text": "Type B, because they have few of their own kind nearby to begin with, mostly below 20%.",
+      "correct": true,
+      "feedback": "Spread at random, type B households have about 10% of their own kind nearby, below the 20% threshold, so the unhappy households are concentrated in this type."
+     }
+    ]
+   },
+   {
+    "stem": "You manage a public rental housing complex that is always full, with no empty homes, and residents aren't allowed to swap homes. The two types of residents make up half each and currently live mixed together; quite a few households have a lower share of their own kind nearby than they'd like.",
+    "question": "Over the next few years, what is most likely to happen in this complex?",
+    "explain": "Unhappy residents have nowhere to go: there are no empty homes and no swaps, so the step of moving can't happen. Unhappiness is what drives the split into blocks, and without empty places there is no chain of moves round after round.",
+    "options": [
+     {
+      "text": "The two types will mix evenly again, because unhappy residents will swap homes privately.",
+      "correct": false,
+      "feedback": "The question says swaps aren't allowed and there are no empty homes, so swapping isn't an option."
+     },
+     {
+      "text": "It won't split in two: residents stay where they are, and the unhappiness stays in their heads.",
+      "correct": true,
+      "feedback": "Splitting into blocks has to be pushed along step by step by moves; with no empty places to move to, the unhappiness can only stay where it is."
+     },
+     {
+      "text": "It will split in two, just more slowly than if there were empty homes.",
+      "correct": false,
+      "feedback": "With no empty homes and no swaps, not one household can move, so there's nothing to be slow about."
+     },
+     {
+      "text": "It will split faster than with empty homes, because more households are unhappy.",
+      "correct": false,
+      "feedback": "However many households are unhappy, they need somewhere to move before blocks can form; with no empty homes, no one's place changes."
+     }
+    ]
+   },
+   {
+    "stem": "A city has three neighborhoods with the same rules and the same resident preferences, all randomly mixed at first. In each one, residents moved around for a while, and all of them ended up split into blocks. Where the blocks formed is different in each neighborhood, but the share of its own kind around each household is about the same.",
+    "question": "For a fourth neighborhood with the same rules, which prediction can you make with more confidence?",
+    "explain": "The order of the moves and which places are empty involve chance, so which building goes to which type can't be known in advance; with the same rules, though, the final degree of splitting is similar. What you can predict is the degree, not the location.",
+    "options": [
+     {
+      "text": "Neither can be predicted, because every neighborhood turns out differently.",
+      "correct": false,
+      "feedback": "The share of its own kind around each household is about the same, so the degree can be estimated."
+     },
+     {
+      "text": "You can say which type each building will end up with, because the rules are the same.",
+      "correct": false,
+      "feedback": "The locations differ in all three neighborhoods; the same rules didn't settle which building goes to whom."
+     },
+     {
+      "text": "You can roughly estimate how much it will split, but not which buildings go to which type.",
+      "correct": true,
+      "feedback": "The blocks formed in different places in the three neighborhoods but to a similar degree, which shows that the rules decide the degree and chance decides the location."
+     },
+     {
+      "text": "Both can be predicted, because they all start from random mixing.",
+      "correct": false,
+      "feedback": "A random start means the location is ruled by chance; the blocks forming in different places in the three neighborhoods already shows this."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "loop",
+  "title": "One move pushes the next family out",
+  "caption": "Go round the arrows: each family wants only 30% of its dialect nearby, but one leaving drops old neighbors below 30%, so they move, and the area splits in two.",
+  "center": "On and on",
+  "centerSub": "Two dialect zones",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "Under 30% own dialect",
+    "tone": "warn"
+   },
+   {
+    "id": "b",
+    "label": "Moves where it's 30%"
+   },
+   {
+    "id": "c",
+    "label": "Old street: one fewer",
+    "sub": "New street: one more",
+    "tone": "accent"
+   },
+   {
+    "id": "d",
+    "label": "Old neighbors < 30%",
+    "sub": "Were just content",
+    "tone": "warn"
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b",
+    "label": "Unhappy"
+   },
+   {
+    "from": "b",
+    "to": "c"
+   },
+   {
+    "from": "c",
+    "to": "d"
+   },
+   {
+    "from": "d",
+    "to": "a",
+    "label": "Their turn"
+   }
+  ]
+ }
+}

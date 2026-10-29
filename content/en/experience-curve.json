@@ -1,0 +1,230 @@
+{
+ "id": "experience-curve",
+ "name": "Experience Curve",
+ "en": "经验曲线",
+ "discipline": "business",
+ "one_line": "The more you make, the less each one costs.",
+ "story": "Wright publishes \"Factors Affecting the Cost of Airplanes\": each time the number of planes built doubles, direct labor per airframe falls to about 80%",
+ "shallow": {
+  "scene": "In 1936 the aeronautical engineer Theodore Wright published \"Factors Affecting the Cost of Airplanes\" in the *Journal of the Aeronautical Sciences*. He wanted to answer a practical question: before a type of plane has been built, how do you estimate what it will cost? He lined up aircraft production records by the total number of planes built so far and looked at the hours of direct labor on each airframe. He found a pattern in the numbers: each time the total number built doubled, the average labor hours per plane fell to about 80% of what they had been.",
+  "plain": "You build a bookshelf yourself. The first one takes 10 hours: measuring, cutting a piece wrong, redoing it. The second takes 8 hours, and the fourth only 6.4, because you already know which piece to cut first and where the screws go; the eighth takes just 5.12 hours. Each time the count doubles, the time drops to 80%. The experience curve draws exactly this kind of line: the horizontal axis is total output so far, the vertical axis is cost per unit, and each time total output doubles, the cost falls to the same fraction of what it was."
+ },
+ "deep": {
+  "mechanism": "### Savings carry over to the next unit only once they're written into the method\n\nPeople who do the same job over and over notice wasted motions, engineers find the setting that's producing scrap, and buyers change the material specs. An improvement that stays only in a veteran's head is gone when he leaves; written into work instructions, jigs and drawings, it's there for newcomers from day one. So the labor, materials and rework the same product needs go down round after round.\n\n### The easy savings are found first, so cost drops one step per doubling\n\nThe first few units are full of wasted motions that are easy to fix; further on, the savings left are harder to find, and it takes many more units to come across one. So going from unit 1 to unit 2 takes just 1 more, while going from unit 1,000 to unit 2,000 takes 1,000 more, yet the cost falls by the same proportion.\n\nCall the fraction of unit cost left after each doubling $r$. If unit cost starts at $c$, it is multiplied by $r$ each time total output doubles, and after $k$ doublings it becomes\n\n$$c\\,r^k$$\n\nAt a total of 1,000 units, unit cost is 100 yuan. Getting to 8,000 units passes 2,000, 4,000 and 8,000, which is three doublings: on a curve that keeps 80%, cost is down to $100\\times0.8^3\\approx51$ yuan; on one that keeps 90%, 73 yuan is left.",
+  "origin": "In 1936 Wright was studying the direct labor hours on airframes, and the pattern he found was later called the \"learning curve.\" In the 1960s the Boston Consulting Group, founded by Bruce Henderson, extended it from labor hours to total cost, including materials and management, and named it the \"experience curve.\" They used it to help companies set prices and judge their competitive position.",
+  "limits": "The line fits most closely on a production line that makes the same product again and again, with the same crew on it, seeing results every day. On custom projects designed from scratch for each order, most of the tricks from the last order don't carry over; when the process changes, old experience is thrown out. Bigger equipment investment, looser quality standards and research breakthroughs also bring costs down, and if you look only at total output, you'll count all of them as experience.\n\nThe most dangerous mistake is treating it as a promise. Cost falling as total sales grow is only a record of the past. If you push volume with subsidies, or raw material prices swing, costs won't follow the curve, but the cash spent pushing volume won't come back."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "To quote a new product's unit cost three years out, first measure from existing records how much it falls per doubling, then count how many units you'll have made in total over the three years."
+   },
+   {
+    "use": "act",
+    "text": "When fighting a rival for the same customers, first work out how long your cash will last, then price at the cost you'll reach once total output has doubled, and win the market share: whoever leads in total output keeps its costs below its rival's."
+   },
+   {
+    "use": "communicate",
+    "text": "To explain to your boss why the new line loses money in its first six months, bring out those months' labor-hour records and show him at what level of total output the unit cost will finally start making money."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "Solar panels get cheaper as more go up",
+    "text": "Over more than forty years, each time the world's total installed solar capacity doubled, panel prices fell by about 20%. In 2018 Jessika Trancik's team at MIT broke down why panel costs had fallen since 1980, and higher yield was one reason: the same inputs turned out more good cells. The more was installed, the more scrap-producing steps manufacturers fixed, and the price kept going down."
+   },
+   {
+    "field": "Medicine",
+    "title": "Up to the 250th operation",
+    "text": "In 2007 Vickers and colleagues analyzed 7,765 operations to remove the prostate for cancer, done by 72 surgeons at four large US medical centers. When a surgeon had done 10 of these operations before, the predicted share of patients whose cancer came back within five years was about 18%; after 250, it fell to about 11%. The curve is steep at first and only starts to flatten around 250: the further along, the more operations each further bit of improvement takes."
+   },
+   {
+    "field": "Personal life",
+    "title": "Editing the 20th video",
+    "text": "You edit a travel video every week. The first took a whole weekend, most of it spent hunting for footage and fixing subtitles. By the twentieth, you no longer have to dig through your footage library, the operations you use most have keyboard shortcuts, and a video of the same length is done in one evening."
+   }
+  ],
+  "ask": [
+   "Will this be repeated many times the same way? If the method changes, do the old records still count?",
+   "When did someone last change the work instructions? What did they change?",
+   "Do the cost cuts on the books use the same quality and cost definitions before and after? Take out the effects of raw material prices and how fully the plant was running, and compare the two years again."
+  ],
+  "with": [
+   {
+    "id": "unit-economics",
+    "sees": "On orders for a new device, you lose 8 yuan on every one sold. The experience curve says take the orders for now: once total output grows, costs will come down. Unit economics says the opposite: this order loses money right now, and if your cash won't last until costs come down, taking it only makes the loss bigger. How much to listen to each depends on whether your own records back up the rate of decline, and whether your cash is enough to get you to where the books turn positive."
+   },
+   {
+    "id": "economies-of-scale",
+    "sees": "Should you build a dedicated line just for the next order? Economies of scale asks how many units the line's fixed costs can be spread over once it's running; the experience curve asks whether these units are the same model you've made before, and whether the times you've made it count. If the order is for an entirely new spec, the first question still stands, and the second comes to almost nothing."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A kettle line had made 50,000 kettles in total, and in the last three months it made 20,000 more, so the total is now 70,000. The cost per kettle had been falling all along, but these three months it hasn't budged. The workshop's work instructions haven't been changed in two years, while workers on the three shifts rotate often.",
+    "question": "What is the most likely reason the cost has stopped falling?",
+    "explain": "Total units made is only a clue; what really saves money is a changed way of working. With no update to the method, the extra 20,000 brought no new savings.",
+    "options": [
+     {
+      "text": "The kettle orders are too small, so the cost can't come down.",
+      "correct": false,
+      "feedback": "50,000 in total plus 20,000 more in three months is not a small order, and the cost had been falling before."
+     },
+     {
+      "text": "The repetition goes on, but nobody writes improvements into the instructions and tooling, so the tricks are lost when shifts change.",
+      "correct": true,
+      "feedback": "The instructions haven't changed in two years and rotation is frequent, so new savings are neither looked for nor kept."
+     },
+     {
+      "text": "A total of 70,000 isn't enough yet; keep making them and the cost will naturally come down.",
+      "correct": false,
+      "feedback": "The latest 20,000 brought no drop at all, which shows that just making more won't cut costs by itself."
+     },
+     {
+      "text": "Every product's unit cost falls to a certain point and stops, and kettles are no exception.",
+      "correct": false,
+      "feedback": "This puts a conclusion in place of a cause. The clue in the question is that the method hasn't been updated; the decline doesn't have to reach some fixed point to stop."
+     }
+    ]
+   },
+   {
+    "stem": "Two factories make the same motor. Factory A makes 10,000 a month and has been running for 8 years. Factory B also makes 10,000 a month and only started production last year. You notice that B's cost per motor is clearly higher, and want to know how much of that comes from experience.",
+    "question": "Which comparison best separates the effect of experience from other factors?",
+    "explain": "Current output is already the same, and among the remaining differences, total output so far is one. Compare B with A in the year A had reached the same total, and the effect of experience cancels out; whatever is left comes from other causes.",
+    "options": [
+     {
+      "text": "Look at the two factories' monthly output: whichever makes more has lower costs.",
+      "correct": false,
+      "feedback": "The two make the same amount each month, so this shows no difference at all."
+     },
+     {
+      "text": "Compare the two factories' wages, and subtract the wage gap from the cost gap.",
+      "correct": false,
+      "feedback": "Wages are a separate matter; subtracting them still doesn't separate out the difference that comes from total output."
+     },
+     {
+      "text": "Compare the two factories' floor space and equipment prices, to see which invested more.",
+      "correct": false,
+      "feedback": "This compares fixed investment, which has nothing to do with how many units were made, and can't separate out the effect of total output either."
+     },
+     {
+      "text": "Compare B's cost this year with A's cost in the year A had made the same total.",
+      "correct": true,
+      "feedback": "With the same total, the difference in experience cancels out; whatever gap remains between the two costs comes from other factors."
+     }
+    ]
+   },
+   {
+    "stem": "Two lines make the same part. Line A has made 30 million in total; line B, only 30,000. Both keep improving how they work, and next year each will make another 30,000.",
+    "question": "Next year, which line's unit cost will fall more?",
+    "explain": "The curve counts how many times total output has doubled, not how many more units were made. Line B's extra 30,000 doubles its total; line A's same 30,000 is only a thousandth of its total.",
+    "options": [
+     {
+      "text": "Both the same, since each makes 30,000 more next year.",
+      "correct": false,
+      "feedback": "A big total means the next doubling is further off; 30,000 more barely shows on line A."
+     },
+     {
+      "text": "Line A: its big total gives it deep experience, so each extra unit cuts the cost more.",
+      "correct": false,
+      "feedback": "The same 30,000 is a share of each line's total that differs a thousandfold, so the drops differ too."
+     },
+     {
+      "text": "Line B: the extra 30,000 doubles its total.",
+      "correct": true,
+      "feedback": "Line B doubles and goes down a whole step; for line A to double again, it would have to make another 30 million."
+     },
+     {
+      "text": "They can't be compared: their totals are so far apart that they aren't on the same curve.",
+      "correct": false,
+      "feedback": "Same part, same curve. However far apart the totals are, you can compare them by how many times each has doubled."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "By the 8th bookshelf, it takes half the hours",
+  "caption": "The first shelf takes 10 hours; each doubling leaves 80% of the time: 8, 6.4, 5.12. Drag the slider to see how slowly it falls when 90% is left.",
+  "x": {
+   "label": "Shelves made so far",
+   "min": 1,
+   "max": 8,
+   "ticks": [
+    {
+     "at": 1,
+     "label": "1"
+    },
+    {
+     "at": 2,
+     "label": "2"
+    },
+    {
+     "at": 4,
+     "label": "4"
+    },
+    {
+     "at": 8,
+     "label": "8"
+    }
+   ]
+  },
+  "y": {
+   "label": "Hours for this one",
+   "min": 0,
+   "max": 10
+  },
+  "params": [
+   {
+    "id": "r",
+    "label": "Left per doubling",
+    "min": 60,
+    "max": 95,
+    "step": 5,
+    "value": 80,
+    "unit": "%"
+   }
+  ],
+  "series": [
+   {
+    "name": "Hours per shelf",
+    "expr": "10*pow(x, log2(r/100))",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "x": 2,
+    "y": "10*r/100",
+    "text": "2nd"
+   },
+   {
+    "x": 4,
+    "y": "10*(r/100)^2",
+    "text": "4th"
+   },
+   {
+    "x": 8,
+    "y": "10*(r/100)^3",
+    "text": "8th"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "The 8th takes",
+    "expr": "10*(r/100)^3",
+    "unit": " hours",
+    "digits": 2
+   },
+   {
+    "label": "Saved vs. the 1st",
+    "expr": "(1-(r/100)^3)*100",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

@@ -1,0 +1,219 @@
+{
+ "id": "overconfidence",
+ "name": "Overconfidence",
+ "en": "过度自信",
+ "discipline": "psychology",
+ "one_line": "The things people feel 90% sure about turn out right less often than that.",
+ "story": "Svenson asks American and Swedish students to rate their own driving, and 93% of the Americans and 69% of the Swedes put themselves above the median",
+ "shallow": {
+  "scene": "In 1981, the Swedish psychologist Ola Svenson asked students in the United States and Sweden to rank their own driving skill. The question was: compared with this group of people, are you above or below the median? Among the American college students, 93% chose above; among the Swedish students, 69%.\n\nThe median means exactly half the people are above it, so at most half of those who chose \"above\" can be right. Both groups were over half, so in both some people overrated themselves. In the American group, 93% minus 50% means at least 43% got it wrong.\n\nPutting yourself in the top half, and stating more certainty than your hit rate, are two ways of measuring the same flaw: people's estimate of themselves is higher than the results you can count.",
+  "plain": "As you leave an exam, you give each multiple-choice question a confidence rating. On ten of them you wrote \"90% sure,\" so by that number you should get nine right, but when the paper is marked you got only seven. That is where overconfidence lies: the 90% you stated turns out, counted afterward, to be only 70%. At the time you really did feel sure about all ten; you weren't lying."
+ },
+ "deep": {
+  "mechanism": "### The more sure you say you are, the more you have to live up to the number\n\nA confidence rating is like a check: write 80%, and across a pile of similar questions you should cash 80% of it. Suppose you rated 100 questions at 80% sure. You should get 80 right, but you got only 60, a gap of 20 points. If, for the same pile of questions, you had written only 60% sure and got 60 right, the books would balance.\n\n### If you can think of reasons, you feel you know\n\nWhen you answer, the first things that come to mind are reasons that support your answer, and the more easily they come, the surer you feel. The factors you didn't think of don't pop up on their own to warn you. In a field you know well, you have the most reasons, and your confidence floats highest. On top of that, few people ever go back and check. With no results to pull the number down, it stays high.\n\n### One miss shows nothing; you have to count in batches\n\nBeing 90% sure already allows for being wrong one time in ten, so on any single question, getting it wrong is no surprise. You have to sort the confidence ratings you wrote into bands and count the hits in each band. Suppose that over a year, the questions you rated 60% were right 58% of the time; the ones you rated 80% were right 60% of the time; and the ones you rated 90% were right only 70% of the time. The 60% band lives up to its rating; the two higher bands both fall 20 points short. Next time you write 90%, use it as 70%: leave more room for error and double-check more.\n\n### Giving too narrow a range is the same flaw\n\nAsked how long tomorrow morning's commute will take, as a range you're 90% sure of, you'll most likely write \"30 to 40 minutes\": thirty on a smooth day, forty with a bit of traffic. But when the things you didn't think of happen, rain, a subway shutdown, a child dawdling, the time falls outside the range; with enough mornings like that, the range doesn't cover 90%. Alpert and Raiffa asked people for ranges they were 98% sure of, and the true value fell outside about 40% of the time, when it should have been only 2%. Checking yourself also comes down to counting: dig out the 90% ranges you've written and see what share of the true values fell inside.",
+  "origin": "In 1977, Fischhoff, Slovic and Lichtenstein used general-knowledge questions to test how accurate people are when they are extremely sure, and found that the subjects' confidence was higher than their accuracy. Svenson's 1981 driving survey carried the same effect into an everyday skill. A study Alpert and Raiffa published in 1982 showed that the high-confidence ranges people give miss too many of the true answers.",
+  "limits": "Weather forecasters give a chance of rain every day and can check it the next day. With long practice, on the days they say 70%, it rains on roughly 70% of them, so their confidence lives up to their results. With very easy questions it goes the other way: people tend to state too little confidence. How certain someone looks to your face says nothing; to judge whether confidence is excessive, you have to check a batch of confidence ratings written down beforehand against the results. Pinning the label \"overconfident\" on people who disagree with you doesn't hold up either: whether their confidence lives up to their record also has to be counted before you know."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "When estimating a range for a new project's revenue, first dig out the 90% ranges you've written before and count what share they actually covered, then use that coverage to adjust the upper and lower bounds this time."
+   },
+   {
+    "use": "act",
+    "text": "When a colleague says \"I'm absolutely certain,\" you can first ask how many of the last few times they said so it came true, then decide whether to keep something in reserve yourself."
+   },
+   {
+    "use": "design",
+    "text": "When designing a forecasting process, make \"write down your confidence\" and \"check it afterward\" two fixed steps: every forecast comes with a confidence number, and every quarter the hits are counted by band."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Investing",
+    "title": "Confident people trade more often",
+    "text": "In 2000, Barber and Odean analyzed the stock accounts of more than 60,000 US households. The group that traded most often earned 11.4% a year after costs, while the market returned 17.9% over the same period. The two authors' explanation was that these investors believed their judgment was good enough to earn back the cost of buying and selling, so they traded again and again, and again and again the costs ate up the gains."
+   },
+   {
+    "field": "Publishing",
+    "title": "The confidence written down at sign-off",
+    "text": "You are an editor at a publishing house. Each time a book is approved, you write down on a form how sure you are that the first print run will sell out. A year later, you sort the few dozen books approved that year into piles by the confidence you wrote at the time, and compare them with actual sales. In the pile you rated 80%, the books whose first run sold out were only a little over half. The next time you approve a book, you add a column to the form: \"the point I'm least sure of.\""
+   },
+   {
+    "field": "Health care",
+    "title": "Confidence written down, checked three months later",
+    "text": "You are an emergency doctor. For each patient with chest pain, you first write down your judgment and how sure you are. Three months later, you dig out the forty forms that say \"heart attack basically ruled out\" and check them against follow-up results: nine of those patients were later diagnosed with heart problems. You keep these patients under observation for longer, and no longer send them home based on the confidence written on the form at the time."
+   }
+  ],
+  "ask": [
+   "How many times have I written down my confidence? Counted by band, what share did each band actually get right?",
+   "Is my confidence propped up by reasons I can think of, or by my track record on similar judgments in the past?",
+   "If my actual hit rate is 20 points lower than I said, does this decision still work?"
+  ],
+  "with": [
+   {
+    "id": "circle-of-competence",
+    "sees": "Should you make a big bet in the industry you know best? Circle of competence says you see things inside your circle most clearly, so go ahead. Overconfidence says that it's exactly inside your circle that your confidence runs highest and the fewest people check it for you. When the two clash, first dig out your forecasting record inside the circle. If your hit rate lives up to your confidence, act as you would inside the circle; if it doesn't, mark your confidence down even inside the circle before deciding how much to bet."
+   },
+   {
+    "id": "probabilistic-thinking",
+    "sees": "Probabilistic thinking asks you to rewrite \"it will definitely go up\" as \"70% chance it goes up.\" Only then can the confidence you state be tested for the first time: of a batch of 70% calls, 70% should come true. If you only write probabilities and never check them, the numbers can still stay too high forever, so every quarter, take out the pile you rated 70% and count it again."
+   },
+   {
+    "id": "margin-of-safety",
+    "sees": "You already know your estimates tend to be too narrow. The next step is deciding how much room to leave, and that is exactly what margin of safety is for: set the worst outcome you can survive further out than your range, so that even if the estimate is wrong, you aren't knocked out of the game."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You give yourself a 100-question general-knowledge test and mark each answer with a confidence rating. Of the 20 questions marked \"completely sure,\" you got 15 right; of the 30 marked \"70% sure,\" you got 21 right. Next week you take a real test of the same kind, and you plan to spend the checking time before you hand it in on the questions you're least sure of.",
+    "question": "What does this record show?",
+    "explain": "In the 70% band, you wrote 70% and got 70% right, so your confidence lives up to your results. The \"completely sure\" band came true only 75% of the time, more than 20 points too high. So the questions in this band also deserve some checking time.",
+    "options": [
+     {
+      "text": "The 70% band lives up to its rating; the \"completely sure\" band is too high and also deserves checking time.",
+      "correct": true,
+      "feedback": "The 70% band came true 70% of the time; the \"completely sure\" band only 75%. The gap is in the band you were surest about."
+     },
+     {
+      "text": "The two bands' hit rates are about the same, which shows confidence ratings don't help predict anything.",
+      "correct": false,
+      "feedback": "The two hit rates are close because the \"completely sure\" band is more than 20 points too high, not because the ratings are useless: the 70% band is exactly right."
+     },
+     {
+      "text": "Both bands are too high, so next time all confidence ratings should be cut in half.",
+      "correct": false,
+      "feedback": "The 70% band came true exactly 70% of the time. It isn't too high, so it shouldn't be cut too."
+     },
+     {
+      "text": "The \"completely sure\" band is right; only a few questions slipped now and then.",
+      "correct": false,
+      "feedback": "Completely sure means almost all right. Getting only 75% right means a quarter of them already missed."
+     }
+    ]
+   },
+   {
+    "stem": "Two scouts each predict whether ten young prospects will make the first team. Each scout gets six right. Scout A always says \"90% sure,\" and Scout B always says \"60% sure.\" The club has to decide how to treat the same words from them next time.",
+    "question": "Where is the difference between the two?",
+    "explain": "Their hit rates are the same; the difference is in the confidence they state. B says 60% and delivers 60%; A says 90% but also delivers only 60%, 30 points too high. Next time, A's \"90%\" should be used as 60%.",
+    "options": [
+     {
+      "text": "A is more trustworthy: he is more sure of his judgment and more decisive.",
+      "correct": false,
+      "feedback": "Being more sure doesn't mean being more accurate. Both scouts got six right."
+     },
+     {
+      "text": "B's confidence fits; A's \"90%\" is worth only 60% and should be marked down.",
+      "correct": true,
+      "feedback": "B says 60% and delivers 60%; A says 90% but also delivers only 60%. Next time A says 90%, use it as 60%."
+     },
+     {
+      "text": "B's hit rate is lower than A's, because he gives lower confidence ratings.",
+      "correct": false,
+      "feedback": "In the question both scouts got six right, so their hit rates are the same."
+     },
+     {
+      "text": "There's no difference: after all, both got only six of the ten right.",
+      "correct": false,
+      "feedback": "The number right is the same, but the stated confidence isn't: B's 60% is accurate, and A's 90% has to be used as 60%."
+     }
+    ]
+   },
+   {
+    "stem": "Suppose you ask two groups of volunteers to predict the winners of the same set of games. The first group gets three pieces of background information, the second gets ten. Both groups pick the winner about half the time, but the first group rates its own confidence at 50% on average, and the second at 70%.",
+    "question": "What did the seven extra pieces of information mainly change?",
+    "explain": "The hit rate didn't change, but self-rated confidence went up 20 points. The extra information made people feel they knew more without making their judgments any more accurate.",
+    "options": [
+     {
+      "text": "It made no difference to either group, since both groups had the same hit rate.",
+      "correct": false,
+      "feedback": "The second group's confidence rose 20 points; the effect shows up in confidence."
+     },
+     {
+      "text": "It made the second group's judgments more careful, which is why their confidence rose.",
+      "correct": false,
+      "feedback": "Rising confidence shows they were more certain; nothing in the question suggests they were more careful."
+     },
+     {
+      "text": "It mainly raised the hit rate, so it makes sense that confidence rose along with it.",
+      "correct": false,
+      "feedback": "Both groups were right about half the time; the hit rate didn't go up."
+     },
+     {
+      "text": "It mainly pushed up people's confidence, while the hit rate barely moved.",
+      "correct": true,
+      "feedback": "Both groups were right about half the time; only self-rated confidence rose, from 50% to 70%."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "title": "60% roughly fits; at 80–90% it's 20 points short",
+  "caption": "Across: confidence written. Up: share of that pile right (made-up numbers). Dashed: a perfect match; the farther a dot is below it, the more that band overstates.",
+  "x": {
+   "label": "Confidence written",
+   "unit": "%",
+   "min": 50,
+   "max": 100,
+   "ticks": [
+    {
+     "at": 60,
+     "label": "60%"
+    },
+    {
+     "at": 80,
+     "label": "80%"
+    },
+    {
+     "at": 90,
+     "label": "90%"
+    }
+   ]
+  },
+  "y": {
+   "label": "Actually right",
+   "unit": "%",
+   "min": 50,
+   "max": 100
+  },
+  "series": [
+   {
+    "name": "Perfect match",
+    "points": [
+     [
+      50,
+      50
+     ],
+     [
+      100,
+      100
+     ]
+    ],
+    "tone": "muted",
+    "dashed": true
+   },
+   {
+    "name": "Actual hits",
+    "points": [
+     [
+      60,
+      58
+     ],
+     [
+      80,
+      60
+     ],
+     [
+      90,
+      70
+     ]
+    ],
+    "tone": "warn",
+    "dots": true
+   }
+  ]
+ }
+}

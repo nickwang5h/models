@@ -1,0 +1,213 @@
+{
+ "id": "stocks-and-flows",
+ "name": "Stocks and Flows",
+ "en": "存量与流量",
+ "discipline": "systems",
+ "one_line": "As long as more comes in than goes out, the pile grows, day by day.",
+ "story": "After the Titanic hits an iceberg, water pours in faster than the pumps can get it out, and the ship sinks",
+ "shallow": {
+  "scene": "Late at night on April 14, 1912, the Titanic hit an iceberg in the North Atlantic, and seawater poured through the holes in the hull into the compartments at the bow. The ship's pumps kept working, but they pumped out less water than was flooding in, so the water in the compartments kept rising. The bow slowly sank lower, and the water spilled over the tops of the walls between compartments into the next ones. In the early hours of the 15th, the ship went down, less than three hours after hitting the iceberg.",
+  "plain": "Your closet has 80 pieces of clothing in it right now. This month you buy 6 and get rid of 4, so at the end of the month you have 82. Next month you decide to buy less and buy only 5, but you still get rid of 4, so the closet still gains 1; it just grows more slowly. Keep that up for a year, and the closet still has 12 more pieces. The number of pieces in the closet is a stock; the number you buy and get rid of each month are flows. A stock can only be changed by its flows: only when you get rid of more than you buy will the number go down."
+ },
+ "deep": {
+  "mechanism": "### Whether it rises or falls depends on the difference between in and out\n\nYou run a subscription service with 10,000 users. Each month 800 new people join and 5% leave, which is 500 people, so you gain 300 net. But the people leaving are a share, so the more users you have, the more of them leave, and the net gain keeps shrinking.\n\nSay $I$ new people join each month, and of the $S$ users you have, a share $d$ leaves each month, which is $dS$ people. When the users grow until $dS$ equals $I$, the number stops at\n\n$$S=\\frac{I}{d}$$\n\nWhere it stops depends only on how many come in and what share leaves, not on where you started. Here it is $800\\div5\\%=16000$ people: at that point 800 people leave each month, evening out the new ones.\n\n### Change the share that leaves, and the stopping point moves with it\n\nIf the share leaving drops to 4%, the break-even point moves to $800\\div4\\%=20000$ people. If it rises to 8%, the break-even point is $800\\div8\\%=10000$ people, and the number of users doesn't move at all: the 800 who leave each month exactly cancel out the 800 who join.\n\n### Fewer new users, and the total still goes up\n\nCut the new users to 600 a month. When you have 10,000 users, 500 still leave, so you still gain 100 net each month. The number of users has to grow to $600\\div5\\%=12000$ before the people leaving catch up with the people joining and it stops.",
+  "origin": "The idea of stocks and flows comes from bookkeeping and from conservation laws in physics; nobody invented it alone. In 1961 Jay Forrester of MIT published *Industrial Dynamics*. He treated a company's inventory, orders and staff as stocks and what goes in and out as flows, and used them to study why companies swing up and down.",
+  "limits": "The model is most reliable when you're counting inventory, checking accounts or counting the people on a roster, where everything in and out is fully recorded. Trust and reputation have no scale and can't be put into numbers; you can only borrow the idea that they \"build up bit by bit.\" If you count only the people who join and leave out the ones who go, you'll count the stock too high."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "A campaign to bring in new members makes a lot of noise, yet the online community's total doesn't grow. Check how many people left the group over the same period, and the numbers add up."
+   },
+   {
+    "use": "predict",
+    "text": "Estimate how many months until your savings cover a down payment: monthly income minus fixed spending, times the number of months, plus the money you have now. If your income or rent changes, add it up in separate stretches."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Public finance",
+    "title": "Smaller deficit, debt still growing",
+    "text": "The US federal government's deficit was about 3.1 trillion dollars in fiscal 2020 and fell to about 2.8 trillion in fiscal 2021. In both years the Treasury still had to borrow to cover the gap, and the national debt kept rising."
+   },
+   {
+    "field": "Population",
+    "title": "Fewer births, more deaths",
+    "text": "In recent years, fewer than 800,000 people have been born in Japan each year and more than 1.5 million have died, so the population of Japanese nationals falls every year. Only when births catch up with deaths will that number stop falling."
+   },
+   {
+    "field": "Personal life",
+    "title": "Still left out in the cold after saying sorry",
+    "text": "You promised to go running with a friend once a week, then canceled at the last minute several weeks in a row. Later you apologized properly and showed up on time twice, but your friend still didn't save you a spot ahead of time. You stopped making excuses and turned up every week, and after a little over a month, your friend started asking you to come along."
+   }
+  ],
+  "ask": [
+   "Is the number I have a balance on a certain day, or what went in and out over a period? First find these two numbers separately in the accounts or reports.",
+   "How many ways in are there, and how many ways out? Have I recorded the exits, like waste, returns and people quitting?",
+   "Is the outflow a fixed amount, or a share of what's there now? If it's a share, at what number will the total stop?"
+  ],
+  "with": [
+   {
+    "id": "redundancy",
+    "sees": "You run a hospital pharmacy, and every week more of a common drug comes in than goes out, so the stock is growing. Stocks and flows does these sums: with 50 extra boxes a week, how many more boxes, and how much money, will be tied up on the shelves in three months, and which batches will expire before they're used up. Redundancy sees it the other way: the stock is there as a buffer for times when deliveries stop or use suddenly jumps, so its growth isn't a problem. First work out how many weeks of use the stock covers. If it lasts until the next delivery arrives, order less; if it doesn't, let it grow."
+   },
+   {
+    "id": "time-delays",
+    "sees": "You place a restocking order, and the goods won't arrive for three weeks. During those three weeks the count on the shelf drops every day, and you're tempted to order again. Stocks and flows has you count the goods on the way as part of the stock too: if what's on the shelf plus what's on the way is enough, don't order more. Time delays look at something else in the same gap: nothing has changed yet, but your reactions are already piling up, one on top of another."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "At the start of the year, the city library has 12,000 books. In the first half of the year it buys 300 books and discards 100 each month. In the second half it buys the same number, but discards rise to 400 a month. There are no donations during the year and no books out on loan that never come back.",
+    "question": "How many books does the library have at the end of the year?",
+    "explain": "Each month, the number of books equals last month's number plus books bought minus books discarded. The rates in and out changed halfway through the year, so split it into two stretches and add each one up separately.",
+    "options": [
+     {
+      "text": "10,800 books",
+      "correct": false,
+      "feedback": "Discards went up in the second half, but in the first half there was still a net gain of 200 books a month. You can't apply the second half's net loss of 100 to the whole year."
+     },
+     {
+      "text": "13,200 books",
+      "correct": false,
+      "feedback": "That's the number at midyear. The net loss of 100 books a month in the second half hasn't been counted."
+     },
+     {
+      "text": "15,600 books",
+      "correct": false,
+      "feedback": "This only adds the 3,600 books bought during the year and doesn't subtract the books discarded."
+     },
+     {
+      "text": "12,600 books",
+      "correct": true,
+      "feedback": "In the first half there's a net gain of 200 books a month, 1,200 in all; in the second half a net loss of 100 a month, 600 in all. At the end of the year there are 12,600 books."
+     }
+    ]
+   },
+   {
+    "stem": "You take over a stationery wholesale warehouse. It has 900 slow-selling notebooks, and 100 more come in every week. The boss wants stock down to 300 or fewer in 12 weeks. The supply contract is already signed, and the quantity can't be changed.",
+    "question": "To hit the target, how many notebooks do you need to sell each week at least?",
+    "explain": "The number left after 12 weeks equals what you have now plus 12 weeks of deliveries minus 12 weeks of sales. Put the target in and work backward to the weekly sales.",
+    "options": [
+     {
+      "text": "175",
+      "correct": false,
+      "feedback": "175 doesn't take off the 300 the target allows you to keep, so the sales figure it gives is too high."
+     },
+     {
+      "text": "100",
+      "correct": false,
+      "feedback": "Selling 100 a week only balances in and out. Stock stays at 900, still 600 short of 300."
+     },
+     {
+      "text": "150",
+      "correct": true,
+      "feedback": "1,200 come in over the 12 weeks; add the 900 you have now, and to get down to 300 or fewer you must sell 1,800, an average of 150 a week."
+     },
+     {
+      "text": "50",
+      "correct": false,
+      "feedback": "50 just spreads the 600-book gap over 12 weeks, leaving out the 1,200 still coming in during those 12 weeks."
+     }
+    ]
+   },
+   {
+    "stem": "Your brokerage account is worth 100,000 yuan at the start of the month. This month you transfer in 3,000 yuan and receive 500 yuan in dividends; the dividends stay in the account as cash and count toward the total. You make no trades. At the end of the month the account is worth 108,000 yuan.",
+    "question": "How much did rising share prices add to the account's value?",
+    "explain": "The change in the account's value has three sources: money transferred in, dividends received, and changes in the prices of what you hold. The money transferred in came from outside, and the dividends are cash paid out by your holdings; neither came from prices rising. Take both out, and what's left is the answer.",
+    "options": [
+     {
+      "text": "7,500 yuan",
+      "correct": false,
+      "feedback": "7,500 only takes out the dividends. The 3,000 transferred in is also cash coming in and has to be taken out too."
+     },
+     {
+      "text": "4,500 yuan",
+      "correct": true,
+      "feedback": "The value rose 8,000 yuan. Take out the 3,000 transferred in and the 500 in dividends, and the remaining 4,500 came from rising prices."
+     },
+     {
+      "text": "5,000 yuan",
+      "correct": false,
+      "feedback": "5,000 only takes out the money transferred in. The 500 in dividends is also cash coming in and has to be taken out too."
+     },
+     {
+      "text": "8,000 yuan",
+      "correct": false,
+      "feedback": "8,000 is the whole increase in value, and the 3,000 transferred in and the 500 in dividends didn't come from rising prices."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "800 in and 5% out a month: users stop at 16,000",
+  "caption": "The more users, the more leave each month, until as many leave as join. Drag both sliders: the level moves with them; the 10,000 start only sets how long it takes.",
+  "x": {
+   "label": "Month"
+  },
+  "y": {
+   "label": "Users",
+   "min": 0,
+   "max": 25000
+  },
+  "params": [
+   {
+    "id": "inflow",
+    "label": "New per month",
+    "min": 400,
+    "max": 1000,
+    "step": 100,
+    "value": 800,
+    "unit": " users"
+   },
+   {
+    "id": "churn",
+    "label": "Lost per month",
+    "min": 4,
+    "max": 10,
+    "step": 1,
+    "value": 5,
+    "unit": "%"
+   }
+  ],
+  "model": {
+   "steps": 60,
+   "init": {
+    "u": 10000
+   },
+   "next": {
+    "u": "u + inflow - u*churn/100"
+   }
+  },
+  "series": [
+   {
+    "name": "Users",
+    "expr": "u",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "y": "inflow/(churn/100)",
+    "text": "Losses catch up"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Where it stops",
+    "expr": "inflow/(churn/100)",
+    "unit": " users",
+    "digits": 0
+   },
+   {
+    "label": "Month 60",
+    "expr": "u",
+    "unit": " users",
+    "digits": 0
+   }
+  ]
+ }
+}

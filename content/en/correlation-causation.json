@@ -1,0 +1,204 @@
+{
+ "id": "correlation-causation",
+ "name": "Correlation vs Causation",
+ "en": "相关不等于因果",
+ "discipline": "math",
+ "one_line": "Two things showing up together doesn't mean one of them caused the other.",
+ "story": "John Snow investigates cholera on Broad Street in London, asking door to door about water and hunting for exceptions; on September 8 the pump handle is removed",
+ "shallow": {
+  "scene": "At the end of August 1854, around Broad Street in Soho, London, more than five hundred people died of cholera in ten days. Most doctors at the time believed disease was caused by foul air. John Snow went door to door asking where the dead had gotten their drinking water, and found that their homes clustered around the Broad Street water pump. But this was only a correlation: people who lived near the pump also breathed the same air.\n\nSo he went looking for exceptions. Workers at the brewery on the street didn't drink the pump water, and almost none of them fell ill. A woman far away in Hampstead, who had water from the Broad Street well brought to her every day, caught the disease and died. People breathing the same air stayed well, and someone far away who drank the pump water died. The air couldn't explain that; the water could.\n\nOn September 7 he presented his case to local officials, and the next day the pump's handle was removed. By then the outbreak was already dying down, so \"we took it off and it got better\" on its own couldn't prove that the water was the source of the disease.",
+  "plain": "Suppose a city's fire records show that the more firefighters arrive at a fire, the more houses burn down. Someone proposes, on that basis, sending fewer people to cut the losses. But two things rising and falling together in a table is only a correlation, and correlation is not causation. The number of firefighters is set by the dispatch center based on how big the fire is: the bigger the fire, the more people are sent, and the more houses burn down. It's the size of the fire pushing both numbers up at once. Actually sending fewer people because of the table would only make the fire burn longer."
+ },
+ "deep": {
+  "mechanism": "### One cause can push up two things at once\n\nYou run a survey (the numbers are made up): people who sleep with their shoes on more often wake up with a headache. Among those who sleep in their shoes, 90% drank too much the night before; among those who sleep barefoot, only 10% did. Of those who drank too much, 80% get a headache; of those who didn't, 20%. Headaches in the shoes group are 72% from the drinkers (90% times 80%) plus 2% from the others, 74% in all; in the barefoot group it's the reverse, 8% plus 18%, 26% in all. The headaches come from the drink. Tell everyone to take off their shoes, and there won't be any fewer headaches.\n\n### The arrow can also point backward\n\nDistricts with more police also have more crime. The department sends officers to whichever district has more crime: the crime comes first, the police after. Pull out the extra officers, and there won't be less crime because of it.\n\n### Drawing lots spreads other causes evenly; splitting into layers holds them fixed\n\nSuppose half of a whole group of volunteers drank too much. Have them toss a coin each night to decide whether to sleep in their shoes. The coin doesn't care who's been drinking, so the share of drinkers in the shoes group goes from 90% to half, and the barefoot group is half too. Both groups get headaches 50% of the time, and the gap goes from 48 percentage points (74% minus 26%) to 0.\n\nWhen you can't draw lots, you can hold the suspected shared cause fixed and compare only among people for whom it's the same. Look only at those who drank too much, and 80% of both the shoe sleepers and the barefoot sleepers get headaches; look only at those who didn't, and it's 20% for both. With no difference within the same layer, the shoes are off the hook.",
+  "origin": "Karl Pearson developed modern correlation analysis in the 1890s, and Ronald Fisher set out the design of randomized experiments systematically in the 1920s and 1930s. In 1948 Britain's Medical Research Council published its trial of streptomycin for treating tuberculosis, seen as a milestone of the modern randomized controlled trial.",
+  "limits": "Where you can't draw lots, you have to find groups that have already been sorted for you. In 1854, the water pipes of two water companies in South London crisscrossed the same streets, and which company's water each home used had been decided by landlords or residents back when the two companies were competing for customers. When Snow looked into it, he could see no difference between the houses or the residents on the two sides; it was as if someone had drawn lots for him. The difference between the two companies was their water source: one took its water from the Thames downstream of the sewage outlets, the other upstream. In the first seven weeks of the outbreak, homes using the downstream water had 315 deaths per 10,000 houses, while those using the upstream water had only 37.\n\nA conclusion from drawing lots also only covers the people in that trial. Using \"correlation is not causation\" to throw out all evidence is a misuse: when the evidence is incomplete, keep looking."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "You run an online shop and notice that the number of items people \"save to favorites\" on Monday morning always predicts that weekend's sales. Saving items doesn't bring in sales by itself; it's just the earlier footprint of the same people who want to buy. You use this number to schedule customer service shifts for the weekend."
+   },
+   {
+    "use": "explore",
+    "text": "When you come across a surprising correlation, first write down a few possible chains: what drives what, whether there's one shared cause, whether it could just be chance. Whatever evidence each chain needs to rule it out is what to go looking for next."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Medicine",
+    "title": "Women on hormones were healthier to begin with",
+    "text": "In the 1990s, several observational studies found that women past menopause who took hormones had less heart disease, so doctors recommended hormones to protect the heart. In 2002, the US Women's Health Initiative split women at random into a hormone group and a placebo group, and the trial was stopped partway: the hormone group had more breast cancer, and even slightly more heart disease. The researchers' later explanation was that the women who had chosen to take hormones back then were already more careful about their health and saw doctors more often."
+   },
+   {
+    "field": "Work",
+    "title": "The project teams with more meetings",
+    "text": "You go through last year's records for each project team: teams that held more meetings also had more bugs. Someone proposes fewer meetings, to free up time for fixing code. You split the teams into three tiers by headcount and compare only within the same tier: teams with more meetings and teams with fewer have about the same number of bugs."
+   },
+   {
+    "field": "Investing",
+    "title": "Cafeteria visits and the share price",
+    "text": "You plot your company's yearly cafeteria meal count and its share price over ten years on one chart. Both lines climb steadily and almost overlap. When you switch to looking at each year's rise or fall compared with the year before, the ups and downs of the two columns no longer match. In your weekly report you write just one line: both lines are rising along with the size of the company, and you don't use the meal count to estimate the share price."
+   }
+  ],
+  "ask": [
+   "Who put people or places into the group that \"has it,\" and on what basis? Go through the list and the rules for how groups were formed.",
+   "Has the thing I want to change actually been changed by anyone in the data? Who changed it?",
+   "If drawing lots isn't possible, is there a group of people in similar circumstances who ended up on different sides by chance, whom I can compare?"
+  ],
+  "with": [
+   {
+    "id": "avoid-ruin",
+    "sees": "Someone finds that people who eat more of a common food additive have more of a certain cancer. No experiment has been done, and the confounding factors can't be sorted out. Going by correlation is not causation, this data can't prove the additive causes cancer, and a controlled study is needed. Avoiding ruin takes the opposite view: once the harm is done it can't be undone, so stop using it even without full certainty, and keep the research going. Where the consequences can't be undone, stop using it first; where they're small and can be reversed, wait for the experiment's results before acting."
+   },
+   {
+    "id": "linear-regression",
+    "sees": "Using data from 30 housing complexes, you fit a formula for how much more homes cost for each extra point of green space. Linear regression puts floor area and distance to the subway in too, and reads the difference between complexes where those are all the same. Correlation versus causation asks about what was left out: did developers put the plots with more green space in better locations? Without that in the formula, its effect gets credited to the green space. Go and check how the plots were allotted."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A community center has 40 places for free home meal delivery. 100 elderly people sign up, and the staff draw lots to decide who gets them. In the end, 10 of those drawn never use it. A year later you have everyone's hospital records and want to know whether \"getting a place\" lowered the rate of hospital stays.",
+    "question": "Which comparison best answers this question?",
+    "explain": "Drawing lots means the group that was drawn and the group that wasn't had no systematic difference at the start. Only by comparing by the original groups, counting the 10 who didn't use it, does that fairness hold.",
+    "options": [
+     {
+      "text": "Compare the hospital stay rates of the 30 who used the meal delivery and the other 70.",
+      "correct": false,
+      "feedback": "The people who used it chose to, and may already have been more careful about diet and health. Compared with everyone else, these are no longer two groups split by drawing lots."
+     },
+     {
+      "text": "Compare the number of hospital stays of the 30 who used the meal delivery in the year before and the year after it started.",
+      "correct": false,
+      "feedback": "A before-and-after comparison has no control group, and that year's flu, weather and getting older all get mixed in."
+     },
+     {
+      "text": "Compare the hospital stay rates of the 40 who were drawn and the 60 who weren't, whether or not they used it.",
+      "correct": true,
+      "feedback": "Comparing by the result of the draw, the two groups had no systematic difference at the start. Those who didn't use it are counted too, because when a scheme of places is actually run, some people will always not use it."
+     },
+     {
+      "text": "Leave out the 10 who were drawn but didn't use it, and compare the remaining 30 with the 60 who weren't drawn.",
+      "correct": false,
+      "feedback": "Leaving out those who didn't use it filters people by what they did afterward, so the people left in the two groups are no longer alike."
+     }
+    ]
+   },
+   {
+    "stem": "A claim is going around a school: students who spend longer on a study app get worse grades, and some parents want the school to stop using it. The academic affairs teacher goes through the app's records and finds that for many students, time spent on the app rose sharply in the two weeks after their grades dropped on a monthly exam.",
+    "question": "What do these records mean for the claim that \"the app drags grades down\"?",
+    "explain": "Time on the app rose only after grades dropped, which shows that at least in part, the bad grades came first and parents then had their children use it more. These records give no evidence that the app drags grades down, and no evidence that it helps either.",
+    "options": [
+     {
+      "text": "At least in part, grades dropped first and parents then added app time; these records can't prove the app drags grades down.",
+      "correct": true,
+      "feedback": "Time on the app rose only after grades dropped, so at least part of the arrow points the other way."
+     },
+     {
+      "text": "Students with worse grades use it longer, which shows the app drags grades down.",
+      "correct": false,
+      "feedback": "The order in the records is grades dropping first and time on the app rising after; this claim reads the order backward."
+     },
+     {
+      "text": "The claim doesn't hold up, which shows the app actually helps grades.",
+      "correct": false,
+      "feedback": "The records don't show the app making grades better; the order only shows that app time followed grades, and whether it helps is still blank."
+     },
+     {
+      "text": "Wait until every student in the school has used it for a full year, then see whether the correlation gets stronger.",
+      "correct": false,
+      "feedback": "Another year of waiting still gives the same link between the two; the question of what came first doesn't go away because the sample gets bigger."
+     }
+    ]
+   },
+   {
+    "stem": "Elderly people who keep dogs go to the hospital fewer times a year on average. An insurance company, the neighborhood office and the health department have all noticed this data, and each has plans for it.",
+    "question": "Which of these uses doesn't need you first to work out whether keeping a dog really makes people get sick less?",
+    "explain": "For the insurance company, it's enough if its scoring sheet estimates accurately on new data: as long as dog owners keep having lower claims, that's all it needs. Handing out dogs, putting up publicity and writing it into guidelines all count on keeping a dog to change how often people see a doctor, so whether keeping a dog is the cause decides whether they succeed.",
+    "options": [
+     {
+      "text": "A community hospital puts up a notice saying \"keeping a dog means fewer doctor visits.\"",
+      "correct": false,
+      "feedback": "This line claims keeping a dog brings fewer doctor visits; the data only shows the two going together and doesn't establish that cause."
+     },
+     {
+      "text": "The neighborhood office gives a dog to every elderly person living alone, expecting doctor visits across the district to fall by the same proportion.",
+      "correct": false,
+      "feedback": "Handing out dogs means stepping in to change who keeps a dog. Elderly dog owners may see doctors less because they were more active to begin with, so handing out dogs may not have the same effect."
+     },
+     {
+      "text": "The health department adds keeping a dog to the recommendations in its guidelines for preventing chronic disease.",
+      "correct": false,
+      "feedback": "Putting it in the guidelines asks people to keep a dog for their health, which assumes keeping a dog really is the cause; this data doesn't prove that."
+     },
+     {
+      "text": "The insurance company uses \"keeps a dog or not\" as a scoring item to estimate next year's claims for each group.",
+      "correct": true,
+      "feedback": "The score is only used to estimate. Dog owners have lower claims in the data, and as long as that carries on in new data, the scoring sheet works."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "More crews and more damage come from one fire",
+  "caption": "The two rise and fall together in the table because both follow the size of the fire. Send fewer people because of the table, and the fire only burns longer.",
+  "nodes": [
+   {
+    "id": "fire",
+    "label": "Big fire",
+    "tone": "accent"
+   },
+   {
+    "id": "crew",
+    "label": "More firefighters",
+    "sub": "Dispatch sizes up fire"
+   },
+   {
+    "id": "loss",
+    "label": "More houses lost"
+   },
+   {
+    "id": "table",
+    "label": "Rise and fall together",
+    "tone": "muted"
+   },
+   {
+    "id": "cut",
+    "label": "Send fewer?",
+    "sub": "Fire burns longer",
+    "tone": "warn"
+   }
+  ],
+  "edges": [
+   {
+    "from": "fire",
+    "to": "crew"
+   },
+   {
+    "from": "fire",
+    "to": "loss"
+   },
+   {
+    "from": "crew",
+    "to": "table",
+    "dashed": true,
+    "tone": "muted"
+   },
+   {
+    "from": "loss",
+    "to": "table",
+    "dashed": true,
+    "tone": "muted"
+   },
+   {
+    "from": "table",
+    "to": "cut",
+    "tone": "warn"
+   }
+  ]
+ }
+}

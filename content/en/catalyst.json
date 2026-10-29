@@ -1,0 +1,206 @@
+{
+ "id": "catalyst",
+ "name": "Catalyst",
+ "en": "催化剂",
+ "discipline": "physics",
+ "one_line": "It doesn't change where things end up, only gets them there faster, and works again and again.",
+ "story": "In September, BASF's ammonia plant at Oppau starts up; Bosch's team scales up Haber's method, using the same batch of iron-based catalyst over and over",
+ "shallow": {
+  "scene": "Most of the nitrogen fertilizer spread on fields starts out as ammonia made in factories. Nearly 80% of the air is nitrogen gas, but the two atoms in a nitrogen molecule hold on to each other so tightly that crops can't use it. Getting nitrogen and hydrogen to join straight into ammonia is so slow it hardly moves at all.\n\nIn September 1913, the German company BASF started up its ammonia plant at Oppau. Carl Bosch had led a team that moved the method Haber had made work in the lab into industrial equipment. Nitrogen and hydrogen, at high temperature and high pressure, flowed over pellets of a catalyst made mainly of iron, and what came out was ammonia. The ammonia was separated out, and the gas that hadn't reacted went round again.\n\nThe plant had to keep adding nitrogen and hydrogen, because they turned into ammonia and were shipped away. The iron didn't need topping up as output grew: the same batch of iron took in each new lot of gas, time after time.",
+  "plain": "You may have done this in middle-school chemistry: a glass of hydrogen peroxide left standing barely bubbles, but sprinkle in a small spoonful of black manganese dioxide powder and foam surges up at once; that is oxygen being given off. When the reaction stops, filter the powder out and weigh it: not a bit of the spoonful is gone, and it can go into the next glass. The powder is the catalyst here: it opens a different route for the hydrogen peroxide to break down, and comes back to its original state every time. The glass without powder also breaks down into water and oxygen, just much more slowly, and what is left at the end is the same."
+ },
+ "deep": {
+  "mechanism": "### On the new route, the hump at every step is much lower\n\nFor a reaction to happen, the molecules first have to be twisted into an awkward in-between shape, and this step is like getting over a hump. The higher the hump, the fewer molecules at a given temperature build up enough energy to get over it, and the slower the reaction. Without iron, a nitrogen molecule has to come apart in one go; the hump is too high, and almost no molecules get over it. The iron surface first lets a nitrogen molecule stick to it, grips both ends and pulls it apart into two nitrogen atoms, then lets them join with hydrogen one at a time. The route is broken into several steps, the hump at each step is much lower, and many more molecules get over. Manganese dioxide does the same thing for hydrogen peroxide.\n\n### After each round, the surface is free for the next batch\n\nA spot on the iron surface that can grip a nitrogen molecule finishes one round when it grips a nitrogen molecule and lets go of ammonia; then it is free to pull apart the next one. Suppose each such spot can help a million molecules become ammonia before it wears out: a thousand spots can then help a billion molecules. Change the million to ten, and the same thousand spots can handle only ten thousand molecules. They would soon need replacing, more like a raw material used up along with output.\n\n### Both directions speed up together, and the end point stays put\n\nThe hump works in both directions: raw material has to get over it to become product, and product has to get over it to go back to raw material, so when the hump is lowered, both directions speed up together. Take a reversible reaction where, without a catalyst, the forward rate constant $k_+$ is 1 and the backward one $k_-$ is 0.25; the bigger a rate constant, the faster that direction goes. Write $P$ for the product and $A$ for the raw material. In each unit of time, $k_+A$ goes forward and $k_-P$ comes back, and the reaction stops when the two are equal:\n\n$$\\frac{P}{A}=\\frac{k_+}{k_-}=\\frac{1}{0.25}=4$$\n\nThat is, there is 4 times as much product as raw material, so product makes up 80%. A catalyst multiplies both constants by 100, making them 100 and 25; the ratio is still 4, and the stopping point is still 80%. The time it takes to reach the stopping point shrinks to a hundredth, but where it stops doesn't move.\n\nTo move the stopping point, you have to change the conditions; a catalyst can't do it. For example, if the product is taken away as soon as it forms, there is less product to go back, and the reaction keeps going toward the product. The ammonia plant separating out the ammonia and sending the rest of the gas back to react again relies on exactly this.",
+  "origin": "In 1835 the Swedish chemist Berzelius grouped a kind of event together: some substances, just by being there, help a reaction happen, yet in the end not a bit of them is used up. He gave this the name catalysis. Platinum making hydrogen react with oxygen is the classic evidence. Later the Haber–Bosch ammonia process showed what catalysis is worth on an industrial scale.",
+  "limits": "A catalyst shows its value most in the same production run going round thousands upon thousands of times. It can also stop working: sulfur compounds in the feed gas take up the spots on the iron surface and poison the iron, so the gas has to be cleaned first. When analysts call a piece of good news a \"catalyst\" for a stock, they are borrowing only the sense of speeding things up. Once the announcement is out it's spent, and there's no next round in which it can work again."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "Estimate the payoff of bringing in an automation tool: it speeds up one step that already exists in the process, so first measure how long that step takes now, then work out how much earlier delivery comes once it is shorter."
+   },
+   {
+    "use": "design",
+    "text": "When a plant needs a slow reaction to go faster, first look for a catalyst that fits, and only then consider raising heat and pressure: more heat and pressure cost extra energy for every batch, while one load of catalyst serves many batches."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Engineering and environment",
+    "title": "A platinum and palladium coating",
+    "text": "Most new American cars of the 1975 model year had a converter under the exhaust pipe with a coating of platinum and palladium, and gas stations started selling unleaded gasoline made for it. Carbon monoxide and unburned hydrocarbons in the exhaust flow over the coating and turn into carbon dioxide and water. The coating stays where it is and goes on to treat the exhaust that flows in after."
+   },
+   {
+    "field": "Biology",
+    "title": "Chewed rice turns sweet",
+    "text": "Keep a mouthful of white rice in your mouth and chew it slowly, and after a minute or two you taste a hint of sweetness. The amylase in your saliva cuts the starch in the rice into maltose and other smaller sugars; after each cut it moves on to make the next. Until you swallow, that bit of enzyme keeps on cutting."
+   },
+   {
+    "field": "Working together",
+    "title": "Translating the factory's words for the lab",
+    "text": "You work in a university office that turns research into products. A factory wants a more wear-resistant coating, and a materials lab happens to have this kind of technology. Both sides are interested, but their meetings never meet in the middle: the factory talks about how many cycles of wear, the lab about crystal structure. You translate the factory's targets one by one into the lab's test conditions and set up a side-by-side test. Both sides see the data on the spot and sign a trial. You keep the translation table, and when the next factory and lab come along, you go straight into the meeting with it."
+   }
+  ],
+  "ask": [
+   "What is slowing this down: which specific step can I name, waiting for a person, a bit of paperwork, or a conversation?",
+   "Will the method or the person I'm bringing in still be there, unchanged, after being used once? Do I have to pay again to use it next time?",
+   "With the other inputs about the same, how many times faster does the same thing get done with it than without it?"
+  ],
+  "with": [
+   {
+    "id": "activation-energy",
+    "sees": "Someone at home says they'll read for half an hour every day. Activation energy looks at the start: keep the book by the pillow, read five minutes first, and once you've started it flows. A catalyst looks at the process of each reading session: if reading is slow because every word you look up means getting up for the dictionary, keep one within reach; it gets used every time and never wears out. If you can't take the first step, follow the first approach; if you start every day and still read slowly, follow the second."
+   },
+   {
+    "id": "bottlenecks",
+    "sees": "Shipping from a warehouse takes three steps: sorting, packing and loading, and packing is the slowest. Someone suggests adding an automatic machine to sorting, the busiest area. Bottlenecks would say the output of the whole line is limited by packing; faster sorting only piles up more goods in front of packing. Only a catalyst-style fix at the packing step will cut the total time to ship."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "In a reactor at a flavorings plant, an acid and an alcohol are going through a reversible reaction that makes an ester. With nothing else added, the reaction stops after about eight hours with ester at two-thirds, and waiting longer changes nothing. After a little sulfuric acid is added, it stops at the same place in about an hour. The plant manager wants to get the ester share up to 90%.",
+    "question": "Which of these would push the final ester share above two-thirds?",
+    "explain": "A catalyst speeds up both the forward and backward directions; where the reaction stops is set by the conditions in the reactor. Only removing the water as it forms changes the conditions, so the reaction goes on to make more ester.",
+    "options": [
+     {
+      "text": "Remove the water from the reactor as it forms during the reaction.",
+      "correct": true,
+      "feedback": "With the water constantly removed, the reaction keeps going toward making ester, and the share can pass the old stopping point."
+     },
+     {
+      "text": "Double both the acid and the alcohol in the reactor.",
+      "correct": false,
+      "feedback": "When both raw materials are doubled in the same proportion, the ester share at the stopping point doesn't change; there is just more of everything."
+     },
+     {
+      "text": "Extend the reaction time to twenty-four hours.",
+      "correct": false,
+      "feedback": "The reaction stopped long ago; waiting another dozen or so hours leaves the ester share where it was."
+     },
+     {
+      "text": "Switch to a more strongly acidic agent to speed things up.",
+      "correct": false,
+      "feedback": "A stronger agent only gets the reaction to the stopping point sooner; the share at the stopping point doesn't move, and in this reactor it already gets there in an hour."
+     }
+    ]
+   },
+   {
+    "stem": "In a lab, substances A and B react to make C. There is plenty of A, but only ten grams of B. The reaction is slow: at the current rate, the ten grams of B will take three days to use up. The group finds a powder that helps this reaction along and adds a little.",
+    "question": "When the reaction is all over, which is most likely?",
+    "explain": "The powder only speeds up the conversion. How much C can be made is decided by how much B there is: once the ten grams of B are used up, C has reached its limit. All that changes is how long it takes to use it up.",
+    "options": [
+     {
+      "text": "B is used up more slowly, because the powder ties up some of the B.",
+      "correct": false,
+      "feedback": "The powder returns to its original state every round and doesn't tie up B; the conversion can only get faster."
+     },
+     {
+      "text": "B is used up quickly, and the amount of C is the same as without the powder.",
+      "correct": true,
+      "feedback": "All the C comes from those ten grams of B; the time is shorter, and the total is unchanged."
+     },
+     {
+      "text": "B is used up faster, and there is quite a bit more C than before too.",
+      "correct": false,
+      "feedback": "All the C comes from those ten grams of B; a faster reaction doesn't make more B."
+     },
+     {
+      "text": "B takes just as long to use up; the powder just gets mixed into the product.",
+      "correct": false,
+      "feedback": "The new route makes the conversion faster, so the three days will shrink; the powder returns to its original state every round and doesn't end up in the product."
+     }
+    ]
+   },
+   {
+    "stem": "A syrup plant wants to turn an unwanted sugar in its sugar solution into the sugar it needs, and is comparing two methods. A: add a dose of acid to each batch of solution, then neutralize it into salt and drain it away. B: run the solution through a column packed with an enzyme; the enzyme stays in the column, and the column is serviced monthly, on a schedule that has nothing to do with output. Next year the plant's output is set to double.",
+    "question": "Once output doubles, which cost will rise noticeably?",
+    "explain": "A's acid is used up dose by dose, so its cost follows output. B's enzyme returns to its original state every round; when output doubles, servicing still runs on the fixed schedule.",
+    "options": [
+     {
+      "text": "B's enzyme column: when output doubles, it has to be replaced twice as often.",
+      "correct": false,
+      "feedback": "The enzyme isn't used up with output, and the servicing schedule has nothing to do with output, so this cost doesn't rise with it."
+     },
+     {
+      "text": "Neither cost changes much.",
+      "correct": false,
+      "feedback": "The acid is drained away after use; with twice as many batches, twice as much has to be bought."
+     },
+     {
+      "text": "A's acid: every batch of solution needs a new dose.",
+      "correct": true,
+      "feedback": "One dose of acid serves only one batch; with twice as many batches, twice as much has to be bought."
+     },
+     {
+      "text": "Both costs rise in proportion to output.",
+      "correct": false,
+      "feedback": "The enzyme column isn't used up one dose per batch, so B's cost doesn't rise in proportion."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "The curve gets steeper; it still stops at 80%",
+  "caption": "The vertical axis is product as a share of raw material plus product. Drag \"Speed-up\": the catalyst line gets steeper, but both lines end on the 80% line.",
+  "x": {
+   "label": "Time",
+   "min": 0,
+   "max": 4
+  },
+  "y": {
+   "label": "Product share",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "c",
+    "label": "Speed-up",
+    "min": 1,
+    "max": 100,
+    "step": 1,
+    "value": 10
+   }
+  ],
+  "series": [
+   {
+    "name": "No catalyst",
+    "expr": "80*(1-exp(-1.25*x))",
+    "tone": "ink"
+   },
+   {
+    "name": "With catalyst",
+    "expr": "80*(1-exp(-1.25*c*x))",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "y": 80,
+    "text": "Stops at 80% product"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Forward rate now",
+    "expr": "c",
+    "digits": 0
+   },
+   {
+    "label": "Backward rate now",
+    "expr": "0.25*c",
+    "digits": 2
+   },
+   {
+    "label": "Product at stop",
+    "expr": "100*c/(c+0.25*c)",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

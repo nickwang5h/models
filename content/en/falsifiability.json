@@ -1,0 +1,185 @@
+{
+ "id": "falsifiability",
+ "name": "Falsifiability",
+ "en": "可证伪性",
+ "discipline": "thinking",
+ "one_line": "If you can't say what would prove you wrong, nobody can test your claim.",
+ "story": "On May 29 Eddington watches an eclipse on Príncipe; in November the starlight's bending is announced, closer to Einstein's prediction of about twice Newton's value",
+ "shallow": {
+  "scene": "On May 29, 1919, Arthur Eddington was on the island of Príncipe, off the west coast of Africa, waiting for the moon to cover the sun. As the sky went dark, the stars near the sun came out, and his team hurried to photograph their positions. Later they compared these with photos of the same stars in the ordinary night sky to see how far they had moved. Einstein's theory predicted that starlight passing the sun would be bent, by about twice the angle worked out from Newton's gravity. Whichever figure the photos came closer to, the other side would have to admit defeat. In November that year the results were announced: they were closer to Einstein's figure.",
+  "plain": "A friend says, \"My luck's about to turn.\" Find ten yuan on the street and he was right; lose your wallet and he can say the lost money kept worse luck away. No result can prove this sentence wrong. That is what it means to lack falsifiability, and it also means you can't do anything with it. Change it to \"I'll get a call for a job interview before Friday,\" and if there's no call by Friday night, he was wrong."
+ },
+ "deep": {
+  "mechanism": "### The more results a claim rules out, the easier it is to refute\n\nA friend says, \"It will rain here this month.\" That rules out almost nothing; it always rains a bit at some point in a month. Change it to \"It will rain on the first Wednesday of next month,\" and one sunny day refutes him. Change it again to \"More than ten millimeters of rain will fall that day before 2 p.m.,\" and even a light shower refutes him. Each time the claim is tightened, one more kind of result could prove him wrong. Only when a claim could so easily be wrong and still comes true do you have reason to listen to him a bit more.\n\n### One counterexample outweighs a hundred confirmations\n\nCounting a hundred white swans does not prove that all swans are white; a single black swan can overturn it. In 1697, the Dutch sea captain Willem de Vlamingh saw black swans on a river in Western Australia, and a saying Europeans had used for a very long time was finished.\n\n### When a prediction fails, first find which link broke\n\nA prediction comes from three things together: the theory, the assumptions, and the measurement. If any one is wrong, the prediction fails. If a cake doesn't rise, the recipe might be bad, or the oven might read 180 degrees when it's really only 150. You first check the oven's real temperature with a thermometer and bake it again; only if it still fails do you change the recipe.",
+  "origin": "In 1934, Karl Popper published *Logik der Forschung* (The Logic of Research) in Vienna. In it he proposed falsifiability as the line between empirical science and non-science. The English translation of 1959 was titled *The Logic of Scientific Discovery*. He later recalled that Eddington's eclipse observations of 1919 showed him that Einstein's prediction could be judged wrong, while some theories popular around him could be made to fit whatever happened. Historians since then have argued over how Eddington chose which data to keep and which to drop.",
+  "limits": "Claims about facts, such as whether a drug works or whether a process got faster, are what falsifiability tests best. \"People ought to be honest\" is a value judgment, and the real world can't rule on it. If you say a coin has a fifty percent chance of landing heads, one toss can't refute it, heads or tails. Popper used falsifiability to place psychoanalysis outside science, and later readers often took this to mean \"what can't be falsified is nonsense.\" He himself only said it wasn't empirical science."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Set a goal for a new shop's trial run: turn \"let's see how people respond\" into \"within three months, weekday lunches are at least 20% full; if not, we close.\" When the time is up, count the seats and you have the answer."
+   },
+   {
+    "use": "act",
+    "text": "When a salesperson says their software will make your team much more efficient, first ask, \"After how long, and which number not going up would mean it doesn't work?\" If they can't say, don't sign yet."
+   },
+   {
+    "use": "communicate",
+    "text": "In your weekly report, replace \"going well\" with \"the interface passes the load test by Friday, or we push back the date.\" Your boss knows what you're betting on without having to ask."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Medicine",
+    "title": "Drinking the broth",
+    "text": "In 1984, the Australian doctor Barry Marshall drank a broth of cultured Helicobacter pylori bacteria. His prediction was clear: if the bacteria really caused gastritis, he should get sick. A few days later he had symptoms of gastritis, the bacteria were found in samples taken through an endoscope, and after treatment with antibiotics he recovered."
+   },
+   {
+    "field": "Technology",
+    "title": "Write down first what counts as wrong",
+    "text": "You suspect a web page sometimes shows old prices because the cache isn't being cleared in time. Before touching anything, you write one line: make every request for this page skip the cache, and the old prices should disappear. You skip the cache and the old prices still show up, so you cross that idea off and go check how prices are written into the database."
+   },
+   {
+    "field": "Personal life",
+    "title": "A small experiment on yourself",
+    "text": "You think not looking at your phone before bed will help you sleep better. First you write in a notebook: two weeks in a row of no phone, and on average I must fall asleep at least twenty minutes earlier than before; otherwise it doesn't count as working. After two weeks your fitness band shows you fall asleep only four minutes earlier, so you cross it off your bedtime list and try something else."
+   }
+  ],
+  "ask": [
+   "Which results that could be observed does this statement rule out? If it rules out too few, it says nothing.",
+   "Which specific result would make me take it back? Did I set that result before looking at the data?",
+   "When a prediction fails, which link do I check first: the theory, the assumptions, or the measurement?"
+  ],
+  "with": [
+   {
+    "id": "bayesian-updating",
+    "sees": "Uranus's orbit never quite matched what Newton's gravity predicted. By the rule \"one failure and you take it back,\" Newton's theory should have been retired. By Bayesian updating, when a theory has passed test after test for more than a hundred years, the first thing to suspect is something not yet counted. In 1846, Urbain Le Verrier used this to work out where an unknown planet should be, and on the night Johann Galle at the Berlin Observatory got his letter, he found Neptune close to that spot. A new claim that hasn't been tested much should be taken back after one failure; an old theory that has passed for years calls for checking the measurements and assumptions first, before deciding whether to take it back."
+   },
+   {
+    "id": "probabilistic-thinking",
+    "sees": "A doctor says a drug works for seven in ten patients. One patient takes it and doesn't get better. Has the claim been refuted? Looking at one case only, falsifiability would say the claim rules out no result, so nobody can refute it. Probabilistic thinking says this outcome was always part of the prediction; what matters is whether, across a group of patients, the share who get better is clearly below seven in ten."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "At the weekly meeting, the product manager says, \"After this redesign, users will like our app more.\" The team wants to turn this into a claim that can be tested before deciding whether to keep the redesign.",
+    "question": "Which of these rewrites makes the claim testable?",
+    "explain": "The right version names what it is compared with, when to look, and what counts as failing, so when the time is up the data shows whether it was right. The sign-up completion rate is only a measurable stand-in for \"liking,\" but it was agreed in advance, so nobody can pick a different one afterward. The other options either have no line for failure or just gather more opinions.",
+    "options": [
+     {
+      "text": "Change it to \"The redesign will clearly improve the user experience,\" then ask everyone at the meeting to say how it felt to use.",
+      "correct": false,
+      "feedback": "\"Clearly\" and \"experience\" have no boundaries, and no feeling anyone shares would make the claim admit it was wrong."
+     },
+     {
+      "text": "Change it to \"In the first month after launch, new users' sign-up completion rate is higher than under the old version in the same period; if it isn't higher, we roll back the redesign.\"",
+      "correct": true,
+      "feedback": "What it's compared with, the time and the failure condition are all spelled out, so a look at the data when the time is up tells you whether to roll back. \"Liking\" is swapped for the sign-up completion rate to have a number that can be measured and was set in advance, not because the two are the same thing."
+     },
+     {
+      "text": "Change it to \"The redesign will make users like it more, but it works sooner for some users and later for others,\" then watch for a while.",
+      "correct": false,
+      "feedback": "With \"sooner for some and later for others\" added, any time it hasn't worked yet can be explained away, so the claim becomes even harder to prove wrong."
+     },
+     {
+      "text": "First collect thirty user comments, then count whether most of them praise the redesign.",
+      "correct": false,
+      "feedback": "Collecting comments only looks for words of support. Nothing set in advance says which comments would count as failure."
+     }
+    ]
+   },
+   {
+    "stem": "In a wellness class, the teacher says, \"If you follow my method, those it works for will get better. Those who don't get better weren't sincere enough and didn't do the method properly.\" A student asks how anyone could show that the method doesn't work. He has no answer.",
+    "question": "What is the biggest problem with this claim?",
+    "explain": "If people get better, the method is right; if they don't, the method is still right. No result can prove it wrong, so the real world can't test it.",
+    "options": [
+     {
+      "text": "Wellness has no single standard, so it shouldn't be tested against facts.",
+      "correct": false,
+      "feedback": "Whether people get better is a fact you can observe, and it can be used to test the method. The problem is that this claim won't accept such a test."
+     },
+     {
+      "text": "The class has too few students as a sample; collect several more groups before drawing a conclusion.",
+      "correct": false,
+      "feedback": "A bigger sample won't help: whatever the results, the claim keeps a way out to explain them."
+     },
+     {
+      "text": "It makes sense whether people get better or not, so no result can make it admit it's wrong.",
+      "correct": true,
+      "feedback": "A statement that can explain any result predicts nothing at all."
+     },
+     {
+      "text": "Those who didn't get better are really only a few, and a few exceptions aren't enough to overturn the whole method.",
+      "correct": false,
+      "feedback": "The question gives no proportions. The key point is that people who didn't get better are also said to \"fit the claim.\""
+     }
+    ]
+   },
+   {
+    "stem": "An agricultural technician says, \"Every field that gets this new fertilizer will yield more.\" He wants to put this claim through the strictest possible test.",
+    "question": "Which of these best tests his claim?",
+    "explain": "A claim about \"every\" case fears a counterexample, and a higher yield only shows up against a comparison. Testing on the least favorable fields, with half of each field fertilized and half not, gives the best chance of meeting a counterexample and also tells apart the effect of the fertilizer from the field itself. Another higher yield on a good field only adds one more supporting example.",
+    "options": [
+     {
+      "text": "Pick a few dry, poor fields, fertilize half of each and leave the other half alone, then compare the harvests of the two halves.",
+      "correct": true,
+      "feedback": "The worst conditions plus a comparison within the same field: if the fertilized half of even one field doesn't yield more, \"every\" is refuted. Only if they all yield more has the claim passed a hard test."
+     },
+     {
+      "text": "Test it on the most fertile, best-watered fields, so the trial finishes smoothly without surprises.",
+      "correct": false,
+      "feedback": "A higher yield on the fields most likely to yield more takes almost no risk, so it is the weakest test."
+     },
+     {
+      "text": "Visit farmers who have used the fertilizer and ask each of them whether they are happy with the results.",
+      "correct": false,
+      "feedback": "Being happy is not the same as a higher yield, and the farmers willing to talk are mostly the ones who got good results."
+     },
+     {
+      "text": "Find a few dozen more fields whose yields went up after fertilizing, and compile their yields per unit of land into a record.",
+      "correct": false,
+      "feedback": "Supporting examples never run out, and one more field with a higher yield can't tell you the next one will yield more."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "down",
+  "title": "Firmer claims: easier to refute, worth more if right",
+  "caption": "Each step adds a kind of result that would prove him wrong. The last can be refuted by a light shower; if it still comes true, he's worth listening to.",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "Rain this month",
+    "sub": "Almost unrefutable",
+    "tone": "muted"
+   },
+   {
+    "id": "b",
+    "label": "Rain on 1st Wed",
+    "sub": "One dry day refutes it"
+   },
+   {
+    "id": "c",
+    "label": "Over 10 mm by 2 pm",
+    "sub": "Even a drizzle refutes it",
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b",
+    "label": "Tighten it"
+   },
+   {
+    "from": "b",
+    "to": "c",
+    "label": "Tighten more"
+   }
+  ]
+ }
+}

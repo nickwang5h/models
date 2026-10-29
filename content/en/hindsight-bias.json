@@ -1,0 +1,218 @@
+{
+ "id": "hindsight-bias",
+ "name": "Hindsight Bias",
+ "en": "后见之明",
+ "discipline": "psychology",
+ "one_line": "Once you know how things turned out, you feel you saw it coming all along.",
+ "story": "Around Nixon's visits to China and the Soviet Union, Fischhoff and Beyth have people predict the odds and later recall them (published 1975)",
+ "shallow": {
+  "scene": "When the killer is revealed at the end of a mystery film, plenty of people say, \"I knew it was him.\" Whether that's true can only be checked afterward if you wrote your guess down before the reveal.\n\nIn 1972, when US President Richard Nixon visited Beijing and Moscow, the psychologists Baruch Fischhoff and Ruth Beyth checked exactly this. Before the trips, they asked a group of people to estimate how likely various things were to happen during the visits, such as whether Nixon would meet Mao Zedong. After the visits were over, they asked the same people to recall the numbers they had written, then compared them with the original answer sheets.\n\nFor things that had happened, the numbers people recalled were higher than what they had written; for things that hadn't happened, the recalled numbers were lower. Nobody was lying on purpose. Once they knew the outcome, their memory of how sure they had been moved toward it.",
+  "plain": "On Friday you tell a colleague you're 60% sure the home team will win tomorrow night. The home team loses. On Sunday the colleague asks about it, and you say, \"I had doubts. Forty percent at most.\" You're not lying: the 60% in your head really has turned into 40%, and you didn't even notice. That is hindsight bias: once the outcome is known, it pulls how sure you remember being some way toward it. The trouble comes later. Since you think you saw it right all along, you don't correct yourself, and next time you're just as overconfident. You also blame whoever made the call for \"not seeing something so obvious.\""
+ },
+ "deep": {
+  "mechanism": "### Recalling how sure you were means estimating it again with what you know now\n\nThere is no saved copy of your earlier judgment in your head to pull up. When the colleague asks how sure you were on Friday, you use everything you know now to estimate again \"roughly what I was thinking then.\" The loss is already among the things you know, so the number you come up with leans toward the loss.\n\n### The further you were from the outcome, the further memory drifts\n\nLet $p$ be how sure you wrote down you were (60% is written as 60), and $p'$ the number you remember afterward. Write the outcome as $y=100$ if it happened and $y=0$ if it didn't, and let $a$ be the pull of the outcome, between 0 and 1:\n\n$$p' = p + a(y - p)$$\n\nIn other words, the number you remember moves toward the outcome by a share $a$ of the distance left ($y-p$). Below, $a$ is one third, and the numbers are only an illustration. You wrote 60% and the home team lost: the distance left is 60 points, it moves 20, and you remember 40%. You wrote 60% and the home team won: the distance left is only 40 points, and you remember about 73%. You wrote 20% and they won: the distance left is 80 points, and you remember about 47%, the furthest drift of all. So the times you misjudged most are the easiest to remember afterward as \"I saw it coming.\"\n\n### Even remembering your doubts, the outcome can still seem obvious\n\nHindsight bias also takes a second form. You clearly remember writing that you were 60% sure of a win, yet you feel the loss could have been seen coming. Puzzles work the same way: one look at the answer and you think, \"That's so easy, how did I miss it?\" Once the outcome is settled, the clues that fit it come back to mind one by one: the star striker played injured, and it was an away game. Clues that were just as plain at the time and pointed to a win, such as the other side's goalkeeper being suspended, fade into the background. With only the clues that point to a loss left in view, the loss looks obvious. The first form changes the number you remember; this one changes which clues stand out.",
+  "origin": "In 1975 Fischhoff published a classic study. He had several groups read the same historical account of the war between Britain and the Gurkhas, then told each of some groups a different outcome. Whichever outcome people were told, they rated it as more foreseeable, yet they believed knowing the outcome had hardly affected their judgment.",
+  "limits": "Hindsight bias leads you astray most easily in two situations: judging whether something could have been foreseen at the time, and recalling how sure you yourself were. Warnings that someone clearly raised at the time don't count. Those were evidence already on the table, and if they were ignored, you should ask why. If you count everything that \"looks obvious in hindsight\" as bias, the people who really did fail in their duty can get off with \"who could have known?\""
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "When you read a history of a war, every step seems to lead toward the ending because the book only includes the clues that led there; nobody writes about the roads that went nowhere."
+   },
+   {
+    "use": "communicate",
+    "text": "When telling new colleagues about the company's big change of direction years ago, first make clear which three roads were on the table at the time and who backed each one, then say which one was finally taken."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Law",
+    "title": "Judging after the flood",
+    "text": "In 1995, the psychologists Kim Kamin and Jeffrey Rachlinski had two groups read the same material written as if before the event: should a city government hire someone to guard against flooding at a bridge? In the group judging beforehand, only about a quarter thought the city should hire someone. The other group was told a flood had already happened, and 57% of them decided the city government had been negligent. Even when the researchers clearly warned them in advance not to let the outcome affect their judgment, this share hardly changed."
+   },
+   {
+    "field": "Education",
+    "title": "The argument after the results",
+    "text": "The results of China's national college entrance exam come out. Your daughter gets into the safe school on her list of choices. The reach school she didn't dare put down had a cutoff score this year twenty points lower than usual, and she would have made it. You say, \"I told you that school was worth a shot.\" Your daughter says, \"You told me not to take the risk.\" Both of you remember it clearly, but you remember two different things."
+   },
+   {
+    "field": "Product operations",
+    "title": "After a short video goes viral",
+    "text": "A shopping app you run is suddenly popular thanks to one short video. Weekend traffic shoots to twenty times normal, and the servers go down for four hours. At Monday's review, the boss says, \"The data showed early signs of this kind of growth long ago.\" You pull up last month's capacity plan: it prepared for peaks of three times a normal day, and not one page mentioned short videos as a route for growth. The meeting goes on, and the topic becomes how to leave room in the plan for sources of traffic nobody has seen before."
+   }
+  ],
+  "ask": [
+   "Of the clues that seem obvious to me now, which ones only appeared after the outcome?",
+   "If the result had gone the other way, how would I talk about the same clues that were on the table?",
+   "About the thing I'm about to say \"I knew all along,\" who around me held the opposite view at the time?"
+  ],
+  "with": [
+   {
+    "id": "outcome-bias",
+    "sees": "A truck driver speeds for three months in a row. Nothing happens, and nobody says anything. In the fourth month he hits a guardrail, the company hands him a heavy penalty on the spot, and the notice says \"everyone knows the dangers of speeding.\" Hindsight bias hides in that notice: only after the crash did the company feel the danger was obvious; for three months nobody took it seriously. Outcome bias hides in the fine: the same behavior cost nothing for three months and the most this month, with the amount following the damage to the guardrail. Correct both, and what should be punished is the speeding itself, whether he crashed or not. If the rules already said speeding is punished, add the penalty for the first three months too; if they didn't, write the rule first and go easy this time, because at the time nobody really did take it seriously."
+   },
+   {
+    "id": "probabilistic-thinking",
+    "sees": "A forecaster says \"70% sure\" twenty times. Probabilistic thinking does the sums by counting: only if the thing happened about fourteen times out of twenty does he deserve that 70%. Hindsight bias spoils this, because each time an outcome comes in he remembers his confidence as a different number, \"90%\" or \"50%,\" always matching the outcome, so the count can never be done."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A fund manager looks back at a stock he bet on wrongly last year and wants to know whether his judgment at the time was really way off.",
+    "question": "To answer that, what should he get first?",
+    "explain": "Views written down afterward already have the outcome mixed in. Only the judgment and reasons recorded at the time of buying keep the information he had then.",
+    "options": [
+     {
+      "text": "Ask three colleagues to read all the material now and each write a paragraph of their views.",
+      "correct": false,
+      "feedback": "These views are written after the outcome is known, so the information from back then is already mixed with it."
+     },
+     {
+      "text": "The investment memo written on the day he bought, with his reasons and how sure he was.",
+      "correct": true,
+      "feedback": "These are his own words at the moment of the decision. They show what he knew then and what he ruled out."
+     },
+     {
+      "text": "Go through only the stocks that lost money, and find what they have in common.",
+      "correct": false,
+      "feedback": "Look only at the losers and every clue gets read as a road to losses. Stocks picked with the same judgment that later made money need to be compared too."
+     },
+     {
+      "text": "Have the manager recall what he was thinking at the time and write it up on one page.",
+      "correct": false,
+      "feedback": "Memory itself has been rewritten by the outcome, so what he writes is still the after-the-fact version."
+     }
+    ]
+   },
+   {
+    "stem": "Three years ago, an editor at a publisher reviewed a manuscript. He wasn't sure about it, but in the end he agreed to publish it. The book sold very badly. When a colleague asks about it, he says, \"As soon as I read it I felt it wouldn't sell. Anyone could see that about a book like this.\" He also admits that at the time he really was hesitant.",
+    "question": "Where is the bias in what he says?",
+    "explain": "He remembers that he hesitated, so his memory hasn't changed. What has changed is how obvious he thinks the clues were: he treats the later sales as if they had been on the table at the time.",
+    "options": [
+     {
+      "text": "He saw new evidence, the sales, and updated his view of the manuscript. That's normal learning.",
+      "correct": false,
+      "feedback": "He says \"as soon as I read it I felt,\" which describes the situation back then, not his view now."
+     },
+     {
+      "text": "He has raised his standards for choosing books, so his judgment then now seems too generous.",
+      "correct": false,
+      "feedback": "Nothing in the question suggests his standards changed. He is talking about whether the clues were obvious."
+     },
+     {
+      "text": "He's lying to dodge responsibility; at the time he wasn't worried at all.",
+      "correct": false,
+      "feedback": "He admits he hesitated at the time, so you can't say he had no worries."
+     },
+     {
+      "text": "He remembers hesitating, yet feels the clues were obvious enough that he should have called it.",
+      "correct": true,
+      "feedback": "What changed is the sense that it was bound to happen: once he knew the sales, the flaws he read back then were treated as a clear warning."
+     }
+    ]
+   },
+   {
+    "stem": "A project team has held reviews after their projects for four years running. Every report concludes that \"there were early signs,\" yet the schedule forecasts for new projects keep missing.",
+    "question": "With so many reviews done, what is the most likely reason the forecasts haven't improved?",
+    "explain": "Each review rearranges the result so that it looks foreseeable. The more reviews the team holds, the more predictable the world seems to them, and their estimates of uncertainty on new projects get too narrow instead.",
+    "options": [
+     {
+      "text": "The reviews rewrite results as having been foreseeable, so the team grows more confident and leaves less and less room on new projects.",
+      "correct": true,
+      "feedback": "The conclusion \"there were early signs\" keeps coming back, which shows that the uncertainty at the time was erased in the reviews, so the forecasts never learned how hard things really are."
+     },
+     {
+      "text": "Everyone in the reviews is from inside the project, so there's no outside view and they all tend to think alike.",
+      "correct": false,
+      "feedback": "The problem in the question is that every report reaches the same \"there were early signs.\" If outsiders wrote them, they would also know the outcome first."
+     },
+     {
+      "text": "There still haven't been enough reviews; the sample is too small to find the real pattern.",
+      "correct": false,
+      "feedback": "There have already been four years of reviews. The problem is that every conclusion is rearranged after the fact, and more reviews would be the same."
+     },
+     {
+      "text": "Every project is different, so nothing useful can be learned from past ones.",
+      "correct": false,
+      "feedback": "You can learn from past projects as long as the information from the time is kept. The reviews in the question don't do that."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "The further off you were, the more memory moves",
+  "caption": "Illustrative numbers. Dashed: remembered exactly. Raise the outcome's pull and the solid lines drift from it, most for a win at left or a loss at right.",
+  "x": {
+   "label": "Friday's odds of a win",
+   "min": 0,
+   "max": 100
+  },
+  "y": {
+   "label": "Odds remembered later",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "Friday's odds",
+    "min": 10,
+    "max": 90,
+    "step": 10,
+    "value": 60,
+    "unit": "%"
+   },
+   {
+    "id": "a",
+    "label": "Outcome's pull",
+    "min": 0,
+    "max": 60,
+    "step": 3,
+    "value": 33,
+    "unit": "%"
+   }
+  ],
+  "series": [
+   {
+    "name": "Remembered exactly",
+    "expr": "x",
+    "tone": "muted",
+    "dashed": true
+   },
+   {
+    "name": "Recalled after win",
+    "expr": "x+a/100*(100-x)",
+    "tone": "accent"
+   },
+   {
+    "name": "Recalled after loss",
+    "expr": "x*(1-a/100)",
+    "tone": "warn"
+   }
+  ],
+  "marks": [
+   {
+    "x": "p",
+    "text": "Written Friday"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Win: recalled as",
+    "expr": "p+a/100*(100-p)",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "Loss: recalled as",
+    "expr": "p*(1-a/100)",
+    "unit": "%",
+    "digits": 0
+   }
+  ]
+ }
+}

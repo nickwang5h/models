@@ -1,0 +1,203 @@
+{
+ "id": "mechanism-design",
+ "name": "Mechanism Design",
+ "en": "机制设计",
+ "discipline": "games",
+ "one_line": "Decide the outcome you want, then set rules so people serving themselves bring it about.",
+ "story": "In July the Boston School Committee votes to drop the \"Boston mechanism\" and, pushed by economists including Alvin Roth, switches to the deferred acceptance algorithm to assign school places",
+ "shallow": {
+  "scene": "In China, students ranking their choices of high school or university after the entrance exams often agonize over whether to aim high or play it safe: put a school that's too ambitious first, and if you miss it, your second choice may already be full. Parents in Boston choosing public schools for their children were stuck on this very step for years.\n\nUnder the old method, the first round looked only at first choices, and anyone admitted was locked in on the spot. By the time children who missed their first choice competed for their second, the places were often already filled by other children's first choices. So parents who knew the system learned to move a safe school up their list, while parents who simply listed what they wanted ended up hurting their children's chances.\n\nIn July 2005, the Boston School Committee voted to replace this method, and economists including Alvin Roth pushed for the change. The new method has just one key point: missing your first choice doesn't cost you your place for your second. So parents no longer need to guess how others will fill in their lists. Writing down their true order of preference is the best way to fill it in for their child.",
+  "plain": "Mechanism design is often explained with a small example. To share ten candies between two children, you let one divide them and the other choose first. The child dividing knows that only what's left will be his, so he honestly splits them five and five; if he split them seven and three, the other child would reach out and take the seven. You didn't urge him to be fair or watch him count. You only changed the order of who divides and who chooses. Each child still looked out for himself, and yet the candies were split evenly."
+ },
+ "deep": {
+  "mechanism": "### When you pay only the second-highest price, bidding the truth pays best\n\nThe bids are sealed, the highest bidder wins, but the winner pays only the second-highest bid. The most you'd pay is 100 yuan (this is called your valuation), and the highest anyone else bids is 80. Bid the truth, 100, and you win, pay 80, and come out 20 ahead. Shade it down to 70 and you lose to the 80, throwing away that 20. Bid above it, at 120, and this time nothing changes; but if someone else bids 110, you win and pay 110, a loss of 10, whereas bidding the truth would just have meant not buying.\n\nYour bid only decides whether you win, not how much you pay, so bidding the truth never costs you. Switch to \"pay your own bid,\" and with the same 100 and 80, bidding the truth gains you 0 while bidding 85 gains you 15, so everyone starts shading their bids.\n\n### The rules also have to keep people in\n\nRules only get used if taking part is no worse than staying out. If an auction first charges a 500-yuan entry fee, a buyer who values the item at only 300 loses money just by signing up, so he simply doesn't come. However honest the bidding, there is one buyer fewer.\n\n### If buyers collude, even good rules fail\n\nThe winner still pays the second-highest price. Buyer A values the item at 200 yuan and buyer B at 150; bidding truthfully, A wins and pays 150. But suppose the two agree in advance that B bids only 10 and A bids the truth, 200. A wins and pays only 10, and afterward the two split the gain. The seller gets 140 yuan less.",
+  "origin": "Mechanism design comes from economics and game theory. Leonid Hurwicz's work in 1960 laid the foundation, and later the idea of incentive compatibility was pinned down: arranging things so that telling the truth is exactly what serves you best. Eric Maskin and Roger Myerson developed implementation theory and the revelation principle, and the three shared the 2007 Nobel Prize in economics. The 1994 US spectrum auctions and the 2005 school choice reform in Boston were major cases of it being put into practice.",
+  "limits": "For mechanism design to be of use, the rules have to be open to change and someone has to enforce them. If neither is true, first fight for the power to make the rules. Adding a bonus doesn't finish the design: reward only signed deals, and salespeople will care only about signing, pushing through a batch of poor-quality orders. With one buyer and one seller, if each keeps their valuation secret, you can't have all four of these at once: honest bids, voluntary participation, no subsidy, and a deal that always happens when the buyer values the item more. The designer has to give up one."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When dividing a hospital's limited weekly operating-room slots among departments, if shares go by the number of operations each department reports, every department will over-report. Tie the report to something the department has to give up, and the reports start to come close to real need."
+   },
+   {
+    "use": "act",
+    "text": "Before bidding on someone else's behalf, first find out how payment works: do you pay your own bid or someone else's? When the rules reward shading bids, the numbers rivals bid can't be taken as the truth either."
+   },
+   {
+    "use": "explain",
+    "text": "Explain why surge pricing at rush hour gets ride-hailing drivers to head into the busy areas on their own: the higher fare goes into the driver's earnings. Nobody is forcing him; his own reckoning pushes him there on the rules' behalf."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Public resources",
+    "title": "Spectrum licenses bid on all at once",
+    "text": "In July 1994, the US Federal Communications Commission held its first auction, of ten nationwide narrowband licenses, using simultaneous multiple-round bidding. Companies often wanted several licenses that worked together. Auctioned one at a time, a company that won the first was afraid of losing the next, so it had to bid high regardless. With all the licenses open at once, companies could see the bids on each one in every round, and when one got expensive they switched to a neighboring one. As a result, similar licenses sold for very similar prices, and no one paid more because of the order of the sales."
+   },
+   {
+    "field": "Investing",
+    "title": "No fee until the losses are made back",
+    "text": "You put money into a fund, and the contract says the manager may take a performance fee only on the part of the fund's value above the previous high at which a fee was last charged. The fund falls and then rises, and for the whole stretch until it climbs back to the old high, the manager gets no performance fee at all."
+   },
+   {
+    "field": "Manufacturing",
+    "title": "Paid by the piece, and you own the rework",
+    "text": "Lincoln Electric, an American maker of welding equipment, pays its production workers by the piece: the more they make, the more they earn. That alone would make workers rush and skimp on quality, so the factory has workers put their names on the equipment they make, and if something goes wrong, the worker fixes it unpaid. The money from making more is theirs, and the cost of cutting corners lands back on them too. Reportedly, the factory's workers produce two to three times as much as others in the industry, and earn two to three times as much on average."
+   }
+  ],
+  "ask": [
+   "Once the rules are written out, put yourself in a participant's place and work through a set of real numbers by hand: what bid pays best?",
+   "What do participants know that I can't see, and what do the rules make them give up to reveal it?",
+   "What happens if two people collude, or one person opens two accounts?"
+  ],
+  "with": [
+   {
+    "id": "goodharts-law",
+    "sees": "You pay warehouse pickers a bonus by the number of items picked: the more, the higher. Mechanism design asks what each person finds it pays to do under this rule. The answer is to grab the easy orders and not worry about picking mistakes, so first change the measure and put accuracy into the bonus. Goodhart's law warns that changing the measure isn't the end: once a bonus hangs on the new measure, people will aim at it in the same way, so change the measures from time to time and spot-check the picking."
+   },
+   {
+    "id": "coase-theorem",
+    "sees": "An orchard upstream draws river water for irrigation, and a fish pond downstream often runs short. The county wants to set new rules for charging for water. When there are only one or two households and bargaining costs almost nothing, the Coase theorem says it doesn't matter who gets the water rights first: they'll work it out themselves, and no rules need designing. Only when dozens of households live along the river, each with its own claims, and they can't reach agreement, is it mechanism design's turn to write the rules."
+   },
+   {
+    "id": "nash-equilibrium",
+    "sees": "Once the rules are written, where will things settle when each person picks whatever pays them best? Mechanism design thinks about the goal; Nash equilibrium does the work of checking each person's choice one by one, to see whether the place where things settle is the outcome you wanted."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A school rents out a classroom each month to one of two clubs. Each club writes down the monthly rent it's willing to pay; the one that writes more gets the room and pays the number the other club wrote. You're in charge of one of the clubs. The room is truly worth 900 yuan to you, and you've heard the other club will probably write 600.",
+    "question": "What should you write?",
+    "explain": "Under these rules, the number you write only decides whether you win; what you pay is set by the other club's number. Write your true value, and you win every time you should, while what you pay isn't affected by your own number.",
+    "options": [
+     {
+      "text": "900 yuan",
+      "correct": true,
+      "feedback": "If the other club writes less than 900, you win and pay their number, the same result as writing anything lower. If they write more, you lose, and you shouldn't have won anyway."
+     },
+     {
+      "text": "650 yuan",
+      "correct": false,
+      "feedback": "If the other club actually writes 700, you lose, when writing the truth would have won you the room at 700 and left you 200 ahead."
+     },
+     {
+      "text": "1,000 yuan",
+      "correct": false,
+      "feedback": "If the other club writes 950, you win the room but pay 950, which is 50 more than its true worth of 900, a loss of 50."
+     },
+     {
+      "text": "601 yuan",
+      "correct": false,
+      "feedback": "That's only one yuan above the 600 you heard. If the other club actually writes 700, you lose, when writing the truth would have won it at 700 and left you 200 ahead."
+     }
+    ]
+   },
+   {
+    "stem": "Before the buying season, the county wants fruit growers to register their expected harvest so it can arrange collection trucks in advance. The scheme: the closer the registered harvest is to the actual one, the bigger the subsidy, up to 200 yuan; growers who don't register can still sell their fruit to the collection station as usual. Registering costs a grower a whole day of farm work, and that day's work is worth 300 yuan.",
+    "question": "Once the scheme is running, what is the most likely result?",
+    "explain": "The subsidy only rewards people who register accurately; it doesn't make registering better than not registering. Giving up a day of farm work to get at most 200 yuan doesn't pay, so most growers won't come.",
+    "options": [
+     {
+      "text": "The numbers growers register will be close to each other, because the subsidy cap is the same for all.",
+      "correct": false,
+      "feedback": "The same cap only limits the most each household can get. It doesn't make their harvest numbers come together."
+     },
+     {
+      "text": "Growers who register will all deliberately report a bigger harvest to get more subsidy.",
+      "correct": false,
+      "feedback": "The subsidy depends on how close the figure is to the actual harvest, so reporting high gets less. The problem is that few people are willing to come."
+     },
+     {
+      "text": "Most growers won't register, because the subsidy doesn't make up for the lost day.",
+      "correct": true,
+      "feedback": "Registering costs 300 yuan of farm work and pays at most 200, so taking part loses money compared with staying out, and most growers won't register."
+     },
+     {
+      "text": "All growers will register, because the subsidy goes only to those who register accurately.",
+      "correct": false,
+      "feedback": "The subsidy looks only at accuracy and has no say over whether people come. Just coming costs 100 yuan, and no amount of accuracy in the subsidy will keep people."
+     }
+    ]
+   },
+   {
+    "stem": "Ten households in an apartment building want to put in an elevator, at a total cost of 1 million yuan. The plan: each household writes down what it's willing to pay; if the total reaches 1 million, the elevator goes in and each household pays what it wrote; if not, it doesn't go in. Every household wants the elevator, and each knows the others see it differently.",
+    "question": "Once the numbers are in, what is most likely to happen?",
+    "explain": "Once the elevator is in, people who paid nothing can ride it just the same, while the number you write decides how much you pay. Write a bit lower, and the money saved is yours, while whether it goes in depends on the others, so many households will write it that way.",
+    "options": [
+     {
+      "text": "The households' numbers, some high and some low, cancel out, and the total is just enough.",
+      "correct": false,
+      "feedback": "Every household has the same reason to write low. The numbers all lean the same way, so they don't cancel out."
+     },
+     {
+      "text": "Each household writes the truth, because everyone wants the elevator to go in.",
+      "correct": false,
+      "feedback": "Every household wants it to go in but would rather pay less: the gain from writing low is its own, while the cost of the elevator not going in is shared by everyone."
+     },
+     {
+      "text": "Households write high, because they're afraid that writing low will mean it doesn't go in.",
+      "correct": false,
+      "feedback": "Writing high means paying more, and once the elevator is in, every household can ride it. Most households have no reason to raise their own number."
+     },
+     {
+      "text": "Many households write less than they're really willing to pay, and the total may fall short.",
+      "correct": true,
+      "feedback": "Every household wants the others to pay more, and its own number decides what it pays, so they all write low, and the chance of falling short of 1 million grows."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "grid",
+  "title": "Pay the second-highest bid: truth never loses",
+  "caption": "You'd pay at most 100 yuan, and a win costs only the top other bid. Shading loses a gain, overbidding wins at a loss, and the truth is safe both ways.",
+  "rowLabel": "You bid",
+  "rows": [
+   "True: 100",
+   "Shade to 70",
+   "Over: 120"
+  ],
+  "cols": [
+   "Other bids 80",
+   "Other bids 110"
+  ],
+  "cells": [
+   [
+    {
+     "text": "Win, pay 80",
+     "sub": "Gain 20",
+     "tone": "accent"
+    },
+    {
+     "text": "Lose",
+     "sub": "Break even",
+     "tone": "accent"
+    }
+   ],
+   [
+    {
+     "text": "Lose",
+     "sub": "Miss out on 20",
+     "tone": "warn"
+    },
+    {
+     "text": "Lose",
+     "sub": "Break even"
+    }
+   ],
+   [
+    {
+     "text": "Win, pay 80",
+     "sub": "Gain 20"
+    },
+    {
+     "text": "Win, pay 110",
+     "sub": "Lose 10",
+     "tone": "warn"
+    }
+   ]
+  ]
+ }
+}

@@ -1,0 +1,211 @@
+{
+ "id": "square-cube-law",
+ "name": "Square-Cube Law",
+ "en": "平方-立方定律",
+ "discipline": "physics",
+ "one_line": "Make something twice as big and its weight goes up eight times, but what holds it up only four.",
+ "story": "Hoover Dam is poured in separate blocks with cooling pipes buried inside to carry off the heat of its huge mass of setting concrete",
+ "shallow": {
+  "scene": "A big pot of freshly made rice porridge is still warm by evening; ladle out a small bowl and you can eat it in a few minutes. It is the same porridge; the only difference is size. The heat is held throughout the whole pot, but it can only leave through the surface. The bigger the pot, the less surface each spoonful of porridge gets, and the farther the heat in the middle has to travel.\n\nThe engineers who built Hoover Dam ran into the same thing, only much bigger. Hoover Dam sits across the Colorado River in the United States. It was finished in 1935, and its base is about two hundred meters thick. Concrete gives off heat of its own as it sets. In a single block that thick, the heat inside would take a very long time to get out, so the inside would stay hot while the outside cooled. The two would shrink by different amounts, and the dam would crack.\n\nSo the builders did not pour the whole dam in one go. They split it into column-shaped blocks poured separately, and buried cooling pipes in the concrete, running cold water through them to carry the heat away. When a thing gets big, its surface can't keep up, so they built in extra paths for the heat to get out.",
+  "plain": "Put a handful of crushed ice in a drink and it melts in a few minutes; put in one big block and there is still a lump left hours later. It's the same ice; the difference is size.\n\nThink of the ice as small cubes. A cube 1 centimeter on each side has a volume of 1 cubic centimeter, and its six faces add up to 6 square centimeters. Scale it up in the same shape to 2 centimeters on each side, and the volume becomes 8 cubic centimeters while the surface only grows to 24 square centimeters. Per cubic centimeter, the small cube has 6 square centimeters of surface and the big cube only 3. Heat can only get in through the surface, so each cubic centimeter of the big cube gets half as much heat, and it melts more slowly.\n\nThis is the square-cube law. Scale something up in the same shape, and its surface area grows with the square of its length while its volume grows with the cube, so each unit of volume gets less and less surface. Weight follows volume and grows with the cube too. But how much a leg or a column can bear depends on its cross-section, and a cross-section is an area, which grows only with the square. So as a thing is scaled up, each square centimeter of its legs' cross-section has to carry more and more weight. Big things are hard to cool and hard to hold up, and both come from this same sum."
+ },
+ "deep": {
+  "mechanism": "### Scale up k times and each unit of volume gets only 1/k the surface\n\nScaling a thing up $k$ times means multiplying every length by $k$. Areas are then multiplied by $k^2$ and volumes by $k^3$. The surface each unit of volume gets is the area divided by the volume, so it becomes this much of what it was:\n\n$$\\frac{k^2}{k^3}=\\frac{1}{k}$$\n\nIn other words, scale something up by some factor and the surface per unit of volume shrinks by the same factor. Going from a 1-centimeter ice cube to a 2-centimeter one, $k=2$, and the surface per cubic centimeter drops from 6 square centimeters to 3, half as much; take $k$ as 10 and only a tenth is left.\n\n### What a leg can carry depends on its cross-section, but weight grows with volume\n\nHow much weight bone and muscle can bear depends on how big their cross-section is, not on how long the leg is. Scale an ant up a hundred times in the same shape, and its weight grows with its volume, by $100^3$, a million times; the cross-section of its legs grows with area, by $100^2$, only ten thousand times. A million divided by ten thousand: each unit of cross-section has to carry a hundred times the weight it did. However many times you scale it up, each unit of cross-section carries that many times as much.\n\n### Heat is made inside but can only leave through the surface\n\nHeat production follows volume, and heat loss follows surface; on top of that, the bigger the thing, the farther the heat at its center has to travel to reach the surface. Hoover Dam is about two hundred meters thick at its base. Poured as a single block, the heat at its center would have to travel a hundred meters or more to get out, and by some accounts it would have taken more than a hundred years to cool. Pouring it in blocks and burying water pipes amounted to adding cooling surface by hand, and the heat only had to travel as far as the nearest pipe. That is how heat loss finally kept up with heat production.",
+  "origin": "This is a result of geometry. Galileo discussed it in 1638 in *Two New Sciences*: when a body is scaled up in the same shape, its strength can't keep up with its weight, which is why big animals need much thicker bones than small ones. J. B. S. Haldane's 1926 essay *On Being the Right Size* applied the idea to living things, showing that every animal's body structure is matched to its size.",
+  "limits": "The square-cube law covers things scaled up equally in every direction, with the same material: how a container loses heat, how much a tower of blocks can bear, the build of an ant or an elephant. Add extra paths or change the structure, and the ratio of surface to volume is rewritten: hollow bones, cooling pipes and extra gill plates all do this. Headcount and customer numbers are not lengths, and they have no area or volume; forcing business growth into squares and cubes only gives you neat-looking wrong numbers."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "A mouse that falls down a mine shaft lands and runs off, while a person who falls from the same height does not: weight grows with volume and air resistance grows with surface area, so small animals fall much more slowly."
+   },
+   {
+    "use": "predict",
+    "text": "Make a cold store four times as long on each side, and the wall area is sixteen times as big while the storage space is sixty-four times as big. Each cubic meter of goods gets only a quarter of the heat leaking in, so the refrigeration doesn't need to grow sixty-four times along with the space."
+   },
+   {
+    "use": "design",
+    "text": "When designing something large, first ask which path will run out of room first. Thicker supports, splitting into blocks, adding cooling fins and adding contact surface are all ways of adding paths to carry the load."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Biology",
+    "title": "A giant ant can't hold itself up",
+    "text": "Scale an ant up a hundred times in the same proportions, and its weight grows a million times while the cross-section of its legs grows only ten thousand times, so its original legs and muscles can't carry it. The tubes that carry oxygen through its body would also have to cover a hundred times the distance. Elephants can grow so big because their legs are as thick as pillars, they stand upright, and they have a circulatory system that carries blood and oxygen around the body."
+   },
+   {
+    "field": "Business and organizations",
+    "title": "Ships keep getting bigger",
+    "text": "You handle purchasing at a shipping company, and one ship design comes in a small and a large version; the large one is scaled up to 1.5 times in every direction. Its cargo capacity grows about 3.4 times, while the area of steel plate in the hull grows only 2.25 times, so each ton of cargo gets about a third less steel plate, and the drag the hull meets underwater also goes by surface area. You place the order for the large version, and at the same time have the design institute check the reinforcement of the hatches and deck."
+   },
+   {
+    "field": "Personal life",
+    "title": "Cut it and it cools faster",
+    "text": "A big freshly boiled potato is too hot to bite into; cut it into eight pieces spread out on a plate, and it cools fast. Treat the potato roughly as a cube and make one cut in each of the three directions: the total volume hasn't changed, but the total surface area is twice what it was. More surface touches the air, and the heat inside has a shorter way to go."
+   }
+  ],
+  "ask": [
+   "In this scaling up, is it lengths that are growing, or the number of people and amount of work?",
+   "How fast is the load growing, and how fast are the load-bearing cross-section, the cooling surface or the paths for handling the work growing?",
+   "Which path that was enough at small scale will be the first to run out of room once things are bigger? Can I split it into blocks, make it thicker, add contact surface, or push decisions down?"
+  ],
+  "with": [
+   {
+    "id": "economies-of-scale",
+    "sees": "A bakery wants to make a large loaf of sandwich bread twice as long, wide and tall. Economies of scale say that baking one big loaf at a time saves labor and oven space, so do it. The square-cube law says the volume is eight times as big but the surface only four, so the center cooks slowly, and the outside burns while the inside is still raw. The large loaf would need a lower temperature, a longer bake, or a flatter shape, and that cost has to go into the sums first."
+   },
+   {
+    "id": "bottlenecks",
+    "sees": "A cold store is made five times as long on each side: its storage space is a hundred and twenty-five times as big, but its walls and doors only twenty-five times. Goods have to go in and out through the doors. Should you hire more porters, or first see which path is narrowest? Bottlenecks look at which link is narrowest right now, and if you only add forklifts, the goods pile up at the doors. The square-cube law reminds you that the paths for goods in and out grow with area while the goods to be stored grow with volume, so you can work out before you start which will run out of room first, and leave space for it ahead of time."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You manage a reaction tank at a paint factory, and you scale its length, width and height up to three times what they were, keeping the same shape. Each liter of material gives off the same heat per minute, all cooling comes from the water jacket on the tank's outer wall, and each square meter of outer wall can carry away the same heat per minute. The small tank used to be just able to hold the target temperature.",
+    "question": "If the large tank keeps the same cooling method, what will happen?",
+    "explain": "Scale the tank up three times, and the volume of material grows to twenty-seven times while the outer wall area grows only to nine times. The cooling each liter of material gets drops to a third of what it was, so more heat-exchange surface or internal cooling pipes are needed.",
+    "options": [
+     {
+      "text": "Each liter of material gives off the same heat and needs the same cooling, so the original setup will do.",
+      "correct": false,
+      "feedback": "The need per liter hasn't changed, but each liter of material now gets only a third of the outer wall area, so the cooling hasn't kept up."
+     },
+     {
+      "text": "The outer wall area grows to nine times, so the cooling grows to nine times too, and the temperature can still be held.",
+      "correct": false,
+      "feedback": "The outer wall grows to nine times, but the material grows to twenty-seven times; heat production grows faster, and the cooling can't keep up."
+     },
+     {
+      "text": "Heat production grows to twenty-seven times while cooling through the outer wall grows only to nine times, so the temperature will rise and more heat-exchange paths are needed.",
+      "correct": true,
+      "feedback": "Heat production follows volume, and cooling follows outer wall area. To hold the target temperature, add heat-exchange surface or bury cooling pipes inside."
+     },
+     {
+      "text": "Raise the cooling water's flow rate to three times and the gap is closed.",
+      "correct": false,
+      "feedback": "The cooling needed is three times what you have now, but heat exchange is also limited by how well the tank wall conducts heat and how the water flows, so tripling the flow rate won't exactly triple the heat exchange."
+     }
+    ]
+   },
+   {
+    "stem": "You are researching an online tax-filing company. Its customer numbers grew to ten times in a year, each tax return can be handled independently, and the company has added servers and support staff in line with the volume of work. An analyst says, \"As scale grows, the load grows with the cube while handling capacity grows only with the square, so profit margins are bound to fall sooner or later.\"",
+    "question": "What do you make of this analysis?",
+    "explain": "The relationship between squares and cubes comes from objects of the same shape scaled up equally in every direction; customer numbers don't meet that condition. What matters is how the workload and handling capacity each grow, and the actual rates have to be found in the real process.",
+    "options": [
+     {
+      "text": "First compare how the actual workload and handling capacity grow; ten times the customers doesn't come with geometric powers built in.",
+      "correct": true,
+      "feedback": "Customer numbers have no area or volume relationship. You need to check, step by step, how servers, support staff and other costs grow with the workload."
+     },
+     {
+      "text": "The conclusion should be the other way around: independent tasks are easy to scale, so profit margins will keep rising.",
+      "correct": false,
+      "feedback": "Handling capacity keeping up with the volume of work only shows the company can take on the tasks; profit margins also depend on revenue and costs."
+     },
+     {
+      "text": "The conclusion basically holds: the more customers, the harder coordination gets, and new resources can only delay the fall in profit.",
+      "correct": false,
+      "feedback": "The tasks in the question can be handled independently; nothing shows that the coordination load will grow faster."
+     },
+     {
+      "text": "Replace customer numbers with revenue, then compare cubic and square growth.",
+      "correct": false,
+      "feedback": "Revenue isn't a geometric size either; switching measures still gives those two powers no basis."
+     }
+    ]
+   },
+   {
+    "stem": "You've got a new open-topped cylindrical water barrel for your vegetable garden. The new barrel is twice the old one's diameter and twice its height, and both barrels start out full. Each square meter of water surface loses the same amount to evaporation in a day; there is no rain, no water is taken out, and nothing leaks. After one day, both barrels still have water in them.",
+    "question": "How do the amount of water the new barrel loses to evaporation in a day, and its share of the starting water, change?",
+    "explain": "With the barrel scaled up twice, the water surface grows to four times and the volume of water stored grows to eight times. Total evaporation is four times the small barrel's, but as a share of the water stored it is only half the small barrel's.",
+    "options": [
+     {
+      "text": "Evaporation becomes four times as much, and its share of the starting water stays the same.",
+      "correct": false,
+      "feedback": "The starting water grows to eight times while total evaporation grows only to four times. The share is divided by that bigger number, so it can't stay the same."
+     },
+     {
+      "text": "Evaporation becomes four times as much, and its share of the starting water becomes half.",
+      "correct": true,
+      "feedback": "The water surface grows to four times and the water to eight times: more evaporates in total, but a smaller share is lost."
+     },
+     {
+      "text": "Evaporation becomes eight times as much, and its share of the starting water stays the same.",
+      "correct": false,
+      "feedback": "Evaporation happens at the water surface and follows the surface area; the water growing to eight times has nothing to do with total evaporation."
+     },
+     {
+      "text": "Evaporation becomes twice as much, and its share of the starting water becomes a quarter.",
+      "correct": false,
+      "feedback": "With the diameter and height doubled, the water surface doubles in both directions, so its area grows to four times, not two."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Scale up 10x and each unit gets 1/10 the surface",
+  "caption": "Drag to scale up the ice cube, same shape. Area grows with the square, volume with the cube: surface per unit falls, weight per unit of cross-section rises.",
+  "x": {
+   "label": "Times scaled up",
+   "min": 1,
+   "max": 10
+  },
+  "y": {
+   "label": "Times the original",
+   "unit": "x",
+   "min": 0,
+   "max": 10
+  },
+  "params": [
+   {
+    "id": "s",
+    "label": "Scale up by",
+    "min": 1,
+    "max": 10,
+    "step": 1,
+    "value": 2
+   }
+  ],
+  "series": [
+   {
+    "name": "Surface per unit",
+    "expr": "1/x",
+    "tone": "accent"
+   },
+   {
+    "name": "Weight per section",
+    "expr": "x",
+    "tone": "warn"
+   }
+  ],
+  "marks": [
+   {
+    "x": "s"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Surface area",
+    "expr": "s^2",
+    "unit": "x",
+    "digits": 0
+   },
+   {
+    "label": "Volume and weight",
+    "expr": "s^3",
+    "unit": "x",
+    "digits": 0
+   },
+   {
+    "label": "Surface per unit",
+    "expr": "1/s",
+    "unit": "x",
+    "digits": 2
+   }
+  ]
+ }
+}

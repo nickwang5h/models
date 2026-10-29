@@ -1,0 +1,200 @@
+{
+ "id": "goodharts-law",
+ "name": "Goodhart's Law",
+ "en": "古德哈特定律",
+ "discipline": "economics",
+ "one_line": "Once a number becomes a target, people chase the number and it stops telling the truth.",
+ "story": "The US Consumer Financial Protection Bureau reveals that Wells Fargo staff opened accounts without customers knowing, to meet account targets, and fines the bank 100 million dollars",
+ "shallow": {
+  "scene": "Staff at Wells Fargo had a daily target for opening new accounts. Anyone who missed it got told off and lost their bonus. Some began opening accounts for customers without telling them, and moved money into them from the customers' existing accounts, so some customers were charged extra fees. On September 8, 2016, the US Consumer Financial Protection Bureau published what it had found and fined the bank 100 million dollars. On the reports, the number of accounts kept climbing, but the people whose names were on those accounts had no need for them.",
+  "plain": "You tell your child, who is in primary school, that you'll give him one yuan for every book he finishes. He used to work his way through one thick book a week. Now he reads five thin picture books a day and earns 35 yuan a week. The number of books he finished used to show whether he liked reading. Once it earns him money, he chases the count alone, and the count no longer shows that. This is Goodhart's law: once a number is used to hand out rewards, people chase the number, and its old link to the real result breaks. What you wanted was a child who loves reading; what you got is a stack of thin books, all finished."
+ },
+ "deep": {
+  "mechanism": "### When someone gets paid by a number, what it records changes\n\nNormally a restaurant gets few bad reviews because the food is good and arrives quickly. But once the manager's bonus depends on the number of bad reviews, there is another way to bring that number down: give each customer who left a bad review a voucher and ask them to delete it. The count of bad reviews used to record whether customers were happy. Now it also records whether the manager is willing to pay to have reviews deleted.\n\n### The cheaper it is to get around, the more people do it\n\nSuppose the bonus is 20 yuan for each bad review fewer, and getting a customer to delete one costs a 5-yuan voucher. Each deletion nets 15 yuan, so the manager will delete. If the review site starts checking orders and having people re-examine deletions, the cost of getting one deleted rises to 30 yuan, a loss of 10, and the only route left to the manager is serving food better. But raise the bonus to 200 yuan, and spending 30 yuan to get a review deleted pays again.\n\n### Even people who meet the target honestly push aside what isn't counted\n\nCustomer-support staff get a bonus for the number of tickets they close each day, and every ticket counts as one, easy or hard. Some tickets can be closed in two minutes; some take an afternoon. Even an honest support agent will close the two-minute ones first and leave the hard ones sitting in the queue until the end of the month. The number closed looks good every day, and the customers who wait longest are the ones with the hardest problems.",
+  "origin": "The British economist Charles Goodhart put it forward in 1975, talking about how Britain managed its money supply: you can try to steer the economy using a statistical relationship seen in the past, but once that relationship is used as a lever of control, it falls apart. In 1997 the anthropologist Marilyn Strathern rewrote it into the form common today: when a measure becomes a target, it ceases to be a good measure.",
+  "limits": "When a measure sticks closely to the real result and someone checks it item by item, using it as a target still works. If a warehouse rechecks every order, wrong shipments can't be hidden, so when the number of wrong shipments goes down, shipping really has got better. When a number is only watched and nobody is paid by it, a strange swing usually has some other cause, and there is no need to suspect gaming. Dropping all measured targets because of this law is a mistake too: without numbers, managers can only reward and punish on impressions, which makes favoritism easier."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Before setting how a sales team's commission is counted, list three ways to push the number up even with unhappy customers. Launch it only if you can't come up with any."
+   },
+   {
+    "use": "predict",
+    "text": "If a city judges its traffic police by the number of parking tickets they write, you can predict the tickets will pile up on the easiest streets to patrol, not on the most congested ones."
+   },
+   {
+    "use": "communicate",
+    "text": "Explain to a principal why homeroom teachers shouldn't get bonuses for how many students get into higher schools: lay out, in front of them, three ways to raise that rate without teaching any better."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Education",
+    "title": "Scores went up, extra help went away",
+    "text": "In 2011 the state of Georgia published its investigation into Atlanta's public schools, covering the 2009 statewide tests. It found that 178 teachers and principals had taken part in cheating, mainly because of pressure to hit targets. The score sheets looked excellent, and the students who were falling behind went unseen and never got extra tutoring."
+   },
+   {
+    "field": "Investing",
+    "title": "Earnings per share doubled",
+    "text": "You set the executives' bonus condition as doubling earnings per share. The company's profit has always been 1 million yuan. Management uses cash to buy back shares, cutting the share count from 1 million to 500,000, so earnings per share go from 1 yuan to 2, and the bonus is paid. There is less cash on the books, and the business hasn't earned a cent more."
+   },
+   {
+    "field": "Software",
+    "title": "One bug logged as five",
+    "text": "The testing team you lead gets a quarterly bonus based on the number of bugs found. In the second month, the faults on a single login page are logged separately: a misplaced button, a typo in a message, a shifted input box, a blurry icon, a slow redirect, each counted as one bug. The bug count goes up several times over, the login page works almost exactly as before, and the developers have five extra tickets to handle."
+   }
+  ],
+  "ask": [
+   "When this number goes up, what ways are there to make it rise without things actually getting better? How much effort would they take?",
+   "What changed in how the same people work, from before the target to after? Go back to the raw records from before and after.",
+   "Is there something that isn't scored but does reflect the real result, such as follow-up calls, spot checks or repeat purchases, that I can look at alongside this number?"
+  ],
+  "with": [
+   {
+    "id": "principal-agent",
+    "sees": "You hire someone to mind your shop. You can't see what he does, so you have to pay him by some number. The principal-agent problem says pay should be tied to the number, or he has no reason to try; Goodhart's law says the tighter the tie, the more the number gets manufactured. For numbers you can spot-check, tie pay to them boldly; for ones you can't check, tie only a small part of the pay to them and make most of it a fixed salary."
+   },
+   {
+    "id": "overfitting",
+    "sees": "Every week your team scores its model on the same test set, and bonuses depend on it. In three months accuracy goes from 82% to 91%, yet after launch nothing changes. Overfitting says the model has memorized this set of questions; Goodhart's law says it got memorized because people were watching it to earn their bonuses. A holdout set used only once, at the very end, treats both problems."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A city's 12345 public-service hotline judges its staff by the share of complaints answered within 48 hours: once a complaint comes in, sending the caller any reply within 48 hours counts as meeting the target. Three months after this started, the reply rate rose from 71% to 98%, while the share of complaints actually resolved barely changed. Spot checks found that many replies were just one line: \"Received, we're working on it.\"",
+    "question": "What does the rise in the reply rate show?",
+    "explain": "The target only counts whether there was a reply, and one line saying \"Received\" meets it, so staff put their effort into the easiest step to score. Resolutions didn't increase, but the number went up. To know whether things got better, look at the resolution rate and follow-up calls to callers.",
+    "options": [
+     {
+      "text": "The 48-hour limit is still too long. Make it 24 hours and the reply rate will be more honest.",
+      "correct": false,
+      "feedback": "With a shorter limit, a one-line \"Received\" can still go out within 24 hours, so the loophole isn't closed."
+     },
+     {
+      "text": "Replying is the easiest step to score, so the number went up while resolved complaints did not increase.",
+      "correct": true,
+      "feedback": "One line saying \"Received\" counts as a reply, the target rewards only this step, and a flat resolution rate doesn't affect the bonus."
+     },
+     {
+      "text": "Callers are happier with the hotline; the way resolutions are counted just hasn't been standardized yet.",
+      "correct": false,
+      "feedback": "There are no satisfaction figures in the question; an unchanged resolution rate means callers' problems weren't solved."
+     },
+     {
+      "text": "The hotline's staffing and process run more smoothly now; the resolution rate is lagging a little and will soon catch up.",
+      "correct": false,
+      "feedback": "The spot checks in the question show the replies were just a stock phrase, and there is no sign of the resolution rate catching up."
+     }
+    ]
+   },
+   {
+    "stem": "You run a mobile game, and the operations team gets bonuses based on daily active users. The team launches a \"log in every day for free gems\" promotion, and a month later daily active users are up 30%. You want to know whether that 30% came from players liking the game more.",
+    "question": "What should you look at first?",
+    "explain": "Free gems make players log in to collect a reward, so more daily users doesn't mean they like the game more. Look at behavior that the reward doesn't drive: for regular players from before the promotion, how long they stay and how many come back in the week after it ends. Also check how many people collect and leave.",
+    "options": [
+     {
+      "text": "New downloads during the promotion.",
+      "correct": false,
+      "feedback": "New downloads count people coming in; they can't tell you why people already playing stayed."
+     },
+     {
+      "text": "Whether any accounts were counted twice in the daily active user figures.",
+      "correct": false,
+      "feedback": "Removing duplicates only makes the daily count accurate, and an accurate daily count is still just the number of people logging in; it can't tell you whether players like the game."
+     },
+     {
+      "text": "The average rise in daily active users for similar games over the same period.",
+      "correct": false,
+      "feedback": "The industry's rise only reflects the wider market; it can't show whether this game's players came for the gems or for the game."
+     },
+     {
+      "text": "For regular players from before the promotion, how long they stay and how many come back in the week after it ends.",
+      "correct": true,
+      "feedback": "This behavior isn't part of the bonus calculation, so nobody has gamed it. Whether people who played regularly before still come back once the rewards stop is the best sign of whether they like the game."
+     }
+    ]
+   },
+   {
+    "stem": "In a housing complex, the parcel-locker company pays its local couriers a bonus based on the same-day delivery rate: once a parcel is in a locker, the courier only has to tap \"Delivered\" in the system for it to count. Three months later the delivery rate has risen from 80% to 99%, and complaints from recipients that a parcel \"shows as delivered but never arrived\" have doubled.",
+    "question": "Which change would do most to make the delivery rate follow recipients actually getting their parcels again?",
+    "explain": "The delivery rate could be pushed up because a tap takes almost no effort, and the person tapping is the person getting the bonus. Hand the confirming step to the recipient, so a parcel only counts as delivered when they enter the pickup code. Getting around it then costs more, and the number goes back to tracking the real result.",
+    "options": [
+     {
+      "text": "Publish a weekly ranking of each site's delivery rate.",
+      "correct": false,
+      "feedback": "A ranking makes everyone care more about the number itself, and the tap that pushes it up hasn't been blocked."
+     },
+     {
+      "text": "Add a \"same-day dispatch rate\" to the targets as well.",
+      "correct": false,
+      "feedback": "The new measure can also be pushed up by tapping or adjusting records, and the loophole in the delivery rate is still there."
+     },
+     {
+      "text": "A parcel counts as delivered only when the recipient enters the pickup code.",
+      "correct": true,
+      "feedback": "The recipient does the confirming, so no amount of tapping by the courier can mark a parcel delivered, and the number once again means the parcel was really picked up."
+     },
+     {
+      "text": "Double the delivery bonus.",
+      "correct": false,
+      "feedback": "Double the bonus and the payoff for tapping \"Delivered\" doubles too. The urge to push the number up grows, and doing it gets no harder."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Paid per book, the count rose on thin books",
+  "caption": "The number of books finished used to follow a love of reading. At one yuan a book, the fastest way up was five thin picture books a day, 35 a week.",
+  "nodes": [
+   {
+    "id": "m",
+    "label": "1 yuan a book",
+    "layer": 0
+   },
+   {
+    "id": "a",
+    "label": "Loves reading",
+    "sub": "1 thick book a week",
+    "layer": 1,
+    "tone": "muted"
+   },
+   {
+    "id": "c",
+    "label": "Thin books only",
+    "sub": "Five a day",
+    "layer": 1,
+    "tone": "warn"
+   },
+   {
+    "id": "d",
+    "label": "Books finished",
+    "sub": "35 a week",
+    "layer": 2,
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "m",
+    "to": "c"
+   },
+   {
+    "from": "a",
+    "to": "d",
+    "label": "Before",
+    "dashed": true
+   },
+   {
+    "from": "c",
+    "to": "d",
+    "label": "Now",
+    "tone": "warn"
+   }
+  ]
+ }
+}

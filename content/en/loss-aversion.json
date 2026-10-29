@@ -1,0 +1,208 @@
+{
+ "id": "loss-aversion",
+ "name": "Loss Aversion",
+ "en": "损失厌恶",
+ "discipline": "psychology",
+ "one_line": "Losing a hundred dollars hurts more than finding a hundred feels good.",
+ "story": "Kahneman, Knetsch and Thaler's mug experiment: students given a mug ask a median price more than twice what buyers offer",
+ "shallow": {
+  "scene": "When you sell your old things on a secondhand site, buyers' offers always seem too low; when you buy the same secondhand thing, sellers' prices seem too high. In 1990 Daniel Kahneman, Jack Knetsch and Richard Thaler measured this feeling with coffee mugs.\n\nA class of college students was randomly split into three groups. Everyone in the first group was given a mug with the university's logo on it and asked the lowest price they would sell it for. The second group had no mugs and was asked the most they would pay for one. The third group had no mugs either; they only chose between a mug and a sum of money, saying at what amount they would rather take the money. The result: the median price the sellers asked was more than twice what the buyers offered.\n\nThe third group ruled out the explanation that the sellers just wanted to make a bit more. They faced the same choice as the sellers: in the end they would hold either a mug or money, and the only difference was whether the mug was in their hands first. Yet the price they put on the mug was about the same as the buyers'. The mugs were identical, who got one was down to chance, and they had held them for only a few minutes, yet letting go already counted as a loss.",
+  "plain": "You and a friend toss a coin: heads you win 100 yuan, tails you lose 100, even odds, no gain or loss on average, yet most people shake their heads. Win 120 yuan, and they still shake their heads; only when the win reaches about 200 yuan do most people nod. In other words, the pain of losing 100 yuan takes the pleasure of winning 200 to make up for it. A loss weighs more than a gain of the same size, and that is called loss aversion.\n\nIt also governs the things you already have. Imagine a sofa you've used for three years: someone offers you 400 yuan and you won't sell; the same secondhand sofa in a shop, you'd pay 250 yuan at most."
+ },
+ "deep": {
+  "mechanism": "### Losses outweigh gains\n\nHow many times heavier a loss is than a gain can be measured from people's choices. Researchers offer a fifty-fifty bet to win $x$ yuan or lose 1,000 yuan, raise $x$ bit by bit, and see where people start to say yes. Say a loss weighs $k$ times as much as a gain of the same size. Then in people's heads the bet works out as\n\n$$x-k\\times1000$$\n\nThe winnings first have to cancel out $k$ times the loss; only when the result is above zero do people say yes. Most people want to win about 2,000 yuan before they'll bet, which means that at $x=2000$ this sum comes out exactly zero: $2000-k\\times1000=0$, so $k$ is about 2. In 1992 Kahneman and Amos Tversky fitted it to data and got about 2.25.\n\nAs for why losses weigh more, Kahneman's explanation in a 2013 interview was that serious threats matter more than opportunities, and pain is a more urgent signal than pleasure. Losing your stored food could mean not getting through the winter; having more stored food only means a few more meals.\n\n### Owning something turns selling it into a loss\n\nIf you don't have a mug, buying one is a gain, and the money you pay is the cost. If you have a mug, selling it is a loss, and only the money the other person gives counts as a gain. Losses weigh more than gains, so sellers need quite a lot more money before they'll let go, while buyers offer only what the gain is worth to them. This extra asking price that comes from owning something is called the endowment effect.\n\n### Loss or gain depends on the starting point you compare with\n\nThe flat you rent has always been 3,000 yuan. If the landlord tells you it will go up to 3,300 next month, you're angry for a month and ask around about other places; if he tells you it will drop to 2,700, you're happy for two days and then forget it. 3,000 yuan is your starting point: the 300 above it is recorded as a loss, the 300 below it as a gain. The starting point isn't always what you hold: the price you paid when you bought, the figure you got last year, what someone promised to give you can all be taken as a starting point, and anything less than it is recorded as a loss.",
+  "origin": "In 1979 Kahneman and Tversky put forward prospect theory: people look at whether an outcome is more or less than their starting point, and a bit less weighs more than a bit more. In 1992 the two estimated from data that this multiple is about 2.25. In 1980 Thaler named the extra price that owning brings the endowment effect, and the 1990 mug experiment by Kahneman, Knetsch and Thaler is its most famous evidence. In 1995 Charlie Munger called people's strong reaction to losing things *deprival superreaction*.",
+  "limits": "It explains small gains and losses and everyday buying and selling well: for the same thing, your selling price is higher than your buying price. And 2 times isn't a fixed rate of exchange: people who trade often show a much smaller gap, and when the amount or the thing changes, the multiple changes too. Some markups aren't a bias at all: a watch handed down in the family carries memories that belong only to you, and it's perfectly reasonable for your selling price to be above the market price. Treat every reluctance to sell as a bias, and you'll also throw out the cases where keeping something has good grounds."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Design trial periods and return periods: once the item is in the customer's hands, sending it back feels like a loss, and more people will keep it within the deadline than an ad could persuade."
+   },
+   {
+    "use": "act",
+    "text": "When negotiating, first look at what the other side is holding on to: the thing they'd give up has to be made up with a share bigger than what they'd gain."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Investing",
+    "title": "A holding comes with its own premium",
+    "text": "You're given shares worth 10,000 yuan at today's price. After carefully checking the business and the risks, you wouldn't pay 10,000 yuan in cash to buy them, yet you won't sell the ones you were given. Taxes and fees and your portfolio's needs are the same either way. You rephrase the question: if I had 10,000 yuan in cash, would I buy this? The answer is no, so you sell half."
+   },
+   {
+    "field": "Work",
+    "title": "A promised perk taken back",
+    "text": "A department head announces that from next quarter, staff can work from home two days a week, and the staff promptly arrange their school runs around it. Before it officially starts, the head cancels it. The staff treat this as having a benefit they already had taken away, and sign a joint letter asking for it back. The head switches to explaining when it will be delivered and gives a one-month transition, and the joint letter is withdrawn."
+   },
+   {
+    "field": "Technology",
+    "title": "Free HD moved behind the paywall",
+    "text": "The video site you subscribe to moves the HD picture quality that longtime users had always watched for free into its paid membership. New users who sign up see the same price list and don't feel much about it. Longtime users run the numbers in the comments and cancel, and some say that what was there before was clearly theirs."
+   }
+  ],
+  "ask": [
+   "In this decision, which item am I counting as a loss? Is my reference point what I have now, or what someone promised?",
+   "If I write both options as the outcome I'd end up holding, and strip out the words \"loss\" and \"gain,\" would my choice change?",
+   "If this weren't in my hands right now, how much would I be willing to pay for it?"
+  ],
+  "with": [
+   {
+    "id": "expected-value",
+    "sees": "A colleague invites you to a coin toss: heads you win 150 yuan, tails you lose 100. Expected value works out to an average gain of 25 yuan a toss, so you should accept; most people's gut says no. The difference lies in how many tosses: if you could toss a hundred times a year, your gut is throwing away gains for nothing, so go by expected value and accept; if it's only this once, and losing 100 yuan would leave you unable to pay rent at the end of the month, saying no costs you nothing."
+   },
+   {
+    "id": "opportunity-cost",
+    "sees": "You've kept 50,000 yuan in a current account for years, earning almost no interest. From the angle of loss aversion, if you move it into an investment product, the moment its value dips below what you put in, that's a loss, and it outweighs a gain of the same size, so you leave it be. From the angle of opportunity cost, leaving it be has a cost too: the return you could have had elsewhere, only nobody records it. Before you move this money, write the outcomes of the current account and the investment side by side."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "In 2021 you paid 3 million yuan for a small two-bedroom apartment as an investment. It has always been rented out, and you've never lived in it. Now apartments of the same layout in the same complex are selling for 2.6 million. You've listed yours at 3 million, and for a year nobody has made an offer. Your agent sends you a table of sales every month and says there's been no sign of prices rising for the past six months, and you agree with that view yourself.",
+    "question": "What is the most likely reason you keep refusing to drop to the selling price?",
+    "explain": "3 million has become your starting point, so selling at 2.6 million would be recorded as a loss, and that loss weighs more than a gain of the same size. The question gives no clues about the market, feelings or expectations.",
+    "options": [
+     {
+      "text": "You have a special attachment to the apartment, with too many memories of living there to let it change hands.",
+      "correct": false,
+      "feedback": "The apartment has always been rented out and you've never lived in it. The question gives no clue of any emotional attachment."
+     },
+     {
+      "text": "You think prices will soon go back up, so you're willing to wait another year or two and sell when the price is back at 3 million.",
+      "correct": false,
+      "feedback": "The question says you yourself agree there's been no sign of a rise for six months, so you're not waiting for one."
+     },
+     {
+      "text": "3 million has become your starting point, and selling below it counts as a loss, so the price stays pinned at that number.",
+      "correct": true,
+      "feedback": "The market for the apartment hasn't changed. What has changed is that you take the purchase price as the starting point for gains and losses, and cutting the price would turn the loss into a fact."
+     },
+     {
+      "text": "You don't know the recent selling prices for the same layout, and don't realize your price is well above the market.",
+      "correct": false,
+      "feedback": "Your agent sends you a table of sales every month, so you know the selling prices."
+     }
+    ]
+   },
+   {
+    "stem": "The company has moved a whole floor of staff onto a newly renovated floor. The new desks have more space and better light and are closer to the kitchen, and before the move there were three briefings explaining the reasons. Three weeks after the move, most of the feedback staff have submitted says they \"want to go back to their old spot.\"",
+    "question": "Where does this feedback most likely come from?",
+    "explain": "The old desk was already the staff's own, so giving it up counts as a loss; the new desk's advantages count only as gains, which weigh less. In the question, nothing is wrong with the new desks or the briefings.",
+    "options": [
+     {
+      "text": "The old desks already belonged to them, and losing them weighs more than gaining the new desks' advantages.",
+      "correct": true,
+      "feedback": "The new desks are objectively better, yet the feedback still centers on the old spots, which points to staff counting the old spot as something they already owned."
+     },
+     {
+      "text": "The new desks are actually worse to use, and staff are honestly reporting how they really feel.",
+      "correct": false,
+      "feedback": "The question states the new desks are better in space, light and distance; there's no basis for saying they're worse."
+     },
+     {
+      "text": "Staff didn't understand the reasons for the move and have misunderstood the company's plans.",
+      "correct": false,
+      "feedback": "There were three briefings before the move, so the reasons were explained."
+     },
+     {
+      "text": "The new floor has just been renovated, and the smell and noise make it hard to stay at the desks.",
+      "correct": false,
+      "feedback": "The question mentions no smell or noise; the feedback says they want to go back to their old spot."
+     }
+    ]
+   },
+   {
+    "stem": "The company gives raises at the end of the year. At the start of the year, Team A's manager said in a meeting, \"Everyone gets a 10% raise this year,\" while Team B's manager never said anything. At the end of the year, everyone on both teams got a 5% raise.",
+    "question": "Which team's people are more likely to be unhappy?",
+    "explain": "Team A's starting point is the 10% their manager mentioned, so a 5% raise is recorded as getting only half; Team B's starting point is their old salary, so a 5% raise is recorded as getting more. The same raise counts as a loss on one side and a gain on the other.",
+    "options": [
+     {
+      "text": "About the same: both got 5% more than their old salary.",
+      "correct": false,
+      "feedback": "Measured against the old salary, the two teams are indeed the same. But Team A heard about 10%, and that is what they compare with, not their old salary."
+     },
+     {
+      "text": "Team A: the 10% they were told became the starting point, and a raise of only 5% feels like half was docked.",
+      "correct": true,
+      "feedback": "One sentence from the manager raised Team A's starting point to 10%, so 5% is recorded as a loss for them and as a gain for Team B."
+     },
+     {
+      "text": "Team B: their manager never said a word, so they'll feel undervalued.",
+      "correct": false,
+      "feedback": "Nobody gave Team B a number, so their starting point is their old salary, and a 5% raise is recorded as getting more."
+     },
+     {
+      "text": "Team A: they're angry that the manager didn't keep his word, which has nothing to do with how much less they got.",
+      "correct": false,
+      "feedback": "If they had got 12% at year end, the manager would have been just as wrong, yet nobody would be angry. What makes them unhappy is getting 5% less than promised."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "A 1,000 loss counts double: it takes a 2,000 win",
+  "caption": "Even odds: win X yuan or lose 1,000. In money, a 1,000 win is even; if losses count double, a 1,500 win still feels negative. Drag the multiple to move the even point.",
+  "x": {
+   "label": "Amount won (yuan)",
+   "min": 0,
+   "max": 3000,
+   "step": 100
+  },
+  "y": {
+   "label": "How it feels",
+   "unit": " yuan",
+   "min": -3000,
+   "max": 2000
+  },
+  "params": [
+   {
+    "id": "L",
+    "label": "Loss weight ×",
+    "min": 1,
+    "max": 3,
+    "step": 0.25,
+    "value": 2
+   }
+  ],
+  "series": [
+   {
+    "name": "How it feels",
+    "expr": "x - L*1000",
+    "tone": "accent"
+   },
+   {
+    "name": "In money",
+    "expr": "x - 1000",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "y": 0
+   },
+   {
+    "x": "L*1000",
+    "y": 0,
+    "text": "Feels even"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Win to feel even",
+    "expr": "L*1000",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "Feeling at a 1,500 win",
+    "expr": "1500 - L*1000",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

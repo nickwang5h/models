@@ -1,0 +1,65 @@
+{
+ "_note": "English names of the disciplines. The cards are in this folder as <id>.json, each with its opening story in one line in `story`; see docs/english.md.",
+ "disciplines": [
+  {
+   "id": "thinking",
+   "title": "Ways of Thinking",
+   "short": "Thinking"
+  },
+  {
+   "id": "math",
+   "title": "Mathematics & Statistics",
+   "short": "Math"
+  },
+  {
+   "id": "physics",
+   "title": "Physics, Chemistry & Engineering",
+   "short": "Physics"
+  },
+  {
+   "id": "biology",
+   "title": "Biology & Evolution",
+   "short": "Biology"
+  },
+  {
+   "id": "systems",
+   "title": "Systems",
+   "short": "Systems"
+  },
+  {
+   "id": "economics",
+   "title": "Economics",
+   "short": "Economics"
+  },
+  {
+   "id": "games",
+   "title": "Game Theory",
+   "short": "Games"
+  },
+  {
+   "id": "psychology",
+   "title": "Psychology & Misjudgment",
+   "short": "Psychology"
+  },
+  {
+   "id": "business",
+   "title": "Business & Strategy",
+   "short": "Business"
+  },
+  {
+   "id": "investing",
+   "title": "Investing & Risk",
+   "short": "Investing"
+  },
+  {
+   "id": "society",
+   "title": "Society, History & Organizations",
+   "short": "Society"
+  },
+  {
+   "id": "computing",
+   "title": "Computing & Information",
+   "short": "Computing"
+  }
+ ]
+}

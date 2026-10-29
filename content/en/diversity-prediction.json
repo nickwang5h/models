@@ -1,0 +1,214 @@
+{
+ "id": "diversity-prediction",
+ "name": "Diversity Prediction Theorem",
+ "en": "多样性预测定理",
+ "discipline": "math",
+ "one_line": "The more a crowd's guesses differ from each other, the closer their average gets.",
+ "story": "Galton collects 787 guesses of an ox's weight at a Plymouth livestock show; the middle guess is 1,207 pounds against a true 1,198 (Nature, 1907, \"Vox Populi\")",
+ "shallow": {
+  "scene": "At a livestock fair in Plymouth, England, there was a guessing stall. For sixpence you could guess what an ox would weigh once it was slaughtered and dressed, and the closest guess won a prize. Butchers, farmers and onlookers all put in their tickets. It was 1906, and the statistician Francis Galton happened to be there.\n\nAfterwards he got hold of the more than seven hundred valid tickets, lined the guesses up from smallest to largest, and took the one in the middle: 1,207 pounds. The ox actually weighed 1,198 pounds, less than one percent off. Single tickets that were off by dozens of pounds were common. But some people guessed too heavy and some too light, and put together, most of the errors cancelled out.",
+  "plain": "Suppose you wear two watches, one 5 minutes fast and one 5 minutes slow. Average the two readings and you get exactly the right time: one is wrong forward, the other wrong backward, and the errors cancel. If both are 5 minutes fast, the average is still 5 minutes fast, and the second watch adds nothing.\n\nThe diversity prediction theorem writes this cancelling as an equation: crowd error = average individual error − diversity. All three are measured by squaring the differences. The average individual error is how many minutes each watch is off, squared, then averaged: fast or slow, each is 5×5, which is 25. Diversity is how far each watch is from the average of the two, also squared and then averaged: each is 5 minutes from the right time, so that is also 25. The crowd error is how many minutes the average reading is off, squared: 25 minus 25, which is 0.\n\nWhen both watches are 5 minutes fast, diversity is 0, and the crowd error is still 25, not a bit smaller."
+ },
+ "deep": {
+  "mechanism": "### When each person is just as wrong, the more spread out the guesses, the better the average\n\nAn average lets overestimates and underestimates cancel each other, and the more spread out the guesses are, the more can cancel. The true value is 100. Below are three pairs of people, and in each pair the average individual error is 400.\n\nBoth guess 80: the average is also 80, the crowd error is 400, and nothing has cancelled. One guesses 72 and the other 104: they are off by 28 and 4, which squared are 784 and 16, and the average is still 400. But their average, 88, is only 12 off, so the crowd error drops to 144. The 256 that disappeared is the diversity, because each of them is 16 away from 88. One guesses 80 and the other 120: the average is exactly 100, all 400 of diversity is taken off, and the crowd error is zero. If two people guess $a$ and $b$, their average is $m$ and the true value is $t$:\n\n$$(m-t)^2=\\frac{(a-t)^2+(b-t)^2}{2}-\\frac{(a-m)^2+(b-m)^2}{2}$$\n\nThe left side is the crowd error; the right side is the average individual error, then the diversity. Put in 72 and 104 and you get $144=400-256$. Diversity is an average of squares, so it can never be below zero. That means the error of the average can never be bigger than the average individual error, and the bigger the diversity, the more is taken off.\n\n### If each person is a little better than guessing blindly, a big enough majority can be trusted\n\nTaking a majority vote on a yes-or-no question leads to a similar result. Condorcet imagined a group of jurors who vote independently, each right with probability 0.6. One juror is right with probability 0.6. With three, the chance that two or more are right is 0.648; with a hundred and one, it is over 0.97. Change each person's probability to 0.45 and the result flips: the more people, the more likely the majority is wrong. For the majority to get more and more accurate, two things must both hold: each person is right more than half the time, and they vote independently of each other. A hundred and one people who all do what one person says count as one person.",
+  "origin": "The Marquis de Condorcet worked out the jury theorem in an essay in 1785. The diversity prediction theorem was laid out in full by Scott Page in his 2007 book *The Difference*; the equation is an algebraic identity, true whatever each person guesses. Galton wrote up the guessing contest in a short article published in 1907 under the title \"Vox Populi\" (the voice of the people).",
+  "limits": "Averaging works best when each person estimates a number from their own information: counting beans, guessing a weight, forecasting sales. If everyone has read the same report, or has heard other people's answers first, the guesses bunch together, diversity shrinks to zero, and any number of people amounts to one person. The same happens if you ask a hundred people from very different backgrounds and they all repeat what one analyst's report says."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "To estimate how many people will come to an event, have several people who don't talk to each other each give a number. The error of their average will be no bigger than their average individual error."
+   },
+   {
+    "use": "design",
+    "text": "When running an online guessing contest, collect everyone's written number before announcing the average, so that later players don't drift toward the average and wipe out the diversity."
+   },
+   {
+    "use": "explain",
+    "text": "On a talent show where each judge scores alone, the average score is steadier than any single judge's score: some score high and some low, and part of that cancels."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Weather",
+    "title": "Dozens of forecasts for one day",
+    "text": "A weather forecasting center doesn't run its forecast just once. It changes the starting conditions a tiny bit each time, runs it dozens of times, and then looks at the average of the results and how spread out they are. The average is usually closer to what actually happens than any single forecast. On days when the dozens of results are widely scattered, forecasters say in the forecast that they aren't very sure."
+   },
+   {
+    "field": "Computing",
+    "title": "A forest of trees that each go wrong their own way",
+    "text": "A random forest first trains several hundred decision trees. Each tree sees only a random sample of the data and a random selection of features, so each goes wrong in its own way; at the end they vote or are averaged. When engineers want it to be more accurate, they first make the trees more different from each other, and only then work on improving each tree."
+   },
+   {
+    "field": "Personal life",
+    "title": "Three estimates that never compared notes",
+    "text": "You're renovating, and you ask three contractors each to look over the place and each to write an estimate, without letting them talk to each other first. The quotes are 180,000, 240,000 and 270,000 yuan. You set aside the average, 230,000, and then ask the one who quoted 180,000 what he left out."
+   }
+  ],
+  "ask": [
+   "Did each of these estimates come from that person's own information, or did they read the same material or hear someone else's number first?",
+   "How many people guessed high and how many low? If they all lean the same way, no number of people will cancel it out.",
+   "Could I collect everyone's number before showing anyone, or add one more person who works from completely different information?"
+  ],
+  "with": [
+   {
+    "id": "social-proof",
+    "sees": "Your team is estimating how many customers a new shop will get in its first month. Colleagues see that someone in the group chat has already said 3,000, so they say 2,800 and 3,200. Social proof says follow the majority; it's easy and safe. The diversity prediction theorem wants the exact opposite: everyone writes down their own number first, because once a number appears in the chat, the guesses drift toward it and the diversity is wiped out. When a question has a right answer, collect independent estimates before sharing them; for things with no right or wrong, like which restaurant to eat at, following the majority is fine."
+   },
+   {
+    "id": "law-of-large-numbers",
+    "sees": "With the same budget, do you interview another thousand customers of the same kind, or find ten people with completely different backgrounds? The law of large numbers says a bigger sample gets closer to the true value, as long as each error is random and they cancel each other. When the customers' biases all point the same way, interviewing a thousand only measures the same bias more precisely; then ten people with different points of view cancel more of the error. When the errors are only random noise, spend the money on a bigger sample."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You lead a forecasting team of five who have long estimated costs for the same kind of project. Their numbers always come out too high, because they all work from the same old price list. Now you need to add one person. A has the smallest individual error and also uses the old price list. B's individual error is a bit bigger, but B uses suppliers' current prices, and B's errors are mostly on the low side.",
+    "question": "Adding whom would do more to reduce the error of the team's average?",
+    "explain": "The team's errors are all on the high side. B's errors go the other way and pull the average down; A just adds one more error in the same direction.",
+    "options": [
+     {
+      "text": "It makes little difference: it's only one more person, and the average hardly changes.",
+      "correct": false,
+      "feedback": "The number of people isn't what matters. One person who is wrong in a different direction does far more for the average than one who is wrong in the same direction."
+     },
+     {
+      "text": "Neither: the team already has five people, and adding more only makes it harder to agree.",
+      "correct": false,
+      "feedback": "Averaging doesn't need people to agree; different views are exactly what it needs. What's missing is an estimate from the other direction."
+     },
+     {
+      "text": "B: his errors go the opposite way from everyone else's and can cancel part of the overestimate.",
+      "correct": true,
+      "feedback": "B brings the diversity the team lacks, and the average is pulled toward the true value."
+     },
+     {
+      "text": "A: he has the smallest individual error, so adding him makes the average most accurate.",
+      "correct": false,
+      "feedback": "A makes the same mistake as the other five. Adding him leaves the diversity almost unchanged, and the average is still too high."
+     }
+    ]
+   },
+   {
+    "stem": "Your review panel judges whether each application passes. Each reviewer decides independently and is right 45% of the time. Right now there are 3 reviewers and the majority decides, so the panel is right about 42.5% of the time. Your manager proposes growing the panel to 9.",
+    "question": "With 9 reviewers, what happens to the chance the panel judges correctly?",
+    "explain": "Each person is right less than half the time, so the more people vote, the more reliably the majority lands on the wrong side. With 9 people the panel is right about 38% of the time.",
+    "options": [
+     {
+      "text": "It falls: each person already leans toward the wrong answer, and the more people, the more firmly the majority sits on the wrong side.",
+      "correct": true,
+      "feedback": "About 42.5% with 3 people, about 38% with 9; the more people you add, the closer it gets to always wrong."
+     },
+     {
+      "text": "It rises: with more people, someone will always correct the others' mistakes.",
+      "correct": false,
+      "feedback": "Each person votes independently, and nobody corrects anybody. Each leans toward the wrong answer, and the majority leans with them."
+     },
+     {
+      "text": "It stays the same: each person's probability hasn't changed, so the panel's hasn't either.",
+      "correct": false,
+      "feedback": "The panel's probability is the chance the majority vote is right, and it changes with the number of people, even though each person's probability stays the same."
+     },
+     {
+      "text": "It rises and then falls: small groups swing a lot, and only big ones settle down.",
+      "correct": false,
+      "feedback": "From 3 people on, it goes down all the way; there is no rising stage first."
+     }
+    ]
+   },
+   {
+    "stem": "Four colleagues each guess how many people will come tomorrow, and the count turns out to be 100. Their guesses are 90, 110, 110 and 130. The average of the four people's squared errors is 300, and the average squared distance between the four guesses and their own average is 200.",
+    "question": "If you average the four guesses, what is the squared error of that average?",
+    "explain": "Crowd error = average individual error − diversity = 300 − 200 = 100. To check: the average is 110, which is 10 more than 100, and 10 squared is 100.",
+    "options": [
+     {
+      "text": "200: the diversity among the guesses is the crowd's error.",
+      "correct": false,
+      "feedback": "200 measures how spread out the four guesses are from each other, not how far the average is from the true value."
+     },
+     {
+      "text": "100: the average individual error minus the diversity.",
+      "correct": true,
+      "feedback": "300 − 200 = 100. The average is 110, 10 above the true 100, and squared that is exactly 100."
+     },
+     {
+      "text": "300: the error of the average is the average of the individual errors.",
+      "correct": false,
+      "feedback": "That is the average individual error, before taking off the part that cancels because people guessed differently."
+     },
+     {
+      "text": "0: the four numbers include highs and lows, so the average must land right on it.",
+      "correct": false,
+      "feedback": "There is more overestimating than underestimating, so the average is 110, still 10 off."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "One fast, one slow: diversity cancels all error",
+  "caption": "Your watch is 5 min fast. Drag the other: at 5 slow, diversity equals individual error and crowd error is 0; at 5 fast, diversity is 0 and the average stays 5 fast.",
+  "x": {
+   "label": "Other watch (min fast; minus = slow)",
+   "min": -10,
+   "max": 10
+  },
+  "y": {
+   "label": "Error, squared",
+   "min": 0,
+   "max": 70
+  },
+  "params": [
+   {
+    "id": "b",
+    "label": "Other is fast by",
+    "min": -10,
+    "max": 10,
+    "step": 1,
+    "value": -5,
+    "unit": " min"
+   }
+  ],
+  "series": [
+   {
+    "name": "Avg. individual error",
+    "expr": "(25+x^2)/2",
+    "tone": "muted"
+   },
+   {
+    "name": "Diversity",
+    "expr": "((5-x)/2)^2",
+    "tone": "ink"
+   },
+   {
+    "name": "Crowd error",
+    "expr": "((5+x)/2)^2",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "x": "b"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Average still off by",
+    "expr": "abs(5+b)/2",
+    "unit": " minutes",
+    "digits": 1
+   },
+   {
+    "label": "Diversity taken off",
+    "expr": "((5-b)/2)^2",
+    "digits": 1
+   },
+   {
+    "label": "Crowd error",
+    "expr": "((5+b)/2)^2",
+    "digits": 1
+   }
+  ]
+ }
+}

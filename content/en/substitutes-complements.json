@@ -1,0 +1,194 @@
+{
+ "id": "substitutes-complements",
+ "name": "Substitutes and Complements",
+ "en": "替代品与互补品",
+ "discipline": "economics",
+ "one_line": "When something gets pricier, what can replace it sells more, and what goes with it sells less.",
+ "story": "After the oil embargo pushes up fuel prices, American car buyers turn to small cars that use less fuel",
+ "shallow": {
+  "scene": "In October 1973, the Arab oil-producing countries placed an oil embargo on the United States. Long lines formed at gas stations, and gas prices kept climbing. Families who walked into showrooms to buy a car no longer asked first about horsepower, but about how far it would go on a gallon. Orders for small cars that used less fuel went up, big gas-guzzlers sat in the showrooms unsold, and many families turned to small cars imported from Japan.",
+  "plain": "Every day at lunch you buy a 20-yuan rice bowl, a dish over rice, downstairs from your office, with a 5-yuan bowl of soup. The day the rice bowl goes up to 28 yuan, you go to the 18-yuan noodle shop across the street, and you don't buy the soup either, because you only ever had the soup with the rice bowl. One price rise pushes business in two directions. Noodles can replace the rice bowl, so they are a substitute, and the noodle shop gets one more order; soup goes with the rice bowl, so it is a complement, and the soup stall gets one order fewer."
+ },
+ "deep": {
+  "mechanism": "### The more alike the substitutes, the smaller the rise that drives buyers away\n\nSuppose two bubble-tea shops sell much the same milk tea, at 12 yuan a cup each. If Shop A goes up to 13 yuan, only people who really care about one yuan switch to Shop B; at 18 yuan, most people switch, because Shop B's cup is much the same and not worth 6 yuan more. But if the only thing you'll drink is Shop A's mango-pomelo sago, at 18 yuan you'll probably stay. The more alike the two shops are, the less you give up by switching, and the more easily buyers leave.\n\n### Complements sell less along with the main item\n\nWhen phones go up in price, fewer people buy phones; a phone case is only useful when you have a phone, so fewer people buy cases too. To tell which relationship two things have, see whether people buy more or less of one when the other goes up in price: if they buy more, it's a substitute; if they buy less, it's a complement.\n\n### Substitute or complement depends on what it's used for this time\n\nBread and rice replace each other when you're choosing a staple; bread and cheese go together when you're making sandwiches. The week bread went up in price, the people choosing a staple cooked an extra pot of rice, and the people making sandwiches bought less cheese.",
+  "origin": "In 1838, Antoine Augustin Cournot analyzed copper and zinc, which are combined to make brass; this is one of the earliest examples of a complementary relationship. In 1890, Alfred Marshall discussed \"joint demand\" in *Principles of Economics*, meaning things that are only useful when used together. In 1934, John Hicks and Roy Allen made the distinction between substitutes and complements more rigorous. The idea was filled in by several scholars one after another; no single year counts as its birth.",
+  "limits": "In the first few weeks after a price changes, if buyers can freely switch what they buy, it's easiest to see which things are substitutes and which are complements. When buyers can't switch, this way of judging doesn't help: the subway can replace a taxi on the way to work, but not a van to move a sofa; and while the contract hasn't run out, you can't move your phone plan either. Taking \"often bought together\" as a sign of complements is a common misreading: when year-end bonuses are paid, people have more money, and two completely unrelated things can sell well at the same time."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "Before pricing your own product, first list the other things buyers have at hand that get the same job done, then list the partners it can't do without. The first list tells you who a price rise will lose people to; the second tells you what a price cut can pull along."
+   },
+   {
+    "use": "design",
+    "text": "When setting a combined ticket for a tourist site, put the things used together, such as lodging, the cable car and meals, on the same ticket, so a discount on each one pulls along the others."
+   },
+   {
+    "use": "predict",
+    "text": "After tolls on an expressway are lowered, you want to estimate next month's fuel and food business at the service areas along it: more cars take the expressway, so more stop at the service areas to fill up and eat. Some of those cars have switched over from the ordinary highway, so the small restaurants along the highway will be quieter."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "Cheaper tickets, more popcorn",
+    "text": "You run a neighborhood cinema where weekend tickets are 45 yuan and a popcorn combo is 30 yuan. You cut the weekend ticket to 35 yuan, more people come, and you also sell more popcorn than on weekends in past years. The cinema in the mall next door didn't change its prices, and it had somewhat fewer viewers on the weekend."
+   },
+   {
+    "field": "Personal life",
+    "title": "Tent rental went up",
+    "text": "The four of you are going camping this weekend, and the campsite's tent rental has gone up from 100 yuan a night to 180 yuan. One person suggests booking a guesthouse outside the campsite instead; another suggests bringing your own tents. In the end three of you carry your own tents to the campsite and one books the guesthouse. The stall owner selling hot drinks at the campsite entrance says business this week is slower than last week."
+   },
+   {
+    "field": "Investing",
+    "title": "Subsidy cut, fewer chargers",
+    "text": "You hold shares in a company that installs charging points in apartment complexes. When you hear the government will end its subsidy for buying electric cars, you first lower the forecast for electric car sales in your spreadsheet, then follow it down to the orders for charging points: fewer cars, fewer chargers installed. In another column of the spreadsheet, the forecast for gasoline car sales goes up."
+   }
+  ],
+  "ask": [
+   "What job is the buyer really trying to get done by buying it? Besides things of the same kind, what else can get that job done?",
+   "To get that job done, which partners have to be bought along with it?",
+   "The moment the price goes up, who can switch away today, and who can't leave for now?"
+  ],
+  "with": [
+   {
+    "id": "switching-costs",
+    "sees": "Your software subscription is about to go up in price. Substitutes and complements remind you that with many rivals of the same kind, a price rise pushes customers to them, so don't raise it. Switching costs see the other side: the customers' data is all stored in your software, their staff are used to it, and leaving would take a lot of money and time, so they'll probably put up with a small rise. First look at how many customers have actually tried a rival today: if many have, listen to the first; if almost nobody has, the room for a price rise lies with the second."
+   },
+   {
+    "id": "price-elasticity",
+    "sees": "For the same price rise, price elasticity answers \"how much will sales fall,\" while substitutes and complements answer \"where does the lost demand go, and who does it drag down with it.\" First use elasticity to estimate the total, then follow the stand-ins and partners to find who gains and who gets hurt."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "The marketing team you lead has to make a fixed number of event posters each month. There are two ways to do it: subscribe to design software and buy template packs that only work in that software, or hire a studio to do the design. The two ways cost about the same in total and give equally good results. Now the software subscription has gone up 30%, and the price of the template packs and the studio's quotes have not changed.",
+    "question": "How will this team's purchases most likely change from here?",
+    "explain": "Both the studio and the software can get the posters done. When the software route gets more expensive, the studio picks up part of the work. The templates only work in that software, so with the software route used a bit less, fewer templates are bought too.",
+    "options": [
+     {
+      "text": "Studio orders stay the same, and purchases of the template packs go down.",
+      "correct": false,
+      "feedback": "Buyers compare the relative prices of the two routes: the studio's quotes haven't changed while the software has gotten pricier, so the studio is better value and its orders will go up."
+     },
+     {
+      "text": "Studio orders go up, and purchases of the template packs go down.",
+      "correct": true,
+      "feedback": "The studio replaces the software and picks up the work that moves over; the templates are no use without the software, so purchases of them fall along with the software."
+     },
+     {
+      "text": "Studio orders go up, and purchases of the template packs go up too.",
+      "correct": false,
+      "feedback": "The templates only work in that software; posters that go to the studio don't use them."
+     },
+     {
+      "text": "Studio orders go down, and purchases of the template packs go up.",
+      "correct": false,
+      "feedback": "It's the route of doing it yourself with the software that has gotten more expensive; the studio's relative price has actually fallen, so it won't get fewer orders because of this."
+     }
+    ]
+   },
+   {
+    "stem": "You're going through a supermarket's sales data. With everything else unchanged, in the month after one brand of coffee beans went up 10% in price, sales of the same brand's drip-bag coffee filters fell, sales of tea bags rose, and sales of school stationery barely changed.",
+    "question": "What does each of these three sets of data say about its relationship to the coffee beans?",
+    "explain": "After the coffee beans went up in price, the item people bought less of is a complement, the one they bought more of is a substitute, and the one that barely changed shows no visible link.",
+    "options": [
+     {
+      "text": "The drip-bag filters are complements to the coffee beans, the tea bags are substitutes, and the stationery is also a complement, because they're all sold in the same supermarket.",
+      "correct": false,
+      "feedback": "Being sold in the same supermarket doesn't make a relationship; what counts is whether the amount bought changed after the coffee beans went up. Stationery barely changed, so no link can be seen."
+     },
+     {
+      "text": "The drip-bag filters are substitutes for the coffee beans, the tea bags are complements, and the stationery has no visible link to the coffee beans.",
+      "correct": false,
+      "feedback": "This reads the direction backward. The filters only go with coffee beans, and when the beans got pricier they sold less too, so they're complements; it's the tea that picked up the buyers who switched, so it's the substitute."
+     },
+     {
+      "text": "The drip-bag filters are complements to the coffee beans, the tea bags are also complements, and the stationery is a substitute.",
+      "correct": false,
+      "feedback": "Tea bag sales rose, which shows buyers switched from coffee to them; that's substitution. Stationery sales didn't change, so no substitute relationship can be seen."
+     },
+     {
+      "text": "The drip-bag filters are complements to the coffee beans, the tea bags are substitutes, and the stationery has no visible link to the coffee beans.",
+      "correct": true,
+      "feedback": "The filters sold less as coffee beans went up, so they're complements; the tea bags picked up the buyers who switched, so they're substitutes; the stationery didn't react, so no link can be seen."
+     }
+    ]
+   },
+   {
+    "stem": "You run a bike shop. A bike sells for 2,000 yuan, and you plan to cut it to 1,800 yuan, making 200 yuan less on each one. On average, people who buy a bike also spend 600 yuan in your shop on helmets, locks and cycling clothes. These accessories have a 30% profit margin; they can be bought at other shops too, but most people just pick them up on the spot.",
+    "question": "To judge whether this price cut is worth it, which number matters most?",
+    "explain": "People who buy a bike pick up accessories along with it, so the sums for the price cut have to include this accessory profit and then compare it with the 200 yuan less made on each bike.",
+    "options": [
+     {
+      "text": "How much profit comes from the accessories bought along with the extra bikes sold after the price cut.",
+      "correct": true,
+      "feedback": "The extra buyers will also buy helmets, locks and cycling clothes, and this accessory profit has to be set against the 200 yuan less made on each bike."
+     },
+     {
+      "text": "The 200 yuan less made on each bike.",
+      "correct": false,
+      "feedback": "This only counts the bike side and leaves out the profit from accessories that bike buyers pick up, so there's no way to tell whether the price cut pays."
+     },
+     {
+      "text": "The price of the same bike at the bike shop next door.",
+      "correct": false,
+      "feedback": "That's the sum for how customers choose between the two shops. What the question compares is the money lost from the price cut and the accessory profit from the extra bikes sold."
+     },
+     {
+      "text": "The cost of the fabric for the cycling clothes.",
+      "correct": false,
+      "feedback": "The fabric cost doesn't decide how many extra buyers and how much accessory business the price cut brings, so it doesn't belong in the sums for this cut."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Rice bowl up: noodles gain an order, soup loses one",
+  "caption": "One price rise pushes two ways: the noodle shop that can replace the rice bowl gets you, and the soup that only goes with it goes unordered.",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "Rice bowl now 28 yuan",
+    "sub": "Was 20 yuan"
+   },
+   {
+    "id": "m",
+    "label": "You skip the rice bowl"
+   },
+   {
+    "id": "b",
+    "label": "Noodle shop instead",
+    "sub": "Substitute: one more",
+    "tone": "accent"
+   },
+   {
+    "id": "c",
+    "label": "No soup either",
+    "sub": "Complement: one fewer",
+    "tone": "warn"
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "m"
+   },
+   {
+    "from": "m",
+    "to": "b",
+    "label": "Can replace it"
+   },
+   {
+    "from": "m",
+    "to": "c",
+    "label": "Only goes with it",
+    "tone": "warn"
+   }
+  ]
+ }
+}

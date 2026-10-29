@@ -1,0 +1,198 @@
+{
+ "id": "public-choice",
+ "name": "Public Choice",
+ "en": "公共选择",
+ "discipline": "society",
+ "one_line": "Officials look out for themselves too, so ask who gains from a policy and who pays.",
+ "story": "Congress sets aside 223 million dollars for Alaska's \"Bridge to Nowhere\"; the Senate votes 82 to 15 against moving the money to hurricane rebuilding",
+ "shallow": {
+  "scene": "In 2005 the US Congress passed a highway bill that set aside 223 million dollars for a bridge in Alaska. The bridge would run from the small seaside town of Ketchikan to an island across the water that had only an airport and about 50 residents, who usually got back and forth by ferry. The national media called it the \"Bridge to Nowhere.\"\n\nThat October, just after Hurricane Katrina had wrecked the coast of the American South, a senator proposed moving the money to disaster relief. The Senate voted 82 to 15 not to move it.\n\nThe same bill held thousands of other earmarks, each one won by a lawmaker for his own home district. For each lawmaker, protecting someone else's bridge today is how your own project gets protected tomorrow. The people paying, though, were spread very thin: the cost of this bridge, shared among nearly 300 million Americans, came to less than a dollar each, and few people call their lawmaker over a dollar.",
+  "plain": "A city plans to cut a bus line, which would save 900,000 yuan a year. The line's 300 regular riders depend on it to get to and from work; on the day of the hearing they all showed up, with a petition. The money saved, shared among the city's 900,000 people, comes to 1 yuan each, and nobody stands up to speak for 1 yuan. The public choice school treats lawmakers as ordinary people keeping their own accounts too: save the line, and those 300 remember him at the next vote; cut it, and the 900,000 don't even know how he voted. So the line was saved."
+ },
+ "deep": {
+  "mechanism": "### The thinner a cost is spread, the less anyone bothers about it\n\nBack to the bus line. If the same money were shared among only 900 households, 1,000 yuan each, someone would go to the hearing. Shared across the whole city, 1 yuan each, nobody wants to take half a day off for it. The side that benefits is small, and each member gains a lot; the side that pays is large, and each member pays a little. So almost the only voices lawmakers hear come from the side that benefits.\n\n### A lawmaker's report card is written in votes\n\nVotes, campaign donations and the next job are a lawmaker's income. The day a new line opens there's a ribbon-cutting, photos and thanks from people in the district; an old line carries a few fewer riders each year and money keeps being spent on it, but nobody pins that waste on anyone. So the same money brings the lawmaker a bigger return when it is spent opening a new line.\n\n### Change the rules, and the same person chooses differently\n\nThe economist James Buchanan moved the question one step earlier: before making particular decisions, what rules should people agree on first? If a lawmaker who proposes a new line had to state which spending the money would come out of, the people who benefit from that spending would come to the hearing, and the lawmaker would have to face them before deciding whether to propose it. With the paying side in the room, the same lawmaker, having weighed it up, might no longer propose it.",
+  "origin": "In 1957 Anthony Downs, in *An Economic Theory of Democracy*, treated voters and parties as actors weighing gains and losses. In 1962 Buchanan and Gordon Tullock wrote *The Calculus of Consent*, which studied the rules for group decisions starting from individual choice. Buchanan won the Nobel Prize in economics in 1986. Later studies of real voting, budgets and lobbying made public choice a school of thought.",
+  "limits": "Public choice is best for analyzing decisions like budget spending, votes on laws and regulatory approvals: there, rewards and punishments are visible, and who voted for what can be looked up. Rescuers who take risks at a disaster scene are driven by professional belief and a sense of mission, and votes and promotions don't explain much. If you find a hidden self-interest behind every failed policy, so that any evidence that turns up can be talked round, then the explanation can no longer be proved wrong by facts."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "Predict which clauses of a draft regulation will be changed after public comment: the ones that hurt only a few big players are the first to be changed."
+   },
+   {
+    "use": "design",
+    "text": "Add a sunset clause to the city's new projects: if there's no new vote after five years, the funding stops automatically, so that in every round someone has to come out and speak up for the project."
+   },
+   {
+    "use": "explain",
+    "text": "At a university, new buildings go up one after another while an old building's leaking roof waits years to be fixed, because a groundbreaking ceremony has a ribbon to cut and fixing a roof doesn't."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Politics",
+    "title": "One list, voted on as a whole",
+    "text": "From 1988 the US Congress changed how it closed military bases. Before then, whenever a base was due to close, the lawmakers from its state always found a way to hold it up. Under the new method, an independent commission handed over a list, and Congress could only pass or reject the list as a whole, not strike bases off one by one. In the rounds of lists that followed, a number of bases were closed."
+   },
+   {
+    "field": "Trade",
+    "title": "Steel tariffs follow the swing-state vote",
+    "text": "In March 2002 the US government put tariffs of up to 30% on many kinds of imported steel. Steel mills were concentrated in Pennsylvania, Ohio and West Virginia, states that swung back and forth in presidential elections; the companies and consumers that use steel were spread across the country, and the little extra each one paid went unnoticed. After the World Trade Organization ruled that the tariffs broke its rules, the European Union threatened to retaliate, with a list that picked out products from swing states, like Florida oranges and Michigan cars. In December 2003, eleven months before the next election, the US dropped the tariffs."
+   },
+   {
+    "field": "Personal life",
+    "title": "Old factories into homes",
+    "text": "In the old part of town where you live there is a stretch of old factory buildings, and the city proposes turning it into a 12-story apartment building. On the day of the hearing, the owners of the homes around it all show up, talking about sunlight and the value of their own homes. The people who would one day move into the new building still live in other cities; nobody knows who they are, and not one of them is there. When it comes to the vote, the council members vote against it."
+   }
+  ],
+  "ask": [
+   "On the day this decision is voted on, who will be there and who won't?",
+   "Who scores the decision-makers for promotion, reelection or bonuses, and what do they look at when they score?",
+   "Follow the budget: which district, which company does the money end up in?"
+  ],
+  "with": [
+   {
+    "id": "principal-agent",
+    "sees": "You're the new chair of a company owned by the provincial government, and you find that the branch offices' accounts have never been transparent. Principal-agent thinking has you add a layer of audit and write headquarters' performance targets in more detail. Public choice has you ask first: who decides the new auditors' promotions? If they are still scored by the branch's own bosses, this extra layer of oversight just adds one more person to be bought off. First check who writes the overseers' reviews, then decide whether to add the layer."
+   },
+   {
+    "id": "collective-action",
+    "sees": "When a tariff can't be got rid of for years, the collective action problem sees that the people paying can't get together. Public choice goes on to look at the receiving end of the mail: in a lawmaker's inbox, which side is organized, and which side has people whose job is to watch how he votes. Only by setting the two side by side can you judge how long the tariff will last."
+   },
+   {
+    "id": "checks-and-balances",
+    "sees": "You want to stop a local official from putting all the funding into his relatives' projects. The checks-and-balances approach splits approval among three departments that can each halt the others. Public choice warns that if the three departments gain and lose in the same ways, splitting them up just leads them to trade support. Then the power should go to people whose interests run the other way, for example by giving the department whose budget is being taken the right to veto in public."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A newly elected mayor with a four-year term has to raise water prices to close a funding gap. The increase will cost each household 30 yuan more a month, and the benefits of upgrading the waterworks won't show for two or three years. The mayor's advisers are discussing when to announce the increase.",
+    "question": "With his own reelection in mind, when is the mayor most likely to announce the increase?",
+    "explain": "Voters' anger fades with time, and the benefits of the upgrade take a few years to appear. Put the increase at the very start of his term, and he has more than three years for voters to see the benefits and for the anger to pass.",
+    "options": [
+     {
+      "text": "In his first six months in office, putting the cost before the benefits.",
+      "correct": true,
+      "feedback": "The cost is paid first and the benefits come later. With the increase at the very start, the anger has faded by election time, just as the upgrade's benefits appear."
+     },
+     {
+      "text": "In the month of the next election, slipped in while voters are focused on other issues.",
+      "correct": false,
+      "feedback": "Announced in the election month, the first thing voters see is the bill, and the upgrade's benefits have no time at all to appear."
+     },
+     {
+      "text": "Six months before the next election, so voters remember the upgrade is under way when they vote.",
+      "correct": false,
+      "feedback": "Announced six months before the election, voters' anger is at its peak, and the upgrade's benefits haven't appeared yet."
+     },
+     {
+      "text": "At the start of his third year, leaving plenty of time for the benefits to appear.",
+      "correct": false,
+      "feedback": "The start of the third year is only a little over a year from the election. The benefits haven't appeared yet, and the anger over the increase lands right before the vote."
+     }
+    ]
+   },
+   {
+    "stem": "The city transport bureau sets its director's rank by the number of staff he manages, and its budget is also set by headcount. Last year the bureau launched a new approval system, and work that used to take ten people now takes five. The director has served a full three years and hopes to move up a rank within the year.",
+    "question": "What is the director most likely to do next?",
+    "explain": "The director's rank follows headcount, so staff freed up are a loss on his books, not a gain. He has every reason to keep those five people and find them new work to do.",
+    "options": [
+     {
+      "text": "Report to his superiors that approval work has halved and suggest shrinking the bureau.",
+      "correct": false,
+      "feedback": "Shrinking would bring down both the bureau's headcount and his rank, so the director has no reason to do it."
+     },
+     {
+      "text": "Announce the staff time the system has saved and wait for his superiors to reward him.",
+      "correct": false,
+      "feedback": "Rank is set by headcount, so announcing the saved staff time amounts to telling his superiors they can cut jobs; no reward comes of it."
+     },
+     {
+      "text": "Apply to take over parking management for the whole city, keeping the five extra people in the bureau.",
+      "correct": true,
+      "feedback": "The new work gives the five people a place, so both the bureau's headcount and his rank are kept."
+     },
+     {
+      "text": "Transfer the five extra people to a neighboring bureau, which in return asks for less budget to cover them.",
+      "correct": false,
+      "feedback": "When the staff move out, his own headcount and rank shrink with them, which does him no good."
+     }
+    ]
+   },
+   {
+    "stem": "For years, your state's senator has voted against every budget, saying publicly that he does so out of belief in fiscal discipline. His opponent says he is just pandering to the voters in his state who oppose tax increases. Both can point to plenty of his speeches and his voting record.",
+    "question": "What evidence best tells the two claims apart?",
+    "explain": "While he still has to face voters, the belief explanation and the pandering explanation predict the same thing. Only once voters can no longer reward or punish him do the two claims part ways.",
+    "options": [
+     {
+      "text": "How much media coverage he gets.",
+      "correct": false,
+      "feedback": "The amount of coverage only shows that he gets attention; whatever his motive, he would be covered."
+     },
+     {
+      "text": "His party's approval rating nationwide.",
+      "correct": false,
+      "feedback": "A national approval rating reflects the party; it can't explain why this senator votes this way in his own state."
+     },
+     {
+      "text": "How harsh his speeches are each time he votes no.",
+      "correct": false,
+      "feedback": "Someone who uses harsh words may be acting on belief, or putting on a show for voters; both claims predict that."
+     },
+     {
+      "text": "Whether his voting record changes after he announces he won't run again.",
+      "correct": true,
+      "feedback": "If he votes just as before once votes can no longer reward or punish him, the belief claim gains support; if his votes change, the pandering claim does."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "grid",
+  "title": "Lawmakers hear, and voters remember, only the 300",
+  "caption": "Saving 900,000 a year is 1 yuan each; the cut costs 300 people their bus to work. Read across: those with a big stake show up, recall the vote, and the line stays.",
+  "rowLabel": "Who",
+  "colLabel": "Cutting this bus line",
+  "rows": [
+   "300 regulars",
+   "900,000 residents"
+  ],
+  "cols": [
+   "Each one's stake",
+   "Hearing day",
+   "Next election"
+  ],
+  "cells": [
+   [
+    {
+     "text": "Lose their commute",
+     "tone": "warn"
+    },
+    {
+     "text": "All come, with petition",
+     "tone": "accent"
+    },
+    {
+     "text": "Remember he saved it",
+     "tone": "accent"
+    }
+   ],
+   [
+    {
+     "text": "Each saves 1 yuan",
+     "tone": "muted"
+    },
+    {
+     "text": "No one takes leave",
+     "tone": "muted"
+    },
+    {
+     "text": "Don't know his vote",
+     "tone": "muted"
+    }
+   ]
+  ]
+ }
+}

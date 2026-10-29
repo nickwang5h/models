@@ -1,0 +1,230 @@
+{
+ "id": "time-delays",
+ "name": "Time Delays",
+ "en": "时间延迟",
+ "discipline": "systems",
+ "one_line": "When results come slowly, people keep pushing harder and end up overshooting.",
+ "story": "Sterman publishes his study of the Beer Game: demand doubles once, and the supply chain swings between shortages and piled-up stock",
+ "shallow": {
+  "scene": "Four people each run one link of a supply chain: retailer, wholesaler, distributor, factory. They're playing MIT's Beer Game. The beer customers buy each week goes up from four cases to eight, and stays at eight from then on. Orders and goods take a few weeks to pass through each link. The retailer watches the shelves empty and keeps adding orders; then the goods ordered earlier all arrive, and the storeroom is full again. Everyone switches to cutting orders, but upstream they are still delivering the earlier big orders. In 1989 John Sterman published his study of this experiment.",
+  "plain": "You're showering in an old house with a long hot-water pipe. Turn the tap toward hot, and the water temperature only changes ten seconds later. After the first turn the water is still cold, so you turn it a second time, then a third. This is a time delay: what you feel is always the temperature of ten seconds ago. When the heat from all three turns arrives together, it scalds you and you jump back. You wrench the tap toward cold, and again you have to wait ten seconds. The water swings between cold and scalding, and every turn goes past the comfortable spot."
+ },
+ "deep": {
+  "mechanism": "### Goods on the way can't be seen, so the gap gets filled again and again\n\nYou run a shop and want to keep 12 cases in stock. Goods arrive two weeks after you order. Each week you order what customers want plus the gap between your stock and 12 cases. Demand jumps from 4 cases a week to 8, but what arrives in the first two weeks is still the 4 cases you ordered before. In week one stock drops to 8 cases, and you order 12; in week two it drops to 4, and you order 16. In week three the 12 cases arrive, stock is back to 8, and you order 12. In week four the 16 cases arrive, stock shoots up to 16, and you order 4; in week five another 12 arrive, stock is 20, and you order 0.\n\nDemand stays at 8 cases the whole time, yet your orders swing between 0 and 16, in a cycle of six weeks. The trouble starts in week two: when you order 16, the 12 cases ordered in week one are still on the way, so the same gap gets filled twice.\n\n### The longer the wait and the harder you fill, the further you overshoot and the longer you swing\n\nWhen stock shoots past 12 cases and falls back, that's called overshoot; when it keeps going back and forth like this, that's oscillation. With the same rule but goods arriving in one week, orders settle at 8 cases from week two on, and stock holds at 12. Stretch delivery to three weeks, and orders first shoot up to 20, then are 0 four weeks in a row, and stock piles up to 32 cases. Keep delivery at two weeks but fill only half the gap each week, and orders peak at 12, then close in on 8 week by week.\n\n### Count the goods on the way as part of the gap, and it stops after one round\n\nAt the shop with two-week delivery, take off your order the goods on the way beyond the usual amount. You order 16 in week one, and 8 every week after that. Stock drops to 4 cases in week two, is back to 12 in week three, and stays there.",
+  "origin": "Delay is a basic idea in control theory and system dynamics, with no single person who came up with it. In his 1961 *Industrial Dynamics*, Jay Forrester discussed how delays make a company's production and stock swing up and down; the Beer Game came out of system dynamics research at MIT.",
+  "limits": "Waiting makes sense when the action has already gone out and the process is still under way: the goods are already shipped, the person already hired, the medicine already taken. A system with a lot of momentum and little friction overshoots its target even with no delay at all, so a curve that swings back and forth isn't always caused by delay. Just waiting before you've even acted goes wrong as well: if the house is already on fire, waiting won't make anything better."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "Before adding more orders, staff or machines again and again, first subtract what you've already sent for that hasn't arrived yet. The gap that's left is what this step needs to fill."
+   },
+   {
+    "use": "design",
+    "text": "Set a rule for the office air conditioning: once the temperature is set, wait at least twenty minutes before changing it, however hot the room still feels."
+   },
+   {
+    "use": "explain",
+    "text": "You start watching what you eat. In the first week your weight barely moves, and only in the third week does it start to drop: the action happened on day one, and the change on the scale comes later."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "Orders that arrived as demand collapsed",
+    "text": "In May 2001, Cisco took a 2.25 billion dollar charge in its results for excess inventory. The large orders it placed the year before, when parts were scarce, kept arriving after demand had collapsed."
+   },
+   {
+    "field": "Economic policy",
+    "title": "Ten rate hikes, then one pause",
+    "text": "From March 2022 the Federal Reserve raised interest rates again and again, ten times in all by May 2023. In June 2023 the committee paused, and its statement said that later decisions would take into account the tightening already built up and the lag before policy affects the economy and inflation."
+   },
+   {
+    "field": "Personal life",
+    "title": "Dough that rose too far",
+    "text": "You want to make steamed buns. The dough sits in a cool kitchen and still hasn't risen after an hour, so you add another spoonful of yeast, and half an hour later another. The spoonfuls you added earlier are already working, and the dough suddenly rises too far. When you lift the lid it smells sour, and the buns come out of the steamer flat and shapeless."
+   }
+  ],
+  "ask": [
+   "Of the actions I've taken, how many haven't shown up yet in the number in front of me?",
+   "How long is it from acting to seeing the effect? Is my next action coming before that time is up?",
+   "If this number doesn't move, how much longer am I willing to wait before deciding the action didn't work?"
+  ],
+  "with": [
+   {
+    "id": "feedback-loops",
+    "sees": "You run an automatic restocking line that orders whenever stock falls below a line. Feedback loops say to correct a gap as soon as you see it; time delays remind you that the last order is still on the way, and if you place another, the gap gets filled twice. If the delay is shorter than the time between your checks, follow the feedback-loop rule and fill the gap as soon as it appears; if the delay spans several checks, subtract what's on the way first."
+   },
+   {
+    "id": "sunk-cost",
+    "sees": "A new shop has been open three months with no sign of picking up. Time delays say that if you have reason to believe shops like this take six months to get going, closing now is closing too early; sunk cost says the money spent on the fit-out is no reason to carry on. The two models look at different things: ask whether the shop shows the signs it should by now, not how much has been spent."
+   },
+   {
+    "id": "stocks-and-flows",
+    "sees": "Goods on the way are a stock: ordered but not yet received, they're already in the system, just not in the warehouse count. List them on their own line when you take stock, and the delayed part becomes visible."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're promoting an online course. Data from past years shows that after an ad goes out, purchases come in gradually over two to three weeks, with only about a tenth in the first week. You started the ads on Monday. On Thursday you see purchases are still far below target, and you're thinking of doubling the budget.",
+    "question": "What should you do on Thursday?",
+    "explain": "Thursday's reading only includes the first few days of the ads, and it may not be far from the tenth the past years' curve says the first week should bring. Check it against that curve first, and only then will you know whether you're really behind or the purchases just haven't come yet.",
+    "options": [
+     {
+      "text": "Check the past years' curve for how many purchases there should be at this point in the first week, then judge whether you're behind.",
+      "correct": true,
+      "feedback": "The curve tells you how many you should see by Thursday: below it, you're behind; close to it, the rest is still on the way."
+     },
+     {
+      "text": "Cut the budget in half; the first few days' numbers already show it isn't working.",
+      "correct": false,
+      "feedback": "The first few days always bring only a small part of all purchases. Judging by them treats what hasn't arrived yet as what isn't coming."
+     },
+     {
+      "text": "Double the budget to push the numbers up in the first week.",
+      "correct": false,
+      "feedback": "The extra money also takes two to three weeks to turn into purchases. Adding it now means judging by results that haven't arrived yet."
+     },
+     {
+      "text": "Stop the ads first, and decide after three full weeks of results.",
+      "correct": false,
+      "feedback": "Stopping the ads would also cut the purchases that should come in the next two weeks, so you'd be cutting off the results still on the way yourself."
+     }
+    ]
+   },
+   {
+    "stem": "You follow the shipping industry. After freight rates have risen for two years in a row, shipping companies one after another order new ships. Together the orders would add capacity a quarter bigger than the current fleet, and the new ships take two and a half years to deliver. While the ships are on order, demand for freight stays about the same.",
+    "question": "In the year the new ships are being delivered, what will freight rates most likely do?",
+    "explain": "Every company ordered based on the high rates of two and a half years earlier, but the new ships all arrive together. Demand hasn't changed and capacity is up by a quarter, so rates fall.",
+    "options": [
+     {
+      "text": "Keep rising; shipping companies are willing to order new ships, so the industry is booming.",
+      "correct": false,
+      "feedback": "The orders reflect rates from two and a half years earlier. At delivery, demand hasn't changed while capacity has grown a lot, so prices can't go up."
+     },
+     {
+      "text": "Stay high; the new ships are just replacing old ones.",
+      "correct": false,
+      "feedback": "Together the orders add capacity a quarter bigger than the current fleet. That's a net addition, not a replacement."
+     },
+     {
+      "text": "Rise first and then level off, as the rise is canceled out by new orders.",
+      "correct": false,
+      "feedback": "The orders were placed long ago. What's being added is capacity, not demand, so rates can't rise, and won't rise first."
+     },
+     {
+      "text": "Fall back; everyone ordered at the old rates, and the capacity arrives all at once.",
+      "correct": true,
+      "feedback": "The decision comes first and the ships later: no one ordering saw that the others were ordering too, so when the ships arrive there's too much capacity."
+     }
+    ]
+   },
+   {
+    "stem": "The water level at the lower end of an irrigation canal is too low. After the upstream gate is opened wider, the water takes about thirty minutes to reach the level gauge downstream. Two keepers each check the gauge every ten minutes and, if the level is still low, open the gate wider: A opens it 5% more each time, B opens it 25% more each time.",
+    "question": "Once the water arrives, whose shift is more likely to push the downstream level over the warning line?",
+    "explain": "In thirty minutes each checks the gauge three times, the gauge never changes, and each opens the gate three more times. Each time B opens it five times as much as A, 75% in all against 15%, so when the water arrives, B's side shoots much higher.",
+    "options": [
+     {
+      "text": "A, because opening it only a little keeps the level low, so A keeps opening it for longer.",
+      "correct": false,
+      "feedback": "A opens it only 5% more each time; over three times that's a fifth of B's total. A is not the one who goes over the line."
+     },
+     {
+      "text": "B, who opens it five times as much each time, so more water has been let out in total before it arrives.",
+      "correct": true,
+      "feedback": "The gauge reading doesn't change, and B opens it 25% more three times, so much more water is on the way than with A, and it all arrives at once."
+     },
+     {
+      "text": "Neither; as soon as the gauge changes, they can stop in time.",
+      "correct": false,
+      "feedback": "By the time the gauge changes, all the water from the earlier openings is already on the way, and stopping can't hold it back."
+     },
+     {
+      "text": "Both the same; they wait the same time for the water, so the chance of going over is the same.",
+      "correct": false,
+      "feedback": "They wait the same time, but the total extra opening differs fivefold, so how far they overshoot differs a lot too."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Two-week delivery: orders swing from 0 to 16",
+  "caption": "Demand rises from 4 to 8 cases in week 1 and stays there. Drag the delivery time: at one week it settles by week 2; the longer, the higher stock shoots.",
+  "x": {
+   "label": "Weeks"
+  },
+  "y": {
+   "label": "Cases"
+  },
+  "params": [
+   {
+    "id": "d",
+    "label": "Weeks to arrive",
+    "min": 1,
+    "max": 3,
+    "step": 1,
+    "value": 2
+   },
+   {
+    "id": "g",
+    "label": "Gap filled",
+    "min": 25,
+    "max": 100,
+    "step": 25,
+    "value": 100,
+    "unit": "%"
+   }
+  ],
+  "model": {
+   "steps": 12,
+   "init": {
+    "inv": 12,
+    "o1": 4,
+    "o2": 4,
+    "o3": 4,
+    "o4": 4,
+    "mx": 12
+   },
+   "next": {
+    "inv": "inv + (d==1)*o1 + (d==2)*o2 + (d==3)*o3 + (d==4)*o4 - 8",
+    "o1": "max(0, 8 + g/100*(12 - (inv + (d==1)*o1 + (d==2)*o2 + (d==3)*o3 + (d==4)*o4 - 8)))",
+    "o2": "o1",
+    "o3": "o2",
+    "o4": "o3",
+    "mx": "max(mx, inv + (d==1)*o1 + (d==2)*o2 + (d==3)*o3 + (d==4)*o4 - 8)"
+   }
+  },
+  "series": [
+   {
+    "name": "Stock",
+    "expr": "inv",
+    "tone": "accent",
+    "dots": "small"
+   },
+   {
+    "name": "Orders a week",
+    "expr": "o1",
+    "tone": "ink",
+    "dashed": true,
+    "dots": "small"
+   }
+  ],
+  "marks": [
+   {
+    "y": 12,
+    "text": "Target stock"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Peak stock",
+    "expr": "mx",
+    "unit": " cases",
+    "digits": 0
+   }
+  ]
+ }
+}

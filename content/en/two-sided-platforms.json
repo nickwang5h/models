@@ -1,0 +1,232 @@
+{
+ "id": "two-sided-platforms",
+ "name": "Two-Sided Platforms",
+ "en": "双边平台",
+ "discipline": "business",
+ "one_line": "When two groups need each other, you often pay one side and charge the other.",
+ "story": "McNamara and Schneider launch the Diners Club card in New York, courting cardholders and restaurants at the same time",
+ "shallow": {
+  "scene": "When you order food through a delivery app, the app often hands you discount coupons, yet it takes a commission on every order from the restaurant. Paying one side and charging the other is something people were already doing more than seventy years ago.\n\nIn 1950, Frank McNamara and Ralph Schneider launched the Diners Club card in New York. After a meal, customers didn't pay cash; they signed, and settled everything in one bill at the end of the month. From the start, Diners Club was stuck on a chicken-and-egg problem. Customers would sign up for the card only if restaurants accepted it; restaurants would accept it only if cardholders came through the door. It started with only about 200 cardholders and a group of New York restaurants.\n\nDiners Club first charged restaurants a fee on every transaction, and only later charged cardholders a yearly fee. The fee went on the restaurants first because when cardholders came in, the restaurants did more business.",
+  "plain": "Suppose you run a graduation-season job fair and need to bring in both companies and job seekers at once. Each group is waiting for the other to show up first. With few job seekers, companies won't pay for a booth; with few booths, job seekers won't bother making the trip. Students are short of money, so if you charge them for a ticket, many turn around and leave. What companies want is a hall full of students, and for that they'll accept a slightly pricier booth. So you let job seekers in free and charge companies for booths. Once the hall is full of students, paying for a booth is worth it to the companies.\n\nA business like this connects two groups of people who need each other and charges the two sides different amounts. It is called a two-sided platform."
+ },
+ "deep": {
+  "mechanism": "### The same total price gives different results depending on which side pays\n\nSuppose there are 20 companies, and each job seeker who shows up is worth 1 yuan to a company. With free entry, 1,000 job seekers come, each company is willing to pay 1,000 yuan, and the 20 companies pay 20,000 yuan in all. Now charge each job seeker 20 yuan. Only 400 are willing to come, and they pay 8,000 yuan. Seeing fewer people, each company will pay only 400 yuan, 8,000 yuan in all. The two sides together pay 16,000 yuan, less than with free entry.\n\nSo the charge is left to the companies alone, and the 1,000 job seekers still come.\n\n### Subsidize the side that is sensitive to price and valued by the other side\n\nJob seekers are very sensitive to the ticket price: charge 20 yuan, and 1,000 people drop to 400. And what companies value is exactly the number of job seekers; when there are fewer people, the companies' offers fall too. Companies get a lot from a hall full of job seekers, so they come even if the booth costs a bit more. That is why you charge the companies.\n\nIf either condition is missing, the conclusion flips. Suppose companies don't value job seekers much, and each one is worth only 0.2 yuan. With 1,000 people there, each company pays 200 yuan, 4,000 yuan in all. Switch to a 20-yuan ticket, and 400 job seekers pay 8,000 yuan; each company still pays 80 yuan, 1,600 yuan in all; the total is 9,600 yuan. Now charging for tickets pays better.\n\nDiners Club split its charges the same way: restaurants did more business thanks to cardholders, so the transaction fee was charged to the restaurants. Back at the job fair, you don't need both companies and job seekers to grow at once when you start. First pick one industry, invite a few companies that really have openings, and then find job seekers with matching skills.",
+  "origin": "The idea of two-sided platforms comes from industrial organization economics. In 2003, Rochet and Tirole published \"Platform Competition in Two-Sided Markets,\" which set out in a systematic way how a platform splits its charges between the sides. Payment cards, video games and media were the classic cases studied. Later came another line of thinking about platforms, called Aggregation Theory. Ben Thompson put it forward on Stratechery in July 2015, and its evidence came mainly from business observations of companies such as Google Search and Airbnb.",
+  "limits": "If the subsidy brings in people who come only for the reward, or fake orders, then the numbers the other side sees are hollow, and the platform ends up worth less in the other side's eyes. If you treat the subsidy itself as the platform strategy, people scatter as soon as the subsidy stops, and all you bought was a burst of activity.\n\nSome platforms control the point where users come in; Ben Thompson calls them aggregators. An aggregator can also squeeze the suppliers on the same side, that is, the merchants. If users simply pick from the platform's ranking, then when one merchant leaves, users choose another one, so the platform dares to raise its commission. If users come for one particular merchant, the platform can't squeeze that merchant."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explore",
+    "text": "When starting out, pick a small circle where both sides are dense for a trial, such as a university, an office building or an industry trade show, and see whether the two sides can match up there first."
+   },
+   {
+    "use": "design",
+    "text": "When setting a platform's price list, treat charging this side and charging that side as two separate plans, and work out for each how many people are left on the other side."
+   },
+   {
+    "use": "explain",
+    "text": "Some apps are free for users and take a commission from merchants, and some do the reverse. It depends on which side is more sensitive to price and more valued by the other side."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Media",
+    "title": "A daily paper free to readers",
+    "text": "In February 1995, the Swedish paper Metro was handed out free in the Stockholm subway. It charged readers nothing and made its money from ads. Commuters wouldn't pay for a newspaper every day, but if it was free they'd pick one up on the way. Advertisers wanted exactly these people who rode the subway every day, and were willing to pay to reach them. The paper made a profit in its very first year."
+   },
+   {
+    "field": "Software",
+    "title": "Reading PDFs is free, making them costs money",
+    "text": "In September 1994, Adobe made Acrobat Reader 2.0 free, while Acrobat Exchange, used to create and mark up PDFs, still cost money. There were many people receiving files, and they wouldn't buy software just to read one document. The people sending files cared about exactly that, the other person being able to open them, and were willing to pay for the tool that made them."
+   },
+   {
+    "field": "Work",
+    "title": "Free for clients, a cut from designers",
+    "text": "You design posters through a freelance job platform. Clients pay nothing to post a request or look at work, and the platform takes 15% of what you earn on each job. Clients shop around, and if posting a request cost money, they'd go elsewhere. What you value is exactly the large number of clients on the platform, so even though the cut hurts, you stay."
+   }
+  ],
+  "ask": [
+   "What does each of the two groups I connect want from the other? Which side is missing right now?",
+   "If I cut the subsidy, will both sides keep coming because of the value they give each other?",
+   "If one supplier leaves, will users stay at the entry point and pick another, or follow it out?"
+  ],
+  "with": [
+   {
+    "id": "network-effects",
+    "sees": "A food-delivery platform keeps signing up more restaurants. Network effects say the more the better. Two-sided platforms also see that restaurants on the same side are competing for the same customers; once there are so many restaurants that each one's orders are falling, signing up more only drives restaurants away. While customers still complain about too little choice, keep signing up restaurants; once each restaurant's orders are already falling, stop for now."
+   },
+   {
+    "id": "unit-economics",
+    "sees": "During a subsidy, the platform pays 8 yuan on every order. Unit economics sees a loss on each order and says to stop first. Two-sided platforms see that the 8 yuan buys the other side's presence; stop it, and the merchants leave. Look at how many people and how much money are left per order once the subsidy stops. If the other side has already stayed, stop; if they scatter the moment it stops, keep subsidizing, and find another side to charge."
+   },
+   {
+    "id": "razor-and-blades",
+    "sees": "Razor and blades also draws people in with a low price, but the subsidy goes to the same group of buyers, and the money comes back later as they keep buying refills. A two-sided platform's subsidy buys the presence of a different group, and the two groups need each other. For the first, check whether users are locked in by the refills; for the second, check whether the other side has shown up."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You run a ticketing mini-app for small local gigs. Three months after launch, 60 bands have joined, but only 200 audience members have signed up. Every show is half-empty, and bands are starting to leave. You still have some launch budget.",
+    "question": "Which step is most likely to keep the bands on the app?",
+    "explain": "There are plenty of bands and few audience members, so the audience is the bottleneck. Get the first audience members to show up, and the bands have a reason to stay.",
+    "options": [
+     {
+      "text": "Cut prices for both bands and audiences, to grow both sides first.",
+      "correct": false,
+      "feedback": "Right now only one side is stuck. Cutting prices on both spreads the budget thin, and neither side gets enough."
+     },
+     {
+      "text": "Give the first audience members free tickets, to fill a few shows first.",
+      "correct": true,
+      "feedback": "Once the audience shows up, the bands can see a payoff; the free tickets go to people who are willing to come and watch."
+     },
+     {
+      "text": "Advertise across the whole city to push sign-ups to 10,000.",
+      "correct": false,
+      "feedback": "More sign-ups doesn't mean anyone comes to these shows; the ad money mostly reaches people who don't care."
+     },
+     {
+      "text": "Pay the current bands a joining bonus so they schedule more shows.",
+      "correct": false,
+      "feedback": "There are already 60 bands; they aren't what's missing. Schedule more shows, and there's still nobody in the audience."
+     }
+    ]
+   },
+   {
+    "stem": "When it's free, a comic convention booking platform gets 800 visitors booking, and 15 exhibitors bid according to how many people show up, each willing to pay 800 yuan. The platform wants to earn more, and has two plans. Plan A: charge each visitor 5 yuan; visitors drop to 400, and each exhibitor's bid drops to 400 yuan. Plan B: raise the booth fee to 1,000 yuan; 1 exhibitor leaves, the rest pay, and the number of visitors stays the same.",
+    "question": "What is the platform's total income under each plan?",
+    "explain": "Plan A: visitors pay 400×5=2,000 yuan and exhibitors pay 15×400=6,000 yuan, 8,000 yuan in all. Plan B: 14×1,000=14,000 yuan. When it was free, only exhibitors paid, 12,000 yuan in all, so Plan A brings in less than before and Plan B more.",
+    "options": [
+     {
+      "text": "Plan A 8,000 yuan, Plan B 14,000 yuan.",
+      "correct": true,
+      "feedback": "Plan A charges visitors but makes both the turnout and the exhibitors' bids fall; Plan B touches only the exhibitors' side, and visitors still come."
+     },
+     {
+      "text": "Plan A 6,000 yuan, Plan B 14,000 yuan.",
+      "correct": false,
+      "feedback": "This leaves out the 2,000 yuan visitors pay in Plan A. It should be 2,000 plus 6,000, 8,000 yuan in all."
+     },
+     {
+      "text": "Plan A 16,000 yuan, Plan B 15,000 yuan.",
+      "correct": false,
+      "feedback": "This ignores the change in numbers: in Plan A only 400 visitors are left and the exhibitors' bids fall with them; in Plan B one exhibitor leaves and only 14 pay."
+     },
+     {
+      "text": "Both plans bring in 12,000 yuan.",
+      "correct": false,
+      "feedback": "Both plans change things: Plan A brings in less because visitors and bids both fall, and Plan B brings in more because each exhibitor pays 200 yuan more while only 1 leaves."
+     }
+    ]
+   },
+   {
+    "stem": "You're building a platform that connects parents with university students who tutor. When parents look for a tutor, they care more about whether the tutor is good. In a trial, you added a 20-yuan service fee, and hardly any fewer parents placed orders. Student tutors are very sensitive to fees: when you charged a 30-yuan joining fee, sign-ups dropped from 300 to 90, and when parents saw fewer tutors, they placed fewer orders too.",
+    "question": "What is the best way to set the fees?",
+    "explain": "Tutors are sensitive to fees and leave as soon as they're charged, and what parents value most is having tutors to choose from, so let tutors join free. Parents get a lot from the tutors and still order if they pay a little more, so charge the parents.",
+    "options": [
+     {
+      "text": "Charge each side half, so nobody loses out and the books look fairest.",
+      "correct": false,
+      "feedback": "Splitting it looks fair, but tutors leave as soon as they're charged, and with fewer tutors the parents stop coming too."
+     },
+     {
+      "text": "Make it free for parents and charge tutors a higher joining fee, to weed out people who aren't serious.",
+      "correct": false,
+      "feedback": "The trial already showed that charging 30 yuan drove away seven in ten tutors; raising it further would only leave fewer tutors."
+     },
+     {
+      "text": "Make it free for both sides, grow the numbers first, and work out how to make money later.",
+      "correct": false,
+      "feedback": "Parents still order when they pay a little more. That money is there to be collected, and there's no reason to give it up along with the other."
+     },
+     {
+      "text": "Let tutors join free and charge parents a service fee.",
+      "correct": true,
+      "feedback": "Tutors are the sensitive side and the side parents value, so subsidize them; parents don't mind paying a little more, so charge them."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "The more firms value seekers, the worse tickets do",
+  "caption": "Free entry brings 1,000 job seekers; a 20-yuan ticket, only 400. Drag the ticket to see total income change. Set worth to firms below 0.6 yuan, and tickets pay.",
+  "x": {
+   "label": "Job seeker ticket (yuan)",
+   "min": 0,
+   "max": 30
+  },
+  "y": {
+   "label": "Job fair income",
+   "unit": " yuan",
+   "format": "en",
+   "min": 0,
+   "max": 30000
+  },
+  "params": [
+   {
+    "id": "t",
+    "label": "Ticket price",
+    "min": 0,
+    "max": 30,
+    "step": 1,
+    "value": 20,
+    "unit": " yuan"
+   },
+   {
+    "id": "v",
+    "label": "Worth to firms",
+    "min": 0.2,
+    "max": 1.5,
+    "step": 0.1,
+    "value": 1,
+    "unit": " yuan"
+   }
+  ],
+  "series": [
+   {
+    "name": "Total income",
+    "expr": "(x+20*v)*1000/(1+0.075*x)",
+    "tone": "accent"
+   },
+   {
+    "name": "Companies pay",
+    "expr": "20*v*1000/(1+0.075*x)",
+    "tone": "ink"
+   },
+   {
+    "name": "Job seekers pay",
+    "expr": "x*1000/(1+0.075*x)",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "x": "t"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Job seekers there",
+    "expr": "1000/(1+0.075*t)",
+    "unit": " people",
+    "digits": 0
+   },
+   {
+    "label": "Total income",
+    "expr": "(t+20*v)*1000/(1+0.075*t)",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "More than free",
+    "expr": "(t+20*v)*1000/(1+0.075*t)-20000*v",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

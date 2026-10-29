@@ -1,0 +1,187 @@
+{
+ "id": "comparative-advantage",
+ "name": "Comparative Advantage",
+ "en": "比较优势",
+ "discipline": "economics",
+ "one_line": "Even if you're better at everything, do what you're best at and trade for the rest.",
+ "story": "In On the Principles of Political Economy and Taxation, Ricardo uses English cloth and Portuguese wine to show comparative advantage",
+ "shallow": {
+  "scene": "Portugal can make cloth with fewer workers than England, and wine with fewer workers too. So why would it still buy cloth from England? The English economist David Ricardo answered with a set of sums. In his setup, making a batch of cloth takes 100 people a year in England and 90 in Portugal; making a batch of wine takes 120 people in England and only 80 in Portugal.\n\nFor cloth, Portugal uses only 10 fewer people than England, but for wine it uses 40 fewer, so its advantage lies mainly in wine. So Portugal puts 80 more people to making another batch of wine and trades it for a batch of English cloth. Then it doesn't need to put 90 people to weaving, and it saves a year's work for 10 people. England puts 100 more people to weaving another batch of cloth and trades it for a batch of wine. Then it doesn't need to put 120 people to making wine, and it saves 20 people.\n\nBoth countries end up with as much cloth and wine as before, yet both do less work. Even Portugal, better at both, should make only wine, where it's better by the most.",
+  "plain": "You're a freelance illustrator who can earn 200 yuan an hour. Comparative advantage doesn't compare who works faster; it compares who gives up less. Cleaning your place yourself takes 3 hours, which means turning down 600 yuan of work. A house cleaner takes 4 hours, but if he spent those 4 hours on other jobs he'd earn only 50 yuan an hour, so he gives up only 200 yuan in all. So the job should be his, even though you're faster than he is. You pay him 320 yuan, which saves you 280 yuan compared with cleaning yourself, and he earns 120 yuan more than he would at other jobs."
+ },
+ "deep": {
+  "mechanism": "### Compare what's given up, not how long it takes\n\nFor one cleaning, you give up 600 yuan and the cleaner gives up only 200, so the cleaning goes to him. Illustration is the other way round: an hour of it is worth 200 yuan in your hands and only 50 in his, so the illustration goes to you. You're better than him at both, but at cleaning you're only a little faster, while at illustration you're 4 times better. So you take the commissions and he cleans.\n\n### Both sides gain only when the price lands between the two costs\n\nThe cleaner could earn 200 yuan doing other work in those 4 hours; doing it yourself costs you 600. As long as the price lands between these two numbers, both sides gain. The two are 400 yuan apart. Paying 320 means you get 280 of it and he gets 120. If he asks 700, more than it costs you to do it yourself, you pick up the rag and do it yourself, and there's no deal. The price doesn't have to be money either; it can be a rate of one thing for another. Ricardo's two countries traded a batch of wine for a batch of cloth, and both used fewer workers than making everything themselves.\n\n### When the gap shrinks, so does the money to share\n\nIf the cleaner's hourly pay elsewhere rises to 150 yuan, then 4 hours of cleaning means giving up 600 yuan, the same as you. Now the most you'll pay is 600, and the least he'll take is 600; the 400 yuan in between has shrunk to zero.",
+  "origin": "In 1817, David Ricardo set out this idea fully in *On the Principles of Political Economy and Taxation*, using English cloth and Portuguese wine. The labor figures in the book were ones he made up to illustrate the idea, not measurements of how efficiently the two countries actually produced at the time.",
+  "limits": "Dividing up work only saves something when the work can be split apart, the results are easy to check, and the people can actually switch over. If handoffs and redoing work eat up the savings, or a skill has to be practiced every day to keep it, doing it yourself pays better. And more total output doesn't mean everyone is better off: a garment-factory worker who loses her job won't automatically find a new one just because cloth has become cheaper overall."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "act",
+    "text": "When you hire your first helper, look at which of your tasks someone else can do closest to how well you do it, and hand that one over first."
+   },
+   {
+    "use": "explain",
+    "text": "When small countries export and big countries import too, you don't need to assume who is stronger or weaker: each picks the thing where it gives up least, and both have something to sell."
+   },
+   {
+    "use": "design",
+    "text": "When you hand out a team's tasks, arrange them by what each person gives up, rather than pushing every hard job onto the strongest person."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "A factory that only makes chips",
+    "text": "In 1987, Morris Chang founded TSMC in Taiwan. It only manufactures chips for its customers and doesn't design a single chip of its own. Chip-design companies no longer build their own factories and put their money and people into design; TSMC keeps its equipment fully booked, with one production line serving many customers."
+   },
+   {
+    "field": "Medicine",
+    "title": "The chief surgeon's mornings",
+    "text": "The head of surgery changes dressings more deftly than the ward nurses, but at the operating table only she can lead the surgery. The department changes the schedule: the nurses handle all dressing changes, and the head surgeon's mornings are filled with operations."
+   },
+   {
+    "field": "Education",
+    "title": "Grading goes to the assistant",
+    "text": "A senior teacher is faster than the teaching assistant at both grading homework and preparing lessons. At grading she's only a little faster, but at preparing lessons that explain things thoroughly she's far better. The teaching team hands all grading of the multiple-choice questions to the assistant, and the teacher uses the afternoons this frees up each week to prepare lessons."
+   }
+  ],
+  "ask": [
+   "How long does this take me, and how long does it take someone else? And how long does each of us take at the other task? Write out the two timetables first.",
+   "If I spend an hour on it, how much less do I get done of something else I could use the time for? If they spend an hour, how much less do they get done?",
+   "Once I hand it over, how much will communication, checking and redoing work each take? What's left of the time saved after taking those out?"
+  ],
+  "with": [
+   {
+    "id": "explore-exploit",
+    "sees": "You're a new designer, faster at layout than anyone else in your group. Comparative advantage says the best use of your time is to put all of it into layout. Explore and exploit asks whether to keep one afternoon a week to try illustration, because in three years the industry may no longer want layout. First look at how many more years demand for this skill will hold up. If it will last, specialize in layout; if not, set the afternoon aside to try things."
+   },
+   {
+    "id": "transaction-costs",
+    "sees": "You're faster than the outsourcing company at organizing documents, so by comparative advantage the work should be outsourced. But every handoff takes half an hour of explaining the background, and when the work comes back you have to check it all again yourself; the transaction costs eat up the time saved. If each handoff plus checking takes less time than outsourcing saves, outsource; if it takes more, do it yourself."
+   },
+   {
+    "id": "opportunity-cost",
+    "sees": "You're the only person in your group who can review contracts, and you're also the fastest at data entry. Looking only at your own opportunity cost, an hour of data entry seems like no big deal. Opportunity cost looks at the contract you give up; comparative advantage then puts the intern's hour next to yours: his hour can only go to data entry, so he gives up less. The data entry should go to him; the contracts stay with you."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You and your partner have to hand in 2 proposals and 4 sets of accounts today. You each have 8 hours today, the tasks can be split any way you like, and handing work over costs nothing. A proposal takes you 2 hours and a set of accounts 1 hour; a proposal takes your partner 6 hours and a set of accounts 2 hours. You want to spend as little of your own time today as possible and hand everything else to your partner.",
+    "question": "How should you split the work so you spend the least time today?",
+    "explain": "For your partner, writing a proposal means giving up 3 sets of accounts; for you it means giving up only 2, so the proposals go to you. Accounts are the work where your partner gives up less: working a full 8 hours, he finishes exactly 4 sets, and you spend only 4 hours. That's the least of any split that works.",
+    "options": [
+     {
+      "text": "You write one proposal and do three sets of accounts; the other proposal and one set of accounts go to your partner.",
+      "correct": false,
+      "feedback": "You spend 5 hours, 1 more than the best split, and your partner's 8 hours are used up as well."
+     },
+     {
+      "text": "You do both proposals and two sets of accounts; the other two sets go to your partner.",
+      "correct": false,
+      "feedback": "You spend 6 hours, while your partner still has 4 hours unused."
+     },
+     {
+      "text": "You write both proposals; all four sets of accounts go to your partner.",
+      "correct": true,
+      "feedback": "You spend 4 hours and your partner spends exactly 8 on accounts. No other split lets you spend less."
+     },
+     {
+      "text": "You do it all: both proposals and all four sets of accounts yourself.",
+      "correct": false,
+      "feedback": "That takes 8 hours. You're faster than your partner at both, but doing it all fills your whole day."
+     }
+    ]
+   },
+   {
+    "stem": "At a studio, a senior translator takes 2 hours to translate a page and 1 hour to proofread one; a new translator takes 4 hours to translate a page and 2 hours to proofread one. Translation and proofreading are delivered as sets: each translated page goes with one proofreading. Each has 6 hours today. Each doing complete sets on their own, the two hand in 3 sets today. Now the work is changed so the senior translator only translates and the new translator only proofreads.",
+    "question": "How many more sets than 3 does this produce?",
+    "explain": "The senior translator takes half as long as the new one to translate a page, and also half as long to proofread one. Their time ratios are the same, so whoever translates and whoever proofreads, each gives up just as much. Translating 3 pages takes the senior translator 6 hours, and proofreading 3 pages takes the new translator 6 hours too: still 3 sets.",
+    "options": [
+     {
+      "text": "Half a set more; dividing the work always helps at least a little.",
+      "correct": false,
+      "feedback": "For two people with the same time ratios, dividing the work brings no gain; the number of sets doesn't change at all."
+     },
+     {
+      "text": "Not a single set more; it's still 3.",
+      "correct": true,
+      "feedback": "The two have the same ratio of translating time to proofreading time, so switching to translating-only and proofreading-only gives the same result as each working alone."
+     },
+     {
+      "text": "2 sets more: the new translator no longer has to translate and can spend all the time proofreading.",
+      "correct": false,
+      "feedback": "The new translator takes 2 hours to proofread a page, so 6 hours covers only 3 pages: still 3 sets."
+     },
+     {
+      "text": "1 set more: the senior translator translates fast, so having the senior translator only translate pays best.",
+      "correct": false,
+      "feedback": "The senior translator is just as much faster at proofreading; the edge isn't any bigger at translating, so translating only saves no time."
+     }
+    ]
+   },
+   {
+    "stem": "There are two families in the mountains, and each family has time to pick only one kind of fruit in a day. Family A can pick 6 baskets of apples a day, or 3 baskets of pears; Family B can pick 2 baskets of apples a day, or 2 baskets of pears. The two plan to divide the work, B growing pears and A growing apples, and then trade with each other.",
+    "question": "At how many baskets of apples per basket of pears does trading leave both families better off than each growing both fruits?",
+    "explain": "For A to grow a basket of pears itself, it gives up 2 baskets of apples; for B, a basket of pears means giving up only 1 basket of apples. Trading a basket of pears for 1.5 baskets of apples lands between 1 and 2: A gives up 0.5 basket less, and B gets 0.5 basket more.",
+    "options": [
+     {
+      "text": "Half a basket of apples per basket of pears.",
+      "correct": false,
+      "feedback": "B could get 1 more basket by growing apples itself; at this price B loses out."
+     },
+     {
+      "text": "1 basket of apples per basket of pears.",
+      "correct": false,
+      "feedback": "The apples B gets for a basket of pears are about the same as growing more apples itself; there's no gain at all."
+     },
+     {
+      "text": "3 baskets of apples per basket of pears.",
+      "correct": false,
+      "feedback": "That's more than the 2 baskets of apples A gives up to grow pears itself, so A is better off not trading."
+     },
+     {
+      "text": "1.5 baskets of apples per basket of pears.",
+      "correct": true,
+      "feedback": "It lands between B's 1 and A's 2, so both families get a bit more than by growing both themselves."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "grid",
+  "title": "You clean faster, but give up 3× what he does",
+  "caption": "What counts is the money one cleaning gives up, not the hours. You give up 600 yuan of work, the cleaner only 200: cleaning goes to him, illustration to you.",
+  "rowLabel": "Who cleans",
+  "colLabel": "One cleaning",
+  "rows": [
+   "You",
+   "Cleaner"
+  ],
+  "cols": [
+   "Hours",
+   "An hour elsewhere",
+   "Given up"
+  ],
+  "cells": [
+   [
+    "3 hours",
+    "200 yuan",
+    {
+     "text": "600 yuan",
+     "tone": "muted"
+    }
+   ],
+   [
+    "4 hours",
+    "50 yuan",
+    {
+     "text": "200 yuan",
+     "sub": "Cleaning is his",
+     "tone": "accent"
+    }
+   ]
+  ]
+ }
+}

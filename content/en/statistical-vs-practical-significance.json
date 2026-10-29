@@ -1,0 +1,207 @@
+{
+ "id": "statistical-vs-practical-significance",
+ "name": "Statistical vs Practical Significance",
+ "en": "统计显著与实际显著",
+ "discipline": "math",
+ "one_line": "A difference you can measure isn't always big enough to care about.",
+ "story": "Facebook's emotional contagion experiment: across 689,000 users, the share of positive words drops by about 0.1 percentage points",
+ "shallow": {
+  "scene": "In 2014 the Facebook researcher Adam Kramer and two co-authors published a paper in the *Proceedings of the National Academy of Sciences*. 689,003 users took part in the experiment. For about 155,000 of them, the researchers made posts with positive words show up less often in their News Feed, then looked at the words these people used in their own posts. The result: in the posts these people wrote, the share of positive words fell by about 0.1 percentage points. With so many people, a change this small could be measured very clearly; spread over one person, it's one word in a thousand.",
+  "plain": "Spot-check bottled water from two production lines. Each bottle is labeled 500 ml. Across both lines, 200,000 bottles are measured, and line A fills 1 ml more than line B on average. With so many bottles measured, this 1 ml can't be chance; that's called statistical significance. Whether it's worth acting on is a question of practical significance. The plant manager read the report and didn't stop line A for repairs: he worked out that the extra water was worth too little to make up for a day of output lost by stopping the line."
+ },
+ "deep": {
+  "mechanism": "### The bigger the sample, the more easily the same 1 ml becomes significant\n\nSuppose the fill of each bottle naturally varies by about $s=5$ ml, each line has $n$ bottles sampled, and the two lines' averages differ by $d$ ml. The standard error is how much this difference normally wobbles. Convert the difference into a number of standard errors:\n\n$$z=\\frac{d}{s\\sqrt{2/n}}$$\n\nWhen you sample $n$ bottles from one line, the bottles that are overfilled and underfilled partly cancel out. If two bottles go the same way, their errors add up; if one is over and one is under, they cancel. So the sum of the errors of $n$ bottles, squared, averages only $ns^2$, and the total error is about $s\\sqrt{n}$. Divide by $n$, and the average wobbles by only $s/\\sqrt{n}$. The two lines wobble independently, so when you subtract one from the other, the errors again sometimes add up and sometimes cancel. The two squares add, $s^2/n+s^2/n$, and that's how $2/n$ ends up under the square root.\n\nThe more you sample, the smaller the denominator, and the more standard errors the same $d$ comes to. Sample 100 bottles from each line, and the standard error is about 0.7 ml, so 1 ml is only 1.4 standard errors and can't be told apart from luck. Sample 400 bottles from each line, and the standard error halves to 0.35, so 1 ml becomes nearly 3 standard errors, and the p-value falls below 0.01: if the two lines were really the same, the chance of their differing this much by luck would be under 1%. Sample 100,000 bottles from each line, and the standard error is about 0.022 ml, so 1 ml is about 45 standard errors. The difference is still that same 1 ml.\n\nSo a p-value only measures how badly the data fit with \"the two lines are no different.\" It doesn't measure how big the difference is.\n\n### Whether to act is decided by the sums\n\nSuppose the extra 1 ml costs 0.002 yuan more per bottle, and repairing line A costs 50,000 yuan. A plant making 5 million bottles a year spends an extra 10,000 yuan a year, so the repair takes five years to pay for itself. A plant making 100 million bottles a year spends an extra 200,000 yuan a year, and the repair pays for itself in a quarter. Both plants measured the same 1 ml and the same 45 standard errors; the first doesn't repair, and the second schedules the repair.",
+  "origin": "This distinction wasn't put forward by any one person at any one time. In 1925, in *Statistical Methods for Research Workers*, Ronald Fisher popularized significance tests, and also made 0.05 the usual cutoff. In 1969 Jacob Cohen published *Statistical Power Analysis for the Behavioral Sciences*, asking researchers to report both how big a difference is and whether the sample is large enough to detect it.",
+  "limits": "Online experiments and large surveys often involve tens of thousands of people, and the p-value is almost always very low, so what you should look at is how much money or how many minutes the difference comes to. On the other hand, when a piece of basic research only asks whether an effect exists, with no plan to spend money on it, then whether it's significant is the very answer it wants. The fault of looking only at significance is common in economics: in a 2008 book, Stephen Ziliak and Deirdre McCloskey criticized economics papers for often saying only whether a result was significant, not how much money the difference came to."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explore",
+    "text": "Take a report that only says \"significant,\" pick out each difference in it, and convert it into money at your own unit prices. See which of the \"significant\" ones aren't even worth one person's pay for a day."
+   },
+   {
+    "use": "act",
+    "text": "When an A/B test shows a new button's click rate significantly higher, first convert the difference into extra orders per month, then compare that with the cost of the work for the redesign, and only then decide whether to ship it."
+   },
+   {
+    "use": "communicate",
+    "text": "When you report an experiment's results to your boss, beyond the p-value, put it as \"300 more orders a month\" or \"20 more minutes of sleep per person per night,\" so they know whether to say yes."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Medicine",
+    "title": "1 mmHg lower",
+    "text": "You read about a trial of a blood pressure drug with 100,000 people: the group taking the drug saw their systolic pressure fall 1 mmHg more on average, with a p-value far below 0.001. Your blood pressure is already within target, and switching drugs would mean working out the dose again and more trips to the hospital. For that 1 mmHg, you can't work out how much risk it would save you. You put the paper down and don't switch."
+   },
+   {
+    "field": "Investing",
+    "title": "Costs eat the edge",
+    "text": "You're evaluating a trading strategy: its historical return is 0.3 percentage points a year above the market, and the test says it's significant. Trading as planned, fees and slippage come to 0.5 percentage points a year in total. After costs, the net difference is minus 0.2 percentage points, and you don't put money into it."
+   },
+   {
+    "field": "Personal life",
+    "title": "Half an hour more sleep",
+    "text": "You've tracked your sleep over two stretches in a row. In the stretch when you turned the lights off earlier, you slept 35 minutes more a night on average, though the test isn't significant yet. Getting up in the morning is easier, and turning the lights off earlier hasn't got in the way of anything else. You keep turning the lights off earlier and keep tracking."
+   }
+  ],
+  "ask": [
+   "Converted into minutes, yuan or number of people, does this difference reach the line I set in advance?",
+   "What does acting cost: money, time, side effects? Once the difference is multiplied by the number of people and times, is it enough to pay for that?",
+   "Of the two ends of the margin of error, which one would change my mind?"
+  ],
+  "with": [
+   {
+    "id": "multiple-comparisons",
+    "sees": "An experiment on a new home page tracks 20 metrics at once, and only one, \"saves,\" is significant, with a p-value of 0.03 and a rise that looks sizable. Looking only at size, you'd ship it. Multiple comparisons remind you that among 20 metrics, one landing below 0.05 is common anyway, so this rise was most likely picked out by chance. So first run a separate experiment on saves alone, and ship only if it passes; however big the rise, it can't stand in for that rerun."
+   },
+   {
+    "id": "confidence-intervals",
+    "sees": "A report says only \"p below 0.01\" and gives no confidence interval. A confidence interval tells you how small and how large the difference could be: if the whole interval is below your threshold, you can drop it; if it straddles the threshold, another round of testing is cheaper than reaching a conclusion."
+   },
+   {
+    "id": "opportunity-cost",
+    "sees": "A redesign tests at 300 more orders a month, both significant and big enough, and the team is getting ready to ship it. Opportunity cost asks what the same two engineers could do next quarter instead: if something else could bring in 800 more orders a month, these 300 go further down the list."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A paper reports that in a randomized trial with 120,000 people, a new cold medicine made symptoms go away 3 hours sooner on average, with a p-value below 0.0001. The abstract says the effect is \"extremely significant.\" Cold symptoms usually drag on for about seven days.",
+    "question": "What does this p-value tell you directly?",
+    "explain": "A p-value answers this: if the drug actually had no effect, how unlikely would it be to measure a difference this big by chance? It doesn't report the size of the difference, and 3 hours is only about 2% of seven days.",
+    "options": [
+     {
+      "text": "If the drug had no effect, the chance of measuring a difference this big by luck would be tiny.",
+      "correct": true,
+      "feedback": "A p-value measures how badly the data fit with \"no difference,\" and 120,000 people pushed the error very low. Whether 3 hours is worth it has to be weighed separately."
+     },
+     {
+      "text": "After taking the drug people get well very quickly; most people in the trial recovered within a day instead of dragging on.",
+      "correct": false,
+      "feedback": "A p-value doesn't report how much shorter the illness is; the question says it's only 3 hours shorter, about 2% of seven days."
+     },
+     {
+      "text": "There's a 99.99% chance the new drug really works, so it's all but certain.",
+      "correct": false,
+      "feedback": "A p-value is a probability worked out assuming the drug has no effect, not the probability that the drug works."
+     },
+     {
+      "text": "3 hours carries a lot of weight in the whole illness, which is why the p-value is so small.",
+      "correct": false,
+      "feedback": "The p-value is this small because 120,000 people pushed the error down; with 1,200 people, the same 3 hours wouldn't get this p-value."
+     }
+    ]
+   },
+   {
+    "stem": "Two studies measured the effect of the same after-school tutoring class on a final exam scored out of 100. Study A had 40 students, an average gain of 8 points, and a p-value of 0.09. Study B had 40,000 students, an average gain of 0.5 points, and a p-value below 0.001.",
+    "question": "Which statement about these two studies is right?",
+    "explain": "B has many people and a small error, so it can be sure there's a gain, but the gain is only half a point. A's 8 points look big, but the sample is small and the margin of error is wide, so the 8 points may not be reliable.",
+    "options": [
+     {
+      "text": "A's p-value isn't below 0.05, which shows the class did nothing for those 40 students.",
+      "correct": false,
+      "feedback": "A sample of 40 has a large error, so a p-value of 0.09 only means the evidence isn't strong enough. The average gain of 8 points hasn't gone away."
+     },
+     {
+      "text": "B's p-value is smaller, so the class gave B's students a bigger gain.",
+      "correct": false,
+      "feedback": "B's p-value is small because it has many people; its average gain is only 0.5 points, much smaller than A's 8."
+     },
+     {
+      "text": "B is surer there's a gain, but it's only 0.5 points; A's gain looks big, but its margin of error is wide.",
+      "correct": true,
+      "feedback": "The p-value is about the evidence, the points are about the size: B has strong evidence and a small effect, A has a big effect and weak evidence."
+     },
+     {
+      "text": "The two studies contradict each other, so one of them must have been done wrong.",
+      "correct": false,
+      "feedback": "The two studies don't clash: the big sample measured a small gain, and the small sample measured a big one. A's margin of error is wide enough to take in B's 0.5 points."
+     }
+    ]
+   },
+   {
+    "stem": "You're a school principal and want to try an evening study-group system. Rolling it out would mean adding a tutor to every class, which costs a fair amount. The trial has been approved, and you're planning the preparations.",
+    "question": "For the trial's results to answer \"roll it out or not\" directly, which of these should be done first?",
+    "explain": "Decide first how many points of gain would make it worth rolling out. Only then can you work out from it how many students to test, and you won't bend to the results once the data is in.",
+    "options": [
+     {
+      "text": "Set the significance level at 0.001 first; the stricter the test, the more believable the result.",
+      "correct": false,
+      "feedback": "However strict the cutoff, it only tests whether there's a difference. It can't tell you whether the difference is enough to pay for the tutors."
+     },
+     {
+      "text": "Start the trial first, and once the data is in, decide how many points of gain count as worth it.",
+      "correct": false,
+      "feedback": "If you set the standard only after the data is in, the standard tends to follow the results, and 3 points or 0.5 points can both be talked up as worth it."
+     },
+     {
+      "text": "First pick the classes most likely to show an effect for the trial, to make sure the result is significant.",
+      "correct": false,
+      "feedback": "Hand-picked classes don't represent the whole school; even if significant, it's only a result for those few classes and may not hold when rolled out to others."
+     },
+     {
+      "text": "First decide how many points of gain would make it worth rolling out, then use that to work out how many students to test.",
+      "correct": true,
+      "feedback": "The cost is known, so the gain that would be worth it can be written down before the trial. Work out the number of students from it, and the difference you measure speaks directly to \"roll it out or not.\""
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "flow",
+  "layout": "right",
+  "title": "Same significant 1 ml, different sums, different call",
+  "caption": "1 ml extra per bottle costs 0.002 yuan, and the repair costs 50,000 yuan. Significance only says this isn't error; whether to repair depends on these sums.",
+  "nodes": [
+   {
+    "id": "a",
+    "label": "Line A +1 ml",
+    "sub": "45 std. errors: significant"
+   },
+   {
+    "id": "b",
+    "label": "5 million a year",
+    "sub": "10,000 yuan extra a year"
+   },
+   {
+    "id": "c",
+    "label": "100 million a year",
+    "sub": "200,000 yuan extra a year"
+   },
+   {
+    "id": "d",
+    "label": "Don't repair",
+    "sub": "Five years to pay back",
+    "tone": "muted"
+   },
+   {
+    "id": "e",
+    "label": "Schedule repair",
+    "sub": "Paid back in a quarter",
+    "tone": "accent"
+   }
+  ],
+  "edges": [
+   {
+    "from": "a",
+    "to": "b"
+   },
+   {
+    "from": "a",
+    "to": "c"
+   },
+   {
+    "from": "b",
+    "to": "d",
+    "tone": "muted"
+   },
+   {
+    "from": "c",
+    "to": "e",
+    "tone": "accent"
+   }
+  ]
+ }
+}

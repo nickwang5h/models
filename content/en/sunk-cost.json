@@ -1,0 +1,214 @@
+{
+ "id": "sunk-cost",
+ "name": "Sunk Cost",
+ "en": "沉没成本",
+ "discipline": "economics",
+ "one_line": "Money already spent won't come back, so don't let it decide what you do next.",
+ "story": "Britain and France sign up to build the Concorde supersonic airliner; in 1964 Britain's Labour government wants out, but the treaty has no exit clause; the 70-plus provisional orders are all canceled by about 1973; it carries passengers from 1976, retires in 2003, and only 20 are built",
+ "shallow": {
+  "scene": "In 1962 the British and French governments signed an agreement to build a supersonic airliner together, later named Concorde. In 1964 Britain's newly elected Labour government wanted to pull out, but the treaty had no exit clause, so it couldn't.\n\nOver the next ten-plus years, the development cost rose from an original estimate of 70 million pounds to between 1.5 billion and 2.1 billion pounds. The 70-odd provisional orders were canceled one after another. The two governments still added money again and again, and the reason often quoted was that so much had already been put in.\n\nIn the end only British Airways and Air France bought any, 7 each. Concorde began carrying passengers in 1976 and was retired in 2003; 20 were built in all.",
+  "plain": "You pay 80 yuan for a movie ticket, and half an hour in, you can tell the film is terrible. The ticket can't be refunded or exchanged, so you won't get the 80 yuan back whether you leave or not. Money like this is called a sunk cost. If you stay, you put in another hour and a half and get a terrible film for it; if you leave, that hour and a half is yours to do something else with. The 80 yuan is already spent on both paths, so it cancels out and shouldn't go into your sums; the only thing to compare is that hour and a half. Yet plenty of people sit through to the end anyway, saying \"I've already paid for it.\""
+ },
+ "deep": {
+  "mechanism": "### When comparing two paths, the old bill is on both sides and cancels out\n\nYou had the screen of an old laptop replaced for 900 yuan, and you can't get that back. Now the motherboard has broken too. Repairing it costs 1,500 yuan; a used laptop that works just as well costs 1,000. If you repair, you pay another 1,500 from today; if you replace, another 1,000. The 900 yuan has already been paid on both sides, so repairing costs 500 more than replacing.\n\nThe size of the old bill doesn't affect the answer: make it 9,000 yuan or 0, and repairing still costs 500 more. Only prices from today on can flip the answer: if used laptops go up to 1,800 yuan, repairing costs 300 yuan less than replacing.\n\n### The moment you stop, the old bill turns from \"maybe I'll win it back\" into \"definitely lost\"\n\nAs long as you keep going, the loss is still an unsettled number on paper; stop, and it instantly becomes a settled one. The more you've put in, the bigger that number, and the harder it is to call a halt. So people would rather pay a little more to avoid admitting the loss for a few more months, but next time the number to admit has grown bigger. With each new top-up, the total put in rises, while what you're waiting to get back grows not one bit.",
+  "origin": "In *The Theory of Political Economy* in 1871, William Stanley Jevons had already stated plainly that what was spent in the past cannot decide what something is worth from now on. In 1985 the psychologists Hal Arkes and Catherine Blumer published *The Psychology of Sunk Cost*. In their theater season-ticket experiment, people who had been randomly given a discount went to fewer plays in the first half of the season than people who had paid full price. The ticket money had long been paid, yet those who paid more went more often. The Concorde story later gave this way of thinking another name: the Concorde fallacy.",
+  "limits": "Sunk cost works best when a project is half done, the money already spent can't be recovered, and only two paths are left: carry on or stop. If the money can still be refunded or resold, or stopping means paying a penalty, those amounts change with today's choice and have to be counted; of the old bill, only the part that truly can't come back is sunk. Using sunk cost as a slogan for quitting is a different mistake: a project losing money doesn't mean it should stop. What you look at is still the account from today on."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Why someone won't sell a stock that has fallen by half: on the day they sell, the loss on paper becomes a loss on the record."
+   },
+   {
+    "use": "act",
+    "text": "When renewing a contract, keep the other side's line \"you've already invested so much\" out of your sums, and compare only the quotes for renewing a year and for switching to another supplier."
+   },
+   {
+    "use": "communicate",
+    "text": "When reviewing a project that should be cut with your team, set \"how much we've already spent\" aside and lay out only \"how much more we'd put in and what it would bring back.\" The argument then moves from whose face is at stake to the account going forward."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "The purchase price won't do the work",
+    "text": "In 2014 Microsoft bought Nokia's phone business for about 7.2 billion dollars. In July 2015, CEO Satya Nadella announced a sharp cutback in phone hardware, admitted in the accounts that about 7.6 billion dollars was gone, and cut several thousand jobs. That purchase price couldn't be recovered whether Microsoft kept making phones or cut back; what the cutback weighed was how much more making phones would lose from then on. The phone hardware business shrank to a very small size after that."
+   },
+   {
+    "field": "Sports",
+    "title": "The ankle at kilometer 14",
+    "text": "You're at kilometer 14 of a half marathon when your ankle starts to stab with pain. There are 7 kilometers to go, and the first-aid station is right by the road. The 14 kilometers you've already run can't touch your ankle, but the next 7 will. You walk into the first-aid station and hand your race number to a volunteer."
+   },
+   {
+    "field": "Technology",
+    "title": "The home-built logging system",
+    "text": "The team you lead has spent nine months building its own logging system. By now an open-source product covers 90% of what you need and could be plugged in within a week. Finishing your own would take another three months. You set the nine months already spent aside and compare only three months with one week. You have the team switch to the open-source product and keep the home-built code as a backup."
+   }
+  ],
+  "ask": [
+   "How much of this money can be refunded, resold or credited now, and which part truly can't come back?",
+   "If I were seeing this for the first time today, with the assets and situation I have now, would I still choose to carry on?",
+   "From today on, how much more does each path, carrying on or pulling out, still cost, and what does each bring back?"
+  ],
+  "with": [
+   {
+    "id": "credible-commitment",
+    "sees": "You lead a project, and a rival is watching to see whether you'll pull out. Credible commitment values that money you can't get back: once it's spent, your way out is cut off, and only then do people believe you won't pull out. Sunk cost looks at the same money and says that in your own accounts it shouldn't sway whether you pull out today. Use it as a bargaining chip with others; keep it out of your own sums."
+   },
+   {
+    "id": "opportunity-cost",
+    "sees": "You want to keep spending your weekends on a side business you've already put half a year into. Sunk cost crosses out that half year; opportunity cost then asks what those weekends could bring back if spent on something else. Use the two together, and your comparison leaves out the old bill and includes the path you'd be giving up."
+   },
+   {
+    "id": "commitment-consistency",
+    "sees": "Crossing out the old bill is hard because earlier choices keep pulling at you: things you've said in public and things you've signed your name to all make you want to present yourself as consistent. Sunk cost gives how the sums should be done; commitment and consistency explains why people can never bring themselves to do them."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "One of the company's apps has lost money for four quarters in a row, and estimates show that even another 2 million yuan would hardly earn back its cost. Two managers each get the same data: one personally gave the go-ahead to start the project three years ago; the other took it over only last month. Both have to submit budget requests for next year.",
+    "question": "Which manager is more likely to ask for more budget?",
+    "explain": "The project was his own call, so stopping it amounts to admitting his judgment was wrong; the manager who took it over carries no such burden. In Barry Staw's 1976 experiment, people who had made the decision themselves put more money in after the project lost money.",
+    "options": [
+     {
+      "text": "About the same for both: the data is the same, so the conclusion should be too.",
+      "correct": false,
+      "feedback": "The data is the same, but their situations aren't: the one who made the call has to answer for that decision, and the one who took over doesn't."
+     },
+     {
+      "text": "The one who took over: a newcomer is keener to make a mark by putting more money in.",
+      "correct": false,
+      "feedback": "The one who took over never answered for starting this project. Stopping it doesn't mean admitting his own mistake, so he has no reason to chase it harder than the one who made the call."
+     },
+     {
+      "text": "The one who made the call: he started the project himself, and calling a halt would mean rejecting his own decision.",
+      "correct": true,
+      "feedback": "The original decision was his, and stopping the project means owning up to that mistake, so he is more likely to put in another round."
+     },
+     {
+      "text": "Neither: after four losing quarters in a row, anyone can see it should stop.",
+      "correct": false,
+      "feedback": "The question asks who is more likely to add money, not who should. People don't always react to losses the way the accounts say they should, and the one who made the call least of all."
+     }
+    ]
+   },
+   {
+    "stem": "The orchard you lease has already spent 80,000 yuan building a cold store. The money can't be refunded, and the cold store can't be sold on. It still needs a compressor, which costs 12,000 yuan. Once that's installed it can be used, and it will save about 4,000 yuan of fruit a year from rotting, for an expected five years.",
+    "question": "Should you buy the compressor?",
+    "explain": "The 80,000 yuan won't come back whether you buy or not. Today you only compare 12,000 yuan with about 20,000 yuan of benefit over the next five years: buying leaves you 8,000 yuan better off.",
+    "options": [
+     {
+      "text": "Buy it: spend another 12,000 yuan to get back about 20,000 over five years, 8,000 yuan better off.",
+      "correct": true,
+      "feedback": "The account going forward is positive, and however much was lost before doesn't change that; buying earns 8,000 yuan more than not buying."
+     },
+     {
+      "text": "Buy it: 80,000 yuan is the bulk, another 12,000 is small change, and finishing the job does right by what came before.",
+      "correct": false,
+      "feedback": "Whether it counts as small change depends on the size of the old bill, which has nothing to do with whether this money is worth spending. Whether it's worth it depends on what it brings back."
+     },
+     {
+      "text": "Buy it: the cold store cost 80,000 yuan, and without a compressor it was built for nothing.",
+      "correct": false,
+      "feedback": "Whether it was built for nothing depends on what spending another 12,000 yuan today brings back. The 80,000 yuan can't add points for the compressor."
+     },
+     {
+      "text": "Don't buy it: 80,000 yuan is already lost, and putting in more is throwing money into a bottomless pit.",
+      "correct": false,
+      "feedback": "There is only one extra payment here, 12,000 yuan, and it brings back about 20,000 yuan over five years. That's no bottomless pit."
+     }
+    ]
+   },
+   {
+    "stem": "You manage two neighborhood clinics, and each has ordered the same model of lab equipment; everything else is exactly the same. Clinic A has paid a 100,000-yuan deposit; Clinic B has paid only 20,000. Neither deposit is refundable. Each still has to pay a final 50,000 yuan to take delivery, and once delivered, each machine is expected to bring in 45,000 yuan of testing income in total.",
+    "question": "What should be done about the equipment at the two clinics?",
+    "explain": "The account the two clinics face today is exactly the same: pay another 50,000 yuan to get back only 45,000. Whatever the deposits were, neither can be recovered, so they can't lead the two clinics to different answers.",
+    "options": [
+     {
+      "text": "B takes delivery and A doesn't: A spent more, which shows this investment was a worse mistake.",
+      "correct": false,
+      "feedback": "The size of the deposit only shows how much was spent in the past. If B takes delivery it also pays 50,000 yuan and gets 45,000 back, the same loss."
+     },
+     {
+      "text": "Neither takes delivery: each would pay another 50,000 yuan to get back only 45,000.",
+      "correct": true,
+      "feedback": "The two clinics' accounts going forward are the same: pay 50,000 yuan more and get 45,000 back. The different deposits don't change that."
+     },
+     {
+      "text": "A takes delivery and B doesn't: A has already paid more, so giving up would be too much of a waste.",
+      "correct": false,
+      "feedback": "The extra 80,000 yuan A paid in deposit can't be recovered either. If A takes delivery, it still pays 50,000 yuan and gets 45,000 back."
+     },
+     {
+      "text": "Both take delivery: the deposits are paid, and not taking delivery means losing everything.",
+      "correct": false,
+      "feedback": "Neither deposit can be recovered either way. Taking delivery only makes each clinic lose another 5,000 yuan."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "Old bill 0 or 9,000: repair still costs 500 more",
+  "caption": "Across: the old screen bill. At 0 or 9,000, what repair and replace cost from today won't change: flat lines. Drag the used price: past 1,500 yuan they swap.",
+  "x": {
+   "label": "Old bill for the screen",
+   "min": 0,
+   "max": 9000
+  },
+  "y": {
+   "label": "Still to pay from today",
+   "unit": " yuan",
+   "min": 0,
+   "max": 2200
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "Used laptop price",
+    "min": 600,
+    "max": 2000,
+    "step": 100,
+    "value": 1000,
+    "unit": " yuan"
+   }
+  ],
+  "series": [
+   {
+    "name": "Repair board",
+    "expr": "1500",
+    "tone": "warn"
+   },
+   {
+    "name": "Buy used",
+    "expr": "p",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "x": 900,
+    "text": "Your old bill: 900"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Repair: still pay",
+    "expr": "1500",
+    "unit": " yuan"
+   },
+   {
+    "label": "Replace: still pay",
+    "expr": "p",
+    "unit": " yuan"
+   },
+   {
+    "label": "Repair costs more by",
+    "expr": "1500 - p",
+    "unit": " yuan"
+   }
+  ]
+ }
+}

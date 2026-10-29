@@ -1,0 +1,181 @@
+{
+ "id": "caching-locality",
+ "name": "Caching and Locality",
+ "en": "缓存与局部性",
+ "discipline": "computing",
+ "one_line": "Keep what you use often within reach, and a little extra space saves you effort every time.",
+ "story": "Netflix launches Open Connect, putting cache servers that hold popular titles inside local internet providers' facilities",
+ "shallow": {
+  "scene": "In 2012 Netflix launched Open Connect: servers holding popular movies and shows, installed in the facilities of local network providers. When a viewer presses play, the video is sent from the nearby facility instead of traveling all the way from somewhere far off. The many thousands of people watching the same series every night each take a copy that is stored close by.",
+  "plain": "You were already using caching in primary school. Asked what 7 times 8 is, you don't add up 7 eight times; 56 just comes out. The times table takes up a small corner of your mind, and in exchange you skip a calculation every time. The table only goes up to 9 times 9 is 81, because these small multiplications are the ones you're asked most often. Asked 13 times 17, which nobody has memorized, you have to work out 221 on the spot, which is much slower."
+ },
+ "deep": {
+  "mechanism": "### When accesses cluster, a small fast store catches most of them\n\nWhen a processor runs a loop, it reads the same few instructions millions of times: this is temporal locality. When it goes through a table, it reads one cell and then the one next to it: this is spatial locality. Because reads keep crowding into one small area, a small, fast store that holds on to that area means most requests never have to go to slow memory.\n\n### A little more hit rate, a lot less waiting on average\n\nChecking the cache takes $c$ nanoseconds; if the item isn't there, fetching it from memory takes another $m$ nanoseconds. Finding it in the cache is called a hit, and the share of hits is written $h$. The average wait each time is:\n\n$$c+(1-h)\\,m$$\n\nEvery request checks the cache first, and only the part that misses spends the extra $m$. Say $c$ is 1 and $m$ is 100. At a 50% hit rate the average is 51 nanoseconds; at 90%, 11 nanoseconds; at 99%, 2 nanoseconds. Going from 90% to 99% cuts the misses from one in ten to one in a hundred, and every miss means waiting an extra 100 nanoseconds, so the average time shrinks to less than a fifth of what it was.\n\n### Store an extra copy, and it takes ten uses to break even\n\nBuilding a table of results takes 90 seconds, working out one answer on the spot takes 10 seconds, and looking one up in the table takes 1 second. Each use saves 9 seconds, so it takes exactly 10 uses to break even. Use it only 3 times and you've wasted 63 seconds; use it 100 times and you save 810 seconds net.",
+  "origin": "Caching has no single inventor. In 1965 Maurice Wilkes proposed putting a small, fast \"slave memory\" in front of slow memory; IBM's System/360 Model 85, announced in 1968, built a cache into a commercial machine. Trading space for computation is older still: in 1614 John Napier published his tables of logarithms, and astronomers turned pages to look things up, swapping multiplication and division for addition and subtraction.",
+  "limits": "Things that are read often and changed rarely suit caching best: the instructions in a loop, popular movies. For numbers that change all the time, like an account balance or the number of seats left, once the original changes, the copy gives the wrong answer, so you have to ask the original before reading. If you keep a copy of everything, the copies pile up so high that finding one is slower than working it out again."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Set how often a sales report that gets opened thousands of times a day should refresh: look at how long it takes to compute once and how often the data really changes, and set the interval between the two, so people neither wait every day nor see stale numbers."
+   },
+   {
+    "use": "act",
+    "text": "When a web service is slow to respond, first count how many times the same query is sent within one minute. If it repeats a lot, keep a copy of the result in the application; if it hardly repeats, go fix the query itself."
+   },
+   {
+    "use": "explain",
+    "text": "The same program runs faster on a processor with a bigger cache: more of its reads are caught close by, without waiting for memory."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Technology",
+    "title": "The 40th term for just 40 stored numbers",
+    "text": "You wrote a recursive function to compute the 40th term of the Fibonacci sequence. Each term works out all the earlier terms again from scratch, so it takes more than 330 million calls in all, and you wait a long time. Add a table to it that records each term once it has been computed and fetches it directly when it comes up again. The calls drop to fewer than a hundred, and the table holds only about 40 extra numbers."
+   },
+   {
+    "field": "Health care",
+    "title": "The crash cart in the hallway",
+    "text": "A crash cart stands in the hallway of a hospital ward, holding a defibrillator and emergency drugs; it is rarely wheeled out. It isn't kept in the faraway pharmacy stockroom, because a patient whose heart has stopped can't wait for that trip. Nurses check the drugs and equipment on the cart regularly and replace anything out of date."
+   },
+   {
+    "field": "Everyday life",
+    "title": "Opening the same web page a second time",
+    "text": "The first time you open a news site, it loads for several seconds; close it and open it again, and the page appears at once. The logo, fonts and style sheets stayed on your phone after the first download, and the second time they are read locally. Only the day's headlines have to be downloaded fresh each time."
+   }
+  ],
+  "ask": [
+   "How many times a week do I do this? How long does it take each time to work it out or look it up from scratch? Go through the past week's records and count.",
+   "Do these requests cluster: is the same small set of things asked for again and again, or is it different every time? Go look at a day's access records.",
+   "When the original changes, how will I know the copy is out of date: does someone tell me, or do I rely only on a set expiry time?"
+  ],
+  "with": [
+   {
+    "id": "redundancy",
+    "sees": "A customer list is stored in three places at once: the sales spreadsheet, the customer service system and the accounting software. Redundancy sees insurance: if one breaks there are two more, and every extra copy is one more layer of protection. Caching sees the other side: every copy has to change when the original does, and when a customer changes phone numbers, one place always gets missed. With the list already spread over three places, first name one as the one that counts, make the others read-only and write down when they refresh; only data that can't be recovered once lost is worth keeping several copies of."
+   },
+   {
+    "id": "explore-exploit",
+    "sees": "Your playlist keeps only the songs you've played most lately. It's always the fastest to search, but new songs never get in, and six months on it still matches your taste from six months ago. Caching's way of arranging things is to keep what's known to be used often close by; explore-exploit's advice is to set aside a few spots every so often for songs you haven't heard. When space is tight and your taste is steady, arrange it the caching way; if you want to find out what else you like, set aside a slot or two just for unfamiliar songs."
+   },
+   {
+    "id": "bottlenecks",
+    "sees": "Your website is slow to open, and you want to add caching to every page. Bottlenecks asks first which step is slow. Suppose 4 of each page's 5 seconds go to downloading large images: however fast cached query results are, they can only save part of the remaining 1 second. First measure where the time goes, then put the cache on that step."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You run the warehouse for an online store, and all the products sell in about the same amounts. The shelves are now arranged in alphabetical order of product name, and pickers walk the warehouse order by order; the three items in one order are often at opposite ends of the warehouse. Going through last month's orders, you find that phone cases and screen protectors show up in the same order 60% of the time, and toothbrushes and toothpaste are often bought together too.",
+    "question": "How should you rearrange the shelves to shorten the pickers' walking the most?",
+    "explain": "With sales about the same, only one clue is left that can shorten the walk: which items are always picked together. Put them near each other, and one trip gets everything.",
+    "options": [
+     {
+      "text": "Sort by price from high to low, with the expensive items where they're easiest to keep an eye on.",
+      "correct": false,
+      "feedback": "Price has nothing to do with what gets bought together, so the items in one order are still scattered everywhere."
+     },
+     {
+      "text": "Put items that often appear in the same order in neighboring slots.",
+      "correct": true,
+      "feedback": "With the items from one order side by side, when you reach one slot you can pick up the next item on the way."
+     },
+     {
+      "text": "Sort by monthly sales, with the best sellers closest to the exit.",
+      "correct": false,
+      "feedback": "All the products sell about the same, so sorting by sales doesn't shorten the walk for any order."
+     },
+     {
+      "text": "Keep the alphabetical order and just tidy the shelves in each letter's section.",
+      "correct": false,
+      "feedback": "Alphabetical order depends only on names, so the items in one order are still at opposite ends of the warehouse."
+     }
+    ]
+   },
+   {
+    "stem": "Your company's contract system keeps contracts on an old archive server, and opening one takes 8 seconds. About 40,000 contracts were opened over the year, most of them only once or twice; on top of that, each week twenty or thirty contracts under negotiation get opened again and again every day by several people. The front-end computer only has room for a few hundred.",
+    "question": "How should they be stored to cut everyone's waiting the most?",
+    "explain": "Most contracts are opened once or twice and never touched again, so storing them wouldn't pay off with a second read; the ones read again and again are the small batch under negotiation. Keep those, and the 8-second waits are saved right where they happen most often.",
+    "options": [
+     {
+      "text": "Store nothing, and wait 8 seconds for every contract.",
+      "correct": false,
+      "feedback": "Contracts under negotiation are opened by several people every day, with an 8-second wait each time; most of the total waiting comes from those twenty or thirty."
+     },
+     {
+      "text": "Fit as many of the 40,000 contracts onto the front end as possible.",
+      "correct": false,
+      "feedback": "The front end holds only a few hundred, not all of them, and the other contracts won't be read a second time anyway."
+     },
+     {
+      "text": "Keep the contracts under negotiation on the front end, and swap in the next batch once they're done.",
+      "correct": true,
+      "feedback": "Contracts under negotiation are opened again and again every day, so keeping them on the front end saves a wait on every read, and the space freed up goes to the next batch."
+     },
+     {
+      "text": "Store the few hundred contracts opened most last year on the front end.",
+      "correct": false,
+      "feedback": "Most of last year's contracts under negotiation have been signed, and nobody opens them this year, so storing them means nobody reads them."
+     }
+    ]
+   },
+   {
+    "stem": "You manage a table of daily sales for 365 days, and people often ask how much was sold in total from one date to another. The start and end dates are different almost every time. You want each answer to take just one addition or subtraction, while using as little space as possible.",
+    "question": "What should you store in addition?",
+    "explain": "Running totals can piece together any stretch, so you don't need to store an answer for each stretch separately. Only a few numbers are stored, and each answer takes one step.",
+    "options": [
+     {
+      "text": "Store nothing extra, and each time add up day by day from the start date.",
+      "correct": false,
+      "feedback": "Adding day by day takes dozens or hundreds of additions, not one."
+     },
+     {
+      "text": "Store each month's total, and add the leftover days one by one when the dates aren't on month boundaries.",
+      "correct": false,
+      "feedback": "Monthly totals only line up with whole months. When a date falls mid-month you have to add the leftover days one by one, which takes more than one addition or subtraction."
+     },
+     {
+      "text": "Store the total for every pair of start and end dates, about 67,000 in all.",
+      "correct": false,
+      "feedback": "67,000 numbers is more than 180 times as many as the running totals, far more space than needed."
+     },
+     {
+      "text": "Store the running total of sales from the start of the year to each day, and answer by subtracting one running total from another.",
+      "correct": true,
+      "feedback": "Subtract the running totals for the two dates and you get the total for that stretch, with only 365 numbers stored."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "type": "bar",
+  "title": "From 90% to 99% hits, the wait shrinks to a fifth",
+  "caption": "Checking the cache takes 1 nanosecond; on a miss, going to memory takes 100 more. The few extra points of hit rate save the slowest requests.",
+  "categories": [
+   "Hit rate 50%",
+   "Hit rate 90%",
+   "Hit rate 99%"
+  ],
+  "y": {
+   "label": "Average wait (ns)"
+  },
+  "series": [
+   {
+    "name": "Average ns",
+    "values": [
+     51,
+     11,
+     2
+    ],
+    "tones": [
+     "muted",
+     "ink",
+     "accent"
+    ]
+   }
+  ]
+ }
+}

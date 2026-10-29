@@ -1,0 +1,196 @@
+{
+ "id": "framing-effect",
+ "name": "Framing Effect",
+ "en": "框架效应",
+ "discipline": "psychology",
+ "one_line": "Say the same thing a different way, and people choose differently.",
+ "story": "Tversky and Kahneman's \"Asian disease\" problem: choices flip between 200 saved and 400 dead",
+ "shallow": {
+  "scene": "In 1981 Tversky and Kahneman had college students read a made-up problem about an epidemic. A disease is expected to kill 600 people, and there are two plans. The first group read: with Plan A, 200 people will certainly be saved; with Plan B, there is a one-third chance that everyone is saved and a two-thirds chance that no one is. 72% chose A. The second group read: with Plan A, 400 people will certainly die; with Plan B, there is a one-third chance that nobody dies and a two-thirds chance that everyone dies. 78% chose B. Yet 200 saved is the same as 400 dead.",
+  "plain": "A friend is thinking of signing up for a course that prepares you for a certificate, and asks what you think. One person tells him, \"Of the people who sign up, eight in ten get the certificate.\" Another says, \"Of the people who sign up, two in ten don't get the certificate.\" It's the same data, but after the first sentence he wants to sign up, and after the second he hesitates. This is just what the framing effect studies: the facts stay the same, but change the wording and people's judgments and choices change with it. When people read a sentence, they first take it in from the side it shows. To fill in the other side, they would have to work out ten minus eight themselves, and most of the time nobody does the subtraction."
+ },
+ "deep": {
+  "mechanism": "### The wording sets where you start counting\n\nYou got 70 on your final exam. If you had expected 60, that's 10 points more; if you had expected 80, the same 70 is 10 points short. The score didn't change; what changed is where you counted from. Wording can move this starting point too. \"Saved\" makes people count from \"nobody saved\", so saving 200 is a gain. \"Die\" makes people count from \"everyone safe\", so the same outcome becomes losing 400 lives.\n\n### Call it a loss, and people are willing to gamble\n\nProspect theory describes a pattern: with each extra unit gained or lost, the feeling grows by less and less. On the gain side, saving 200 already brings a good deal of relief. Winning the gamble would save 400 more but add little more relief, and losing it would save nobody, so most people take the sure 200. On the loss side, 400 deaths already feels nearly as bad as 600. Another 200 deaths can't feel much worse, while the gamble gives a one-third chance that nobody dies, so most people gamble.\n\n### Show only one side, and people score by that side\n\nThe two sentences about the certificate course are not like the epidemic problem. No risk is involved, and the only thing that changes is how favorably people feel. People first score by the side the sentence shows; the other side they have to work out by subtraction, and most don't. If the two sentences are put side by side, no subtraction is needed, and the difference in how people feel gets smaller.",
+  "origin": "In 1981 Tversky and Kahneman published \"The Framing of Decisions and the Psychology of Choice\" in *Science*. They used the \"Asian disease\" problem from the opening to show the framing effect, and explained it with prospect theory, which they had put forward in 1979. Given the exact numbers the authors set, the two wordings are equivalent. But the problem doesn't say what happens to everyone else, and some people later questioned it: participants might not have taken \"200 people will be saved\" to mean \"the other 400 will certainly die\".",
+  "limits": "The framing effect explains things most cleanly when only the wording changes and not a single fact does, such as the same data written as a pass rate or as a fail rate. If the facts behind the wording change too, that's a different matter: a set meal that throws in an extra dessert has changed its price, not its wording. In real life, wording also carries information. When a shop assistant says \"there aren't many of these left\", she's telling you it sells well, and you have good reason to change your mind. Counting every rise in sales after a new name or new copy as the framing effect is taking it too far."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "communicate",
+    "text": "When writing an appeal for donations or sign-ups, write two versions of the same thing, one about \"what you'll gain\" and one about \"what you'll lose\". Give them to a few people you don't know well, see which version gets the stronger reaction, then decide which to use."
+   },
+   {
+    "use": "design",
+    "text": "When writing an app's permission pop-up, rewrite the copy the opposite way once you're done, and check item by item that the numbers and time limits match before it goes live."
+   },
+   {
+    "use": "act",
+    "text": "When you hear something that instantly tempts or alarms you, first turn it into the opposite wording. If your choice changes along with it, the wording is making the decision for you."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "The label changes the rating",
+    "text": "In 1988 Levin and Gaeth had consumers rate ground beef labeled either \"75% lean\" or \"25% fat\". The beef labeled lean got higher ratings. After the consumers had tasted it themselves, the gap between the ratings for the two labels narrowed."
+   },
+   {
+    "field": "Medicine",
+    "title": "Survival rate and death rate",
+    "text": "In 1982 McNeil and colleagues asked patients, doctors and students to choose between surgery and radiation therapy for lung cancer. Half of them read each option's survival rates, and the other half its death rates. More of those who read the death rates chose radiation therapy, and the doctors were no exception."
+   },
+   {
+    "field": "Technology",
+    "title": "Two ways to count a speed-up",
+    "text": "Your team cut an API's response time from 100 milliseconds to 60. The update sent to the product team says \"latency down 40%\"; the one sent to management says \"speed up 67%\". Management writes back that this optimization was much bigger than usual, while the product team sees it as nothing special. You change both updates to give the before and after times in milliseconds."
+   }
+  ],
+  "ask": [
+   "Which sentence was my first reaction responding to? If the same thing were put another way, would I react the same?",
+   "Do the numbers of people, the amounts of money and the time spans in the two wordings match up item by item? If they don't, it isn't a change of wording; the facts have changed.",
+   "Dig out the raw data table and see what the denominator is and what the numerator is: from which end was the proportion I heard worked out?"
+  ],
+  "with": [
+   {
+    "id": "loss-aversion",
+    "sees": "A price-rise notice says \"5 yuan more than the old price\", and users are angry; change it to \"new price: 105 yuan\", and they're a bit less angry. The framing effect's advice is to keep trying new wordings until you find one that doesn't make people count from the old price. Loss aversion's advice is the opposite: as long as the new price is higher than the old one, any wording is still a loss, so what should change is the price, or you should add a free gift. First see whether the anger shifts when the wording changes. If it does, the wording is having an effect; if it doesn't, the wording has done all it can."
+   },
+   {
+    "id": "mental-accounting",
+    "sees": "A salesperson says \"just 15 yuan a day\", and it sounds cheap. Write it as 5,475 yuan a year and the feeling is gone: that's the framing effect at work. If you also feel \"this money was going to come out of my fun budget anyway\", that's mental accounting at work. The money has been put in a different drawer, and you need to check which account you've assigned it to."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A community health station sends residents text messages about booking a checkup, in two versions, each to a different group. Version one: \"Come for a checkup this week and problems can be found early.\" Version two: \"Skip your checkup this week and you may miss the chance to find problems early.\" Both refer to the same checkup and the same set of tests. The two groups book in clearly different numbers.",
+    "question": "What does the difference in bookings most directly show?",
+    "explain": "The two messages say the same thing; the only difference is that one talks about gaining and the other about losing. Bookings changed along with it, which shows the wording changed the residents' judgment.",
+    "options": [
+     {
+      "text": "The checkup is more useful to residents who got version one, so they're more willing to come.",
+      "correct": false,
+      "feedback": "Both messages refer to the same checkup, and its usefulness doesn't change because the message is different."
+     },
+     {
+      "text": "The same thing, put as a gain or as a loss, leads to a different willingness to book.",
+      "correct": true,
+      "feedback": "Finding problems early and missing the chance to find them are two sides of the same thing. Whichever side residents are given first, their decision leans that way."
+     },
+     {
+      "text": "Version two gave residents extra health information that made it feel more urgent.",
+      "correct": false,
+      "feedback": "The two messages told residents exactly the same facts; nobody learned anything more from either one."
+     },
+     {
+      "text": "Residents who got version one trust the health station more, so they're more willing to book.",
+      "correct": false,
+      "feedback": "Nothing in the question suggests any change in trust; the two versions differ only in wording."
+     }
+    ]
+   },
+   {
+    "stem": "At the gas station you run, the same liter of fuel costs 0.3 yuan less if paid in cash than by card. You want to put this difference on the price board in the way that makes card-paying customers least likely to feel they're paying extra. You can list only one price, plus one line explaining the difference.",
+    "question": "How should the price board read?",
+    "explain": "The listed price is the customer's starting point. List the card price, and the cash discount is an extra gain, while paying by card isn't a loss; list the cash price, and paying by card becomes paying extra.",
+    "options": [
+     {
+      "text": "Either way the difference is 0.3 yuan, so customers won't feel any different.",
+      "correct": false,
+      "feedback": "The difference is the same, but the starting points are not: one is a gain, the other is paying extra, and they feel different."
+     },
+     {
+      "text": "List the cash price, and write \"card price = cash price + 0.3 yuan\".",
+      "correct": false,
+      "feedback": "The starting point is still the cash price, only written as a different sum, so card customers still feel they're paying extra."
+     },
+     {
+      "text": "List the card price, and write \"pay cash, save 0.3 yuan a liter\".",
+      "correct": true,
+      "feedback": "The card price becomes the starting point, so paying by card isn't a loss, and paying cash is a small extra gain."
+     },
+     {
+      "text": "List the cash price, and write \"card payments: 0.3 yuan a liter extra\".",
+      "correct": false,
+      "feedback": "The cash price becomes the starting point, so card customers are charged 0.3 yuan extra, and every purchase feels like taking a loss."
+     }
+    ]
+   },
+   {
+    "stem": "In an experiment, the description of the same guesthouse is written two ways, about the same set of guests: \"60% of guests say they'll come back\" and \"40% of guests say they won't come back\". Among people given only one sentence, those who read the first were clearly more willing to book. Another group was given both sentences at once, and showed almost no difference in willingness to book.",
+    "question": "Taking the two groups' results together, what do they best show?",
+    "explain": "The wording works because the other side goes unnoticed and has to be worked out by yourself. With both sentences in front of you, nothing needs working out, and the difference almost disappears.",
+    "options": [
+     {
+      "text": "People given only one sentence didn't understand the description, which is why the wording swayed them.",
+      "correct": false,
+      "feedback": "They understood the sentence they read; they just didn't work out the other side. Not understanding can't explain why the difference vanishes when the two sentences sit side by side."
+     },
+     {
+      "text": "The two sentences state different facts to begin with, and seeing them together reveals this.",
+      "correct": false,
+      "feedback": "The question says it's the same set of guests: 60% who will come back means 40% who won't. The facts are the same."
+     },
+     {
+      "text": "People given both sentences found the reading more tiring and just put down an answer in the middle.",
+      "correct": false,
+      "feedback": "Nothing in the question suggests tiredness. The difference disappears so cleanly that it looks more like the other side was seen."
+     },
+     {
+      "text": "The wording shows only one side, and the other has to be worked out; with both sides next to each other, the difference shrinks.",
+      "correct": true,
+      "feedback": "With only one sentence, the other side has to be worked out by subtraction, and most people don't do it; with both sentences side by side, filling in the other side takes no effort."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "grid",
+  "title": "From none saved, a gain; from all safe, a loss",
+  "caption": "Same plans in each row: 200 saved = 400 dead. Only the start moves. From none saved, sure is a gain; from all safe, a loss, and the gamble may lose no one (1/3).",
+  "rowLabel": "Worded as",
+  "colLabel": "How listeners count it",
+  "rows": [
+   "How many saved",
+   "How many die"
+  ],
+  "cols": [
+   "Counting from",
+   "Sure plan",
+   "Gamble"
+  ],
+  "cells": [
+   [
+    {
+     "text": "No one saved",
+     "sub": "Each one saved is a gain"
+    },
+    {
+     "text": "Gain 200 lives",
+     "sub": "72% chose it",
+     "tone": "accent"
+    },
+    {
+     "text": "1/3: gain 600",
+     "sub": "28% chose it"
+    }
+   ],
+   [
+    {
+     "text": "Everyone safe",
+     "sub": "Each death is a loss"
+    },
+    {
+     "text": "Lose 400 lives",
+     "sub": "22% chose it"
+    },
+    {
+     "text": "1/3: lose no one",
+     "sub": "78% chose it",
+     "tone": "accent"
+    }
+   ]
+  ]
+ }
+}

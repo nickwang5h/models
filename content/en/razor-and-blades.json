@@ -1,0 +1,217 @@
+{
+ "id": "razor-and-blades",
+ "name": "Razor and Blades",
+ "en": "剃刀与刀片",
+ "discipline": "business",
+ "one_line": "Sell the main thing cheap, then earn it back as people keep buying refills.",
+ "story": "Gillette cuts its old razor set from 5 dollars to 1 dollar and keeps blades at the same price",
+ "shallow": {
+  "scene": "In 1921, in Boston, the company King Gillette had founded cut the price of its old-model razor set from 5 dollars to 1 dollar. The new model still sold for 5 dollars, and the blades weren't any cheaper. A razor handle can last for years, but blades go dull, so users have to come back every so often to buy new ones. The company took less money for the handle, and in return Gillette handles sat in many more bathrooms.",
+  "plain": "Through your neighborhood's group-buying chat you get a free water-filter pitcher, and the seller is counting on you to buy a 30-yuan filter every month from then on. Giving up money up front and then making it back on refills is a play whose model case is Gillette's razor handles and blades, so it's called \"razor and blades.\" Giving away a pitcher costs the seller 90 yuan, and each filter sold leaves them 15 yuan. You have to buy six filters before the seller earns that 90 yuan back; if you buy just two and then move house, the seller earns back 30 yuan and loses 60 on this pitcher."
+ },
+ "deep": {
+  "mechanism": "### A cheap main item gets the hesitant to start, and the heavy users pay more\n\nWhen the main item costs a large sum up front, plenty of people hesitate before paying. If the pitcher is free, even people who wouldn't pay a large sum first will take one home. After that, the money is charged by use: a household that drinks a lot of water every day goes through six filters a year, an occasional user two, so those who use more pay more. The other way around, if the pitcher sold for 90 yuan and the filters cost only a little over cost, occasional users would find the pitcher too expensive and not buy it, and the seller would make almost nothing even on the heavy users who change filters more often.\n\n### How often people restock decides when the money you gave up comes back\n\nSay you sell air purifiers instead. You give up $S$ yuan on each unit, each filter you sell leaves you $m$ yuan, and a user buys $n$ filters from you a year. Each year you get back $mn$ yuan, so the number of years to break even is\n\n$$t=\\frac{S}{mn}$$\n\nThe money you gave up, divided by what you get back from filters each year. Give up 150 yuan, keep 25 per filter, two a year, and you get back 50 a year: $150\\div(25\\times2)=3$. The user has to buy six filters, and you only break even at the end of the third year. If the user moves away after two years, you get back just 100 yuan from four filters, and you lose 50 yuan on this machine.\n\n### Compatible filters and bigger discounts both push break-even later\n\nIf a user buys half their filters from another brand's compatible ones, you sell only one a year and get back 25 yuan, so breaking even takes six years; if only 40% are bought from you, that's 0.8 a year, 20 yuan, and seven and a half years. Cut what you give up from 150 yuan to 50, and a user who buys everything from you pays it back in one year; give up 300, and they have to buy twelve filters in a row, a full six years.",
+  "origin": "This practice comes from business, with no recognized originator, and the name comes from Gillette's handles and blades. In 2011 Randal Picker of the University of Chicago published \"The Razors-and-Blades Myth(s),\" using old ads and price records to show that Gillette priced its early razors high, and only began selling old-model sets cheaply around 1921.",
+  "limits": "The sums work best for things where the main item lasts several years and the refill is replaced every month or two, like razor blades and water filters. If the refill is only replaced every few years, the money from restocking can't catch up with the money given up. The refills also have to be ones only you can sell: patents, chips or special fittings keep other makers from producing refills that work. If anyone can make them, users buy the cheap compatible ones, and the money you gave up never comes back. Nor are subscriptions and memberships all this kind of deal: renewing buys a service, and no matching item gets used up."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "When drawing up an equipment rental contract, make the machine rent-free in exchange for a minimum monthly purchase of supplies written into the terms, so the money you give up has somewhere to come back from."
+   },
+   {
+    "use": "explain",
+    "text": "Work out why a machine that makes almost no money is sold so hard: the profit isn't in the machine but in every refill it uses from then on."
+   },
+   {
+    "use": "act",
+    "text": "Before signing a contract for a free piece of equipment, first find the minimum purchase and the penalty for breaking the contract: the money given up is often written into those two lines."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "A free water cooler for the office",
+    "text": "You run a bottled-water business for office buildings, giving water coolers away for free and selling the water to companies by the bottle. Three months in, one company of thirty-odd people orders several bottles a week, and another with only four or five people makes one bottle last a week. You take back the second company's cooler and give it to a company on the waiting list."
+   },
+   {
+    "field": "Personal life",
+    "title": "The coffee machine from the building manager",
+    "text": "Your building's management company gives you a capsule coffee machine. You used to buy a coffee downstairs every day; once the machine is on your desk, you have one capsule in the morning and one in the afternoon. After a month, you've spent more on capsules than you used to spend on coffee."
+   },
+   {
+    "field": "Investing",
+    "title": "The test strips in the financial report",
+    "text": "You're reading the financial report of a company that makes home blood glucose meters: for two quarters in a row, meter shipments have been rising, but income from test strips has barely moved. You set test-strip sales volume and income side by side: volume is up 20%, but the price of each box of strips has been pushed down a good deal by hospitals' bulk purchasing."
+   }
+  ],
+  "ask": [
+   "How often does the refill get replaced? Look up the replacement interval in the manual, then multiply by the number of years you plan to use it.",
+   "Search online stores for compatible refills for the same model: count how many sellers there are, and what fraction of the original brand's price they charge.",
+   "Who ultimately makes up the money given up: this user, a third party, or the company's other businesses? Look at the breakdown in the financial report."
+  ],
+  "with": [
+   {
+    "id": "unit-economics",
+    "sees": "Should you give away a water-filter pitcher that costs you 90 yuan? The razor-and-blades sum says give it away: lose money on the pitcher, then earn it back on the filters that follow. Unit economics asks something else first: what do the 90 yuan for the pitcher plus the advertising it took to bring in this user add up to? How many filters does he have to buy on average to make it back? If the answer is ten, charge a little for the pitcher."
+   },
+   {
+    "id": "switching-costs",
+    "sees": "You sell a smart-home system, giving the hub away cheaply and selling the sensors and cameras separately. Giving the hub away cheaply relies on users adding accessories one by one later. What keeps users from leaving is a house already ringed with devices that only work with this hub, so switching brands means ripping them all out. Switching costs and lock-in look at this layer: only once you've sold the accessories is there anything to lock in."
+   },
+   {
+    "id": "present-bias",
+    "sees": "In a mall, a sign saying \"Get the machine for 0 yuan\" stands out far more than the price list for refills next to it. Present bias explains why the sign works: today's zero is easy to see, while the monthly cost of refills only becomes visible if you multiply it out yourself. The seller's sums for giving up money don't depend on this; they hold as long as users really do restock."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A brand sells a smart litter box at close to cost and makes its money on the special cat litter that goes with it each month. Six months after launch, it has shipped 80,000 units, and sales of the special litter are under 30% of what was expected. In user surveys, feedback on price was lukewarm, and nobody mentioned other brands' litter; in customer service records, \"the cat won't go in\" and \"we've put it away\" come up again and again.",
+    "question": "What is the most direct reason litter sales are low?",
+    "explain": "Restocking only happens while the machine is in use. Shipping machines doesn't mean refills get used up: a machine put away in a storeroom won't buy a single bag of litter.",
+    "options": [
+     {
+      "text": "Other brands' litter took away the original brand's restocking.",
+      "correct": false,
+      "feedback": "Nobody in the surveys mentioned other brands' litter; there's no evidence the restocking went elsewhere."
+     },
+     {
+      "text": "The special litter is priced too high, so users find it too expensive to restock.",
+      "correct": false,
+      "feedback": "Users' feedback on price was lukewarm; price isn't what they complained about."
+     },
+     {
+      "text": "Many of the machines are no longer being used, so the need to restock never arises.",
+      "correct": true,
+      "feedback": "\"The cat won't go in\" and \"we've put it away\" show the machines are sitting idle. Idle machines don't use litter, so there's no restocking."
+     },
+     {
+      "text": "Not enough units have shipped yet; ship tens of thousands more and litter sales will naturally catch up.",
+      "correct": false,
+      "feedback": "Newly shipped machines may get put away just the same. Sales are low because each machine brings in little restocking, and more units won't change that ratio."
+     }
+    ]
+   },
+   {
+    "stem": "You're buying a steam mop that you plan to use for three years, changing the mop pad once a month. Model A costs 199 yuan, with pads at 15 yuan each; Model B costs 399 yuan, with pads at 6 yuan each. Both clean equally well, and the pads don't fit each other's mop.",
+    "question": "Adding up the total cost over three years, which should you choose?",
+    "explain": "The difference in the mop's price is paid once; the difference in pads is paid every month. Over three years, 36 pads: A costs 739 yuan in total, B 615 yuan.",
+    "options": [
+     {
+      "text": "Choose A: the mop is 200 yuan cheaper, the biggest saving right now.",
+      "correct": false,
+      "feedback": "Each pad costs 9 yuan more, so 36 pads over three years cost 324 yuan more, more than the 200 saved on the mop."
+     },
+     {
+      "text": "Choose B: 615 yuan over three years, 124 yuan less than A's 739.",
+      "correct": true,
+      "feedback": "B is 399 + 36 × 6 = 615 yuan, A is 199 + 36 × 15 = 739 yuan, so B saves 124 yuan."
+     },
+     {
+      "text": "Choose A: the pads cost only 9 yuan more a month, far less than the 200-yuan difference in the mop.",
+      "correct": false,
+      "feedback": "The 9 yuan has to be paid every month; over three years it adds up to 324 yuan, which is already more than 200."
+     },
+     {
+      "text": "Choose B: even if you use it for only a year, B is cheaper than A.",
+      "correct": false,
+      "feedback": "In one year you change only 12 pads: B costs 471 yuan in total and A 379, so B actually costs 92 yuan more."
+     }
+    ]
+   },
+   {
+    "stem": "A maker sells entry-level 3D printers cheaply, losing money on the machine and counting on profit from each spool of its own filament. Then third-party filament that fits the same printers appears on the market at half the original brand's price, and a survey shows 60% of users have switched to it. The company hasn't yet earned back what it gave up on each machine.",
+    "question": "The company wants to win back its restocking income. Which approach makes sense?",
+    "explain": "The sums for each machine depend on how much filament the user goes through, how much of it is bought from the original brand, and how much each spool leaves. Users already have a cheaper place to buy, so to win back restocking, the original filament needs a reason to buy it that third parties can't offer.",
+    "options": [
+     {
+      "text": "Give the original filament benefits third parties can't offer, such as automatic recognition of print settings and replacement if a print fails.",
+      "correct": true,
+      "feedback": "This gives users a reason to keep buying the original brand and wins back restocking that was going to third parties."
+     },
+     {
+      "text": "Wait until there are more users in total; what was given up will be earned back automatically with scale.",
+      "correct": false,
+      "feedback": "The sums are done machine by machine. With more users in total, each machine still won't earn back its share."
+     },
+     {
+      "text": "Raise the price of the original filament to make up for the lost volume.",
+      "correct": false,
+      "feedback": "The original brand already costs twice as much as the third party; raising the price would push away the remaining 40% too."
+     },
+     {
+      "text": "Cut the machine's price again to sell more, so what was given up gets spread thinner.",
+      "correct": false,
+      "feedback": "Each extra machine sold adds one more share of money not earned back. The 60% of restocking going to third parties hasn't changed, so the losses only grow."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "A 150-yuan discount takes six filters to earn back",
+  "caption": "Each filter leaves 25 yuan, two a year. Drag \"From you\" to see compatible filters push break-even later; drag the discount to see it get longer or shorter.",
+  "x": {
+   "label": "Years",
+   "min": 0,
+   "max": 8
+  },
+  "y": {
+   "label": "Total earned on this unit",
+   "unit": " yuan"
+  },
+  "params": [
+   {
+    "id": "g",
+    "label": "Discount",
+    "min": 50,
+    "max": 300,
+    "step": 50,
+    "value": 150,
+    "unit": " yuan"
+   },
+   {
+    "id": "s",
+    "label": "From you",
+    "min": 20,
+    "max": 100,
+    "step": 10,
+    "value": 100,
+    "unit": "%"
+   }
+  ],
+  "series": [
+   {
+    "name": "Total earned",
+    "expr": "-g + 25*2*s/100*x",
+    "tone": "accent"
+   }
+  ],
+  "marks": [
+   {
+    "y": 0,
+    "text": "Break even"
+   },
+   {
+    "x": 2,
+    "text": "Moves after 2 years"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Years to break even",
+    "expr": "g/(50*s/100)",
+    "unit": " years",
+    "digits": 1
+   },
+   {
+    "label": "At 2 years",
+    "expr": "-g + 25*2*s/100*2",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

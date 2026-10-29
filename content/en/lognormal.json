@@ -1,0 +1,225 @@
+{
+ "id": "lognormal",
+ "name": "Lognormal Distribution",
+ "en": "对数正态分布",
+ "discipline": "math",
+ "one_line": "When results grow and shrink by percentages, a few get huge and pull the average up.",
+ "story": "Galton asks McAlister to work out the law of the geometric mean: take the logarithm of skewed data and it becomes a bell curve (the two papers appeared together in the Proceedings of the Royal Society)",
+ "shallow": {
+  "scene": "Most people who have bought into a fund have done this sum: 100 yuan goes up 10% to 110, then down 10%, and only 99 is left, short of what you started with. The rise and the fall are the same percentage, but the 10% fall is taken from a bigger number, so you lose more.\n\nIn 1879 the British scholar Francis Galton began to doubt a rule that statistics of his day took for granted: a quantity is as likely to be too high as too low, so working out the average finds the middle. But a business's capital grows year after year in proportion to its own size, and the money gained by doubling is twice the money lost by halving, so the two sides are not symmetrical. He couldn't sort out quantities like this himself, so he went to the mathematician Donald McAlister for help.\n\nMcAlister's answer was to use a different ruler: don't look at how many pounds were gained or lost, look only at how many times it multiplied or shrank. Measured with this ruler, doubling and halving are the same distance from the start, and the lopsided capital figures become symmetrical again. In other words, for quantities that change by proportion, the middle is not where the average is.",
+  "plain": "A hundred small stalls each toss a coin once a month: heads, their sales are multiplied by 1.2; tails, by 0.8. After two months, a stall with two heads is at 1.44 times where it started, and one with two tails is at only 0.64 times. One with one of each is at 0.96 times: up 20% and then down 20% doesn't get you back where you started.\n\nOver more months, most stalls get about as many rises as falls, and get nibbled down this way to below where they started. But the ones that rise can keep rising, and the few that rise again and again shoot very high, trailing a long tail off to the right. Numbers built up step by step by multiplying like this make a shape called a lognormal distribution."
+ },
+ "deep": {
+  "mechanism": "### The same shocks make a bell when added, and lean right when multiplied\n\nEach stall starts at 100 yuan. If over ten months its sales go up or down by 20 yuan each month, the result is symmetrical, and the average and the median both stay at 100. Change it to going up or down by 20% each month, and the average is still 100, but the median drops to 82. The stall in the very middle is one with five rises and five falls, and whatever the order, it ends at $100\\times1.2^5\\times0.8^5=100\\times0.96^5\\approx82$. Every stall with fewer than six rises is below 100, about 60% of them. A stall that rose all ten times reaches 619; one that fell all ten times has only 11 left.\n\n### The bigger the monthly swings, the further the average is from the median\n\nA stall that rises once and falls once is left with $(1+s)(1-s)=1-s^2$ times what it had, where $s$ is the monthly swing. With a 10% swing, two months lose 1%; with 20%, 4%; with 40%, 16%.\n\nOver ten months, the stall in the middle gets hit five times, so the median drops from 95 to 82, and then to 42. The average stays at 100 throughout, because each month a rise and a fall are equally likely, so on average nothing is gained or lost. The lower the median is dragged, the higher the stalls on the right have to shoot to hold the average up.\n\n### Take the logarithm, and multiplying turns back into adding\n\nA logarithm is a ruler that turns multiplication into addition: multiplying by 1.2 counts as one step to the right, and multiplying by 0.8 as one step to the left. The step to the left is a little longer, because 1.2 times 0.8 is only 0.96. Call the starting point $x_0$ and the tenth month $x_{10}$, and call the factors (1.2 or 0.8) multiplied in months 1 to 10 $m_1$ to $m_{10}$:\n\n$$\\log x_{10}=\\log x_0+\\log m_1+\\log m_2+\\cdots+\\log m_{10}$$\n\nTen rises and falls multiplied together become, once you take the logarithm, ten steps added together. When many unrelated steps are added up, the results form a bell shape; that is what the central limit theorem says. The logarithm of sales forms a bell, and that is where the name \"lognormal\" comes from. Because the step to the left is longer, a stall with half rises and half falls lands to the left of where it started, and the median drops below 100. Switch the sales axis to a logarithmic scale, and the pile of stalls becomes symmetrical.",
+  "origin": "Galton's and McAlister's two papers were published together in 1879. In 1903 the Dutch astronomer Kapteyn applied this distribution to skewed biological data. In 1931 Gibrat in France proposed that if the rate at which a company grows each year has nothing to do with its current size, company sizes tend toward a lognormal distribution.",
+  "limits": "For quantities built up by multiplying layer on layer, such as incomes, company sizes and the incubation periods of infectious diseases, the lognormal distribution fits well; for quantities built by adding, like height, it is no use. It also fails to fit the very top: there are more and bigger real fortunes and giant companies than it predicts, and the tail looks more like a power law. When Black and Scholes priced options in 1973, they treated stock prices as lognormal. Under that assumption, a one-day crash almost never happens, yet in real markets it does."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "predict",
+    "text": "Estimate how next year's sales will spread across the thousand-plus small merchants on a platform: if they rise and fall by percentages each month, the median will be below the average, and the biggest few need room set aside on their own."
+   },
+   {
+    "use": "communicate",
+    "text": "In a weekly operations report, put the average and the median spend per customer side by side: the further apart the two are, the more it shows a few big customers are pulling the average up."
+   },
+   {
+    "use": "explore",
+    "text": "When you get a set of data that leans right, check whether each of its steps changes by a proportion. If so, lognormal is a reasonable first guess; then take the logarithm and plot it to test that."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Medicine",
+    "title": "Incubation periods trail to the right",
+    "text": "In 1950 the epidemiologist Philip Sartwell went through records of incubation periods for several infectious diseases, such as measles and polio, and found that each disease's incubation periods trailed a tail to the right, and were roughly bell-shaped once you took the logarithm. The usual explanation is that a pathogen that gets into the body multiplies, and illness starts only once its numbers reach a certain level. Each person catches a different dose, and it multiplies at a different speed, and these differences stack up by proportion. In March 2020 a team at Johns Hopkins University fitted a lognormal distribution to 181 COVID-19 cases. The median incubation period came out at about 5.1 days, and 97.5% of people fell ill within 11.5 days, from which the team concluded that a 14-day quarantine held up."
+   },
+   {
+    "field": "Retail",
+    "title": "Stock new products by the median",
+    "text": "You're launching a hundred new snacks in a chain of stores. Each one's sales are several proportions multiplied together: how many customers pass the shelf, what share of them pick it up, what share of those buy it, and what share of buyers buy it again. Each of these can be twice as high or half as low, so the sales that come out trail to the right. Last year, similar new products sold 2,000 packs a month on average, but the median was only 800. You stock the first batch of each by the median, and keep a restocking budget for the few that sell out in the first month, then order more of those. Stock by the average, and most of the products would sit in the warehouse."
+   },
+   {
+    "field": "Society",
+    "title": "The average and median household income",
+    "text": "Every year the US Census Bureau publishes a report on household income, and the average is always well above the median. Raises, job changes and investment returns mostly come as percentages, multiplied in year after year. Most households end up in the middle or a bit below, while a few multiply their way to the top and push the average up."
+   }
+  ],
+  "ask": [
+   "Is each step of this quantity added on, or multiplied in by a proportion?",
+   "How far above the median is the average? The further above it is, how many are in the small group pulling it up?",
+   "If I take the logarithm and plot it again, is the picture symmetrical? Do the few points at the very top still fall on the line?"
+  ],
+  "with": [
+   {
+    "id": "ergodicity",
+    "sees": "A friend urges you to open a small shop, on the grounds that for shops like it the monthly rises and falls cancel out on average, so you won't lose. The lognormal says that after ten months, in a group of shops like this, the median one has only a bit over 80% left, and more than 60% of the shops are below the average. Ergodicity asks about your one path: you have only one shop, and if you lose everything once you're out. However flat the average is, it isn't yours; look at the median and the worst case, and keep your capital in separate places. On the other hand, if you own a chain of a hundred shops and can afford the losses, the average is what you live on."
+   },
+   {
+    "id": "power-law",
+    "sees": "You manage one type of car insurance at an insurer and need to set aside reserves for next year's single biggest claim, and you have the past ten years of claims records. First pick a few thresholds, say 100,000, 500,000 and 1 million, and for each one work out how far, on average, the claims above it go past it. With lognormal data, the higher you raise the threshold, the smaller the excess gets relative to the threshold, so the biggest claim is held in by the tail, and reserves based on the top few claims in history are enough. If the data follow a power law, the average excess grows in proportion as you raise the threshold, there will always be a claim far above the old record, and if your reserves are too small, it will eat a whole year's profit."
+   },
+   {
+    "id": "central-limit-theorem",
+    "sees": "Take the same pile of small shocks. Add them up, and you're looking at the central limit theorem: the result is a bell shape, and the average is the center. Multiply them, and you have to take the logarithm first; only on the logarithm do you get a bell, and the average is no longer the center."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You have four sets of data and want to pick out first the one most likely to lean right, with an average clearly above the median.",
+    "question": "Which set fits best?",
+    "explain": "Rising or falling each year by a proportion of the year before is multiplying layer on layer, and multiplied quantities trail to the right. Added quantities and random errors both form a symmetrical bell.",
+    "options": [
+     {
+      "text": "The heights of a few hundred adult men.",
+      "correct": false,
+      "feedback": "Height is built by adding many small factors, so it forms a roughly symmetrical bell."
+     },
+     {
+      "text": "The yearly sales of a few hundred online shops in a city, each rising or falling each year by some proportion of the year before.",
+      "correct": true,
+      "feedback": "Multiplied year after year, they have no ceiling on rises, but falls can't go below zero. A long tail trails off to the right, and a few large values lift the average."
+     },
+     {
+      "text": "The number of heads in each set of a hundred coin tosses.",
+      "correct": false,
+      "feedback": "The count is built by adding one toss at a time, so it is symmetrical with no tail."
+     },
+     {
+      "text": "The errors from the standard length in a few thousand parts made on the same machine.",
+      "correct": false,
+      "feedback": "The error is built by adding many small deviations, positive and negative are symmetrical, and the average and median almost coincide."
+     }
+    ]
+   },
+   {
+    "stem": "You're growing two groups of bacteria at the same time, 200 dishes in each group, all starting with the same number of bacteria. Every hour, in group A the count in each dish is multiplied at random by 1.1 or 0.9; in group B, by 1.3 or 0.7. Each dish is independent, and the two outcomes are equally likely. The average count in both groups stays the same every hour. After 24 hours you compare the two groups.",
+    "question": "Which statement is correct?",
+    "explain": "The averages are the same, but the bigger the swings, the less the median dish has left: the median dish in group A has about 90% left, in group B only about 30%, and group B's right tail is longer too.",
+    "options": [
+     {
+      "text": "Group A's median dish is lower than group B's, because group A rises less each step.",
+      "correct": false,
+      "feedback": "Group A rises less but also falls less. The median dish rises about half the time and falls about half the time, so group A actually loses less from the multiplying."
+     },
+     {
+      "text": "Group B has a higher average count, because the group with bigger swings rises more sharply.",
+      "correct": false,
+      "feedback": "The question says the averages of both groups stay the same every hour. Group B's swings don't raise the average."
+     },
+     {
+      "text": "The median dishes of the two groups are about the same, because the two groups have the same average.",
+      "correct": false,
+      "feedback": "The averages are the same, but the medians are not: the bigger the swings, the further apart average and median are."
+     },
+     {
+      "text": "The two groups have the same average; group B's median dish has less left, and a few dishes are far higher.",
+      "correct": true,
+      "feedback": "With big swings, the dishes with half rises and half falls lose more once it is all multiplied out, and the few absurdly high dishes on the right hold up the average."
+     }
+    ]
+   },
+   {
+    "stem": "You get a set of data. Plotted as it is, the histogram trails a long tail to the right; with the logarithm of each number plotted instead, it is almost symmetrical.",
+    "question": "What does this most likely show?",
+    "explain": "Being symmetrical after taking the logarithm shows that these numbers were built by multiplying a series of effects stacked up by proportion. Multiplied numbers trail to the right, and the average is above the median.",
+    "options": [
+     {
+      "text": "The data contained quite a few entry errors, which were removed when taking the logarithm, so it became symmetrical.",
+      "correct": false,
+      "feedback": "Taking the logarithm doesn't remove any numbers; it only changes the scale. The whole set became symmetrical, which shows that this is its real shape."
+     },
+     {
+      "text": "The sample is still too small; with a bigger sample, the original plot will become symmetrical on its own.",
+      "correct": false,
+      "feedback": "A bigger sample would only make the tail clearer. The symmetry shows up on the log scale."
+     },
+     {
+      "text": "These numbers were built by multiplying a series of effects stacked up by proportion, and the average is above the median.",
+      "correct": true,
+      "feedback": "Taking the logarithm turns repeated multiplying into repeated adding, and repeated adding forms a bell. Back on the original scale, a long tail trails off to the right."
+     },
+     {
+      "text": "These numbers were built by adding many small effects layer on layer; taking the logarithm just changed the scale.",
+      "correct": false,
+      "feedback": "Numbers built by adding are already bell-shaped as they are, without needing a logarithm to make them symmetrical."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "The average stays at 100; the median falls to 82",
+  "caption": "30 stalls toss a coin monthly: up or down 20%. Most lines end below 100; a few shoot high and hold the average at 100. Drag the swing up: the median falls faster.",
+  "x": {
+   "label": "Months"
+  },
+  "y": {
+   "label": "Sales (yuan)",
+   "min": 0
+  },
+  "params": [
+   {
+    "id": "s",
+    "label": "Monthly swing",
+    "min": 10,
+    "max": 40,
+    "step": 5,
+    "value": 20,
+    "unit": "%"
+   }
+  ],
+  "runs": 30,
+  "model": {
+   "steps": 10,
+   "init": {
+    "v": 100
+   },
+   "next": {
+    "v": "v*(1 + (2*flip(0.5)-1)*s/100)"
+   }
+  },
+  "series": [
+   {
+    "name": "",
+    "expr": "v",
+    "tone": "muted"
+   },
+   {
+    "name": "Average",
+    "expr": "100",
+    "tone": "ink",
+    "dashed": true,
+    "thin": false
+   },
+   {
+    "name": "Median",
+    "expr": "100*pow(1-(s/100)^2, k/2)",
+    "tone": "accent",
+    "thin": false
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Median",
+    "expr": "100*pow(1-(s/100)^2, 5)",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "Up all ten times",
+    "expr": "100*pow(1+s/100, 10)",
+    "unit": " yuan",
+    "digits": 0
+   },
+   {
+    "label": "Down all ten times",
+    "expr": "100*pow(1-s/100, 10)",
+    "unit": " yuan",
+    "digits": 0
+   }
+  ]
+ }
+}

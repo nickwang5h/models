@@ -1,0 +1,183 @@
+{
+ "id": "chicken-game",
+ "name": "Game of Chicken",
+ "en": "胆小鬼博弈",
+ "discipline": "games",
+ "one_line": "Whoever backs down first loses out, but if neither backs down, both are ruined.",
+ "story": "In the Cuban Missile Crisis, the US–Soviet standoff ends with the missiles withdrawn in return for a promise not to invade and the secret removal of US missiles from Turkey",
+ "shallow": {
+  "scene": "In October 1962, the United States discovered that the Soviet Union was placing nuclear missiles in Cuba. On October 22, Kennedy announced a naval blockade of Cuba and demanded that the Soviet Union remove the missiles. Both sides knew that one more step could lead to nuclear war, and both worried that backing down first would look weak. On October 28, Khrushchev announced on Moscow radio that the missiles would be removed. The United States publicly promised not to invade Cuba, and privately also agreed to remove the American missiles based in Turkey, a part of the deal that was not made public at the time.",
+  "plain": "You drive into an old lane only wide enough for one car, and another car comes in from the other end. Whoever backs up to make way loses three minutes; if neither gives way, both cars are stuck in the lane and each loses an hour. That's the smallest version of the game of chicken. You think: the other driver doesn't look like he's in a hurry, so he should back up. The other driver probably thinks the same about you. Both of you watch for the other's reversing lights, and the two cars stay nose to nose."
+ },
+ "deep": {
+  "mechanism": "### When the other gives way, holding firm pays best; when the other holds firm, giving way is the better deal\n\nTwo drivers are heading toward each other, and each can swerve or go straight. Below are made-up scores, higher is better, with A's score first and B's second in each cell:\n\n| | B swerves | B goes straight |\n|---|---|---|\n| A swerves | 2, 2 | 1, 3 |\n| A goes straight | 3, 1 | −10, −10 |\n\nWhen B swerves, A gets 3 for going straight, better than the 2 for both swerving; when B goes straight, A gets 1 for swerving, far better than crashing. So what A should do depends entirely on what B does. B is in the same position as A, and the answer is the same the other way around.\n\n### The worse the crash, the fewer people dare to bet the other will give way\n\nWhen B swerves, A gets 1 point more by going straight than by swerving (3 against 2); when B goes straight, A gets 11 points less by going straight than by swerving (−10 against 1). For going straight to pay, B must be more than 11 times as likely to swerve as to go straight, which means the chance of B going straight has to be under 1/12, about 8%. Change the cost of a crash to −100, and the loss becomes 101 points, so the bar drops to about 1%. Hardly anyone is ever that sure.\n\n### When backing down needn't happen in public, holding firm is less tempting\n\nIn the Cuban crisis, the only thing announced publicly was the American promise not to invade Cuba, so the Soviet withdrawal didn't look like giving in on its own; the American promise to remove the missiles from Turkey stayed private, so the United States didn't look like it was backing down either. Neither side lost much face by taking a step back, so holding firm was less tempting. Public challenges work the other way: whoever takes back their words first loses face, the score for backing down is pushed even lower, and the standoff is harder to break.",
+  "origin": "The name comes from a game young Americans played, driving straight at each other to see who had more nerve; whoever swerved first was called chicken. In 1959 Russell used it in Common Sense and Nuclear Warfare as a picture of the standoff between nuclear powers; in 1960 Schelling analyzed threats and brinkmanship in The Strategy of Conflict.",
+  "limits": "It fits best when both sides fear a crash more than backing down and there's only one chance, like two cars meeting head-on, or a standoff before a deadline. If one side can push its losses onto others, or cares more about not backing down than about its own safety, counting on fear to make it back down will fail. Taking the other side's backing down this time as a sign they're scared and will back down again next time is also a mistake: the same opponent, meeting you a second time, remembers last time and is often less willing to give way."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "Explain why, when merging from a highway on-ramp, two cars squeeze forward side by side: whoever eases off first is a few seconds later, and if neither does, they scrape each other."
+   },
+   {
+    "use": "design",
+    "text": "Set a deadline for a negotiation: put it at a point where there's still room to turn, not at the moment of the crash."
+   },
+   {
+    "use": "act",
+    "text": "Halfway through a standoff, first write down, item by item, what a crash would cost you. Only if you can put real numbers on it do you have grounds to hold firm."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Public policy",
+    "title": "A shutdown runs toward a deadline",
+    "text": "On October 1, 2013, the US federal government partly shut down. Obama and the Republicans in Congress were locked in a standoff over the budget and his health care law, and the government was also about to hit the debt ceiling. On October 16, Congress passed a bill that restored funding and suspended the debt ceiling, and the health care law was not delayed."
+   },
+   {
+    "field": "Labor",
+    "title": "Third week of the strike",
+    "text": "You're the union representative at a small factory. The union wants a raise, and management says not one cent more. In the third week of the stoppage, half the orders in the warehouse were taken by another factory. Management cut back the production lines, and a number of union members found other jobs."
+   },
+   {
+    "field": "Personal life",
+    "title": "Who calls someone to fix the wall",
+    "text": "Your home and the one next door share a garden wall. Before the rainy season a crack opened up in it. Getting it fixed costs money, and you wanted the neighbors to pay first, while they were waiting for you. A heavy storm in early autumn washed that stretch of wall away, and each family paid a large sum to have it rebuilt."
+   }
+  ],
+  "ask": [
+   "If I hold firm and we crash, what exactly will it cost me? Can I put a number on it?",
+   "What gives me reason to believe the other side will give way first? And what gives them reason to believe I will?",
+   "By what day, what moment at the latest, does one side have to move?"
+  ],
+  "with": [
+   {
+    "id": "avoid-ruin",
+    "sees": "Your landlord wants to raise the rent, and you say you'll move out unless he doesn't; each of you is betting the other will give way first. The score table only counts points: win the bet and get 3, lose it and lose 10. But if what you lose is all your savings, that cell isn't minus 10, it's out of the game. The game of chicken lets you see that the other side is scared too; avoiding ruin has you first ask whether you can come back alive if you lose. If you can, keep up the standoff; if you can't, look for a way out first, even if the other side will most likely give way."
+   },
+   {
+    "id": "credible-commitment",
+    "sees": "Two companies are both holding firm in the final week. Credible commitment's move is to tie your own hands first, for example by signing a contract with a large penalty for backing out, so the other side believes you can't back down. The game of chicken points to the other side of this move: if the other side ties its hands too, nobody can swerve any more. It only works if you tie your hands before they do and they have time to see it; once both sides have said their last word, tying yourself tighter only brings the crash closer."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "A release is due on Friday. Two developers have each changed the same module, and their code won't merge. Whichever one first changes his own work to fit the other's will spend an extra day redoing it; if neither changes, the release will slip by a whole week. Both know a week's delay is the worst outcome, yet each says, \"You change yours first, mine is fine,\" and they've been stuck for two days.",
+    "question": "Both know the delay is the worst outcome, so why are they still stuck?",
+    "explain": "Whoever changes first spends an extra day for nothing while the other does nothing, so each wants to wait for the other to move. With both thinking this way, the deadline closes in while they hold out.",
+    "options": [
+     {
+      "text": "The code not merging is a technical problem and has nothing to do with how the two are calculating.",
+      "correct": false,
+      "feedback": "Technically, the code will merge whichever one makes the change; what's stuck is who spends the extra day."
+     },
+     {
+      "text": "Really, both would rather delay the release; a week's delay does them no harm.",
+      "correct": false,
+      "feedback": "The question says plainly that both see the delay as the worst outcome; neither wants it."
+     },
+     {
+      "text": "Each wants the other to spend the extra day, and thinks the other also fears the delay and will change first.",
+      "correct": true,
+      "feedback": "Both fear the delay, and precisely because both do, each takes it as a reason the other will back down first."
+     },
+     {
+      "text": "Neither knows how serious a week's delay is; once told, one will change first right away.",
+      "correct": false,
+      "feedback": "Both already understand what the delay means, so explaining it won't end the standoff."
+     }
+    ]
+   },
+   {
+    "stem": "A big supermarket chain and a small cookie maker are negotiating the price for renewing their contract. The supermarket says it will stop stocking the cookies unless the price comes down; the cookie maker says it will stop supplying unless the price goes up. For the supermarket, losing the supply just means one brand fewer on the shelves; for the cookie maker, it means nearly half its orders. Neither side has softened in public, and the talks have dragged on to a week before the contract runs out.",
+    "question": "Before the supply is actually cut off, which side is more likely to give way first?",
+    "explain": "A crash doesn't cost them the same: for the supermarket it's one brand fewer, for the cookie maker it's nearly half its orders. The cookie maker needs to be far surer before holding firm, so it's more likely to move first.",
+    "options": [
+     {
+      "text": "Whoever made the threat to cut off first gives way first.",
+      "correct": false,
+      "feedback": "Who threatened first has nothing to do with who gives way; the information in the question points to how heavy the cost of a crash is for each."
+     },
+     {
+      "text": "Both equally, since both have threatened to cut off.",
+      "correct": false,
+      "feedback": "How many threats were made doesn't decide who goes first; a cut-off costs the two sides very different amounts."
+     },
+     {
+      "text": "The supermarket, because the bigger side has to look gracious.",
+      "correct": false,
+      "feedback": "Nothing in the question is about looking gracious; what decides who moves first is how much a cut-off costs each side."
+     },
+     {
+      "text": "The cookie maker, because a cut-off costs it nearly half its orders, a far heavier cost than the supermarket's.",
+      "correct": true,
+      "feedback": "The heavier the cost of a crash, the surer you have to be before betting the other side will back down; the cookie maker has less to stand on."
+     }
+    ]
+   },
+   {
+    "stem": "At an all-staff meeting, two departments each announced in public that, on a shared training budget, \"our department won't give up a cent.\" After the meeting, both managers privately think splitting the budget in half makes the most sense, but neither wants to be the first to suggest it, for fear of being seen as the loser. You're their shared boss, and you want the budget settled this week.",
+    "question": "What are you most likely to do to get the budget settled this week?",
+    "explain": "Having taken a stand in public, whoever speaks first loses face. Have the two talk it over in private and each put forward the half-and-half plan at the same moment, and nobody loses out by speaking first; both have a way to step down.",
+    "options": [
+     {
+      "text": "Have the two debate it face to face at the next regular meeting, and announce on the spot who's right.",
+      "correct": false,
+      "feedback": "A face-to-face debate is another public stand; the loser would have to admit defeat, making both even less willing to give way."
+     },
+     {
+      "text": "Talk to each one privately and agree that on Wednesday each will propose splitting it in half at the meeting.",
+      "correct": true,
+      "feedback": "Both take a step back at the same moment, so neither admits defeat alone, and backing down costs less."
+     },
+     {
+      "text": "Do nothing and wait for the two to calm down and come to you on their own in a few weeks.",
+      "correct": false,
+      "feedback": "The question wants it settled this week; waiting a few weeks misses the deadline, and nobody is made responsible for moving first."
+     },
+     {
+      "text": "Post a notice in the department group chat: if there's no plan by Friday, the whole budget is frozen.",
+      "correct": false,
+      "feedback": "A freeze only makes the crash worse. Whoever speaks first still loses face, exactly as before, so both are even less willing to speak first."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "grid",
+  "title": "They yield, you hold; they hold, you yield",
+  "caption": "Made-up scores, A's first. Each driver wants to wait for the other to swerve; if neither gives way, both end up in the bottom right.",
+  "rowLabel": "A",
+  "colLabel": "B",
+  "rows": [
+   "Swerve",
+   "Go straight"
+  ],
+  "cols": [
+   "Swerve",
+   "Go straight"
+  ],
+  "cells": [
+   [
+    "2, 2",
+    {
+     "text": "1, 3",
+     "sub": "B gains by holding firm"
+    }
+   ],
+   [
+    {
+     "text": "3, 1",
+     "sub": "A gains by holding firm"
+    },
+    {
+     "text": "−10, −10",
+     "sub": "Both crash",
+     "tone": "warn"
+    }
+   ]
+  ]
+ }
+}

@@ -1,0 +1,181 @@
+{
+ "id": "social-proof",
+ "name": "Social Proof",
+ "en": "社会认同",
+ "discipline": "psychology",
+ "one_line": "When unsure, we copy what others do, but they may be copying too.",
+ "story": "Latané and Darley's smoke experiment: with calm companions in the room, the share who report the smoke drops from 75% to 10%",
+ "shallow": {
+  "scene": "In 1968 Bibb Latané and John Darley published an experiment. College students were taken into a room to fill out a questionnaire, and smoke began pouring from a vent, thicker and thicker. Of the students filling out the form alone, 75% went out to report it within six minutes. When two companions planted by the researchers sat beside them, glanced at the smoke and calmly went on filling out their forms, only 10% of the students went out to report it.",
+  "plain": "You come out of an unfamiliar train station. Neither of the two exits has a sign, and you see that nearly everyone is streaming toward the stairs on the left, so you follow. You're probably right, because many of them have been here before, and the flow of people is an unwritten map. Following others when you're unsure is called social proof, and it saves you the work of finding the way. But if the people ahead are also just following the people further ahead, the map is blank: of a hundred people going left, maybe only the first one actually knows the way. What you see is the number of people. How much each of them knows, you can't see."
+ },
+ "deep": {
+  "mechanism": "### Break the head count down into how many separate pieces of knowledge it holds\n\nSuppose ten people recommend the same pair of hiking boots. If all ten have worn them on mountain trails, you're getting ten pieces of experience. If they've only shared the same review, you're getting one piece, shown ten times. When the number who actually wore them drops from ten to two, the weight of the recommendation drops from ten pieces to two, yet the number of recommenders in the post hasn't changed by one. The recommenders also need to be like you where it matters: the same foot shape and the same trails count for more than the same love of the outdoors.\n\n### Latecomers see only what earlier people did\n\nA new dessert shop opens at half price, and the first ten people line up because it's cheap. Passers-by see the long line, assume the food is good, and twenty more join it, not one of whom has tasted the shop's desserts. The line has grown to thirty, but the evidence about whether the desserts are good hasn't grown at all: the first ten came for the half price, and the next twenty came for the line.\n\n### When everyone is watching everyone else, doubts get pushed down first\n\nIn the smoky room, a student glances at his companions, sees they're calm, and pushes his own worry down; his calm in turn becomes evidence to others that nothing is wrong. If none of the students in the room are in on it, each waits for someone else to move first, and what each of them sees is a room full of people in no hurry. Nobody goes to check where the smoke is coming from, yet everyone's calm stacks up, layer on layer.",
+  "origin": "In 1935 Muzafer Sherif had people in a dark room estimate how far a point of light moved. When several people estimated together, their numbers gradually drew closer. In 1984 Robert Cialdini's book *Influence* listed social proof as one of the principles that shape our choices.",
+  "limits": "When you have no information of your own and the people ahead have each tried it for themselves, following them saves effort and is reliable. If you already have direct evidence, or the consequences fall on you alone and not on the people following the crowd, trust the evidence, not the numbers. The numbers can also be faked: paid reviews and coordinated sharing blow up one voice into many. And the reverse: when a group goes wrong together, you can't work backward to conclude that someone must have silenced dissent. Too little information can just as easily lead a whole room astray together."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "design",
+    "text": "Set rules for a drug review section: only reviews from people who have uploaded a prescription count toward the star rating, and reviews that were shared or copied don't count as separate pieces."
+   },
+   {
+    "use": "act",
+    "text": "When choosing a takeout restaurant, first filter the reviews down to ones with photos that name specific dishes, then look at the stars. Among thousands of five-star ratings, those few dozen are the ones where each person actually ate there and said something of their own."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Business",
+    "title": "One line on a card",
+    "text": "In 2008 Noah Goldstein, Robert Cialdini and Vladas Griskevicius ran a field experiment at a hotel in the US, placing different cards in the guest rooms. With cards that only appealed to guests to protect the environment, fewer guests reused their towels; with cards stating that most guests reuse their towels during their stay, more did. None of the guests had seen anyone else use a towel. They read one sentence and did the same."
+   },
+   {
+    "field": "Investing",
+    "title": "Ten recommendations, one article",
+    "text": "In an investing group chat, you see ten people recommend the same fund. You ask for their reasons and find that all ten were sharing the same article ranking funds, and not one had looked at what the fund holds. You put your planned purchase on hold and go through the fund's quarterly reports yourself."
+   },
+   {
+    "field": "Education",
+    "title": "The classroom where nobody raised a hand",
+    "text": "The professor finishes working through a formula and asks if there are any questions. In a classroom of eighty, not one hand goes up. You didn't follow the last step, but you look around and everyone seems calm, so you don't raise your hand either. After class you compare notes with the person next to you: he got stuck on the same step, and so did several people in the back rows."
+   }
+  ],
+  "ask": [
+   "Did the people who made these choices each find something out before choosing, or were they all looking at the same source?",
+   "Of the people saying it's good, how many said so after paying and using it for a good while?",
+   "If I cover up the head count and the ranking, what evidence do I have left? Can I try it once on a small scale and get a piece of evidence of my own?"
+  ],
+  "with": [
+   {
+    "id": "network-effects",
+    "sees": "Your apartment complex needs to pick a group-chat app, and 90% of the neighbors are already on App A. Social proof says to first ask whether the neighbors each compared the options before choosing, or just followed each other. Network effects say that question doesn't need asking: the people you need to reach are on App A, so its use is already settled. Choose a chat app by how many of your contacts use it; choose a hospital or a fund by whether people have tried it themselves."
+   },
+   {
+    "id": "preference-falsification",
+    "sees": "A post has tens of thousands of likes, and almost nobody objects. Social proof reads that as most people agreeing; preference falsification reminds you that when speaking up in public carries a cost, people who disagree will also like the post or stay silent. Only when taking a stand costs nothing can the likes be read as a head count; when it has a cost, the silent part has to be counted separately."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "You're forty-five, you've had knee surgery, and you want to sign up for a half marathon. A fitness influencer's twelve-week training plan has been completed by more than 10,000 people who logged their progress. The comments are almost all positive, and most of the people logging their progress are in their early twenties.",
+    "question": "How much can the records of these 10,000-plus people tell you?",
+    "explain": "Ten thousand people show that the plan works for people like them. Age and knees are key factors in running training, and you differ from them on both.",
+    "options": [
+     {
+      "text": "The comments are almost all positive, which shows it works even for people with injuries.",
+      "correct": false,
+      "feedback": "The comments contain no experiences from people who've had knee surgery, and lots of praise can't fill in that gap."
+     },
+     {
+      "text": "They only show it works for young people with no old injuries; you need to find the experiences of people closer to you.",
+      "correct": true,
+      "feedback": "How much the records tell you depends on whether those people are like you where it matters, and age and old injuries are exactly where it matters."
+     },
+     {
+      "text": "Ten thousand people are enough to prove the plan is safe, so you can follow it as is.",
+      "correct": false,
+      "feedback": "Most of the people who finished were in their early twenties. Nobody has shown it's safe for a forty-five-year-old who has had knee surgery."
+     },
+     {
+      "text": "The people logging their progress are too young, so their records tell you nothing at all and can be ignored entirely.",
+      "correct": false,
+      "feedback": "Parts of the plan, such as how the weeks are arranged and how the distance builds up, are still useful to you; you just can't copy it whole."
+     }
+    ]
+   },
+   {
+    "stem": "Two new fruit stalls open on the same street, with no visible difference in their fruit or prices. On opening day, a passer-by stands in front of Stall A taking a phone call. Others think he's choosing fruit and gather round too, and the crowd keeps growing. A week later, Stall A has three times as many customers as Stall B.",
+    "question": "What does this threefold gap show?",
+    "explain": "The people who gathered round saw a crowd, not fruit. None of Stall A's popularity comes from anyone who first compared the two stalls' fruit. (The threefold figure is made up.)",
+    "options": [
+     {
+      "text": "Stall A's owner is better at drumming up business than Stall B's.",
+      "correct": false,
+      "feedback": "The first crowd came from a passer-by taking a phone call, not from anything the owner did."
+     },
+     {
+      "text": "Stall A's fruit is better than Stall B's, and customers voted with their feet.",
+      "correct": false,
+      "feedback": "The first people to gather were drawn by the passer-by on the phone; nobody had compared the two stalls' fruit first."
+     },
+     {
+      "text": "There is something wrong with Stall B's prices or service, which is why customers leave.",
+      "correct": false,
+      "feedback": "In the question, the two stalls' fruit and prices are no different, and there is no clue of any difference in service."
+     },
+     {
+      "text": "It says almost nothing about the fruit; the later customers gathered because of the crowd.",
+      "correct": true,
+      "feedback": "Latecomers take the crowd as a clue, and their joining in becomes the clue for the next group. Nobody ever compared the fruit."
+     }
+    ]
+   },
+   {
+    "stem": "At a quarterly review, six judges have to score the same project. The usual practice is for the judges to call out their scores one after another. The first three said 8, and so did the last three. Afterward, one judge said privately that he actually thought it deserved only 6.",
+    "question": "How should this change so that the scores finally recorded are closer to each judge's own judgment?",
+    "explain": "When scores are called out in turn, the people later in line hear the earlier scores, and their own judgment is swayed. Only if everyone writes a score down separately and they're all revealed at once is each score an independent piece.",
+    "options": [
+     {
+      "text": "Add a few more judges, so more people call out scores in turn.",
+      "correct": false,
+      "feedback": "The added judges also hear the earlier scores first. More people means more people drifting toward the same score."
+     },
+     {
+      "text": "Have the most senior judge score first, to show the others the standard.",
+      "correct": false,
+      "feedback": "If the most senior person speaks first, everyone after will drift even more toward that score."
+     },
+     {
+      "text": "Have the judges each write their score down first, then reveal them all at once.",
+      "correct": true,
+      "feedback": "No one can see the others' scores while writing their own, so what's recorded is six independent judgments."
+     },
+     {
+      "text": "Before scores are called out in turn, remind the judges to speak up if they disagree.",
+      "correct": false,
+      "feedback": "The reminder doesn't change the order of scoring. The scores called out first are still a clue for those who come after."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "chart",
+  "type": "hbar",
+  "title": "Same head count, 10× gap in what they know",
+  "caption": "Ten people recommend the same boots each time. Light: people you see. Dark: those who wore them on a trail. More sharing, shorter dark bar; the count stays put.",
+  "categories": [
+   "All ten wore them",
+   "Two wore, eight shared",
+   "Ten shared one review"
+  ],
+  "y": {
+   "label": "Pieces",
+   "min": 0,
+   "max": 10,
+   "step": 2
+  },
+  "series": [
+   {
+    "name": "Recommenders seen",
+    "values": [
+     10,
+     10,
+     10
+    ],
+    "tone": "muted"
+   },
+   {
+    "name": "Each wore them",
+    "values": [
+     10,
+     2,
+     1
+    ],
+    "tone": "accent"
+   }
+  ]
+ }
+}

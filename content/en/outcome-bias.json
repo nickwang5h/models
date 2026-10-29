@@ -1,0 +1,204 @@
+{
+ "id": "outcome-bias",
+ "name": "Outcome Bias",
+ "en": "结果偏差",
+ "discipline": "psychology",
+ "one_line": "A good ending doesn't mean the decision was right; it may just be luck.",
+ "story": "The Challenger breaks apart after earlier flights came home safely with damaged seals, which were taken as grounds to keep launching; in the inquiry report's appendix, Feynman compares this to Russian roulette",
+ "shallow": {
+  "scene": "When a risky thing has been done a few times without anything going wrong, people start to feel it isn't really dangerous. On January 28, 1986, the US space shuttle Challenger broke apart 73 seconds after liftoff, and all seven astronauts were killed. The cause was a rubber seal ring at a joint in a booster rocket that failed to seal, letting hot gas burst out through the gap.\n\nOn earlier flights, seals like this had already been partly burned away, and the recovered rockets carried the scorch marks. But the shuttle came back safely every time, so the scorch marks came to be treated as an acceptable risk.\n\nRichard Feynman, a physicist on the commission that investigated the accident, wrote: \"When playing Russian roulette the fact that the first shot got off safely is little comfort for the next.\" The earlier safe flights were treated as proof that the design was sound, when all they really showed was that those flights had been lucky.",
+  "plain": "Suppose there's a crossing on your way home from work. Running the red light saves you two minutes, and each time you run it there's a one-in-ten chance of being hit by a car. You run it nine times and get home safely every time, so you decide this way is fine. The tenth time you're hit, and you immediately blame yourself for running it. But all ten times you made the same decision and took the same risk; only the luck changed. Grading the choice you made by how it turned out, high marks for the first nine and a low mark for the tenth, is outcome bias."
+ },
+ "deep": {
+  "mechanism": "### A string of safe outcomes doesn't tell you how big the risk is\n\nIf the chance of an accident each time is $p$, the chance of no accident is $1-p$. Each time has nothing to do with the others, so the chance $S$ of $n$ safe times in a row is the chance of \"no accident this time\" multiplied together $n$ times:\n\n$$S=(1-p)^n$$\n\nWith a one-in-ten risk at the crossing each time, the chance of running it nine times in a row safely is 0.9 to the 9th power, about 39%: two people in five would run it nine times without an accident. Even with a risk as high as 40%, the chance of three safe times in a row is 0.6 to the 3rd power, still about 22%. People who judge by outcomes will take these lucky ones for people who did the right thing.\n\n### To judge a decision, look at the accounts as they stood beforehand\n\nThe chance of an accident, $p$, times the loss from an accident, $L$, is what you can expect to pay out on average each time; the thing is worth doing only if that is less than $c$, what you save each time. Suppose a shortcut saves 100 yuan each time, and an accident costs 5,000 yuan. If the chance of an accident is 1%, the average payout is 50 yuan each time, less than you save, so it's worth doing. If the chance is 40%, the average payout is 2,000 yuan each time, with an accident every two or three tries; even if three tries in a row go safely, you are losing money. These accounts can be worked out before the outcome is known, and they don't change after it.\n\n### The outcome is plain to see; what was known at the time has to be rebuilt\n\nProfits, casualties, wins and losses are right in front of you. What people knew at the time, what options they had and how much risk they took on all have to be dug out of records and from the people involved. Reviewers who want to save effort let the outcome stand in for all of that. So in review meetings, a project that went wrong gets gone through page by page, while nobody reads the approval papers of a project that didn't, even if it took just as big a risk.\n\n### Reward only the moves that won, and luck becomes the method\n\nOn a team whose rewards follow outcomes, the person who bet big and won gets promoted, and others copy what he did. The person who followed the process and ran into bad luck is told to change methods. After a few years, most of the people left in key jobs are those who made big bets and happened never to lose.",
+  "origin": "In 1988 Jonathan Baron and John Hershey published \"Outcome Bias in Decision Evaluation.\" They asked people to rate decisions others had made, including medical decisions. The information available beforehand was written exactly the same; only the outcome was changed. With a good outcome the decision got a higher score; with a bad outcome, a lower one.",
+  "limits": "This model works best when the information and options from before the decision can still be looked up: reviews after the fact, handing out bonuses and assigning blame are all such cases. When the same person has used the same method dozens of times, the record of outcomes becomes evidence of whether the method is good; it's drawing a conclusion from only one or two outcomes that is the bias. If the information wasn't available to anyone at the time and can't be pieced together afterward, all you can do is accept that it was bad luck. But \"bad luck\" is not a shield either: anything that could have been checked at the time and wasn't still counts against the quality of the decision."
+ },
+ "use": {
+  "uses": [
+   {
+    "use": "explain",
+    "text": "New features go through the same gradual rollout process; when one succeeds the credit goes to a \"careful process,\" and when one fails the blame goes to a \"process that's too slow.\" That is where contradictory verdicts like these come from."
+   },
+   {
+    "use": "design",
+    "text": "When setting bonus rules, reserve part of the bonus for how well the case for a project was made when it was approved, instead of paying it all on final results, and those who bet on luck get a little less out of it."
+   }
+  ],
+  "examples": [
+   {
+    "field": "Medicine",
+    "title": "Checking the prescription after a bleed",
+    "text": "You are in charge of drug safety at a hospital. Following the guidelines, a doctor prescribed a blood thinner to a patient with atrial fibrillation. The dose was within the guideline range, and all the required lab tests were done. In the third week the patient had bleeding in the gut and was admitted to a ward. At the incident meeting, someone said the prescription was wrong. You lay the medical record, the lab results and the guideline text side by side and check them point by point: what should have been checked was checked, the dose wasn't too high, and there was no safer alternative. The prescription is rated sound, and the bleed is entered in the register of known side effects."
+   },
+   {
+    "field": "Sports",
+    "title": "The penalty kick that went over",
+    "text": "You coach a high school soccer team, and in the penalty shootout it's time to pick the fifth kicker. In the training records, the player with the best scoring rate is the number 10 striker, who scores eight of ten. You send him. He sends the ball over the bar, the team loses, and in the parents' group chat someone says the coach made a bad call. After the match you post the whole team's penalty training records so everyone can see why number 10 was ranked first. The next time you set the kicking order, you still go by scoring rate."
+   },
+   {
+    "field": "Manufacturing",
+    "title": "Should inspections be cut back?",
+    "text": "You manage equipment at a food factory, and the filling line stops for two hours every month for inspection. For six months in a row, the inspections have only replaced a few small parts. The floor manager says that since six months turned up no major problems, inspections could move to once a quarter. You dig out three years of breakdown records, and the last major breakdown happened right after an inspection that had been postponed. Instead of simply changing the interval, you draw up a schedule by how fast each part wears out: some are checked every other month, and some are still checked every month."
+   }
+  ],
+  "ask": [
+   "In judging this decision, am I using information that was available on the day it was made, or things I only learned after the outcome was known?",
+   "If the outcome were reversed, would the score I give it change too?",
+   "How many times have other people made decisions like this, and how did each turn out?"
+  ],
+  "with": [
+   {
+    "id": "bayesian-updating",
+    "sees": "A fund manager has done worse than similar funds for three quarters in a row. Outcome bias reminds you that a lot of luck is mixed into these three numbers: first look at his reasons for each purchase, and don't conclude from the numbers alone that his decisions are poor. Bayesian updating, though, says that every quarter's results are evidence, and with all three on the low side, your confidence in him should drop a notch. How far it drops depends on how bumpy this kind of strategy's results normally are: if very bumpy, drop it a little; if not very bumpy, drop it a lot."
+   },
+   {
+    "id": "hindsight-bias",
+    "sees": "At the review meeting after an accident, an engineer says, \"Wasn't it obvious?\" Hindsight bias focuses on that remark: once the outcome is known, people feel they should have seen it coming. Outcome bias sees something else: the scores reviewers give the people involved rise and fall with the size of the accident, even if no one ever said \"obvious.\" If the word \"obvious\" shows up in the minutes, it's probably the first; if the scores line up with the size of the accident, it's probably the second."
+   }
+  ],
+  "questions": [
+   {
+    "stem": "When hiring, the boss skipped an 800 yuan background check. Suppose 5% of people in this kind of job have faked résumés, and when that comes out, the average loss is 200,000 yuan. A year later the new hire is doing very well, and the boss says, \"The background check would have been a waste of money; I was right not to do it.\"",
+    "question": "How should the decision to skip the background check be judged?",
+    "explain": "The average loss to expect beforehand on each hire is 5% times 200,000 yuan, about 10,000 yuan, more than ten times the 800 yuan. This time the loss didn't happen, but the accounts as they stood at the time haven't changed.",
+    "options": [
+     {
+      "text": "Hard to say: you'd have to wait and see whether anything goes wrong over the next few years before deciding.",
+      "correct": false,
+      "feedback": "What you'd be waiting for is the outcome, but whether it was worth it at the time can be worked out right now."
+     },
+     {
+      "text": "Worth it: the new hire is doing well, which shows most people in this kind of job are fine, so saving the 800 yuan was right.",
+      "correct": false,
+      "feedback": "One person doing well doesn't change the 5% chance, known beforehand, that someone in this kind of job has faked a résumé."
+     },
+     {
+      "text": "Not worth it: the average loss to expect beforehand was about 10,000 yuan, far more than 800, and not taking the loss this time doesn't change the decision itself.",
+      "correct": true,
+      "feedback": "5% times 200,000 yuan is about 10,000 yuan, much more than 800. Nothing went wrong, but this time just happened to land on the good side."
+     },
+     {
+      "text": "Worth it: the 800 yuan was certain to be spent, while faking was only a possibility, and certain losses should be avoided first.",
+      "correct": false,
+      "feedback": "Putting a certain 800 yuan ahead of an average loss of 10,000 yuan gets the sums backward."
+     }
+    ]
+   },
+   {
+    "stem": "A climbing team has a rule: if you can't reach the top by 2 p.m., turn back. That day at 1:40 p.m., one climber is still forty minutes from the top, and the leader orders the team to turn back. The whole team gets down safely. That evening they learn that another team reached the top at 4 p.m. and also got down safely. The climber complains, \"Turning back was a mistake.\"",
+    "question": "How should the leader's decision to turn back be judged?",
+    "explain": "To judge turning back, go back to the moment the order was given: the time, how much strength people had left, the forecast, and how the rule was set. The other team's safe return is just one more outcome where nothing went wrong.",
+    "options": [
+     {
+      "text": "Look at the time, strength and forecast at the moment of the order; the other team's safe return doesn't count.",
+      "correct": true,
+      "feedback": "A decision should be judged on the information available at the time. Someone else being safe that day doesn't make the risk at 1:40 any smaller."
+     },
+     {
+      "text": "The other team reached the top safely, which shows the 2 p.m. line was set too early and should be relaxed next time.",
+      "correct": false,
+      "feedback": "One safe trip by another team can't tell you how big the risk of reaching the top late is."
+     },
+     {
+      "text": "Check what the weather actually did that day; if it stayed clear, the forecast judgment at the time of turning back was wrong.",
+      "correct": false,
+      "feedback": "What the weather did later is the outcome. What the forecast showed when they turned back is what the judgment rests on."
+     },
+     {
+      "text": "The whole team got down safely, which shows turning back was right and the rule can stay as it is.",
+      "correct": false,
+      "feedback": "This also draws a conclusion from the outcome: getting down safely only shows that nothing went wrong that day."
+     }
+    ]
+   },
+   {
+    "stem": "Your friend put half his savings into an investment product promising 12% a year, without checking the issuer's credentials. A year later he was paid back in full, principal and interest, and he tells you, \"My decision has been proven right; you should buy it too.\"",
+    "question": "What does his \"proof\" leave out?",
+    "explain": "Being paid back after one year is one outcome in which this product didn't go wrong. It doesn't answer how likely the issuer is to default, and that is something he never checked.",
+    "options": [
+     {
+      "text": "One year is too short; it only counts as proven once it has paid out for three years.",
+      "correct": false,
+      "feedback": "Waiting a few more years only adds a few more outcomes where nothing went wrong. It doesn't fill in the chance of default he never checked."
+     },
+     {
+      "text": "He left nothing out: getting all the principal and interest back shows the issuer can pay; there just isn't a record of it.",
+      "correct": false,
+      "feedback": "Getting everything back only proves the issuer could pay during this one year, not that it will be able to pay later."
+     },
+     {
+      "text": "The 12% alone shows he chose wrong; high-yield investment products are all traps.",
+      "correct": false,
+      "feedback": "A high return doesn't mean a default is certain. Deciding he chose wrong from this number alone also skips checking what was known at the time."
+     },
+     {
+      "text": "Being paid back after a year is just one outcome where nothing went wrong; it doesn't answer how likely the issuer is to default.",
+      "correct": true,
+      "feedback": "An outcome where nothing went wrong says nothing at all about how likely the issuer is to default. He didn't check that at the start, and he still doesn't know."
+     }
+    ]
+   }
+  ]
+ },
+ "figure": {
+  "kind": "demo",
+  "title": "At 10% risk, nearly 4 in 10 run nine safe times",
+  "caption": "Across: times run. Up: chance all were safe. Drag the risk: at 10%, nearly 4 in 10 still run nine times safely; a clean record doesn't prove the risk is small.",
+  "x": {
+   "label": "Times run",
+   "min": 1,
+   "max": 20
+  },
+  "y": {
+   "label": "Chance all were safe",
+   "unit": "%",
+   "min": 0,
+   "max": 100
+  },
+  "params": [
+   {
+    "id": "p",
+    "label": "Risk each time",
+    "min": 1,
+    "max": 40,
+    "step": 1,
+    "value": 10,
+    "unit": "%"
+   }
+  ],
+  "series": [
+   {
+    "name": "All safe",
+    "expr": "100*(1-p/100)^x",
+    "tone": "accent"
+   },
+   {
+    "name": "If risk were 1%",
+    "expr": "100*0.99^x",
+    "tone": "muted",
+    "dashed": true
+   }
+  ],
+  "marks": [
+   {
+    "x": 9,
+    "text": "Nine times"
+   }
+  ],
+  "readouts": [
+   {
+    "label": "Nine safe in a row",
+    "expr": "100*(1-p/100)^9",
+    "unit": "%",
+    "digits": 0
+   },
+   {
+    "label": "A crash about every",
+    "expr": "100/p",
+    "unit": " tries",
+    "digits": 0
+   }
+  ]
+ }
+}
