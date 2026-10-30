@@ -347,6 +347,7 @@ a.e:hover .n{color:var(--accent)}
 .toc li.gap{height:22px}
 .toc .ind{position:absolute;left:-1px;width:2px;background:var(--accent);top:0;height:0;transition:top .25s ease,height .25s ease}
 /* 目录条目都是这张卡自己的内容：故事的年份和一句话、机制的节名、用途、例子的题目、搭配的卡名、三道题的进度 */
+.toc .up{display:none}
 .toc .ty{display:block;font-size:19px;font-weight:600;line-height:1.3;color:var(--ink2);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
 .toc a.on .ty{color:var(--accent)}
 .toc .ts{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-top:2px}
@@ -653,6 +654,10 @@ h3{scroll-margin-top:24px}
   html.sheet .page .toc{transform:none;visibility:visible;transition:transform .25s ease}
   html.sheet{overflow:hidden}
   .toc .grip{display:block;width:38px;height:4px;margin:2px auto 12px;border-radius:2px;background:var(--rule)}
+  /* the way out from the middle of a card: the crumbs, kept at the top of the sheet (app.js closes the sheet first) */
+  .toc .up{display:flex;align-items:center;gap:8px;position:sticky;top:-8px;z-index:1;margin:-8px 0 4px;padding-top:8px;background:var(--paper);font-size:14px;color:var(--ink3)}
+  .toc .up a{display:flex;align-items:center;min-height:44px}
+  .toc .up .sep{opacity:.6}
   .toc ol{border-left:0}
   .toc .ind{display:none}
   .toc li a{display:block;min-height:44px;padding:10.5px 0 10.5px 14px;border-left:2px solid var(--rule);color:var(--ink2)}

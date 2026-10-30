@@ -168,7 +168,8 @@ export function cardPage(card, { cards, index, lang = 'zh', zh = null }) {
 
   const body = `<div class="page wrap" data-card="${escape(card.id)}">
 <p class="crumbs"><a href="${at('/')}">${t.site}</a><span class="sep">/</span><a href="${at(`/d/${escape(discipline.id)}`)}">${escape(discipline.title)}</a><span class="day" data-day hidden></span></p>
-<nav class="toc" aria-label="${t.outline}" data-toc><span class="grip" aria-hidden="true"></span><ol>
+<nav class="toc" aria-label="${t.outline}" data-toc><span class="grip" aria-hidden="true"></span>
+<p class="up"><a href="${at('/')}">${t.site}</a><span class="sep">/</span><a href="${at(`/d/${escape(discipline.id)}`)}">${escape(discipline.title)}</a></p><ol>
 ${toc('s-scene', `${year ? `<span class="ty">${escape(year)}</span>` : ''}<span class="ts">${escape(year ? storyRest(entry.story ?? '') : (entry.story || shallow.scene.slice(0, 40)))}</span>`)}
 <li class="gap" aria-hidden="true"></li>
 ${heads.map((t, n) => toc(`m${n}`, md0(t))).join('\n')}

@@ -173,7 +173,8 @@ test('phones get a bottom bar on every page but a card, which has its spine and 
   assert.doesNotMatch(card, /class="tabs"/);
   assert.match(card, /<div class="spine" data-spine>[\s\S]*data-back[\s\S]*data-here[\s\S]*<a class="sq" href="#s-quiz" aria-label="去答题">/);
   assert.match(card, /<div class="scrim" data-scrim hidden><\/div>/);
-  assert.match(card, /<nav class="toc" aria-label="本页" data-toc><span class="grip" aria-hidden="true"><\/span><ol>/);
+  // the sheet starts with the way out: the site, then the card's discipline
+  assert.match(card, /<nav class="toc" aria-label="本页" data-toc><span class="grip" aria-hidden="true"><\/span>\n<p class="up"><a href="\/">思维模型<\/a><span class="sep">\/<\/span><a href="\/d\/math">[^<]+<\/a><\/p><ol>/);
   for (const page of [home, card]) assert.match(page, /<button class="theme ft" type="button" data-theme-toggle>/);
 });
 

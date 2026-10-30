@@ -327,7 +327,7 @@ function card(root) {
   let targets = [];
   let k = 0;
   const marker = root.querySelector('.toc .ind');
-  const collect = () => { links = [...toc.querySelectorAll('a')]; targets = links.map((a) => document.getElementById(a.dataset.t)); };
+  const collect = () => { links = [...toc.querySelectorAll('ol a')]; targets = links.map((a) => document.getElementById(a.dataset.t)); };
   // The outline's first item, the opening, goes to the top of the card (from the phone's sheet: goTo below).
   toc.addEventListener('click', (e) => {
     const a = e.target.closest('a');
@@ -454,13 +454,15 @@ function card(root) {
     const a = e.target.closest('a');
     if (!a || !open) return;
     e.preventDefault();
+    // the crumbs leave the card; the sheet's history entry goes first, so back from there returns to the card
+    if (!a.dataset.t) { close(() => { location.href = a.href; }); return; }
     close(() => goTo(a.dataset.t));
   });
   // The examples: a swipe, with a button per example under it.
   const dots = [...root.querySelectorAll('[data-dots] button')];
   const articles = [...ex3.children];
-  const at = () => articles.reduce((best, el, n) => (Math.abs(el.getBoundingClientRect().left - ex3.getBoundingClientRect().left - 16) < Math.abs(articles[best].getBoundingClientRect().left - ex3.getBoundingClientRect().left - 16) ? n : best), 0);
-  const mark = () => { const n = at(); dots.forEach((d, i) => { if (i === n) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current'); }); };
+  const shown = () => articles.reduce((best, el, n) => (Math.abs(el.getBoundingClientRect().left - ex3.getBoundingClientRect().left - 16) < Math.abs(articles[best].getBoundingClientRect().left - ex3.getBoundingClientRect().left - 16) ? n : best), 0);
+  const mark = () => { const n = shown(); dots.forEach((d, i) => { if (i === n) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current'); }); };
   ex3.addEventListener('scroll', () => { mark(); follow(); }, { passive: true });
   dots.forEach((d, n) => d.addEventListener('click', () => { ex3.scrollTo({ left: ex3.scrollLeft + articles[n].getBoundingClientRect().left - ex3.getBoundingClientRect().left - 16, behavior: 'smooth' }); }));
 }
