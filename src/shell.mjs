@@ -59,6 +59,18 @@ export function shell({ title, description, body, total, math = false, script = 
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>${escape(title)}</title>
 <meta name="description" content="${escape(description)}">
+<link rel="canonical" href="${alt(lang)}">
+<meta property="og:type" content="${path.startsWith('/m/') ? 'article' : 'website'}">
+<meta property="og:site_name" content="${t.site}">
+<meta property="og:title" content="${escape(title)}">
+<meta property="og:description" content="${escape(description)}">
+<meta property="og:url" content="${alt(lang)}">
+<meta property="og:locale" content="${lang === 'en' ? 'en_US' : 'zh_CN'}">
+<meta property="og:image" content="${SITE}/${lang === 'en' ? 'og-en.png' : 'og.png'}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="${t.site}">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#141619" media="(prefers-color-scheme: dark)">
 <meta name="mobile-web-app-capable" content="yes">
@@ -66,6 +78,7 @@ export function shell({ title, description, body, total, math = false, script = 
 <meta name="apple-mobile-web-app-title" content="${t.site}">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 ${lang === 'zh' ? '<link rel="alternate" type="application/atom+xml" title="思维模型 · 今日一卡" href="/feed.xml">\n' : ''}<link rel="alternate" hreflang="zh" href="${alt('zh')}"><link rel="alternate" hreflang="en" href="${alt('en')}">
 <script>try { var d = JSON.parse(localStorage.getItem('models-display') || '{}'); if (d.theme === 'light' || d.theme === 'dark') document.documentElement.dataset.theme = d.theme; } catch (e) {}</script>

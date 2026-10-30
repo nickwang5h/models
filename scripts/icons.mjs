@@ -3,7 +3,7 @@
 import { deflateSync } from 'node:zlib';
 import { writeFileSync, mkdirSync } from 'node:fs';
 
-const BG = [0x2b, 0x4c, 0x7e], INK = [0xf7, 0xf5, 0xf0];
+const BG = [0x0e, 0x6b, 0x56], INK = [0xff, 0xff, 0xff];   // the site's --accent and --paper (light)
 const LINES = [[18, 14, 18, 50], [32, 14, 32, 50], [46, 14, 46, 50], [12, 22, 52, 22], [12, 42, 52, 42]];   // in a 64-unit box, stroke 4, round caps
 
 function crc(buffer) {
@@ -27,6 +27,11 @@ function inRounded(x, y, r) {
 }
 // `rounded`: transparent corners (for a plain icon); otherwise full bleed with the lattice shrunk into the safe zone (maskable, iOS).
 function icon(size, rounded, path) {
+  const png = draw(size, rounded);
+  if (path) writeFileSync(path, png);
+  return png;
+}
+function draw(size, rounded) {
   const S = 4, raw = Buffer.alloc(size * (size * 4 + 1));
   for (let py = 0; py < size; py++) {
     for (let px = 0; px < size; px++) {
@@ -43,7 +48,7 @@ function icon(size, rounded, path) {
   }
   const head = Buffer.alloc(13);
   head.writeUInt32BE(size, 0); head.writeUInt32BE(size, 4); head[8] = 8; head[9] = 6;
-  writeFileSync(path, Buffer.concat([Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]), chunk('IHDR', head), chunk('IDAT', deflateSync(raw)), chunk('IEND', Buffer.alloc(0))]));
+  return Buffer.concat([Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]), chunk('IHDR', head), chunk('IDAT', deflateSync(raw)), chunk('IEND', Buffer.alloc(0))]);
 }
 
 mkdirSync('public/icons', { recursive: true });
@@ -51,3 +56,9 @@ icon(192, true, 'public/icons/icon-192.png');
 icon(512, true, 'public/icons/icon-512.png');
 icon(512, false, 'public/icons/icon-maskable-512.png');
 icon(180, false, 'public/icons/apple-touch-icon.png');
+// /favicon.ico, for whatever still asks for it: one 32px PNG in an ICO wrapper.
+const png = icon(32, true);
+const ico = Buffer.alloc(22);
+ico.writeUInt16LE(1, 2); ico.writeUInt16LE(1, 4);
+ico[6] = 32; ico[7] = 32; ico.writeUInt16LE(1, 10); ico.writeUInt16LE(32, 12); ico.writeUInt32LE(png.length, 14); ico.writeUInt32LE(22, 18);
+writeFileSync('public/favicon.ico', Buffer.concat([ico, png]));

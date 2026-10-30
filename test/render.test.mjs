@@ -222,3 +222,17 @@ test('the story year reads as English on an English page', () => {
   assert.equal(storyYear({ story: '20 世纪 70 年代的实验' }, 'en'), '1970s');
   assert.equal(storyYear({ year: 1790 }, 'en'), '1790');
 });
+
+test('every page says what it is when shared: canonical address, Open Graph and a large image', () => {
+  const all = cards();
+  const card = cardPage(all.a, { cards: all, index });
+  assert.match(card, /<link rel="canonical" href="https:\/\/models\.wuhua\.app\/m\/a">/);
+  assert.match(card, /<meta property="og:type" content="article">/);
+  assert.match(card, /<meta property="og:url" content="https:\/\/models\.wuhua\.app\/m\/a">/);
+  assert.match(card, /<meta property="og:image" content="https:\/\/models\.wuhua\.app\/og\.png">/);
+  assert.match(card, /<meta name="twitter:card" content="summary_large_image">/);
+  const review = reviewPage(3, index.disciplines, 'en');
+  assert.match(review, /<meta property="og:type" content="website">/);
+  assert.match(review, /<meta property="og:image" content="https:\/\/models\.wuhua\.app\/og-en\.png">/);
+  assert.match(review, /<meta property="og:locale" content="en_US">/);
+});

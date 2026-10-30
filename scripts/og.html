@@ -1,0 +1,38 @@
+<!doctype html>
+<!-- The share image (1200×630), in the site's colours and faces: node scripts/og.mjs screenshots this page, ?lang=zh into
+     public/og.png and ?lang=en into public/og-en.png. The mark is public/icon.svg's lattice, drawn larger. -->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+@font-face{font-family:"Inter";src:url("../public/fonts/inter-latin.woff2") format("woff2");font-weight:100 900}
+html,body{margin:0;width:1200px;height:630px;overflow:hidden;background:#ffffff;color:#16181b;
+  font-family:"Inter","PingFang SC","Hiragino Sans GB","Noto Sans SC",sans-serif}
+.card{position:relative;display:grid;grid-template-columns:360px 1fr;align-items:center;height:100%;padding:0 96px 0 72px;box-sizing:border-box}
+.card::after{content:"";position:absolute;inset:28px;border:1px solid #e1e4e8}
+.mark{width:264px;height:264px}
+.kick{margin:0 0 18px;font-size:20px;font-weight:600;letter-spacing:.14em;color:#70767d}
+h1{margin:0;font-size:116px;line-height:1.1;font-weight:700;letter-spacing:-.01em}
+html[lang=en] h1{font-size:96px;letter-spacing:-.02em}
+p.one{margin:26px 0 0;font-size:34px;line-height:1.5;color:#4a4f55;max-width:640px}
+p.one b{font-weight:600;color:#0e6b56}
+</style>
+</head>
+<body>
+<div class="card">
+<svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0e6b56"/><g stroke="#ffffff" stroke-width="4" stroke-linecap="round"><path d="M18 14v36M32 14v36M46 14v36M12 22h40M12 42h40"/></g></svg>
+<div>
+<p class="kick">MODELS.WUHUA.APP</p>
+<h1 data-t="h1">思维模型</h1>
+<p class="one" data-t="one">跨学科的思维模型卡，<br>每张都带<b>一道情境题</b>。</p>
+</div>
+</div>
+<script>
+if (new URLSearchParams(location.search).get('lang') === 'en') {
+  document.documentElement.lang = 'en';
+  document.querySelector('[data-t=h1]').textContent = 'Mental Models';
+  document.querySelector('[data-t=one]').innerHTML = 'Ideas from many fields, each card<br>with <b>a question to try it on</b>.';
+}
+</script>
+</body>
+</html>
