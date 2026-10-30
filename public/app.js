@@ -175,7 +175,7 @@ async function updateDue() {
 }
 
 // Support pills: the dumpling hops when pressed and lets off steam when focused from the keyboard (hover is CSS). The one at
-// the end of a card lets off steam once a session, when most of it is on screen. Reduced motion stops all of it in CSS.
+// the end of a card lets off steam when most of it is on screen. Reduced motion stops all of it in CSS.
 function tips() {
   const replay = (el, cls) => { el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); };
   for (const a of document.querySelectorAll('[data-tip]')) {
@@ -183,12 +183,18 @@ function tips() {
     a.addEventListener('animationend', (e) => { if (e.animationName === 'tipHop') a.classList.remove('hop'); });
     a.addEventListener('focus', () => { replay(a, 'steam'); setTimeout(() => a.classList.remove('steam'), 1400); });
   }
+  // The block at the end of a card shows on the first card read to the end in a session, and on a discipline's last card.
   const after = document.querySelector('[data-tip-after]');
-  if (!after || !('IntersectionObserver' in window)) return;
+  if (!after) return;
+  let shown = false;
+  try { shown = Boolean(sessionStorage.getItem('models-tip')); } catch { /* no storage: show it */ }
+  if (shown && !after.hasAttribute('data-last')) return;
+  after.hidden = false;
+  if (!('IntersectionObserver' in window)) return;
   const seen = new IntersectionObserver(([e]) => {
     if (e.intersectionRatio < 0.6) return;
     seen.disconnect();
-    try { if (sessionStorage.getItem('models-tip')) return; sessionStorage.setItem('models-tip', '1'); } catch { /* no storage: play it */ }
+    try { sessionStorage.setItem('models-tip', '1'); } catch { /* no storage */ }
     after.classList.add('play');
   }, { threshold: [0, 0.6, 1] });
   seen.observe(after);
@@ -289,7 +295,6 @@ function card(root) {
   const rows = [...root.querySelectorAll('.toc .tq, .hq .tq')].map((row) => [...row.querySelectorAll('i')]);
   const spine = phone.matches ? document.querySelector('[data-spine]') : null;
   if (spine) rows.push([...spine.querySelectorAll('.sq i')]);
-  const cont = root.querySelector('.tasks .cont');
   // The same question can be on the page twice (the day's copy); answered in one place, it shows answered in both.
   const pristine = qs.map((q) => q.cloneNode(true));
   const reveals = new Map();
@@ -306,7 +311,6 @@ function card(root) {
     });
     for (const boxes of rows) boxes.forEach((b, n) => b.classList.toggle('ok', qs[n]?.classList.contains('done')));
     if (dayBox) dayBox.box.classList.toggle('ok', qs[dayBox.n].classList.contains('done'));
-    cont?.classList.toggle('on', qs.every((q) => q.classList.contains('done')));
     label();
   };
   qs.forEach((q) => reveals.set(q.dataset.q, [wire(q, () => answered(q.dataset.q))]));

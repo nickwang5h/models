@@ -556,9 +556,6 @@ h3{scroll-margin-top:24px}
 .tasks svg{width:16px;height:16px;margin-top:3px}
 .tasks svg path{stroke:var(--accent);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:20;stroke-dashoffset:20}
 .tasks .ok svg path{stroke-dashoffset:0;transition:stroke-dashoffset .45s ease .05s}
-.tasks .cont{margin-top:auto;display:block;padding:16px 18px;background:var(--rule);color:var(--ink3);font-weight:600;font-size:15px;text-align:center;line-height:1.5}
-.tasks .cont.on{background:var(--accent);color:var(--paper)}
-.tasks .cont:not(.on){pointer-events:none}
 
 .tip-after{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:center;max-width:984px;margin:0 0 32px;padding:20px 0 22px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .tip-after .art{width:56px;height:56px;display:grid;place-items:center;color:var(--accent)}
@@ -579,6 +576,16 @@ h3{scroll-margin-top:24px}
 .pn a b{font-weight:600;font-size:17px}
 .pn a:hover b{color:var(--accent)}
 .pn a.r{text-align:right;margin-left:auto}
+/* a card's end: the next card right after the questions, a full-width button; the one before, small, under it; then
+   the dumpling, last before the footer (render.mjs) */
+.page .pn{display:grid;grid-template-columns:minmax(0,1fr);justify-items:start;gap:16px;width:100%;border-top:0;padding-top:0;margin:8px 0 56px}
+.page .pn .nx{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:16px;justify-self:stretch;max-width:none;padding:16px 22px;border-radius:8px;background:var(--accent);color:var(--paper)}
+.page .pn .nx span{font-size:13px;color:inherit;opacity:.82}
+.page .pn .nx b{grid-row:2;font-size:19px}
+.page .pn .nx::after{content:"→";grid-column:2;grid-row:1 / span 2;font-size:22px}
+.page .pn .nx:hover b{color:inherit}
+.page .pn .pv{flex-direction:row;align-items:baseline;gap:8px;max-width:none}
+.page .pn .pv b{font-size:15px;font-weight:500}
 
 @media (max-width:1180px){
   .ua{grid-template-columns:1fr}
@@ -677,8 +684,6 @@ h3{scroll-margin-top:24px}
   .tasks li+li{border-top:0;border-left:1px solid var(--rule)}
   .tasks button{grid-template-columns:auto auto;justify-content:center;gap:6px;padding:10px 0;min-height:44px}
   .tasks button .tq{display:none}
-  .tasks .cont{display:none}
-  .tasks .cont.on{display:block}
   .opt{padding:10px 12px;grid-template-columns:22px 1fr 18px}
   .fb{padding-left:12px}
 }

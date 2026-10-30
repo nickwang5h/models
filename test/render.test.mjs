@@ -144,7 +144,12 @@ test('every page has one support pill in the top bar; a card page ends with the 
   }
   assert.doesNotMatch(home, /data-tip-after/);
   assert.equal(html.match(/data-tip-after/g).length, 1);
-  assert.match(html, /data-tip-after[\s\S]*这张卡读完了。[\s\S]*<nav class="pn"/);
+  // after the questions: the next card, then the dumpling, last; app.js shows it once a session and on a field's last card
+  assert.match(html, /id="s-quiz"[\s\S]*<nav class="pn"[^>]*>\n<a class="nx" href="\/m\/[^"]+" rel="next"><span>[^<]+ · 下一张<\/span><b>[\s\S]*<\/nav>\n<aside class="tip-after"[^>]* data-tip-after hidden>[\s\S]*这张卡读完了。/);
+  const field = index.cards.filter((e) => e.discipline === all.a.discipline).sort((x, y) => x.rank - y.rank);
+  const last = cardPage(all[field.at(-1).id], { cards: all, index });
+  assert.match(last, /<a class="nx" href="\/d\/[^"]+"><span>回到<\/span>/);
+  assert.match(last, /data-tip-after data-last hidden>/);
 });
 
 test('the home page subscribe form submits with the envelope pill', () => {

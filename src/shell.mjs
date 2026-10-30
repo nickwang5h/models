@@ -21,7 +21,8 @@ const DUMPLING = '<svg class="dp" viewBox="0 0 24 24" aria-hidden="true" focusab
 export const tip = (cls = '', lang = 'zh') => `<a class="tip${cls}" href="${KOFI}" target="_blank" rel="noopener noreferrer" aria-label="${T[lang].tipLabel}" data-tip>${DUMPLING}<span class="tl">${T[lang].tipLong}</span></a>`;
 
 // The end of a card: one line and the same pill. Its dumpling lets off steam once a session (app.js).
-export const tipAfter = (lang = 'zh') => `<aside class="tip-after" aria-label="${T[lang].tipLong}" data-tip-after><div class="art" aria-hidden="true">${DUMPLING}</div>
+// Hidden until app.js decides: the first card read to the end in a session, and the last card of a discipline.
+export const tipAfter = (lang = 'zh', { last = false } = {}) => `<aside class="tip-after" aria-label="${T[lang].tipLong}" data-tip-after${last ? ' data-last' : ''} hidden><div class="art" aria-hidden="true">${DUMPLING}</div>
 <p class="line">${T[lang].tipLine}</p><p class="row">${tip('', lang)}<span class="note">${T[lang].tipNote}</span></p></aside>`;
 
 // Subscribe: the dumpling's companion, the same pill outlined, with a line envelope whose flap opens on hover and lets

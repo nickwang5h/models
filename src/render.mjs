@@ -164,7 +164,6 @@ export function cardPage(card, { cards, index, lang = 'zh', zh = null }) {
   const mechanism = markdown(deep.mechanism).replace(/<h3>/g, () => `<h3 id="m${h++}">`);
   const originYear = ((zh?.card ?? card).deep.origin.match(/(\d{3,4}) ?年/) ?? [])[1];
   const year = storyYear(zh?.entry ?? entry, lang);
-  const after = cards[use.with[0].id] ?? cards[next?.id];
 
   const body = `<div class="page wrap" data-card="${escape(card.id)}">
 <p class="crumbs"><a href="${at('/')}">${t.site}</a><span class="sep">/</span><a href="${at(`/d/${escape(discipline.id)}`)}">${escape(discipline.title)}</a><span class="day" data-day hidden></span></p>
@@ -209,16 +208,16 @@ ${card.figure ? figureHtml(card.figure, { live: true, id: card.id, lang }) : ''}
 <div class="blk" id="s-quiz"><div class="quiz">
 <div class="qmain" aria-live="polite">${use.questions.map((q, n) => questionHtml(q, `${card.id}-${n}`)
     + (n < use.questions.length - 1 ? `<button class="qnext" type="button" data-to="${n + 1}" hidden>${t.nextQuestion(n + 2)}</button>` : '')).join('')}</div>
-<aside class="tasks"><ol>${use.questions.map((q, n) => `<li><button type="button" data-i="${n}"><span class="ti">${n + 1}</span><span class="tq">${escape(firstSentence(q.stem, lang))}</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5"/></svg></button></li>`).join('')}</ol>
-${after ? `<a class="cont" href="${at(`/m/${escape(after.id)}`)}">${escape(after.name)} →</a>` : ''}</aside>
+<aside class="tasks"><ol>${use.questions.map((q, n) => `<li><button type="button" data-i="${n}"><span class="ti">${n + 1}</span><span class="tq">${escape(firstSentence(q.stem, lang))}</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5"/></svg></button></li>`).join('')}</ol></aside>
 </div></div>
 </section>
 
-${tipAfter(lang)}
 <nav class="pn" aria-label="${t.sameField}">
-${prev ? `<a href="${at(`/m/${escape(prev.id)}`)}" rel="prev"><span>← ${escape(discipline.title)}</span><b>${escape(prev.name)}</b></a>` : ''}
-${next ? `<a class="r" href="${at(`/m/${escape(next.id)}`)}" rel="next"><span>${escape(discipline.title)} →</span><b>${escape(next.name)}</b></a>` : ''}
+${next ? `<a class="nx" href="${at(`/m/${escape(next.id)}`)}" rel="next"><span>${escape(discipline.title)} · ${t.nextCard}</span><b>${escape(next.name)}</b></a>`
+    : `<a class="nx" href="${at(`/d/${escape(discipline.id)}`)}"><span>${t.backTo}</span><b>${escape(discipline.title)}</b></a>`}
+${prev ? `<a class="pv" href="${at(`/m/${escape(prev.id)}`)}" rel="prev"><span>← ${t.prevCard}</span><b>${escape(prev.name)}</b></a>` : ''}
 </nav>
+${tipAfter(lang, { last: !next })}
 </div>
 </div>
 <div class="spine" data-spine><span class="prog" aria-hidden="true"><i></i></span>
