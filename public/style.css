@@ -209,6 +209,8 @@ mark{background:none;color:var(--accent);font-weight:inherit}
 .sieve .find{width:168px;flex:none}
 .sieve .tg{display:flex;align-items:center;gap:0;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none}
 .sieve .tg::-webkit-scrollbar{display:none}
+/* the strip scrolls sideways, which clips what is drawn outside a button: its focus ring is drawn inside */
+.sieve .tg button:focus-visible{outline-offset:-2px}
 .sieve .tg i{flex:none;width:1px;height:18px;background:var(--rule);margin:0 8px}
 .sieve button{flex:none;border:0;background:none;padding:4px 6px;border-radius:4px;font-size:0.9375rem;color:var(--ink2);cursor:pointer;white-space:nowrap;position:relative}
 .sieve button:hover{background:var(--hover);color:var(--ink)}
