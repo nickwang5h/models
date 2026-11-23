@@ -3,7 +3,7 @@
  "name": "Conservation Laws",
  "en": "守恒定律",
  "discipline": "physics",
- "one_line": "Some things never just vanish; if some is missing, it went somewhere else.",
+ "one_line": "Some things never just vanish, so whatever is missing went somewhere else.",
  "story": "Joule lets falling weights turn a paddle wheel that stirs water, and measures how much heat a given amount of work makes",
  "shallow": {
   "scene": "When your hands are cold in winter, rub them hard for a while and your palms warm up. There's no fire in the room; the heat comes from the effort you put in. In 1845 the Englishman James Joule measured this: he let a weight on a cord sink slowly, and the cord turned a paddle wheel that stirred water in a container. The water really did get warmer, but only by a tiny amount, so small that it took a very sensitive thermometer to read it.\n\nHe measured, again and again, how far the weight fell and how much the water's temperature rose, and every time he got the same ratio: for so much fall of the weight, a matching amount of heat appeared in the water. The energy the weight lost as it fell was not lost; it turned, to the last bit, into heat in the water.",
