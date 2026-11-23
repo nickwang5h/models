@@ -3,7 +3,7 @@
  "name": "Regression to the Mean",
  "en": "回归均值",
  "discipline": "math",
- "one_line": "An unusually good or bad result has luck in it, so the next one usually falls back toward normal.",
+ "one_line": "An unusually good or bad result contains luck, so the next usually falls back toward normal.",
  "story": "In the mid-1960s Kahneman lectures to Israeli Air Force instructors, who believe criticism is what makes cadets improve",
  "shallow": {
   "scene": "In the mid-1960s, Daniel Kahneman was teaching flight instructors in the Israeli Air Force, telling them that rewards do more for learning than punishment. A senior instructor pushed back. When a cadet flew a maneuver beautifully, he praised him, and the next attempt was usually worse; when a cadet botched it, he yelled at him, and the next attempt was usually better. Kahneman saw on the spot what was going on. The instructor only spoke up after an unusually good or unusually bad attempt, and either kind of attempt would tend to move back toward the middle next time anyway.",

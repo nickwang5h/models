@@ -3,7 +3,7 @@
  "name": "Checklists",
  "en": "检查清单",
  "discipline": "thinking",
- "one_line": "Even experts miss steps, so write the key ones down and check them off one by one.",
+ "one_line": "Even experts miss steps, so list the key ones and check them off one by one.",
  "story": "On October 30 the Boeing Model 299 crashes on a test flight at Wright Field with its control locks still on, and written checks follow",
  "shallow": {
   "scene": "On October 30, 1935, at Wright Field in Ohio, a Boeing Model 299 bomber crashed just after taking off on a test flight. Its pilot, Major Ployer Hill, was highly experienced, but the crew had not released the locks on the rudder and elevators. These locks hold the control surfaces still while the plane is parked, so the wind can't knock them about, and they must be released before takeoff; with them on, the plane can't be steered. After that, crews of this plane had to go through a written checklist item by item before takeoff, and steps like releasing the locks no longer depended on memory.",

@@ -3,7 +3,7 @@
  "name": "Median vs Mean",
  "en": "中位数与平均数",
  "discipline": "math",
- "one_line": "A few extreme values pull the mean away, but the median shows the one in the middle.",
+ "one_line": "A few extreme values drag the mean off, but the median shows the middle one.",
  "story": "Gould is diagnosed with mesothelioma, finds the median survival is eight months, and goes on to write \"The Median Isn't the Message\"",
  "shallow": {
   "scene": "In July 1982 the Harvard biologist Stephen Jay Gould was diagnosed with abdominal mesothelioma. Once he could walk again after surgery, he went to the Countway Library of Medicine in Boston to look up the research. He read that the median survival was eight months, and sat by the shelves for fifteen minutes.\n\nThen he worked it out. Eight months only meant that half of patients didn't live that long, and the other half lived longer, some of them for several years. Lay out how long patients lived from shortest to longest, and there is a long tail trailing behind. He was young, his cancer was found early, and he could get the best treatment, so he was likely to land on the tail side.\n\nHe went on to live another twenty years.",

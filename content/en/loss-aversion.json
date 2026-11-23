@@ -3,7 +3,7 @@
  "name": "Loss Aversion",
  "en": "损失厌恶",
  "discipline": "psychology",
- "one_line": "Losing a hundred dollars hurts more than finding a hundred feels good.",
+ "one_line": "Losing a hundred yuan hurts more than finding a hundred feels good.",
  "story": "Kahneman, Knetsch and Thaler's mug experiment: students given a mug ask a median price more than twice what buyers offer",
  "shallow": {
   "scene": "When you sell your old things on a secondhand site, buyers' offers always seem too low; when you buy the same secondhand thing, sellers' prices seem too high. In 1990 Daniel Kahneman, Jack Knetsch and Richard Thaler measured this feeling with coffee mugs.\n\nA class of college students was randomly split into three groups. Everyone in the first group was given a mug with the university's logo on it and asked the lowest price they would sell it for. The second group had no mugs and was asked the most they would pay for one. The third group had no mugs either; they only chose between a mug and a sum of money, saying at what amount they would rather take the money. The result: the median price the sellers asked was more than twice what the buyers offered.\n\nThe third group ruled out the explanation that the sellers just wanted to make a bit more. They faced the same choice as the sellers: in the end they would hold either a mug or money, and the only difference was whether the mug was in their hands first. Yet the price they put on the mug was about the same as the buyers'. The mugs were identical, who got one was down to chance, and they had held them for only a few minutes, yet letting go already counted as a loss.",

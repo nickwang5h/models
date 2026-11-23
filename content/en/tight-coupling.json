@@ -91,7 +91,7 @@
    },
    {
     "stem": "One morning after a cold snap, the elevators in three buildings in the same apartment complex stopped at almost the same time. The three buildings' power and control systems are not connected to each other, and each is repaired separately. The property manager found that all three elevators used the same batch of guide-rail lubricant from the same maker.",
-    "question": "Which judgement about these stoppages makes more sense?",
+    "question": "Which judgment about these stoppages makes more sense?",
     "explain": "The three buildings don't depend on each other: one building's elevator stopping doesn't change the working conditions in another. It looks more like one cause striking three places separately. What needs checking is how the lubricant behaves at low temperatures, not which building stopped first.",
     "options": [
      {

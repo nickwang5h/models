@@ -3,7 +3,7 @@
  "name": "Economies of Scale",
  "en": "规模经济",
  "discipline": "economics",
- "one_line": "The more you make, the less fixed cost each one carries, but grow too big and costs climb again.",
+ "one_line": "Make more and each carries less fixed cost, until growing too big pushes costs back up.",
  "story": "Ford's Highland Park plant starts a moving assembly line, and the Model T is built in huge numbers at far lower prices",
  "shallow": {
   "scene": "A car is put together from hundreds of parts. Assembling one car and assembling ten thousand use the same factory building and the same set of tools. Henry Ford took this as far as it would go. In 1913, at his Highland Park plant in Michigan, he installed a moving assembly line: the car frames moved along the line, the workers stayed in place, and each one fitted only a few parts. The line was very expensive to build. The investment only paid off if the same car, the Model T, was built by the tens of thousands every year.\n\nThe more cars were built, the less of the cost of the plant, the machines and the design fell on each car, and so Ford could cut the price again and again. The cheapest Model T went from 825 dollars to 260 dollars, less than a third of the original price.\n\nThe price cuts didn't come from any part getting cheaper. They came from the same investment being shared among more and more cars.",

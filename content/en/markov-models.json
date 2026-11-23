@@ -3,7 +3,7 @@
  "name": "Markov Models",
  "en": "马尔可夫模型",
  "discipline": "math",
- "one_line": "Where you go next depends only on where you are now, and in the long run the starting point stops mattering.",
+ "one_line": "Only where you are decides where you go next, and in time the start stops mattering.",
  "story": "Markov counts the vowels and consonants in the first 20,000 letters of Pushkin's Eugene Onegin and how often each follows the other (vowels about 43%, a vowel after a vowel 13%, a vowel after a consonant 66%)",
  "shallow": {
   "scene": "Your phone keyboard guesses as you type: write one word, and the suggestion bar already shows the words most likely to come next. It doesn't need to understand what you are writing. It only needs to remember which word most often follows which.\n\nIn 1913 the Russian mathematician Andrei Markov counted out the same kind of pattern with pen and paper. He took the first 20,000 letters of Pushkin's long poem Eugene Onegin and first counted the vowels: about 43%. Then he counted again, split by the letter before. When the letter before was a vowel, the next one was also a vowel only 13% of the time; when the letter before was a consonant, the next one was a vowel 66% of the time. If letters had nothing to do with each other, both numbers should be close to 43%. That they were so far apart showed that one letter really does sway the next.\n\nAt the time, some people believed that only events with nothing to do with each other settle into a steady proportion when you count enough of them. Markov used the poem to show otherwise: each letter pulls on the next, and still the vowels across the whole text settle steadily at a little over 40%. The next step depends only on where you are now, and the long-run proportions are still fixed. That is a Markov model.",
@@ -22,7 +22,7 @@
    },
    {
     "use": "explain",
-    "text": "Two rivals' market shares have barely moved in decades, because the customers flowing out and the customers flowing back cancelled each other out long ago."
+    "text": "Two rivals' market shares have barely moved in decades, because the customers flowing out and the customers flowing back canceled each other out long ago."
    },
    {
     "use": "reason",

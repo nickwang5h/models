@@ -90,7 +90,7 @@
     ]
    },
    {
-    "stem": "A school is preparing an autumn sports day for three hundred people. The premortem turned up more than thirty reasons for failure: rain on opening day, no shifts set for volunteers, not enough timers, no sound system to borrow, someone wrote \"the principal might be called away on a trip at short notice\"... The teacher in charge has two weeks to make these stories useful to the plan.",
+    "stem": "A school is preparing an autumn sports day for three hundred people. The drill turned up more than thirty reasons for failure: rain on opening day, no shifts set for volunteers, not enough timers, no sound system to borrow, someone wrote \"the principal might be called away on a trip at short notice\"... The teacher in charge has two weeks to make these stories useful to the plan.",
     "question": "What should be done with these thirty-plus reasons next?",
     "explain": "The thirty-plus reasons don't carry the same weight. Pick a few by loss, evidence and cost of fixing, then write down for each who checks it, the deadline and the warning sign. Only then do the stories turn into changes to the plan.",
     "options": [
@@ -107,7 +107,7 @@
      {
       "text": "Pick \"rain,\" the biggest loss, and \"no volunteer shifts,\" which is already showing signs, assign one teacher to each to sort it out by next Wednesday, and cut the item if it can't be done.",
       "correct": true,
-      "feedback": "Picking only the two weighty ones and tying each to a person, a deadline and a sign that the plan changes if it isn't done by then is what lets the premortem change the plan."
+      "feedback": "Picking only the two weighty ones and tying each to a person, a deadline and a sign that the plan changes if it isn't done by then is what lets the drill change the plan."
      },
      {
       "text": "Put them all into a summary report for the principal and let the principal decide which reasons need handling.",
@@ -117,7 +117,7 @@
     ]
    },
    {
-    "stem": "A project team is going to hold a premortem for next quarter's product launch, and there are four ways to word the question on the meeting notice.",
+    "stem": "A project team is going to hold a failure drill for next quarter's product launch, and there are four ways to word the question on the meeting notice.",
     "question": "Which wording makes it easiest for people to write a specific account of failure?",
     "explain": "Set the failure as something that has already happened and then ask how it happened, and everyone has to come up with times, people and actions. Ask about what \"could\" happen, \"risks\" or \"reasons,\" and you mostly get vague adjectives.",
     "options": [

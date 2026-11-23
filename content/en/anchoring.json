@@ -3,7 +3,7 @@
  "name": "Anchoring",
  "en": "锚定",
  "discipline": "psychology",
- "one_line": "The first number you hear drags your estimate toward it, even when it has nothing to do with anything.",
+ "one_line": "The first number you hear drags your estimate toward it, even when it's irrelevant.",
  "story": "Tversky and Kahneman's rigged wheel stops at 10 or 65 and sways people's guesses of what share of UN members are African countries",
  "shallow": {
   "scene": "In 1974, Amos Tversky and Daniel Kahneman put participants in front of a wheel marked from 0 to 100. The wheel was rigged to stop only at 10 or 65. Participants first said whether the share of United Nations member countries that are African was higher or lower than the number on the wheel, then gave their own estimate. In the group whose wheel stopped at 10, the median estimate was 25%; in the group whose wheel stopped at 65, it was 45%. The number on the wheel had nothing to do with the United Nations, yet the two groups' answers ended up twenty percentage points apart.",
@@ -33,7 +33,7 @@
    {
     "field": "Business",
     "title": "The last two digits become a bid",
-    "text": "In 2003, Dan Ariely, George Loewenstein and Drazen Prelec had MBA students at MIT first write down the last two digits of their Social Security number as a dollar amount. Next the students said whether they would buy a bottle of wine or some chocolate at that price, and finally wrote down the most they would pay. Students whose last two digits were higher bid more overall."
+    "text": "In 2003, Dan Ariely, George Loewenstein and Drazen Prelec had MBA students at MIT first write down the last two digits of their Social Security number as a dollar amount. Next the students said whether they would buy a bottle of wine or some chocolate at that price, and finally wrote down the most they would pay. Students whose last two digits were higher bid more overall. When others later repeated one of the studies the same way, the effect came out about half as large, and how big it really is is still argued about."
    },
    {
     "field": "Investing",

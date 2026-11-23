@@ -4,7 +4,7 @@
  "en": "古德哈特定律",
  "discipline": "economics",
  "one_line": "Once a number becomes a target, people chase the number and it stops telling the truth.",
- "story": "The US Consumer Financial Protection Bureau reveals that Wells Fargo staff opened accounts without customers knowing, to meet account targets, and fines the bank 100 million dollars",
+ "story": "On September 8, the US Consumer Financial Protection Bureau reveals that Wells Fargo staff opened accounts without customers knowing, to meet account targets, and fines the bank 100 million dollars",
  "shallow": {
   "scene": "Staff at Wells Fargo had a daily target for opening new accounts. Anyone who missed it got told off and lost their bonus. Some began opening accounts for customers without telling them, and moved money into them from the customers' existing accounts, so some customers were charged extra fees. On September 8, 2016, the US Consumer Financial Protection Bureau published what it had found and fined the bank 100 million dollars. On the reports, the number of accounts kept climbing, but the people whose names were on those accounts had no need for them.",
   "plain": "You tell your child, who is in primary school, that you'll give him one yuan for every book he finishes. He used to work his way through one thick book a week. Now he reads five thin picture books a day and earns 35 yuan a week. The number of books he finished used to show whether he liked reading. Once it earns him money, he chases the count alone, and the count no longer shows that. This is Goodhart's law: once a number is used to hand out rewards, people chase the number, and its old link to the real result breaks. What you wanted was a child who loves reading; what you got is a stack of thin books, all finished."

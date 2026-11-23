@@ -3,7 +3,7 @@
  "name": "Shifting the Burden",
  "en": "转嫁负担",
  "discipline": "systems",
- "one_line": "The better a quick fix works, the less we fix the real cause, and the more we need it.",
+ "one_line": "The better a quick fix works, the more we skip the real cure and need it.",
  "story": "Anne Sullivan arrives in Tuscumbia to teach Helen Keller, and the family's habit of giving in makes the teaching hard to move forward",
  "shallow": {
   "scene": "In March 1887, Anne Sullivan came to Tuscumbia, Alabama, to teach Helen Keller, who was blind and deaf. Whenever Helen threw a tantrum, her family gave in to her, and only then would the house quiet down.\n\nWhen Sullivan tried to teach her to wash her hands and brush her hair, Helen fought hard against it. Her father couldn't bear to see his daughter cry and several times wanted to step in and stop Sullivan. In the end Sullivan persuaded the parents to let her move with Helen into a small cottage nearby, and kept on with the teaching there.\n\nEach time the family gave in, the house got quiet once more, and the tantrum worked once more, so Helen had even less reason to learn to wash her hands and brush her hair herself. Once they moved into the cottage, the family wasn't around, and the easy way out, giving in as soon as she cried, was cut off.",
@@ -69,7 +69,7 @@
    {
     "stem": "A food factory often has packages that aren't properly sealed. The veteran technician can always readjust the machine in time to meet that day's delivery. So the supervisor cancels the operators' training in adjusting the machine and has the veteran take over directly; the operators also gradually forget the checks they used to know how to do. Lately, the veteran has been handling this kind of fault more and more often.",
     "question": "What will happen to this factory next?",
-    "explain": "The veteran's adjustments pushed down the delivery crisis, and also made the supervisor feel the training could be cancelled. The operators got less practice, and the skills they had faded, so next time the veteran is needed even more.",
+    "explain": "The veteran's adjustments pushed down the delivery crisis, and also made the supervisor feel the training could be canceled. The operators got less practice, and the skills they had faded, so next time the veteran is needed even more.",
     "options": [
      {
       "text": "Add more checks on finished products, so faulty ones won't get out, and the factory will depend less on the veteran.",
@@ -82,7 +82,7 @@
       "feedback": "Someone solves the fault in front of them, but the ability to handle it alone is falling. The operators' fading check skills are the evidence that the dependence is deepening."
      },
      {
-      "text": "After watching the veteran adjust the machine so often, the operators will gradually learn it themselves, even with the training cancelled.",
+      "text": "After watching the veteran adjust the machine so often, the operators will gradually learn it themselves, even with the training canceled.",
       "correct": false,
       "feedback": "Watching is not the same as doing it yourself. And in the question, the operators are even losing the checks they used to do, with no sign of learning."
      },

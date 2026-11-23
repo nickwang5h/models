@@ -148,7 +148,7 @@
  "figure": {
   "kind": "demo",
   "title": "A real 8-minute saving takes about a week to see",
-  "caption": "Daily times swing about 10 min; six lines, six separate trials. Set the real saving to 2 and lines leave zero only after 100 days; at 20, they split in two or three.",
+  "caption": "Daily times swing about 10 min; six lines, six separate trials. Set the real saving to 2 and lines leave zero only after 100 days; at 20, within two or three days.",
   "x": {
    "label": "Days run"
   },

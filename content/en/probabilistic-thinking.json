@@ -3,7 +3,7 @@
  "name": "Probabilistic Thinking",
  "en": "概率思维",
  "discipline": "thinking",
- "one_line": "Don't just say yes or no. Say how sure you are and how far off it could be.",
+ "one_line": "Beyond yes or no, say how sure you are and how far off it could be.",
  "story": "FiveThirtyEight gives Trump a 28.6% chance of winning the presidential election, and Trump wins",
  "shallow": {
   "scene": "November 8, 2016 was election day in the United States. FiveThirtyEight, Nate Silver's team's website, published its final forecast: Hillary Clinton had a 71.4% chance of winning and Donald Trump 28.6%. That night Trump won. The next day, some people said the forecast had been completely wrong. Others dug up that 28.6% and said a result like this would come up about two times in seven anyway. Both groups had read the same forecast, yet they were surprised by the result to completely different degrees.",

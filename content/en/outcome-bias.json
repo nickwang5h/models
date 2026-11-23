@@ -3,7 +3,7 @@
  "name": "Outcome Bias",
  "en": "结果偏差",
  "discipline": "psychology",
- "one_line": "A good ending doesn't mean the decision was right; it may just be luck.",
+ "one_line": "A good ending doesn't mean the decision was right, because it may just be luck.",
  "story": "The Challenger breaks apart after earlier flights came home safely with damaged seals, which were taken as grounds to keep launching; in the inquiry report's appendix, Feynman compares this to Russian roulette",
  "shallow": {
   "scene": "When a risky thing has been done a few times without anything going wrong, people start to feel it isn't really dangerous. On January 28, 1986, the US space shuttle Challenger broke apart 73 seconds after liftoff, and all seven astronauts were killed. The cause was a rubber seal ring at a joint in a booster rocket that failed to seal, letting hot gas burst out through the gap.\n\nOn earlier flights, seals like this had already been partly burned away, and the recovered rockets carried the scorch marks. But the shuttle came back safely every time, so the scorch marks came to be treated as an acceptable risk.\n\nRichard Feynman, a physicist on the commission that investigated the accident, wrote: \"When playing Russian roulette the fact that the first shot got off safely is little comfort for the next.\" The earlier safe flights were treated as proof that the design was sound, when all they really showed was that those flights had been lucky.",
