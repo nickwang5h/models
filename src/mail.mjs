@@ -342,7 +342,17 @@ export function createDailyMailHandler({ env, load, fetcher = fetch, now = () =>
       }
       step = 'send';
       const sent = await fetcher(`${RESEND}/broadcasts/${encodeURIComponent(id)}/send`, { method: 'POST', headers, body: '{}', signal: timeout() });
-      if (!sent.ok) return failed(step, 'Could not send the broadcast.', sent, { broadcast: id });
+      if (!sent.ok) {
+        // Nobody has subscribed (or everyone has left): Resend will not send to a segment without contacts and says so
+        // with a 422. That is a quiet day, not a failure: the draft made for it is removed (a draft can be deleted), and
+        // the caller hears ok. The wording is Resend's own; if it changes, this falls back to reporting the refusal.
+        const detail = await sent.clone().json().catch(() => null);
+        if (sent.status === 422 && /no contacts/i.test(text(detail?.message) ?? '')) {
+          const removed = await fetcher(`${RESEND}/broadcasts/${encodeURIComponent(id)}`, { method: 'DELETE', headers, signal: timeout() }).then((r) => r.ok, () => false);
+          return json(200, { ok: true, skipped: true, reason: 'no-subscribers', name, card: day.id, draft: removed ? 'deleted' : 'kept' });
+        }
+        return failed(step, 'Could not send the broadcast.', sent, { broadcast: id });
+      }
       return json(200, { ok: true, broadcast: id, name, card: day.id });
     } catch (error) {
       return failed(step, 'The mail provider did not answer.', undefined, { reason: text(error?.message) });

@@ -39,6 +39,7 @@ Pages 没有定时任务。每天已经在跑的 `ops/models-daily.py`（Telegra
 - Telegram 失败不影响邮件；邮件接口返回非 `ok` 时脚本以非零状态退出，便于在 cron 日志里看到。
 - 通过令牌校验之后，发信失败也回 200，正文是 `{"ok":false,"step":…,"upstream":{…}}`：`step` 是 `list`、`topic`、`create`、`send` 里失败的那一步，`upstream` 是 Resend 的状态码和错误名。不回 502，是因为 Cloudflare 会把 502 的正文换成 `error code: 502`，日志里就看不出原因。
 - 接口本身是幂等的，重跑脚本或手动调用不会重复发信。
+- 没有订阅者的日子不算失败：Resend 不肯向没有联系人的 Segment 发 Broadcast（回 422，原话是 “The audience you are sending has no contacts”），接口这时删掉当天建的草稿，回 `{"ok":true,"skipped":true,"reason":"no-subscribers"}`。2026-10-24 到 11-23 每天的失败就是这个原因（Segment 里没有联系人；多半是验收时订阅又退订之后就没有人了，这一点没有到 Resend 后台核对），那些天各留下了一条名为 `models-today-<日期>` 的草稿，可以在 Resend 后台的 Broadcasts 里删掉。
 - 脚本按 UTC 日期工作。如果它的 cron 时间离 UTC 零点很近，留意本地日期和 UTC 日期可能不同。
 - 手动补发：`python3 ops/models-daily.py --mail-only`，或者
 
