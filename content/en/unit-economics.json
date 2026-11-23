@@ -4,7 +4,7 @@
  "en": "单位经济",
  "discipline": "business",
  "one_line": "First check that one sale makes money, then decide whether to grow.",
- "story": "MoviePass offers a movie a day for $9.95 a month, and pays theaters the full ticket price for every visit",
+ "story": "MoviePass offers a movie a day for 9.95 dollars a month, and pays theaters the full ticket price for every visit",
  "shallow": {
   "scene": "On August 15, 2017, MoviePass, led by its chief executive Mitch Lowe, announced a plan: for 9.95 dollars a month, you could see one movie every day. Subscribers paid the monthly fee only once, but MoviePass had to pay the theater the full ticket price for every visit. Suppose a ticket cost 10 dollars: if a subscriber saw two movies in a month, the company was out 10.05 dollars. The more subscribers it had and the more often they went, the bigger the hole. In August 2018 the company cut the plan back to three movies a month.",
   "plain": "You run a stall at a weekend market selling pour-over coffee. A cup sells for 20 yuan; beans, cup and milk cost 8 yuan, so each cup leaves you 12 yuan. The stall fee is 2,400 yuan a month, so after 200 cups you've covered it, and every cup after that is pure profit. This is how unit economics starts: pick one unit and look only at how much money it leaves you. Give 30% off to win customers, and the price becomes 14 yuan: each cup leaves only 6 yuan, and covering the fee takes 400 cups. If the price drops further, below the 8-yuan cost, you lose money on every cup, and the busier the stall, the more you lose."
