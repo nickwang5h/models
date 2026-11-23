@@ -93,11 +93,12 @@ ${MODULES}
 ${math ? `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/${KATEX_VERSION}/katex.min.css">` : ''}
 ${head}</head>
 <body>
+<a class="skip" href="#main">${lang === 'en' ? 'Skip to content' : '跳到正文'}</a>
 <header class="bar"><div class="wrap">
 <a class="mark" href="${href(lang, '/')}">${t.site}<small>${t.brandCount(total)}</small></a>
 <nav><a href="${href(lang, '/review')}">${t.review}</a><a href="${href(lang, '/random')}" data-random>${t.random}</a><a class="count" href="${href(lang, '/#read')}" data-count>${t.count(total)}</a>${tip(' hd', lang)}<button class="theme" type="button" aria-label="${t.theme}" data-theme-toggle>${THEME_ICON}</button></nav>
 </div></header>
-<main>
+<main id="main" tabindex="-1">
 ${body}
 </main>
 <footer class="foot"><div class="wrap"><span>${t.footSite}</span>${lang === 'zh' ? '<a href="/today">今日一卡</a><a href="/feed.xml">RSS</a>' : ''}<a href="${REPO}">${t.source}</a><a href="${escape(report)}">${t.report}</a><a href="${href(other.lang, path)}" hreflang="${other.lang}" lang="${other.lang === 'en' ? 'en' : 'zh-CN'}">${other.label}</a><button class="theme ft" type="button" data-theme-toggle>${THEME_ICON}<span>${t.themeShort}</span></button><span>${t.license(`<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/${lang === 'en' ? '' : 'deed.zh-hans'}">CC BY-NC-SA 4.0</a>`, `<a href="${REPO}/blob/main/LICENSE">MIT</a>`)}</span></div></footer>
