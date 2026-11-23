@@ -3,7 +3,7 @@
  "name": "Risk vs Uncertainty",
  "en": "风险与不确定性",
  "discipline": "investing",
- "one_line": "Risk is an unknown where you know the odds, uncertainty is one where you can't even say the odds.",
+ "one_line": "Risk is an unknown with known odds, uncertainty one where you can't even name the odds.",
  "story": "Ellsberg's jar holds 90 balls, 30 red and 60 black or yellow in an unknown mix, and most people bet on red rather than black",
  "shallow": {
   "scene": "Say two shops sell the same set of blind boxes, sealed boxes where you don't know which figure of the set you'll get, at the same price. One has a sign on the counter: \"Hidden figure 1/12.\" The other says nothing. Most people walk into the shop that shows the odds, even though the chance of getting it at the other shop might be higher.\n\nIn 1961 the American economist Daniel Ellsberg put this preference on the table in a paper. He imagined a jar holding 90 balls: 30 are red, and the other 60 are black and yellow, but nobody tells you how many of each. You draw one. Do you bet on red or on black? The prize is the same either way. Most of the people he asked bet on red.\n\nYet you have no reason to think there are more black balls than yellow, or fewer. On average, black balls also make up 30 of the 60, as many as the red ones. What people are avoiding is not a lower chance. It is not being able to say how big the chance is.",
@@ -152,7 +152,7 @@
  "figure": {
   "kind": "demo",
   "title": "Fewer than 30 yellow, and black beats red",
-  "caption": "Along the bottom: the most yellow balls you're told of. Black's chance lies between the top two lines, narrower as that falls; below 30, even its lowest beats red.",
+  "caption": "Along the bottom: the most yellow balls you're told of. Black's chance lies between its two lines, narrower as that falls; below 30, even its lowest beats red.",
   "x": {
    "label": "Most yellow balls",
    "min": 0,
