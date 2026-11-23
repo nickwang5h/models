@@ -3,7 +3,7 @@
  "name": "Critical Mass and Phase Transitions",
  "en": "临界质量与相变",
  "discipline": "physics",
- "one_line": "If each round sets off more than one next round it grows; fewer, it dies out.",
+ "one_line": "It grows if each round sets off more than one next round, and fades if fewer.",
  "story": "On December 2, Fermi's team pulls cadmium control rods out bit by bit in a squash court under the University of Chicago stands, and Chicago Pile-1 first sustains its own chain reaction, running 28 minutes",
  "shallow": {
   "scene": "When a neutron smashes a uranium nucleus, it gives off two or three new neutrons. They go on to smash other uranium nuclei, round after round; this is called a chain reaction. But many of the new neutrons fly off, or get soaked up by something else. If, on average, one neutron can't lead to one in the next round, the reaction stops by itself.\n\nOn December 2, 1942, Fermi's team built a reactor out of uranium and graphite in a squash court under the stands of a sports stadium at the University of Chicago. Control rods made of cadmium, a metal that soaks up neutrons, were stuck into the pile. They pulled the control rods out bit by bit, while Fermi watched the instruments and did the sums. When the rods reached the planned position, the reaction no longer needed any push from outside and kept going on its own. The team let it run for 28 minutes, then pushed the control rods back in.\n\nPulling out the rods did not add a single gram of uranium. It only let the cadmium soak up fewer neutrons, so that the average number of next-round neutrons each neutron led to went from just under one to just over one.",
