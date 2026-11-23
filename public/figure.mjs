@@ -765,7 +765,7 @@ export function figureHtml(spec, { live = false, id = '', lang = 'zh' } = {}) {
     .some((f) => /\b(rand|randn|flip)\s*\(/.test(String(f)));
   const { readouts } = runDemo(spec);
   const ctl = `<div class="ctl">${(spec.params ?? []).map((p) => `<label><span class="lv">${escape(p.label)}<output data-o="${escape(p.id)}">${escape(formatNumber(p.value, { unit: p.unit ?? '', step: p.step ?? 1 }))}</output></span>`
-    + `<input data-i="${escape(p.id)}" type="range" min="${p.min}" max="${p.max}" step="${p.step ?? 1}" value="${p.value}"></label>`).join('')}`
+    + `<input data-i="${escape(p.id)}" type="range" aria-label="${escape(p.label)}" min="${p.min}" max="${p.max}" step="${p.step ?? 1}" value="${p.value}"></label>`).join('')}`
     + (readouts.length ? `<div class="rd">${readouts.map((r, n) => `<div><span>${escape(r.label)}</span><b data-r="${n}">${escape(r.value)}</b></div>`).join('')}</div>` : '')
     + `<div class="btns">${random ? `<button class="again" type="button">${lang === 'en' ? 'Reroll' : '重抽'}</button>` : ''}<button class="reset" type="button" hidden>${lang === 'en' ? 'Reset' : '还原'}</button></div></div>`;
   return `<figure class="fig fig-demo" data-fig="${escape(id)}">${head}<div class="fb fdemo">${ctl}<div class="fv">${both}</div></div>${cap}`
