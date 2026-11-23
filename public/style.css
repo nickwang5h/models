@@ -24,8 +24,10 @@
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
+/* type sizes are in rem (px ÷ 16: the same sizes at the browser's default), so the text follows the reader's own
+   browser and system text size; figure labels inside the SVG stay in px, as figure.mjs lays them out */
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);
-  font-size:17px;line-height:1.85;font-feature-settings:"tnum" 1,"cv11" 1;letter-spacing:.02em;
+  font-size:1.0625rem;line-height:1.85;font-feature-settings:"tnum" 1,"cv11" 1;letter-spacing:.02em;
   -webkit-font-smoothing:antialiased;overflow-x:hidden}
 /* English pages: the tracking suits Chinese; Latin text reads better closer */
 html[lang="en"] body{letter-spacing:.005em}
@@ -37,7 +39,7 @@ html[lang="en"] body{letter-spacing:.005em}
   html[lang="en"] .sieve button[data-d][aria-pressed="true"]::after{bottom:-3px}
 }
 @media (max-width:720px){
-  html[lang="en"] .sieve .tg button[data-d]{font-size:14px;letter-spacing:0}
+  html[lang="en"] .sieve .tg button[data-d]{font-size:0.875rem;letter-spacing:0}
 }
 /* figure labels are measured without tracking, and KaTeX sets its own; headings below set theirs */
 .fig svg,.katex{letter-spacing:normal}
@@ -54,10 +56,10 @@ button,input{font:inherit;color:inherit}
 
 /* top bar */
 .bar{border-bottom:1px solid var(--rule);background:var(--paper)}
-.bar .wrap{display:flex;align-items:center;height:56px;gap:20px}
-.mark{font-weight:600;font-size:17px;letter-spacing:.02em;display:flex;align-items:baseline;gap:14px}
-.mark small{font-size:13px;font-weight:400;color:var(--ink3);letter-spacing:0}
-.bar nav{margin-left:auto;display:flex;align-items:center;gap:22px;font-size:15px;color:var(--ink2)}
+.bar .wrap{display:flex;align-items:center;min-height:56px;gap:20px}
+.mark{font-weight:600;font-size:1.0625rem;letter-spacing:.02em;display:flex;align-items:baseline;gap:14px}
+.mark small{font-size:0.8125rem;font-weight:400;color:var(--ink3);letter-spacing:0}
+.bar nav{margin-left:auto;display:flex;align-items:center;gap:22px;font-size:0.9375rem;color:var(--ink2)}
 .bar nav a:hover{color:var(--ink)}
 .bar nav .count{font-variant-numeric:tabular-nums}
 .bar nav .count b{font-weight:600;color:var(--accent)}
@@ -66,8 +68,8 @@ button,input{font:inherit;color:inherit}
 .theme svg{width:18px;height:18px}
 
 /* support: the one filled pill in the top bar, and the line at the end of a card */
-.tip{display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 15px 0 12px;border-radius:999px;flex:none;white-space:nowrap;
-  background:var(--accent);color:var(--paper);font-weight:600;font-size:14px;line-height:1;letter-spacing:.01em;
+.tip{display:inline-flex;align-items:center;gap:7px;min-height:34px;padding:0 15px 0 12px;border-radius:999px;flex:none;white-space:nowrap;
+  background:var(--accent);color:var(--paper);font-weight:600;font-size:0.875rem;line-height:1;letter-spacing:.01em;
   transition:transform .18s cubic-bezier(.2,.7,.2,1),filter .18s;-webkit-tap-highlight-color:transparent}
 .tip:hover{filter:brightness(1.06) saturate(1.04)}
 .bar nav a.tip:hover{color:var(--paper)}
@@ -88,7 +90,7 @@ button,input{font:inherit;color:inherit}
 @keyframes tipWobble{30%{transform:rotate(-9deg)}60%{transform:rotate(6deg)}}
 @keyframes tipHop{25%{transform:scale(1.12,.84)}55%{transform:translateY(-6px) scale(.94,1.08)}}
 
-.foot{border-top:1px solid var(--rule);margin-top:96px;padding:28px 0 48px;font-size:13px;color:var(--ink3)}
+.foot{border-top:1px solid var(--rule);margin-top:96px;padding:28px 0 48px;font-size:0.8125rem;color:var(--ink3)}
 .foot .wrap{display:flex;gap:24px;flex-wrap:wrap}
 .foot a:hover{color:var(--ink)}
 /* phones only (≤720px): the bottom bar, a card's spine and outline sheet, the theme switch in the footer */
@@ -103,7 +105,7 @@ button,input{font:inherit;color:inherit}
   .mark{white-space:nowrap;padding:7px 0;margin:-7px 0}
   .foot a{position:relative;padding:14px 9px;margin:-14px -9px}
   .foot .wrap{row-gap:28px}
-  .foot .ft{display:inline-flex;align-items:center;gap:6px;width:auto;height:44px;margin:-10px 0;padding:0;border-radius:0;background:none;font-size:13px;color:var(--ink3);letter-spacing:.02em}
+  .foot .ft{display:inline-flex;align-items:center;gap:6px;width:auto;min-height:44px;margin:-10px 0;padding:0;border-radius:0;background:none;font-size:0.8125rem;color:var(--ink3);letter-spacing:.02em}
   .foot .ft svg{width:16px;height:16px}
   .foot .ft:hover{background:none;color:var(--ink)}
   body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
@@ -111,10 +113,10 @@ button,input{font:inherit;color:inherit}
   /* the bottom bar: today, find, review, under the thumb */
   .tabs{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;left:0;right:0;bottom:0;z-index:20;height:calc(56px + env(safe-area-inset-bottom,0px));
     padding:0 env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px);background:var(--paper);border-top:1px solid var(--rule)}
-  .tabs a{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:13px;line-height:1.2;font-weight:500;color:var(--ink3)}
+  .tabs a{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:0.8125rem;line-height:1.2;font-weight:500;color:var(--ink3)}
   .tabs a.on{color:var(--accent)}
   .tabs svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-  .tabs .due{position:absolute;top:3px;left:calc(50% + 8px);min-width:20px;height:20px;padding:0 6px;border-radius:10px;background:var(--accent);color:var(--paper);font-size:13px;line-height:20px;font-weight:600;text-align:center;letter-spacing:0}
+  .tabs .due{position:absolute;top:3px;left:calc(50% + 8px);min-width:20px;height:20px;padding:0 6px;border-radius:10px;background:var(--accent);color:var(--paper);font-size:0.8125rem;line-height:20px;font-weight:600;text-align:center;letter-spacing:0}
   /* while the keyboard is up (a text box has focus), iOS would lift a fixed bar over the box */
   html.kb .tabs{display:none}
 }
@@ -128,25 +130,25 @@ button,input{font:inherit;color:inherit}
 .lead{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:72px;padding-top:64px;padding-bottom:72px}
 .today{display:block;border-radius:6px;margin:-20px -24px;padding:20px 24px;transition:background .15s}
 .today:hover{background:var(--hover)}
-.today .date{font-size:13px;color:var(--ink3);letter-spacing:.02em}
+.today .date{font-size:0.8125rem;color:var(--ink3);letter-spacing:.02em}
 .today .date b{color:var(--accent);font-weight:600}
-.today h1{font-size:64px;line-height:1.15;font-weight:600;margin:10px 0 0;letter-spacing:-.01em}
-.today h1 .en{font-size:17px;font-weight:400;color:var(--ink3);letter-spacing:.01em;margin-left:18px;vertical-align:.9em}
-.today .one{text-wrap:pretty;font-size:22px;line-height:1.65;font-weight:500;margin:14px 0 0;max-width:30em;letter-spacing:.01em}
-.today .ex{font-size:17px;color:var(--ink2);margin:20px 0 0;max-width:38em}
+.today h1{font-size:4rem;line-height:1.15;font-weight:600;margin:10px 0 0;letter-spacing:-.01em}
+.today h1 .en{font-size:1.0625rem;font-weight:400;color:var(--ink3);letter-spacing:.01em;margin-left:18px;vertical-align:.9em}
+.today .one{text-wrap:pretty;font-size:1.375rem;line-height:1.65;font-weight:500;margin:14px 0 0;max-width:30em;letter-spacing:.01em}
+.today .ex{font-size:1.0625rem;color:var(--ink2);margin:20px 0 0;max-width:38em}
 .today .arr{display:inline-block;margin-left:.4em;color:var(--accent);transition:transform .15s}
 .today:hover .arr{transform:translateX(4px)}
 .today:hover h1 .nm{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px;text-decoration-color:var(--accent)}
 
-.sub{border-left:1px solid var(--rule);padding-left:32px;font-size:15px;line-height:1.7}
-.sub h2{font-size:17px;font-weight:600;margin:0 0 14px}
+.sub{border-left:1px solid var(--rule);padding-left:32px;font-size:0.9375rem;line-height:1.7}
+.sub h2{font-size:1.0625rem;font-weight:600;margin:0 0 14px}
 .sub form{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
-.sub input{height:34px;flex:1 1 200px;max-width:280px;min-width:0;padding:0 14px;border:1px solid var(--rule);border-radius:999px;background:transparent;font-size:14px}
+.sub input{height:34px;flex:1 1 200px;max-width:280px;min-width:0;padding:0 14px;border:1px solid var(--rule);border-radius:999px;background:transparent;font-size:0.875rem}
 .sub input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .sub input::placeholder{color:var(--ink3)}
 /* the submit: the dumpling pill's outlined companion (the dumpling stays the only filled button) */
-.letter{display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 15px 0 12px;border:1px solid var(--accent);border-radius:999px;flex:none;white-space:nowrap;
-  background:transparent;color:var(--ink);font-weight:600;font-size:14px;line-height:1;letter-spacing:.01em;cursor:pointer;transition:color .15s}
+.letter{display:inline-flex;align-items:center;gap:7px;min-height:34px;padding:0 15px 0 12px;border:1px solid var(--accent);border-radius:999px;flex:none;white-space:nowrap;
+  background:transparent;color:var(--ink);font-weight:600;font-size:0.875rem;line-height:1;letter-spacing:.01em;cursor:pointer;transition:color .15s}
 .letter:hover{color:var(--accent)}
 .letter:active{transform:translateY(1px) scale(.97)}
 .letter:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
@@ -157,15 +159,15 @@ button,input{font:inherit;color:inherit}
 .env .e-flap{transform-box:fill-box;transform-origin:50% 0;transition:transform .25s ease}
 .letter:hover .e-flap,.letter:focus-visible .e-flap{transform:scaleY(-1)}
 .letter:hover .e-slip,.letter:focus-visible .e-slip{opacity:1;transform:translateY(-4px)}
-.sub .done{margin:10px 0 0;color:var(--accent);font-size:14px}
+.sub .done{margin:10px 0 0;color:var(--accent);font-size:0.875rem}
 .sub .done:empty{display:none}
 .trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.sub .rss{margin-top:10px;color:var(--ink3);font-size:13px}
+.sub .rss{margin-top:10px;color:var(--ink3);font-size:0.8125rem}
 .sub .rss a{text-decoration:underline;text-underline-offset:3px}
 .past{margin-top:36px;border-top:1px solid var(--rule)}
 .past a{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:10px 0;border-bottom:1px solid var(--rule)}
 .past a:hover .pname{color:var(--accent)}
-.past .pd{white-space:nowrap;font-size:13px;color:var(--ink3);padding-top:2px}
+.past .pd{white-space:nowrap;font-size:0.8125rem;color:var(--ink3);padding-top:2px}
 .past .pname{font-weight:500}
 
 @media (max-width:1100px){
@@ -175,10 +177,10 @@ button,input{font:inherit;color:inherit}
 @media (max-width:720px){
   .lead{padding-top:32px;padding-bottom:40px}
   .today{margin:-12px -10px;padding:12px 10px}
-  .today h1{font-size:40px}
-  .today h1 .en{display:block;margin:4px 0 0;vertical-align:0;font-size:15px}
-  .today .one{text-wrap:pretty;font-size:19px}
-  .sub input{font-size:16px;height:44px;margin:-5px 0;border:solid transparent;border-width:5px 0;background-clip:padding-box;box-shadow:inset 0 0 0 1px var(--rule)}
+  .today h1{font-size:2.5rem}
+  .today h1 .en{display:block;margin:4px 0 0;vertical-align:0;font-size:0.9375rem}
+  .today .one{text-wrap:pretty;font-size:1.1875rem}
+  .sub input{font-size:1rem;height:44px;margin:-5px 0;border:solid transparent;border-width:5px 0;background-clip:padding-box;box-shadow:inset 0 0 0 1px var(--rule)}
   .sub input:focus-visible{outline-offset:-3px}
   .letter{position:relative}
   .letter::before{content:"";position:absolute;inset:-6px -1px}
@@ -190,7 +192,7 @@ button,input{font:inherit;color:inherit}
 /* search field shared by the three catalogues */
 .find{position:relative;display:block}
 .find svg{position:absolute;left:11px;top:50%;width:16px;height:16px;transform:translateY(-50%);color:var(--ink3);pointer-events:none}
-.find input{width:100%;border:1px solid var(--rule);border-radius:999px;padding:8px 14px 8px 34px;background:var(--paper);font-size:15px;outline:none}
+.find input{width:100%;border:1px solid var(--rule);border-radius:999px;padding:8px 14px 8px 34px;background:var(--paper);font-size:0.9375rem;outline:none}
 .find input:focus{border-color:var(--accent)}
 mark{background:none;color:var(--accent);font-weight:inherit}
 .none{color:var(--ink3);padding:24px 0}
@@ -199,19 +201,19 @@ mark{background:none;color:var(--accent);font-weight:inherit}
 
 /* 筛选条：搜索、十二门学科、七种用途（绿色动词，和卡片页上的用途同一个样子），钉在顶上 */
 .sieve{position:sticky;top:0;z-index:3;background:var(--paper);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.sieve .wrap{display:flex;align-items:center;gap:14px;height:56px}
+.sieve .wrap{display:flex;align-items:center;gap:14px;min-height:56px}
 .sieve .find{width:168px;flex:none}
 .sieve .tg{display:flex;align-items:center;gap:0;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none}
 .sieve .tg::-webkit-scrollbar{display:none}
 .sieve .tg i{flex:none;width:1px;height:18px;background:var(--rule);margin:0 8px}
-.sieve button{flex:none;border:0;background:none;padding:4px 6px;border-radius:4px;font-size:15px;color:var(--ink2);cursor:pointer;white-space:nowrap;position:relative}
+.sieve button{flex:none;border:0;background:none;padding:4px 6px;border-radius:4px;font-size:0.9375rem;color:var(--ink2);cursor:pointer;white-space:nowrap;position:relative}
 .sieve button:hover{background:var(--hover);color:var(--ink)}
 .sieve button[data-d][aria-pressed="true"]{color:var(--ink);font-weight:600}
 .sieve button[data-d][aria-pressed="true"]::after{content:"";position:absolute;left:6px;right:6px;bottom:-12px;height:2px;background:var(--accent)}
 .sieve button[data-u]{color:var(--accent)}
 .sieve button[data-u][aria-pressed="true"]{background:var(--accent);color:var(--paper);font-weight:500}
-.sieve .tot{flex:none;font-size:13px;font-variant-numeric:tabular-nums}
-.sieve .tot button{border:1px solid var(--accent);background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:2px 10px;font-size:13px}
+.sieve .tot{flex:none;font-size:0.8125rem;font-variant-numeric:tabular-nums}
+.sieve .tot button{border:1px solid var(--accent);background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:2px 10px;font-size:0.8125rem}
 .sieve .rand{display:none}
 
 /* 名次 */
@@ -230,40 +232,40 @@ a.e:hover .n{color:var(--accent)}
 /* 第一档：三栏，卡名大字，一句话全文，擅长的用途 */
 .b1{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:24px;row-gap:12px;padding-bottom:44px}
 .b1 a.e{padding:18px 20px 20px;margin:0 -20px}
-.b1 .m{font-size:13px;color:var(--ink3);letter-spacing:.01em}
-.b1 .m .r{font-size:15px;font-weight:600;color:var(--ink);margin-right:8px}
-.b1 .n{font-size:32px;line-height:1.25;letter-spacing:-.01em;margin-top:6px}
-.b1 .en{display:block;font-size:13px;color:var(--ink3);margin-top:4px}
-.b1 .o{font-size:16px;line-height:1.75;color:var(--ink);margin-top:12px;text-wrap:pretty}
-.b1 .us{display:block;font-size:13px;color:var(--accent);margin-top:10px;letter-spacing:.02em}
+.b1 .m{font-size:0.8125rem;color:var(--ink3);letter-spacing:.01em}
+.b1 .m .r{font-size:0.9375rem;font-weight:600;color:var(--ink);margin-right:8px}
+.b1 .n{font-size:2rem;line-height:1.25;letter-spacing:-.01em;margin-top:6px}
+.b1 .en{display:block;font-size:0.8125rem;color:var(--ink3);margin-top:4px}
+.b1 .o{font-size:1rem;line-height:1.75;color:var(--ink);margin-top:12px;text-wrap:pretty}
+.b1 .us{display:block;font-size:0.8125rem;color:var(--accent);margin-top:10px;letter-spacing:.02em}
 
 /* 第二档：四栏，卡名中字，一句话最多三行 */
 .b2{grid-template-columns:repeat(4,minmax(0,1fr));column-gap:24px;row-gap:4px;padding:32px 0 36px}
 .b2 a.e{padding:14px 14px 16px;margin:0 -14px}
-.b2 .m{font-size:12px;color:var(--ink3)}
-.b2 .m .r{font-size:13px;font-weight:600;color:var(--ink2);margin-right:6px}
-.b2 .n{font-size:21px;line-height:1.35;margin-top:4px}
-.b2 .o{font-size:14px;line-height:1.7;margin-top:6px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.b2 .m{font-size:0.75rem;color:var(--ink3)}
+.b2 .m .r{font-size:0.8125rem;font-weight:600;color:var(--ink2);margin-right:6px}
+.b2 .n{font-size:1.3125rem;line-height:1.35;margin-top:4px}
+.b2 .o{font-size:0.875rem;line-height:1.7;margin-top:6px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 
 /* 第三档：两栏，一行一张：名次、卡名、一句话收成一行 */
 .b3{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;padding:24px 0 28px}
 .b3 a.e{display:grid;grid-template-columns:34px 9em minmax(0,1fr);align-items:baseline;column-gap:10px;padding:8px 10px;margin:0 -10px;border-radius:4px}
-.b3 .r{font-size:13px}
-.b3 .n{font-size:16px;font-weight:500;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.b3 .o{font-size:14px;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.b3 .r{font-size:0.8125rem}
+.b3 .n{font-size:1rem;font-weight:500;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.b3 .o{font-size:0.875rem;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .b3 .m{display:none}
 
 /* 第四档：六栏，只剩名次和卡名 */
 .b4{grid-template-columns:repeat(6,minmax(0,1fr));column-gap:20px;padding:20px 0 8px}
 .b4 a.e{display:flex;align-items:baseline;gap:8px;padding:5px 8px;margin:0 -8px;border-radius:4px}
-.b4 .r{font-size:11px;min-width:22px}
-.b4 .n{font-size:15px;font-weight:400;line-height:1.5;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.b4 .r{font-size:0.6875rem;min-width:22px}
+.b4 .n{font-size:0.9375rem;font-weight:400;line-height:1.5;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .b4 .o,.b4 .m{display:none}
 /* 搜索时第四档也露出一句话，免得命中的字看不见 */
 .ranks.q .b4{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px}
 .ranks.q .b4 a.e{display:grid;grid-template-columns:34px 9em minmax(0,1fr);column-gap:10px}
-.ranks.q .b4 .o{display:block;font-size:13px;color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ranks.q .b4 .r{font-size:12px}
+.ranks.q .b4 .o{display:block;font-size:0.8125rem;color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ranks.q .b4 .r{font-size:0.75rem}
 
 @media (max-width:1100px){
   .sieve .find{width:150px}
@@ -277,69 +279,78 @@ a.e:hover .n{color:var(--accent)}
   .sieve{position:static;border-bottom:0}
   .sieve .wrap{flex-wrap:wrap;align-items:center;height:auto;gap:0;padding-top:14px;padding-bottom:12px}
   .sieve .find{flex:0 0 100%;width:100%}
-  .sieve .find input{height:46px;font-size:16px}
+  .sieve .find input{height:46px;font-size:1rem}
   .sieve .tg{flex:0 0 100%;flex-wrap:wrap;overflow:visible;margin-top:12px}
   .sieve .tg i{flex:0 0 100%;width:auto;height:6px;margin:0;background:none}
   .sieve .tg button{min-height:44px;border-radius:0}
-  .sieve .tg button[data-d]{flex:0 0 25%;padding:12px 0 10px;font-size:16px;font-weight:500;line-height:1.3;color:var(--ink);box-shadow:inset -1px -1px 0 var(--rule)}
+  .sieve .tg button[data-d]{flex:0 0 25%;padding:12px 0 10px;font-size:1rem;font-weight:500;line-height:1.3;color:var(--ink);box-shadow:inset -1px -1px 0 var(--rule)}
   .sieve .tg button[data-d]:nth-child(-n+4){box-shadow:inset -1px -1px 0 var(--rule),inset 0 1px 0 var(--rule)}
   .sieve .tg button[data-d]:nth-child(4n+1){box-shadow:inset -1px -1px 0 var(--rule),inset 1px 0 0 var(--rule)}
   .sieve .tg button[data-d]:first-child{box-shadow:inset -1px -1px 0 var(--rule),inset 1px 1px 0 var(--rule)}
-  .sieve .tg button[data-d]::after,.sieve .tg button[data-d][aria-pressed="true"]::after{content:attr(data-n);position:static;display:block;height:auto;margin-top:2px;background:none;font-size:13px;font-weight:400;color:var(--ink3)}
-  .sieve .tg button[data-u]{padding:0 8px;font-size:16px}
+  .sieve .tg button[data-d]::after,.sieve .tg button[data-d][aria-pressed="true"]::after{content:attr(data-n);position:static;display:block;height:auto;margin-top:2px;background:none;font-size:0.8125rem;font-weight:400;color:var(--ink3)}
+  .sieve .tg button[data-u]{padding:0 8px;font-size:1rem}
   .sieve .tg i+button{margin-left:-8px}
-  .sieve .rand{display:flex;flex:0 0 100%;align-items:center;gap:8px;min-height:48px;margin-top:4px;font-size:16px;color:var(--ink2);border-bottom:1px solid var(--rule)}
+  .sieve .rand{display:flex;flex:0 0 100%;align-items:center;gap:8px;min-height:48px;margin-top:4px;font-size:1rem;color:var(--ink2);border-bottom:1px solid var(--rule)}
   .sieve .rand svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
   .sieve .rand circle{fill:currentColor;stroke:none}
   .sieve.on .tg button[aria-pressed="false"],.sieve.on .tg i,.sieve.on .rand{display:none}
   .sieve.on .tg{flex:0 1 auto;margin:12px 8px 0 0}
-  .sieve.on .tg button[aria-pressed="true"]{display:inline-flex;align-items:center;gap:6px;flex:none;min-height:0;height:34px;margin:0;padding:0 14px;border-radius:999px;
-    background:var(--accent-soft);color:var(--accent);font-size:15px;font-weight:600;line-height:1;box-shadow:none}
-  .sieve.on .tg button[aria-pressed="true"]::after{content:"×";margin:0;font-size:15px;font-weight:600;color:var(--accent)}
+  .sieve.on .tg button[aria-pressed="true"]{display:inline-flex;align-items:center;gap:6px;flex:none;min-height:34px;margin:0;padding:0 14px;border-radius:999px;
+    background:var(--accent-soft);color:var(--accent);font-size:0.9375rem;font-weight:600;line-height:1;box-shadow:none}
+  .sieve.on .tg button[aria-pressed="true"]::after{content:"×";margin:0;font-size:0.9375rem;font-weight:600;color:var(--accent)}
   .sieve.on .tg button[aria-pressed="true"]::before{content:"";position:absolute;inset:-5px 0}
   /* room under a short result list, so the search box can still sit at the top of the screen */
   .sieve.on+.ranks{min-height:calc(100vh - 120px)}
   .sieve .tot{position:static;flex:none;margin-top:12px}
   .sieve .tot:empty{display:none}
-  .sieve .tot button{height:34px;padding:0 14px;font-size:15px}
+  .sieve .tot button{min-height:34px;padding:0 14px;font-size:0.9375rem}
   .sieve .tot button::before{content:"";position:absolute;inset:-6px -1px}
   .ranks{padding-top:16px}
   .band{scroll-margin-top:110px}
   .b1{grid-template-columns:minmax(0,1fr);row-gap:0;padding-bottom:24px}
   .b1 a.e{padding:14px 12px;margin:0 -12px}
-  .b1 .n{font-size:28px}
-  .b1 .o{font-size:15px;margin-top:8px}
+  .b1 .n{font-size:1.75rem}
+  .b1 .o{font-size:0.9375rem;margin-top:8px}
   .b2{grid-template-columns:minmax(0,1fr);padding:20px 0 24px;row-gap:0}
   .b1 .en{display:none}
   .b1 .n{margin-top:2px}
   .b1 .us{margin-top:6px}
   .b2 a.e{display:grid;grid-template-columns:30px minmax(0,1fr);align-items:baseline;padding:9px 8px;margin:0 -8px}
   .b2 .m{display:contents}
-  .b2 .m .r{grid-column:1;grid-row:1;font-size:13px;font-weight:500;color:var(--ink3)}
+  .b2 .m .r{grid-column:1;grid-row:1;font-size:0.8125rem;font-weight:500;color:var(--ink3)}
   .b2 .m .d{display:none}
-  .b2 .n{grid-column:2;grid-row:1;font-size:19px;margin:0}
-  .b2 .o{grid-column:2;-webkit-line-clamp:2;margin-top:2px;font-size:14px}
+  .b2 .n{grid-column:2;grid-row:1;font-size:1.1875rem;margin:0}
+  .b2 .o{grid-column:2;-webkit-line-clamp:2;margin-top:2px;font-size:0.875rem}
   .b3{padding:16px 0 20px}
   .b3 a.e{grid-template-columns:30px minmax(0,1fr);row-gap:0;padding:7px 8px;margin:0 -8px}
-  .b3 .o{grid-column:2;font-size:13px;color:var(--ink3)}
+  .b3 .o{grid-column:2;font-size:0.8125rem;color:var(--ink3)}
   .b4{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:12px;padding-top:14px}
-  .b4 .r,.ranks.q .b4 .r{font-size:13px}
+  .b4 .r,.ranks.q .b4 .r{font-size:0.8125rem}
   .e.is-today .r,.e.is-today .o,.e.is-today .m{color:var(--ink2)}
   .ranks.q .b4{grid-template-columns:minmax(0,1fr)}
   .ranks.q .b4 a.e{grid-template-columns:30px minmax(0,1fr)}
   .ranks.q .b4 .o{grid-column:2}
 }
+/* under a finger, a name in the list is a 44px row: the same list, a little more air between the lines (a search
+   already gives the fourth band two lines a name) */
+@media (pointer:coarse){
+  .ranks:not(.q) .b4 a.e{padding-top:10px;padding-bottom:10px}
+}
+@media (pointer:coarse) and (min-width:721px){
+  .b3 a.e{padding-top:10px;padding-bottom:10px}
+  .ranks:not(.q) .b4 a.e{padding-top:11px;padding-bottom:11px}
+}
 
 /* ---------- a card ---------- */
 
 .page{display:grid;grid-template-columns:200px minmax(0,1fr);column-gap:44px;padding-top:28px}
-.crumbs{grid-column:2;margin:0;font-size:13px;color:var(--ink3);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.crumbs{grid-column:2;margin:0;font-size:0.8125rem;color:var(--ink3);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .crumbs a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
 .crumbs .sep{opacity:.6}
 .crumbs .day{margin-left:auto;color:var(--accent);font-weight:500}
 
 /* toc */
-.toc{grid-column:1;grid-row:1 / span 3;position:sticky;top:24px;align-self:start;font-size:14px;line-height:1.5;padding-top:108px}
+.toc{grid-column:1;grid-row:1 / span 3;position:sticky;top:24px;align-self:start;font-size:0.875rem;line-height:1.5;padding-top:108px}
 .toc ol{list-style:none;margin:0;padding:0;position:relative;border-left:1px solid var(--rule)}
 .toc li a{display:block;padding:5px 0 5px 14px;color:var(--ink3)}
 .toc li a:hover{color:var(--ink)}
@@ -348,7 +359,7 @@ a.e:hover .n{color:var(--accent)}
 .toc .ind{position:absolute;left:-1px;width:2px;background:var(--accent);top:0;height:0;transition:top .25s ease,height .25s ease}
 /* 目录条目都是这张卡自己的内容：故事的年份和一句话、机制的节名、用途、例子的题目、搭配的卡名、三道题的进度 */
 .toc .up{display:none}
-.toc .ty{display:block;font-size:19px;font-weight:600;line-height:1.3;color:var(--ink2);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.toc .ty{display:block;font-size:1.1875rem;font-weight:600;line-height:1.3;color:var(--ink2);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
 .toc a.on .ty{color:var(--accent)}
 .toc .ts{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-top:2px}
 .toc .tx{color:var(--ink3);margin-right:5px;font-weight:400}
@@ -359,10 +370,10 @@ a.e:hover .n{color:var(--accent)}
 
 .page .body{grid-column:2;min-width:0}
 .head{padding:14px 0 36px}
-.head h1{font-size:64px;line-height:1.15;font-weight:600;margin:0;letter-spacing:-.01em}
+.head h1{font-size:4rem;line-height:1.15;font-weight:600;margin:0;letter-spacing:-.01em}
 .head .en{letter-spacing:.01em}
-.head .en{font-size:17px;color:var(--ink3);margin:6px 0 0}
-.head .one{text-wrap:pretty;font-size:22px;line-height:1.65;font-weight:500;margin:22px 0 0;max-width:30em;letter-spacing:.01em}
+.head .en{font-size:1.0625rem;color:var(--ink3);margin:6px 0 0}
+.head .one{text-wrap:pretty;font-size:1.375rem;line-height:1.65;font-weight:500;margin:22px 0 0;max-width:30em;letter-spacing:.01em}
 .hq{display:none}
 
 .col{max-width:680px}
@@ -371,31 +382,31 @@ h3{scroll-margin-top:24px}
 
 /* ---- the story ---- */
 .story{padding-bottom:56px}
-.scene p{font-size:18px;line-height:1.95;margin:0}
+.scene p{font-size:1.125rem;line-height:1.95;margin:0}
 .scene p+p{margin-top:1.1em}
 .plain{margin:36px 0 0;padding-top:32px;border-top:1px solid var(--rule)}
 .plain p{margin:0;line-height:1.9}.plain p+p{margin-top:1.1em}
 
 .ctl label{display:block}
 .ctl .lv{display:flex;justify-content:space-between;align-items:baseline}
-.ctl output{font-weight:600;font-size:17px;font-variant-numeric:tabular-nums}
+.ctl output{font-weight:600;font-size:1.0625rem;font-variant-numeric:tabular-nums}
 .ctl input[type=range]{width:100%;margin:8px 0 0;accent-color:var(--accent);height:24px;cursor:pointer}
 .rd{margin:auto 0 0;padding-top:14px;border-top:1px solid var(--rule);display:grid;gap:10px}
-.rd div{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:6px;font-size:13px;color:var(--ink2);line-height:1.5}
-.rd b{font-size:17px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.rd div{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:6px;font-size:0.8125rem;color:var(--ink2);line-height:1.5}
+.rd b{font-size:1.0625rem;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
 
 /* tables written in a card's Markdown (payoff tables and the like) */
-.body table{border-collapse:collapse;margin:18px 0;font-size:15px;line-height:1.6;display:block;max-width:100%;overflow-x:auto;font-variant-numeric:tabular-nums}
+.body table{border-collapse:collapse;margin:18px 0;font-size:0.9375rem;line-height:1.6;display:block;max-width:100%;overflow-x:auto;font-variant-numeric:tabular-nums}
 .body th,.body td{padding:7px 16px;border-bottom:1px solid var(--rule);text-align:left;white-space:nowrap}
 .body th{font-weight:500;color:var(--ink2);border-bottom-color:var(--ink3)}
 .body td:first-child,.body th:first-child{padding-left:0}
 
 /* ---- figures (figure.mjs): flow, chart, demo ---- */
 .fig{margin:36px 0 0;max-width:984px}
-.fig .fh{font-size:15px;font-weight:500;margin:0 0 12px;padding-left:12px;border-left:3px solid var(--accent);line-height:1.5}
+.fig .fh{font-size:0.9375rem;font-weight:500;margin:0 0 12px;padding-left:12px;border-left:3px solid var(--accent);line-height:1.5}
 .fig .fb{border:1px solid var(--rule);border-radius:8px;padding:20px 22px 14px;overflow:hidden}
 .fig-flow .fb{display:flex;justify-content:center;padding:22px 18px}
-.fig .fcap{font-size:14px;color:var(--ink3);margin:10px 0 0;line-height:1.7;max-width:46em}
+.fig .fcap{font-size:0.875rem;color:var(--ink3);margin:10px 0 0;line-height:1.7;max-width:46em}
 .fig svg{display:block;max-width:100%;height:auto;overflow:visible;font-family:var(--font)}
 .fig .fc{width:100%;max-width:680px;margin:0 auto}
 .fig .fn{display:none}
@@ -459,15 +470,15 @@ h3{scroll-margin-top:24px}
 .fc-mt{fill:var(--ink2);font-size:12px;stroke:var(--paper);stroke-width:3px;paint-order:stroke;stroke-linejoin:round}
 .fc-pt{fill:var(--paper);stroke:var(--ink);stroke-width:1.6}
 .fig .fdemo{display:grid;grid-template-columns:230px minmax(0,1fr);padding:0}
-.fig .fdemo .ctl{padding:18px;border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:16px;font-size:15px}
+.fig .fdemo .ctl{padding:18px;border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:16px;font-size:0.9375rem}
 .fig .fdemo .fv{padding:18px 20px 12px 10px;min-width:0}
 .fig .btns{display:flex;gap:8px}
-.fig .btns button{border:1px solid var(--rule);background:var(--block);border-radius:4px;padding:2px 12px;font-size:13px;cursor:pointer;color:var(--ink2)}
+.fig .btns button{border:1px solid var(--rule);background:var(--block);border-radius:4px;padding:2px 12px;font-size:0.8125rem;cursor:pointer;color:var(--ink2)}
 .fig .btns button:hover{color:var(--ink);border-color:var(--ink3)}
 .fig .btns:not(:has(button:not([hidden]))){display:none}
 /* on the home page the figure sits quietly under the one line */
 .today .fig{margin:24px 0 0;max-width:none}
-.today .fig .fh{font-size:14px;color:var(--ink2)}
+.today .fig .fh{font-size:0.875rem;color:var(--ink2)}
 .today .fig .fb{padding:16px 18px 10px;background:var(--paper)}
 .today .fig-flow .fb,.today .fig-grid .fb{padding:16px}
 .today .fig .fcap{display:none}
@@ -484,17 +495,17 @@ h3{scroll-margin-top:24px}
 /* ---- why it works ---- */
 .why{background:var(--block);border-radius:8px;padding:44px 44px 48px;display:grid;grid-template-columns:minmax(0,1fr) 230px;column-gap:44px;max-width:984px}
 .why .main{min-width:0;max-width:640px}
-.why h3{font-size:19px;font-weight:600;line-height:1.5;letter-spacing:.01em;margin:48px 0 12px}
+.why h3{font-size:1.1875rem;font-weight:600;line-height:1.5;letter-spacing:.01em;margin:48px 0 12px}
 .why h3:first-child{margin-top:0}
-.why p{margin:0 0 1.1em;font-size:17px;line-height:1.9}
+.why p{margin:0 0 1.1em;font-size:1.0625rem;line-height:1.9}
 .why p:last-child{margin-bottom:0}
 .why .katex-display{margin:22px 0;overflow-x:auto;overflow-y:hidden;padding:2px 0}
 .why .limits{margin-top:48px;padding:2px 0 2px 22px;border-left:3px solid var(--ink)}
 .why .limits h3{margin-top:0}
-.origin{font-size:15px;line-height:1.85;color:var(--ink2);position:sticky;top:24px;align-self:start}
-.origin .yr{font-size:40px;line-height:1;font-weight:600;color:var(--ink);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.origin h3{font-size:13px;font-weight:500;color:var(--ink3);margin:10px 0 8px;letter-spacing:.04em}
-.origin p{font-size:15px;margin:0}
+.origin{font-size:0.9375rem;line-height:1.85;color:var(--ink2);position:sticky;top:24px;align-self:start}
+.origin .yr{font-size:2.5rem;line-height:1;font-weight:600;color:var(--ink);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.origin h3{font-size:0.8125rem;font-weight:500;color:var(--ink3);margin:10px 0 8px;letter-spacing:.04em}
+.origin p{font-size:0.9375rem;margin:0}
 
 /* ---- using it ---- */
 .tools{padding-top:72px;max-width:984px}
@@ -504,52 +515,52 @@ h3{scroll-margin-top:24px}
 .uses{display:grid;grid-template-columns:72px 1fr;margin:0;border-top:2px solid var(--ink)}
 .uses dt,.uses dd{padding:16px 0;border-bottom:1px solid var(--rule);margin:0}
 .uses dt{font-weight:600;color:var(--accent)}
-.uses dd{font-size:17px}
+.uses dd{font-size:1.0625rem}
 .ask{list-style:none;margin:0;padding:6px 24px;counter-reset:a;background:var(--block);border-radius:8px}
-.ask li{counter-increment:a;display:grid;grid-template-columns:30px 1fr;padding:16px 0;font-size:17px;line-height:1.75}
+.ask li{counter-increment:a;display:grid;grid-template-columns:30px 1fr;padding:16px 0;font-size:1.0625rem;line-height:1.75}
 .ask li+li{border-top:1px solid var(--rule)}
-.ask li::before{content:counter(a);font-size:17px;font-weight:600;color:var(--accent)}
+.ask li::before{content:counter(a);font-size:1.0625rem;font-weight:600;color:var(--accent)}
 .ex3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 32px}
 .ex3 article{border-top:2px solid var(--ink);padding-top:14px}
-.ex3 .f{font-size:13px;color:var(--ink3);margin:0}
-.ex3 h4{font-size:19px;font-weight:600;margin:4px 0 8px;line-height:1.5}
-.ex3 p{font-size:15px;line-height:1.9;margin:0;color:var(--ink2)}
+.ex3 .f{font-size:0.8125rem;color:var(--ink3);margin:0}
+.ex3 h4{font-size:1.1875rem;font-weight:600;margin:4px 0 8px;line-height:1.5}
+.ex3 p{font-size:0.9375rem;line-height:1.9;margin:0;color:var(--ink2)}
 .with{border-top:2px solid var(--ink)}
 .with a.w{display:grid;grid-template-columns:260px minmax(0,1fr);gap:32px;padding:22px 12px;margin:0 -12px;border-bottom:1px solid var(--rule);transition:background .12s}
 .with a.w:hover{background:var(--hover)}
-.with .pair{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 8px;font-size:19px;line-height:1.5}
+.with .pair{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 8px;font-size:1.1875rem;line-height:1.5}
 .with .me{color:var(--ink3);font-weight:500}
 .with .x{color:var(--ink3);font-weight:400}
 .with .wn{font-weight:600}
 .with .wn span{color:var(--accent);margin-left:6px;display:inline-block;transition:transform .15s}
 .with a.w:hover .wn span{transform:translateX(3px)}
-.with .wo{display:block;font-size:13px;color:var(--ink3);line-height:1.6;margin-top:6px}
-.with .ws{font-size:15px;line-height:1.9;color:var(--ink2)}
+.with .wo{display:block;font-size:0.8125rem;color:var(--ink3);line-height:1.6;margin-top:6px}
+.with .ws{font-size:0.9375rem;line-height:1.9;color:var(--ink2)}
 
 /* quiz */
 .quiz{display:grid;grid-template-columns:minmax(0,1fr) 280px;border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin-top:20px}
 .qmain{padding:28px 32px 32px;min-width:0}
-.stem{font-size:17px;color:var(--ink2);margin:0}
-.qq{font-size:19px;font-weight:600;margin:14px 0 18px;line-height:1.6}
+.stem{font-size:1.0625rem;color:var(--ink2);margin:0}
+.qq{font-size:1.1875rem;font-weight:600;margin:14px 0 18px;line-height:1.6}
 .opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.opt{display:grid;grid-template-columns:28px 1fr 20px;gap:8px;width:100%;text-align:left;border:1px solid var(--rule);background:var(--paper);border-radius:6px;padding:11px 14px;cursor:pointer;font-size:16px;line-height:1.7;transition:border-color .12s,background .12s}
+.opt{display:grid;grid-template-columns:28px 1fr 20px;gap:8px;width:100%;text-align:left;border:1px solid var(--rule);background:var(--paper);border-radius:6px;padding:11px 14px;cursor:pointer;font-size:1rem;line-height:1.7;transition:border-color .12s,background .12s}
 .opt:hover:not(:disabled){border-color:var(--ink3);background:var(--hover)}
 .opt .k{font-weight:600;color:var(--ink3)}
 .opt .st{font-weight:600;text-align:right}
 .opt:disabled{cursor:default}
 .li.dim .opt{opacity:.6}
-.fb{margin:0;font-size:15px;line-height:1.75;padding:8px 14px 4px 50px;color:var(--ink2)}
+.fb{margin:0;font-size:0.9375rem;line-height:1.75;padding:8px 14px 4px 50px;color:var(--ink2)}
 .li.bad .opt{border-color:var(--wrong);background:var(--wrong-soft)}
 .li.bad .opt .st,.li.bad .opt .k{color:var(--wrong)}
 .li.good .opt{border-color:var(--accent);background:var(--accent-soft)}
 .li.good .opt .st,.li.good .opt .k{color:var(--accent)}
-.explain{margin:18px 0 0;padding:16px 18px;border-left:3px solid var(--accent);background:var(--accent-soft);font-size:16px;line-height:1.8}
-.qnext{display:inline-block;margin-top:16px;border:0;background:var(--accent);color:var(--paper);font-weight:600;border-radius:6px;padding:9px 18px;cursor:pointer;font-size:15px}
+.explain{margin:18px 0 0;padding:16px 18px;border-left:3px solid var(--accent);background:var(--accent-soft);font-size:1rem;line-height:1.8}
+.qnext{display:inline-block;margin-top:16px;border:0;background:var(--accent);color:var(--paper);font-weight:600;border-radius:6px;padding:9px 18px;cursor:pointer;font-size:0.9375rem}
 .tasks{background:var(--block);border-left:1px solid var(--rule);padding:22px 0 0;display:flex;flex-direction:column}
 .tasks ol{list-style:none;margin:0;padding:0 18px}
 .tasks li+li{border-top:1px solid var(--rule)}
 .tasks .tq{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.tasks button{display:grid;grid-template-columns:22px 1fr 20px;gap:6px;width:100%;text-align:left;border:0;background:none;padding:12px 0;cursor:pointer;font-size:14px;line-height:1.6;color:var(--ink3)}
+.tasks button{display:grid;grid-template-columns:22px 1fr 20px;gap:6px;width:100%;text-align:left;border:0;background:none;padding:12px 0;cursor:pointer;font-size:0.875rem;line-height:1.6;color:var(--ink3)}
 .tasks button:hover{color:var(--ink2)}
 .tasks button.cur{color:var(--ink);font-weight:500}
 .tasks button .ti{font-weight:600}
@@ -561,31 +572,31 @@ h3{scroll-margin-top:24px}
 .tip-after .art{width:56px;height:56px;display:grid;place-items:center;color:var(--accent)}
 .tip-after .art .dp{width:52px;height:52px;margin:0}
 .tip-after .art .dp path{stroke-width:1.05}
-.tip-after .line{margin:0;font-size:17px;line-height:1.7;max-width:34em}
+.tip-after .line{margin:0;font-size:1.0625rem;line-height:1.7;max-width:34em}
 .tip-after .row{grid-column:2;display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:6px 0 0}
-.tip-after .note{font-size:12.5px;line-height:1.3;color:var(--ink3)}
+.tip-after .note{font-size:0.78125rem;line-height:1.3;color:var(--ink3)}
 @media (max-width:720px){
   .tip-after{grid-template-columns:1fr;gap:10px}
   .tip-after .row{grid-column:1}
   .tip-after .art{width:44px;height:44px}
   .tip-after .art .dp{width:42px;height:42px}
 }
-.pn{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--rule);padding-top:20px;font-size:15px;max-width:984px}
+.pn{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--rule);padding-top:20px;font-size:0.9375rem;max-width:984px}
 .pn a{display:flex;flex-direction:column;gap:2px;max-width:45%}
-.pn a span{font-size:13px;color:var(--ink3)}
-.pn a b{font-weight:600;font-size:17px}
+.pn a span{font-size:0.8125rem;color:var(--ink3)}
+.pn a b{font-weight:600;font-size:1.0625rem}
 .pn a:hover b{color:var(--accent)}
 .pn a.r{text-align:right;margin-left:auto}
 /* a card's end: the next card right after the questions, a full-width button; the one before, small, under it; then
    the dumpling, last before the footer (render.mjs) */
 .page .pn{display:grid;grid-template-columns:minmax(0,1fr);justify-items:start;gap:16px;width:100%;border-top:0;padding-top:0;margin:8px 0 56px}
 .page .pn .nx{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:16px;justify-self:stretch;max-width:none;padding:16px 22px;border-radius:8px;background:var(--accent);color:var(--paper)}
-.page .pn .nx span{font-size:13px;color:inherit;opacity:.82}
-.page .pn .nx b{grid-row:2;font-size:19px}
-.page .pn .nx::after{content:"→";grid-column:2;grid-row:1 / span 2;font-size:22px}
+.page .pn .nx span{font-size:0.8125rem;color:inherit;opacity:.82}
+.page .pn .nx b{grid-row:2;font-size:1.1875rem}
+.page .pn .nx::after{content:"→";grid-column:2;grid-row:1 / span 2;font-size:1.375rem}
 .page .pn .nx:hover b{color:inherit}
 .page .pn .pv{flex-direction:row;align-items:baseline;gap:8px;max-width:none}
-.page .pn .pv b{font-size:15px;font-weight:500}
+.page .pn .pv b{font-size:0.9375rem;font-weight:500}
 
 @media (max-width:1180px){
   .ua{grid-template-columns:1fr}
@@ -600,8 +611,8 @@ h3{scroll-margin-top:24px}
 @media (max-width:720px){
   .page{padding-top:16px}
   .head{padding:10px 0 28px}
-  .head h1{font-size:40px}
-  .head .one{text-wrap:pretty;font-size:19px;margin-top:16px}
+  .head h1{font-size:2.5rem}
+  .head .one{text-wrap:pretty;font-size:1.1875rem;margin-top:16px}
   /* the outline is hidden on phones; its row of question boxes stays under the name, a link to the questions */
   .hq{display:block;width:max-content;padding:15px 0;margin:2px 0 -15px}
   .hq .tq{display:flex;gap:6px}
@@ -611,32 +622,34 @@ h3{scroll-margin-top:24px}
   .crumbs .sep{opacity:1}
   .ctl input[type=range]{height:44px;margin:-2px 0 -10px}
   .tasks button{color:var(--ink2)}
-  .tip-after .note{font-size:13px}
+  .tip-after .note{font-size:0.8125rem}
   .tip-after .tip{position:relative}
   .tip-after .tip::before{content:"";position:absolute;inset:-5px 0}
-  .origin p{font-size:16px}
-  .scene p{font-size:17px;line-height:1.9}
+  .page .pn .pv{position:relative}
+  .page .pn .pv::before{content:"";position:absolute;inset:-8px 0}
+  .origin p{font-size:1rem}
+  .scene p{font-size:1.0625rem;line-height:1.9}
   .why h3{margin-top:40px}
   .ask{padding:4px 16px}
-  .with .pair{font-size:17px}
+  .with .pair{font-size:1.0625rem}
   .why{margin:0 -16px;border-radius:0;padding:32px 16px 36px}
   .why .limits{padding-left:16px}
   .tools{padding-top:52px}
   .blk{margin-bottom:52px}
   .uses{grid-template-columns:56px 1fr}
-  .uses dd{font-size:16px}
+  .uses dd{font-size:1rem}
   /* three examples from three fields: a swipe, the next one showing at the edge */
   .blk.ex3{display:flex;gap:14px;margin:0 -16px;padding:0 16px 4px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 16px;scrollbar-width:none}
   .ex3::-webkit-scrollbar{display:none}
   .ex3 article{flex:0 0 calc(100% - 34px);scroll-snap-align:start}
-  .ex3 p{font-size:16px}
+  .ex3 p{font-size:1rem}
   .ex3dots{display:flex;margin:2px 0 52px -13px}
   .ex3dots button{display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;background:none;cursor:pointer}
   .ex3dots i{width:18px;height:3px;border-radius:2px;background:var(--rule)}
   .ex3dots button[aria-current="true"] i{background:var(--accent)}
   /* the day's question, right after the opening when the card was opened from today (app.js) */
   .dq{margin:0 0 56px;padding-top:18px;border-top:2px solid var(--ink)}
-  .dq .when{margin:0 0 6px;font-size:14px;font-weight:600;color:var(--accent)}
+  .dq .when{margin:0 0 6px;font-size:0.875rem;font-weight:600;color:var(--accent)}
   /* the spine: where the desk has its margin outline, a bar under the thumb */
   .spine{display:grid;grid-template-columns:48px minmax(0,1fr) auto;align-items:center;position:fixed;left:0;right:0;bottom:0;z-index:20;height:calc(56px + env(safe-area-inset-bottom,0px));
     padding:0 env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px);background:var(--paper);border-top:1px solid var(--rule)}
@@ -646,7 +659,7 @@ h3{scroll-margin-top:24px}
   .spine svg{fill:none;stroke-linecap:round;stroke-linejoin:round}
   .spine .back{display:grid;place-items:center;width:48px}
   .spine .back svg{width:24px;height:24px;stroke:var(--ink2);stroke-width:1.8}
-  .spine .here{display:flex;align-items:center;gap:6px;min-width:0;padding:0 6px;font-size:15px;line-height:1.4;color:var(--ink2);text-align:left}
+  .spine .here{display:flex;align-items:center;gap:6px;min-width:0;padding:0 6px;font-size:0.9375rem;line-height:1.4;color:var(--ink2);text-align:left}
   .spine .hl{min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
   .spine .hl b{margin-right:6px;font-weight:600;color:var(--accent)}
   .spine .hl .tx{margin-right:4px;color:var(--ink3)}
@@ -656,13 +669,13 @@ h3{scroll-margin-top:24px}
   /* the outline sheet: the desk's margin outline, risen from the bottom; nothing above it but a grip */
   .page .toc{display:block;position:fixed;left:0;right:0;top:auto;bottom:0;z-index:31;max-height:76vh;overflow-y:auto;overscroll-behavior:contain;
     padding:8px max(20px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));
-    background:var(--paper);border-radius:16px 16px 0 0;box-shadow:0 -10px 40px rgba(0,0,0,.12);font-size:15px;line-height:1.55;
+    background:var(--paper);border-radius:16px 16px 0 0;box-shadow:0 -10px 40px rgba(0,0,0,.12);font-size:0.9375rem;line-height:1.55;
     transform:translateY(105%);visibility:hidden;transition:transform .25s ease,visibility 0s .25s}
   html.sheet .page .toc{transform:none;visibility:visible;transition:transform .25s ease}
   html.sheet{overflow:hidden}
   .toc .grip{display:block;width:38px;height:4px;margin:2px auto 12px;border-radius:2px;background:var(--rule)}
   /* the way out from the middle of a card: the crumbs, kept at the top of the sheet (app.js closes the sheet first) */
-  .toc .up{display:flex;align-items:center;gap:8px;position:sticky;top:-8px;z-index:1;margin:-8px 0 4px;padding-top:8px;background:var(--paper);font-size:14px;color:var(--ink3)}
+  .toc .up{display:flex;align-items:center;gap:8px;position:sticky;top:-8px;z-index:1;margin:-8px 0 4px;padding-top:8px;background:var(--paper);font-size:0.875rem;color:var(--ink3)}
   .toc .up a{display:flex;align-items:center;min-height:44px}
   .toc .up .sep{opacity:.6}
   .toc ol{border-left:0}
@@ -670,12 +683,12 @@ h3{scroll-margin-top:24px}
   .toc li a{display:block;min-height:44px;padding:10.5px 0 10.5px 14px;border-left:2px solid var(--rule);color:var(--ink2)}
   .toc li a.on{border-left-color:var(--accent);color:var(--ink);font-weight:500}
   .toc li.gap{height:14px;border-left:2px solid var(--rule)}
-  .toc .ty,.toc a.on .ty{font-size:22px;color:var(--accent)}
+  .toc .ty,.toc a.on .ty{font-size:1.375rem;color:var(--accent)}
   .toc .tq{padding:0}
   .toc a.td{display:flex;align-items:center;gap:8px}
   .toc .tqd{font-weight:600;color:var(--accent)}
   .scrim{display:block;position:fixed;inset:0;z-index:30;background:rgba(10,12,14,.32)}
-  .ask li{grid-template-columns:32px 1fr;font-size:17px}
+  .ask li{grid-template-columns:32px 1fr;font-size:1.0625rem}
   .with a.w{grid-template-columns:1fr;gap:8px;margin:0 -16px;padding:18px 16px}
   .quiz{grid-template-columns:1fr;margin-left:-16px;margin-right:-16px;border-radius:0;border-left:0;border-right:0}
   .qmain{padding:20px 16px 24px}
@@ -690,15 +703,15 @@ h3{scroll-margin-top:24px}
 
 /* ---------- questions on /today and /review ---------- */
 .plainpage{padding-top:48px;max-width:860px}
-.plainpage h1{font-size:40px;line-height:1.2;font-weight:600;margin:0 0 8px}
-.plainpage .one{font-size:19px;line-height:1.6;color:var(--ink2);margin:8px 0 28px}
+.plainpage h1{font-size:2.5rem;line-height:1.2;font-weight:600;margin:0 0 8px}
+.plainpage .one{font-size:1.1875rem;line-height:1.6;color:var(--ink2);margin:8px 0 28px}
 .plainpage .sub{border:0;padding:0;max-width:440px}
 /* review: while the questions load, what sits below them waits unseen (reviewPage, app.js) */
 html.rvwait .foot,html.rvwait #review .empty{visibility:hidden}
-.plainpage .sub .rss{margin-top:16px;font-size:14px;line-height:1.7}
+.plainpage .sub .rss{margin-top:16px;font-size:0.875rem;line-height:1.7}
 .day .today{margin:0 -24px 8px}
 .qs .q{border:1px solid var(--rule);border-radius:8px;padding:24px 28px 28px;margin-top:24px}
-.qs .from{margin:0 0 6px;font-size:13px}
+.qs .from{margin:0 0 6px;font-size:0.8125rem}
 .qs .from a{color:var(--accent)}
 .qs .more{margin-top:24px}
 .qs .more a{color:var(--accent);font-weight:600}
@@ -706,7 +719,7 @@ html.rvwait .foot,html.rvwait #review .empty{visibility:hidden}
 .day .pn{margin-top:40px}
 @media (max-width:720px){
   .plainpage{padding-top:28px}
-  .plainpage h1{font-size:32px}
+  .plainpage h1{font-size:2rem}
   .day .today{margin:0 -10px 8px}
   .qs .q{padding:18px 16px 20px;margin-left:-16px;margin-right:-16px;border-radius:0;border-left:0;border-right:0}
   .qs .from a,.qs .more a{position:relative;display:inline-block;min-width:44px;padding:12px 0;margin:-12px 0}
@@ -714,27 +727,27 @@ html.rvwait .foot,html.rvwait #review .empty{visibility:hidden}
   /* the review page keeps its own heading from the first paint, and room for the question, so nothing jumps when the
      question arrives; the empty note waits until the queue is known */
   .plainpage.rv{padding-top:16px}
-  .rv>h1{display:flex;align-items:baseline;justify-content:space-between;margin:0;font-size:22px;line-height:1.4}
-  .rv>h1 .rvn{font-size:13px;font-weight:400;color:var(--ink3);font-variant-numeric:tabular-nums}
+  .rv>h1{display:flex;align-items:baseline;justify-content:space-between;margin:0;font-size:1.375rem;line-height:1.4}
+  .rv>h1 .rvn{font-size:0.8125rem;font-weight:400;color:var(--ink3);font-variant-numeric:tabular-nums}
   .rv #review{min-height:calc(100vh - 160px)}
   .segs{display:flex;gap:4px;margin:12px 0 0}
   .segs i{flex:1;height:3px;border-radius:2px;background:var(--rule)}
   .segs i.ok{background:var(--accent)}
   .segs i.miss{background:var(--wrong)}
   .segs i.cur{background:var(--ink)}
-  .rvq .src{margin:22px 0 8px;font-size:14px}
+  .rvq .src{margin:22px 0 8px;font-size:0.875rem}
   .rvq .src a{position:relative;display:inline-block;padding:12px 8px;margin:-12px -8px;font-weight:600;color:var(--accent)}
   .rvq .src span{margin-left:6px;color:var(--ink3)}
   .rvmode .qs .q{margin:0;padding:0;border:0}
-  .rnext,.again{display:block;width:100%;min-height:44px;margin-top:16px;border:0;border-radius:8px;background:var(--accent);color:var(--paper);font-size:16px;font-weight:600;cursor:pointer}
+  .rnext,.again{display:block;width:100%;min-height:44px;margin-top:16px;border:0;border-radius:8px;background:var(--accent);color:var(--paper);font-size:1rem;font-weight:600;cursor:pointer}
   .rnext{position:sticky;bottom:calc(56px + env(safe-area-inset-bottom,0px) + 12px);box-shadow:0 6px 18px rgba(0,0,0,.12)}
   .again{margin-top:24px;background:none;color:var(--accent);border:1.5px solid var(--accent)}
-  .sum .big{margin:40px 0 0;font-size:44px;line-height:1;font-weight:600;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
-  .sum .big small{margin-left:6px;font-size:18px;font-weight:500;color:var(--ink3)}
+  .sum .big{margin:40px 0 0;font-size:2.75rem;line-height:1;font-weight:600;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+  .sum .big small{margin-left:6px;font-size:1.125rem;font-weight:500;color:var(--ink3)}
   .sum ul{list-style:none;margin:26px 0 0;padding:0;border-top:2px solid var(--ink)}
   .sum li a{display:block;padding:12px 0;border-bottom:1px solid var(--rule)}
-  .sum li b{font-size:17px;font-weight:600}
+  .sum li b{font-size:1.0625rem;font-weight:600}
   .sum li .y{color:var(--accent)}
   .sum li .n{color:var(--wrong)}
-  .sum li span{display:block;font-size:14px;line-height:1.7;color:var(--ink2)}
+  .sum li span{display:block;font-size:0.875rem;line-height:1.7;color:var(--ink2)}
 }
