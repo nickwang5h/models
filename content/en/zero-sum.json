@@ -4,7 +4,7 @@
  "en": "零和与正和",
  "discipline": "games",
  "one_line": "Your gain isn't always my loss, and some things make the whole pie bigger.",
- "story": "At Macworld in Boston, Jobs announces Microsoft will invest $150 million in Apple and keep making Office for the Mac, and the crowd boos",
+ "story": "In August, at Macworld in Boston, Jobs announces Microsoft will invest 150 million dollars in Apple and keep making Office for the Mac, and the crowd boos",
  "shallow": {
   "scene": "In August 1997, at the Macworld conference in Boston, Steve Jobs announced that Microsoft would invest 150 million dollars in Apple and keep developing Office for the Mac. Bill Gates appeared on the big screen, and the audience booed: to many Apple fans, anything Microsoft gained was Apple's loss. Yet both companies came out ahead on the deal. Apple was short of cash at the time, and the Mac couldn't do without Office; Microsoft got to keep making money from Mac users, and the two companies settled their patent disputes in the same deal.",
   "plain": "You can fix computers but can't cut hair; your downstairs neighbor can cut hair, and his computer is always acting up. You spend an afternoon fixing his computer, he gives you a haircut, and both of you save the money you would have paid someone else. Nobody loses out: the swap is positive-sum. Now play a game of chess instead. Every point you win is exactly a point your opponent loses, so the two of you always add up to zero: that is zero-sum. Which kind a thing is depends on whether it can create new value. Even a positive-sum deal turns zero-sum when it comes to splitting the money: if you take 20 yuan more, he gets 20 yuan less."
