@@ -3,7 +3,7 @@
  "name": "Caching and Locality",
  "en": "缓存与局部性",
  "discipline": "computing",
- "one_line": "Keep what you use often within reach, and a little extra space saves you effort every time.",
+ "one_line": "Keep what you use often within reach, and a little extra space saves effort every time.",
  "story": "Netflix launches Open Connect, putting cache servers that hold popular titles inside local internet providers' facilities",
  "shallow": {
   "scene": "In 2012 Netflix launched Open Connect: servers holding popular movies and shows, installed in the facilities of local network providers. When a viewer presses play, the video is sent from the nearby facility instead of traveling all the way from somewhere far off. The many thousands of people watching the same series every night each take a copy that is stored close by.",
