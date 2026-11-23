@@ -302,8 +302,8 @@ var seen = {}; qs.forEach(function (q) { if (seen[q.id] || Object.keys(seen).len
 // 200 with the home page, robots.txt and sitemap.xml included.
 export function notFoundPage(total, lang = 'zh') {
   const t = T[lang];
-  const body = `<section class="plainpage wrap"><h1>${t.notFound}</h1><p class="one">${t.notFoundLine}</p><p><a class="home" href="${href(lang, '/')}">${t.notFoundHome} →</a></p></section>`;
-  return shell({ title: t.notFoundTitle, description: t.notFoundLine, body, total, tab: null, lang, path: '/', head: '<meta name="robots" content="noindex">\n' });
+  const body = `<section class="plainpage wrap"><h1>${t.noPage}</h1><p class="one">${t.noPageLine}</p><p><a class="home" href="${href(lang, '/')}">${t.noPageHome} →</a></p></section>`;
+  return shell({ title: t.noPageTitle, description: t.noPageLine, body, total, tab: null, lang, path: '/', head: '<meta name="robots" content="noindex">\n' });
 }
 
 // robots.txt and sitemap.xml. Every page is listed in both languages, each entry naming its other half. No lastmod:

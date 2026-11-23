@@ -250,4 +250,6 @@ test('crawlers get a robots file, a sitemap naming both languages, and a real pa
   const missing = notFoundPage(2);
   assert.ok(missing.includes('<meta name="robots" content="noindex">'));
   assert.ok(missing.includes('href="/"'));
+  assert.ok(missing.includes('<h1>没有这一页</h1>'));
+  assert.ok(notFoundPage(2, 'en').includes('<h1>No such page</h1>'));
 });
