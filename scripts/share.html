@@ -1,0 +1,82 @@
+<!doctype html>
+<!-- One slide of a day's card for social posts (1080×1350, the portrait size 小红书 and Instagram show whole; X and others
+     take it too), in the site's colours. scripts/share.mjs fills in window.SLIDE and screenshots this page once per slide:
+     the card and its opening, the day's question, the answer. Text that would not fit is set smaller until it does. -->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+@font-face{font-family:"Inter";src:url("__FONT__") format("woff2");font-weight:100 900}
+html,body{margin:0;width:1080px;height:1350px;overflow:hidden;background:#ffffff;color:#16181b;
+  font-family:"Inter","PingFang SC","Hiragino Sans GB","Noto Sans SC",sans-serif}
+.slide{position:relative;box-sizing:border-box;width:1080px;height:1350px;padding:88px 84px 76px;display:flex;flex-direction:column}
+.slide::after{content:"";position:absolute;inset:30px;border:1px solid #e1e4e8;pointer-events:none}
+.top{display:flex;align-items:center;gap:18px;font-size:27px;font-weight:600;letter-spacing:.08em;color:#70767d}
+.top svg{width:52px;height:52px;flex:none}
+.top .n{margin-left:auto;letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.body{flex:1;min-height:0;box-sizing:border-box;padding:40px 0 32px;display:flex;flex-direction:column;justify-content:center;font-size:42px;line-height:1.62}
+h1{margin:0;font-size:2.7em;line-height:1.12;font-weight:700;letter-spacing:-.01em}
+html[lang=en] h1{font-size:2.15em;letter-spacing:-.02em}
+.en{margin:.35em 0 0;font-size:.8em;color:#70767d}
+.one{margin:.9em 0 0;font-size:1.12em;line-height:1.5;font-weight:600;color:#0e6b56}
+.story{margin:1em 0 0;color:#4a4f55}
+.stem{margin:0;color:#4a4f55}
+.ask{margin:.8em 0 .6em;font-weight:700}
+ol{margin:0;padding:0;list-style:none;display:grid;gap:.42em}
+li{display:grid;grid-template-columns:1.5em 1fr;gap:.3em;padding:.42em .6em;background:#f4f5f7;border-radius:14px;line-height:1.45}
+li b{color:#70767d;font-weight:600}
+li.right{background:#e6f2ee}
+li.right b{color:#0e6b56}
+.label{margin:0 0 .5em;font-size:.72em;font-weight:600;letter-spacing:.1em;color:#0e6b56}
+.why{margin:.8em 0 0;color:#4a4f55}
+.foot{display:flex;justify-content:space-between;align-items:baseline;gap:24px;font-size:27px;color:#70767d;white-space:nowrap}
+.foot b{color:#16181b;font-weight:600}
+</style>
+</head>
+<body>
+<div class="slide">
+<div class="top"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0e6b56"/><g stroke="#ffffff" stroke-width="4" stroke-linecap="round"><path d="M18 14v36M32 14v36M46 14v36M12 22h40M12 42h40"/></g></svg><span id="kick"></span><span class="n" id="n"></span></div>
+<div class="body" id="body"></div>
+<div class="foot"><b id="site"></b><span id="next"></span></div>
+</div>
+<script>
+window.SLIDE = __SLIDE__;
+const s = window.SLIDE;
+const el = (tag, cls, text) => { const node = document.createElement(tag); if (cls) node.className = cls; if (text != null) node.textContent = text; return node; };
+document.documentElement.lang = s.lang === 'en' ? 'en' : 'zh-CN';
+document.getElementById('kick').textContent = s.kick;
+document.getElementById('n').textContent = `${s.index} / ${s.count}`;
+// the last slide ends on where to read the whole card, which needs the line to itself
+document.getElementById('site').textContent = s.kind === 'answer' ? '' : s.site;
+document.getElementById('next').textContent = s.next;
+const body = document.getElementById('body');
+if (s.kind === 'card') {
+  body.append(el('h1', '', s.name));
+  if (s.en) body.append(el('p', 'en', s.en));
+  body.append(el('p', 'one', s.one), el('p', 'story', s.story));
+} else {
+  if (s.kind === 'answer') body.append(el('p', 'label', s.label));
+  else body.append(el('p', 'stem', s.stem));
+  body.append(el('p', 'ask', s.question));
+  const list = el('ol');
+  s.options.forEach((option, n) => {
+    if (s.kind === 'answer' && !option.correct) return;
+    const item = el('li', s.kind === 'answer' ? 'right' : '');
+    item.append(el('b', '', 'ABCD'[n]), el('span', '', option.text));
+    list.append(item);
+  });
+  body.append(list);
+  if (s.kind === 'answer') body.append(el('p', 'why', s.feedback), el('p', 'why', s.explain));
+}
+// Set the text smaller until it fits between the header and the footer.
+// (Measured on a wrapper: content centred in a flex box overflows at both ends, and scrollHeight counts only the bottom.)
+const inner = el('div');
+inner.append(...body.childNodes);
+body.append(inner);
+const room = body.clientHeight - 72;   // the body's own padding, top and bottom
+let size = 42;
+while (inner.offsetHeight > room && size > 24) body.style.fontSize = `${size -= 1}px`;
+document.title = inner.offsetHeight > room ? 'OVERFLOW' : `fits at ${size}px`;
+</script>
+</body>
+</html>
