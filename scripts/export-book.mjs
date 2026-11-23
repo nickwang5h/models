@@ -1,6 +1,7 @@
 // The cards as an e-book and as Anki notes, in Chinese and in English:
 //   out/models-zh.epub, out/models-en.epub        one chapter per discipline, one section per card, by rank
-//   out/models-zh.anki.txt, out/models-en.anki.txt  Anki's text import: one note per question and one per card
+//   out/models-zh.anki.txt, out/models-en.anki.txt  Anki's text import (2.1.54 or newer, for the header lines): one note per
+//                                                   question and one per card
 // Usage: node scripts/export-book.mjs [--out DIR] [--date YYYY-MM-DD]
 // Figures are the site's own, drawn once at the card column's width; a figure that is interactive on the site shows its
 // starting values. Their styles are taken from public/style.css with the light theme's colours written in.
@@ -255,10 +256,11 @@ function anki(lang, { chapters }) {
     for (const card of chapter.cards) {
       const link = `<a href="${url(lang, card.id)}">${esc(card.name)}</a>`;
       const tags = `${chapter.id} ${card.id}`;
-      rows.push([`${esc(t.what(card.name))}`, `<b>${esc(card.one_line)}</b><br><br>${md(card.shallow.plain)}<br>${link}`, tags]);
-      card.use.questions.forEach((q) => {
+      rows.push([`models-${lang}-${card.id}`, `${esc(t.what(card.name))}`, `<b>${esc(card.one_line)}</b><br><br>${md(card.shallow.plain)}<br>${link}`, tags]);
+      card.use.questions.forEach((q, n) => {
         const right = q.options.findIndex((o) => o.correct);
         rows.push([
+          `models-${lang}-${card.id}-q${n + 1}`,
           `<div><small>${esc(chapter.title)}</small></div>${md0(q.stem)}<br><br><b>${md0(q.question)}</b><ol type="A">${q.options.map((o) => `<li>${md0(o.text)}</li>`).join('')}</ol>`,
           `<b>${KEYS[right]}</b>${t.sep}${md0(q.options[right].text)}<br><br>${md0(q.options[right].feedback)}<br><br>${md0(q.explain)}<br><br>${link}${t.sep}${esc(card.one_line)}`,
           tags,
@@ -266,7 +268,9 @@ function anki(lang, { chapters }) {
       });
     }
   }
-  const header = ['#separator:tab', '#html:true', '#notetype:Basic', `#deck:${t.deck}`, '#tags column:3', ''];
+  // The first column is a stable id: importing a newer export updates the notes already in the collection, schedules
+  // kept, instead of adding them a second time when a question's wording has changed.
+  const header = ['#separator:Tab', '#html:true', '#notetype:Basic', `#deck:${t.deck}`, '#guid column:1', '#tags column:4', ''];
   return { notes: rows.length, data: header.join('\n') + rows.map((r) => r.map(field).join('\t')).join('\n') + '\n' };
 }
 

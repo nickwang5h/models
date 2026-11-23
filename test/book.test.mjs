@@ -25,7 +25,9 @@ test('the cards export as an e-book and as Anki notes in both languages', async 
 
       const rows = (await readFile(join(out, `models-${lang}.anki.txt`), 'utf8')).split('\n').filter((line) => line && !line.startsWith('#'));
       assert.equal(rows.length, index.cards.length * 4);   // the card itself and its three questions
-      for (const row of rows) assert.equal(row.split('\t').length, 3);
+      for (const row of rows) assert.equal(row.split('\t').length, 4);
+      // ids are what a later import matches on, so they must not repeat
+      assert.equal(new Set(rows.map((row) => row.split('\t')[0])).size, rows.length);
     }
     // The same date gives the same bytes, so a rebuilt book can be compared with the last one.
     const first = await readFile(join(out, 'models-zh.epub'));
