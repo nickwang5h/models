@@ -253,3 +253,11 @@ test('crawlers get a robots file, a sitemap naming both languages, and a real pa
   assert.ok(missing.includes('<h1>没有这一页</h1>'));
   assert.ok(notFoundPage(2, 'en').includes('<h1>No such page</h1>'));
 });
+
+test('the KaTeX stylesheet a page links is the version of the library that rendered its maths', async () => {
+  const { default: katex } = await import('katex');
+  const { KATEX_VERSION } = await import('../src/shell.mjs');
+  assert.equal(KATEX_VERSION, katex.version);
+  const all = cards();
+  assert.ok(cardPage(all.a, { cards: all, index }).includes(`/KaTeX/${katex.version}/katex.min.css`));
+});

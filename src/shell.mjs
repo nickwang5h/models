@@ -3,6 +3,9 @@ import { escape } from '../public/quiz.mjs';
 import { T, href } from '../public/i18n.mjs';
 
 export const SITE = 'https://models.wuhua.app';
+// The stylesheet must be the version of the katex package that renders the maths at build time: 0.19 renamed its
+// classes (katex-base, katex-strut…), and an older sheet leaves them unstyled. test/render.test.mjs holds the two together.
+export const KATEX_VERSION = '0.19.0';
 
 export const REPO = 'https://github.com/nickwang5h/models';
 
@@ -86,7 +89,7 @@ ${lang === 'zh' ? '<link rel="alternate" type="application/atom+xml" title="思�
 <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/style.css">
 ${MODULES}
-${math ? '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">' : ''}
+${math ? `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/${KATEX_VERSION}/katex.min.css">` : ''}
 ${head}</head>
 <body>
 <header class="bar"><div class="wrap">
