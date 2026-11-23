@@ -166,6 +166,10 @@ main:focus{outline:none}
 .sub .done{margin:10px 0 0;color:var(--accent);font-size:0.875rem}
 .sub .done:empty{display:none}
 .trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.sub.after{max-width:984px;margin:0 0 32px;padding:22px 0 0;border-left:0;border-top:1px solid var(--rule)}
+.sub.after h2{margin:0 0 4px}
+.sub.after .say{margin:0 0 14px;color:var(--ink2);max-width:34em}
+.day .sub.after{margin:36px 0 0;max-width:none}
 .sub .rss{margin-top:10px;color:var(--ink3);font-size:0.8125rem}
 .sub .rss a{text-decoration:underline;text-underline-offset:3px}
 .past{margin-top:36px;border-top:1px solid var(--rule)}

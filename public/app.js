@@ -545,12 +545,27 @@ const NOTES = {
 };
 function subscribe(form, note, box) {
   const query = new URLSearchParams(location.search);
+  // A reader who confirmed in this browser is not asked again under every card.
+  const lazy = box?.hasAttribute('data-lazy');
+  try {
+    if (query.has('confirmed')) localStorage.setItem('models-subscribed', '1');
+    if (lazy && localStorage.getItem('models-subscribed')) return;
+  } catch { /* no storage: offer it */ }
   if (query.has('confirmed')) note.textContent = NOTES.confirmed;
   else if (query.has('expired')) note.textContent = NOTES.expired;
-  fetch('/api/subscribe').then((r) => (r.ok ? r.json() : null)).then((answer) => {
+  const ask = () => fetch('/api/subscribe').then((r) => (r.ok ? r.json() : null)).then((answer) => {
     if (answer?.open) { if (box) box.hidden = false; return; }
+    if (lazy) box.hidden = true;
     if (!box) { form.hidden = true; note.textContent = NOTES.off; }
   }).catch(() => {});
+  // Under a card the block is there from the start, far below the first screen, so nothing moves when the reader gets
+  // to it; the question whether the site can send waits until they are near, so reading a card costs no request.
+  const before = lazy && 'IntersectionObserver' in window ? box.previousElementSibling : null;
+  if (before) {
+    box.hidden = false;
+    const near = new IntersectionObserver(([e]) => { if (e.isIntersecting) { near.disconnect(); ask(); } }, { rootMargin: '900px 0px' });
+    near.observe(before);
+  } else ask();
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const button = form.querySelector('button');
@@ -559,7 +574,7 @@ function subscribe(form, note, box) {
     try {
       const response = await fetch('/api/subscribe', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: form.email.value, website: form.website.value }),
+        body: JSON.stringify({ email: form.email.value, website: form.website.value, place: form.dataset.place ?? '' }),
       });
       const answer = await response.json().catch(() => ({}));
       if (response.ok) { note.textContent = NOTES.sent; form.reset(); }

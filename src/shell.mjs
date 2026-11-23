@@ -34,6 +34,15 @@ const ENVELOPE = '<svg class="env" viewBox="0 0 24 24" aria-hidden="true" focusa
   + '<path class="e-body" d="M3.5 9.5v9a1 1 0 0 0 1 1h15a1 1 0 0 0 1-1v-9"/><path class="e-body" d="M3.5 9.5l8.5 5.6 8.5-5.6"/><path class="e-flap" d="M3.5 9.5l8.5-5 8.5 5"/></svg>';
 export const subButton = () => `<button class="letter" type="submit">${ENVELOPE}<span>订阅</span></button>`;
 
+// The subscription offered where a reader finishes: under a card, and under the day's question. `place` says which,
+// for the count of requests (src/count.mjs). Hidden without scripts (the form needs them), when the site cannot send, and for a
+// reader who has confirmed in this browser. The daily mail is Chinese only, so English pages have none.
+export const subAfter = (place) => `<aside class="sub after" aria-label="邮件订阅" data-mail data-lazy hidden><h2>每天一张，发到邮箱</h2>
+<p class="say">一张卡的一句话、一道题，和读整张卡的链接。每封信都能退订。</p>
+<form data-subscribe data-place="${place}"><input name="email" type="email" required maxlength="254" autocomplete="email" aria-label="邮箱" placeholder="you@example.com"><span class="trap" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></span>${subButton()}</form>
+<p class="done" data-subscribe-status role="status" aria-live="polite"></p>
+<p class="rss">不想留邮箱，可以用 <a href="/feed.xml">RSS</a>。</p></aside>`;
+
 // app.js and every module it imports, fetched together instead of one after another (the import chain is two deep).
 const MODULES = ['app.js', 'progress.mjs', 'quiz.mjs', 'keys.mjs', 'display.mjs', 'list.mjs', 'daily.mjs', 'i18n.mjs'].map((f) => `<link rel="modulepreload" href="/${f}">`).join('');
 
@@ -101,7 +110,7 @@ ${head}</head>
 <main id="main" tabindex="-1">
 ${body}
 </main>
-<footer class="foot"><div class="wrap"><span>${t.footSite}</span>${lang === 'zh' ? '<a href="/today">今日一卡</a><a href="/feed.xml">RSS</a>' : ''}<a href="${REPO}">${t.source}</a><a href="${escape(report)}">${t.report}</a><a href="${href(other.lang, path)}" hreflang="${other.lang}" lang="${other.lang === 'en' ? 'en' : 'zh-CN'}">${other.label}</a><button class="theme ft" type="button" data-theme-toggle>${THEME_ICON}<span>${t.themeShort}</span></button><span>${t.license(`<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/${lang === 'en' ? '' : 'deed.zh-hans'}">CC BY-NC-SA 4.0</a>`, `<a href="${REPO}/blob/main/LICENSE">MIT</a>`)}</span></div></footer>
+<footer class="foot"><div class="wrap"><span>${t.footSite}</span>${lang === 'zh' ? '<a href="/today">今日一卡</a><a href="/subscribe">邮件订阅</a><a href="/feed.xml">RSS</a>' : ''}<a href="${REPO}">${t.source}</a><a href="${escape(report)}">${t.report}</a><a href="${href(other.lang, path)}" hreflang="${other.lang}" lang="${other.lang === 'en' ? 'en' : 'zh-CN'}">${other.label}</a><button class="theme ft" type="button" data-theme-toggle>${THEME_ICON}<span>${t.themeShort}</span></button><span>${t.license(`<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/${lang === 'en' ? '' : 'deed.zh-hans'}">CC BY-NC-SA 4.0</a>`, `<a href="${REPO}/blob/main/LICENSE">MIT</a>`)}</span></div></footer>
 ${tab ? tabs(tab, lang) : ''}
 <script type="module" src="/app.js"></script>
 ${script}

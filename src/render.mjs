@@ -4,7 +4,7 @@ import { Marked } from 'marked';
 import { escape, questionHtml } from '../public/quiz.mjs';
 import { USES, bands, leadHtml } from '../public/list.mjs';
 import { T, href, uses } from '../public/i18n.mjs';
-import { SITE, reportUrl, shell, subButton, tipAfter } from './shell.mjs';
+import { SITE, reportUrl, shell, subAfter, subButton, tipAfter } from './shell.mjs';
 import { figureHtml, figureProblems } from '../public/figure.mjs';
 
 const md = new Marked({ gfm: true });
@@ -218,7 +218,7 @@ ${next ? `<a class="nx" href="${at(`/m/${escape(next.id)}`)}" rel="next"><span>$
     : `<a class="nx" href="${at(`/d/${escape(discipline.id)}`)}"><span>${t.backTo}</span><b>${escape(discipline.title)}</b></a>`}
 ${prev ? `<a class="pv" href="${at(`/m/${escape(prev.id)}`)}" rel="prev"><span>← ${t.prevCard}</span><b>${escape(prev.name)}</b></a>` : ''}
 </nav>
-${tipAfter(lang, { last: !next })}
+${lang === 'zh' ? `${subAfter('card')}\n` : ''}${tipAfter(lang, { last: !next })}
 </div>
 </div>
 <div class="spine" data-spine><span class="prog" aria-hidden="true"><i></i></span>
@@ -255,7 +255,7 @@ export function homePage(index, list, { discipline = null, today, figure = null,
 <a class="today" href="${at(`/m/${escape(first.id)}`)}?day=${today.date}" data-lead>${leadHtml(first, today.date, title[first.discipline], figure ? figureHtml(figure, { lang }) : '', lang)}</a>
 <aside class="sub">
 ${lang === 'zh' ? `<div data-mail hidden><h2>每天一张，发到邮箱</h2>
-<form data-subscribe><input name="email" type="email" required maxlength="254" autocomplete="email" aria-label="邮箱" placeholder="you@example.com"><span class="trap" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></span>${subButton()}</form>
+<form data-subscribe data-place="home"><input name="email" type="email" required maxlength="254" autocomplete="email" aria-label="邮箱" placeholder="you@example.com"><span class="trap" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></span>${subButton()}</form>
 <p class="done" data-subscribe-status role="status" aria-live="polite"></p></div>
 <p class="rss"><a href="/feed.xml">RSS</a><span class="td"> · <a href="/today">今天的题</a></span></p>
 ` : ''}<nav class="past" data-past aria-label="${t.pastDays}"></nav>

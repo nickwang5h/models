@@ -23,7 +23,7 @@
 
 ## 订阅流程
 
-1. 读者在 `/subscribe` 填邮箱。`POST /api/subscribe` 只接受同源（`Origin` 与站点一致）的 JSON，正文不超过 24 KiB；隐藏的诱捕字段 `website` 非空时返回 202 但不发信。
+1. 读者在订阅框里填邮箱。订阅框有四处：首页、`/subscribe`、今日一卡页的题目下面、每张中文卡片的末尾。后两处在读者确认订阅之后就不再出现（浏览器里记一个 `models-subscribed`）。英文页没有订阅框，因为每日邮件只有中文。`POST /api/subscribe` 只接受同源（`Origin` 与站点一致）的 JSON，正文不超过 24 KiB；隐藏的诱捕字段 `website` 非空时返回 202 但不发信。
 2. 它用 `MAIL_FROM` 发一封确认信，链接是 `/api/confirm?t=<令牌>`。令牌是 `base64url(邮箱|过期时间).base64url(HMAC-SHA256)`，密钥为 `SUBSCRIBE_SECRET`，自申请当天 UTC 零点起 72 小时有效，所以不管当天几点申请，读者手里的链接至少能用 48 小时（信里写的是 48 小时）。同一地址同一天的确认信内容相同，并带同一个 `Idempotency-Key`，多按几次也只发一封。
 3. 读者点开链接，`GET /api/confirm` 验证令牌后，把地址加入 Resend Segment（`RESEND_AUDIENCE_ID`），并让它订阅 Topic「思维模型 · 今日一卡」，再跳回 `/subscribe?confirmed=1`；令牌无效或过期跳到 `/subscribe?expired=1`。
 4. 每天一次，`POST /api/daily-mail`（`Authorization: Bearer <CRON_SECRET>`）把当天的卡作为一条名为 `models-today-YYYY-MM-DD` 的 Broadcast 发给该 Segment 里订阅了这个 Topic 的人。它先列出账号里的 Broadcast：同名且已发送就跳过；同名的草稿（上次创建后发送失败）就接着发送；都没有才新建。退订链接由 Resend 的 `{{{RESEND_UNSUBSCRIBE_URL}}}` 占位符生成。
@@ -39,6 +39,7 @@ Pages 没有定时任务。每天已经在跑的 `ops/models-daily.py`（Telegra
 - Telegram 失败不影响邮件；邮件接口返回非 `ok` 时脚本以非零状态退出，便于在 cron 日志里看到。
 - 通过令牌校验之后，发信失败也回 200，正文是 `{"ok":false,"step":…,"upstream":{…}}`：`step` 是 `list`、`topic`、`create`、`send` 里失败的那一步，`upstream` 是 Resend 的状态码和错误名。不回 502，是因为 Cloudflare 会把 502 的正文换成 `error code: 502`，日志里就看不出原因。
 - 接口本身是幂等的，重跑脚本或手动调用不会重复发信。
+- 没有订阅者的日子不算失败：Resend 不肯向没有联系人的 Segment 发 Broadcast（回 422，原话是 “The audience you are sending has no contacts”），接口这时删掉当天建的草稿，回 `{"ok":true,"skipped":true,"reason":"no-subscribers"}`。2026-10-24 到 11-23 每天的失败就是这个原因（Segment 里没有联系人；多半是验收时订阅又退订之后就没有人了，这一点没有到 Resend 后台核对），那些天各留下了一条名为 `models-today-<日期>` 的草稿，可以在 Resend 后台的 Broadcasts 里删掉。
 - 脚本按 UTC 日期工作。如果它的 cron 时间离 UTC 零点很近，留意本地日期和 UTC 日期可能不同。
 - 手动补发：`python3 ops/models-daily.py --mail-only`，或者
 

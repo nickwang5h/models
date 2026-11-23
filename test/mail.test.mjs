@@ -202,8 +202,7 @@ test('daily mail creates and sends one broadcast with today\'s card', async () =
   assert.ok(created.subject.includes(day.card.name));
   for (const part of [created.html, created.text]) {
     assert.ok(part.includes('{{{RESEND_UNSUBSCRIBE_URL}}}'));
-    assert.ok(part.includes(`${SITE}/m/${day.id}`));
-    assert.ok(part.includes(`${SITE}/today?date=2026-11-05`));
+    assert.ok(part.includes(`${SITE}/c/mail?d=2026-11-05`));
     assert.ok(!part.includes('反馈') && !part.includes('解析文字'));
   }
   assert.ok(created.html.includes('情境 &lt;b&gt;'));
@@ -248,10 +247,30 @@ test('the mail body reads well without HTML too', () => {
   assert.match(dailyMailHtml(day), /<h1[^>]*>卡/);
 });
 
-test('the mail links the card for its day, so a phone shows the question inside it; answering stays on /today', () => {
+test('the mail links pass through /c/mail, which leads to the card for its day and to /today for answering', () => {
   const day = today(data, '2026-11-05');
-  const link = `https://models.wuhua.app/m/${day.id}?day=2026-11-05`;
-  assert.ok(dailyMailText(day).includes(`读整张卡：${link}`));
-  assert.ok(dailyMailHtml(day).includes(`<a href="${link}">读整张卡：`));
-  assert.ok(dailyMailText(day).includes('去网页作答，看解析：https://models.wuhua.app/today?date=2026-11-05'));
+  const link = 'https://models.wuhua.app/c/mail?d=2026-11-05';
+  assert.ok(dailyMailText(day).includes(`读整张卡：${link}&to=card`));
+  assert.ok(dailyMailHtml(day).includes(`<a href="${link}&amp;to=card">读整张卡：`));
+  assert.ok(dailyMailText(day).includes(`去网页作答，看解析：${link}\n`));
+});
+
+test('a day with no subscribers is a quiet day: the draft is removed and the caller hears ok', async () => {
+  const none = { status: 200, body: { data: [] } };
+  const topics = { status: 200, body: { data: [{ id: 'tp_1', name: TOPIC }] } };
+  const empty = { status: 422, body: { statusCode: 422, name: 'validation_error', message: 'The audience you are sending has no contacts. Before sending the Broadcast, add contacts to the audience' } };
+  const quiet = fake(none, topics, { status: 201, body: { id: 'bc_1' } }, empty, { status: 200, body: { object: 'broadcast', id: 'bc_1', deleted: true } });
+  const response = await createDailyMailHandler({ env, load, fetcher: quiet.fetcher, now })(cron());
+  assert.equal(response.status, 200);
+  const day = today(data, '2026-11-05');
+  assert.deepEqual(await response.json(), { ok: true, skipped: true, reason: 'no-subscribers', name: 'models-today-2026-11-05', card: day.id, draft: 'deleted' });
+  assert.deepEqual(quiet.calls.map((c) => `${c.method} ${c.url}`).slice(-2), ['POST https://api.resend.com/broadcasts/bc_1/send', 'DELETE https://api.resend.com/broadcasts/bc_1']);
+  // the draft could not be removed: still a quiet day, and it says the draft stayed
+  const kept = fake(none, topics, { status: 201, body: { id: 'bc_1' } }, empty, { status: 500 });
+  assert.equal((await (await createDailyMailHandler({ env, load, fetcher: kept.fetcher, now })(cron())).json()).draft, 'kept');
+  // any other 422 is still a refusal the caller must see
+  const other = fake(none, topics, { status: 201, body: { id: 'bc_1' } }, { status: 422, body: { name: 'validation_error', message: 'The from address is not verified.' } });
+  const refused = await (await createDailyMailHandler({ env, load, fetcher: other.fetcher, now })(cron())).json();
+  assert.equal(refused.ok, false);
+  assert.equal(refused.step, 'send');
 });
