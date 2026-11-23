@@ -27,10 +27,11 @@ md.use({
 const MATH = /\$\$([\s\S]+?)\$\$|\$([^$\n]+?)\$/g;
 
 // Markdown with $…$ and $$…$$ typeset by KaTeX; math is cut out before Markdown so underscores and stars survive.
-export function markdown(text, { inline = false } = {}) {
+// `output` is KaTeX's: 'html' for the site (styled by its stylesheet), 'mathml' for the e-book, which carries no KaTeX fonts.
+export function markdown(text, { inline = false, output = 'html' } = {}) {
   const pieces = [];
   const held = String(text).replace(MATH, (_, block, line) => {
-    pieces.push(katex.renderToString(block ?? line, { displayMode: Boolean(block), throwOnError: false, strict: 'ignore', output: 'html' }));
+    pieces.push(katex.renderToString(block ?? line, { displayMode: Boolean(block), throwOnError: false, strict: 'ignore', output }));
     return `@@M${pieces.length - 1}@@`;
   });
   const html = inline ? md.parseInline(held) : md.parse(held);

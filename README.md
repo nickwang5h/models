@@ -27,6 +27,7 @@ npx wrangler pages dev dist   # 本地预览，包括 functions/ 里的 /today�
 
 ```sh
 npm run deploy    # 构建，然后 wrangler pages deploy dist --project-name models --branch main
+npm run book      # 电子书和 Anki 卡组：out/models-{zh,en}.epub、out/models-{zh,en}.anki.txt（不进版本管理）
 ```
 
 要在仓库根目录运行：wrangler 会把根目录的 `functions/` 一起打包。每日邮件的开通步骤和环境变量见 [docs/email.md](docs/email.md)。

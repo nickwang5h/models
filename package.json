@@ -13,6 +13,7 @@
   "scripts": {
     "build": "node build.mjs",
     "test": "node --test test/*.test.mjs",
+    "book": "node scripts/export-book.mjs",
     "deploy": "node build.mjs && wrangler pages deploy dist --project-name models --branch main"
   },
   "dependencies": {
