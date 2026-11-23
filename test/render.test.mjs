@@ -261,3 +261,22 @@ test('the KaTeX stylesheet a page links is the version of the library that rende
   const all = cards();
   assert.ok(cardPage(all.a, { cards: all, index }).includes(`/KaTeX/${katex.version}/katex.min.css`));
 });
+
+test('search highlights every word once, and a later word never matches inside an earlier mark', async () => {
+  const { highlight } = await import('../public/list.mjs');
+  assert.equal(highlight('market mark', 'mark a'), '<mark>mark</mark>et <mark>mark</mark>');
+  assert.equal(highlight('复利 Compounding', '复利 comp'), '<mark>复利</mark> <mark>Comp</mark>ounding');
+  assert.equal(highlight('a <b> & c', 'b'), 'a &lt;<mark>b</mark>&gt; &amp; c');
+  assert.equal(highlight('plain', ''), 'plain');
+});
+
+test('/today and /subscribe name themselves as canonical, not the home page', async () => {
+  const { todayPage, subscribePage } = await import('../src/today.mjs');
+  const question = { stem: 's', question: 'q', explain: 'e', options: [0, 1, 2, 3].map((n) => ({ text: `o${n}`, correct: n === 0, feedback: 'f' })) };
+  const day = (date) => ({ date, id: 'a', card: { name: '复利', en: 'Compounding', one_line: '一句话' }, questionIndex: 0, question });
+  assert.ok(todayPage(day('2026-11-05'), '2026-11-05', 2).includes('<link rel="canonical" href="https://models.wuhua.app/today">'));
+  const earlier = todayPage(day('2026-11-03'), '2026-11-05', 2);
+  assert.ok(earlier.includes('<link rel="canonical" href="https://models.wuhua.app/today?date=2026-11-03">'));
+  assert.ok(!earlier.includes('rel="alternate" hreflang='));
+  assert.ok(subscribePage(2).includes('<link rel="canonical" href="https://models.wuhua.app/subscribe">'));
+});

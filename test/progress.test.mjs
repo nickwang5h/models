@@ -48,3 +48,13 @@ test('random card prefers unread ones', () => {
   assert.equal(pickUnread(state, ['a', 'b'], () => 0), 'b');
   assert.equal(pickUnread(markRead(state, 'b', 'd'), ['a', 'b'], () => 0.99), 'b');
 });
+
+test('a damaged record keeps its sound parts and never throws later', () => {
+  const stored = (value) => ({ getItem: () => JSON.stringify(value), setItem() {} });
+  assert.deepEqual(load(stored({ read: null, answers: [] })).read, {});
+  assert.deepEqual(load(stored({ read: [], answers: 'x' })), { read: {}, answers: [] });
+  const mixed = load(stored({ read: { a: '2026-11-01' }, answers: [null, { q: 5, ok: true }, { q: 'a-0', ok: true, at: 1 }, 'junk'] }));
+  assert.deepEqual(mixed.answers, [{ q: 'a-0', ok: true, at: 1 }]);
+  assert.deepEqual(stats(mixed, ['a']), { read: 1, right: 1, answered: 1 });
+  assert.deepEqual(reviewQueue(mixed, [{ id: 'a', questions: ['a-0', 'a-1'] }]), ['a-1', 'a-0']);
+});

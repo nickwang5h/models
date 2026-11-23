@@ -12,7 +12,9 @@ import { SITE, entryHtml } from './today.mjs';
 import { escape } from '../public/quiz.mjs';
 
 const MAX_BYTES = 24 * 1024;
-const TOKEN_LIFE = 48 * 60 * 60 * 1000;
+// The mail promises 48 hours. A link is signed from the start of its UTC day (so a day's retries send the identical
+// mail), which is up to 24 hours before it is sent; 72 hours from there keeps the promise whenever it was sent.
+const TOKEN_LIFE = 72 * 60 * 60 * 1000;
 const RESEND = 'https://api.resend.com';
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export const UNAVAILABLE = '邮件订阅还没有开通。';
@@ -77,7 +79,7 @@ export async function sha256Hex(text) {
   return [...digest].map((b) => b.toString(16).padStart(2, '0')).join('');
 }
 
-// `base64url(email|expiresMs).base64url(hmac)`; the link stays valid for 48 hours from `now`.
+// `base64url(email|expiresMs).base64url(hmac)`; the link stays valid for TOKEN_LIFE from `now`.
 export async function signToken(email, secret, now = new Date()) {
   const payload = `${email.trim().toLowerCase()}|${now.getTime() + TOKEN_LIFE}`;
   const mac = new Uint8Array(await crypto.subtle.sign('HMAC', await hmacKey(secret), utf8(payload)));

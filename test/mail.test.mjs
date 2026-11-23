@@ -37,11 +37,11 @@ test('email addresses and configuration', () => {
   assert.equal(configured(undefined), false);
 });
 
-test('a confirmation token carries the address for 48 hours and nothing else verifies', async () => {
+test('a confirmation token carries the address for 72 hours and nothing else verifies', async () => {
   const token = await signToken(' Reader@Example.com ', SECRET, NOW);
   assert.equal(await verifyToken(token, SECRET, NOW), 'reader@example.com');
-  assert.equal(await verifyToken(token, SECRET, new Date(NOW.getTime() + 47 * 3600e3)), 'reader@example.com');
-  assert.equal(await verifyToken(token, SECRET, new Date(NOW.getTime() + 49 * 3600e3)), undefined);
+  assert.equal(await verifyToken(token, SECRET, new Date(NOW.getTime() + 71 * 3600e3)), 'reader@example.com');
+  assert.equal(await verifyToken(token, SECRET, new Date(NOW.getTime() + 73 * 3600e3)), undefined);
   assert.equal(await verifyToken(token, 'another-secret', NOW), undefined);
   const [payload, mac] = token.split('.');
   const forged = Buffer.from(Buffer.from(payload, 'base64url').toString().replace('reader', 'victim')).toString('base64url');
@@ -106,9 +106,11 @@ test('subscribe sends one identical, idempotent confirmation per address per day
   assert.ok(link);
   assert.ok(mail.html.includes(link[0]));
   assert.equal(await verifyToken(link[1], SECRET, NOW), 'reader@example.com');
-  // Signed from the start of the UTC day: valid until 48 hours after that midnight.
-  assert.equal(await verifyToken(link[1], SECRET, new Date('2026-11-06T23:59:00Z')), 'reader@example.com');
-  assert.equal(await verifyToken(link[1], SECRET, new Date('2026-11-07T00:00:01Z')), undefined);
+  // Signed from the start of the UTC day and valid 72 hours from that midnight, so a mail sent at 15:30 still has the
+  // 48 hours it promises.
+  assert.equal(await verifyToken(link[1], SECRET, new Date(NOW.getTime() + 48 * 3600e3)), 'reader@example.com');
+  assert.equal(await verifyToken(link[1], SECRET, new Date('2026-11-07T23:59:00Z')), 'reader@example.com');
+  assert.equal(await verifyToken(link[1], SECRET, new Date('2026-11-08T00:00:01Z')), undefined);
 });
 
 test('subscribe passes on rate limits and reports provider failures without detail', async () => {

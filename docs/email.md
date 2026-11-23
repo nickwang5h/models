@@ -24,7 +24,7 @@
 ## 订阅流程
 
 1. 读者在 `/subscribe` 填邮箱。`POST /api/subscribe` 只接受同源（`Origin` 与站点一致）的 JSON，正文不超过 24 KiB；隐藏的诱捕字段 `website` 非空时返回 202 但不发信。
-2. 它用 `MAIL_FROM` 发一封确认信，链接是 `/api/confirm?t=<令牌>`。令牌是 `base64url(邮箱|过期时间).base64url(HMAC-SHA256)`，密钥为 `SUBSCRIBE_SECRET`，自申请当天 UTC 零点起 48 小时有效。同一地址同一天的确认信内容相同，并带同一个 `Idempotency-Key`，多按几次也只发一封。
+2. 它用 `MAIL_FROM` 发一封确认信，链接是 `/api/confirm?t=<令牌>`。令牌是 `base64url(邮箱|过期时间).base64url(HMAC-SHA256)`，密钥为 `SUBSCRIBE_SECRET`，自申请当天 UTC 零点起 72 小时有效，所以不管当天几点申请，读者手里的链接至少能用 48 小时（信里写的是 48 小时）。同一地址同一天的确认信内容相同，并带同一个 `Idempotency-Key`，多按几次也只发一封。
 3. 读者点开链接，`GET /api/confirm` 验证令牌后，把地址加入 Resend Segment（`RESEND_AUDIENCE_ID`），并让它订阅 Topic「思维模型 · 今日一卡」，再跳回 `/subscribe?confirmed=1`；令牌无效或过期跳到 `/subscribe?expired=1`。
 4. 每天一次，`POST /api/daily-mail`（`Authorization: Bearer <CRON_SECRET>`）把当天的卡作为一条名为 `models-today-YYYY-MM-DD` 的 Broadcast 发给该 Segment 里订阅了这个 Topic 的人。它先列出账号里的 Broadcast：同名且已发送就跳过；同名的草稿（上次创建后发送失败）就接着发送；都没有才新建。退订链接由 Resend 的 `{{{RESEND_UNSUBSCRIBE_URL}}}` 占位符生成。
 

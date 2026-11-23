@@ -7,7 +7,12 @@ const empty = () => ({ read: {}, answers: [] });
 export function load(storage) {
   try {
     const saved = JSON.parse(storage.getItem(KEY));
-    if (saved && typeof saved.read === 'object' && Array.isArray(saved.answers)) return saved;
+    // A record edited by hand, cut short or written by a bug must not stop the page: keep what has the right shape.
+    if (saved && typeof saved === 'object') {
+      const read = saved.read && typeof saved.read === 'object' && !Array.isArray(saved.read) ? saved.read : {};
+      const answers = Array.isArray(saved.answers) ? saved.answers.filter((a) => a && typeof a === 'object' && typeof a.q === 'string') : [];
+      return { ...saved, read, answers };
+    }
   } catch { /* no progress */ }
   return empty();
 }

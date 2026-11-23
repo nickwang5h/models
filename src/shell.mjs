@@ -51,7 +51,8 @@ const tabs = (tab, lang) => `<nav class="tabs" aria-label="${T[lang].mainNav}">$
 
 // `total` is the number of cards, shown in the top bar until the reader has read some. `head` goes at the end of <head>.
 // `lang` is the page's language and `path` its address without the /en prefix, so each page links to its other half.
-export function shell({ title, description, body, total, math = false, script = '', report = reportUrl(), tab = 'today', head = '', lang = 'zh', path = '/' }) {
+// `own` is for a page with no other-language half (/today, /subscribe): its address, used as the canonical one.
+export function shell({ title, description, body, total, math = false, script = '', report = reportUrl(), tab = 'today', head = '', lang = 'zh', path = '/', own = null }) {
   const t = T[lang];
   const other = t.other;
   const alt = (l) => `${SITE}${href(l, path)}`;
@@ -63,12 +64,12 @@ export function shell({ title, description, body, total, math = false, script = 
 <meta name="text-scale" content="scale">
 <title>${escape(title)}</title>
 <meta name="description" content="${escape(description)}">
-<link rel="canonical" href="${alt(lang)}">
+<link rel="canonical" href="${own ? SITE + own : alt(lang)}">
 <meta property="og:type" content="${path.startsWith('/m/') ? 'article' : 'website'}">
 <meta property="og:site_name" content="${t.site}">
 <meta property="og:title" content="${escape(title)}">
 <meta property="og:description" content="${escape(description)}">
-<meta property="og:url" content="${alt(lang)}">
+<meta property="og:url" content="${own ? SITE + own : alt(lang)}">
 <meta property="og:locale" content="${lang === 'en' ? 'en_US' : 'zh_CN'}">
 <meta property="og:image" content="${SITE}/${lang === 'en' ? 'og-en.png' : 'og.png'}">
 <meta property="og:image:width" content="1200">
@@ -84,7 +85,7 @@ export function shell({ title, description, body, total, math = false, script = 
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
-${lang === 'zh' ? '<link rel="alternate" type="application/atom+xml" title="思维模型 · 今日一卡" href="/feed.xml">\n' : ''}<link rel="alternate" hreflang="zh" href="${alt('zh')}"><link rel="alternate" hreflang="en" href="${alt('en')}"><link rel="alternate" hreflang="x-default" href="${alt('en')}">
+${lang === 'zh' ? '<link rel="alternate" type="application/atom+xml" title="思维模型 · 今日一卡" href="/feed.xml">\n' : ''}${own ? '' : `<link rel="alternate" hreflang="zh" href="${alt('zh')}"><link rel="alternate" hreflang="en" href="${alt('en')}"><link rel="alternate" hreflang="x-default" href="${alt('en')}">`}
 <script>try { var d = JSON.parse(localStorage.getItem('models-display') || '{}'); if (d.theme === 'light' || d.theme === 'dark') document.documentElement.dataset.theme = d.theme; } catch (e) {}</script>
 <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/style.css">

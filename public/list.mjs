@@ -19,9 +19,10 @@ export function matches(card, q) {
 }
 
 export function highlight(text, q) {
-  let html = escape(text);
-  for (const w of words(q)) html = html.replace(new RegExp(escape(w).replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), (m) => `<mark>${m}</mark>`);
-  return html;
+  const html = escape(text);
+  // All the words in one pass, longest first: a second pass would also match inside the <mark> tags of the first.
+  const parts = [...new Set(words(q).map((w) => escape(w)))].sort((a, b) => b.length - a.length).map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  return parts.length ? html.replace(new RegExp(parts.join('|'), 'gi'), (m) => `<mark>${m}</mark>`) : html;
 }
 
 // `short` maps discipline ids to their one-word names; `read` is a Set of read ids; `today` is today's id; `lang` is

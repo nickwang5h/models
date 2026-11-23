@@ -28,7 +28,8 @@ export function todayPage(day, current, total) {
   // Phones read the day on the card itself, its question right after the opening (app.js); replace() keeps /today out
   // of the back stack.
   const head = `<script>if (matchMedia('(max-width:720px)').matches) location.replace('/m/${escape(id)}?day=${date}');</script>\n`;
-  return shell({ title: `今日一卡：${card.name} · 思维模型`, description: card.one_line, body, total, report: reportUrl(id), head });
+  // An earlier day is its own page; today's is /today.
+  return shell({ title: `今日一卡：${card.name} · 思维模型`, description: card.one_line, body, total, report: reportUrl(id), head, own: date === current ? '/today' : `/today?date=${date}` });
 }
 
 export function subscribePage(total) {
@@ -45,7 +46,7 @@ ${subButton()}
 <p class="rss">先收到一封确认信，点开链接才算订阅；每封信都能退订。不想留邮箱，可以用 <a href="/feed.xml">RSS</a>。</p>
 </div>
 </section>`;
-  return shell({ title: '订阅 · 思维模型', description: '每天一张思维模型卡，发到你的邮箱', body, total });
+  return shell({ title: '订阅 · 思维模型', description: '每天一张思维模型卡，发到你的邮箱', body, total, own: '/subscribe' });
 }
 
 export const escapeXml = (text) => String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
