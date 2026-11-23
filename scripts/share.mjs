@@ -5,7 +5,8 @@
 //   out/share/<date>-<lang>.txt     a caption with the link, ready to paste
 // The card and question are the site's 今日一卡 for that UTC day (src/daily.mjs), so a post matches /today, the feed and
 // the email. Pictures are 1080×1350, drawn by scripts/share.html in headless Chrome, like scripts/og.mjs.
-//   node scripts/share.mjs [--date YYYY-MM-DD] [--days N] [--lang zh|en|both] [--out DIR]
+//   node scripts/share.mjs [--date YYYY-MM-DD] [--days N] [--lang zh|en|both] [--out DIR] [--no-site]
+//   --no-site leaves the address off the pictures and out of the caption, for places that count a printed address as a link.
 //   (CHROME=/path/to/chrome when it isn't in the usual place on a Mac)
 import { execFileSync } from 'node:child_process';
 import { mkdir, mkdtemp, readFile, writeFile } from 'node:fs/promises';
@@ -22,6 +23,7 @@ const FIRST = option('--date', utcDate());
 const DAYS = Number(option('--days', 1));
 const LANGS = option('--lang', 'both') === 'both' ? ['zh', 'en'] : [option('--lang')];
 const SITE = 'https://models.wuhua.app';
+const BARE = args.includes('--no-site');
 if (!isDate(FIRST) || !(DAYS >= 1) || LANGS.some((lang) => !['zh', 'en'].includes(lang))) throw new Error('usage: node scripts/share.mjs [--date YYYY-MM-DD] [--days N] [--lang zh|en|both] [--out DIR]');
 
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -30,13 +32,13 @@ const W = {
     kick: (date) => `思维模型 · 今日一卡 · ${Number(date.slice(5, 7))} 月 ${Number(date.slice(8, 10))} 日`, site: 'models.wuhua.app',
     toQuestion: '下一张：一道题 →', toAnswer: '下一张：答案 →', read: (id) => `读整张卡：models.wuhua.app/m/${id}`, answer: '答案',
     caption: (day, url) => [`今日一卡：${day.card.name}`, '', day.card.one_line, '', `${day.question.stem}`, day.question.question, '',
-      '答案在第三张图。整张卡讲它怎么起作用、什么时候不灵，还有两道题：', url, '', '每天一张，免费，不用注册。', '', '#思维模型 #每日一卡 #认知 #决策'].join('\n'),
+      ...(url ? ['答案在第三张图。整张卡讲它怎么起作用、什么时候不灵，还有两道题：', url] : ['答案在第三张图。']), '', '每天一张，免费，不用注册。', '', '#思维模型 #每日一卡 #认知 #决策'].join('\n'),
   },
   en: {
     kick: (date) => `Mental Models · Card of the day · ${MONTHS[Number(date.slice(5, 7)) - 1]} ${Number(date.slice(8, 10))}`, site: 'models.wuhua.app/en',
     toQuestion: 'Next: a question →', toAnswer: 'Next: the answer →', read: (id) => `The whole card: models.wuhua.app/en/m/${id}`, answer: 'Answer',
     caption: (day, url) => [`Card of the day: ${day.card.name}`, '', day.card.one_line, '', day.question.stem, day.question.question, '',
-      'The answer is in the third picture. The whole card explains how the model works and when it fails, with two more questions:', url, '', 'One card a day. Free, no account.', '', '#mentalmodels #decisionmaking #thinking'].join('\n'),
+      ...(url ? ['The answer is in the third picture. The whole card explains how the model works and when it fails, with two more questions:', url] : ['The answer is in the third picture.']), '', 'One card a day. Free, no account.', '', '#mentalmodels #decisionmaking #thinking'].join('\n'),
   },
 };
 
@@ -55,13 +57,13 @@ const plain = (text) => String(text).replace(/\$\$?([^$]+)\$\$?/g, '$1').replace
 
 function slides(day, lang) {
   const t = W[lang];
-  const base = { lang, kick: t.kick(day.date), site: t.site, count: 3 };
+  const base = { lang, kick: t.kick(day.date), site: BARE ? '' : t.site, count: 3 };
   const options = day.question.options.map((o) => ({ text: plain(o.text), correct: o.correct }));
   const right = day.question.options.find((o) => o.correct);
   return [
     { ...base, index: 1, kind: 'card', name: day.card.name, en: lang === 'zh' ? day.card.en : '', one: day.card.one_line, story: plain(day.card.scene), next: t.toQuestion },
     { ...base, index: 2, kind: 'question', stem: plain(day.question.stem), question: plain(day.question.question), options, next: t.toAnswer },
-    { ...base, index: 3, kind: 'answer', label: t.answer, question: plain(day.question.question), options, feedback: plain(right.feedback), explain: plain(day.question.explain), next: t.read(day.id) },
+    { ...base, index: 3, kind: 'answer', label: t.answer, question: plain(day.question.question), options, feedback: plain(right.feedback), explain: plain(day.question.explain), next: BARE ? '' : t.read(day.id) },
   ];
 }
 
@@ -80,7 +82,7 @@ for (const lang of LANGS) {
         '--virtual-time-budget=3000', `--user-data-dir=${join(work, 'profile')}`, `--screenshot=${png}`, pathToFileURL(page).href], { stdio: 'ignore' });
     }
     const url = `${SITE}${lang === 'en' ? '/en' : ''}/m/${day.id}?day=${day.date}`;
-    await writeFile(join(OUT, `${day.date}-${lang}.txt`), `${W[lang].caption(day, url)}\n`);
+    await writeFile(join(OUT, `${day.date}-${lang}.txt`), `${W[lang].caption(day, BARE ? '' : url)}\n`);
     console.log(`${day.date} ${lang}: ${day.card.name} → ${join(OUT, `${day.date}-${lang}-{1,2,3}.png`)}`);
   }
 }
