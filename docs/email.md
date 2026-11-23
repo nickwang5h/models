@@ -37,6 +37,7 @@ Resend 账号与 learn.wuhua.app 共用，联系人的“已订阅／已退订�
 Pages 没有定时任务。每天已经在跑的 `ops/models-daily.py`（Telegram 推送）在发完 Telegram 之后，用 `~/vps-msg.env` 里的 `MODELS_CRON_SECRET` 调用 `POST https://models.wuhua.app/api/daily-mail`。选它而不是 GitHub Actions 定时任务，是因为公开仓库 60 天没有提交时 GitHub 会停用定时工作流，而且定时触发常常延迟。
 
 - Telegram 失败不影响邮件；邮件接口返回非 `ok` 时脚本以非零状态退出，便于在 cron 日志里看到。
+- 通过令牌校验之后，发信失败也回 200，正文是 `{"ok":false,"step":…,"upstream":{…}}`：`step` 是 `list`、`topic`、`create`、`send` 里失败的那一步，`upstream` 是 Resend 的状态码和错误名。不回 502，是因为 Cloudflare 会把 502 的正文换成 `error code: 502`，日志里就看不出原因。
 - 接口本身是幂等的，重跑脚本或手动调用不会重复发信。
 - 脚本按 UTC 日期工作。如果它的 cron 时间离 UTC 零点很近，留意本地日期和 UTC 日期可能不同。
 - 手动补发：`python3 ops/models-daily.py --mail-only`，或者

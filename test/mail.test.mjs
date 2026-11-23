@@ -218,8 +218,24 @@ test('daily mail is idempotent: a sent broadcast is skipped, a stuck draft is se
   assert.equal(resumed.status, 200);
   assert.deepEqual(draft.calls.map((c) => `${c.method} ${c.url}`), ['GET https://api.resend.com/broadcasts', 'POST https://api.resend.com/broadcasts/bc_9/send']);
 
-  assert.equal((await createDailyMailHandler({ env, load, fetcher: fake({ status: 500 }).fetcher, now })(cron())).status, 502);
-  assert.equal((await createDailyMailHandler({ env, load, fetcher: fake(new Error('down')).fetcher, now })(cron())).status, 502);
+});
+
+test('a daily mail that fails says which Resend call was refused and why', async () => {
+  const run = async (...answers) => {
+    const response = await createDailyMailHandler({ env, load, fetcher: fake(...answers).fetcher, now })(cron());
+    assert.equal(response.status, 200);   // not 502: Cloudflare would replace the body
+    return response.json();
+  };
+  const none = { status: 200, body: { data: [] } };
+  const topics = { status: 200, body: { data: [{ id: 'tp_1', name: TOPIC }] } };
+  const refused = { status: 403, body: { statusCode: 403, name: 'validation_error', message: 'Contact limit reached.' } };
+  const upstream = { status: 403, name: 'validation_error', message: 'Contact limit reached.' };
+  assert.deepEqual(await run({ status: 500 }), { ok: false, error: 'Could not list broadcasts.', step: 'list', upstream: { status: 500 } });
+  assert.deepEqual(await run(none, refused), { ok: false, error: 'The mail provider did not answer.', step: 'topic', reason: 'topics: 403' });
+  assert.deepEqual(await run(none, topics, refused), { ok: false, error: 'Could not create the broadcast.', step: 'create', upstream });
+  assert.deepEqual(await run(none, topics, { status: 201, body: {} }), { ok: false, error: 'Could not create the broadcast.', step: 'create' });
+  assert.deepEqual(await run(none, topics, { status: 201, body: { id: 'bc_1' } }, refused), { ok: false, error: 'Could not send the broadcast.', step: 'send', broadcast: 'bc_1', upstream });
+  assert.deepEqual(await run(new Error('down')), { ok: false, error: 'The mail provider did not answer.', step: 'list', reason: 'down' });
 });
 
 test('the mail body reads well without HTML too', () => {

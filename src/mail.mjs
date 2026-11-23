@@ -283,6 +283,9 @@ function sameText(a, b) {
   return diff === 0;
 }
 
+// A short string from an upstream answer, for the cron log.
+const text = (value) => (typeof value === 'string' ? value.slice(0, 300) : undefined);
+
 const json = (status, body) => Response.json(body, { status, headers: { 'Cache-Control': 'no-store' } });
 
 export function createDailyMailHandler({ env, load, fetcher = fetch, now = () => new Date(), site = SITE }) {
@@ -296,17 +299,31 @@ export function createDailyMailHandler({ env, load, fetcher = fetch, now = () =>
     const name = broadcastName(day.date);
     const headers = { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' };
     const timeout = () => AbortSignal.timeout(15000);
+    // After the bearer check a failure answers 200 with ok:false, not 502: Cloudflare swaps the body of a 502 for its
+    // own "error code: 502", and the caller's log then cannot say which Resend call was refused or why.
+    const failed = async (step, error, response, extra = {}) => {
+      const body = { ok: false, error, step, ...extra };
+      if (response) {
+        const detail = await response.json().catch(() => null);
+        body.upstream = { status: response.status, name: text(detail?.name), message: text(detail?.message) };
+      }
+      console.error('daily-mail', JSON.stringify(body));
+      return json(200, body);
+    };
+    let step = 'list';
     try {
       // Without `limit`, Resend returns every broadcast of the account (learn.wuhua.app's too) in one response.
       const listed = await fetcher(`${RESEND}/broadcasts`, { headers, signal: timeout() });
-      if (!listed.ok) return json(502, { ok: false, error: 'Could not list broadcasts.' });
+      if (!listed.ok) return failed(step, 'Could not list broadcasts.', listed);
       const existing = await listed.json();
       const items = Array.isArray(existing?.data) ? existing.data : [];
       const previous = items.find((b) => b?.name === name);
       if (previous && previous.status !== 'draft') return json(200, { ok: true, skipped: true, name, card: day.id });
       let id = previous?.id;
       if (!id) {
+        step = 'topic';
         const topic = await topicId(fetcher, headers, timeout);
+        step = 'create';
         const created = await fetcher(`${RESEND}/broadcasts`, {
           method: 'POST',
           headers,
@@ -316,16 +333,17 @@ export function createDailyMailHandler({ env, load, fetcher = fetch, now = () =>
           }),
           signal: timeout(),
         });
-        if (!created.ok) return json(502, { ok: false, error: 'Could not create the broadcast.' });
+        if (!created.ok) return failed(step, 'Could not create the broadcast.', created);
         const broadcast = await created.json();
         id = typeof broadcast?.id === 'string' ? broadcast.id : undefined;
-        if (!id) return json(502, { ok: false, error: 'Could not create the broadcast.' });
+        if (!id) return failed(step, 'Could not create the broadcast.');
       }
+      step = 'send';
       const sent = await fetcher(`${RESEND}/broadcasts/${encodeURIComponent(id)}/send`, { method: 'POST', headers, body: '{}', signal: timeout() });
-      if (!sent.ok) return json(502, { ok: false, error: 'Could not send the broadcast.', broadcast: id });
+      if (!sent.ok) return failed(step, 'Could not send the broadcast.', sent, { broadcast: id });
       return json(200, { ok: true, broadcast: id, name, card: day.id });
-    } catch {
-      return json(502, { ok: false, error: 'The mail provider did not answer.' });
+    } catch (error) {
+      return failed(step, 'The mail provider did not answer.', undefined, { reason: text(error?.message) });
     }
   };
 }
