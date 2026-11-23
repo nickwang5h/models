@@ -2,13 +2,15 @@
 //   out/models-zh.epub, out/models-en.epub        one chapter per discipline, one section per card, by rank
 //   out/models-zh.anki.txt, out/models-en.anki.txt  Anki's text import: one note per question and one per card
 // Usage: node scripts/export-book.mjs [--out DIR] [--date YYYY-MM-DD]
-// Figures are left out: more than half are interactive on the site and none are drawn for paper yet.
+// Figures are the site's own, drawn once at the card column's width; a figure that is interactive on the site shows its
+// starting values. Their styles are taken from public/style.css with the light theme's colours written in.
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { crc32, deflateRawSync } from 'node:zlib';
 import { join } from 'node:path';
 import { markdown } from '../src/render.mjs';
 import { uses } from '../public/i18n.mjs';
+import { figureSvg } from '../public/figure.mjs';
 
 const args = process.argv.slice(2);
 const option = (name, fallback) => (args.includes(name) ? args[args.indexOf(name) + 1] : fallback);
@@ -22,7 +24,7 @@ const W = {
     aboutText: (n) => [
       `这本书是 models.wuhua.app 的 ${n} 张思维模型卡，按学科分章，章内按网站上的名次排列。每张卡先讲一个真实的故事，再讲它怎么起作用、从哪里来、什么时候不灵，然后是用法、三个例子、和相邻模型的分工，最后三道情境题。`,
       '题目的答案和解析紧跟在每道题后面。想先自己做，就先遮住。',
-      '网站上的图大多可以动手试，这一版电子书没有收图；每张卡标题下面有它在网站上的地址。',
+      '网站上的图有一半可以拖动滑块来试，书里画的是它们开始时的样子；每张卡标题下面有它在网站上的地址。',
       `导出日期 ${DATE}。卡片内容以 CC BY-NC-SA 4.0 授权：可以非商业地转载和改编，须署名「思维模型 · models.wuhua.app」并以同样方式共享。`,
     ],
     origin: '来历', limits: '什么时候不灵', uses: '用它来', ask: '用之前问自己', examples: '三个例子', withOthers: '和相邻模型的分工', questions: '三道题',
@@ -33,7 +35,7 @@ const W = {
     aboutText: (n) => [
       `This book holds the ${n} mental model cards of models.wuhua.app, one chapter per discipline, in the site's rank order within each. A card opens with a true story, then explains how the model works, where it came from and when it fails, and goes on to its uses, three examples, how it divides the work with its neighbours, and three questions.`,
       'The answer and its explanation follow each question. Cover them if you want to try first.',
-      'Most figures on the site are interactive and this edition leaves them out; each card gives its address on the site under its title.',
+      'About half the figures are interactive on the site; the book shows them at their starting values, and each card gives its address on the site under its title.',
       `Exported on ${DATE}. The cards are licensed CC BY-NC-SA 4.0: share and adapt them non-commercially, credit “Mental Models · models.wuhua.app”, and share alike.`,
     ],
     origin: 'Where it came from', limits: 'When it fails', uses: 'Use it to', ask: 'Ask before using it', examples: 'Three examples', withOthers: 'With its neighbours', questions: 'Three questions',
@@ -56,6 +58,35 @@ async function load(lang) {
   for (const entry of index.cards) cards[entry.id] = JSON.parse(await readFile(join(base, `${entry.id}.json`), 'utf8'));
   const chapters = names.map((d) => ({ ...d, cards: index.cards.filter((e) => e.discipline === d.id).sort((a, b) => a.rank - b.rank).map((e) => cards[e.id]) }));
   return { cards, chapters, total: index.cards.length };
+}
+
+// The figure rules of the site's stylesheet (top level only, so no phone or dark overrides), with var(--x) replaced by
+// the light theme's value: e-book readers differ in how well they handle custom properties.
+async function figureCss() {
+  const css = await readFile('public/style.css', 'utf8');
+  const vars = Object.fromEntries([...css.slice(css.indexOf(':root{'), css.indexOf('}', css.indexOf(':root{'))).matchAll(/--([\w-]+):\s*([^;]+);/g)].map((m) => [m[1], m[2].trim()]));
+  const rules = [];
+  let depth = 0;
+  let start = 0;
+  for (let i = 0; i < css.length; i++) {
+    if (css[i] === '{') depth += 1;
+    else if (css[i] === '}') {
+      depth -= 1;
+      if (depth === 0) {
+        const rule = css.slice(start, i + 1).replace(/\/\*[\s\S]*?\*\//g, '').trim();
+        if (/^\.(fig|fg|fgd|fc|fd)[\w-]*[ .:,>{]/.test(rule)) rules.push(rule.replace(/var\(--([\w-]+)\)/g, (_, name) => vars[name] ?? 'inherit'));
+        start = i + 1;
+      }
+    }
+  }
+  return rules.join('\n');
+}
+
+function figureXhtml(spec) {
+  if (!spec) return '';
+  // An SVG inside XHTML takes its namespace from the element itself.
+  const svg = figureSvg(spec, { size: 'wide' }).replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" ');
+  return `<figure class="fig fig-${spec.kind}">${spec.title ? `<figcaption class="fh">${esc(spec.title)}</figcaption>` : ''}<div class="fb">${svg}</div>${spec.caption ? `<p class="fcap">${esc(spec.caption)}</p>` : ''}</figure>`;
 }
 
 const url = (lang, id) => `${SITE}${lang === 'en' ? '/en' : ''}/m/${id}`;
@@ -92,6 +123,7 @@ ${lang === 'zh' ? `<p class="en">${esc(card.en)}</p>` : ''}
 <p class="web">${t.online}${t.sep}<a href="${url(lang, card.id)}">${url(lang, card.id).replace('https://', '')}</a></p>
 <div class="scene">${md(shallow.scene)}</div>
 <div class="plain">${md(shallow.plain)}</div>
+${figureXhtml(card.figure)}
 ${mechanism}
 <h3>${t.limits}</h3>
 ${md(deep.limits)}
@@ -157,7 +189,7 @@ function zip(files) {
   return Buffer.concat([...chunks, ...central, end]);
 }
 
-function epub(lang, { cards, chapters, total }) {
+function epub(lang, { cards, chapters, total }, figures) {
   const t = W[lang];
   const id = createHash('sha256').update(`models.wuhua.app/${lang}`).digest('hex');
   const uuid = `${id.slice(0, 8)}-${id.slice(8, 12)}-4${id.slice(13, 16)}-8${id.slice(17, 20)}-${id.slice(20, 32)}`;
@@ -174,7 +206,8 @@ function epub(lang, { cards, chapters, total }) {
 <li><a href="about.xhtml">${t.about}</a></li>
 ${chapters.map((ch) => `<li><a href="d-${ch.id}.xhtml">${esc(ch.title)}</a><ol>${ch.cards.map((c) => `<li><a href="c-${c.id}.xhtml">${esc(c.name)}</a></li>`).join('')}</ol></li>`).join('\n')}
 </ol></nav>`);
-  const mathPages = new Set(pages.filter(([, , body]) => body.includes('<math')).map(([name]) => name));
+  // The package file must say which pages hold MathML or SVG.
+  const properties = (body) => [body.includes('<math') && 'mathml', body.includes('<svg') && 'svg'].filter(Boolean).join(' ');
   const opf = `<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="pub-id" xml:lang="${t.lang}">
 <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -190,7 +223,7 @@ ${chapters.map((ch) => `<li><a href="d-${ch.id}.xhtml">${esc(ch.title)}</a><ol>$
 <manifest>
 <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
 <item id="css" href="style.css" media-type="text/css"/>
-${pages.map(([name]) => `<item id="${name}" href="${name}.xhtml" media-type="application/xhtml+xml"${mathPages.has(name) ? ' properties="mathml"' : ''}/>`).join('\n')}
+${pages.map(([name, , body]) => `<item id="${name}" href="${name}.xhtml" media-type="application/xhtml+xml"${properties(body) ? ` properties="${properties(body)}"` : ''}/>`).join('\n')}
 </manifest>
 <spine>
 <itemref idref="title"/>
@@ -207,7 +240,7 @@ ${pages.slice(1).map(([name]) => `<itemref idref="${name}"/>`).join('\n')}
       ['META-INF/container.xml', container],
       ['OEBPS/content.opf', opf],
       ['OEBPS/nav.xhtml', nav],
-      ['OEBPS/style.css', CSS],
+      ['OEBPS/style.css', CSS + figures],
       ...pages.map(([name, , body]) => [`OEBPS/${name}.xhtml`, body]),
     ]),
   };
@@ -238,9 +271,11 @@ function anki(lang, { chapters }) {
 }
 
 await mkdir(OUT, { recursive: true });
+// The site's figure rules, then what differs on a book page.
+const FIGURES = `${await figureCss()}\n.fig{margin:1.2em 0;max-width:100%;page-break-inside:avoid}\n.fig .fb{padding:.8em}\n.fig .fc{max-width:100%}\n`;
 for (const lang of ['zh', 'en']) {
   const book = await load(lang);
-  const e = epub(lang, book);
+  const e = epub(lang, book, FIGURES);
   const a = anki(lang, book);
   await writeFile(join(OUT, `models-${lang}.epub`), e.data);
   await writeFile(join(OUT, `models-${lang}.anki.txt`), a.data);
