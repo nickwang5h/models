@@ -331,15 +331,6 @@ a.e:hover .n{color:var(--accent)}
   .ranks.q .b4 a.e{grid-template-columns:30px minmax(0,1fr)}
   .ranks.q .b4 .o{grid-column:2}
 }
-/* under a finger, a name in the list is a 44px row: the same list, a little more air between the lines (a search
-   already gives the fourth band two lines a name) */
-@media (pointer:coarse){
-  .ranks:not(.q) .b4 a.e{padding-top:10px;padding-bottom:10px}
-}
-@media (pointer:coarse) and (min-width:721px){
-  .b3 a.e{padding-top:10px;padding-bottom:10px}
-  .ranks:not(.q) .b4 a.e{padding-top:11px;padding-bottom:11px}
-}
 
 /* ---------- a card ---------- */
 
