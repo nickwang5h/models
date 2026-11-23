@@ -3,7 +3,7 @@
  "name": "Coase Theorem",
  "en": "科斯定理",
  "discipline": "economics",
- "one_line": "If bargaining is cheap, things end up with whoever uses them best, whoever held the right first.",
+ "one_line": "If bargaining is cheap, things reach their best user, no matter who got the right first.",
  "story": "In Sturges v. Bridgman, a confectioner's grinding noise disturbs a doctor's new consulting room and the Court of Appeal upholds the ban; Coase revisits the case in 1960",
  "shallow": {
   "scene": "London, 1879. For years the confectioner Bridgman had pounded sugar and other ingredients in two large mortars at the back of his shop. His neighbor, the doctor Sturges, later built a new consulting room in his own garden, and whenever the mortars were going, he couldn't examine his patients properly. The case went to the English Court of Appeal, and the judges upheld the injunction: the confectioner could no longer make this noise. Eighty-one years later, in a 1960 paper, Ronald Coase brought the case up again. Even if the doctor won, he said, if the confectioner set more store by those two mortars than the doctor did by quiet, the confectioner could perfectly well pay the doctor and buy his right to quiet.",
