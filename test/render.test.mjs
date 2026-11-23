@@ -236,3 +236,18 @@ test('every page says what it is when shared: canonical address, Open Graph and 
   assert.match(review, /<meta property="og:image" content="https:\/\/models\.wuhua\.app\/og-en\.png">/);
   assert.match(review, /<meta property="og:locale" content="en_US">/);
 });
+
+test('crawlers get a robots file, a sitemap naming both languages, and a real page for unknown addresses', async () => {
+  const { notFoundPage, robotsTxt, sitemapXml } = await import('../src/render.mjs');
+  assert.ok(robotsTxt().includes('Sitemap: https://models.wuhua.app/sitemap.xml'));
+  assert.ok(robotsTxt().includes('Disallow: /api/'));
+  const map = sitemapXml(['a', 'b'], ['math']);
+  // the home page, one discipline and two cards, each in two languages, and the subscribe page
+  assert.equal(map.match(/<url>/g).length, 4 * 2 + 1);
+  assert.ok(map.includes('<loc>https://models.wuhua.app/en/m/a</loc>'));
+  assert.ok(map.includes('<xhtml:link rel="alternate" hreflang="zh" href="https://models.wuhua.app/m/a"/>'));
+  assert.ok(!map.includes('lastmod'));
+  const missing = notFoundPage(2);
+  assert.ok(missing.includes('<meta name="robots" content="noindex">'));
+  assert.ok(missing.includes('href="/"'));
+});

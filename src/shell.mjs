@@ -81,7 +81,7 @@ export function shell({ title, description, body, total, math = false, script = 
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
-${lang === 'zh' ? '<link rel="alternate" type="application/atom+xml" title="思维模型 · 今日一卡" href="/feed.xml">\n' : ''}<link rel="alternate" hreflang="zh" href="${alt('zh')}"><link rel="alternate" hreflang="en" href="${alt('en')}">
+${lang === 'zh' ? '<link rel="alternate" type="application/atom+xml" title="思维模型 · 今日一卡" href="/feed.xml">\n' : ''}<link rel="alternate" hreflang="zh" href="${alt('zh')}"><link rel="alternate" hreflang="en" href="${alt('en')}"><link rel="alternate" hreflang="x-default" href="${alt('en')}">
 <script>try { var d = JSON.parse(localStorage.getItem('models-display') || '{}'); if (d.theme === 'light' || d.theme === 'dark') document.documentElement.dataset.theme = d.theme; } catch (e) {}</script>
 <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/style.css">

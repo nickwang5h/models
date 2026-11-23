@@ -2,7 +2,7 @@
 // /today, /today.json, /feed.xml and /api/* are Pages Functions (functions/) that read dist/questions.json.
 import { cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { cardPage, homePage, listData, reviewPage, validate } from './src/render.mjs';
+import { cardPage, homePage, listData, notFoundPage, reviewPage, robotsTxt, sitemapXml, validate } from './src/render.mjs';
 import { subscribePage } from './src/today.mjs';
 import { dailyPick, utcDate } from './src/daily.mjs';
 import { checkTranslation } from './src/translation.mjs';
@@ -49,6 +49,8 @@ await writeFile(join(DIST, 'index.html'), homePage(index, list, { today, figure 
 await writeFile(join(DIST, 'random.html'), homePage(index, list, { today, figure, random: true }));
 await writeFile(join(DIST, 'review.html'), reviewPage(total, index.disciplines, 'zh', questionCounts(cards, order)));
 await writeFile(join(DIST, 'subscribe.html'), subscribePage(total));
+await writeFile(join(DIST, '404.html'), notFoundPage(total));
+await writeFile(join(DIST, 'robots.txt'), robotsTxt());
 await writeFile(join(DIST, 'ids.json'), JSON.stringify(order));
 await writeFile(join(DIST, 'questions.json'), JSON.stringify(Object.fromEntries(order.map((id) => [id, { name: cards[id].name, en: cards[id].en, discipline: cards[id].discipline, one_line: cards[id].one_line, questions: cards[id].use.questions }]))));
 // The browser needs far less than questions.json (the Functions' copy): how many questions each card has (the review
@@ -105,5 +107,7 @@ if (existsSync(join(EN, 'index.json'))) {
   await writeFile(join(OUT, 'qn.json'), JSON.stringify(questionCounts(en, order)));
   await writeQuestions(OUT, en, order);
   await writeFile(join(OUT, 'questions.json'), JSON.stringify(Object.fromEntries(order.map((id) => [id, { name: en[id].name, en: en[id].en, discipline: en[id].discipline, one_line: en[id].one_line, questions: en[id].use.questions }]))));
+  // Listed only once the English half exists, since every entry names both.
+  if (!partial) await writeFile(join(DIST, 'sitemap.xml'), sitemapXml(order, index.disciplines.map((d) => d.id)));
   console.log(`English: ${total - stand} cards${stand ? ` (${stand} still in Chinese)` : ''} to ${OUT}/`);
 }

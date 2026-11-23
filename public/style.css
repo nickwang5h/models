@@ -697,6 +697,7 @@ h3{scroll-margin-top:24px}
 .plainpage h1{font-size:2.5rem;line-height:1.2;font-weight:600;margin:0 0 8px}
 .plainpage .one{font-size:1.1875rem;line-height:1.6;color:var(--ink2);margin:8px 0 28px}
 .plainpage .sub{border:0;padding:0;max-width:440px}
+.plainpage a.home{color:var(--accent);font-weight:500}
 /* review: while the questions load, what sits below them waits unseen (reviewPage, app.js) */
 html.rvwait .foot,html.rvwait #review .empty{visibility:hidden}
 .plainpage .sub .rss{margin-top:16px;font-size:0.875rem;line-height:1.7}

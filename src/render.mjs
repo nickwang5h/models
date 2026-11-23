@@ -4,7 +4,7 @@ import { Marked } from 'marked';
 import { escape, questionHtml } from '../public/quiz.mjs';
 import { USES, bands, leadHtml } from '../public/list.mjs';
 import { T, href, uses } from '../public/i18n.mjs';
-import { reportUrl, shell, subButton, tipAfter } from './shell.mjs';
+import { SITE, reportUrl, shell, subButton, tipAfter } from './shell.mjs';
 import { figureHtml, figureProblems } from '../public/figure.mjs';
 
 const md = new Marked({ gfm: true });
@@ -228,7 +228,13 @@ ${tipAfter(lang, { last: !next })}
 <div class="scrim" data-scrim hidden></div>`;
   const math = /\$/.test([shallow.scene, shallow.plain, deep.mechanism, deep.origin, deep.limits, ...use.examples.map((e) => e.text), ...use.uses.map((u) => u.text), ...use.with.map((w) => w.sees)].join(''));
   const script = card.figure?.kind === 'demo' ? '<script type="module" src="/figs.js"></script>' : '';
-  return shell({ title: t.cardTitle(card.name), description: card.one_line, body, total: index.cards.length, math, script, report: reportUrl(card.id), tab: null, lang, path: `/m/${card.id}` });
+  // Where the card sits, for search results: site › discipline › card.
+  const crumbs = [[t.site, at('/')], [discipline.title, at(`/d/${discipline.id}`)], [card.name, at(`/m/${card.id}`)]];
+  const head = `<script type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map(([name, path], n) => ({ '@type': 'ListItem', position: n + 1, name, item: `${SITE}${path}` })),
+  }).replace(/</g, '\\u003c')}</script>\n`;
+  return shell({ title: t.cardTitle(card.name), description: card.one_line, body, total: index.cards.length, math, script, report: reportUrl(card.id), tab: null, head, lang, path: `/m/${card.id}` });
 }
 
 const DICE = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r=".9"/><circle cx="15" cy="15" r=".9"/><circle cx="15" cy="9" r=".9"/><circle cx="9" cy="15" r=".9"/></svg>';
@@ -264,7 +270,9 @@ ${lang === 'zh' ? `<div data-mail hidden><h2>每天一张，发到邮箱</h2>
 <section class="ranks wrap" data-ranks aria-label="${t.allCards}">${bands(shown, { short, today: today.id, lang })}</section>
 <script type="application/json" id="cards">${JSON.stringify({ list, short, titles: title, discipline }).replace(/</g, '\\u003c')}</script>`;
   const what = discipline ? t.disciplineTitle(title[discipline]) : t.homeTitle;
-  return shell({ title: what, description: t.homeDescription(list.length), body, total: list.length, tab: discipline ? 'find' : 'today', lang, path: random ? '/random' : discipline ? `/d/${discipline}` : '/' });
+  // A discipline's page describes itself, so search results don't show thirteen pages with the home page's line.
+  const description = discipline && !random ? t.disciplineDescription(index.disciplines.find((d) => d.id === discipline).title, list.filter((c) => c.discipline === discipline).length) : t.homeDescription(list.length);
+  return shell({ title: what, description, body, total: list.length, tab: discipline ? 'find' : 'today', lang, path: random ? '/random' : discipline ? `/d/${discipline}` : '/' });
 }
 
 // `disciplines` name each question's discipline in the phone layout (one question a screen, app.js); `counts` is how
@@ -288,4 +296,27 @@ var seen = {}; qs.forEach(function (q) { if (seen[q.id] || Object.keys(seen).len
 })(); } catch (e) {}</script>
 `;
   return shell({ title: t.reviewTitle, description: t.reviewDescription, body, total, tab: 'review', lang, path: '/review', head });
+}
+
+// What an unknown address gets. Cloudflare Pages serves it with status 404; without it every unknown address answered
+// 200 with the home page, robots.txt and sitemap.xml included.
+export function notFoundPage(total, lang = 'zh') {
+  const t = T[lang];
+  const body = `<section class="plainpage wrap"><h1>${t.notFound}</h1><p class="one">${t.notFoundLine}</p><p><a class="home" href="${href(lang, '/')}">${t.notFoundHome} →</a></p></section>`;
+  return shell({ title: t.notFoundTitle, description: t.notFoundLine, body, total, tab: null, lang, path: '/', head: '<meta name="robots" content="noindex">\n' });
+}
+
+// robots.txt and sitemap.xml. Every page is listed in both languages, each entry naming its other half. No lastmod:
+// the build knows no page's real date, and a date that changes on every deploy teaches crawlers to ignore it.
+export function robotsTxt() {
+  return `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${SITE}/sitemap.xml\n`;
+}
+
+export function sitemapXml(ids, disciplines) {
+  const paths = ['/', ...disciplines.map((d) => `/d/${d}`), ...ids.map((id) => `/m/${id}`)];
+  const entry = (path, lang) => `<url><loc>${SITE}${href(lang, path)}</loc>`
+    + `<xhtml:link rel="alternate" hreflang="zh" href="${SITE}${href('zh', path)}"/><xhtml:link rel="alternate" hreflang="en" href="${SITE}${href('en', path)}"/>`
+    + `<xhtml:link rel="alternate" hreflang="x-default" href="${SITE}${href('en', path)}"/></url>`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n`
+    + `${paths.flatMap((path) => [entry(path, 'zh'), entry(path, 'en')]).join('\n')}\n<url><loc>${SITE}/subscribe</loc></url>\n</urlset>\n`;
 }
