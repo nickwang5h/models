@@ -144,8 +144,9 @@ test('every page has one support pill in the top bar; a card page ends with the 
   }
   assert.doesNotMatch(home, /data-tip-after/);
   assert.equal(html.match(/data-tip-after/g).length, 1);
-  // after the questions: the next card, then the dumpling, last; app.js shows it once a session and on a field's last card
-  assert.match(html, /id="s-quiz"[\s\S]*<nav class="pn"[^>]*>\n<a class="nx" href="\/m\/[^"]+" rel="next"><span>[^<]+ · 下一张<\/span><b>[\s\S]*<\/nav>\n<aside class="tip-after"[^>]* data-tip-after hidden>[\s\S]*这张卡读完了。/);
+  // after the questions: the next card, the mail (Chinese pages only), then the dumpling, last; app.js shows it once a session and on a field's last card
+  assert.match(html, /id="s-quiz"[\s\S]*<nav class="pn"[^>]*>\n<a class="nx" href="\/m\/[^"]+" rel="next"><span>[^<]+ · 下一张<\/span><b>[\s\S]*<\/nav>\n<aside class="sub after"[^>]* data-mail data-lazy hidden>[\s\S]*<form data-subscribe data-place="card">[\s\S]*<\/aside>\n<aside class="tip-after"[^>]* data-tip-after hidden>[\s\S]*这张卡读完了。/);
+  assert.equal(html.match(/<form data-subscribe /g).length, 1);
   const field = index.cards.filter((e) => e.discipline === all.a.discipline).sort((x, y) => x.rank - y.rank);
   const last = cardPage(all[field.at(-1).id], { cards: all, index });
   assert.match(last, /<a class="nx" href="\/d\/[^"]+"><span>回到<\/span>/);
@@ -154,7 +155,7 @@ test('every page has one support pill in the top bar; a card page ends with the 
 
 test('the home page subscribe form submits with the envelope pill', () => {
   const home = homePage(index, listData(index, cards()), { today: { id: 'a', date: '2026-10-23' } });
-  assert.match(home, /<form data-subscribe>[\s\S]*<button class="letter" type="submit">[\s\S]*<span>订阅<\/span><\/button><\/form>/);
+  assert.match(home, /<form data-subscribe data-place="home">[\s\S]*<button class="letter" type="submit">[\s\S]*<span>订阅<\/span><\/button><\/form>/);
 });
 
 test('a card page carries its question boxes under the name, as one wordless link to the questions', () => {
@@ -201,6 +202,7 @@ test('an English page is the same frame in English, every link under /en, each p
   const enIndex = { ...index, disciplines: [{ id: 'math', title: 'Mathematics & Statistics', short: 'Math' }] };
   const html = cardPage(all.a, { cards: all, index: enIndex, lang: 'en', zh: { card: all.a, entry: index.cards[0] } });
   assert.match(html, /<html lang="en">/);
+  assert.doesNotMatch(html, /data-subscribe/);   // the daily mail is Chinese only
   assert.match(html, /<a class="mark" href="\/en\/">Mental Models<small>3 cards · 12 fields<\/small><\/a>/);
   assert.match(html, /<a href="\/en\/d\/math">Mathematics &amp; Statistics<\/a>/);
   assert.match(html, /<a class="w" id="s-w0" href="\/en\/m\/b">/);

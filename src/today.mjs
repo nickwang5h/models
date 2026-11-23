@@ -1,7 +1,7 @@
 // The pages and the feed around 今日一卡. /today and /feed.xml are rendered per request by Pages Functions
 // (functions/), so this file avoids KaTeX and Markdown: the day shows the card's summary and one question, not its body.
 import { escape, questionHtml } from '../public/quiz.mjs';
-import { reportUrl, shell, subButton } from './shell.mjs';
+import { reportUrl, shell, subAfter, subButton } from './shell.mjs';
 import { EPOCH, addDays, recentDates } from './daily.mjs';
 
 export const SITE = 'https://models.wuhua.app';
@@ -24,6 +24,7 @@ export function todayPage(day, current, total) {
 <p class="one">${escape(card.one_line)}</p><p class="ex">读整张卡<span class="arr" aria-hidden="true">→</span></p></a>
 <div class="qs" data-today-quiz>${questionHtml(question, `${id}-${questionIndex}`)}</div>
 <nav class="pn">${prev}${next}</nav>
+${subAfter('today')}
 </section>`;
   // Phones read the day on the card itself, its question right after the opening (app.js); replace() keeps /today out
   // of the back stack.
@@ -37,7 +38,7 @@ export function subscribePage(total) {
 <h1>每天一张，发到邮箱</h1>
 <p class="one">一张卡的一句话、一道题，和读整张卡的链接。</p>
 <div class="sub">
-<form data-subscribe>
+<form data-subscribe data-place="page">
 <input id="email" name="email" type="email" required maxlength="254" autocomplete="email" aria-label="邮箱" placeholder="you@example.com">
 <span class="trap" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></span>
 ${subButton()}
@@ -51,14 +52,22 @@ ${subButton()}
 
 export const escapeXml = (text) => String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
+// Where a day's two links lead. `via` names a channel (src/count.mjs): the links then pass through /c/<via>, which
+// counts the visit and sends the reader on to the same two pages. The feed links straight to them.
+export function dayLinks({ date, id }, site = SITE, via = null) {
+  if (via) return { card: `${site}/c/${via}?d=${date}&to=card`, quiz: `${site}/c/${via}?d=${date}` };
+  return { card: `${site}/m/${id}?day=${date}`, quiz: `${site}/today?date=${date}` };
+}
+
 // The day as HTML for a feed entry or an email body: summary, question and options, no answer.
-export function entryHtml(day, site = SITE) {
-  const { date, id, card, question } = day;
+export function entryHtml(day, site = SITE, via = null) {
+  const { card, question } = day;
+  const to = dayLinks(day, site, via);
   const options = question.options.map((option, n) => `<li>${'ABCD'[n]}. ${escape(option.text)}</li>`).join('');
   return `<p>${escape(card.one_line)}</p>`
-    + `<p><a href="${site}/m/${escape(id)}?day=${date}">读整张卡：${escape(card.name)}</a></p>`
+    + `<p><a href="${escape(to.card)}">读整张卡：${escape(card.name)}</a></p>`
     + `<p>${escape(question.stem)}</p><p><strong>${escape(question.question)}</strong></p><ol>${options}</ol>`
-    + `<p><a href="${site}/today?date=${date}">去网页作答，看解析</a></p>`;
+    + `<p><a href="${escape(to.quiz)}">去网页作答，看解析</a></p>`;
 }
 
 // Atom 1.0: one entry per UTC day for the last two weeks, newest first. `days` is [{date, id, card, question, ...}].

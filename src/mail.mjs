@@ -8,7 +8,7 @@
 // Broadcast named models-today-YYYY-MM-DD; a second call finds it by name and does nothing.
 // Addresses are kept only with Resend; nothing here logs or stores them. See docs/email.md.
 import { utcDate, today } from './daily.mjs';
-import { SITE, entryHtml } from './today.mjs';
+import { SITE, dayLinks, entryHtml } from './today.mjs';
 import { escape } from '../public/quiz.mjs';
 
 const MAX_BYTES = 24 * 1024;
@@ -253,31 +253,32 @@ export function dailyMailHtml(day, site = SITE) {
   return wrap(`<p style="margin:0 0 8px;color:#847e74;font-size:13px;letter-spacing:.2em">思维模型 · 今日一卡 · ${escape(day.date)}</p>
 <h1 style="margin:0 0 4px;font:700 30px/1.3 'Songti SC','Noto Serif SC',serif">${escape(day.card.name)}</h1>
 <p style="margin:0 0 16px;color:#847e74;font-size:14px">${escape(day.card.en ?? '')}</p>
-${entryHtml(day, site)}
+${entryHtml(day, site, 'mail')}
 ${footer}`);
 }
 
 export function dailyMailText(day, site = SITE) {
-  const { date, id, card, question } = day;
+  const { date, card, question } = day;
+  const to = dayLinks(day, site, 'mail');
   return [
     `思维模型 · 今日一卡 · ${date}`,
     '',
     `${card.name}（${card.en ?? ''}）`,
     card.one_line,
-    `读整张卡：${site}/m/${id}?day=${date}`,
+    `读整张卡：${to.card}`,
     '',
     question.stem,
     question.question,
     ...question.options.map((option, n) => `${'ABCD'[n]}. ${option.text}`),
     '',
-    `去网页作答，看解析：${site}/today?date=${date}`,
+    `去网页作答，看解析：${to.quiz}`,
     '',
     '每天一封。退订：{{{RESEND_UNSUBSCRIBE_URL}}}',
   ].join('\n');
 }
 
 // Constant-time string comparison for the bearer token.
-function sameText(a, b) {
+export function sameText(a, b) {
   const x = utf8(a);
   const y = utf8(b);
   let diff = x.length ^ y.length;
